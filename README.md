@@ -1,4 +1,4 @@
-The Legend of Zelda - Black Crown
+# The Legend of Zelda - Black Crown
 ---------------------------------------
 ## About The Game
 The Legend of Zelda - Black Crown is a free fan game that combines ideas from The Legend of Zelda, Diablo and Ragnarok Online.
@@ -36,7 +36,8 @@ The game currenly contains:
 - ...
 
 ## Requirements
-The game requires you to have a graphics card/integrated graphics that supports atleast pixel shader 2.0. Besides that the game will require you to install the .NET Framework 4.6.1.
+The game requires you to have a graphics card/integrated graphics that supports atleast pixel shader 2.0.
+Besides that the game requires you to install the Microsoft .NET Framework 4.6.1.
 
 ## Game Download
 You can download the game here:
@@ -45,5 +46,8 @@ http://paul.ennemoser.com/files/zelda/TLoZ%20-%20Black%20Crown.zip
 You can download the Microsoft .NET Framework 4.6.1 here:
 https://www.microsoft.com/en-us/download/details.aspx?id=49981
 
-Source Code
+## Source Code
 Atom Framework: https://github.com/tivtag/Atom
+
+## Remarks
+The audio files are not included in the github release.
