@@ -1,6 +1,4 @@
 # The Legend of Zelda - Black Crown
----------------------------------------
-## About The Game
 The Legend of Zelda - Black Crown is a free fan game that combines ideas from The Legend of Zelda, Diablo and Ragnarok Online.
 Development started around the year 2008 with various prototypes previously done in C++/OpenGL.
 The large code base has undergone various transformations, but like with any old codebase there are some historically grown pieces.
@@ -8,14 +6,11 @@ The large code base has undergone various transformations, but like with any old
 Game Code: C#
 
 Script Code: IronRuby
-
 Graphics: Microsoft XNA
-
 Audio: FMOD Ex
-
 UI framework for dev tools: Windows Presentation Foundation
 
-## What is the Game about
+## Game Overview
 You gain experience by killing monsters or completing quests. 
 When you get a level-up you get both stat points, investable in the 6 main stats
 (Strength, Dexterity, Agility, Vitality, Intelligence and Luck), and talent points.
@@ -37,7 +32,6 @@ The game currenly contains:
 - 5 difficulty levels plus hardcore modus (including one that you have to unlock)
 - day/night system, dynamic lighting, dynamic weather effects!
 - adjustable resolution, no need to ruin your eyes!
-- ...
 
 ## Requirements
 The game requires you to have a graphics card/integrated graphics that supports atleast pixel shader 2.0.
