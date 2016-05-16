@@ -19,12 +19,12 @@ You gain experience by killing monsters or completing quests.
 When you get a level-up you get both stat points, investable in the 6 main stats
 (Strength, Dexterity, Agility, Vitality, Intelligence and Luck), and talent points.
 
-Talent points may be invested to further specialize your character! 
+Talent points may be invested to further specialize your character.
 Do you want to be a fast-attacking melee fighter that often crits? Or a straight up archer?
 There are many ways in which you can invest your talent points to create new and fun characters.
 
-Items come in different types and qualities, from Common to Rare, Epic or even Legendary!
-Some of the best items may be crafted using the Magical Crafting Bottle!
+Items come in different types and qualities, from Common to Rare, Epic or even Legendary.
+Some of the best items may be crafted using the Magical Crafting Bottle.
 
 ## Content Overview
 The game currenly contains:
@@ -34,7 +34,7 @@ The game currenly contains:
 - crafting system.
 - content to easily level-up to level 50.
 - 5 difficulty levels plus hardcore modus (including one that you have to unlock)
-- day/night system, dynamic lighting, dynamic weather effects!
+- day/night system, dynamic lighting, dynamic weather effects
 - adjustable resolution, no need to ruin your eyes!
 
 ## Requirements
