@@ -1,0 +1,276 @@
+﻿<UserControl x:Class="Zelda.QuestCreator.QuestViewModelControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:prop="clr-namespace:Zelda.QuestCreator.Properties"
+    xmlns:zq="clr-namespace:Zelda.Quests;assembly=ZeldasLibrary"
+    xmlns:awc="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf"
+    Height="Auto" Width="Auto"
+    Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource ForegroundBrush}">
+    
+    <UserControl.Resources>
+        <!-- Provides the values of the QuestType enumeration. -->
+        <ObjectDataProvider x:Key="QuestTypeValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="zq:QuestType" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        
+        <!-- Provides the values of the QuestGiverType enumeration. -->
+        <ObjectDataProvider x:Key="QuestGiverTypeValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="zq:QuestGiverType" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        
+        <!-- Provides the values of the QuestDeliverType enumeration. -->
+        <ObjectDataProvider x:Key="QuestDeliverTypeValues" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="zq:QuestDeliverType" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="1" Grid.Column="1">            
+            <TabControl>
+                <TabItem Header="Settings">
+                    <Grid Height="324">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/> <!-- Name -->
+                            <RowDefinition Height="Auto"/> <!-- Type -->
+                            <RowDefinition Height="Auto"/> <!-- Level -->
+
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="Auto"/><!-- Description -->
+                            <RowDefinition Height="Auto"/><!-- Start Text -->
+                            <RowDefinition Height="Auto"/><!-- Not Completed Text -->
+                            <RowDefinition Height="Auto"/><!-- Completed Text -->
+                            
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="Auto"/> <!-- Deliver Type -->
+                            <RowDefinition Height="Auto"/> <!-- Deliver Location -->
+                            <RowDefinition Height="Auto"/> <!-- Is Repeatable -->
+                            <RowDefinition Height="Auto"/> <!-- Is State Hidden -->
+
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Name" ToolTip="{x:Static prop:Resources.Tooltip_Name}" Style="{StaticResource MediumLabelStyle}" />
+                        <TextBox Text="{Binding Name}" Style="{StaticResource TextBoxStyle}" Grid.Column="1"/>
+
+                        <Label Content="Type" ToolTip="{x:Static prop:Resources.Tooltip_Type}" Style="{StaticResource MediumLabelStyle}" Grid.Row="1" />
+                        <ComboBox SelectedValue="{Binding QuestType}" 
+                              ItemsSource="{Binding Source={StaticResource QuestTypeValues}}" 
+                              Style="{StaticResource ComboBoxStyle}" Grid.Row="1" Grid.Column="1">
+                        </ComboBox>
+                        
+                        <Label Content="Level" ToolTip="{x:Static prop:Resources.Tooltip_Level}" Style="{StaticResource MediumLabelStyle}" Grid.Row="2" />
+                        <awc:NumericTextBox Text="{Binding Level}" Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Content="Description Id" ToolTip="{x:Static prop:Resources.Tooltip_DescriptionId}" Style="{StaticResource SmallLabelStyle}" Grid.Row="4" />
+                        <TextBox Text="{Binding TextDescription}" Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1"/>
+
+                        <Label Content="Start Text Id" ToolTip="{x:Static prop:Resources.Tooltip_StartTextId}" Style="{StaticResource SmallLabelStyle}" Grid.Row="5" />
+                        <TextBox Text="{Binding TextStart}" Style="{StaticResource TextBoxStyle}" Grid.Row="5" Grid.Column="1"/>
+
+                        <Label Content="Not Completed Text Id" ToolTip="{x:Static prop:Resources.Tooltip_NotCompletedTextId}" Style="{StaticResource SmallLabelStyle}" Grid.Row="6" />
+                        <TextBox Text="{Binding TextNotCompleted}" Style="{StaticResource TextBoxStyle}" Grid.Row="6" Grid.Column="1"/>
+                        
+                        <Label Content="Completed Text Id" ToolTip="{x:Static prop:Resources.Tooltip_CompletedTextId}" Style="{StaticResource SmallLabelStyle}" Grid.Row="7" />
+                        <TextBox Text="{Binding TextCompleted}" Style="{StaticResource TextBoxStyle}" Grid.Row="7" Grid.Column="1"/>
+
+                        <Label Content="Deliver Type" ToolTip="{x:Static prop:Resources.Tooltip_DeliverType}" Style="{StaticResource SmallLabelStyle}" Grid.Row="9" />
+                        <ComboBox SelectedValue="{Binding DeliverType}" 
+                              ItemsSource="{Binding Source={StaticResource QuestDeliverTypeValues}}" 
+                              Style="{StaticResource ComboBoxStyle}" Grid.Row="9" Grid.Column="1">
+                        </ComboBox>
+
+                        <Label Content="Deliver Location" ToolTip="{x:Static prop:Resources.Tooltip_DeliverLocation}" Style="{StaticResource SmallLabelStyle}" Grid.Row="10" />
+                        <TextBox Text="{Binding DeliverLocation}" Style="{StaticResource TextBoxStyle}" Grid.Row="10" Grid.Column="1"/>
+
+                        <Label Content="Is Repeatable" ToolTip="{x:Static prop:Resources.Tooltip_IsRepeatable}" Style="{StaticResource SmallLabelStyle}" Grid.Row="11" />
+                        <CheckBox IsChecked="{Binding IsRepeatable}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="1"/>
+
+                        <Label Content="Is State Hidden" ToolTip="{x:Static prop:Resources.Tooltip_IsStateHidden}" Style="{StaticResource SmallLabelStyle}" Grid.Row="12" />
+                        <CheckBox IsChecked="{Binding IsStateHidden}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="12" Grid.Column="1"/>
+
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Requirements">
+                    <Grid Height="295">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Commands" Style="{StaticResource SmallLabelStyle}" />
+                        <StackPanel Margin="2" Grid.Row="1">
+                            <Button Content="Add Requirement" Command="{Binding AddRequirement}" Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="Remove Requirement" Command="{Binding RemoveRequirement}" Style="{StaticResource ButtonStyle}"/>
+                        </StackPanel>
+
+                        <Label Content="List" Style="{StaticResource SmallLabelStyle}" Grid.Column="1" />
+                        <ListBox ItemsSource="{Binding Requirements}" Style="{StaticResource ListBoxStyle}"
+                                 Grid.Row="1" Grid.Column="1"
+                                 SelectionChanged="ListBox_Requirements_SelectionChanged">
+                        </ListBox>
+
+                        <Label Content="Selected" Style="{StaticResource SmallLabelStyle}" Grid.Column="2" />
+                        <awc:PropertyGridControl x:Name="propertyGrid_Requirement"
+                                                 Margin="2"
+                                                 Grid.Row="1" Grid.Column="2">
+                        </awc:PropertyGridControl>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Goals">
+                    <Grid Height="295">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Commands" Style="{StaticResource SmallLabelStyle}" />
+                        <StackPanel Margin="2" Grid.Row="1">
+                            <Button Content="Add Goal" Command="{Binding AddGoal}" Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="Remove Goal" Command="{Binding RemoveGoal}" Style="{StaticResource ButtonStyle}"/>
+                        </StackPanel>
+
+                        <Label Content="List" Style="{StaticResource SmallLabelStyle}" Grid.Column="1" />
+                        <ListBox ItemsSource="{Binding Goals}" Style="{StaticResource ListBoxStyle}"
+                                 SelectionChanged="ListBox_Goals_SelectionChanged"
+                                 Grid.Row="1" Grid.Column="1">
+                        </ListBox>
+
+                        <Label Content="Selected" Style="{StaticResource SmallLabelStyle}" Grid.Column="2" />
+                        <awc:PropertyGridControl x:Name="propertyGrid_Goal"
+                                                 Margin="2"
+                                                 Grid.Row="1" Grid.Column="2">
+                        </awc:PropertyGridControl>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Rewards">
+                    <Grid Height="295">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Commands" Style="{StaticResource SmallLabelStyle}" />
+                        <StackPanel Margin="2" Grid.Row="1">
+                            <Button Content="Add Reward" Command="{Binding AddReward}" Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="Remove Reward" Command="{Binding RemoveReward}" Style="{StaticResource ButtonStyle}"/>
+                        </StackPanel>
+
+                        <Label Content="List" Style="{StaticResource SmallLabelStyle}" Grid.Column="1" />
+                        <ListBox ItemsSource="{Binding Rewards}" Style="{StaticResource ListBoxStyle}"
+                                 SelectionChanged="ListBox_Rewards_SelectionChanged"
+                                 Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Content="Selected" Style="{StaticResource SmallLabelStyle}" Grid.Column="2" />
+                        <awc:PropertyGridControl x:Name="propertyGrid_Reward"
+                                                 Margin="2"
+                                                 Grid.Row="1" Grid.Column="2">
+                        </awc:PropertyGridControl>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Start Events">
+                    <Grid Height="295">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Commands" Style="{StaticResource SmallLabelStyle}" />
+                        <StackPanel Margin="2" Grid.Row="1">
+                            <Button Content="Add Event" Command="{Binding AddStartEvent}" Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="Remove Event" Command="{Binding RemoveStartEvent}" Style="{StaticResource ButtonStyle}"/>
+                        </StackPanel>
+
+                        <Label Content="List" Style="{StaticResource SmallLabelStyle}" Grid.Column="1" />
+                        <ListBox ItemsSource="{Binding StartEvents}" Style="{StaticResource ListBoxStyle}"
+                                 SelectionChanged="ListBox_StartEvents_SelectionChanged"
+                                 Grid.Row="1" Grid.Column="1">
+                        </ListBox>
+
+                        <Label Content="Selected" Style="{StaticResource SmallLabelStyle}" Grid.Column="2" />
+                        <awc:PropertyGridControl x:Name="propertyGrid_StartEvent"
+                                                     Margin="2" Grid.Row="1" Grid.Column="2">
+                        </awc:PropertyGridControl>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Completion Events">
+                    <Grid Height="295">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Commands" Style="{StaticResource SmallLabelStyle}" />
+                        <StackPanel Margin="2" Grid.Row="1">
+                            <Button Content="Add Event" Command="{Binding AddCompletionEvent}" Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="Remove Event" Command="{Binding RemoveCompletionEvent}" Style="{StaticResource ButtonStyle}"/>
+                        </StackPanel>
+
+                        <Label Content="List" Style="{StaticResource SmallLabelStyle}" Grid.Column="1" />
+                        <ListBox ItemsSource="{Binding CompletionEvents}" Style="{StaticResource ListBoxStyle}"
+                                 SelectionChanged="ListBox_CompletionEvents_SelectionChanged"
+                                 Grid.Row="1" Grid.Column="1">
+                        </ListBox>
+
+                        <Label Content="Selected" Style="{StaticResource SmallLabelStyle}" Grid.Column="2" />
+                        <awc:PropertyGridControl x:Name="propertyGrid_CompletionEvent"
+                                                     Margin="2" Grid.Row="1" Grid.Column="2">
+                        </awc:PropertyGridControl>
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

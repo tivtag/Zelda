@@ -1,0 +1,16 @@
+﻿
+
+*********************************************
+************ Todo-List of Editor ************
+*********************************************
+
+1. General
+- save IsLightingEnabled state of the last used Scene (priority: low)
+
+2. Tile Workspace
+
+3. Object Workspace
+
+4. Event Workspace
+
+5. Waypoint Workspace

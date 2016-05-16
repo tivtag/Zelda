@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.3
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "The Legend of Zelda - Black Crown Installer", "The Legend of Zelda - Black Crown Installer.wixproj", "{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

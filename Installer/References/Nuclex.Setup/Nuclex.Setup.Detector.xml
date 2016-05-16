@@ -1,0 +1,819 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Nuclex.Setup.Detector"
+    </assembly>
+    <members>
+        <member name="M:NsisIsXnaInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Verifies that XNA in the given version is installed</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of XNA is installed</returns>
+            <remarks>
+  This method asks for the DirectX version to check because the different
+  versions can be installed side-by-side. If you developed a XNA 1.0
+  application and the user has installed XNA 2.0 but not XNA 1.0,
+  your application will not work.
+</remarks>
+        </member>
+        <member name="M:NsisIsWindowsInstallerInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that Windows Installer in the given version are installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of Windows Installer is installed</returns>
+        </member>
+        <member name="M:NsisIsOperatingSystemAtLeast(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Verifies that the operating system is at least the specified version</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the running operating system is of the specified version or newer</returns>
+        </member>
+        <member name="M:MsiCheckDotNet(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the Microsoft .NET Framework is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckPhysX(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether AGEIA PhysX is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckWindowsInstaller(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether Windows Installer is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.Installer.IsWindowsInstallerInstalled(Nuclex.Setup.Detector.Installer.WindowsInstallerVersions)">
+            <summary>Verifies that Windows Installer in the given version is installed</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of Windows Installer is installed</returns>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.Installer.WindowsInstallerVersions">
+            <summary>Known Versions of Windows Installer</summary>
+        </member>
+        <member name="F:WindowsInstaller_4_0">
+            <summary>The latest windows installer available for Windows Vista</summary>
+        </member>
+        <member name="F:WindowsInstaller_3_1">
+            <summary>The latest windows installer available for Windows XP</summary>
+        </member>
+        <member name="F:WindowsInstaller_2_0">
+            <summary>Outdated version that is unsupported by this library</summary>
+        </member>
+        <member name="M:NsisIsXaudioInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that the XAUDIO Libary in the given version is installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the XAUDIO Library is installed</returns>
+        </member>
+        <member name="M:NsisIsXinputInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that the XINPUT Libary in the given version is installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the XINPUT Library is installed</returns>
+        </member>
+        <member name="M:NsisIsXactInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that the XACT Libary in the given version is installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the XACT Library is installed</returns>
+        </member>
+        <member name="M:NsisIsD3DXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that the D3DX Libary in the given version is installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the D3DX Library is installed</returns>
+            <remarks>
+  The version numbers that can be specified are the DirectX release dates,
+  eg. "February 2005" will test whether the D3DX library from the February 2005
+  release of DirectX is installed. XNA Game Studio 1.0 developers will want to use
+  "October 2006", as this is the version being targeted by
+  XNA Game Studio Express 1.0 Refresh.
+</remarks>
+        </member>
+        <member name="M:NsisIsDirectXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>
+  Verifies that the DirectX Core Components in the given version are installed
+</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the DirectX Core Components is installed</returns>
+            <remarks>
+  This method asks for the DirectX Core version to check because the different
+  versions can be installed side-by-side. If you developed a DirectX 9.0
+  application and the user has installed DirectX 10.1 but not DirectX 9.0,
+  your application will not work.
+</remarks>
+        </member>
+        <member name="M:NsisIsDotNetInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Verifies that the .NET Framework in the given version is installed</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the .NET Framework is installed</returns>
+            <remarks>
+  This method asks for the .NET Framework version to check because the different
+  framework versions can be installed side-by-side. If you developed a .NET 2.0
+  application and the user has installed the .NET Framework 3.5 but not the
+  .NET Framework 2.0, your application will not work.
+</remarks>
+        </member>
+        <member name="M:NsisIsPhysXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Verifies that PhysX in the given version is installed</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of PhysX is installed</returns>
+        </member>
+        <member name="M:MsiCheckXna(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the XNA Framework is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckOperatingSystem(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the operating system is at least the specified version</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.OperatingSystem.IsOperatingSystemAtLeast(Nuclex.Setup.Detector.OperatingSystem.WindowsVersions)">
+            <summary>Verifies that the operating system is at least the specified version</summary>
+            <param name="version">Windows version to check for</param>
+            <returns>True if the running operating system is at least the specified version</returns>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.OperatingSystem.WindowsVersions">
+            <summary>Known Versions of Microsoft Windows</summary>
+        </member>
+        <member name="F:Windows_Vista_SP1">
+            <summary>Windows Vista with installed service pack 1</summary>
+        </member>
+        <member name="F:Windows_Vista">
+            <summary>Windows Vista without any service packs</summary>
+        </member>
+        <member name="F:Windows_XP_SP2">
+            <summary>Windows XP with installed service pack 2</summary>
+        </member>
+        <member name="F:Windows_XP_SP1">
+            <summary>Windows XP with installed service pack 1</summary>
+        </member>
+        <member name="F:Windows_XP">
+            <summary>Windows XP without any service packs</summary>
+        </member>
+        <member name="F:Windows_2000">
+            <summary>Windows 2000 without any service packs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.PhysX.IsPhysXInstalled(Nuclex.Setup.Detector.PhysX.PhysXVersions)">
+            <summary>Verifies that PhysX in the specified version is installed</summary>
+            <param name="version">PhysX version to check for</param>
+            <returns>True if the specified PhysX version is installed on the system</returns>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.PhysX.PhysXVersions">
+            <summary>Known Versions of the PhysX System Software</summary>
+        </member>
+        <member name="F:PhysX_1">
+            <summary>PhysX System Software</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DotNet.IsDotNetFrameworkInstalled(Nuclex.Setup.Detector.DotNet.DotNetFrameworkVersions)">
+            <summary>Verifies that the .NET Framework in the given version is installed</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if the specified version of the .NET Framework is installed</returns>
+            <remarks>
+  This method asks for the .NET Framework version to check because the different
+  framework versions can be installed side-by-side. If you developed a .NET 1.1
+  application and the user has installed the .NET Framework 2.0 but not the
+  .NET Framework 1.1, your application will not work.
+</remarks>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.DotNet.DotNetFrameworkVersions">
+            <summary>Known Versions of the .NET Framework</summary>
+        </member>
+        <member name="F:Framework_4_0_Full">
+            <summary>Version that is shipped with Visual Studio 2010</summary>
+        </member>
+        <member name="F:Framework_3_5_SP1">
+            <summary>Service release of the .NET Framework 3.5 including .NET 2.0 SP1</summary>
+        </member>
+        <member name="F:Framework_3_5">
+            <summary>Version that is shipped with Visual Studio 2008</summary>
+        </member>
+        <member name="F:Framework_3_0">
+            <summary>Extended .NET Framework 2.0 with libraries for WPF, WCF and WWF</summary>
+            <remarks>Supported by Visual Studio 2005 with add-ons and in Visual Studio 2008</remarks>
+        </member>
+        <member name="F:Framework_2_0_SP2">
+            <summary>Service release of the .NET Framework 2.0 including most patches</summary>
+            <remarks>Fully backwards compatible to .NET 2.0, included in .NET 3.5 SP1</remarks>
+        </member>
+        <member name="F:Framework_2_0_SP1">
+            <summary>Service release of the .NET Framework 2.0 including most patches</summary>
+            <remarks>Fully backwards compatible to .NET 2.0</remarks>
+        </member>
+        <member name="F:Framework_2_0">
+            <summary>New .NET Framework with generics as targeted by Visual Studio 2005</summary>
+            <remarks>XNA projects and anything recently developed target this framework</remarks>
+        </member>
+        <member name="F:Framework_1_1">
+            <summary>Upgraded version that was supported by Visual Studio .NET 2003</summary>
+            <remarks>The most common version, also fully supported by Mono</remarks>
+        </member>
+        <member name="F:Framework_1_0">
+            <summary>The framework as it was supported by the Visual Studio .NET</summary>
+            <remarks>This version of the .NET Framework is completely obsolete now</remarks>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.baseKey">
+            <summary>Registry key the wrapper is working on</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.op_Assign(Nuclex.Setup.RegistryKey!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private assignment operator to disallow instance cloning</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.#ctor(Nuclex.Setup.RegistryKey!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private copy constructor to disallow instance copying</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.Exists(HKEY__*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Verifies that the specified key exists</summary>
+            <param name="registryRoot">Registry hive under which to look for the key</param>
+            <param name="path">Path of the key that will be opened</param>
+            <returns>True if the specified key exists</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.HasValue(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether the indicated value exists</summary>
+            <param name="name">Name of the value whose existence will be verified</param>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.Value(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Accesses the value of the specified name within the registry key</summary>
+            <param name="name">Name of the value that will be accessed</param>
+            <returns>
+  A registry value instance that will allow you to retrieve the contents of the
+  registry value or to modify it
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.openKey(HKEY__*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean)">
+            <summary>Opens the specified registry key</summary>
+            <param name="registryRoot">Registry hive under which to look for the key</param>
+            <param name="path">Path of the key that will be opened</param>
+            <param name="writable">Whether to allow the key to be written to</param>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.#ctor(HKEY__*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean)">
+            <summary>Initializes a new registry key wrapper on the specified key</summary>
+            <param name="registryRoot">Registry hive under which to look for the key</param>
+            <param name="path">Path of the key that will be opened</param>
+            <param name="writable">Whether to allow the key to be written to</param>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.#ctor(HKEY__*,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Initializes a new registry key wrapper on the specified key</summary>
+            <param name="registryRoot">Registry hive under which to look for the key</param>
+            <param name="path">Path of the key that will be opened</param>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.RegistryValue.name">
+            <summary>Name of the value</summary>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.RegistryValue.baseKey">
+            <summary>Key the value is located under</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.queryData">
+            <summary>Retrieves the data stored in the registry value</summary>
+            <returns>An std::vector containing the data stored in the registry value</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.queryType">
+            <summary>Retrieves the type of the data stored in a registry value</summary>
+            <returns>The type of data stored in the specified registry value</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.As{std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;}">
+            <summary>Retrieves the registry value as a string</summary>
+            <returns>The registry value as a string</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.As{System.Int32}">
+            <summary>Retrieves the registry value as an integer</summary>
+            <returns>The registry value as an integer</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.As{System.Boolean}">
+            <summary>Retrieves the registry value as a booolean</summary>
+            <returns>The registry value as a boolean</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.RegistryValue.#ctor(Nuclex.Setup.RegistryKey.SharedKey,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Initializes a new registry key value</summary>
+            <param name="baseKey">Key the value is located under</param>
+            <param name="name">Name of the value</param>
+        </member>
+        <member name="T:Nuclex.Setup.RegistryKey.RegistryValue">
+            <summary>Encapsulates a value found under a registry key</summary>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.SharedKey.keyKeeper">
+            <summary>Shared registry key keeper containing the key and user count</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.op_Implicit~HKEY__*">
+            <summary>Implicit usage of the shared key as an HKEY</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.Dispose">
+            <summary>Releases the registry key again</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.op_Assign(Nuclex.Setup.RegistryKey.SharedKey!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Assigns another shared key to the instance</summary>
+            <param name="other">Shared key that will be assigned</param>
+            <returns>The instance being assigned to</returns>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.#ctor(Nuclex.Setup.RegistryKey.SharedKey!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Copies a shared key and gives the copy co-ownership of the key</summary>
+            <param name="other">Shared key that will be copied</param>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.#ctor(HKEY__*)">
+            <summary>Initializes a new shared registry key handle</summary>
+            <param name="keyHandle">Registry key handle that will be shared</param>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.SharedKey.Keeper.Key">
+            <summary>Registry key handle that is being shared</summary>
+        </member>
+        <member name="F:Nuclex.Setup.RegistryKey.SharedKey.Keeper.UserCount">
+            <summary>Number of remaining users for the registry key handle</summary>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.Keeper.Dispose">
+            <summary>Initializes a new registry key keeper</summary>
+            <param name="key">Registry key to be kept</param>
+        </member>
+        <member name="M:Nuclex.Setup.RegistryKey.SharedKey.Keeper.#ctor(HKEY__*)">
+            <summary>Initializes a new registry key keeper</summary>
+            <param name="key">Registry key to be kept</param>
+        </member>
+        <member name="T:Nuclex.Setup.RegistryKey.SharedKey.Keeper">
+            <summary>Stores the shared registry key and its user count</summary>
+        </member>
+        <member name="T:Nuclex.Setup.RegistryKey.SharedKey">
+            <summary>
+  Manages a registry key handle that is being shared between multiple objects
+</summary>
+        </member>
+        <member name="T:Nuclex.Setup.RegistryKey">
+            <summary>Provides convenient methods to work with the Win32 registry API</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.Xna.IsXnaInstalled(Nuclex.Setup.Detector.Xna.XnaVersions)">
+            <summary>Verifies that the XNA Framework in the specified version is installed</summary>
+            <param name="version">XNA Framework version to check for</param>
+            <returns>True if the specified XNA Framework version is installed on the system</returns>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.Xna.XnaVersions">
+            <summary>Known Versions of the XNA Framework</summary>
+        </member>
+        <member name="F:Xna_3_1">
+            <summary>XNA Framework 3.1 released in June 2009</summary>
+            <remarks>
+  Incremental update adding support for rendering XBox avatars in XNA,
+  video playback and several enhancements to the audio pipeline.
+</remarks>
+        </member>
+        <member name="F:Xna_3_0">
+            <summary>XNA Framework 3.0 released in October 2008</summary>
+            <remarks>
+  Updated release that introduct playtest mode, support for the Zune platform,
+  integration into Visual Studio 2008 and visual C# 2008 Express and
+  content compression for the XNA content pipeline.
+</remarks>
+        </member>
+        <member name="F:Xna_2_0">
+            <summary>XNA Framework 2.0 released in December 2007</summary>
+            <remarks>
+  This release introduced some major changes to XNA by virtualizing the
+  graphics device. Developers no lange have to handle lost device resources
+  themselfes unless they're doing something funky with dynamic buffers.
+</remarks>
+        </member>
+        <member name="F:Xna_1_0_Refresh">
+            <summary>XNA Framework refresh as published in April 2007</summary>
+            <remarks>
+  Refresh release of the original XNA Framework which added font rendering
+  support and amongst others, relaxed some of the restrictions with render targets.
+</remarks>
+        </member>
+        <member name="F:Xna_1_0">
+            <summary>Original release of the XNA Framework</summary>
+            <remarks>
+  The original XNA Framework release was missing font rendering support and
+  imposed some more limitations on the developer than later releases.
+  Theoretically applications built against the XNA Framework 1.0 Refresh
+  could run on this framework too, if they don't make use of the new features.
+</remarks>
+        </member>
+        <member name="M:NsisSupportsAtLeastShaderModel(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Verifies that the hardware supports at least the specified shader model</summary>
+            <param name="version">Version to be verified</param>
+            <returns>True if hardware is installed that supports the specified shader model</returns>
+            <remarks>
+  This function, of course, depends on a driver being installed that supports shaders.
+  In some edge cases it might be that a system actually has a shader-capable graphics
+  card but no supporting driver has been installed. Either use this check to warn the user
+  or, if you decide to fail the setup, at least tell the user that it might be due to
+  his graphics card drivers being outdated.
+</remarks>
+        </member>
+        <member name="M:MsiCheckShaderModel(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>
+  Checks whether hardware support for the specified shader model is available
+ </summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.Shaders.SupportsAtLeastShaderModel(Nuclex.Setup.Detector.Shaders.ShaderModelVersions)">
+            <summary>
+  Verifies that there's hardware for at least the specified Shader Model version
+</summary>
+            <param name="version">Shader Model version to check for</param>
+            <returns>
+  True if there's hardware installed with the required Shader Model version
+</returns>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.Shaders.ShaderModelVersions">
+            <summary>Known Shader Model versions</summary>
+        </member>
+        <member name="F:ShaderModel_4_0">
+            <summary>Version 4.0, required for DirectX 10-level hardware</summary>
+        </member>
+        <member name="F:ShaderModel_3_0">
+            <summary>Version 3.0, required for DirectX 9.0c-level hardware</summary>
+        </member>
+        <member name="F:ShaderModel_2_0">
+            <summary>Version 2.0, required for DirectX 9.0-level hardware</summary>
+        </member>
+        <member name="F:ShaderModel_1_3">
+            <summary>Version 1.3, required for DirectX 8.1-level hardware</summary>
+        </member>
+        <member name="F:ShaderModel_1_1">
+            <summary>Version 1.1, required for DirectX 8.0a-level hardware</summary>
+        </member>
+        <member name="F:ShaderModel_1_0">
+            <summary>Version 1.0, required for DirectX 8.0-level hardware</summary>
+        </member>
+        <member name="M:MsiCheckXinput(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the XINPUT library in the requested version is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckXact(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the XACT library in the requested version is installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckD3DX(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>
+  Checks whether the DirectX libraries for the requested XNA release are installed
+</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="M:MsiCheckDirectX(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Checks whether the DirectX Core Components are installed</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="F:Nuclex.Setup.File.path">
+            <summary>Path to the file represented by the file class</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.op_Assign(Nuclex.Setup.File!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private assignment operator to disallow instance cloning</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.#ctor(Nuclex.Setup.File!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private copy constructor to disallow instance copying</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.CreateTempFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Creates a unique temporary file and returns its name</summary>
+            <param name="prefix">Prefix the temporary filename shall begin with</param>
+            <returns>The full path to a unique temporary file</returns>
+            <remarks>
+  The method also creates a 0 byte file in place of the temporary file name
+  in order to prevent other callers from receiving the same file name.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.File.GetTempPathW">
+            <summary>Returns the path to the system's temporary directory</summary>
+            <returns>The full path to the system's temporary directory</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.Exists(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Checks whether a file with the given name exists</summary>
+            <param name="path">Path of the file whose existence will be checked</param>
+            <returns>True if the file exists</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.Run(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Executes the file</summary>
+            <param name="commandLine">Parameters to provide on the command line</param>
+            <returns>Informations about the running process</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.GetVersion">
+            <summary>Obtains the version number of the file, if available</summary>
+            <returns>The file's version number</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.#ctor(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Initializes a new file</summary>
+            <param name="path">Path to an existing file to provide services for</param>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Revision">
+            <summary>Revision number</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Build">
+            <summary>Build number</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Minor">
+            <summary>Minor version number of the file</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Major">
+            <summary>Major version number of the file</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_GreaterThan(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is greater than another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is greater than the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_LessThan(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is less than another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is less than the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_LessThanOrEqual(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is less or equal to another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is less or equal to the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_GreaterThanOrEqual(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is greater or equal to another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is greater or equal to the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Initializes a new file version structure</summary>
+            <param name="major">Major file version number</param>
+            <param name="minor">Minor file version number</param>
+            <param name="build">File build number</param>
+            <param name="revision">File revision number</param>
+        </member>
+        <member name="T:Nuclex.Setup.File.Version">
+            <summary>Stores a the version number of a file</summary>
+        </member>
+        <member name="T:Nuclex.Setup.File">
+            <summary>Encapsulates a file for easy handling</summary>
+        </member>
+        <member name="F:Nuclex.Setup.MsiHandle.installHandle">
+            <summary>MSIHANDLE this wrapper is providing services on</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.op_Assign(Nuclex.Setup.MsiHandle!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private assignment operator to disallow instance cloning</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.#ctor(Nuclex.Setup.MsiHandle!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private copy constructor to disallow instance copying</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.AddProgress(System.Int32)">
+            <summary>Adds the specified amount of ticks to the total expected progress</summary>
+            <param name="ticks">Number of ticks that will be added to the total progress</param>
+            <returns>
+  The result of the progress addition. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.ShowMessageBox(Nuclex.Setup.MessageSeverities,System.Int32,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32)">
+            <summary>Shows a message box in the installer</summary>
+            <param name="severity">Severity rating of the message</param>
+            <param name="errorTableMessageNumber">Number of this message in the error table</param>
+            <param name="message">Message inserted in the error template's placeholder</param>
+            <param name="type">Message box type (see MB_ enumeration values in Win32)</param>
+            <returns>
+  The result of the message box. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.ShowMessageBox(Nuclex.Setup.MessageSeverities,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32)">
+            <summary>Shows a message box in the installer</summary>
+            <param name="severity">Severity rating of the message</param>
+            <param name="message">Formatted message that is shown to the user</param>
+            <param name="type">Message box type (see MB_ enumeration values in Win32)</param>
+            <returns>
+  The result of the message box. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.LogMessage(Nuclex.Setup.LogSeverities,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Writes a message into the installation log</summary>
+            <param name="severity">Severity level of the message</param>
+            <param name="message">Message that will be written to the installation log</param>
+            <returns>
+  The result of the log publication. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.SetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean)">
+            <summary>Sets the specified property's value to be either true or false</summary>
+            <param name="name">Name of the property that will be set</param>
+            <param name="value">Value to set the property to</param>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.SetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Sets a property in the running installation</summary>
+            <param name="name">Name of the property to set</param>
+            <param name="value">Value to set the property to</param>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.IsPropertyTrue(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Checks whether the specified property's value evaluates to true</summary>
+            <param name="name">Name of the property that will be checked</param>
+            <returns>True if the specified property's value evaluates to true</returns>
+            <remarks>
+  To avoid unneccessary complexity, only property values that evaluate to
+  a numeric value other than 0 are considered being true. The string "true",
+  for example, would be evaluated as meaning false.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.GetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Retrieves a property stored in the running installation</summary>
+            <param name="name">Name of the property to retrieve</param>
+            <returns>The contents of the property with the specified name</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.IsInMode(tagMSIRUNMODE)">
+            <summary>Determines whether the Windows Installer is in the specified mode</summary>
+            <param name="mode">Mode to be checked for</param>
+            <returns>True if the installer is in the specified mode, otherwise false</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.#ctor(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Initializes a new MSI wrapper</summary>
+            <param name="install">MSI installation handle for the wrapper to work on</param>
+        </member>
+        <member name="T:Nuclex.Setup.MsiHandle">
+            <summary>Provides convenient methods to work with the MSI API</summary>
+        </member>
+        <member name="T:Nuclex.Setup.LogSeverities">
+            <summary>How severe a message added to the install log is</summary>
+        </member>
+        <member name="F:LogSeverity_FatalExit">
+            <summary>The message indicates a fatal error in the installation process</summary>
+        </member>
+        <member name="F:LogSeverity_OutOfDiskSpace">
+            <summary>The message reports an out of disk space condition</summary>
+        </member>
+        <member name="F:LogSeverity_Info">
+            <summary>The message is for informative purposes only</summary>
+        </member>
+        <member name="T:Nuclex.Setup.MessageSeverities">
+            <summary>How severe a message shown to the user is</summary>
+        </member>
+        <member name="F:MessageSeverity_Error">
+            <summary>The message indicates an error</summary>
+        </member>
+        <member name="F:MessageSeverity_Warning">
+            <summary>The message warns the end-user</summary>
+        </member>
+        <member name="F:MessageSeverity_User">
+            <summary>User-defined message with no severity rating</summary>
+        </member>
+        <member name="M:Nuclex.Setup.AsciiFromUnicode(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Performs a string conversion from unicode to ascii</summary>
+            <param name="unicodeString">Unicode string that will be converted to ascii</param>
+            <returns>The ascii representation of the provided unicode string</returns>
+        </member>
+        <member name="M:Nuclex.Setup.UnicodeFromAscii(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Performs a string conversion from ascii to unicode</summary>
+            <param name="asciiString">Ascii string that will be converted to unicode</param>
+            <returns>The unicode equivalent of the provided ascii string</returns>
+        </member>
+        <member name="M:Nuclex.Setup.tokenize(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Chops a string to pieces cut at the delimiter characters</summary>
+            <param name="string">String that will be tokenized</param>
+            <param name="delimiter">Delimiter characters at which to cut the string</param>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DirectX.IsXaudioLibraryInstalled(Nuclex.Setup.Detector.DirectX.DirectXLibraryVersions)">
+            <summary>Tests whether a specific version of the XAUDIO libraries is installed</summary>
+            <param name="version">Version of the DirectX libraries to check for</param>
+            <returns>True if the requested version is installed on the system</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DirectX.IsXinputLibraryInstalled(Nuclex.Setup.Detector.DirectX.DirectXLibraryVersions)">
+            <summary>Tests whether a specific version of the XINPUT libraries is installed</summary>
+            <param name="version">Version of the DirectX libraries to check for</param>
+            <returns>True if the requested version is installed on the system</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DirectX.IsXactLibraryInstalled(Nuclex.Setup.Detector.DirectX.DirectXLibraryVersions)">
+            <summary>Tests whether a specific version of the XACT libraries is installed</summary>
+            <param name="version">Version of the DirectX libraries to check for</param>
+            <returns>True if the requested version is installed on the system</returns>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DirectX.IsD3DXLibraryInstalled(Nuclex.Setup.Detector.DirectX.DirectXLibraryVersions)">
+            <summary>Tests whether a specific version of the DirectX libraries is installed</summary>
+            <param name="version">Version of the DirectX libraries to check for</param>
+            <returns>True if the requested version is installed on the system</returns>
+            <remarks>
+  It is recommended to always use the latest DirectX SDK for developing new applications.
+  Later versions of the DirectX libraries don't add any further hardware requirements,
+  they merely provide extended functionality (such as new math operations in D3DX,
+  for example).
+</remarks>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.DirectX.DirectXLibraryVersions">
+            <summary>Known Versions of the DirectX Libraries</summary>
+        </member>
+        <member name="F:DirectXLibraries_August_2009">
+            <summary>Version 42 of the DirectX libraries released in August 2009</summary>
+        </member>
+        <member name="F:DirectXLibraries_March_2009">
+            <summary>Version 41 of the DirectX libraries released in March 2009</summary>
+        </member>
+        <member name="F:DirectXLibraries_November_2008">
+            <summary>Version 40 of the DirectX libraries released in November 2008</summary>
+        </member>
+        <member name="F:DirectXLibraries_August_2008">
+            <summary>Version 39 of the DirectX libraries released in August 2008</summary>
+        </member>
+        <member name="F:DirectXLibraries_June_2008">
+            <summary>Version 38 of the DirectX libraries released in June 2008</summary>
+        </member>
+        <member name="F:DirectXLibraries_March_2008">
+            <summary>Version 37 of the DirectX libraries released in March 2008</summary>
+        </member>
+        <member name="F:DirectXLibraries_November_2007">
+            <summary>Version 36 of the DirectX libraries released in November 2007</summary>
+        </member>
+        <member name="F:DirectXLibraries_August_2007">
+            <summary>Version 35 of the DirectX libraries released in August 2007</summary>
+        </member>
+        <member name="F:DirectXLibraries_June_2007">
+            <summary>Version 34 of the DirectX libraries released in June 2007</summary>
+        </member>
+        <member name="F:DirectXLibraries_April_2007">
+            <summary>Version 33 of the DirectX libraries released in April 2007</summary>
+        </member>
+        <member name="F:DirectXLibraries_February_2007">
+            <summary>Update to Version 32 of the DirectX libraries released in February 2007</summary>
+        </member>
+        <member name="F:DirectXLibraries_December_2006">
+            <summary>Version 32 of the DirectX libraries released in December 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_October_2006">
+            <summary>Version 31 of the DirectX libraries released in October 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_August_2006">
+            <summary>Update to Version 30 of the DirectX libraries released in August 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_June_2006">
+            <summary>Update to Version 30 of the DirectX libraries released in June 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_April_2006">
+            <summary>Version 30 of the DirectX libraries released in April 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_February_2006">
+            <summary>Version 29 of the DirectX libraries released in February 2006</summary>
+        </member>
+        <member name="F:DirectXLibraries_December_2005">
+            <summary>Version 28 of the DirectX libraries released in February 2005</summary>
+        </member>
+        <member name="F:DirectXLibraries_October_2005">
+            <summary>Update to Version 27 of the DirectX libraries released in October 2005</summary>
+        </member>
+        <member name="F:DirectXLibraries_August_2005">
+            <summary>Version 27 of the DirectX libraries released in August 2005</summary>
+        </member>
+        <member name="F:DirectXLibraries_June_2005">
+            <summary>Version 26 of the DirectX libraries released in June 2005</summary>
+        </member>
+        <member name="F:DirectXLibraries_April_2005">
+            <summary>Version 25 of the DirectX libraries released in April 2005</summary>
+        </member>
+        <member name="F:DirectXLibraries_February_2005">
+            <summary>Version 24 of the DirectX libraries released in February 2005</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Detector.DirectX.IsDirectXCoreInstalled(Nuclex.Setup.Detector.DirectX.DirectXCoreVersions)">
+            <summary>Verifies that DirectX in the specified version is installed</summary>
+            <param name="version">DirectX version to check for</param>
+            <returns>True if the specified DirectX version is installed on the system</returns>
+            <remarks>
+  This function will only tell you wether the core components of DirectX are available.
+  If your application uses D3DX (this includes XNA games), you will also have to
+  check whether the D3DX version you need is installed.
+</remarks>
+        </member>
+        <member name="T:Nuclex.Setup.Detector.DirectX.DirectXCoreVersions">
+            <summary>Known Versions of the DirectX Core Components</summary>
+        </member>
+        <member name="F:DirectXCore_10_1">
+            <summary>Updated DirectX 10 requiring second generation SM4.0 hardware</summary>
+        </member>
+        <member name="F:DirectXCore_10_0">
+            <summary>DirectX 10 is only available on the Windows Vista platform</summary>
+            <remarks>This is a first generation unified shader (SM4.0) interface</remarks>
+        </member>
+        <member name="F:DirectXCore_9_0">
+            <summary>Most common version of DirectX also used by XNA projects</summary>
+            <remarks>
+  If your game also uses the D3DX library (most games do, XNA games always),
+  you will also have to check for the correct D3DX versions. Microsoft releases
+  updated DirectX 9.0c variants every 2 or 3 months with new D3DX builds and
+  most developers are unaware of that.
+</remarks>
+        </member>
+    </members>
+</doc>

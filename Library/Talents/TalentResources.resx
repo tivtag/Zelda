@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TD_AngelsEmbracement" xml:space="preserve">
+    <value>Gives a {0}% chance when attacked to increase
+damage done by {2}%, armor by {3}% 
+and magic-find by {4}% for {1} seconds.</value>
+  </data>
+  <data name="TD_ArrowShower" xml:space="preserve">
+    <value>Unleashes a Multi Shot every {0} seconds
+for {1} seconds.</value>
+  </data>
+  <data name="TD_Bash" xml:space="preserve">
+    <value>Instantly bashes the enemy with full power.
+Does (MeleeDamage + {0}) x {1}% damage.</value>
+  </data>
+  <data name="TD_BattleAwareness" xml:space="preserve">
+    <value>By improving your battle awareness you
+increase your chance to parry melee attacks.
+(Parry + {0}) * {1}%</value>
+  </data>
+  <data name="TD_BattleShout" xml:space="preserve">
+    <value>You roar to increase your valor.
+Increases (Strength + {0}) * {1}% for 60 seconds.</value>
+  </data>
+  <data name="TD_Bladestorm" xml:space="preserve">
+    <value>You go nuts after using Whirlwind, turning for
+another {0} times, dealing (MeleeDamage x {1}%) 
+non-parry nor dodgeable damage. {2} sec duration.</value>
+  </data>
+  <data name="TD_CounterAttack" xml:space="preserve">
+    <value>You counter your enemy with an un-parryable
+attack after parrying an attack yourself.
+Deals (MeleeDamage x {0}%). {1} seconds cooldown.</value>
+  </data>
+  <data name="TD_CriticalBalance" xml:space="preserve">
+    <value>You learn to keep your combat balance
+even in the most critical situations. 
+Increases damage done with critical attacks by {0}%.</value>
+  </data>
+  <data name="TD_DoubleAttack" xml:space="preserve">
+    <value>{0}% chance to attack twice instead of once
+on a normal melee attack. Can proc off of itself.</value>
+  </data>
+  <data name="TD_Enrage" xml:space="preserve">
+    <value>{0}% chance to enrage after getting attacked.
+Increases melee damage dealt
+by {1}% for {2} seconds.</value>
+  </data>
+  <data name="TD_FireBomb" xml:space="preserve">
+    <value>Plants a powerful bomb that deals
+({0}% Ranged + {1}% Magic)
+fire area-damage.</value>
+  </data>
+  <data name="TD_Frenzy" xml:space="preserve">
+    <value>You go frenzy after dealing a melee Crit.
+Increases melee attack speed by {0}%
+for {1} seconds.</value>
+  </data>
+  <data name="TD_Frustration" xml:space="preserve">
+    <value>Increases chance to get a Double Attack by {0}% for
+{1} seconds. But frustrated as you are there exists
+a {2}% chance to hit yourself for {3}% MeleeDamage.</value>
+  </data>
+  <data name="TD_GoForTheHead" xml:space="preserve">
+    <value>Increases chance to Crit by {0}
+each ranged hit.
+The bonus resets on the first crit.</value>
+  </data>
+  <data name="TD_HandEyeCoordination" xml:space="preserve">
+    <value>Increases Dexterity by {0}% of Agility.</value>
+  </data>
+  <data name="TD_ImprovedBash" xml:space="preserve">
+    <value>Increases chance to crit with Bash by {0}.</value>
+  </data>
+  <data name="TD_ImprovedMultiShot" xml:space="preserve">
+    <value>Reduces the cooldown of the Multi Shot skill
+by {0} seconds.</value>
+  </data>
+  <data name="TD_LightArrow" xml:space="preserve">
+    <value>Instantly releases a Light arrow.
+Does (RangedDamage + MagicDamage + {0}) x {1}%
+Light damage.</value>
+  </data>
+  <data name="TD_LuckyBastard" xml:space="preserve">
+    <value>Increases your Magic Find value by {0}%.</value>
+  </data>
+  <data name="TD_Meditation" xml:space="preserve">
+    <value>You improve your meditation techniques.
+Increases Mana Regeneration
+by {0} + {1}%.</value>
+  </data>
+  <data name="TD_MultiShot" xml:space="preserve">
+    <value>Instantly releases {0} arrows.
+Each arrow does {1}% RangedDamage.</value>
+  </data>
+  <data name="TD_PiercingArrows" xml:space="preserve">
+    <value>Increases the chance of arrows to
+pierce through the enemy by {0}%.</value>
+  </data>
+  <data name="TD_PoisonedShot" xml:space="preserve">
+    <value>Fires an arrow that deals (RangedDamage x {0}) instantly,
+((Ranged + Magic)Damage x {1}) nature damage
+over {2} seconds; slowing the target by {3}%.
+{4} seconds cooldown.</value>
+  </data>
+  <data name="TD_PoisonMastery" xml:space="preserve">
+    <value>Studying the properties of poisoned herbs
+allows you to increase your damage done
+with poisons by {0}%.</value>
+  </data>
+  <data name="TD_PotionMastery" xml:space="preserve">
+    <value>Improves the effectiveness of healing and
+mana potions by {0}%.</value>
+  </data>
+  <data name="TD_PushingAttack" xml:space="preserve">
+    <value>Pushes the enemy, dealing MeleeDamage,
+with an increased pushing power of '{0}' to '{1}'.</value>
+  </data>
+  <data name="TD_QuickHands" xml:space="preserve">
+    <value>Increases Attack Speed and Spell Haste by {0}%.</value>
+  </data>
+  <data name="TD_RapidFire" xml:space="preserve">
+    <value>By using your inner rage you increase
+your ranged attack speed by {0}% and your
+chance to pierce by {1}% for {2} seconds.</value>
+  </data>
+  <data name="TD_RecoverWounds" xml:space="preserve">
+    <value>You recover from battle,
+increasing Life Regeneration by {0}%
+for {1} seconds.</value>
+  </data>
+  <data name="TD_ShieldWall" xml:space="preserve">
+    <value>Reduces physical damage taken by {0}%.
+As a penalty also reduces damage done
+by {1}% and movement speed by {2}%.</value>
+  </data>
+  <data name="TD_SmoothedEmblazonment" xml:space="preserve">
+    <value>You decide to always keep your jewelry shiny!
+Increases the amount of stats rings and
+necklaces give by {0}%.</value>
+  </data>
+  <data name="TD_Sprint" xml:space="preserve">
+    <value>Increases movement speed by {0}%
+for {1} seconds.</value>
+  </data>
+  <data name="TD_Vitality" xml:space="preserve">
+    <value>Hard training allows you to
+increase your Vitality by {0}%.</value>
+  </data>
+  <data name="TD_Whirlwind" xml:space="preserve">
+    <value>You spin with your sword, dealing
+(MeleeDamage x {0}%) non-parry nor dodgeable
+damage. {1} sec cooldown. {2} sec duration.</value>
+  </data>
+  <data name="TN_AgilityTraining" xml:space="preserve">
+    <value>Agility Training</value>
+  </data>
+  <data name="TN_AngelEmbracement" xml:space="preserve">
+    <value>Angel's Embracement</value>
+  </data>
+  <data name="TN_ArrowShower" xml:space="preserve">
+    <value>Arrow Shower</value>
+  </data>
+  <data name="TN_Bash" xml:space="preserve">
+    <value>Bash</value>
+  </data>
+  <data name="TN_BattleAwareness" xml:space="preserve">
+    <value>Battle Awareness</value>
+  </data>
+  <data name="TN_BattleShout" xml:space="preserve">
+    <value>Battle Shout</value>
+  </data>
+  <data name="TN_Bladestorm" xml:space="preserve">
+    <value>Bladestorm</value>
+  </data>
+  <data name="TN_CotF" xml:space="preserve">
+    <value>Concentrate on the Facts</value>
+  </data>
+  <data name="TN_CounterAttack" xml:space="preserve">
+    <value>Counter Attack</value>
+  </data>
+  <data name="TN_CriticalBalance" xml:space="preserve">
+    <value>Critical Balance</value>
+  </data>
+  <data name="TN_DodgeTraining" xml:space="preserve">
+    <value>Dodge Training</value>
+  </data>
+  <data name="TN_DoubleAttack" xml:space="preserve">
+    <value>Double Attack</value>
+  </data>
+  <data name="TN_Enrage" xml:space="preserve">
+    <value>Enrage</value>
+  </data>
+  <data name="TN_FireBomb" xml:space="preserve">
+    <value>Fire Bomb</value>
+  </data>
+  <data name="TN_Frenzy" xml:space="preserve">
+    <value>Frenzy</value>
+  </data>
+  <data name="TN_Frustration" xml:space="preserve">
+    <value>Frustration</value>
+  </data>
+  <data name="TN_GoForTheHead" xml:space="preserve">
+    <value>Go for the Head</value>
+  </data>
+  <data name="TN_HandEyeCoordination" xml:space="preserve">
+    <value>Hand - Eye Coordination</value>
+  </data>
+  <data name="TN_ImprovedBash" xml:space="preserve">
+    <value>Improved Bash</value>
+  </data>
+  <data name="TN_ImprovedMultiShot" xml:space="preserve">
+    <value>Improved Multi Shot</value>
+  </data>
+  <data name="TN_LightArrow" xml:space="preserve">
+    <value>Light Arrow</value>
+  </data>
+  <data name="TN_LuckyBastard" xml:space="preserve">
+    <value>Lucky Bastard</value>
+  </data>
+  <data name="TN_MagicTraining" xml:space="preserve">
+    <value>Magic Training</value>
+  </data>
+  <data name="TN_Meditation" xml:space="preserve">
+    <value>Meditation</value>
+  </data>
+  <data name="TN_MeleeTraining" xml:space="preserve">
+    <value>Melee Training</value>
+  </data>
+  <data name="TN_MultiShot" xml:space="preserve">
+    <value>Multi Shot</value>
+  </data>
+  <data name="TN_PiercingArrows" xml:space="preserve">
+    <value>Piercing Arrows</value>
+  </data>
+  <data name="TN_PoisonedShot" xml:space="preserve">
+    <value>Poisoned Shot</value>
+  </data>
+  <data name="TN_PoisonMastery" xml:space="preserve">
+    <value>Poison Mastery</value>
+  </data>
+  <data name="TN_PotionMastery" xml:space="preserve">
+    <value>Potion Mastery</value>
+  </data>
+  <data name="TN_PushingAttack" xml:space="preserve">
+    <value>Push</value>
+  </data>
+  <data name="TN_QuickHands" xml:space="preserve">
+    <value>Quick Hands</value>
+  </data>
+  <data name="TN_RangedTraining" xml:space="preserve">
+    <value>Ranged Training</value>
+  </data>
+  <data name="TN_RapidFire" xml:space="preserve">
+    <value>Rapid Fire</value>
+  </data>
+  <data name="TN_RecoverWounds" xml:space="preserve">
+    <value>Recover Wounds</value>
+  </data>
+  <data name="TN_ShieldWall" xml:space="preserve">
+    <value>Shield Wall</value>
+  </data>
+  <data name="TN_SmoothedEmblazonment" xml:space="preserve">
+    <value>Smoothed Emblazonment</value>
+  </data>
+  <data name="TN_Sprint" xml:space="preserve">
+    <value>Sprint</value>
+  </data>
+  <data name="TN_Toughness" xml:space="preserve">
+    <value>Toughness</value>
+  </data>
+  <data name="TN_Vitality" xml:space="preserve">
+    <value>Vitality</value>
+  </data>
+  <data name="TN_Whirlwind" xml:space="preserve">
+    <value>Whirlwind</value>
+  </data>
+  <data name="TD_Headshot" xml:space="preserve">
+    <value>You aim for the head after landing a critical hit,
+firing a swift partially armor-ignoring arrow that 
+has an improved chance to crit and pierce of {0}%.</value>
+  </data>
+  <data name="TN_Headshot" xml:space="preserve">
+    <value>Headshot</value>
+  </data>
+  <data name="TD_RogueWeaponMastery" xml:space="preserve">
+    <value>You train your skills in the weapons of a rogue,
+increasing damage done with bows by {0}%
+and damage done with daggers by {1}%.</value>
+  </data>
+  <data name="TN_RogueWeaponMastery" xml:space="preserve">
+    <value>Rogue Weapon Mastery</value>
+  </data>
+  <data name="TD_Furor" xml:space="preserve">
+    <value>You show the true fury inside you,
+increasing melee attack speed
+by {0}% for {1} seconds.</value>
+  </data>
+  <data name="TN_Furor" xml:space="preserve">
+    <value>Furor</value>
+  </data>
+  <data name="TD_QuickStrike" xml:space="preserve">
+    <value>                 Requires a Dagger to be used!
+Swiftly strikes at the enemy dealing MeleeDamage. 
+Can proc Double Attack. Cooldown of {0} seconds.</value>
+  </data>
+  <data name="TN_QuickStrike" xml:space="preserve">
+    <value>Quick Strike</value>
+  </data>
+  <data name="TD_ShieldBreaker" xml:space="preserve">
+    <value>You build up strength in your sword arm after blocking an attack.
+Unleashes MeleeDmg + BlockValue * (100 + {0} * Block Points)% damage. 
+1 Block Point is awarded for each block; lasting {1} seconds. 
+{2} Block Points maximum. Ignores enemy armor.</value>
+  </data>
+  <data name="TN_ShieldBreaker" xml:space="preserve">
+    <value>Shield Breaker</value>
+  </data>
+  <data name="TD_ShieldMastery" xml:space="preserve">
+    <value>Increases Chance to Block by {0} and Block Value by {1}%.</value>
+  </data>
+  <data name="TN_ShieldMastery" xml:space="preserve">
+    <value>Shield Mastery</value>
+  </data>
+  <data name="TD_ManaHull" xml:space="preserve">
+    <value>You gain a {0}% chance when attacked to
+surround yourself with a perfect hull of mana;
+regenerating {1}% of base mana over {2} seconds.</value>
+  </data>
+  <data name="TN_ManaHull" xml:space="preserve">
+    <value>Mana Hull</value>
+  </data>
+  <data name="TD_ShieldBlock" xml:space="preserve">
+    <value>Increases Chance to Block by {0} for {1} seconds.
+{2} seconds cooldown.</value>
+  </data>
+  <data name="TN_ShieldBlock" xml:space="preserve">
+    <value>Shield Block</value>
+  </data>
+  <data name="TD_SwiftFightStyle" xml:space="preserve">
+    <value>You gain swiftness by adjusting your fight style.
+Reduces the cooldown of Bash and Light Arrow by {0} seconds
+and the cooldown of Quick Strike and Firewhirl by {1} seconds.</value>
+  </data>
+  <data name="TN_SwiftFightStyle" xml:space="preserve">
+    <value>Swift Fight Style</value>
+  </data>
+  <data name="TD_Firewhirl" xml:space="preserve">
+    <value>Casts a small whirl of fire that deals
+{0}% - {1}% fire damage.
+{2} secs cast time. {3} secs cooldown.</value>
+  </data>
+  <data name="TD_StatRoot" xml:space="preserve">
+    <value>Increases {0} by {1} + {2}%.</value>
+  </data>
+  <data name="TN_Firewhirl" xml:space="preserve">
+    <value>Firewhirl</value>
+  </data>
+  <data name="TD_CorrosiveFire" xml:space="preserve">
+    <value>Firewhirl also burns the target for {0}% to {1}%
+fire damage over {2} seconds.</value>
+  </data>
+  <data name="TN_CorrosiveFire" xml:space="preserve">
+    <value>Corrosive Fire</value>
+  </data>
+  <data name="TD_ImpactTheory" xml:space="preserve">
+    <value>By studying the properties of matter you
+gain a {0}% chance for Firewhirl to split
+into {1} to {2} new Firewhirls upon impact.</value>
+  </data>
+  <data name="TN_ImpactTheory" xml:space="preserve">
+    <value>Impact Theory</value>
+  </data>
+  <data name="TD_AppliedImpactResearch" xml:space="preserve">
+    <value>Increases the maximum number of new Firewhirls
+a Firewhirl might split upon impact by {0}.</value>
+  </data>
+  <data name="TN_AppliedImpactResearch" xml:space="preserve">
+    <value>Applied Impact Research</value>
+  </data>
+  <data name="TD_Firevortex" xml:space="preserve">
+    <value>Casts a vortex of fire that deals 100% fire damage and
+gains {0}% in size and strength every 0.5 seconds.
+Sucks nearby enemies into it. {1} seconds cast time.
+{2} seconds cooldown.</value>
+  </data>
+  <data name="TD_RazorWinds" xml:space="preserve">
+    <value>You learn to control the winds around a Firevortex.
+Increases the chance of the vortex
+to pierce through targets by {0}%.</value>
+  </data>
+  <data name="TN_Firevortex" xml:space="preserve">
+    <value>Firevortex</value>
+  </data>
+  <data name="TN_RazorWinds" xml:space="preserve">
+    <value>Razor Winds</value>
+  </data>
+  <data name="TD_MagicalBalance" xml:space="preserve">
+    <value>You try to find the right balance
+between the different elements.
+Increases Critical Strike Bonus of all spells by {0}%.</value>
+  </data>
+  <data name="TN_MagicalBalance" xml:space="preserve">
+    <value>Magical Balance</value>
+  </data>
+  <data name="TD_RackingPains" xml:space="preserve">
+    <value>You ensure that your enemy has to suffer greatly;
+by increasing damage dealt with
+Damage Over Time effects by {0}%.</value>
+  </data>
+  <data name="TN_RackingPains" xml:space="preserve">
+    <value>Racking Pains</value>
+  </data>
+  <data name="TD_RevitalizingStrikes" xml:space="preserve">
+    <value>You gain a {0}% chance on physical melee or
+ranged strike to heal self for {1}% of damage done.</value>
+  </data>
+  <data name="TN_RevitalizingStrikes" xml:space="preserve">
+    <value>Revitalizing Strikes</value>
+  </data>
+  <data name="TD_Pyromania" xml:space="preserve">
+    <value>Reduces the cooldown of all offensive Fire spells
+by {0}% for {1} seconds. {2} seconds cooldown.</value>
+  </data>
+  <data name="TN_Pyromania" xml:space="preserve">
+    <value>Pyromania</value>
+  </data>
+  <data name="TD_Firewall" xml:space="preserve">
+    <value>Casts a wall of fire next to you that deals {0}% to {1}% fire damage. 
+{2} secs cooldown after casting {3} times. {4} sec cast time. Pushback.</value>
+  </data>
+  <data name="TN_Firewall" xml:space="preserve">
+    <value>Firewall</value>
+  </data>
+  <data name="TD_FlamesOfPhlegethon" xml:space="preserve">
+    <value>Summons {0} wave(s) of fire directly from the underworld.
+Targets that are hit take {1}% to {2}% fire damage.
+{3} secs cooldown. {4} secs cast time.</value>
+  </data>
+  <data name="TD_PiercingFire" xml:space="preserve">
+    <value>Increases the chance to crit with Firewall and
+Flames of Phlegethon by {0}%.</value>
+  </data>
+  <data name="TN_FlamesOfPhlegethon" xml:space="preserve">
+    <value>Flames of Phlegethon</value>
+  </data>
+  <data name="TN_PiercingFire" xml:space="preserve">
+    <value>Piercing Fire</value>
+  </data>
+  <data name="TD_ArrowRush" xml:space="preserve">
+    <value>You gain a {0}% chance to unleash a Multi Shot
+when you shoot a normal arrow.</value>
+  </data>
+  <data name="TN_ArrowRush" xml:space="preserve">
+    <value>Arrow Rush</value>
+  </data>
+  <data name="TD_FireBombChain" xml:space="preserve">
+    <value>Increases the number of bombs before the cooldown
+is triggered by {0}. Increases cooldown by {1} seconds.
+Reduces mana cost.</value>
+  </data>
+  <data name="TN_FireBombChain" xml:space="preserve">
+    <value>Bomb Chain</value>
+  </data>
+</root>

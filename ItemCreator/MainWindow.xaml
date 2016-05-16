@@ -1,0 +1,38 @@
+﻿<Window x:Class="Zelda.ItemCreator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:awc="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf"
+    xmlns:prop="clr-namespace:Zelda.ItemCreator.Properties"
+    Title="{x:Static prop:Resources.Title}" WindowStartupLocation="CenterScreen" Height="600" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Menu Background="WhiteSmoke"> 
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_New}" >
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewItem}" Click="MenuItem_NewItem_Click">
+                </MenuItem>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewEquipment}" Click="MenuItem_NewEquipment_Click">
+                </MenuItem>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewWeapon}" Click="MenuItem_NewWeapon_Click">
+                </MenuItem>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewGem}" Click="MenuItem_NewGem_Click">
+                </MenuItem>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewSet}" Click="MenuItem_NewSet_Click">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Open}" Click="MenuItem_Open_Click"/>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Save}" Click="MenuItem_Save_Click"/>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Tools}">
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_ListDropLocations}" Click="OnMenuItemToolsListDropLocationsClicked"/>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_ResaveAll}" Click="OnMenuItemToolsResaveAllClicked"/>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_ShowGems}" Click="OnMenuItemToolsShowGemsAllClicked"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Exit}" Click="OnMenuItemExitClicked"/>
+        </Menu>
+        
+        <awc:PropertyGridControl x:Name="propertyGrid" Margin="2,0,2,2" Grid.Column="0" Grid.Row="1"/>        
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Trinket_CursedLuck_Cleansed">
+    <Requires>
+      <RecipeItem name="Trinket_CursedLuck" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Clover_FourLeaf" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Trinket_CursedLuck_Cleansed" amount="1" applyAffixesOf="Trinket_CursedLuck" />
+    </Results>
+  </Recipe>
+
+</Recipes>

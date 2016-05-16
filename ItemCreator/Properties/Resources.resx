@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogTitle_Selection" xml:space="preserve">
+    <value>Selection Dialog</value>
+  </data>
+  <data name="Filter_Item" xml:space="preserve">
+    <value>Item resources (*.zitm)|*.zitm|Set resources (*.zset)|*.zset</value>
+  </data>
+  <data name="Filter_Sprite" xml:space="preserve">
+    <value>Sprite - binary resources (*.xnb)|*.xnb</value>
+  </data>
+  <data name="Info_ItemXSavedSuccessfully" xml:space="preserve">
+    <value>The item '{0}' has been saved successfully.</value>
+  </data>
+  <data name="Info_ResavedAllItems" xml:space="preserve">
+    <value>Resaved all items.</value>
+  </data>
+  <data name="MenuHeader_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuHeader_ListDropLocations" xml:space="preserve">
+    <value>List Drop Locations</value>
+  </data>
+  <data name="MenuHeader_ModifyItemCost" xml:space="preserve">
+    <value>Modify Item Cost</value>
+  </data>
+  <data name="MenuHeader_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuHeader_NewEquipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="MenuHeader_NewGem" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="MenuHeader_NewItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="MenuHeader_NewSet" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="MenuHeader_NewWeapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="MenuHeader_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="MenuHeader_ResaveAll" xml:space="preserve">
+    <value>Resave All</value>
+  </data>
+  <data name="MenuHeader_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MenuHeader_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="PropCate_Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="PropCate_EquipmentSockets" xml:space="preserve">
+    <value>Equipment - Sockets</value>
+  </data>
+  <data name="PropCate_EquipmentStats" xml:space="preserve">
+    <value>Equipment - Stats</value>
+  </data>
+  <data name="PropCate_Gem" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="PropCate_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="PropCate_Requirements" xml:space="preserve">
+    <value>Equipment - Requirements</value>
+  </data>
+  <data name="PropCate_Set" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="PropCate_Weapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="PropDesc_AdditionalEffects" xml:space="preserve">
+    <value>The additional effects the item provides when it gets equipped.</value>
+  </data>
+  <data name="PropDesc_AdditionalEffectsToggle" xml:space="preserve">
+    <value>States whether the item provides any additional effects when it gets equipped.</value>
+  </data>
+  <data name="PropDesc_Agility" xml:space="preserve">
+    <value>Agility increases Chance To Dodge, Melee and Ranged Attack Speed and to a small part Armor.</value>
+  </data>
+  <data name="PropDesc_AllowedAffixes" xml:space="preserve">
+    <value>The item affixes this item is allowed to be 'enhanced' with.
+Example Prefix: 'Sturdy'.
+Example Suffix: 'of the Sorcery'.</value>
+  </data>
+  <data name="PropDesc_AnimationSpriteGroup" xml:space="preserve">
+    <value>The name of the sprite group that holds the animations shown in-game on the character.</value>
+  </data>
+  <data name="PropDesc_Armor" xml:space="preserve">
+    <value>The armor the item provides. Armor mitigates physical damage.</value>
+  </data>
+  <data name="PropDesc_ArmorMitigation" xml:space="preserve">
+    <value>The amount of mitigation the armor of the item provides against physical damage in %. (against an enemy that has the same level as the item)</value>
+  </data>
+  <data name="PropDesc_AttackSpeed" xml:space="preserve">
+    <value>The time between two swings/uses of the weapon. Attack Speed is improved by agility.</value>
+  </data>
+  <data name="PropDesc_AverageDamage" xml:space="preserve">
+    <value>The damage the weapon provides in average.</value>
+  </data>
+  <data name="PropDesc_DamageMaximum" xml:space="preserve">
+    <value>The maximum damage the weapon provides.</value>
+  </data>
+  <data name="PropDesc_DamageMinimum" xml:space="preserve">
+    <value>The minimum damage the weapon provides.</value>
+  </data>
+  <data name="PropDesc_DamagePerSecond" xml:space="preserve">
+    <value>The damage per second (DPS) the weapon provides in average.</value>
+  </data>
+  <data name="PropDesc_Description" xml:space="preserve">
+    <value>The description of the item.</value>
+  </data>
+  <data name="PropDesc_Dexterity" xml:space="preserve">
+    <value>Dexterity increases Ranged Attack Power (RAP), the change to hit (and not miss an attack), to a small part also Melee Attack Power and reduces the cast-time of spell.</value>
+  </data>
+  <data name="PropDesc_DropRequirement" xml:space="preserve">
+    <value>States an additional requirement that when not fulfilled won't allow the Item to be dropped.</value>
+  </data>
+  <data name="PropDesc_GemColor" xml:space="preserve">
+    <value>The color of the gem. To receive the socket bonus of an item with sockets all sockets must have gems with the same color as the corresponding sockets.</value>
+  </data>
+  <data name="PropDesc_GemEffects" xml:space="preserve">
+    <value>The effects the gem provides when socketed into an equipment.</value>
+  </data>
+  <data name="PropDesc_HasSockets" xml:space="preserve">
+    <value>States whether the equipment contains any sockets.</value>
+  </data>
+  <data name="PropDesc_HeightInInventory" xml:space="preserve">
+    <value>The number of tiles the item takes up in the inventory - horizontally.</value>
+  </data>
+  <data name="PropDesc_IngameColor" xml:space="preserve">
+    <value>The color the weapon is tinted in in-game on the character.</value>
+  </data>
+  <data name="PropDesc_Intelligence" xml:space="preserve">
+    <value>Intelligence increases Magical Attack Power (MagAP), the amount of Mana, and Mana Regeneration.</value>
+  </data>
+  <data name="PropDesc_ItemPoints" xml:space="preserve">
+    <value>The ItemPoints are calculated by taking into account ItemLevel, ItemQuality and EquipmentSlot. Each investment into an stat or bonus takes up Item Points.</value>
+  </data>
+  <data name="PropDesc_Level" xml:space="preserve">
+    <value>The level of the item. The amount of 'Item Points' an item can use depends on the item's level, quality/rarity and the slot the item may be equipped in.</value>
+  </data>
+  <data name="PropDesc_LocalizedDescription" xml:space="preserve">
+    <value>The localized description (for the current locale) of the item.</value>
+  </data>
+  <data name="PropDesc_LocalizedName" xml:space="preserve">
+    <value>The localized name (for the current locale) of the item.</value>
+  </data>
+  <data name="PropDesc_Luck" xml:space="preserve">
+    <value>Luck increases the chance to get a Critical Attack and the chance to find rare items.</value>
+  </data>
+  <data name="PropDesc_Name" xml:space="preserve">
+    <value>The name of the item. Items are saved under their name.</value>
+  </data>
+  <data name="PropDesc_OnUseEffect" xml:space="preserve">
+    <value>The effect that is triggered when the player uses the item.</value>
+  </data>
+  <data name="PropDesc_Quality" xml:space="preserve">
+    <value>The quality of the item. The amount of 'Item Points' an item can use depends on the item's level, quality/rarity and the slot the item may be equipped in.</value>
+  </data>
+  <data name="PropDesc_Recipes" xml:space="preserve">
+    <value>The names of the recipes that use the item as a reagent.</value>
+  </data>
+  <data name="PropDesc_RequiredAgility" xml:space="preserve">
+    <value>The amount of agility the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredDexterity" xml:space="preserve">
+    <value>The amount of dexterity the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredIntelligence" xml:space="preserve">
+    <value>The amount of intelligence the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredLevel" xml:space="preserve">
+    <value>The level the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredLuck" xml:space="preserve">
+    <value>The amount of luck the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredStrength" xml:space="preserve">
+    <value>The amount of strength the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RequiredVitality" xml:space="preserve">
+    <value>The amount of vitality the item requires before it can be equipped.</value>
+  </data>
+  <data name="PropDesc_RubiesWorth" xml:space="preserve">
+    <value>The number of rubies the items is worth when sold.</value>
+  </data>
+  <data name="PropDesc_Set" xml:space="preserve">
+    <value>The set this equipment is part of.</value>
+  </data>
+  <data name="PropDesc_SetBonus" xml:space="preserve">
+    <value>The bonus the set provides when the player has equipped all items of the set.</value>
+  </data>
+  <data name="PropDesc_SetItems" xml:space="preserve">
+    <value>The items the set consists of.</value>
+  </data>
+  <data name="PropDesc_Slot" xml:space="preserve">
+    <value>The slot the equipment goes in. The amount of 'Item Points' an item can use depends on the item's level, quality/rarity and the slot the item may be equipped in.</value>
+  </data>
+  <data name="PropDesc_SocketBonus" xml:space="preserve">
+    <value>The additional bonus that is applied when all sockets of the equipment are socketed with color-matching gems.</value>
+  </data>
+  <data name="PropDesc_Sockets" xml:space="preserve">
+    <value>The sockets of the equipment. Sockets allow customization of an item by placing gems into the sockets.</value>
+  </data>
+  <data name="PropDesc_SoundOnPickupName" xml:space="preserve">
+    <value>The name of the sound resource that is played when the Player has picked up the item.</value>
+  </data>
+  <data name="PropDesc_SpecialType" xml:space="preserve">
+    <value>The special type associated with this Item.</value>
+  </data>
+  <data name="PropDesc_Sprite" xml:space="preserve">
+    <value>The sprite that is used to visualize the item in the world.</value>
+  </data>
+  <data name="PropDesc_SpriteColor" xml:space="preserve">
+    <value>The color the sprite of the item is tinted in.</value>
+  </data>
+  <data name="PropDesc_StackSize" xml:space="preserve">
+    <value>The number of items of this type that can be placed on-top of each other (for example in the Inventory).</value>
+  </data>
+  <data name="PropDesc_Strength" xml:space="preserve">
+    <value>Strength increases Melee Attack Power (MAP), and to a small amount how much damage may be blocked by the shield.</value>
+  </data>
+  <data name="PropDesc_Vitality" xml:space="preserve">
+    <value>Vitality increases Life Points, the Life Point Regeneration and also increases the chance to resist (bad) status changing effects.</value>
+  </data>
+  <data name="PropDesc_WeaponType" xml:space="preserve">
+    <value>The type of the weapon.</value>
+  </data>
+  <data name="PropDesc_WidthInInventory" xml:space="preserve">
+    <value>The number of tiles the item takes up in the inventory - vertically.</value>
+  </data>
+  <data name="PropDisp_AdditionalEffects" xml:space="preserve">
+    <value>Additional Effects</value>
+  </data>
+  <data name="PropDisp_AdditionalEffectsToggle" xml:space="preserve">
+    <value>Additional Effects Toggle</value>
+  </data>
+  <data name="PropDisp_Agility" xml:space="preserve">
+    <value>Agility</value>
+  </data>
+  <data name="PropDisp_AllowedAffixes" xml:space="preserve">
+    <value>Allowed Affixes</value>
+  </data>
+  <data name="PropDisp_AnimationSpriteGroup" xml:space="preserve">
+    <value>Animation Sprite Group</value>
+  </data>
+  <data name="PropDisp_Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="PropDisp_ArmorMitigation" xml:space="preserve">
+    <value>Armor Mitigation</value>
+  </data>
+  <data name="PropDisp_AttackSpeed" xml:space="preserve">
+    <value>Attack Speed</value>
+  </data>
+  <data name="PropDisp_AverageDamage" xml:space="preserve">
+    <value>Average Damage</value>
+  </data>
+  <data name="PropDisp_DamageMaximum" xml:space="preserve">
+    <value>Damage Maximum</value>
+  </data>
+  <data name="PropDisp_DamageMinimum" xml:space="preserve">
+    <value>Damage Minimum</value>
+  </data>
+  <data name="PropDisp_DamagePerSecond" xml:space="preserve">
+    <value>Damage Per Second</value>
+  </data>
+  <data name="PropDisp_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="PropDisp_Dexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="PropDisp_DropRequirement" xml:space="preserve">
+    <value>Drop Requirement</value>
+  </data>
+  <data name="PropDisp_GemColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="PropDisp_GemEffects" xml:space="preserve">
+    <value>Effects</value>
+  </data>
+  <data name="PropDisp_HasSockets" xml:space="preserve">
+    <value>Has Sockets</value>
+  </data>
+  <data name="PropDisp_HeightInInventory" xml:space="preserve">
+    <value>Inventory Height</value>
+  </data>
+  <data name="PropDisp_IngameColor" xml:space="preserve">
+    <value>Ingame Color</value>
+  </data>
+  <data name="PropDisp_Intelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="PropDisp_ItemPoints" xml:space="preserve">
+    <value>Item Points</value>
+  </data>
+  <data name="PropDisp_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="PropDisp_LocalizedDescription" xml:space="preserve">
+    <value>Description (localized)</value>
+  </data>
+  <data name="PropDisp_LocalizedName" xml:space="preserve">
+    <value>Name (localized)</value>
+  </data>
+  <data name="PropDisp_Luck" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="PropDisp_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PropDisp_OnUseEffect" xml:space="preserve">
+    <value>On Use Effect</value>
+  </data>
+  <data name="PropDisp_Quality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="PropDisp_Recipes" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="PropDisp_RequiredAgility" xml:space="preserve">
+    <value>Required Agility</value>
+  </data>
+  <data name="PropDisp_RequiredDexterity" xml:space="preserve">
+    <value>Required Dexterity</value>
+  </data>
+  <data name="PropDisp_RequiredIntelligence" xml:space="preserve">
+    <value>Required Intelligence</value>
+  </data>
+  <data name="PropDisp_RequiredLevel" xml:space="preserve">
+    <value>Required Level</value>
+  </data>
+  <data name="PropDisp_RequiredLuck" xml:space="preserve">
+    <value>Required Luck</value>
+  </data>
+  <data name="PropDisp_RequiredStrength" xml:space="preserve">
+    <value>Required Strength</value>
+  </data>
+  <data name="PropDisp_RequiredVitality" xml:space="preserve">
+    <value>Required Vitality</value>
+  </data>
+  <data name="PropDisp_RubiesWorth" xml:space="preserve">
+    <value>Rubies Worth</value>
+  </data>
+  <data name="PropDisp_Set" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="PropDisp_SetBonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="PropDisp_SetItems" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="PropDisp_Slot" xml:space="preserve">
+    <value>Slot</value>
+  </data>
+  <data name="PropDisp_SocketBonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="PropDisp_Sockets" xml:space="preserve">
+    <value>Sockets</value>
+  </data>
+  <data name="PropDisp_SoundOnPickupName" xml:space="preserve">
+    <value>Sound on pickup</value>
+  </data>
+  <data name="PropDisp_SpecialType" xml:space="preserve">
+    <value>Special Type</value>
+  </data>
+  <data name="PropDisp_Sprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="PropDisp_SpriteColor" xml:space="preserve">
+    <value>Sprite Color</value>
+  </data>
+  <data name="PropDisp_StackSize" xml:space="preserve">
+    <value>Stack Size</value>
+  </data>
+  <data name="PropDisp_Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="PropDisp_Vitality" xml:space="preserve">
+    <value>Vitality</value>
+  </data>
+  <data name="PropDisp_WeaponType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="PropDisp_WidthInInventory" xml:space="preserve">
+    <value>Inventory Width</value>
+  </data>
+  <data name="Question_ReallyRemoveAllSocketsFromTheEquipment" xml:space="preserve">
+    <value>Do you really wish to remove all existing sockets from the equipment?</value>
+  </data>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Item Creator for TLoZ - Black Crown</value>
+  </data>
+  <data name="MenuHeader_ShowGems" xml:space="preserve">
+    <value>Show Gems</value>
+  </data>
+  <data name="PropDesc_SoundOnPickupVolume" xml:space="preserve">
+    <value>The volume of the sound on pickup. [0..1] with 0=silent and 1=normal</value>
+  </data>
+  <data name="PropDisp_SoundOnPickupVolume" xml:space="preserve">
+    <value>Sound on pickup Volume</value>
+  </data>
+</root>

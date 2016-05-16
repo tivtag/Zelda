@@ -1,0 +1,46 @@
+﻿<Window x:Class="Zelda.NpcCreator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:awc="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf"
+    xmlns:prop="clr-namespace:Zelda.NpcCreator.Properties"
+    xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    Title="{x:Static prop:Resources.Title}" Height="500" Width="620" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+        
+        <Menu>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_New}">
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewEnemy}" Click="MenuItem_NewEnemy_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewPlant}" Click="MenuItem_NewPlant_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewNpc}" Click="MenuItem_NewNpc_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_NewMerchant}" Click="MenuItem_NewMerchant_Click"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Open}" Click="MenuItem_Open_Click"/>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Save}" Click="MenuItem_Save_Click"/>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Tools}">
+                <MenuItem Header="{x:Static prop:Resources.MenuHeader_ResaveAll}" Click="MenuItem_Tools_ResaveAll_Click"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static prop:Resources.MenuHeader_Exit}" Click="MenuItem_Exit_Click"/>
+        </Menu>
+        
+        <TabControl Grid.Row="1">
+            <TabItem Header="{x:Static prop:Resources.TabHeader_GeneralProperties}">
+                <awc:PropertyGridControl x:Name="propertyGrid" />
+            </TabItem>
+            <TabItem Header="{x:Static prop:Resources.TabHeader_Loot}" x:Name="tabItem_Loot"
+                     Visibility="Collapsed">
+                <wfi:WindowsFormsHost>
+                    <wf:DataGridView x:Name="dataGridLoot"
+                        BorderStyle="Fixed3D" CellBorderStyle="Single"
+                        RightToLeft="No" ColumnHeadersHeightSizeMode="AutoSize">
+                    </wf:DataGridView>
+                </wfi:WindowsFormsHost>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

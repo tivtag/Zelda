@@ -1,0 +1,1273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agility" xml:space="preserve">
+    <value>Agility</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="AttackMelee" xml:space="preserve">
+    <value>Attack Melee</value>
+  </data>
+  <data name="AttackRanged" xml:space="preserve">
+    <value>Attack Ranged</value>
+  </data>
+  <data name="Beast" xml:space="preserve">
+    <value>Beast</value>
+  </data>
+  <data name="BlockChance" xml:space="preserve">
+    <value>Block Chance</value>
+  </data>
+  <data name="BlockValue" xml:space="preserve">
+    <value>Block Value</value>
+  </data>
+  <data name="Boots" xml:space="preserve">
+    <value>Boots</value>
+  </data>
+  <data name="Bow" xml:space="preserve">
+    <value>Bow</value>
+  </data>
+  <data name="Chest" xml:space="preserve">
+    <value>Chest</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>federrot Software</value>
+  </data>
+  <data name="Cooldown" xml:space="preserve">
+    <value>Cooldown</value>
+  </data>
+  <data name="Crit" xml:space="preserve">
+    <value>Crit</value>
+  </data>
+  <data name="Crit1" xml:space="preserve">
+    <value>Crit</value>
+  </data>
+  <data name="Crossbow" xml:space="preserve">
+    <value>Crossbow</value>
+  </data>
+  <data name="Dagger" xml:space="preserve">
+    <value>Dagger</value>
+  </data>
+  <data name="Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="DecreasesDamageDoneWithXByYPercent" xml:space="preserve">
+    <value>-{1}% {0}damage</value>
+  </data>
+  <data name="DecreasesDamageTakenFromXByY" xml:space="preserve">
+    <value>-{1} {0}damage taken</value>
+  </data>
+  <data name="DemiBeast" xml:space="preserve">
+    <value>Demi Beast</value>
+  </data>
+  <data name="DemiHuman" xml:space="preserve">
+    <value>Demi Human</value>
+  </data>
+  <data name="Dexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="Dodge" xml:space="preserve">
+    <value>Dodge</value>
+  </data>
+  <data name="ED_DmgDoneRaceMod_Negative" xml:space="preserve">
+    <value>-{1} damage done against {0}</value>
+  </data>
+  <data name="ED_DmgDoneRaceMod_Positive" xml:space="preserve">
+    <value>+{1} damage done against {0}</value>
+  </data>
+  <data name="ED_Neg" xml:space="preserve">
+    <value>Decreases {0} by {1}.</value>
+  </data>
+  <data name="ED_NegPercentage" xml:space="preserve">
+    <value>Decreases {0} by {1}%.</value>
+  </data>
+  <data name="ED_Pos" xml:space="preserve">
+    <value>Increases {0} by {1}.</value>
+  </data>
+  <data name="ED_PosPercentage" xml:space="preserve">
+    <value>Increases {0} by {1}%.</value>
+  </data>
+  <data name="Error_CantLeaveEntityBehaviourItIsNotActive" xml:space="preserve">
+    <value>Can't leave this EntityBehaviour; it is not active.</value>
+  </data>
+  <data name="Error_CantRestoreForZeroOrLessThanZero" xml:space="preserve">
+    <value>Can't restore for zero or less than zero.</value>
+  </data>
+  <data name="Error_CantSaveSceneNameNotSet" xml:space="preserve">
+    <value>Cannot save a Scene whose name has not been set.</value>
+  </data>
+  <data name="Error_CouldntFindEntityReaderWriterForTypeX" xml:space="preserve">
+    <value>Couldn't find the IEntityReaderWriter for type '{0}'.</value>
+  </data>
+  <data name="Error_DrawableHasInvalidFloorNrXThereAreYFloorsInSceneZ" xml:space="preserve">
+    <value>Drawable Object has invalid FloorNumber of '{0}'. There are '{1}' Floors in Scene '{2}'.</value>
+  </data>
+  <data name="Error_EntityAlreadyExistsInScene" xml:space="preserve">
+    <value>The Entity already exists in the Scene.</value>
+  </data>
+  <data name="Error_EntityIsRequiredToHaveComponentX" xml:space="preserve">
+    <value>The entity is required to have the '{0}' component.</value>
+  </data>
+  <data name="Error_InvalidSpriteTypeX" xml:space="preserve">
+    <value>Invalid Sprite Type '{0}'.</value>
+  </data>
+  <data name="Error_LoadingVersionXOfYIsNotSupportedCurrentVersionZ" xml:space="preserve">
+    <value>Loading of version '{0}' of '{1}' is not supported. The current version is '{2}'.</value>
+  </data>
+  <data name="Error_OverlayAlreadyExistsInScene" xml:space="preserve">
+    <value>The Overlay already exists in the Scene.</value>
+  </data>
+  <data name="Error_SceneStatusAlreadyExists" xml:space="preserve">
+    <value>The SceneStatus already exists.</value>
+  </data>
+  <data name="Error_TheProfileIsNull" xml:space="preserve">
+    <value>The profile is null. This is not valid.</value>
+  </data>
+  <data name="Error_ValueMustBeGreaterOrEqualMinimum" xml:space="preserve">
+    <value>The value must be greater than or equal to the minimum.</value>
+  </data>
+  <data name="Error_ValueMustBeLessOrEqualMaximum" xml:space="preserve">
+    <value>The value must be less than or equal to the maximum.</value>
+  </data>
+  <data name="Fairy" xml:space="preserve">
+    <value>Fairy</value>
+  </data>
+  <data name="Fire" xml:space="preserve">
+    <value>Fire</value>
+  </data>
+  <data name="FormatStringArmor" xml:space="preserve">
+    <value>{0} Armor</value>
+  </data>
+  <data name="FormatStringStatNegative" xml:space="preserve">
+    <value>-{0} {1}</value>
+  </data>
+  <data name="FormatStringStatPositive" xml:space="preserve">
+    <value>+{0} {1}</value>
+  </data>
+  <data name="GameName" xml:space="preserve">
+    <value>The Legend of Zelda - Black Crown</value>
+  </data>
+  <data name="Gem" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="Head" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="Human" xml:space="preserve">
+    <value>Human</value>
+  </data>
+  <data name="IncreasesChanceToXByY" xml:space="preserve">
+    <value>Increases chance to {0} by {1}.</value>
+  </data>
+  <data name="IncreasesChanceToXByYPercent" xml:space="preserve">
+    <value>Increases chance to {0} by {1}%.</value>
+  </data>
+  <data name="IncreasesDamageDoneWithXByYPercent" xml:space="preserve">
+    <value>+{1}% {0}damage</value>
+  </data>
+  <data name="IncreasesDamageTakenFromXByY" xml:space="preserve">
+    <value>+{1} {0}damage taken</value>
+  </data>
+  <data name="IncreasesXByY" xml:space="preserve">
+    <value>Increases {0} by {1}.</value>
+  </data>
+  <data name="IncreasesXByYPercent" xml:space="preserve">
+    <value>Increases {0} by {1}%.</value>
+  </data>
+  <data name="Intelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="LevelUp" xml:space="preserve">
+    <value>Level Up</value>
+  </data>
+  <data name="Life" xml:space="preserve">
+    <value>Life</value>
+  </data>
+  <data name="LifeRegen" xml:space="preserve">
+    <value>Life Regeneration</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="LoadingError" xml:space="preserve">
+    <value>Loading Error</value>
+  </data>
+  <data name="Luck" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="Magic" xml:space="preserve">
+    <value>Magic</value>
+  </data>
+  <data name="Mana" xml:space="preserve">
+    <value>Mana</value>
+  </data>
+  <data name="ManaRegen" xml:space="preserve">
+    <value>Mana Regeneration</value>
+  </data>
+  <data name="Melee" xml:space="preserve">
+    <value>Melee</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="Miss" xml:space="preserve">
+    <value>Miss</value>
+  </data>
+  <data name="MovementSpeed" xml:space="preserve">
+    <value>Movement Speed</value>
+  </data>
+  <data name="Nature" xml:space="preserve">
+    <value>Nature</value>
+  </data>
+  <data name="Necklace" xml:space="preserve">
+    <value>Necklace</value>
+  </data>
+  <data name="OneHandedAxe" xml:space="preserve">
+    <value>One-Handed Axe</value>
+  </data>
+  <data name="OneHandedMace" xml:space="preserve">
+    <value>One-Handed Mace</value>
+  </data>
+  <data name="OneHandedSword" xml:space="preserve">
+    <value>One-Handed Sword</value>
+  </data>
+  <data name="OnUse" xml:space="preserve">
+    <value>On Use: </value>
+  </data>
+  <data name="OnUseRestoresXToYLife" xml:space="preserve">
+    <value>On Use: Restores {0} to {1} life.</value>
+  </data>
+  <data name="OnUseRestoresXToYLifeAndZToWMana" xml:space="preserve">
+    <value>On Use: Restores {0} to {1} life and {2} to {3} mana.</value>
+  </data>
+  <data name="OnUseRestoresXToYMana" xml:space="preserve">
+    <value>On Use: Restores {0} to {1} mana.</value>
+  </data>
+  <data name="Physical" xml:space="preserve">
+    <value>Physical</value>
+  </data>
+  <data name="Plant" xml:space="preserve">
+    <value>Plant</value>
+  </data>
+  <data name="PushingForce" xml:space="preserve">
+    <value>Pushing Force</value>
+  </data>
+  <data name="Ranged" xml:space="preserve">
+    <value>Ranged</value>
+  </data>
+  <data name="RequiresLevelX" xml:space="preserve">
+    <value>Requires Level {0}.</value>
+  </data>
+  <data name="RequiresXAgility" xml:space="preserve">
+    <value>Requires {0} Agility.</value>
+  </data>
+  <data name="RequiresXDexterity" xml:space="preserve">
+    <value>Requires {0} Dexterity.</value>
+  </data>
+  <data name="RequiresXIntelligence" xml:space="preserve">
+    <value>Requires {0} Intelligence.</value>
+  </data>
+  <data name="RequiresXLuck" xml:space="preserve">
+    <value>Requires {0} Luck.</value>
+  </data>
+  <data name="RequiresXStrength" xml:space="preserve">
+    <value>Requires {0} Strength.</value>
+  </data>
+  <data name="RequiresXVitality" xml:space="preserve">
+    <value>Requires {0} Vitality.</value>
+  </data>
+  <data name="Resisted" xml:space="preserve">
+    <value>Resisted</value>
+  </data>
+  <data name="RespawnCooldownIsNull" xml:space="preserve">
+    <value>Respawn Cooldown is null.</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>Ring</value>
+  </data>
+  <data name="Rod" xml:space="preserve">
+    <value>Rod</value>
+  </data>
+  <data name="SaveGameDescriptionVersionX" xml:space="preserve">
+    <value>This is a SaveGame file of the game 'The Legend of Zelda: Black Crown'. Made by federrot Software. FileVersion "{0}".</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="Shadow" xml:space="preserve">
+    <value>Shadow</value>
+  </data>
+  <data name="ShieldHand" xml:space="preserve">
+    <value>Shield Hand</value>
+  </data>
+  <data name="Slime" xml:space="preserve">
+    <value>Slime</value>
+  </data>
+  <data name="Socket" xml:space="preserve">
+    <value>Socket</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="Trinket" xml:space="preserve">
+    <value>Trinket</value>
+  </data>
+  <data name="TwoHandedAxe" xml:space="preserve">
+    <value>Two-Handed Axe</value>
+  </data>
+  <data name="TwoHandedMace" xml:space="preserve">
+    <value>Two-Handed Mace</value>
+  </data>
+  <data name="TwoHandedSword" xml:space="preserve">
+    <value>Two-Handed Sword</value>
+  </data>
+  <data name="Undead" xml:space="preserve">
+    <value>Undead</value>
+  </data>
+  <data name="Vitality" xml:space="preserve">
+    <value>Vitality</value>
+  </data>
+  <data name="Water" xml:space="preserve">
+    <value>Water</value>
+  </data>
+  <data name="WeaponHand" xml:space="preserve">
+    <value>Weapon Hand</value>
+  </data>
+  <data name="Error_AuraXAlreadyDisabled" xml:space="preserve">
+    <value>The Zelda.Status.Aura '{0}' is already disabled.</value>
+  </data>
+  <data name="Error_AuraXAlreadyEnabledForY" xml:space="preserve">
+    <value>The Zelda.Status.Aura '{0}' is already enabled for the statable Entity '{1}'.</value>
+  </data>
+  <data name="Error_AuraXAlreadyIsAttachedToTheAuraListOfEntityY" xml:space="preserve">
+    <value>The Aura '{0}' is already attached to the AuraList of statable Entity '{1}'.</value>
+  </data>
+  <data name="Error_RespawnCooldownIsNull" xml:space="preserve">
+    <value>The RespawnCooldown is null. This is invalid.</value>
+  </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Exp</value>
+  </data>
+  <data name="GameSaved" xml:space="preserve">
+    <value>Game Saved</value>
+  </data>
+  <data name="Error_GivenItemCountOutOfValidStackRange" xml:space="preserve">
+    <value>The given Item count value is out of the valid Stack Range of the Item.</value>
+  </data>
+  <data name="Error_LoadingSoundAssetXExceptionMessageY" xml:space="preserve">
+    <value>An error has occurred while loading the Sound Asset '{0}'.
+Exception Message:
+
+"{1}"</value>
+  </data>
+  <data name="Error_LoadingSpriteAssetXExceptionMessageY" xml:space="preserve">
+    <value>An error has occurred while loading the Sprite Asset '{0}'.
+Exception Message:
+
+"{1}"</value>
+  </data>
+  <data name="Error_EquipmentXIsAlreadyEquippedByY" xml:space="preserve">
+    <value>The Equipment '{0}' is already equipped by '{1}'.</value>
+  </data>
+  <data name="Error_GemXIsAlreadyUsedByY" xml:space="preserve">
+    <value>The Gem '{0}' is already socketted/used by '{1}'.</value>
+  </data>
+  <data name="Error_CantRemoveXItemYTimesFromInventory" xml:space="preserve">
+    <value>Can't remove the Item '{0}' from the inventory '{1}' times.</value>
+  </data>
+  <data name="Error_GivenCellIndexIsInvalid" xml:space="preserve">
+    <value>The given cell index is invalid.</value>
+  </data>
+  <data name="Error_ItemIsNull" xml:space="preserve">
+    <value>The item is null. This is invalid for this operation.</value>
+  </data>
+  <data name="Error_NoItemIsInGivenCell" xml:space="preserve">
+    <value>No item is in the given inventory cell. This is invalid for this operation.</value>
+  </data>
+  <data name="ArmorXMitigationY" xml:space="preserve">
+    <value>{0} Armor ({1}%)</value>
+  </data>
+  <data name="CritX" xml:space="preserve">
+    <value>{0}% Crit</value>
+  </data>
+  <data name="DodgeX" xml:space="preserve">
+    <value>{0}% Dodge</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_CouldntFindSpawnPointXInSceneY" xml:space="preserve">
+    <value>Couldn't find any ISpawnPoint named '{0}' in the scene '{1}'.</value>
+  </data>
+  <data name="FreeStatPoints" xml:space="preserve">
+    <value>free points</value>
+  </data>
+  <data name="HitX" xml:space="preserve">
+    <value>{0}% Hit</value>
+  </data>
+  <data name="LevelXClassY" xml:space="preserve">
+    <value>Level {0} {1}</value>
+  </data>
+  <data name="LifeXManaYRegen" xml:space="preserve">
+    <value>{0}L/{1}M Regen</value>
+  </data>
+  <data name="MagicFindX" xml:space="preserve">
+    <value>{0} Magic Find</value>
+  </data>
+  <data name="MeleeDamageXToYAtSpeedZ" xml:space="preserve">
+    <value>{0}-{1} | {2} M</value>
+  </data>
+  <data name="OneFreeTalentPoint" xml:space="preserve">
+    <value>[1 free talent point]</value>
+  </data>
+  <data name="PressSpace" xml:space="preserve">
+    <value>Press Space</value>
+  </data>
+  <data name="RangedDamageXToYAtSpeedZ" xml:space="preserve">
+    <value>{0}-{1} | {2} R</value>
+  </data>
+  <data name="TalentLevelXOfY" xml:space="preserve">
+    <value>Level {0} of {1}</value>
+  </data>
+  <data name="XFreeTalentPoints" xml:space="preserve">
+    <value>[{0} free talent points]</value>
+  </data>
+  <data name="Error_TheComponentNeedsSetup" xml:space="preserve">
+    <value>The component needs to be setup.</value>
+  </data>
+  <data name="Error_CouldntFindWeatherCreatorOfTypeX" xml:space="preserve">
+    <value>Couldn't find IWeatherCreator of type '{0}'.</value>
+  </data>
+  <data name="Error_BehaviourXNotFoundInBehaveableOfY" xml:space="preserve">
+    <value>The requested behaviour '{0}' was not found in the Behaveable component of entity {1}. This is required.</value>
+  </data>
+  <data name="Error_EntityTemplateMustBeSet" xml:space="preserve">
+    <value>The entity template must be set for this operation.</value>
+  </data>
+  <data name="Error_PlayerSpawnPointCanOnlySpawnPlayerEntity" xml:space="preserve">
+    <value>The Zelda.Entities.Spawning.PlayerSpawnPoint can only spawn the Zelda.Entities.PlayerEntity.</value>
+  </data>
+  <data name="Error_SpawnPointXOrAlternativeNotFound" xml:space="preserve">
+    <value>The SpawnPoint '{0}' nor an alternative SpawnPoint could be found in the current scene.</value>
+  </data>
+  <data name="DecXByY" xml:space="preserve">
+    <value>-{1} {0}</value>
+  </data>
+  <data name="DecXByYPercent" xml:space="preserve">
+    <value>-{1}% {0}</value>
+  </data>
+  <data name="IncXByY" xml:space="preserve">
+    <value>+{1} {0}</value>
+  </data>
+  <data name="IncXByYPercent" xml:space="preserve">
+    <value>+{1}% {0}</value>
+  </data>
+  <data name="MagicFind" xml:space="preserve">
+    <value>Magic Find</value>
+  </data>
+  <data name="Error_QuestAlreadyAccepted" xml:space="preserve">
+    <value>This quest has already been accepted by the player.</value>
+  </data>
+  <data name="Error_QuestIsCompleted" xml:space="preserve">
+    <value>The quest has already been completed. This is invalid for this operation.</value>
+  </data>
+  <data name="Error_QuestLogAlreadyContainsQuest" xml:space="preserve">
+    <value>The QuestLog already contains the specified quest.</value>
+  </data>
+  <data name="Error_QuestNameNotSet" xml:space="preserve">
+    <value>The name of the quest has not been set. This is required for this operation.</value>
+  </data>
+  <data name="Error_QuestNotAccepted" xml:space="preserve">
+    <value>This quest has not been accepted by the player. This needs to be done for this operation to work.</value>
+  </data>
+  <data name="Error_FactionXDoesNotExist" xml:space="preserve">
+    <value>The Faction '{0}' does not exist.</value>
+  </data>
+  <data name="FD_BrotherhoodOfTheTemple" xml:space="preserve">
+    <value>The Brotherhood of the Temple are
+honored for their brave deeds and
+feared for their powerful magic.</value>
+  </data>
+  <data name="FN_BrotherhoodOfTheTemple" xml:space="preserve">
+    <value>Brotherhood</value>
+  </data>
+  <data name="FD_TownFolk" xml:space="preserve">
+    <value>The 'innocent' people of Hyrule town.</value>
+  </data>
+  <data name="FN_TownFolk" xml:space="preserve">
+    <value>Hyrule</value>
+  </data>
+  <data name="AcceptedQuestX" xml:space="preserve">
+    <value>New Quest '{0}'.</value>
+  </data>
+  <data name="QuestLog" xml:space="preserve">
+    <value>Quest Log</value>
+  </data>
+  <data name="DecreasesAttackSpeedWithXByY" xml:space="preserve">
+    <value>-{1}%{0} Attack Speed</value>
+  </data>
+  <data name="EN_SkeletonHead" xml:space="preserve">
+    <value>Whisper</value>
+  </data>
+  <data name="IncreasesAttackSpeedWithXByY" xml:space="preserve">
+    <value>+{1}%{0} Attack Speed</value>
+  </data>
+  <data name="PressSpaceToRespawn" xml:space="preserve">
+    <value>~ Press Space to Respawn ~</value>
+  </data>
+  <data name="EN_Skeleton_Red" xml:space="preserve">
+    <value>Red Skeleton</value>
+  </data>
+  <data name="SN_HyruleRivers" xml:space="preserve">
+    <value>Hyrule Rivers</value>
+  </data>
+  <data name="SN_TiaWoodsNorth" xml:space="preserve">
+    <value>Tia Woods</value>
+  </data>
+  <data name="Belt" xml:space="preserve">
+    <value>Belt</value>
+  </data>
+  <data name="Error_FloorNumberInvalid" xml:space="preserve">
+    <value>The Floor Number is invalid.</value>
+  </data>
+  <data name="Error_LayerNumberInvalid" xml:space="preserve">
+    <value>The Layer Number is invalid.</value>
+  </data>
+  <data name="SN_FamilyStoneTombs" xml:space="preserve">
+    <value>Family Stone Tombs</value>
+  </data>
+  <data name="EN_DemonGirl" xml:space="preserve">
+    <value>Demon Girl</value>
+  </data>
+  <data name="EN_Skeleton_Green" xml:space="preserve">
+    <value>Green Skeleton</value>
+  </data>
+  <data name="ED_TempNeg" xml:space="preserve">
+    <value>Temporarily decreases {0} by {1}.</value>
+  </data>
+  <data name="ED_TempNegPercentage" xml:space="preserve">
+    <value>Temporarily decreases {0} by {1}%.</value>
+  </data>
+  <data name="ED_TempPos" xml:space="preserve">
+    <value>Temporarily increases {0} by {1}.</value>
+  </data>
+  <data name="ED_TempPosPercentage" xml:space="preserve">
+    <value>Temporarily increases {0} by {1}%.</value>
+  </data>
+  <data name="MagicCraftingBottle" xml:space="preserve">
+    <value>Magic Crafting Bottle</value>
+  </data>
+  <data name="EN_Ghost_Boss" xml:space="preserve">
+    <value>Evil Ghost Boss</value>
+  </data>
+  <data name="EN_Boss_RudrasEye" xml:space="preserve">
+    <value>Demon Eye</value>
+  </data>
+  <data name="Tooltip_Agility" xml:space="preserve">
+    <value>Agility increases chance to Dodge, Melee and Ranged Attack Speed, and to a small part Armor, Movement Speed and Ranged Attack Power.</value>
+  </data>
+  <data name="Tooltip_Dexterity" xml:space="preserve">
+    <value>Dexterity increases Ranged Attack Power, chance to Hit, to a small part Melee Attack Power and reduces the Cast Time of spells.</value>
+  </data>
+  <data name="Tooltip_Intelligence" xml:space="preserve">
+    <value>Intelligence increases Magical Attack Power, the amount of Mana, Mana Regeneration and the effectiveness of Mana Potions.</value>
+  </data>
+  <data name="Tooltip_Luck" xml:space="preserve">
+    <value>Luck increases chance to get a Critical Attack and the chance to find rare items.</value>
+  </data>
+  <data name="Tooltip_Strength" xml:space="preserve">
+    <value>Strength increases Melee Attack Power, Block Value and slightly the chance to Parry melee attacks.</value>
+  </data>
+  <data name="Tooltip_Vitality" xml:space="preserve">
+    <value>Vitality increases the amount of Life, Life Regeneration, the effectiveness of Healing Potions and slightly reduces the chance to be crit.</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="HealingPotionEffectiveness" xml:space="preserve">
+    <value>Healing Potion Effectiveness</value>
+  </data>
+  <data name="ManaPotionEffectiveness" xml:space="preserve">
+    <value>Mana Potion Effectiveness</value>
+  </data>
+  <data name="EquipmentStatus" xml:space="preserve">
+    <value>Equipment Status</value>
+  </data>
+  <data name="Relic" xml:space="preserve">
+    <value>Relic</value>
+  </data>
+  <data name="MagicDamageXToYAtCastSpeedZ" xml:space="preserve">
+    <value>{0}-{1} | {2} S</value>
+  </data>
+  <data name="Error_CouldntFindXNameY" xml:space="preserve">
+    <value>Couldn't find {0} with name '{1}'.</value>
+  </data>
+  <data name="Gloves" xml:space="preserve">
+    <value>Gloves</value>
+  </data>
+  <data name="Error_ErrorLoadingQuestX" xml:space="preserve">
+    <value>And error occurred while loading the Quest '{0}'.</value>
+  </data>
+  <data name="ED_EquipmentStatModifierEffect" xml:space="preserve">
+    <value>Stat Points given by {0}-type items</value>
+  </data>
+  <data name="Parry" xml:space="preserve">
+    <value>Parry</value>
+  </data>
+  <data name="ParryX" xml:space="preserve">
+    <value>{0}% Parry</value>
+  </data>
+  <data name="Exalted" xml:space="preserve">
+    <value>Exalted</value>
+  </data>
+  <data name="Friendly" xml:space="preserve">
+    <value>Friendly</value>
+  </data>
+  <data name="Hated" xml:space="preserve">
+    <value>Hated</value>
+  </data>
+  <data name="Honored" xml:space="preserve">
+    <value>Honored</value>
+  </data>
+  <data name="Neutral" xml:space="preserve">
+    <value>Neutral</value>
+  </data>
+  <data name="ReputationLevelChangedWithXToY" xml:space="preserve">
+    <value>{0} now {1}!</value>
+  </data>
+  <data name="Revered" xml:space="preserve">
+    <value>Revered</value>
+  </data>
+  <data name="Unfriendly" xml:space="preserve">
+    <value>Unfriendly</value>
+  </data>
+  <data name="Cloak" xml:space="preserve">
+    <value>Cloak</value>
+  </data>
+  <data name="Error_SomeWeatherEffectsAreNotSupportedInsufficientPSSupport" xml:space="preserve">
+    <value>
+Warning!! Some WeatherEffects are not supported! Insufficient Pixel Shader support.
+</value>
+  </data>
+  <data name="Beasts" xml:space="preserve">
+    <value>Beasts</value>
+  </data>
+  <data name="DemiBeasts" xml:space="preserve">
+    <value>Demi-Beasts</value>
+  </data>
+  <data name="DemiHumans" xml:space="preserve">
+    <value>Demi-Humans</value>
+  </data>
+  <data name="Demon" xml:space="preserve">
+    <value>Demon</value>
+  </data>
+  <data name="Demons" xml:space="preserve">
+    <value>Demons</value>
+  </data>
+  <data name="Fairies" xml:space="preserve">
+    <value>Fairies</value>
+  </data>
+  <data name="Humans" xml:space="preserve">
+    <value>Humans</value>
+  </data>
+  <data name="Plants" xml:space="preserve">
+    <value>Plants</value>
+  </data>
+  <data name="Slimes" xml:space="preserve">
+    <value>Slimes</value>
+  </data>
+  <data name="UndeadPlural" xml:space="preserve">
+    <value>Undead</value>
+  </data>
+  <data name="ChanceToBeCrit" xml:space="preserve">
+    <value>chance to be crit</value>
+  </data>
+  <data name="ChanceToBeCritX" xml:space="preserve">
+    <value>{0}% chance to be Crit</value>
+  </data>
+  <data name="ChanceToBeHit" xml:space="preserve">
+    <value>chance to be hit</value>
+  </data>
+  <data name="ChanceToBeHitX" xml:space="preserve">
+    <value>{0}% chance to be Hit</value>
+  </data>
+  <data name="ChanceToBeParried" xml:space="preserve">
+    <value>chance to be parried</value>
+  </data>
+  <data name="ChanceToBeParriedX" xml:space="preserve">
+    <value>{0}% chance to be Parried</value>
+  </data>
+  <data name="Error_NoActiveZeldaScene" xml:space="preserve">
+    <value>There is currently no active ZeldaScene.</value>
+  </data>
+  <data name="Error_EntityIsRequiredToImplementInterfaceX" xml:space="preserve">
+    <value>The entity is required to implement the '{0}' interface.</value>
+  </data>
+  <data name="EN_DemonEyeBaby" xml:space="preserve">
+    <value>Demon Eye Baby</value>
+  </data>
+  <data name="OnUseTempIncreasesDamageDoneWithXByY" xml:space="preserve">
+    <value>On Use: Temporarily increases {0}damage done by {1}%.</value>
+  </data>
+  <data name="SongD_FamilyTombsTeleport" xml:space="preserve">
+    <value>Swifly teleports you to the Family Stone Tombs in the Tia Woods.</value>
+  </data>
+  <data name="SongN_FamilyTombsTeleport" xml:space="preserve">
+    <value>Nocturne of the Stones</value>
+  </data>
+  <data name="Error_TheGivenSongIsAlreadyKnown" xml:space="preserve">
+    <value>The given Song is already known to this OcarinaBox.</value>
+  </data>
+  <data name="Error_TheGivenSongNameIsInvalid" xml:space="preserve">
+    <value>The given song name is invalid.</value>
+  </data>
+  <data name="Error_SongIsAlreadyPlaying" xml:space="preserve">
+    <value>The Song is already playing.</value>
+  </data>
+  <data name="SN_RouteOfDin" xml:space="preserve">
+    <value>Route Of Din</value>
+  </data>
+  <data name="Error_CreatingInstanceOfAffixedItemBaseTypeXNotSupportedOrImplemented" xml:space="preserve">
+    <value>Creating an instance of the AffixedItem with base type '{0}' is not implemented or supported.</value>
+  </data>
+  <data name="Error_ItemPrefixSuffixBothNull" xml:space="preserve">
+    <value>The item pre- and suffix are both null. Atleast one must not be null.</value>
+  </data>
+  <data name="AllResistances" xml:space="preserve">
+    <value>All Resistances</value>
+  </data>
+  <data name="FireResistance" xml:space="preserve">
+    <value>Fire Resistance</value>
+  </data>
+  <data name="LightResistance" xml:space="preserve">
+    <value>Light Resistance</value>
+  </data>
+  <data name="NatureResistance" xml:space="preserve">
+    <value>Nature Resistance</value>
+  </data>
+  <data name="ShadowResistance" xml:space="preserve">
+    <value>Shadow Resistance</value>
+  </data>
+  <data name="WaterResistance" xml:space="preserve">
+    <value>Water Resistance</value>
+  </data>
+  <data name="Poison" xml:space="preserve">
+    <value>Poison</value>
+  </data>
+  <data name="DecreasesDamageDoneWithXByY" xml:space="preserve">
+    <value>-{1} {0}damage</value>
+  </data>
+  <data name="IncreasesDamageDoneWithXByY" xml:space="preserve">
+    <value>+{1} {0}damage</value>
+  </data>
+  <data name="CritRating" xml:space="preserve">
+    <value>Crit Rating</value>
+  </data>
+  <data name="DodgeRating" xml:space="preserve">
+    <value>Dodge Rating</value>
+  </data>
+  <data name="Hit" xml:space="preserve">
+    <value>Hit</value>
+  </data>
+  <data name="HitRating" xml:space="preserve">
+    <value>Hit Rating</value>
+  </data>
+  <data name="ParryRating" xml:space="preserve">
+    <value>Parry Rating</value>
+  </data>
+  <data name="InfoBlocking" xml:space="preserve">
+    <value>{0}% to block '1 to {1}'</value>
+  </data>
+  <data name="Text_EnterNameOfHero" xml:space="preserve">
+    <value>Enter the Name of the Hero</value>
+  </data>
+  <data name="Text_PressSpace" xml:space="preserve">
+    <value>Press Space</value>
+  </data>
+  <data name="DecreasesAttackSpeedRatingWithXByY" xml:space="preserve">
+    <value>-{0}{1} Attack Speed Rating ({2}%)</value>
+  </data>
+  <data name="IncreasesAttackSpeedRatingWithXByY" xml:space="preserve">
+    <value>+{0}{1} Attack Speed Rating ({2}%)</value>
+  </data>
+  <data name="QuestXComplete" xml:space="preserve">
+    <value>'{0}' completed!</value>
+  </data>
+  <data name="EN_Keese_Red" xml:space="preserve">
+    <value>Blood Keese</value>
+  </data>
+  <data name="Error_SceneIsNull" xml:space="preserve">
+    <value>The current scene is null.</value>
+  </data>
+  <data name="SongD_ZoneReset" xml:space="preserve">
+    <value>Your action are partially erased in the current region, allowing you to fight for the good cause once again!</value>
+  </data>
+  <data name="SongN_ZoneReset" xml:space="preserve">
+    <value>Song of the Past</value>
+  </data>
+  <data name="Error_StatusManipTypeRatingInvalid" xml:space="preserve">
+    <value>A StatusManipulationType of 'Rating' is invalid.</value>
+  </data>
+  <data name="Songs" xml:space="preserve">
+    <value>Songs</value>
+  </data>
+  <data name="EN_Goron_Mad_45" xml:space="preserve">
+    <value>Mad Goron</value>
+  </data>
+  <data name="FD_Goronia" xml:space="preserve">
+    <value>The mighty boulder brothers of Goronia. They inherit their strength from the earth itself.</value>
+  </data>
+  <data name="FN_Goronia" xml:space="preserve">
+    <value>Goronia</value>
+  </data>
+  <data name="Error_AlreadyHavePickedUpItem" xml:space="preserve">
+    <value>The player already has picked-up an item. Drop or restore the currently picked-up item first.</value>
+  </data>
+  <data name="Error_ItemRequiredToHaveUseEffect" xml:space="preserve">
+    <value>The Itme is required to have an UseEffect.</value>
+  </data>
+  <data name="ExperienceGained" xml:space="preserve">
+    <value>Experience Gained</value>
+  </data>
+  <data name="ArmorIgnore" xml:space="preserve">
+    <value>Armor Ignore</value>
+  </data>
+  <data name="ArmorIgnoreRating" xml:space="preserve">
+    <value>Armor Ignore Rating</value>
+  </data>
+  <data name="FireGem" xml:space="preserve">
+    <value>Fire Gem</value>
+  </data>
+  <data name="LightGem" xml:space="preserve">
+    <value>Light Gem</value>
+  </data>
+  <data name="NatureGem" xml:space="preserve">
+    <value>Nature Gem</value>
+  </data>
+  <data name="PrismaticGem" xml:space="preserve">
+    <value>Prismatic Gem</value>
+  </data>
+  <data name="ShadowGem" xml:space="preserve">
+    <value>Shadow Gem</value>
+  </data>
+  <data name="WaterGem" xml:space="preserve">
+    <value>Water Gem</value>
+  </data>
+  <data name="EmptySocketX" xml:space="preserve">
+    <value>&gt; empty {0} socket</value>
+  </data>
+  <data name="Prismatic" xml:space="preserve">
+    <value>Prismatic</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Weapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="DecXByRatingYActualZ" xml:space="preserve">
+    <value>-{0} {1} Rating ({2}%)</value>
+  </data>
+  <data name="IncXByRatingYActualZ" xml:space="preserve">
+    <value>+{0} {1} Rating ({2}%)</value>
+  </data>
+  <data name="Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="SongD_TimeWarpSong" xml:space="preserve">
+    <value>Warps you and your surroundings 8 hours into the future; costs 25% base mana.</value>
+  </data>
+  <data name="SongN_TimeWarpSong" xml:space="preserve">
+    <value>Futile Song of Time</value>
+  </data>
+  <data name="BlockChanceRating" xml:space="preserve">
+    <value>Block Chance Rating</value>
+  </data>
+  <data name="Error_RequiresIRangedEnemyBehaviour" xml:space="preserve">
+    <value>The entity is required to have an IEntityBehaviour of type IRangedEnemyBehaviour.</value>
+  </data>
+  <data name="TempStatusUseEffectDescription" xml:space="preserve">
+    <value>On Use: {0} for {1} seconds.</value>
+  </data>
+  <data name="CriticalDamageBonus" xml:space="preserve">
+    <value>Critical Damage Bonus</value>
+  </data>
+  <data name="SpellCriticalDamageBonus" xml:space="preserve">
+    <value>Spell Critical Damage Bonus</value>
+  </data>
+  <data name="MeleeCriticalDamageBonus" xml:space="preserve">
+    <value>Melee Critical Damage Bonus</value>
+  </data>
+  <data name="RangedCriticalDamageBonus" xml:space="preserve">
+    <value>Ranged Critical Damage Bonus</value>
+  </data>
+  <data name="DialogTitle_SelectSprite" xml:space="preserve">
+    <value>Select a Sprite resource.</value>
+  </data>
+  <data name="Filter_BinarySpriteResources" xml:space="preserve">
+    <value>Compiled Sprite Resources (*.xnb)|*.xnb</value>
+  </data>
+  <data name="MeleeCrit" xml:space="preserve">
+    <value>melee crit</value>
+  </data>
+  <data name="MeleeHit" xml:space="preserve">
+    <value>melee hit</value>
+  </data>
+  <data name="MeleeRangedCrit" xml:space="preserve">
+    <value>melee and ranged crit</value>
+  </data>
+  <data name="MeleeRangedHit" xml:space="preserve">
+    <value>melee and ranged hit</value>
+  </data>
+  <data name="MeleeRangedStrike" xml:space="preserve">
+    <value>melee and ranged strike</value>
+  </data>
+  <data name="MeleeStrike" xml:space="preserve">
+    <value>melee strike</value>
+  </data>
+  <data name="RangedCrit" xml:space="preserve">
+    <value>ranged crit</value>
+  </data>
+  <data name="RangedHit" xml:space="preserve">
+    <value>ranged hit</value>
+  </data>
+  <data name="RangedStrike" xml:space="preserve">
+    <value>ranged strike</value>
+  </data>
+  <data name="FinishedSpellCast" xml:space="preserve">
+    <value>finished spell cast</value>
+  </data>
+  <data name="SpellCast" xml:space="preserve">
+    <value>spell cast</value>
+  </data>
+  <data name="SpellPower" xml:space="preserve">
+    <value>Spell Power</value>
+  </data>
+  <data name="SpellHaste" xml:space="preserve">
+    <value>Spell Haste</value>
+  </data>
+  <data name="SpellHasteRating" xml:space="preserve">
+    <value>Spell Haste Rating</value>
+  </data>
+  <data name="ListEndSeperator" xml:space="preserve">
+    <value> and</value>
+  </data>
+  <data name="ListSeperator" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="DialogTitle_SelectItem" xml:space="preserve">
+    <value>Select an item definition file ...</value>
+  </data>
+  <data name="Filter_ItemResources" xml:space="preserve">
+    <value>Item Definition Files (*.zitm)|*.zitm</value>
+  </data>
+  <data name="Merchant" xml:space="preserve">
+    <value>Merchant</value>
+  </data>
+  <data name="Magical" xml:space="preserve">
+    <value>Magical</value>
+  </data>
+  <data name="Spell" xml:space="preserve">
+    <value>Spell</value>
+  </data>
+  <data name="DecreasesDamageTakenFromXByYPercent" xml:space="preserve">
+    <value>-{1}% {0}damage taken</value>
+  </data>
+  <data name="IncreasesDamageTakenFromXByYPercent" xml:space="preserve">
+    <value>+{1}% {0}damage taken</value>
+  </data>
+  <data name="Bleed" xml:space="preserve">
+    <value>Bleed</value>
+  </data>
+  <data name="DamageOverTime" xml:space="preserve">
+    <value>Damage Over Time</value>
+  </data>
+  <data name="DialogTitle_SelectSet" xml:space="preserve">
+    <value>Select a Item Set definition file.</value>
+  </data>
+  <data name="Filter_SetResources" xml:space="preserve">
+    <value>Set Definition Files (*.zset)|*.zset</value>
+  </data>
+  <data name="PierceChance" xml:space="preserve">
+    <value>Ranged Piercing Chance</value>
+  </data>
+  <data name="PierceChanceRating" xml:space="preserve">
+    <value>Ranged Piercing Chance Rating</value>
+  </data>
+  <data name="SpellPenetration" xml:space="preserve">
+    <value>Spell Penetration</value>
+  </data>
+  <data name="SpellPenetrationRating" xml:space="preserve">
+    <value>Spell Penetration Rating</value>
+  </data>
+  <data name="EnumValueIsNotSupported" xml:space="preserve">
+    <value>The specified Enum value is not supported by this operation.</value>
+  </data>
+  <data name="LightRadius" xml:space="preserve">
+    <value>Light Radius</value>
+  </data>
+  <data name="DialogTitle_SelectScene" xml:space="preserve">
+    <value>Select an scene definition file ...</value>
+  </data>
+  <data name="Filter_SceneResources" xml:space="preserve">
+    <value>Scene Files (*.zs)|*.zs</value>
+  </data>
+  <data name="ErrorCantAddAnotherPropertyOfThatTypeItIsUnique" xml:space="preserve">
+    <value>Only one IProperty of that type is allowed at a single time.</value>
+  </data>
+  <data name="SongD_RouteOfDinTeleport" xml:space="preserve">
+    <value>Teleports you to Maja at the Route of Din.</value>
+  </data>
+  <data name="SongN_RouteOfDinTeleport" xml:space="preserve">
+    <value>Maja's Return of Hope</value>
+  </data>
+  <data name="ExperienceGainedRating" xml:space="preserve">
+    <value>Experience Gained Rating</value>
+  </data>
+  <data name="DialogTitle_SelectTexture" xml:space="preserve">
+    <value>Select a texture ..</value>
+  </data>
+  <data name="Filter_BinaryTextureResources" xml:space="preserve">
+    <value>Compiled Texture Resources (*.xnb)|*.xnb</value>
+  </data>
+  <data name="LifeManaRegeneration" xml:space="preserve">
+    <value>Life and Mana Regeneration</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="Nightmare" xml:space="preserve">
+    <value>Nightmare</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Hell" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="ChestOfWinds" xml:space="preserve">
+    <value>Chest of Winds</value>
+  </data>
+  <data name="PotionEffectiveness" xml:space="preserve">
+    <value>Potion Effectiveness</value>
+  </data>
+  <data name="Resistance" xml:space="preserve">
+    <value>Resistance</value>
+  </data>
+  <data name="Penetration" xml:space="preserve">
+    <value>Penetration</value>
+  </data>
+  <data name="Recipes" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="ChanceToBe" xml:space="preserve">
+    <value>Chance to Be</value>
+  </data>
+  <data name="SongD_MusicCross" xml:space="preserve">
+    <value>Teleports you to the location that has been stored in the Cross of Teleportation.</value>
+  </data>
+  <data name="SongN_MusicCross" xml:space="preserve">
+    <value>Song of the Cross</value>
+  </data>
+  <data name="FreeStatPoint" xml:space="preserve">
+    <value>free point</value>
+  </data>
+  <data name="CriticalBonus" xml:space="preserve">
+    <value>Critical Bonus</value>
+  </data>
+  <data name="Heal" xml:space="preserve">
+    <value>Heal</value>
+  </data>
+  <data name="Insane" xml:space="preserve">
+    <value>Insane</value>
+  </data>
+  <data name="Easy" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="Bottle" xml:space="preserve">
+    <value>Bottle</value>
+  </data>
+  <data name="SN_BloodWoods" xml:space="preserve">
+    <value>Blood Woods</value>
+  </data>
+  <data name="SN_Shrine" xml:space="preserve">
+    <value>Skull Shrine</value>
+  </data>
+  <data name="SongD_ExecuteTriggerSong" xml:space="preserve">
+    <value>Uncovers secrets when played while standing on specific marked structures.</value>
+  </data>
+  <data name="SongN_ExecuteTriggerSong" xml:space="preserve">
+    <value>Carillon of Secrets</value>
+  </data>
+  <data name="SongD_HomeTeleport" xml:space="preserve">
+    <value>Teleports you home.</value>
+  </data>
+  <data name="SongN_HomeTeleport" xml:space="preserve">
+    <value>Lament of Hyrule</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="Reputation" xml:space="preserve">
+    <value>Reputation</value>
+  </data>
+  <data name="DeathCount" xml:space="preserve">
+    <value>Death Count</value>
+  </data>
+  <data name="KillCount" xml:space="preserve">
+    <value>Kill Count</value>
+  </data>
+  <data name="ChanceTo" xml:space="preserve">
+    <value>Chance to</value>
+  </data>
+  <data name="CritBlock" xml:space="preserve">
+    <value>Block Crit</value>
+  </data>
+  <data name="CritHeal" xml:space="preserve">
+    <value>Heal Crit</value>
+  </data>
+  <data name="ActiveSkill" xml:space="preserve">
+    <value>active skill</value>
+  </data>
+  <data name="GameTime" xml:space="preserve">
+    <value>Game Time</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Bag" xml:space="preserve">
+    <value>Bag</value>
+  </data>
+</root>

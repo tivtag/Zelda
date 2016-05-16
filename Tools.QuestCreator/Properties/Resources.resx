@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogTitle_CompletionEventSelection" xml:space="preserve">
+    <value>Select the Quest Completion Event to add.</value>
+  </data>
+  <data name="DialogTitle_GoalSelection" xml:space="preserve">
+    <value>Select the Quest Goal to add.</value>
+  </data>
+  <data name="DialogTitle_OpenQuest" xml:space="preserve">
+    <value>Select the Quest to open.</value>
+  </data>
+  <data name="DialogTitle_RequirementSelection" xml:space="preserve">
+    <value>Select the Quest Requirement to add.</value>
+  </data>
+  <data name="DialogTitle_RewardSelection" xml:space="preserve">
+    <value>Select the Quest Reward to add.</value>
+  </data>
+  <data name="Error_QuestNameMustBeSetForSave" xml:space="preserve">
+    <value>The name of the Quest must be set before it can be saved.</value>
+  </data>
+  <data name="Filter_QuestFiles" xml:space="preserve">
+    <value>Quest Data Files (*.zq)|*.zq</value>
+  </data>
+  <data name="Info_QuestXSavedSuccessfully" xml:space="preserve">
+    <value>Quest '{0}' has been saved successfully.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Quest Creator for TLoZ - Black Crown</value>
+  </data>
+  <data name="Tooltip_CompletedTextId" xml:space="preserve">
+    <value>The resource id that is used to receive the localized text
+that is shown when the quest has been completed.
+Should be in the format 'QC_X'.</value>
+  </data>
+  <data name="Tooltip_DeliverLocation" xml:space="preserve">
+    <value>The location the quest must be delivered at.
+Interpreted differently regarding the set Deliver Type.
+
+        Instant: This field can be left empty.
+        NPC:     This field must contain the name that uniquely identifies the NPC.
+</value>
+  </data>
+  <data name="Tooltip_DeliverType" xml:space="preserve">
+    <value>States how the player ends the quest.</value>
+  </data>
+  <data name="Tooltip_DescriptionId" xml:space="preserve">
+    <value>The resource id that is used to receive the localized description of the quest.
+Should be in the format 'QD_X'.</value>
+  </data>
+  <data name="Tooltip_IsRepeatable" xml:space="preserve">
+    <value>States whether the quest can be done over and over again.
+After completing a repeatable quest it becomes available to be picked-up again.</value>
+  </data>
+  <data name="Tooltip_IsStateHidden" xml:space="preserve">
+    <value>States whether the quest's current state is hidden from the player.</value>
+  </data>
+  <data name="Tooltip_Level" xml:space="preserve">
+    <value>The level of the quest. Quest difficulty can be induces by
+looking at the level of the quest compared to the level of the player.</value>
+  </data>
+  <data name="Tooltip_Name" xml:space="preserve">
+    <value>The name that uniquely identifies the quest.
+Localization is done by looking up the resource string similiar to 'QN_X',
+where X is the name of the quest.</value>
+  </data>
+  <data name="Tooltip_NotCompletedTextId" xml:space="preserve">
+    <value>The resource id that is used to receive the localized text
+that is shown when the quest has not been completed yet.
+Should be in the format 'QNC_X'.</value>
+  </data>
+  <data name="Tooltip_StartTextId" xml:space="preserve">
+    <value>The resource id that is used to receive the localized start text of the quest.
+Should be in the format 'QS_X'.</value>
+  </data>
+  <data name="Tooltip_Type" xml:space="preserve">
+    <value>The type of the quest.</value>
+  </data>
+</root>

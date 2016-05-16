@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QC_HyruleRivers_GhostHunt" xml:space="preserve">
+    <value>Nice work I must say. You shall be my pupil from now on!</value>
+  </data>
+  <data name="QC_HyruleRivers_TheEvilGhost" xml:space="preserve">
+    <value>You did it! Now my old pupil can rest in peace. His necklace shall be yours.</value>
+  </data>
+  <data name="QC_RouteOfDin_BlackKey" xml:space="preserve">
+    <value>Mhmhm.. those are good! What? Aah.. the key.. I've actually still had one. There you go.</value>
+  </data>
+  <data name="QC_RouteOfDin_ChickenFeed" xml:space="preserve">
+    <value>Thank you! You're such a cutie!</value>
+  </data>
+  <data name="QC_RouteOfDin_SecureTheChickens" xml:space="preserve">
+    <value>Thank you, thank you! *cheers*</value>
+  </data>
+  <data name="QC_RouteOfDin_TheCauseOfMadness" xml:space="preserve">
+    <value>You've slain the evil that was corrupting us? Yes .. I already feel relieved. Thank you. Thaaaank you! You are our hero! I want you to remember this song, so we can see each other anytime.</value>
+  </data>
+  <data name="QC_RouteOfDin_TheMadBrothers" xml:space="preserve">
+    <value>It's so silent outside. Have my brothers found peace?</value>
+  </data>
+  <data name="QC_TiaWoods_BottlesForTheMedicine" xml:space="preserve">
+    <value>Exactly what I needed. I hope I didn't make you too much trouble.</value>
+  </data>
+  <data name="QC_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>Ooohh oooo. That's so cute from you! Thank you. Thaaanks! -hugs-</value>
+  </data>
+  <data name="QC_TiaWoods_CleanseTheTombs" xml:space="preserve">
+    <value>Wow. Nice. But the evil still lurks inside the tombs ...</value>
+  </data>
+  <data name="QC_TiaWoods_CleanseTheTombs_2" xml:space="preserve">
+    <value>Yee ha! You're just awesome.</value>
+  </data>
+  <data name="QC_TiaWoods_CleanseTheTombs_3" xml:space="preserve">
+    <value>You're our hero! Now me and my brother can venture inside the tombs too.</value>
+  </data>
+  <data name="QC_TiaWoods_ClearTheFields" xml:space="preserve">
+    <value>... you've survived ... impressive!</value>
+  </data>
+  <data name="QC_TiaWoods_FreshLeaves" xml:space="preserve">
+    <value>Heureka! Thanks.</value>
+  </data>
+  <data name="QC_TiaWoods_GhostMushrooms" xml:space="preserve">
+    <value>You brought me mushrooms? What mushrooms? Why? Ohhhhh ... the Ghost Mushrooms! Great! Now I can make the potion for Milly!</value>
+  </data>
+  <data name="QC_TiaWoods_HungryKid" xml:space="preserve">
+    <value>Yipiii! Thank you.</value>
+  </data>
+  <data name="QC_TiaWoods_MeetBilly" xml:space="preserve">
+    <value>Hello there. My dad sent you to me? ... ... grr ... Why are you doing this to me dad? ... grr ... You should know that you're the third that comes to get his reward -just this week-.</value>
+  </data>
+  <data name="QC_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>Where did you get this letter? Did you read it? ... Boy boy. This will get complicated for you. You'll now work for us.</value>
+  </data>
+  <data name="QC_TiaWoods_TalkToBillyAboutMilly" xml:space="preserve">
+    <value>You are accusing me of beating my younger sister? ... WHAT THE HELL IS YOUR PROBLEM? THIS IS NOT YOUR PROBLEM. ... Feel free to bother my mother and father with this. But please just go now and do your work.</value>
+  </data>
+  <data name="QC_TiaWoods_TheFamilyPortrait" xml:space="preserve">
+    <value>Nicely done. Thanks for the portrait! Your reward? ... hmph ... I guess I really have to give you something now. You can have this relic of mine, as I don't need it anymore.</value>
+  </data>
+  <data name="QC_TiaWoods_TheFireRitual" xml:space="preserve">
+    <value>You've done as I said? Very well. Listen boy. I warn you, don't do the ritual again.</value>
+  </data>
+  <data name="QC_TiaWoods_TheLostMap" xml:space="preserve">
+    <value>Thanks thanks thanks thanks! You've saved me! Have you met my mother before? She has a small camp in the far north east.</value>
+  </data>
+  <data name="QC_TiaWoods_TheNiceFather" xml:space="preserve">
+    <value>Awww. That's too kind of you for helping me out.</value>
+  </data>
+  <data name="QC_TiaWoods_TheNotSoNiceMother" xml:space="preserve">
+    <value>... It was moms order to let Billy beat me ... ?! :'(</value>
+  </data>
+  <data name="QC_TiaWoods_TheRouteOfDin" xml:space="preserve">
+    <value>Yes, yes. I'm Maja! My younger brothers sent you ..? I'm glad that they are are okay.</value>
+  </data>
+  <data name="QC_TiaWoods_TheSister" xml:space="preserve">
+    <value>Why, hello there! Waaaah... my brother sent you ..? o_o</value>
+  </data>
+  <data name="QC_TiaWoods_TheSkeletonHunt" xml:space="preserve">
+    <value>Hah! It seems dad has finally sent someone who could finish our work in the woods. Your reward shall be ... I've got more for you to do!</value>
+  </data>
+  <data name="QC_TiaWoods_TheSkeletonHuntContinues" xml:space="preserve">
+    <value>Nice nice. Good work I must say.</value>
+  </data>
+  <data name="QC_TiaWoods_ToxicPreparations" xml:space="preserve">
+    <value>Very well. This should do it. Ehehehe ...</value>
+  </data>
+  <data name="QD_HyruleRivers_GhostHunt" xml:space="preserve">
+    <value>Ghost Buster Karl told me I could become a Ghost Buster if I show him what I can do.</value>
+  </data>
+  <data name="QD_HyruleRivers_TheEvilGhost" xml:space="preserve">
+    <value>Ghost Buster Karl wants me to avenge his old pupil by killing the redish ghost. I can have a ghost necklace if I manage kill the ghost.</value>
+  </data>
+  <data name="QD_RouteOfDin_BlackKey" xml:space="preserve">
+    <value>The goron inside the hut will craft me a black key if I bring him what he needs.</value>
+  </data>
+  <data name="QD_RouteOfDin_ChickenFeed" xml:space="preserve">
+    <value>Maja wants me to buy her some Chicken Feed from the Travelling Salesman that recently arrived in Route of Din.</value>
+  </data>
+  <data name="QD_RouteOfDin_SecureTheChickens" xml:space="preserve">
+    <value>Maja in the Route of Din wants me to secure her chickens by securing the area.</value>
+  </data>
+  <data name="QD_RouteOfDin_TheCauseOfMadness" xml:space="preserve">
+    <value>The route of din is turning into a place of madness. I must figure out the cause of this change. I should return to Maja if I have any new information.</value>
+  </data>
+  <data name="QD_RouteOfDin_TheMadBrothers" xml:space="preserve">
+    <value>The goron inside the hut can't take it that his brothers have gone mad. Maybe I should help him out...</value>
+  </data>
+  <data name="QD_TiaWoods_BottlesForTheMedicine" xml:space="preserve">
+    <value>The strange old man wants me to find him 3 empty bottles. He said that the skeletons to the south may have some.</value>
+  </data>
+  <data name="QD_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>The yoyo child-doll has been heavily abused. It'll be required to replace some parts of it. Maybe I should fire up my Magical Bottle! 5x Fabric + 1x Red Dye should fix it. I wrote the crafting recipes into my Recipe List.</value>
+  </data>
+  <data name="QD_TiaWoods_CleanseTheTombs" xml:space="preserve">
+    <value>The older kid outside the Stone Tombs wants me to make the tombs a safer place.</value>
+  </data>
+  <data name="QD_TiaWoods_CleanseTheTombs_2" xml:space="preserve">
+    <value>The older kid outside the Stone Tombs wants me to make the tombs a safer place again. This time I should hunt the female demons.</value>
+  </data>
+  <data name="QD_TiaWoods_CleanseTheTombs_3" xml:space="preserve">
+    <value>The older kid outside the Stone Tombs wants me to attack the evil at its roots. The demon master must die.</value>
+  </data>
+  <data name="QD_TiaWoods_ClearTheFields" xml:space="preserve">
+    <value>Boy Billy wants me to clear the fields to the west of him.</value>
+  </data>
+  <data name="QD_TiaWoods_FreshLeaves" xml:space="preserve">
+    <value>The strange old man wants me to bring him 5 fresh leaves for his medicine. They can be found just north of him.</value>
+  </data>
+  <data name="QD_TiaWoods_GhostMushrooms" xml:space="preserve">
+    <value>The old woman in the north-east of the Tia Woods wants me to bring her 4 Ghost Mushrooms. She indicated that I might want to visit the Hyrule Rivers to the east of the woods.</value>
+  </data>
+  <data name="QD_TiaWoods_HungryKid" xml:space="preserve">
+    <value>The younger kid outside the Stone Tombs wants me to bring him some fish. He's hungry!</value>
+  </data>
+  <data name="QD_TiaWoods_MeetBilly" xml:space="preserve">
+    <value>The old man told me that I'd have to meet his son Billy if I want a reward for my help. He thinks that Billy can be found somewhere to the south.</value>
+  </data>
+  <data name="QD_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>I should deliver the unsealed letter to this so called mother. Maybe she got something to say regarding its very strange content. The skeletons are supposed to follow the orders of Billy?!</value>
+  </data>
+  <data name="QD_TiaWoods_TalkToBillyAboutMilly" xml:space="preserve">
+    <value>Billy seems to beating his younger sister. I really should speak with him.</value>
+  </data>
+  <data name="QD_TiaWoods_TheFamilyPortrait" xml:space="preserve">
+    <value>Billy wants me to bring him the portrait of his father. It's somewhere in the Tombs of his family. I can find the tombs in the south east of the Tia Woods.</value>
+  </data>
+  <data name="QD_TiaWoods_TheFireRitual" xml:space="preserve">
+    <value>The old witch in the north east of the Tia Woods wants me to perform the fire ritual at the ritual place somewhere in the south west of the Tia Woods. To perform the ritual I must simply lit the fires in the right pattern.</value>
+  </data>
+  <data name="QD_TiaWoods_TheLostMap" xml:space="preserve">
+    <value>Milly, the sister of Billy, wants me to bring her the secret-map of the family tombs. She said that the map would be somewhere in the woods north-east of her, guarded by razor blades.</value>
+  </data>
+  <data name="QD_TiaWoods_TheNiceFather" xml:space="preserve">
+    <value>The father of Milly assured me that he's going to talk with Billy about Milly. I better bring Milly the good news.</value>
+  </data>
+  <data name="QD_TiaWoods_TheNotSoNiceMother" xml:space="preserve">
+    <value>I've spoken with Milly's mother about Billy beating her. I should really talk with Milly about all this.</value>
+  </data>
+  <data name="QD_TiaWoods_TheRouteOfDin" xml:space="preserve">
+    <value>The boys at the stone tombs in the Tia Woods want me to travel to the Route of Din to meet their older sister Maja. The entrance to the Route of Din can be found in the north west of the Tia Woods.</value>
+  </data>
+  <data name="QD_TiaWoods_TheSister" xml:space="preserve">
+    <value>Billy wants me to speak with his sister. She can be found somewhere to the south of him.</value>
+  </data>
+  <data name="QD_TiaWoods_TheSkeletonHunt" xml:space="preserve">
+    <value>Billy wants me to revenge his family by hunting the Skeletons in the Tia Woods.</value>
+  </data>
+  <data name="QD_TiaWoods_TheSkeletonHuntContinues" xml:space="preserve">
+    <value>Billy requires my help once more! This time I should bring him 25 Skeleton Bones and slay some of those red skeletons.</value>
+  </data>
+  <data name="QD_TiaWoods_ToxicPreparations" xml:space="preserve">
+    <value>The old woman in the north-eastern parts of the Tia Woods wants me to bring her Keese Tooths and Wings.</value>
+  </data>
+  <data name="QNC_HyruleRivers_GhostHunt" xml:space="preserve">
+    <value>Do ghosts scare you?</value>
+  </data>
+  <data name="QNC_HyruleRivers_TheEvilGhost" xml:space="preserve">
+    <value>Slay the red Ghost King ..! And try to not get eaten alive.</value>
+  </data>
+  <data name="QNC_RouteOfDin_BlackKey" xml:space="preserve">
+    <value>Still waiting.. for the required materials. Be quick about it! The hunger is eating me up alive.</value>
+  </data>
+  <data name="QNC_RouteOfDin_ChickenFeed" xml:space="preserve">
+    <value>You don't want my chickens to hunger, do you?</value>
+  </data>
+  <data name="QNC_RouteOfDin_SecureTheChickens" xml:space="preserve">
+    <value>You must save my poor chickens!</value>
+  </data>
+  <data name="QNC_RouteOfDin_TheCauseOfMadness" xml:space="preserve">
+    <value>Every day more of my chickens get mad .. -sobs-</value>
+  </data>
+  <data name="QNC_RouteOfDin_TheMadBrothers" xml:space="preserve">
+    <value>Oh, oh. Their sounds ... why ... please help me ..!</value>
+  </data>
+  <data name="QNC_TiaWoods_BottlesForTheMedicine" xml:space="preserve">
+    <value>I really need those bottles before I can make my medicine. Hurry!</value>
+  </data>
+  <data name="QNC_TiaWoods_CleanseTheTombs" xml:space="preserve">
+    <value>Don't be too shy to say that the tombs scare you. You don't have to go inside ... just stay here with us.</value>
+  </data>
+  <data name="QNC_TiaWoods_CleanseTheTombs_2" xml:space="preserve">
+    <value>They'll try to seduce you. Watch out.</value>
+  </data>
+  <data name="QNC_TiaWoods_CleanseTheTombs_3" xml:space="preserve">
+    <value>You MUST help us. Please. If we don't stop the evil now it will spread over all Tia Woods.</value>
+  </data>
+  <data name="QNC_TiaWoods_ClearTheFields" xml:space="preserve">
+    <value>Why have you not completed your quest yet? Scared ... hehe ... ?!</value>
+  </data>
+  <data name="QNC_TiaWoods_FreshLeaves" xml:space="preserve">
+    <value>Hurry! Bring me the leaves. There are some north-west of here.</value>
+  </data>
+  <data name="QNC_TiaWoods_GhostMushrooms" xml:space="preserve">
+    <value>Mushrooms from Ghosts. I need!</value>
+  </data>
+  <data name="QNC_TiaWoods_HungryKid" xml:space="preserve">
+    <value>Huuuuuuuuuuuuuuungry. Me want fish! FISH.</value>
+  </data>
+  <data name="QNC_TiaWoods_TheFamilyPortrait" xml:space="preserve">
+    <value>Get me this portrait at all costs.</value>
+  </data>
+  <data name="QNC_TiaWoods_TheFireRitual" xml:space="preserve">
+    <value>What are you waiting for? Don't just stand there.</value>
+  </data>
+  <data name="QNC_TiaWoods_TheLostMap" xml:space="preserve">
+    <value>Pleeeeeeeeeeeeeease help me to find the map! Or my brother will ...</value>
+  </data>
+  <data name="QNC_TiaWoods_TheSkeletonHunt" xml:space="preserve">
+    <value>What's taking so long? Come on try harder! Do it for your friend Billy! Or the reward, THE reward!</value>
+  </data>
+  <data name="QNC_TiaWoods_TheSkeletonHuntContinues" xml:space="preserve">
+    <value>Scared of the Red Skeletons? Muahahah aa... !</value>
+  </data>
+  <data name="QNC_TiaWoods_ToxicPreparations" xml:space="preserve">
+    <value>What are you waiting for? Hunt those bats for their wings and tooths!</value>
+  </data>
+  <data name="QN_HyruleRivers_GhostHunt" xml:space="preserve">
+    <value>The Ghost Hunt</value>
+  </data>
+  <data name="QN_HyruleRivers_TheEvilGhost" xml:space="preserve">
+    <value>The Evil Ghost</value>
+  </data>
+  <data name="QN_RouteOfDin_BlackKey" xml:space="preserve">
+    <value>Black Key Craft</value>
+  </data>
+  <data name="QN_RouteOfDin_ChickenFeed" xml:space="preserve">
+    <value>Chicken Feed</value>
+  </data>
+  <data name="QN_RouteOfDin_SecureTheChickens" xml:space="preserve">
+    <value>Secure The Chickens</value>
+  </data>
+  <data name="QN_RouteOfDin_TheCauseOfMadness" xml:space="preserve">
+    <value>The Cause of Madness</value>
+  </data>
+  <data name="QN_RouteOfDin_TheMadBrothers" xml:space="preserve">
+    <value>The Mad Brothers</value>
+  </data>
+  <data name="QN_StoneTombs_Wanted_Skeletons" xml:space="preserve">
+    <value>Wanted! Green Skeletons</value>
+  </data>
+  <data name="QN_TiaWoods_BottlesForTheMedicine" xml:space="preserve">
+    <value>Bottles for the Medicine</value>
+  </data>
+  <data name="QN_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>The Broken Yoyo Doll</value>
+  </data>
+  <data name="QN_TiaWoods_CleanseTheTombs" xml:space="preserve">
+    <value>The Tombs</value>
+  </data>
+  <data name="QN_TiaWoods_CleanseTheTombs_2" xml:space="preserve">
+    <value>The Tombs - Part 2</value>
+  </data>
+  <data name="QN_TiaWoods_CleanseTheTombs_3" xml:space="preserve">
+    <value>The Tombs - Part 3</value>
+  </data>
+  <data name="QN_TiaWoods_ClearTheFields" xml:space="preserve">
+    <value>Clear The Fields</value>
+  </data>
+  <data name="QN_TiaWoods_FreshLeaves" xml:space="preserve">
+    <value>Fresh Leaves</value>
+  </data>
+  <data name="QN_TiaWoods_GhostMushrooms" xml:space="preserve">
+    <value>Ghost Mushrooms</value>
+  </data>
+  <data name="QN_TiaWoods_HungryKid" xml:space="preserve">
+    <value>Hungry Fish Kid</value>
+  </data>
+  <data name="QN_TiaWoods_MeetBilly" xml:space="preserve">
+    <value>Meet Billy</value>
+  </data>
+  <data name="QN_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>Murder Letter</value>
+  </data>
+  <data name="QN_TiaWoods_TalkToBillyAboutMilly" xml:space="preserve">
+    <value>Talk to Billy about Milly</value>
+  </data>
+  <data name="QN_TiaWoods_TheFamilyPortrait" xml:space="preserve">
+    <value>The Family Portrait</value>
+  </data>
+  <data name="QN_TiaWoods_TheFireRitual" xml:space="preserve">
+    <value>The Fire Ritual</value>
+  </data>
+  <data name="QN_TiaWoods_TheLostMap" xml:space="preserve">
+    <value>The Lost Map</value>
+  </data>
+  <data name="QN_TiaWoods_TheNiceFather" xml:space="preserve">
+    <value>The Nice Father</value>
+  </data>
+  <data name="QN_TiaWoods_TheNotSoNiceMother" xml:space="preserve">
+    <value>The Not So Nice Mother</value>
+  </data>
+  <data name="QN_TiaWoods_TheRouteOfDin" xml:space="preserve">
+    <value>The Route of Din</value>
+  </data>
+  <data name="QN_TiaWoods_TheSister" xml:space="preserve">
+    <value>The Sister</value>
+  </data>
+  <data name="QN_TiaWoods_TheSkeletonHunt" xml:space="preserve">
+    <value>The Skeleton Hunt</value>
+  </data>
+  <data name="QN_TiaWoods_TheSkeletonHuntContinues" xml:space="preserve">
+    <value>The Skeleton Hunt Continues</value>
+  </data>
+  <data name="QN_TiaWoods_ToxicPreparations" xml:space="preserve">
+    <value>Toxic Preparations</value>
+  </data>
+  <data name="QS_HyruleRivers_GhostHunt" xml:space="preserve">
+    <value>Hey you! Come here and listen! I've just lost my pupil to one of those ghosts. I'll make you my new student if you show me what you can do. For starters simply kill 12 ghosts. Hehehe. Some day you may become a great ghost buster - just like me.</value>
+  </data>
+  <data name="QS_HyruleRivers_TheEvilGhost" xml:space="preserve">
+    <value>My last pupil was killed by the Ghost King that lives deep in the woods of Hyrule Rivers. Now go and avenge him. If you succeed then you can have his old ghost necklace.</value>
+  </data>
+  <data name="QS_RouteOfDin_BlackKey" xml:space="preserve">
+    <value>Have you seen the black block? We've sealed the pathway beyond. If you bring me 1x Goron Steel and 3x Goron Croisants, then I can craft you a key to open it. Especially the Croisants are important! They should be around here somewhere..</value>
+  </data>
+  <data name="QS_RouteOfDin_ChickenFeed" xml:space="preserve">
+    <value>Wait, a sec. The travelling salesman has recently arrived! Could you get me some Chicken Feed? Please!</value>
+  </data>
+  <data name="QS_RouteOfDin_SecureTheChickens" xml:space="preserve">
+    <value>The evil Blood Keeses that have appeared last month eat my poor little baby chickens! And some of the older chickens turned -all- mad after they have been bitten. We must figure out this mystery! Bring me a few feathers of the mad chickens, and on the way slay some of those Bloody Keeses!</value>
+  </data>
+  <data name="QS_RouteOfDin_TheCauseOfMadness" xml:space="preserve">
+    <value>These lands are changing and you must stop it ... before everyone turns completely mad. You seem like a strong fighter. Please figure out what is going wrong.</value>
+  </data>
+  <data name="QS_RouteOfDin_TheMadBrothers" xml:space="preserve">
+    <value>Oh dear, my beloved brothers have gone mad! I'm so sorry that someone innocent like you has to see this. But I can't take this anymore. Please ...</value>
+  </data>
+  <data name="QS_StoneTombs_Wanted_Skeletons" xml:space="preserve">
+    <value>WANTED: Any adventurer with courage to slay atleast 10 green skeletons. </value>
+  </data>
+  <data name="QS_TiaWoods_BottlesForTheMedicine" xml:space="preserve">
+    <value>What..? You want your answers now? Boy, first - I've forgotten my medicine bottles at home. And I really need them. Bring me some from the Skeletons to the south.</value>
+  </data>
+  <data name="QS_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>As you inspect the doll you can clearly see that it is broken. If one could just repair it...  5x Fabric + 1x Red Dye should do it. To create Red Dye I will need 1x Small Empty Bottle + 2x Skeleton Bone Powder + 5x Red Potion.</value>
+  </data>
+  <data name="QS_TiaWoods_CleanseTheTombs" xml:space="preserve">
+    <value>Hey you! How did you get here? I think some strange boy sent us here ... I really can't remember. Do you see the entrance next to me? That's the entrance to the Family Stone Tombs. Just recently it was overrun by monsters. You look rather strong. Can't you help us out and make the place a bit safer? Those green skeletons scare us ...</value>
+  </data>
+  <data name="QS_TiaWoods_CleanseTheTombs_2" xml:space="preserve">
+    <value>An even greater evil than some skeletons has infested the tombs. And my feeling tells me that they will leave the tombs soon. Just don't tell my younger brother~. He'd be scared to death! All I can tell you is that they are evil, eat fish and are female! Get them!!</value>
+  </data>
+  <data name="QS_TiaWoods_CleanseTheTombs_3" xml:space="preserve">
+    <value>I have one last wish from you. Attack the evil at its roots by slaying the master demon. You shall have my Hyrule Boots if you succeed.</value>
+  </data>
+  <data name="QS_TiaWoods_ClearTheFields" xml:space="preserve">
+    <value>Hey you. Do you want to work for me? Of course you do. I'm Billy. Everyone wants to help me. Anyway I need you to do some work for me. I need the fields to the west to be cleared of those skeletons and skeleton heads. I may give you a reward. Just go! Or are you too scared?</value>
+  </data>
+  <data name="QS_TiaWoods_FreshLeaves" xml:space="preserve">
+    <value>Why, hello there too. You are asking what is going on? Well.. I won't tell you... until you bring me 5 fresh leaves for my daily medicine! There should be some just north of here. Would you be so nice?</value>
+  </data>
+  <data name="QS_TiaWoods_GhostMushrooms" xml:space="preserve">
+    <value>Hello hello! Do you hear me? Can't you just simply bring me 4 Ghost Mushrooms? Yes, yes. You should be able to find some at the Hyrule Rivers. *coughs* No need to get wet just yet. Simply cross the bridge in the far south east. *coughs*</value>
+  </data>
+  <data name="QS_TiaWoods_HungryKid" xml:space="preserve">
+    <value>Hey you. Do you have some food for me? I mean.. some fish. I want fish!  Any fish! Come please bring me some. Don't you smell the fish from the tombs?</value>
+  </data>
+  <data name="QS_TiaWoods_MeetBilly" xml:space="preserve">
+    <value>About your questions... I actually... don't know. Sorry. But thanks anyway. Go talk to my son, Billy and he will give you a reward for your work. He should be somewhere to the South.</value>
+  </data>
+  <data name="QS_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>You break the seal of the letter and read: ............... Dear mother, I hope this letter reaches you quickly. Those skeletons are just too stupid to follow orders. I've sent two more 'adventurers' to the family tombs. The demon master will be -very- happy with us. Now back to the case with my little sister Milly. Have you managed to create the potion for her? I'd help you but I'm just too busy. Your Billy &lt;3.</value>
+  </data>
+  <data name="QS_TiaWoods_TalkToBillyAboutMilly" xml:space="preserve">
+    <value>Now that you've brought me the map my brother won't hurt me. Billy is such an acerb brother. Why?? :'((</value>
+  </data>
+  <data name="QS_TiaWoods_TheFamilyPortrait" xml:space="preserve">
+    <value>The tombs of my family are hidden in the south east of Tia Woods. Go there and find me the portrait of my father. If you do that then I'll forget about our little quarrel.</value>
+  </data>
+  <data name="QS_TiaWoods_TheFireRitual" xml:space="preserve">
+    <value>Boy boy. I now want you to find the ritual place to the far south west. Perform the fire ritual by simply litting the fires in the right pattern.  Do what I say or you'll face the consequences.</value>
+  </data>
+  <data name="QS_TiaWoods_TheLostMap" xml:space="preserve">
+    <value>Hello stranger! Nice to meet you! I'm Milly, the future princess of these lands. You've helped my dear brother Billy? Oh dear ... my brother ... He has been acting strangely lately. And now he wants the secret-map of the family tombs back! He'll hurt me again if I don't bring the map back. :'( The map is somewhere in the woods, guarded by those razor blades. Please, please bring it to me!</value>
+  </data>
+  <data name="QS_TiaWoods_TheNiceFather" xml:space="preserve">
+    <value>Hello. Who's there? Oh, you the young fighter. Your deeds already reached my kind ears. What do you say? Billy seems to beat poor Milly? Hmm ... You must know that we must train her to endure all physical and mental stress. Anyway, I'm going to talk with Billy about Milly. Beating her is indeed too much.</value>
+  </data>
+  <data name="QS_TiaWoods_TheNotSoNiceMother" xml:space="preserve">
+    <value>Hello hello! You must speak louder or I won't hear you! ... Yes. I am the mother of Milly. And it's known to me that Billy beats Milly. It was my order after all. Be gone now.</value>
+  </data>
+  <data name="QS_TiaWoods_TheRouteOfDin" xml:space="preserve">
+    <value>Phew, thanks again for your help. I fear that our older sister Maja is in trouble too! She has been protecting our chickens. You may find her near the Route of Din in the far north west. Hey, take this key. It will allow you to leave this island quickly! Please, help our sister!</value>
+  </data>
+  <data name="QS_TiaWoods_TheSister" xml:space="preserve">
+    <value>Hey, don't just run off. If you havn't spoken to my sister yet.. You will help her too. She should be hiding somewhere to the south.</value>
+  </data>
+  <data name="QS_TiaWoods_TheSkeletonHunt" xml:space="preserve">
+    <value>My family owns large parts of the Tia Woods. All was great until the skeletons came and most of our workers fled. Those bastards! Your next quest shall be to avenge me and my family. Hunt those skeletons like you've never hunted something else before! Your reward is near ..! Oh, and before I forget it ... if you see my lil' sister - tell her to HURRY.</value>
+  </data>
+  <data name="QS_TiaWoods_TheSkeletonHuntContinues" xml:space="preserve">
+    <value>Hey again. More work before we're finished. First, you must bring me at least 25 Skeleton Bones. I need them to make Skeleton Dust. Oh, and slay some Red Skeletons on your way, alright?</value>
+  </data>
+  <data name="QS_TiaWoods_ToxicPreparations" xml:space="preserve">
+    <value>Hmpf.. I've indeed ran out of Keese Wings and Tooths. Go out and hunt some of those bats for me.</value>
+  </data>
+  <data name="QuestGoalDesc_GetItem" xml:space="preserve">
+    <value>Get {0}! Got {1} of 1.</value>
+  </data>
+  <data name="QuestGoalDesc_GetItems" xml:space="preserve">
+    <value>Get {0}s! Got {1} of {2}.</value>
+  </data>
+  <data name="QuestGoalDesc_KillEnemies" xml:space="preserve">
+    <value>Hunt {0}s! Killed {1} of {2}.</value>
+  </data>
+  <data name="QuestGoalDesc_KillEnemy" xml:space="preserve">
+    <value>Hunt {0}! Killed {1} of 1.</value>
+  </data>
+</root>

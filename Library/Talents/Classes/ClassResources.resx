@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CN_Apprentice" xml:space="preserve">
+    <value>Apprentice</value>
+  </data>
+  <data name="CN_ApprenticeOfWinds" xml:space="preserve">
+    <value>Apprentice of Winds</value>
+  </data>
+  <data name="CN_Archer" xml:space="preserve">
+    <value>Archer</value>
+  </data>
+  <data name="CN_Assassin" xml:space="preserve">
+    <value>Assassin</value>
+  </data>
+  <data name="CN_Assassin_HC" xml:space="preserve">
+    <value>Blood Assassin</value>
+  </data>
+  <data name="CN_BalancedWarrior" xml:space="preserve">
+    <value>Bladebard</value>
+  </data>
+  <data name="CN_BalancedWarrior_HC" xml:space="preserve">
+    <value>Evil Bladebard</value>
+  </data>
+  <data name="CN_EnragedAssassin" xml:space="preserve">
+    <value>Goron Assassin</value>
+  </data>
+  <data name="CN_EnragedMeleeSharpshooter" xml:space="preserve">
+    <value>Goron Hunter</value>
+  </data>
+  <data name="CN_EnragedSharpshooter" xml:space="preserve">
+    <value>Hunter</value>
+  </data>
+  <data name="CN_EnragedSharpshooter_HC" xml:space="preserve">
+    <value>Hyrule Ranger</value>
+  </data>
+  <data name="CN_Hexblade" xml:space="preserve">
+    <value>Hexblade</value>
+  </data>
+  <data name="CN_Hexblade_HC" xml:space="preserve">
+    <value>Blood-Hexblade</value>
+  </data>
+  <data name="CN_HexSpellthief" xml:space="preserve">
+    <value>Hexspellthief</value>
+  </data>
+  <data name="CN_HexSpellthief_HC" xml:space="preserve">
+    <value>Blood-Hexspellthief</value>
+  </data>
+  <data name="CN_Jedi" xml:space="preserve">
+    <value>Jedi</value>
+  </data>
+  <data name="CN_Knight" xml:space="preserve">
+    <value>Knight</value>
+  </data>
+  <data name="CN_Knight_HC" xml:space="preserve">
+    <value>Warblade</value>
+  </data>
+  <data name="CN_Mage" xml:space="preserve">
+    <value>Mage</value>
+  </data>
+  <data name="CN_MageOfWinds" xml:space="preserve">
+    <value>Mage of Winds</value>
+  </data>
+  <data name="CN_MasterSharpshooter" xml:space="preserve">
+    <value>Master Sharpshooter</value>
+  </data>
+  <data name="CN_MasterSharpshooter_HC" xml:space="preserve">
+    <value>Darkshooter</value>
+  </data>
+  <data name="CN_MasterSwordsman" xml:space="preserve">
+    <value>Master Swordsman</value>
+  </data>
+  <data name="CN_MasterSwordsman_HC" xml:space="preserve">
+    <value>Guard of Hyrule</value>
+  </data>
+  <data name="CN_MeleeRanger" xml:space="preserve">
+    <value>Scout</value>
+  </data>
+  <data name="CN_MeleeRanger_HC" xml:space="preserve">
+    <value>Bladescout</value>
+  </data>
+  <data name="CN_Novice" xml:space="preserve">
+    <value>Novice</value>
+  </data>
+  <data name="CN_RangedFighter" xml:space="preserve">
+    <value>Hyrule Scout</value>
+  </data>
+  <data name="CN_RangedFighter_HC" xml:space="preserve">
+    <value>Scoutblade</value>
+  </data>
+  <data name="CN_Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="CN_Ranger_HC" xml:space="preserve">
+    <value>Stalker</value>
+  </data>
+  <data name="CN_Rogue" xml:space="preserve">
+    <value>Rogue</value>
+  </data>
+  <data name="CN_Sharpshooter" xml:space="preserve">
+    <value>Sharpshooter</value>
+  </data>
+  <data name="CN_Spellthief" xml:space="preserve">
+    <value>Spellthief</value>
+  </data>
+  <data name="CN_Spellthief_HC" xml:space="preserve">
+    <value>Blood-Spellthief</value>
+  </data>
+  <data name="CN_SwiftKnight" xml:space="preserve">
+    <value>Warknight</value>
+  </data>
+  <data name="CN_SwiftKnight_HC" xml:space="preserve">
+    <value>Blood-Knight</value>
+  </data>
+  <data name="CN_SwiftMasterAssassin" xml:space="preserve">
+    <value>Warmaster Assassin</value>
+  </data>
+  <data name="CN_SwiftMasterSwordsman" xml:space="preserve">
+    <value>Warmaster Swordsman</value>
+  </data>
+  <data name="CN_SwiftWarrior" xml:space="preserve">
+    <value>Swashbuckler</value>
+  </data>
+  <data name="CN_SwiftWarrior_HC" xml:space="preserve">
+    <value>Bloodbuckler</value>
+  </data>
+  <data name="CN_Swordsman" xml:space="preserve">
+    <value>Swordsman</value>
+  </data>
+  <data name="CN_Warlock" xml:space="preserve">
+    <value>Warlock</value>
+  </data>
+  <data name="CN_Warlock_HC" xml:space="preserve">
+    <value>Dread Warlock</value>
+  </data>
+  <data name="CN_Warrior" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
+  <data name="CN_Wizard" xml:space="preserve">
+    <value>Wizard</value>
+  </data>
+  <data name="CN_WizardOfWinds" xml:space="preserve">
+    <value>Wizard of Winds</value>
+  </data>
+  <data name="CN_WizardOfWinds_HC" xml:space="preserve">
+    <value>Arch-Wizard of Winds</value>
+  </data>
+  <data name="CN_Wizard_HC" xml:space="preserve">
+    <value>Arch-Wizard</value>
+  </data>
+</root>

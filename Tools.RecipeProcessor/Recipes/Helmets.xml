@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Head_ScaleHat">
+    
+    <Requires>
+      <RecipeItem name="Misc_Scale_Snake_Green" amount="50" />
+      <RecipeItem name="Misc_Bottle_GoronWater" amount="5" />
+      <RecipeItem name="Misc_Keese_Tooth" amount="20" />
+      <RecipeItem name="Misc_ChickenFeed" amount="10" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Head_ScaleHat" amount="1" />
+    </Results>
+    
+  </Recipe>
+  
+</Recipes> 

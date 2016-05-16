@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Shield_DarkMatter">
+    <Requires>
+      <RecipeItem name="Shield_Prototype_Dark" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Crystal_DarkMatter" amount="20" />
+      <RecipeItem name="Misc_Iron" amount="5" />
+      <RecipeItem name="Misc_Steel_Goron" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Shield_DarkMatter" amount="1" applyAffixesOf="Shield_Prototype_Dark" />
+    </Results>
+  </Recipe>
+
+</Recipes>

@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:awconv="clr-namespace:Atom.Wpf.Converters;assembly=Atom.Wpf">
+
+    <!-- ListBox Style -->
+    <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Margin" Value="2"/>
+
+        <Setter Property="ListBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock HorizontalAlignment="Center">                        
+                        <!-- Using a converter we strip away the cluttering namespace information. -->
+                        <TextBlock.Text>
+                            <Binding Path="">
+                                <Binding.Converter>
+                                    <awconv:ObjectToSimpleTypeStringConverter />
+                                </Binding.Converter>
+                             </Binding>
+                        </TextBlock.Text>                          
+                    </TextBlock>
+                 </DataTemplate>
+            </Setter.Value>
+        </Setter>        
+    </Style>
+
+</ResourceDictionary>

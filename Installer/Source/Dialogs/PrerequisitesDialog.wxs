@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<?include "../Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog Id="PrerequisitesDialog" Width="370" Height="270" Title="[ProductName]">
+        
+        <!--
+          Banner at the top of the dialog
+        -->
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" FixedSize="yes" Text="banner.bmp" />
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="2" />
+        <Control Id="BottomLine" Type="Line" X="4" Y="234" Width="370" Height="2" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>[TitleFont]Required System Components</Text>
+        </Control>
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>The following system components are required by this software</Text>
+        </Control>
+
+        <!--
+          DirectX logo, description and red X or green check depending on whether it's installed
+        -->
+        <Control
+          Id="directxLogoBitmap" Type="Bitmap" FixedSize="yes" TabSkip="no"
+          X="21" Y="62" Width="48" Height="48"
+          Text="directx64.bmp"
+        />
+        <Control
+          Id="redDirectxCheck" Type="Icon" FixedSize="yes" TabSkip="no"
+          X="74" Y="62" Width="12" Height="12"
+          Text="redx16.ico"
+        >
+          <Condition Action="hide">Is_DirectX_Xna_4.0_Installed = "1"</Condition>
+          <Condition Action="show">Is_DirectX_Xna_4.0_Installed &lt;&gt; "1"</Condition>
+        </Control>
+        <Control
+          Id="greenDirectxCheck" Type="Icon" FixedSize="yes" TabSkip="no" 
+          X="74" Y="62" Width="12" Height="12"
+          Text="greencheck16.ico"
+        >
+          <Condition Action="hide">Is_DirectX_Xna_4.0_Installed &lt;&gt; "1"</Condition>
+          <Condition Action="show">Is_DirectX_Xna_4.0_Installed = "1"</Condition>
+        </Control>
+        <Control
+          Id="directxLabel" Type="Text"
+          X="90" Y="62" Height="10" Width="170"
+          Text="[TitleFont]Microsoft DirectX 9.0c February 2010"
+        />
+        <Control
+          Id="directxDescription" Type="Text"
+          X="74" Y="77" Height="20" Width="284" 
+          Text="DirectX provides applications with high speed access to game related hardware installed in the system."
+        />
+
+        <!--
+          Xna logo, description and red X or green check depending on whether it's installed
+        -->
+        <Control
+          Id="xnaLogoBitmap" Type="Bitmap" FixedSize="yes" TabSkip="no" 
+          X="21" Y="126" Width="48" Height="48"
+          Text="xna64.bmp"
+        />
+        <Control
+          Id="redXnaCheck" Type="Icon" FixedSize="yes" TabSkip="no" 
+          X="74" Y="126" Width="12" Height="12"
+          Text="redx16.ico"
+        >
+          <Condition Action="hide">Is_Xna_4.0_Installed = "1"</Condition>
+          <Condition Action="show">Is_Xna_4.0_Installed &lt;&gt; "1"</Condition>
+        </Control>
+        <Control
+          Id="greenXnaCheck" Type="Icon" FixedSize="yes" TabSkip="no" 
+          X="74" Y="126" Width="12" Height="12"
+          Text="greencheck16.ico"
+        >
+          <Condition Action="hide">Is_Xna_4.0_Installed &lt;&gt; "1"</Condition>
+          <Condition Action="show">Is_Xna_4.0_Installed = "1"</Condition>
+        </Control>
+        <Control
+          Id="xnaLabel" Type="Text"
+          X="90" Y="126" Height="10" Width="176"
+          Text="[TitleFont]Microsoft XNA Framework 4.0"
+        />
+        <Control
+          Id="xnaDescription" Type="Text"
+          X="74" Y="141" Height="20" Width="284"
+          Text="The XNA Framework allows .NET applications to make use of DirectX. It does not use any memory or processing power in the background."
+        />
+
+        <!--
+          Line telling the user what the installer will do if he continues
+        -->
+        <?if $(var.InstallPrerequisitesIfRequired) != "1" ?>
+          <Control Id="installFirstRequiredLabel" Type="Text" Height="20" Width="325" X="21" Y="206" Text="{&amp;DlgFont8Red}One or more required components are missing. Please install them first.">
+            <Condition Action="show">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Condition>
+            <Condition Action="hide">
+              (Is_DirectX_Xna_4.0_Installed = "1") AND
+              (Is_Xna_4.0_Installed = "1")
+            </Condition>
+          </Control>
+        <?endif ?>
+        <?if $(var.InstallPrerequisitesIfRequired) = "1" ?>
+          <Control Id="installWillCommenceLabel" Type="Text" Height="10" Width="325" X="21" Y="206" Text="{&amp;DlgFont8Green}If you proceed, these components will be installed on your system as neccessary.">
+            <Condition Action="show">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Condition>
+            <Condition Action="hide">
+              (Is_DirectX_Xna_4.0_Installed = "1") AND
+              (Is_Xna_4.0_Installed = "1")
+            </Condition>
+          </Control>
+        <?endif ?>
+        <Control Id="installNotRequiredLabel" Type="Text" Height="10" Width="325" X="21" Y="206" Text="{&amp;DlgFont8Green}All of the required components are installed.">
+          <Condition Action="show">
+            (Is_DirectX_Xna_4.0_Installed = "1") AND
+            (Is_Xna_4.0_Installed = "1")
+          </Condition>
+          <Condition Action="hide">
+            (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+            (Is_Xna_4.0_Installed &lt;&gt; "1")
+          </Condition>
+        </Control>
+
+        <!--
+          Next button - shown when all required prerequisites are already installed
+        -->
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="[Button_Next]">
+          <Publish Event="NewDialog" Value="SelectFolderDialog">1</Publish>
+          <?if $(var.InstallPrerequisitesIfRequired) != "1" ?>
+            <Condition Action="disable">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Condition>
+            <Condition Action="enable">
+              (Is_DirectX_Xna_4.0_Installed = "1") AND
+              (Is_Xna_4.0_Installed = "1")
+            </Condition>
+          <?endif ?>
+          <?if $(var.InstallPrerequisitesIfRequired) = "1" ?>
+            <Condition Action="hide">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Condition>
+            <Condition Action="show">
+              (Is_DirectX_Xna_4.0_Installed = "1") AND
+              (Is_Xna_4.0_Installed = "1")
+            </Condition>
+          <?endif ?>
+        </Control>
+
+        <!--
+          Install button - shown when the installer is configured to install the prerequisites
+        -->
+        <?if $(var.InstallPrerequisitesIfRequired) = "1" ?>
+          <Control Id="Install" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="Install">
+            <Condition Action="hide">
+              (Is_DirectX_Xna_4.0_Installed = "1") AND
+              (Is_Xna_4.0_Installed = "1")
+            </Condition>
+            <Condition Action="show">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Condition>
+            <Publish Event="DoAction" Value="InstallXna">
+              (Is_DirectX_Xna_4.0_Installed &lt;&gt; "1") OR
+              (Is_Xna_4.0_Installed &lt;&gt; "1")
+            </Publish>
+            <Publish Event="NewDialog" Value="SelectFolderDialog">1</Publish>
+          </Control>
+        <?endif ?> 
+
+        <!--
+          Cancel button - aborts the installation
+        -->
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="[Button_Cancel]">
+          <Publish Event="SpawnDialog" Value="CancelDialog">1</Publish>
+        </Control>
+
+        <!--
+          Back button - goes back to the previous page
+        -->
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="[Button_Back]">
+          <Publish Event="NewDialog" Value="ViewLicenseAgreementDialog">1</Publish>
+        </Control>
+
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>

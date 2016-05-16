@@ -1,0 +1,263 @@
+131
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Back_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Back_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_ChangeProfile_Left.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_ChangeProfile_Right.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_CharacterWindow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_CubeTransform_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_CubeTransform_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_CubeTransformRubies_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_CubeTransformRubies_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_EquipmentWindow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Inventory.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Invest_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Invest_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Latern.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_MagicBottle.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_New_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_New_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_QuestLog.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Save_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_Save_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_TalentScroll.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_ToggleMusic_Default.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Button_ToggleMusic_Selected.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Dialog_Box.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Dialog_NextPageArrow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Dialog_PressSpace.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Belt.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Boots.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Chest.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Cloak.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Gloves.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Head.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Necklace.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Ranged.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Relic.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Ring.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_ShieldHand.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Staff.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_Trinket.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\EquipmentCell_WeaponHand.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Big1of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Big2of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Big3of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Big4of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Small0of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Small1of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Small2of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Small3of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Heart_Small4of4.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Fire.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Light.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Nature.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Prismatic.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Shadow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\InventoryCell_Gem_Water.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\ManaBar.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Note.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Note_Down.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Note_Left.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Note_Right.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Note_Up.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Ocarina_Play_Box.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\RubyUI.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\RubyUI2.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\SmallSkeletonHead.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\StatusWindow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Angel.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_AppliedImpactResearch.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ArrowShower.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_AttackMelee.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_AttackRanged.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Bash.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_BattleAwareness.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_BattleShout.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Bladestorm.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_CorrosiveFire.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_CotF.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_CounterAttack.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_CriticalBalance.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Dodge.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_DoubleAttack.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Empty.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Enrage.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Firebolt.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_FireBomb.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Firevortex.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Firewall.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Firewhirl.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Frenzy.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Frustration.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Furor.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_GftH.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_HandEyeCoordination.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ImpactTheory.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ImprovedBash.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ImprovedMultiShot.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_LightArrow.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_LuckyBastard.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_MagicalBalance.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_MagicTraining.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Meditation.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_MultiShot.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Pierce.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PiercingFire.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PoisonCloud.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PoisonedShot.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PoisonMastery.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PotionMastery.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_PushingAttack.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Pyromania.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_QuickHands.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_QuickStrike.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_RazorWinds.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Recover.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBlock.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker_1BP.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker_2BP.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker_3BP.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker_4BP.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldBreaker_5BP.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldMastery.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_ShieldWall.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_SmoothedEmblazonment.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Sprint.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_SwiftFightStyle.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_SwordMastery.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Vitality.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\Symbol_Whirlwind.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\UserInterface\TitleLogo.png
+Button_Back_Default
+Button_Back_Selected
+Button_ChangeProfile_Left
+Button_ChangeProfile_Right
+Button_CharacterWindow
+Button_CubeTransform_Default
+Button_CubeTransform_Selected
+Button_CubeTransformRubies_Default
+Button_CubeTransformRubies_Selected
+Button_EquipmentWindow
+Button_Inventory
+Button_Invest_Default
+Button_Invest_Selected
+Button_Latern
+Button_MagicBottle
+Button_New_Default
+Button_New_Selected
+Button_QuestLog
+Button_Save_Default
+Button_Save_Selected
+Button_TalentScroll
+Button_ToggleMusic_Default
+Button_ToggleMusic_Selected
+Dialog_Box
+Dialog_NextPageArrow
+Dialog_PressSpace
+EquipmentCell_Belt
+EquipmentCell_Boots
+EquipmentCell_Chest
+EquipmentCell_Cloak
+EquipmentCell_Gloves
+EquipmentCell_Head
+EquipmentCell_Necklace
+EquipmentCell_Ranged
+EquipmentCell_Relic
+EquipmentCell_Ring
+EquipmentCell_ShieldHand
+EquipmentCell_Staff
+EquipmentCell_Trinket
+EquipmentCell_WeaponHand
+Heart_Big1of4
+Heart_Big2of4
+Heart_Big3of4
+Heart_Big4of4
+Heart_Small0of4
+Heart_Small1of4
+Heart_Small2of4
+Heart_Small3of4
+Heart_Small4of4
+InventoryCell
+InventoryCell_Gem_Fire
+InventoryCell_Gem_Light
+InventoryCell_Gem_Nature
+InventoryCell_Gem_Prismatic
+InventoryCell_Gem_Shadow
+InventoryCell_Gem_Water
+ManaBar
+Ocarina_Note
+Ocarina_Note_Down
+Ocarina_Note_Left
+Ocarina_Note_Right
+Ocarina_Note_Up
+Ocarina_Play_Box
+RubyUI
+RubyUI2
+SmallSkeletonHead
+StatusWindow
+Symbol_Angel
+Symbol_AppliedImpactResearch
+Symbol_ArrowShower
+Symbol_AttackMelee
+Symbol_AttackRanged
+Symbol_Bash
+Symbol_BattleAwareness
+Symbol_BattleShout
+Symbol_Bladestorm
+Symbol_CorrosiveFire
+Symbol_CotF
+Symbol_CounterAttack
+Symbol_CriticalBalance
+Symbol_Dodge
+Symbol_DoubleAttack
+Symbol_Empty
+Symbol_Enrage
+Symbol_Firebolt
+Symbol_FireBomb
+Symbol_Firevortex
+Symbol_Firewall
+Symbol_Firewhirl
+Symbol_Frenzy
+Symbol_Frustration
+Symbol_Furor
+Symbol_GftH
+Symbol_HandEyeCoordination
+Symbol_ImpactTheory
+Symbol_ImprovedBash
+Symbol_ImprovedMultiShot
+Symbol_LightArrow
+Symbol_LuckyBastard
+Symbol_MagicalBalance
+Symbol_MagicTraining
+Symbol_Meditation
+Symbol_MultiShot
+Symbol_Pierce
+Symbol_PiercingFire
+Symbol_PoisonCloud
+Symbol_PoisonedShot
+Symbol_PoisonMastery
+Symbol_PotionMastery
+Symbol_PushingAttack
+Symbol_Pyromania
+Symbol_QuickHands
+Symbol_QuickStrike
+Symbol_RazorWinds
+Symbol_Recover
+Symbol_ShieldBlock
+Symbol_ShieldBreaker
+Symbol_ShieldBreaker_1BP
+Symbol_ShieldBreaker_2BP
+Symbol_ShieldBreaker_3BP
+Symbol_ShieldBreaker_4BP
+Symbol_ShieldBreaker_5BP
+Symbol_ShieldMastery
+Symbol_ShieldWall
+Symbol_SmoothedEmblazonment
+Symbol_Sprint
+Symbol_SwiftFightStyle
+Symbol_SwordMastery
+Symbol_Vitality
+Symbol_Whirlwind
+TitleLogo

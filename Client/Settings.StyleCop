@@ -1,0 +1,6 @@
+<StyleCopSettings Version="4.3">
+  <GlobalSettings>
+    <StringProperty Name="MergeSettingsFiles">Linked</StringProperty>
+    <StringProperty Name="LinkedSettingsFile">..\StyleSettings.StyleCop</StringProperty>
+  </GlobalSettings>
+</StyleCopSettings>

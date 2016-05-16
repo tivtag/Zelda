@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DataGridColumn_ChanceToDrop" xml:space="preserve">
+    <value>Chance To Drop</value>
+  </data>
+  <data name="DataGridColumn_ChanceToDropInPercent" xml:space="preserve">
+    <value>Chance To Drop in %</value>
+  </data>
+  <data name="DataGridColumn_ItemName" xml:space="preserve">
+    <value>Item Name</value>
+  </data>
+  <data name="DataGridColumn_MagicFindWorks" xml:space="preserve">
+    <value>MF Works</value>
+  </data>
+  <data name="DialogTitle_DrawStrategySelection" xml:space="preserve">
+    <value>Select the Draw Strategy to use.</value>
+  </data>
+  <data name="DialogTitle_EntityBehaviourSelection" xml:space="preserve">
+    <value>Select the Entity Behaviour to use.</value>
+  </data>
+  <data name="DialogTitle_SelectNpcFile" xml:space="preserve">
+    <value>Select the NPC definition file to open.</value>
+  </data>
+  <data name="Error_TheLootTableContainsInvalidItemX" xml:space="preserve">
+    <value>Error! The LootTable contains an invalid item '{0}'.</value>
+  </data>
+  <data name="Info_NameMustBeSet" xml:space="preserve">
+    <value>The name of the NPC must be set.</value>
+  </data>
+  <data name="Info_NoBehaviourSet" xml:space="preserve">
+    <value>~ No Behaviour Set ~</value>
+  </data>
+  <data name="Info_ResavedAllEntities" xml:space="preserve">
+    <value>All entities have been resaved.</value>
+  </data>
+  <data name="Info_SaveSuccessful" xml:space="preserve">
+    <value>Saving was successful.</value>
+  </data>
+  <data name="MenuHeader_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuHeader_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuHeader_NewEnemy" xml:space="preserve">
+    <value>Enemy</value>
+  </data>
+  <data name="MenuHeader_NewMerchant" xml:space="preserve">
+    <value>New Merchant</value>
+  </data>
+  <data name="MenuHeader_NewNpc" xml:space="preserve">
+    <value>Non Player Character (friendly)</value>
+  </data>
+  <data name="MenuHeader_NewPlant" xml:space="preserve">
+    <value>Plant</value>
+  </data>
+  <data name="MenuHeader_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="MenuHeader_ResaveAll" xml:space="preserve">
+    <value>Resave All</value>
+  </data>
+  <data name="MenuHeader_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MenuHeader_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="PropCate_Collision" xml:space="preserve">
+    <value>Collision</value>
+  </data>
+  <data name="PropCate_Identification" xml:space="preserve">
+    <value>Identification</value>
+  </data>
+  <data name="PropCate_Merchant" xml:space="preserve">
+    <value>Merchant</value>
+  </data>
+  <data name="PropCate_Movement" xml:space="preserve">
+    <value>Movement</value>
+  </data>
+  <data name="PropCate_Quests" xml:space="preserve">
+    <value>Quests</value>
+  </data>
+  <data name="PropCate_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="PropCate_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="PropCate_Talkable" xml:space="preserve">
+    <value>Talk</value>
+  </data>
+  <data name="PropCate_Vision" xml:space="preserve">
+    <value>Vision</value>
+  </data>
+  <data name="PropDesc_AggressionType" xml:space="preserve">
+    <value>States how the Enemy behaves towards the Player.</value>
+  </data>
+  <data name="PropDesc_Armor" xml:space="preserve">
+    <value>The base armor of the entity. Armor protects from physical damage.</value>
+  </data>
+  <data name="PropDesc_ArmorMitigation" xml:space="preserve">
+    <value>The mitigation the enemy has against physical attacks.</value>
+  </data>
+  <data name="PropDesc_CanBePushed" xml:space="preserve">
+    <value>States whether the Npc can be pushed around, by for example attacking.</value>
+  </data>
+  <data name="PropDesc_CanChangeFloor" xml:space="preserve">
+    <value>States whether the Npc can change from one Floor to another.</value>
+  </data>
+  <data name="PropDesc_CanSlide" xml:space="preserve">
+    <value>States whether the entity can slide around the edges of a tile.</value>
+  </data>
+  <data name="PropDesc_CanSwim" xml:space="preserve">
+    <value>States whether the Npc can swim in deep water.</value>
+  </data>
+  <data name="PropDesc_CollidesWithMap" xml:space="preserve">
+    <value>States whether the entity collides with the tile map.</value>
+  </data>
+  <data name="PropDesc_CollisionOffset" xml:space="preserve">
+    <value>The offset from the position of the Npc to the start of the collision area.</value>
+  </data>
+  <data name="PropDesc_CollisionSize" xml:space="preserve">
+    <value>The size of the collision area of the Npc.</value>
+  </data>
+  <data name="PropDesc_CutEffectAnimationColor" xml:space="preserve">
+    <value>The color the cut animation of the Plant is tinted in.</value>
+  </data>
+  <data name="PropDesc_DrawDataAndStrategySettings" xml:space="preserve">
+    <value>The settings of the IDrawDataAndStrategy.</value>
+  </data>
+  <data name="PropDesc_DrawDataAndStrategyType" xml:space="preserve">
+    <value>The set IDrawDataAndStrategy defines how the Entity is drawn.</value>
+  </data>
+  <data name="PropDesc_EntityBehaviour" xml:space="preserve">
+    <value>The set IEntityBehaviour defines how the Entity is controlled.</value>
+  </data>
+  <data name="PropDesc_EntityBehaviourSettings" xml:space="preserve">
+    <value>The settings of the IEntityBehaviour.</value>
+  </data>
+  <data name="PropDesc_ExaltedText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has exalted reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_ExaltedTextToggle" xml:space="preserve">
+    <value>Toggles the Exalted Text on/off.</value>
+  </data>
+  <data name="PropDesc_Faction" xml:space="preserve">
+    <value>The in-game faction the entity is part of.</value>
+  </data>
+  <data name="PropDesc_FeelingRange" xml:space="preserve">
+    <value>The range (in pixels) the Entity can feel other entities.</value>
+  </data>
+  <data name="PropDesc_FloorRelativity" xml:space="preserve">
+    <value>States how the Entity is drawn relative to other Entities on the same Floor.</value>
+  </data>
+  <data name="PropDesc_FriendlyText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has friendly or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_FriendlyTextToggle" xml:space="preserve">
+    <value>Toggles the Friendly Text on/off.</value>
+  </data>
+  <data name="PropDesc_HatedText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has hated or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_HatedTextToggle" xml:space="preserve">
+    <value>Toggles the Hated Text on/off.</value>
+  </data>
+  <data name="PropDesc_HonoredText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has honored or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_HonoredTextToggle" xml:space="preserve">
+    <value>Toggles the Honored Text on/off.</value>
+  </data>
+  <data name="PropDesc_HostileText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has hostile or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_HostileTextToggle" xml:space="preserve">
+    <value>Toggles the Hostile Text on/off.</value>
+  </data>
+  <data name="PropDesc_IsSolid" xml:space="preserve">
+    <value>States whether the Npc collides with the Scene and other objects.</value>
+  </data>
+  <data name="PropDesc_LocalizedName" xml:space="preserve">
+    <value>The localized name of the entity.</value>
+  </data>
+  <data name="PropDesc_MovementSpeed" xml:space="preserve">
+    <value>The speed the Npc moves by default; without any modifications.</value>
+  </data>
+  <data name="PropDesc_Name" xml:space="preserve">
+    <value>The unique name of the Npc. Npcs are saved under their name.</value>
+  </data>
+  <data name="PropDesc_NeutralText" xml:space="preserve">
+    <value>The list of text from which the talkable entity choses a line to speak from.</value>
+  </data>
+  <data name="PropDesc_NeutralTextToggle" xml:space="preserve">
+    <value>Toggles the Neutral Text on/off.</value>
+  </data>
+  <data name="PropDesc_PlantCutEffectAnimationName" xml:space="preserve">
+    <value>The name of the animation that is displayed once the Plant has been cut.</value>
+  </data>
+  <data name="PropDesc_PushingForceModifier" xml:space="preserve">
+    <value>The value all pushing forces applied to this Entity are multiplied by.</value>
+  </data>
+  <data name="PropDesc_QuestNames" xml:space="preserve">
+    <value>The names that uniquely identify the quests this entity may give to the player.</value>
+  </data>
+  <data name="PropDesc_RespawnTime" xml:space="preserve">
+    <value>The time in seconds it takes for the entity to respawn once killed.</value>
+  </data>
+  <data name="PropDesc_ReveredText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from.(only considered if the player has revered or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_ReveredTextToggle" xml:space="preserve">
+    <value>Toggles the Revered Text on/off.</value>
+  </data>
+  <data name="PropDesc_SellList" xml:space="preserve">
+    <value>The list of items sold by the Merchant.</value>
+  </data>
+  <data name="PropDesc_UnfriendlyText" xml:space="preserve">
+    <value>The list of text from which the talkable entity chooses a line to speak from. (only considered if the player has unfriendly or better reputation towards the npc's faction)</value>
+  </data>
+  <data name="PropDesc_UnfriendlyTextToggle" xml:space="preserve">
+    <value>Toggles the Unfriendly Text on/off.</value>
+  </data>
+  <data name="PropDesc_VisionRange" xml:space="preserve">
+    <value>The range (in pixels) the Entity can see other entities.</value>
+  </data>
+  <data name="PropDisp_AggressionType" xml:space="preserve">
+    <value>Aggression Type</value>
+  </data>
+  <data name="PropDisp_Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="PropDisp_ArmorMitigation" xml:space="preserve">
+    <value>Armor Mitigation</value>
+  </data>
+  <data name="PropDisp_CanBePushed" xml:space="preserve">
+    <value>Is Pushable</value>
+  </data>
+  <data name="PropDisp_CanChangeFloor" xml:space="preserve">
+    <value>Can change Floor</value>
+  </data>
+  <data name="PropDisp_CanSlide" xml:space="preserve">
+    <value>Can Slide</value>
+  </data>
+  <data name="PropDisp_CanSwim" xml:space="preserve">
+    <value>Can Swim</value>
+  </data>
+  <data name="PropDisp_CollidesWithMap" xml:space="preserve">
+    <value>Collides With Map</value>
+  </data>
+  <data name="PropDisp_CollisionOffset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="PropDisp_CollisionSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="PropDisp_CutEffectAnimationColor" xml:space="preserve">
+    <value>Cut Effect Animation Color</value>
+  </data>
+  <data name="PropDisp_DrawDataAndStrategySettings" xml:space="preserve">
+    <value>DrawDataAndStrategy Settings</value>
+  </data>
+  <data name="PropDisp_DrawDataAndStrategyType" xml:space="preserve">
+    <value>DrawDataAndStrategy</value>
+  </data>
+  <data name="PropDisp_EntityBehaviour" xml:space="preserve">
+    <value>Behaviour</value>
+  </data>
+  <data name="PropDisp_EntityBehaviourSettings" xml:space="preserve">
+    <value>Behaviour Settings</value>
+  </data>
+  <data name="PropDisp_ExaltedText" xml:space="preserve">
+    <value>Exalted Text</value>
+  </data>
+  <data name="PropDisp_ExaltedTextToggle" xml:space="preserve">
+    <value>Exalted Text Toggle</value>
+  </data>
+  <data name="PropDisp_Faction" xml:space="preserve">
+    <value>Faction</value>
+  </data>
+  <data name="PropDisp_FeelingRange" xml:space="preserve">
+    <value>Feeling Range</value>
+  </data>
+  <data name="PropDisp_FloorRelativity" xml:space="preserve">
+    <value>Floor Relativity</value>
+  </data>
+  <data name="PropDisp_FriendlyText" xml:space="preserve">
+    <value>Friendly Text</value>
+  </data>
+  <data name="PropDisp_FriendlyTextToggle" xml:space="preserve">
+    <value>Friendly Text Toggle</value>
+  </data>
+  <data name="PropDisp_HatedText" xml:space="preserve">
+    <value>Hated Text</value>
+  </data>
+  <data name="PropDisp_HatedTextToggle" xml:space="preserve">
+    <value>Hated Text Toggle</value>
+  </data>
+  <data name="PropDisp_HonoredText" xml:space="preserve">
+    <value>Honored Text</value>
+  </data>
+  <data name="PropDisp_HonoredTextToggle" xml:space="preserve">
+    <value>Honored Text Toggle</value>
+  </data>
+  <data name="PropDisp_HostileText" xml:space="preserve">
+    <value>Hostile Text</value>
+  </data>
+  <data name="PropDisp_HostileTextToggle" xml:space="preserve">
+    <value>Hostile Text Toggle</value>
+  </data>
+  <data name="PropDisp_IsSolid" xml:space="preserve">
+    <value>Is Solid</value>
+  </data>
+  <data name="PropDisp_LocalizedName" xml:space="preserve">
+    <value>Localized Name</value>
+  </data>
+  <data name="PropDisp_MovementSpeed" xml:space="preserve">
+    <value>Movement Speed</value>
+  </data>
+  <data name="PropDisp_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PropDisp_NeutralText" xml:space="preserve">
+    <value>Neutral Text</value>
+  </data>
+  <data name="PropDisp_NeutralTextToggle" xml:space="preserve">
+    <value>Neutral Text Toggle</value>
+  </data>
+  <data name="PropDisp_PlantCutEffectAnimationName" xml:space="preserve">
+    <value>Cut Effect Animation Name</value>
+  </data>
+  <data name="PropDisp_PushingForceModifier" xml:space="preserve">
+    <value>Pushing-Force Modifier</value>
+  </data>
+  <data name="PropDisp_QuestNames" xml:space="preserve">
+    <value>Quest Names</value>
+  </data>
+  <data name="PropDisp_RespawnTime" xml:space="preserve">
+    <value>Respawn Time</value>
+  </data>
+  <data name="PropDisp_ReveredText" xml:space="preserve">
+    <value>Revered Text</value>
+  </data>
+  <data name="PropDisp_ReveredTextToggle" xml:space="preserve">
+    <value>Revered Text Toggle</value>
+  </data>
+  <data name="PropDisp_SellList" xml:space="preserve">
+    <value>Sell List</value>
+  </data>
+  <data name="PropDisp_UnfriendlyText" xml:space="preserve">
+    <value>Unfriendly Text</value>
+  </data>
+  <data name="PropDisp_UnfriendlyTextToggle" xml:space="preserve">
+    <value>Unfriendly Text Toggle</value>
+  </data>
+  <data name="PropDisp_VisionRange" xml:space="preserve">
+    <value>Vision Range</value>
+  </data>
+  <data name="TabHeader_GeneralProperties" xml:space="preserve">
+    <value>General Properties</value>
+  </data>
+  <data name="TabHeader_Loot" xml:space="preserve">
+    <value>Loot</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Npc Creator for TLoZ - Black Crown</value>
+  </data>
+</root>

@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Zelda.Editor.Event.EventWorkspaceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prop="clr-namespace:Zelda.Editor.Properties"
+             xmlns:awc="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*" />
+            <ColumnDefinition Width="170*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="{x:Static prop:Resources.Label_EventProperties}" Style="{DynamicResource MediumLabelStyle}"/>
+        <awc:PropertyGridControl x:Name="propertyGrid"
+                                 Margin="2" Grid.Row="1" Grid.RowSpan="3"/>
+
+        <!-- Events -->
+        <Label Content="{x:Static prop:Resources.Label_Events}" Style="{DynamicResource MediumLabelStyle}" Grid.Column="1"/>
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="303*" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <ListBox x:Name="listBoxEvents" ItemsSource="{Binding EventManager.Events}" Style="{DynamicResource ListBoxStyle}"
+                                     SelectionChanged="OnSelectedEventChanged"
+                                     Keyboard.KeyDown="OnKeyDownEventList"
+                                     Margin="2">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{DynamicResource SelectedListItemColor2}" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="{DynamicResource SelectedListItemColor2}" />
+                </ListBox.Resources>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Foreground="{DynamicResource ForegroundBrush}" Text="{Binding Path=Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Command="{Binding EventManager.AddEvent}" Content="{x:Static prop:Resources.ButtonText_AddEvent}" 
+                                    Margin="2" Padding="0" Grid.Row="1"/>
+        </Grid>
+
+        <!-- Event Triggers -->
+        <Label Content="{x:Static prop:Resources.Label_EventTriggers}" Style="{DynamicResource MediumLabelStyle}" Grid.Row="2" Grid.Column="1"/>
+        <Grid Grid.Column="1" Grid.Row="3" Grid.RowSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="303*" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <ListBox x:Name="listBoxTriggers" ItemsSource="{Binding EventManager.Triggers}" Style="{DynamicResource ListBoxStyle}"
+                                     SelectionChanged="OnSelectedTriggerChanged"
+                                     Keyboard.KeyDown="OnKeyDownTriggerList"
+                                     Margin="2">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{DynamicResource SelectedListItemColor2}" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="{DynamicResource SelectedListItemColor2}" />
+                </ListBox.Resources>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Foreground="{DynamicResource ForegroundBrush}" Text="{Binding Path=Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Command="{Binding EventManager.AddTrigger}" Content="{x:Static prop:Resources.ButtonText_AddEventTrigger}" 
+                                    Margin="2" Padding="0" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</UserControl>

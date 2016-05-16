@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Potion_Red">
+    <Requires>
+      <RecipeItem name="Potion_Small_Red" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Red" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Blue">
+    <Requires>
+      <RecipeItem name="Potion_Small_Blue" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Blue" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Strong_Red">
+    <Requires>
+      <RecipeItem name="Potion_Red" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Strong_Red" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Strong_Blue">
+    <Requires>
+      <RecipeItem name="Potion_Blue" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Strong_Blue" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Small_Violet_Mix">
+    <Requires>
+      <RecipeItem name="Potion_Small_Red" amount="1" />
+      <RecipeItem name="Potion_Small_Blue" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Small_Violet" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Violet_Mix">
+    <Requires>
+      <RecipeItem name="Potion_Red" amount="1" />
+      <RecipeItem name="Potion_Blue" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Violet" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Strong_Violet_Mix">
+    <Requires>
+      <RecipeItem name="Potion_Strong_Red" amount="1" />
+      <RecipeItem name="Potion_Strong_Blue" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Strong_Violet" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Goron_Violet">
+    <Requires>
+      <RecipeItem name="Potion_Goron_Red" amount="1" />
+      <RecipeItem name="Potion_Goron_Blue" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Goron_Violet" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_Goron_Red_2">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_GoronWater" amount="1" />
+      <RecipeItem name="Misc_Keese_Wing" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Goron_Red" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_BoneHardening">
+    <Requires>
+      <RecipeItem name="Potion_Violet" amount="1" />
+      <RecipeItem name="Misc_Bottle_SmallEmpty" amount="1" />
+      <RecipeItem name="Misc_SkeletonBonePowder" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_BoneHardening" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_GhostlyShroom">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_SmallEmpty" amount="1" />
+      <RecipeItem name="Misc_Bottle_SmallWater" amount="1" />
+      <RecipeItem name="Misc_Mushroom_Ghost" amount="1" />
+      <RecipeItem name="Misc_SkeletonBonePowder" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_GhostlyShroom" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_ShadowProt_Small">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_SmallWater" amount="1" />
+      <RecipeItem name="Misc_Leaf_Small_Black" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_ShadowProt_Small" amount="1" />
+    </Results>
+  </Recipe>
+  
+  <Recipe name="Recipe_Potion_Buff_OctorokMucus">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_LongEmpty" amount="1" />
+      <RecipeItem name="Misc_Mucus_Octorok" amount="5" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Buff_OctorokMucus" amount="1" />
+    </Results>
+  </Recipe>
+  
+  <Recipe name="Recipe_Potion_Buff_SchottlanderFish">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_LongEmpty" amount="1" />
+      <RecipeItem name="Misc_Bottle_SmallWater" amount="2" />
+      <RecipeItem name="Misc_DeadFish" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Buff_SchottlanderFish" amount="1" />
+    </Results>
+  </Recipe>  
+
+  <Recipe name="Recipe_Potion_Buff_BloodCourage">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_SmallEmpty" amount="1" />
+      <RecipeItem name="Misc_Keese_Tooth" amount="10" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_Buff_BloodCourage" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_ResetStatsGoron">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_GoronWater" amount="1" />
+      <RecipeItem name="Misc_Potion_VirginBlood" amount="1" />
+      <RecipeItem name="Misc_Iron" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_ResetStatsGoron" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Potion_ResetTalentsSmall">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_SmallWater" amount="1" />
+      <RecipeItem name="Misc_Potion_VirginBlood" amount="1" />
+      <RecipeItem name="Misc_Leaf_Great" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Potion_ResetTalentsSmall" amount="1" />
+    </Results>
+  </Recipe>
+  
+</Recipes>

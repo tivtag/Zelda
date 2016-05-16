@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Sword_KokiriIron">
+    <Requires>
+      <RecipeItem name="Sword_Kokiri" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Ore_Iron" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Sword_KokiriIron" amount="1" applyAffixesOf="Sword_Kokiri" />
+    </Results>
+  </Recipe>  
+
+  <Recipe name="Recipe_Bow_RudrasEnhancedDemon">
+    <Requires>
+      <RecipeItem name="Bow_RudrasDemon" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_DemonHair" amount="40" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Bow_RudrasEnhancedDemon" amount="1" applyAffixesOf="Bow_RudrasDemon" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Sword_Demonic_Enhanced">
+    <Requires>
+      <RecipeItem name="Sword_Demonic" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Iron" amount="6" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Sword_Demonic_Enhanced" amount="1" applyAffixesOf="Sword_Demonic" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Sword_WindOfHyrule" hidden="true" level="1" >
+    <Requires>
+      <RecipeItem name="Misc_BrokenWindSword_Part_1" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_2" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_3" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_4" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_5" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_6" amount="1" />
+      <RecipeItem name="Misc_BrokenWindSword_Part_7" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Sword_WindOfHyrule" amount="1" />
+    </Results>
+  </Recipe>
+  
+  <Recipe name="Recipe_Trans_Sword_WindOfHyrule" hidden="true" level="1" >
+    <Requires>
+      <RecipeItem name="Sword_WindOfHyrule" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Bow_WindOfHyrule" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Trans_Bow_WindOfHyrule" hidden="true" level="1" >
+    <Requires>
+      <RecipeItem name="Bow_WindOfHyrule" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Staff_WindOfHyrule" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Trans_Staff_WindOfHyrule" hidden="true" level="1" >
+    <Requires>
+      <RecipeItem name="Staff_WindOfHyrule" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Weapon_Dagger_WindOfHyrule" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Trans_Weapon_Dagger_WindOfHyrule" hidden="true" level="1" >
+    <Requires>
+      <RecipeItem name="Weapon_Dagger_WindOfHyrule" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Sword_WindOfHyrule" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Weapon_Dagger_GoronAssassination">
+    <Requires>
+      <RecipeItem name="Misc_Iron" amount="5" />
+      <RecipeItem name="Misc_Gold_Goron" amount="5" />
+      <RecipeItem name="Misc_Steel_Goron" amount="8" />
+      <RecipeItem name="Misc_Skull_Goron" amount="20" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Weapon_Dagger_GoronAssassination" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Bow_HyruleIron">
+    <Requires>
+      <RecipeItem name="Misc_Clover_FourLeaf" amount="2" />
+      <RecipeItem name="Misc_Gold_Goron" amount="2" />
+      <RecipeItem name="Misc_Iron" amount="5" />
+      <RecipeItem name="Misc_Steel_Goron" amount="5" />
+      <RecipeItem name="Misc_Bottle_SmallWater" amount="5" />
+      <RecipeItem name="Misc_DemonHair" amount="10" />
+      <RecipeItem name="Misc_Feather_Chicken_Red" amount="10" />
+      <RecipeItem name="Misc_Feather_Chicken_White" amount="10" />      
+    </Requires>
+    <Results>
+      <RecipeItem name="Bow_HyruleIron" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Sword_Protector_Hyrule">
+    <Requires>
+      <RecipeItem name="Sword_Protector" amount="1" allowsAffixes="true"/>
+      <RecipeItem name="Misc_Gold_Goron" amount="1" />
+      <RecipeItem name="Misc_Iron" amount="2" />
+      <RecipeItem name="Misc_Steel_Goron" amount="3" />
+      <RecipeItem name="Misc_Bottle_GoronWater" amount="2" />      
+    </Requires>
+    <Results>
+      <RecipeItem name="Sword_Protector_Hyrule" amount="1" applyAffixesOf="Sword_Protector" />
+    </Results>
+  </Recipe>  
+
+</Recipes>

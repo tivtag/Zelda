@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<AtlasConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+  <InputImageFolder>Content/Original Sprites/Mixed/</InputImageFolder>	
+  <OutputTextureName>Content/Textures/Mixed.png</OutputTextureName>
+  <SpriteOutputFolder>Content/Sprites/</SpriteOutputFolder>
+  <AtlasSize>
+    <X>2048</X>
+    <Y>1024</Y>
+  </AtlasSize>
+  <Spacing>1</Spacing>
+  <SpriteOutputType>Database</SpriteOutputType>
+  <PreserveSpriteProperties>true</PreserveSpriteProperties>
+</AtlasConfiguration>

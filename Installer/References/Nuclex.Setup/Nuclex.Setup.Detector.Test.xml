@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Nuclex.Setup.Detector.Test"
+    </assembly>
+    <members>
+        <member name="M:Nuclex.Setup.PhysXTest.TestPhysX_1_Installed">
+            <summary>Tests whether the XNA Framework 1.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.PhysXTest">
+            <summary>Tests the PhysX detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsPhysXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsPhysXInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_Vista_SP1_Installed">
+            <summary>Tests whether the Windows Vista SP1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_Vista_Installed">
+            <summary>Tests whether the Windows Vista detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_XP_SP2_Installed">
+            <summary>Tests whether the Windows XP SP2 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_XP_SP1_Installed">
+            <summary>Tests whether the Windows XP SP1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_XP_Installed">
+            <summary>Tests whether the Windows XP detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.OperatingSystemTest.TestWindows_2000_Installed">
+            <summary>Tests whether the Windows 2000 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.OperatingSystemTest">
+            <summary>Tests the Operating System detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsOperatingSystemAtLeast(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the NsisIsOperatingSystemAtLeast method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_3_5_SP1_Installed">
+            <summary>Tests whether the .NET Framework 3.5 SP1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_3_5_Installed">
+            <summary>Tests whether the .NET Framework 3.5 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_3_0_Installed">
+            <summary>Tests whether the .NET Framework 3.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_2_0_SP2_Installed">
+            <summary>Tests whether the .NET Framework 2.0 SP2 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_2_0_SP1_Installed">
+            <summary>Tests whether the .NET Framework 2.0 SP1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_2_0_Installed">
+            <summary>Tests whether the .NET Framework 2.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_1_1_Installed">
+            <summary>Tests whether the .NET Framework 1.1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DotNetFrameworkTest.TestFramework_1_0_Installed">
+            <summary>Tests whether the .NET Framework 1.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.DotNetFrameworkTest">
+            <summary>Tests the .NET Framework detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsDotNetInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsDotNetFrameworkInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_4_0_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_3_0_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_2_0_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_1_3_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_1_1_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ShaderModelTest.TestShaderModel_1_0_Supported">
+            <summary>Tests whether the Shader Model 1.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.ShaderModelTest">
+            <summary>Tests the Shader Model detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisSupportsAtLeastShaderModel(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the NsisIsOperatingSystemAtLeast method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.WindowsInstallerTest.TestWindowsInstaller_4_0_Installed">
+            <summary>Tests whether the Windows Installer 4.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.WindowsInstallerTest.TestWindowsInstaller_3_1_Installed">
+            <summary>Tests whether the Windows Installer 3.1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.WindowsInstallerTest.TestWindowsInstaller_2_0_Installed">
+            <summary>Tests whether the Windows Installer 2.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.WindowsInstallerTest">
+            <summary>Tests the Windows Installer detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsWindowsInstallerInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsWindowsInstallerInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_June_2008_Installed">
+            <summary>Tests whether the XAUDIO June 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_March_2008_Installed">
+            <summary>Tests whether the XAUDIO March 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_November_2007_Installed">
+            <summary>Tests whether the XAUDIO November 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_August_2007_Installed">
+            <summary>Tests whether the XAUDIO August 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_June_2007_Installed">
+            <summary>Tests whether the XAUDIO June 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_April_2007_Installed">
+            <summary>Tests whether the XAUDIO April 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_February_2007_Installed">
+            <summary>Tests whether the XAUDIO February 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_December_2006_Installed">
+            <summary>Tests whether the XAUDIO December 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_October_2006_Installed">
+            <summary>Tests whether the XAUDIO October 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_August_2006_Installed">
+            <summary>Tests whether the XAUDIO August 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_June_2006_Installed">
+            <summary>Tests whether the XAUDIO June 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_April_2006_Installed">
+            <summary>Tests whether the XAUDIO April 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_February_2006_Installed">
+            <summary>Tests whether the XAUDIO February 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_December_2005_Installed">
+            <summary>Tests whether the XAUDIO December 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_October_2005_Installed">
+            <summary>Tests whether the XAUDIO October 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_August_2005_Installed">
+            <summary>Tests whether the XAUDIO August 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_June_2005_Installed">
+            <summary>Tests whether the XAUDIO June 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_April_2005_Installed">
+            <summary>Tests whether the XAUDIO April 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XaudioLibraryTest.TestXaudio_February_2005_Installed">
+            <summary>Tests whether the XAUDIO February 2005 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.XaudioLibraryTest">
+            <summary>Tests the XAUDIO Library detection routines in the setup helper</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_June_2008_Installed">
+            <summary>Tests whether the XINPUT June 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_March_2008_Installed">
+            <summary>Tests whether the XINPUT March 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_November_2007_Installed">
+            <summary>Tests whether the XINPUT November 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_August_2007_Installed">
+            <summary>Tests whether the XINPUT August 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_June_2007_Installed">
+            <summary>Tests whether the XINPUT June 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_April_2007_Installed">
+            <summary>Tests whether the XINPUT April 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_February_2007_Installed">
+            <summary>Tests whether the XINPUT February 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_December_2006_Installed">
+            <summary>Tests whether the XINPUT December 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_October_2006_Installed">
+            <summary>Tests whether the XINPUT October 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_August_2006_Installed">
+            <summary>Tests whether the XINPUT August 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_June_2006_Installed">
+            <summary>Tests whether the XINPUT June 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_April_2006_Installed">
+            <summary>Tests whether the XINPUT April 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_February_2006_Installed">
+            <summary>Tests whether the XINPUT February 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_December_2005_Installed">
+            <summary>Tests whether the XINPUT December 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_October_2005_Installed">
+            <summary>Tests whether the XINPUT October 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_August_2005_Installed">
+            <summary>Tests whether the XINPUT August 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_June_2005_Installed">
+            <summary>Tests whether the XINPUT June 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_April_2005_Installed">
+            <summary>Tests whether the XINPUT April 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XinputLibraryTest.TestXinput_February_2005_Installed">
+            <summary>Tests whether the XINPUT February 2005 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.XinputLibraryTest">
+            <summary>Tests the XINPUT Library detection routines in the setup helper</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_June_2008_Installed">
+            <summary>Tests whether the XACT June 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_March_2008_Installed">
+            <summary>Tests whether the XACT March 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_November_2007_Installed">
+            <summary>Tests whether the XACT November 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_August_2007_Installed">
+            <summary>Tests whether the XACT August 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_June_2007_Installed">
+            <summary>Tests whether the XACT June 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_April_2007_Installed">
+            <summary>Tests whether the XACT April 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_February_2007_Installed">
+            <summary>Tests whether the XACT February 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_December_2006_Installed">
+            <summary>Tests whether the XACT December 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_October_2006_Installed">
+            <summary>Tests whether the XACT October 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_August_2006_Installed">
+            <summary>Tests whether the XACT August 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_June_2006_Installed">
+            <summary>Tests whether the XACT June 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_April_2006_Installed">
+            <summary>Tests whether the XACT April 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_February_2006_Installed">
+            <summary>Tests whether the XACT February 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_December_2005_Installed">
+            <summary>Tests whether the XACT December 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_October_2005_Installed">
+            <summary>Tests whether the XACT October 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_August_2005_Installed">
+            <summary>Tests whether the XACT August 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_June_2005_Installed">
+            <summary>Tests whether the XACT June 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_April_2005_Installed">
+            <summary>Tests whether the XACT April 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XactLibraryTest.TestXact_February_2005_Installed">
+            <summary>Tests whether the XACT February 2005 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.XactLibraryTest">
+            <summary>Tests the XACT Library detection routines in the setup helper</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_June_2008_Installed">
+            <summary>Tests whether the D3DX June 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_March_2008_Installed">
+            <summary>Tests whether the D3DX March 2008 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_November_2007_Installed">
+            <summary>Tests whether the D3DX November 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_August_2007_Installed">
+            <summary>Tests whether the D3DX August 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_June_2007_Installed">
+            <summary>Tests whether the D3DX June 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_April_2007_Installed">
+            <summary>Tests whether the D3DX April 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_February_2007_Installed">
+            <summary>Tests whether the D3DX February 2007 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_December_2006_Installed">
+            <summary>Tests whether the D3DX December 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_October_2006_Installed">
+            <summary>Tests whether the D3DX October 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_August_2006_Installed">
+            <summary>Tests whether the D3DX August 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_June_2006_Installed">
+            <summary>Tests whether the D3DX June 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_April_2006_Installed">
+            <summary>Tests whether the D3DX April 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_February_2006_Installed">
+            <summary>Tests whether the D3DX February 2006 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_December_2005_Installed">
+            <summary>Tests whether the D3DX December 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_October_2005_Installed">
+            <summary>Tests whether the D3DX October 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_August_2005_Installed">
+            <summary>Tests whether the D3DX August 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_June_2005_Installed">
+            <summary>Tests whether the D3DX June 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_April_2005_Installed">
+            <summary>Tests whether the D3DX April 2005 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.D3DXLibraryTest.TestD3DX_February_2005_Installed">
+            <summary>Tests whether the D3DX February 2005 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.D3DXLibraryTest">
+            <summary>Tests the D3DX Library detection routines in the setup helper</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DirectXRuntimeTest.TestDirectX_10_1_Installed">
+            <summary>Tests whether the DirectX 10.1 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DirectXRuntimeTest.TestDirectX_10_0_Installed">
+            <summary>Tests whether the DirectX 10.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.DirectXRuntimeTest.TestDirectX_9_0_Installed">
+            <summary>Tests whether the DirectX 9.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.DirectXRuntimeTest">
+            <summary>Tests the DirectX Runtime detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsXaudioInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsXaudioInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:NsisIsXinputInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsXinputInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:NsisIsXactInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsXactInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:NsisIsD3DXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsD3DXInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:NsisIsDirectXInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsDirectXInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.XnaFrameworkTest.TestXnaFramework_3_0_Installed">
+            <summary>Tests whether the XNA Framework 2.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XnaFrameworkTest.TestXnaFramework_2_0_Installed">
+            <summary>Tests whether the XNA Framework 2.0 detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XnaFrameworkTest.TestXnaFramework_1_0_Refresh_Installed">
+            <summary>Tests whether the XNA Framework 1.0 Refresh detection runs</summary>
+        </member>
+        <member name="M:Nuclex.Setup.XnaFrameworkTest.TestXnaFramework_1_0_Installed">
+            <summary>Tests whether the XNA Framework 1.0 detection runs</summary>
+        </member>
+        <member name="T:Nuclex.Setup.XnaFrameworkTest">
+            <summary>Tests the XNA Framework detection routines in the setup helper</summary>
+        </member>
+        <member name="M:NsisIsXnaInstalled(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Function signature of the IsXnaInstalled method</summary>
+            <remarks> 
+  This is intentionally repeated in plain text here. This way, the unit tests will also
+  fail if the function signature changes and becomes unusable for NSIS.
+</remarks>
+        </member>
+    </members>
+</doc>

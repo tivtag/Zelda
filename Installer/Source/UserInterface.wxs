@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<?include "Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI Id="UserInterface">
+
+      <DialogRef Id="FilesInUse" />
+    	
+      <!-- FONT DEFINITION -->
+      <Property Id="TitleFont">{&amp;DlgFontBold8}</Property>
+      <Property Id="BigFont">{&amp;VerdanaBold13}</Property>
+      <Property Id="DefaultUIFont">DlgFont8</Property>
+      
+      <TextStyle Id="DlgFont8" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="DlgFont8Red" FaceName="Tahoma" Size="8" Red="128" />
+      <TextStyle Id="DlgFont8Green" FaceName="Tahoma" Size="8" Green="128" />
+      <TextStyle Id="DlgFontBold8" FaceName="Tahoma" Size="8" Bold="yes" />
+      <TextStyle Id="VerdanaBold13" FaceName="Verdana" Size="13" Bold="yes" />
+      <!-- END FONT DEFINITION -->
+
+      <!--
+        User interface sequence for local installs. A local installation is the normal
+        process of installing the msi file on a system for usage on the same system.
+      -->
+      <InstallUISequence>
+        <Custom Action="SET_INSTALLDIR" Before="CostInitialize">INSTALLDIR=""</Custom>
+
+        <!--
+          Check for a supported operating system first and bail out before attempting
+          any other checks to make sure we don't run into trouble.
+        -->
+        <Custom Action='CheckOperatingSystem' Before='WrongOperatingSystemDialog' />
+        <Show Dialog="WrongOperatingSystemDialog" Before="CheckShaderModel">
+          Is_At_Least_Windows_XP_SP2 &lt;&gt; "1"
+        </Show>
+        
+        <!--
+          Next, look for a graphics card with hardware shader support. If none is
+          found, the user can still continue the setup process, but it's made clear
+          that the game very likely will not run. This only results in a warning
+          (after all, the detection isn't reliable because it has to rely on graphics
+          drivers and DirectX being installed on the system already).
+        -->
+        <Custom Action='CheckShaderModel' Before='ShaderWarningDialog' />
+        <Show Dialog="ShaderWarningDialog" Before="CheckDirectX" >
+          <?if $(var.RequiredShaderModel) = "0.0" ?>
+            "1" = "0"
+          <?endif ?>
+          <?if $(var.RequiredShaderModel) = "1.0" ?>
+            Supports_At_Least_Shader_Model_1.0 &lt;&gt; "1"
+          <?endif ?>
+          <?if $(var.RequiredShaderModel) = "1.1" ?>
+            Supports_At_Least_Shader_Model_1.1 &lt;&gt; "1"
+          <?endif ?>
+          <?if $(var.RequiredShaderModel) = "1.3" ?>
+            Supports_At_Least_Shader_Model_1.3 &lt;&gt; "1"
+          <?endif ?>
+          <?if $(var.RequiredShaderModel) = "2.0" ?>
+            Supports_At_Least_Shader_Model_2.0 &lt;&gt; "1"
+          <?endif ?>
+          <?if $(var.RequiredShaderModel) = "3.0" ?>
+            Supports_At_Least_Shader_Model_3.0 &lt;&gt; "1"
+          <?endif ?>
+        </Show>
+
+        <!--
+          Run the other custom actions for checking the game's required system
+          components before showing any dialogs. This allows the UI to make use of
+          the results for customizing dialogs and informing the user what needs to
+          be installed.
+        -->
+        <Custom Action='CheckDirectX' Before='CheckD3DX' />
+        <Custom Action='CheckD3DX' Before='CheckDotNet' />
+        <Custom Action='CheckDotNet' Before='CheckXna' />
+        <Custom Action='CheckXna' Before='LaunchConditions' />
+
+        <Show Dialog="WelcomeDialog" After="MigrateFeatureStates" />
+  
+        <Show Dialog="ProgressDialog" After="WelcomeDialog" />
+        
+        <Show Dialog="UserExit" OnExit="cancel" />
+        <Show Dialog="ExitDialog" OnExit="success" />
+        <Show Dialog="FatalError" OnExit="error" />
+      </InstallUISequence>
+      
+      <!--
+        User interface sequence for administrative installs. An adminstrative
+        install creates a source image in a network share which can then
+        subsequently be installed to local network users.
+      -->
+      <AdminUISequence>
+        <Custom Action="SET_INSTALLDIR" Before="CostInitialize">INSTALLDIR=""</Custom>
+        
+        <Show Dialog="WelcomeDialog" After="CostFinalize" />
+        
+        <Show Dialog="ProgressDialog" After="WelcomeDialog" />
+        
+        <Show Dialog="UserExit"   OnExit="cancel" />
+        <Show Dialog="ExitDialog" OnExit="success" />
+        <Show Dialog="FatalError" OnExit="error" />
+      </AdminUISequence>
+
+      <Property Id="ErrorDialog" Value="ErrorDlg" />
+
+<!--      <Error Id="25000">Error message goes here!</Error> -->
+
+ 
+
+      <!--
+        Default dialog resources for the setup
+      -->
+      <Binary Id="dialog.bmp" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/zelda-dialog.png" />
+      <Binary Id="banner.bmp" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/zelda-banner.png" />
+      <Binary Id="info.bmp" SourceFile="$(var.DATADIR)\info.bmp" />
+      <Binary Id="up.bmp" SourceFile="$(var.DATADIR)\up.bmp" />
+      <Binary Id="new.bmp" SourceFile="$(var.DATADIR)\new.bmp" />
+
+      <!--
+        Game installer template specific resources
+      -->
+      <Binary Id="directx64.bmp" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/DirectX-64.bmp" />
+      <Binary Id="dotnet64.bmp" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/DotNet-64.bmp" />
+      <Binary Id="xna64.bmp" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/Xna-64.bmp" />
+
+      <Binary Id="redx16.ico" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/RedX-16.ico" />
+      <Binary Id="greencheck16.ico" SourceFile="$(sys.SOURCEFILEDIR)/../Resources/GreenCheck-16.ico" />
+
+    </UI>
+  </Fragment>
+</Wix>

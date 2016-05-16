@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<?include "../Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog Id="RequireDotNetDialog" Width="370" Height="270" Title="[ProductName]">
+        
+        <!--
+          Banner at the top of the dialog
+        -->
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" FixedSize="yes" Text="banner.bmp" />
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="2" />
+        <Control Id="BottomLine" Type="Line" X="4" Y="234" Width="370" Height="2" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>[TitleFont].NET Framework not installed</Text>
+        </Control>
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>This software requires the Microsoft .NET Framework 4.0 to be installed</Text>
+        </Control>
+
+        <!--
+          .NET logo, description and red X or green check depending on whether it's installed
+        -->
+        <Control
+          Id="dotnetLogoBitmap" Type="Bitmap" FixedSize="yes" TabSkip="no" 
+          X="21" Y="62" Width="48" Height="48"
+          Text="dotnet64.bmp"
+        />
+
+	    <?if $(var.RequiredDotNetProfile) = "Client" ?>
+          <Control
+            Id="dotnetLabel" Type="Text"
+            X="84" Y="62" Height="10" Width="270" 
+            Text="[TitleFont]Microsoft .NET Framework 4.0 Client Profile"
+          />
+	    <?endif ?>
+	    <?if $(var.RequiredDotNetProfile) = "Full" ?>
+          <Control
+            Id="dotnetLabel" Type="Text"
+            X="84" Y="62" Height="10" Width="270" 
+            Text="[TitleFont]Microsoft .NET Framework 4.0"
+          />
+	    <?endif ?>
+
+        <Control
+          Id="dotnetDescription" Type="Text"
+          X="84" Y="77" Height="33" Width="270"
+          Text="The application you are about to install requires the Microsoft .NET Framework 4.0. Setup has detected that you currently do not have the Microsoft .NET Framework 4.0 installed on your system."
+        />
+        <Control
+          Id="dotnetDescription2" Type="Text"
+          X="21" Y="125" Height="33" Width="333"
+          Text="Microsoft .NET is a new technology which helps applications that use it become more reliable and future-proof. It does not use any memory or processing power in the background."
+        />
+        <Control
+          Id="dotnetDescription3" Type="Text"
+          X="21" Y="151" Height="44" Width="328"
+          Text="To use this application, please click on the following link and download .NET from the Microsoft homepage. After you have installed .NET, you can restart the setup assistant and continue."
+        />
+
+	    <?if $(var.RequiredDotNetProfile) = "Client" ?>
+        <Control Id="DownloadDotNet" Type="PushButton" X="21" Y="200" Width="156" Height="17" Text="Download .NET Framework">
+          <Publish Event="DoAction" Value="OpenDotNet4ClientProfileHomepage" />
+        </Control>
+	    <?endif ?>
+	    <?if $(var.RequiredDotNetProfile) = "Full" ?>
+        <Control Id="DownloadDotNet" Type="PushButton" X="21" Y="200" Width="156" Height="17" Text="Download .NET Framework">
+          <Publish Event="DoAction" Value="OpenDotNet4FullHomepage" />
+        </Control>
+	    <?endif ?>
+
+        <!--
+          Back button - goes back to the previous page
+        -->
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="[Button_Back]">
+          <Publish Event="NewDialog" Value="WelcomeDialog">1</Publish>
+        </Control>
+
+        <!--
+          Next button - advances to the next page
+        -->
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Text="[Button_Next]">
+          <Publish Event="SpawnDialog" Value="CancelDialog">1</Publish>
+          <Condition Action="disable">1 = 1</Condition>
+        </Control>
+
+        <!--
+          Cancel button - aborts the installation
+        -->
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Default="yes" Text="[Button_Cancel]">
+          <Publish Event="SpawnDialog" Value="CancelDialog">1</Publish>
+        </Control>
+
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<?include "Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Fragment Id="GameCustomActions">
+
+    <!--
+      To use this custom action, you need to enable the checks for 
+      the specified version(s) your product needs. The custom action will
+      then provide the results of the detection in the corresponding
+      output variables:
+    -->
+
+    <!--
+      Checks the version of the running operating system. GameSetupHelper only
+      sees the NT line of operating systems and is not designed to work on
+      Windows 95, 98 or Me. 
+      
+      Property to enable the Check:           Output property:
+
+      Check_At_Least_Windows_XP_SP2           Is_At_Least_Windows_XP_SP2
+      Check_At_Least_Windows_Vista            Is_At_Least_Windows_Vista
+      Check_At_Least_Windows_Vista_SP1        Is_At_Least_Windows_Vista_SP1
+      Check_At_Least_Windows_7                Is_At_Least_Windows_7
+    -->
+    <CustomAction
+      Id='CheckOperatingSystem'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckOperatingSystem'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Tries to determine whether the installed graphics hardware supports the
+      required shader model. This detection tries to use any graphics libraries
+      already installed on the system at the time the installer is starting up
+      and might therefore return false negatives. Is is recommended that if you
+      use this check, you use it only to warn the user and possibly recommend him
+      to update his system to the latest drivers.
+      
+      Property to enable the Check:           Output property:
+
+      Check_Shader_Model_1.0                  Supports_At_Least_Shader_Model_1.0
+      Check_Shader_Model_1.1                  Supports_At_Least_Shader_Model_1.1
+      Check_Shader_Model_1.3                  Supports_At_Least_Shader_Model_1.3
+      Check_Shader_Model_2.0                  Supports_At_Least_Shader_Model_2.0
+      Check_Shader_Model_3.0                  Supports_At_Least_Shader_Model_3.0
+      Check_Shader_Model_4.0                  Supports_At_Least_Shader_Model_4.0
+    -->
+    <CustomAction
+      Id='CheckShaderModel'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckShaderModel'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Checks whether the DirectX Core Components are installed. The DirectX core
+      components are not equivalent to the D3DX, XINPUT and XAUDIO libraries. Most
+      games require a specified DirectX version to be on the system and should
+      also use the CheckD3DX function to ensure the non-core libraries of DirectX
+      are up-to-date.
+      
+      Property to enable the Check:           Output property:
+
+      Check_DirectX_9.0                       Is_DirectX_9.0_Installed
+      Check_DirectX_10.0                      Is_DirectX_10.0_Installed
+      Check_DirectX_10.1                      Is_DirectX_10.1_Installed
+    -->
+    <CustomAction
+      Id='CheckDirectX'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckDirectX'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Checks whether the D3DX Library is installed. This library, amongst others,
+      was updated every 2, now every 3 months. If a user has eg. D3DX November 2007
+      installed, this does not guarantee that he also has eg. D3DX February 2007
+      installed on the system.
+      
+      Property to enable the Check:           Output property:
+
+	  Check_DirectX_Xna_4.0                   Is_DirectX_Xna_4.0_Installed
+    -->
+    <CustomAction
+      Id='CheckD3DX'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckD3DX'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Checks whether the Microsoft .NET Framework is installed.
+      
+      Property to enable the Check:           Output property:
+
+      Check_DotNet_2.0                        Is_DotNet_2.0_Installed
+      Check_DotNet_2.0_SP1                    Is_DotNet_2.0_SP1_Installed
+      Check_DotNet_2.0_SP2                    Is_DotNet_2.0_SP2_Installed
+      Check_DotNet_3.0                        Is_DotNet_3.0_Installed
+      Check_DotNet_3.5                        Is_DotNet_3.5_Installed
+      Check_DotNet_3.5_SP1                    Is_DotNet_3.5_SP1_Installed
+      Check_DotNet_4.0_Client_Profile         Is_DotNet_4.0_Client_Profile_Installed
+      Check_DotNet_4.0_Full                   Is_DotNet_4.0_Full_Installed
+    -->
+    <CustomAction
+      Id='CheckDotNet'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckDotNet'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Opens the Microsoft .NET Homepage in the default browser
+    -->
+    <CustomAction
+      Id="OpenDotNet4ClientProfileHomepage"
+      BinaryKey='Detector'
+      DllEntry='MsiOpenDotNet4ClientProfileHomepage'
+      Execute='immediate'
+      Return='check'
+    />
+    <CustomAction
+      Id="OpenDotNet4FullHomepage"
+      BinaryKey='Detector'
+      DllEntry='MsiOpenDotNet4FullHomepage'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Checks whether the XNA Framework is installed.
+      
+      Property to enable the Check:           Output property:
+
+      Check_Xna_4.0                           Is_Xna_4.0_Installed
+    -->
+    <CustomAction
+      Id='CheckXna'
+      BinaryKey='Detector'
+      DllEntry='MsiCheckXna'
+      Execute='immediate'
+      Return='check'
+    />
+
+    <!--
+      Include Nuclex.Setup.Detector.dll as a binary in the setup so we can call its
+      exported functions during the install. Nuclex.Setup.Detector.dll will not be
+      installed to the target system, it will only exist in a temporary folder
+      created by Windows Installer during its short lifespan.
+    -->
+    <?if $(var.IntegratedBuild) = "1" ?>
+      <?ifdef $(var.DEBUG) ?>
+        <Binary
+          Id='Detector'
+          SourceFile='$(sys.SOURCEFILEDIR)/../../Nuclex.Setup.Detector/bin/x86/Debug/Nuclex.Setup.Detector.dll'
+        />
+      <?else ?>
+        <Binary
+          Id='Detector'
+          SourceFile='$(sys.SOURCEFILEDIR)/../../Nuclex.Setup.Detector/bin/x86/Release/Nuclex.Setup.Detector.dll'
+        />
+      <?endif ?>
+    <?endif ?><!-- IntegratedBuild -->
+    <?if $(var.IntegratedBuild) != "1" ?>
+      <Binary
+        Id='Detector'
+        SourceFile='$(sys.SOURCEFILEDIR)/../References/Nuclex.Setup/Nuclex.Setup.Detector.dll'
+      />
+    <?endif ?>
+
+  </Fragment>
+
+</Wix>

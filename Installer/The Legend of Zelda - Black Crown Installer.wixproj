@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Package</OutputType>
+    <RootNamespace>MyGame</RootNamespace>
+    <OutputName>MyGame</OutputName>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SupressIces>ICE45</SupressIces>
+    <DefineConstants>DATADIR=$(SharpDevelopBinPath)\..\data\resources\InstallerBitmaps</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <ItemGroup>
+    <None Include="Content\Game.exe" />
+    <None Include="Resources\DirectX-64.bmp" />
+    <None Include="Resources\DotNet-64.bmp" />
+    <None Include="Resources\GreenCheck-16.ico" />
+    <None Include="Resources\GreenCheck-24.ico" />
+    <None Include="Resources\RedX-16.ico" />
+    <None Include="Resources\RedX-24.ico" />
+    <None Include="Resources\Xna-64.bmp" />
+    <None Include="Resources\zelda-banner.png" />
+    <None Include="Resources\zelda-dialog.png" />
+    <None Include="Source\Config.wxi" />
+    <Compile Include="Source\Dialogs\BrowseDialog.wxs" />
+    <Compile Include="Source\Dialogs\CancelDialog.wxs" />
+    <Compile Include="Source\Dialogs\ErrorDialog.wxs" />
+    <Compile Include="Source\Dialogs\ExitDialog.wxs" />
+    <Compile Include="Source\Dialogs\FatalErrorDialog.wxs" />
+    <Compile Include="Source\Dialogs\FilesInUseDialog.wxs" />
+    <Compile Include="Source\Dialogs\PrerequisitesDialog.wxs" />
+    <Compile Include="Source\Dialogs\OutOfDiskSpaceDialog.wxs" />
+    <Compile Include="Source\Dialogs\OutOfRollbackDiskSpaceDialog.wxs" />
+    <Compile Include="Source\Dialogs\ProgressDialog.wxs" />
+    <Compile Include="Source\Dialogs\RequireDotNetDialog.wxs" />
+    <Compile Include="Source\Dialogs\SelectFolderDialog.wxs" />
+    <Compile Include="Source\Dialogs\ShaderWarningDialog.wxs" />
+    <Compile Include="Source\Dialogs\UserExitDialog.wxs" />
+    <Compile Include="Source\Dialogs\VerifyReadyDialog.wxs" />
+    <Compile Include="Source\Dialogs\ViewLicenseAgreementDialog.wxs" />
+    <Compile Include="Source\Dialogs\WelcomeDialog.wxs" />
+    <Compile Include="Source\Dialogs\WrongOperatingSystemDialog.wxs" />
+    <Compile Include="Source\EmbeddedPrerequisites.wxs" />
+    <Compile Include="Source\Files.wxs" />
+    <Compile Include="Source\NuclexSetupDetector.wxs" />
+    <Compile Include="Source\Setup.wxs" />
+    <Compile Include="Source\UserInterface.wxs" />
+    <None Include="Documents\license.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+    <Folder Include="Documents" />
+    <Folder Include="Resources" />
+    <Folder Include="Source" />
+    <Folder Include="Source\Dialogs" />
+  </ItemGroup>
+</Project>

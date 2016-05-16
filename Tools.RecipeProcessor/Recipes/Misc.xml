@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Misc_Dye_Black">
+    <Requires>
+      <RecipeItem name="Misc_Leaf_Small_Black" amount="5" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Dye_Black" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Dye_Green">
+    <Requires>
+      <RecipeItem name="Misc_Leaf_Small_Fresh" amount="5" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Dye_Green" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Dye_Red">
+    <Requires>
+      <RecipeItem name="Misc_Bottle_SmallEmpty" amount="1" />
+      <RecipeItem name="Misc_SkeletonBonePowder" amount="2" />
+      <RecipeItem name="Potion_Red" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Dye_Red" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Dye_Blue">
+    <Requires>
+      <RecipeItem name="Misc_Dye_Green" amount="1" />
+      <RecipeItem name="Misc_Dye_Red" amount="1" />
+      <RecipeItem name="Potion_Strong_Blue" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Dye_Blue" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Iron">
+    <Requires>
+      <RecipeItem name="Misc_Ore_Iron" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Iron" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Doll_Yoyo_FromQuest">
+    <Requires>
+      <RecipeItem name="Quest_TiaWoods_BrokenYoyoDoll" amount="1" />
+      <RecipeItem name="Misc_Fabric" amount="5" />
+      <RecipeItem name="Misc_Dye_Red" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Doll_Yoyo" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_SkeletonBonePowder">
+    <Requires>
+      <RecipeItem name="Misc_SkeletonBone" amount="10" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_SkeletonBonePowder" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_Steel_Goron">
+    <Requires>
+      <RecipeItem name="Misc_Steel_BrokenGoronPiece" amount="20" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Misc_Steel_Goron" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Misc_BrokenWindSword_Part_6">
+    <Requires>
+      <RecipeItem name="Misc_Triforce_Small" amount="2" />
+      <RecipeItem name="Misc_Steel_Goron" amount="5" />
+      <RecipeItem name="Misc_Iron" amount="5" />
+      <RecipeItem name="Misc_Dye_Blue" amount="1" />      
+    </Requires>
+    
+    <Results>
+      <RecipeItem name="Misc_BrokenWindSword_Part_6" amount="1" />
+    </Results>
+  </Recipe>
+
+</Recipes>

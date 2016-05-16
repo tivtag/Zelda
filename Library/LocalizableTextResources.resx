@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ItemOnUse_NewQuest" xml:space="preserve">
+    <value>On Use: New quest!</value>
+  </data>
+  <data name="ItemOnUse_NewQuest_Letter_BreakSealAndRead" xml:space="preserve">
+    <value>On Use: Break the seal and read the letter.</value>
+  </data>
+  <data name="KeyBlock_NotUnlocked_Home_Fireplace" xml:space="preserve">
+    <value>As you inspect your fireplace you notice a strange indentation in the form of a locket that encloses three triangles. Where does it come from? You don't have anything that fits...</value>
+  </data>
+  <data name="KeyBlock_NotUnlocked_MissingKey_Special" xml:space="preserve">
+    <value>Blocked... hmpf. It seems like you need a special key to unlock it. </value>
+  </data>
+  <data name="KeyBlock_NotUnlocked_NoKey_ShimmeringCrystal" xml:space="preserve">
+    <value>There seems to be an indentation in the stone. What could fit into it..?</value>
+  </data>
+  <data name="KeyBlock_NotUnlocked_NoKey_SmallUniversalWind" xml:space="preserve">
+    <value>The key block speaks with a dark voice: "GIVE ME A SMALL WINDY KEY, AND YOU SHALL BE ALLOWED TO PASS BY."</value>
+  </data>
+  <data name="MN_Tingle" xml:space="preserve">
+    <value>Merchant Tingle</value>
+  </data>
+  <data name="MN_TravelingSalesman" xml:space="preserve">
+    <value>Traveling Salesman</value>
+  </data>
+  <data name="NewQuest_CantEverAccept" xml:space="preserve">
+    <value>You get this feeling that you already know all that is there know about this. Meh...</value>
+  </data>
+  <data name="RouteOfDin_WindSwordBlock_NotUnlocked" xml:space="preserve">
+    <value>The inscription on the block says: 'Only a true Hero may open this lock.' As you try to push it you see that the key-hole is S-shaped.</value>
+  </data>
+  <data name="SignPost_Empty" xml:space="preserve">
+    <value>... You stare at the sign post and see absolutely nothing interesting. ... ... ... ... ...</value>
+  </data>
+  <data name="SignPost_TiaWoodsDirections" xml:space="preserve">
+    <value>&gt; &gt; Hyrule Rivers 
+ ^ &gt; Minor Shrine 
+ ^ &lt; Route of Din</value>
+  </data>
+  <data name="TalkFriendly_TownFolk_Milly_1" xml:space="preserve">
+    <value>You've been nice. But my brother is still cuter!</value>
+  </data>
+  <data name="TalkFriendly_TownFolk_Milly_2" xml:space="preserve">
+    <value>La la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la ... Do you like me singing?</value>
+  </data>
+  <data name="TalkFriendly_TownFolk_Milly_3" xml:space="preserve">
+    <value>Aren't I the most absolutely fabulous person you have ever seen? -blinks at you-</value>
+  </data>
+  <data name="TalkHonored_GhostBuster_1" xml:space="preserve">
+    <value>I'm the best ghost hunter of not just Hyrule Rivers and all Hyrule, BUT also the complete world !!! And no, none will ever surpass me.</value>
+  </data>
+  <data name="TalkHonored_GhostBuster_2" xml:space="preserve">
+    <value>Ghosts here? Call me and I'll send you to do the work. Hehehe ...</value>
+  </data>
+  <data name="TalkHonored_GhostBuster_3" xml:space="preserve">
+    <value>When I hunt ghost I do it in a slick way. See? Ssssslick. Sssssliiickkk. Study my ways and you may be like me one day ~!!</value>
+  </data>
+  <data name="TalkHonored_TownFolk_Milly_1" xml:space="preserve">
+    <value>I must really say that ... ... you're just as ... erm ... cute as my brother! -blinks-</value>
+  </data>
+  <data name="TalkHonored_TownFolk_Milly_2" xml:space="preserve">
+    <value>Some day people will sing their own songs just about you!</value>
+  </data>
+  <data name="TalkHonored_TownFolk_Milly_3" xml:space="preserve">
+    <value>Hey! How was your day? Do you want to play together with me?</value>
+  </data>
+  <data name="TalkNeutral_GhostBuster_1" xml:space="preserve">
+    <value>I'm the best ghost hunter of not just Hyrule Rivers and all Hyrule, BUT also the complete world !!!</value>
+  </data>
+  <data name="TalkNeutral_GhostBuster_2" xml:space="preserve">
+    <value>Ghosts here? Call me and I'll fix the problem. Hehehe ...</value>
+  </data>
+  <data name="TalkNeutral_GhostBuster_3" xml:space="preserve">
+    <value>When I hunt ghost I do it in a slick way. See? Ssssslick. Sssssliickkk.</value>
+  </data>
+  <data name="TalkNeutral_Goron_Mindo_1" xml:space="preserve">
+    <value>Did you know that the mad Gorons also somtimes carry Black Goron Keys? I wonder why.. Where are all these blocks that would fit those keys?</value>
+  </data>
+  <data name="TalkNeutral_Goron_Mindo_2" xml:space="preserve">
+    <value>It's terrible! Some of the Gorons have gone mad! What do we do?</value>
+  </data>
+  <data name="TalkNeutral_Maja_1" xml:space="preserve">
+    <value>Seiri - Throw away all rubbish and unrelated materials in the workplace.</value>
+  </data>
+  <data name="TalkNeutral_Maja_2" xml:space="preserve">
+    <value>Seiton - Set everything in proper place for quick retrieval and storage.</value>
+  </data>
+  <data name="TalkNeutral_Maja_3" xml:space="preserve">
+    <value>Seiso - Clean the workplace; everyone should be a janitor.</value>
+  </data>
+  <data name="TalkNeutral_Maja_4" xml:space="preserve">
+    <value>Seiketsu - Standardize the way of maintaining cleanliness.</value>
+  </data>
+  <data name="TalkNeutral_Maja_5" xml:space="preserve">
+    <value>Shitsuke - Practice the 5S daily, make it a way of life; this also means 'commitment'.</value>
+  </data>
+  <data name="TalkNeutral_Maja_6" xml:space="preserve">
+    <value>Seiri, Seiton, Seiso, Seiketsu and Shitsuke. These are my ways.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_BoyBilly_1" xml:space="preserve">
+    <value>I'm Billy the Hilly, oh soooo ... erm ... Who are you again?</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_BoyBilly_2" xml:space="preserve">
+    <value>Billy is my name. Honor me and I shall allow you to be in my sight!</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_Milly_1" xml:space="preserve">
+    <value>My brother is soooo cute compared to you.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_Milly_2" xml:space="preserve">
+    <value>La la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la la ... WHY ARE YOU STILL HERE?</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_Milly_3" xml:space="preserve">
+    <value>Aren't I the most absolutely fabulous person you have ever seen?</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_OldMan_1" xml:space="preserve">
+    <value>Isn't the weather just perfect lately?</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_OldWoman_1" xml:space="preserve">
+    <value>Oh oh oh! Have you seen my children lately?</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_OldWoman_2" xml:space="preserve">
+    <value>The sun has gone from the shining skies, Bye, baby, bye, The dandelions have closed their eyes, Bye, baby, bye. The stars are lighting their lamps to see. If babes and squirrels and birds and bees, Are sound asleep as they should be, Bye, baby, bye.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_OldWoman_3" xml:space="preserve">
+    <value>The squirrel keeps warm in his furs of gray, Bye, baby, bye, 'Neath feathers, birdies are tucked away, Bye, baby, bye. In yellow jackets, the bees sleep tight. And cuddle close through the chilly night, My baby's snug in her gown of white, Bye, baby, bye.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_OldWoman_4" xml:space="preserve">
+    <value>Do you know how to make Red Dye? It's quite simple with a little magic! All you'll need is a Small Empty Bottle, two piles of Skeleton Bone Powder and five Red Potions! Trust me boy, trust me. Hehehe.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TiaWoodsTingle_1" xml:space="preserve">
+    <value>Nothing in stock for you? Just come back later!</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Older_1" xml:space="preserve">
+    <value>It's all my younger brother's fault. Tell him that!</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Older_2" xml:space="preserve">
+    <value>I can't remember how we got here.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Older_3" xml:space="preserve">
+    <value>Standing outside here all day and night is getting old and boring.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Younger_1" xml:space="preserve">
+    <value>It's all my older brother's fault. Tell him that!</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Younger_2" xml:space="preserve">
+    <value>Where's my mother? Aaaaaaa. Aaaaaaaaaaa.  Aaaaaaaaaaaaaaaaaaa.</value>
+  </data>
+  <data name="TalkNeutral_TownFolk_TombKid_Younger_3" xml:space="preserve">
+    <value>I'm sooo hungry. I want fish!</value>
+  </data>
+  <data name="Talk_Crow_Start" xml:space="preserve">
+    <value>Awk. Kra. Kraaa. Kraaaaaaa. Kraakra. [Let me. I want to watch the floating bones.] Kraaaa. Krah! [Go away!] Kra.. krah.. Kraka.. Kraa? Kra. [Hmm.. does it understand what I say? No.. never. Krah.]</value>
+  </data>
+</root>

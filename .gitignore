@@ -1,47 +1,30 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+Binaries
+CodeContracts
+bin
+obj
+Installer/Content/
+Packaged
+StyleCop.Cache
+SourceAnalysis.Cache
+.noReferenceAssembly
+.cachefile
+.Contracts.dll
+*vshost*
+*csproj.user
+*.suo
+*.psess
+*.lastcodeanalysissucceeded
+*.vspx
+*.cachefile
 
-# Folder config file
-Desktop.ini
+Compiled/Release/*.dll
+Compiled/Release/*.exe
+Compiled/Release/*.xml
+Compiled/Release/*.pdb
+Compiled/Release/Content/Updater/*.exe
+Compiled/Release/Content/Updater/*.pdb
+Compiled/Release/Content/Updater/*.exe.config
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+Content/BlackCrown_ContentProject/Atom*.*
+Content/BlackCrown_ContentProject/Tools.RecipeProcessor.*
+Content/BlackCrown_ContentProject/ZeldasLibrary.*

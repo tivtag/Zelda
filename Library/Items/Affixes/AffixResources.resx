@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blackened" xml:space="preserve">
+    <value>Blackened</value>
+  </data>
+  <data name="Cemetery" xml:space="preserve">
+    <value>Cemetery</value>
+  </data>
+  <data name="Deadly" xml:space="preserve">
+    <value>Deadly</value>
+  </data>
+  <data name="Edged" xml:space="preserve">
+    <value>Edged</value>
+  </data>
+  <data name="Emerald" xml:space="preserve">
+    <value>Emerald</value>
+  </data>
+  <data name="Enraging" xml:space="preserve">
+    <value>Enraging</value>
+  </data>
+  <data name="Enriched" xml:space="preserve">
+    <value>Enriched</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="Forceful" xml:space="preserve">
+    <value>Forceful</value>
+  </data>
+  <data name="Haunting" xml:space="preserve">
+    <value>Haunting</value>
+  </data>
+  <data name="Heavy" xml:space="preserve">
+    <value>Heavy</value>
+  </data>
+  <data name="Inflamed" xml:space="preserve">
+    <value>Inflamed</value>
+  </data>
+  <data name="OfAssassination" xml:space="preserve">
+    <value>of Assassination</value>
+  </data>
+  <data name="OfBerserkerRage" xml:space="preserve">
+    <value>of Berserker Rage</value>
+  </data>
+  <data name="OfCorruption" xml:space="preserve">
+    <value>of Corruption</value>
+  </data>
+  <data name="OfCourage" xml:space="preserve">
+    <value>of Courage</value>
+  </data>
+  <data name="OfDefensiveness" xml:space="preserve">
+    <value>of Defensiveness</value>
+  </data>
+  <data name="OfDoom" xml:space="preserve">
+    <value>of Doom</value>
+  </data>
+  <data name="OfEase" xml:space="preserve">
+    <value>of Ease</value>
+  </data>
+  <data name="OfEquilibrium" xml:space="preserve">
+    <value>of Equilibrium</value>
+  </data>
+  <data name="OfFluency" xml:space="preserve">
+    <value>of Fluency</value>
+  </data>
+  <data name="OfFortune" xml:space="preserve">
+    <value>of Fortune</value>
+  </data>
+  <data name="OfHaste" xml:space="preserve">
+    <value>of Haste</value>
+  </data>
+  <data name="OfImmediacy" xml:space="preserve">
+    <value>of Immediacy</value>
+  </data>
+  <data name="OfKings" xml:space="preserve">
+    <value>of Kings</value>
+  </data>
+  <data name="OfLight" xml:space="preserve">
+    <value>of Light</value>
+  </data>
+  <data name="OfPower" xml:space="preserve">
+    <value>of Power</value>
+  </data>
+  <data name="OfProtection" xml:space="preserve">
+    <value>of Protection</value>
+  </data>
+  <data name="OfRage" xml:space="preserve">
+    <value>of Rage</value>
+  </data>
+  <data name="OfRecklessness" xml:space="preserve">
+    <value>of Recklessness</value>
+  </data>
+  <data name="OfRecovery" xml:space="preserve">
+    <value>of Recovery</value>
+  </data>
+  <data name="OfRupture" xml:space="preserve">
+    <value>of Rupture</value>
+  </data>
+  <data name="OfSorcery" xml:space="preserve">
+    <value>of Sorcery</value>
+  </data>
+  <data name="OfTheBlockade" xml:space="preserve">
+    <value>of the Blockade</value>
+  </data>
+  <data name="OfTheeHastyAvatar" xml:space="preserve">
+    <value>of thee Hasty Avatar</value>
+  </data>
+  <data name="OfTheHawk" xml:space="preserve">
+    <value>of the Hawk</value>
+  </data>
+  <data name="OfTheHolySpirit" xml:space="preserve">
+    <value>of the Holy Spirit</value>
+  </data>
+  <data name="OfTheSages" xml:space="preserve">
+    <value>of the Sages</value>
+  </data>
+  <data name="OfTheSeasons" xml:space="preserve">
+    <value>of the Seasons</value>
+  </data>
+  <data name="OfTheTitans" xml:space="preserve">
+    <value>of the Titans</value>
+  </data>
+  <data name="OfWitchCraft" xml:space="preserve">
+    <value>of Witch Craft</value>
+  </data>
+  <data name="Ornate" xml:space="preserve">
+    <value>Ornate</value>
+  </data>
+  <data name="Penetrating" xml:space="preserve">
+    <value>Penetrating</value>
+  </data>
+  <data name="Perforated" xml:space="preserve">
+    <value>Perforated</value>
+  </data>
+  <data name="Piercing" xml:space="preserve">
+    <value>Piercing</value>
+  </data>
+  <data name="Poisoned" xml:space="preserve">
+    <value>Poisoned</value>
+  </data>
+  <data name="Precise" xml:space="preserve">
+    <value>Precise</value>
+  </data>
+  <data name="Pulsating" xml:space="preserve">
+    <value>Pulsating</value>
+  </data>
+  <data name="Rainbow" xml:space="preserve">
+    <value>Rainbow -</value>
+  </data>
+  <data name="Retarding" xml:space="preserve">
+    <value>Retarding</value>
+  </data>
+  <data name="Risky" xml:space="preserve">
+    <value>Risky</value>
+  </data>
+  <data name="Ruby" xml:space="preserve">
+    <value>Ruby</value>
+  </data>
+  <data name="Rugged" xml:space="preserve">
+    <value>Rugged</value>
+  </data>
+  <data name="Rusty" xml:space="preserve">
+    <value>Rusty</value>
+  </data>
+  <data name="Scintillant" xml:space="preserve">
+    <value>Scintillant</value>
+  </data>
+  <data name="Slippery" xml:space="preserve">
+    <value>Slippery</value>
+  </data>
+  <data name="Strond" xml:space="preserve">
+    <value>Strond</value>
+  </data>
+  <data name="Sturdy" xml:space="preserve">
+    <value>Sturdy</value>
+  </data>
+  <data name="Acute" xml:space="preserve">
+    <value>Acute</value>
+  </data>
+  <data name="OfFeathers" xml:space="preserve">
+    <value>of Feathers</value>
+  </data>
+  <data name="Useless" xml:space="preserve">
+    <value>Useless</value>
+  </data>
+  <data name="Golden" xml:space="preserve">
+    <value>Golden</value>
+  </data>
+  <data name="Oiled" xml:space="preserve">
+    <value>Oiled</value>
+  </data>
+  <data name="Impetuous" xml:space="preserve">
+    <value>Impetuous</value>
+  </data>
+</root>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?include "../Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog
+        Id="ShaderWarningDialog"
+        Width="260"
+        Height="134"
+        Title="[ProductName] [Setup]"
+        NoMinimize="yes"
+      >
+
+        <Control Id="NotDetectedText" Type="Text" X="20" Y="19" Width="221" Height="20">
+          <Text>Setup could not detect a graphics card with sufficient shader support in the system.</Text>
+        </Control>
+
+        <Control Id="RequiresShadersText" Type="Text" X="20" Y="50" Width="221" Height="20">
+          <Text>The application you are about to install requires a graphics card with hardware support for at least shader model $(var.RequiredShaderModel).</Text>
+        </Control>
+
+        <Control Id="ContinueAnywayText" Type="Text" X="20" Y="79" Width="221" Height="10">
+          <Text>Do you want to continue anyway? (not recommended)</Text>
+        </Control>
+
+        <Control
+          Id="No"
+          Type="PushButton"
+          X="185"
+          Y="106"
+          Width="56"
+          Height="17"
+          Default="yes"
+          Cancel="no"
+          Text="Cancel"
+        >
+          <Publish Event="EndDialog" Value="Exit">1</Publish>
+        </Control>
+
+        <Control
+          Id="Yes"
+          Type="PushButton"
+          X="92"
+          Y="106"
+          Width="90"
+          Height="17"
+          Text="Continue anyway"
+        >
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>
+

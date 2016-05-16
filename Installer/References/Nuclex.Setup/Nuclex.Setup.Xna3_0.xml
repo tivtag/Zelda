@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Nuclex.Setup.Xna3_0"
+    </assembly>
+    <members>
+        <member name="M:DllMain(System.Void*,System.UInt32!System.Runtime.CompilerServices.IsLong,System.Void*)">
+            <summary>Entry point for the DLL, called when the DLL is loaded or unloaded</summary>
+            <param name="dllInstanceHandle">Instance and module handle of the loaded DLL</param>
+            <param name="reason">Reason the DllMain() method has been called</param>
+        </member>
+        <member name="M:MsiInstallXna(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Installs the Microsoft DirectX Runtime</summary>
+            <param name="install">
+  MSI installation handle providing data about the running installation process
+</param>
+            <returns>ERROR_SUCCESS in case of success</returns>
+        </member>
+        <member name="F:Nuclex.Setup.Xna3_0.DllInstanceHandle">
+            <summary>The DLLs instance handle, required to load DLL-specific resources</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.deleteDirectory(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Deletes an empty directory</summary>
+            <param name="path">Path of the directory that will be deleted</param>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.deleteFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Deletes a file</summary>
+            <param name="path">Path of the file that will be deleted</param>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.moveFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Moves a file from the resource set path into a subdirectory</summary>
+            <param name="name">Name of the file that will be moved</param>
+            <param name="targetDirectory">Subdirectory the file will be moved into</param>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.copyFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Copies a file from the resource set path into a subdirectory</summary>
+            <param name="name">Name of the file that will be copied</param>
+            <param name="targetDirectory">Subdirectory the file will be copied into</param>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.createDirectory(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Creates the specified directory in the resource set path</summary>
+            <param name="path">Path of the folder to create in the resource set path</param>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.deleteDirectoryStructure">
+            <summary>Restores the directory structure of the XNA 3.0 redistributable</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.restoreDirectoryStructure">
+            <summary>Restores the directory structure of the XNA 3.0 redistributable</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.Dispose">
+            <summary>Immediately releases all resources used by the resource set</summary>
+        </member>
+        <member name="M:Nuclex.Setup.Xna3_0.XnaResourceSet.#ctor(HINSTANCE__*,Nuclex.Setup.ResourceSet.Entry!System.Runtime.CompilerServices.IsConst*,System.UInt32)">
+            <summary>Initializes a new resource set</summary>
+            <param name="instanceHandle">
+  Handle of the .dll or .exe instance to take the resources from
+</param>
+            <param name="firstEntry">First entry in the list of binary resources</param>
+            <param name="count">Number of entries following the first provided entry</param>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.files">
+            <summary>Files contained in this resource set</summary>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.temporaryFilePath">
+            <summary>
+  Path to a temporary file used to reserve a unique name in the system's
+  temporary files directory
+</summary>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.temporaryDirectoryPath">
+            <summary>
+  Path to a nested temporary directory in the system's temporary files directory
+</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.deleteFiles">
+            <summary>Deletes all files in the vector in reverse order</summary>
+            <param name="files">Files to be deleted</param>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.extractResources(HINSTANCE__*,Nuclex.Setup.ResourceSet.Entry!System.Runtime.CompilerServices.IsConst*,Nuclex.Setup.ResourceSet.Entry!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Extracts the resources into the instance's temporary folder</summary>
+            <param name="instanceHandle">
+  .dll or .exe instance handle in which the resources are stored
+</param>
+            <param name="begin">Pointer to the entry of the first file to be extracted</param>
+            <param name="end">Pointer one past the final entry that will be extracted</param>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.GetPath">
+            <summary>
+  Retrieves the complete path to where the extracted resources are stored
+</summary>
+            <returns>The path in which the extracted resources are</returns>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.GetTotalSize(HINSTANCE__*,Nuclex.Setup.ResourceSet.Entry!System.Runtime.CompilerServices.IsConst*,System.UInt32)">
+            <summary>Calculates the total uncompressed size of the files in the list</summary>
+            <param name="instanceHandle">
+  Handle of the .dll or .exe instance to take the resources from
+</param>
+            <param name="firstEntry">First entry in the list of binary resources</param>
+            <param name="count">Number of entries following the first provided entry</param>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.Dispose">
+            <summary>Immediately releases all resources used by the resource set</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.#ctor(HINSTANCE__*,Nuclex.Setup.ResourceSet.Entry!System.Runtime.CompilerServices.IsConst*,System.UInt32)">
+            <summary>Initializes a new resource set</summary>
+            <param name="instanceHandle">
+  Handle of the .dll or .exe instance to take the resources from
+</param>
+            <param name="firstEntry">First entry in the list of binary resources</param>
+            <param name="count">Number of entries following the first provided entry</param>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.Entry.IsCompressed">
+            <summary>Whether the file has been compressed with LZMA</summary>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.Entry.Id">
+            <summary>Id of the resource in the DLL</summary>
+        </member>
+        <member name="F:Nuclex.Setup.ResourceSet.Entry.Filename">
+            <summary>Filename of the file the resource corresponds to</summary>
+        </member>
+        <member name="M:Nuclex.Setup.ResourceSet.Entry.#ctor(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.Boolean)">
+            <summary>Initializes a new resource entry</summary>
+            <param name="filename">Filename of the file the resource corresponds to</param>
+            <param name="id">Id of the resource in the DLL</param>
+            <param name="isCompressed">Whether the file has been compressed with LZMA</param>
+        </member>
+        <member name="T:Nuclex.Setup.ResourceSet.Entry">
+            <summary>An entry in the resource table</summary>
+        </member>
+        <member name="T:Nuclex.Setup.ResourceSet">
+            <summary>A set of binary resources embedded into a .dll or .exe</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.path">
+            <summary>Path to the file represented by the file class</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.op_Assign(Nuclex.Setup.File!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private assignment operator to disallow instance cloning</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.#ctor(Nuclex.Setup.File!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private copy constructor to disallow instance copying</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.CreateTempFile(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Creates a unique temporary file and returns its name</summary>
+            <param name="prefix">Prefix the temporary filename shall begin with</param>
+            <returns>The full path to a unique temporary file</returns>
+            <remarks>
+  The method also creates a 0 byte file in place of the temporary file name
+  in order to prevent other callers from receiving the same file name.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.File.GetTempPathW">
+            <summary>Returns the path to the system's temporary directory</summary>
+            <returns>The full path to the system's temporary directory</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.Exists(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Checks whether a file with the given name exists</summary>
+            <param name="path">Path of the file whose existence will be checked</param>
+            <returns>True if the file exists</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.Run(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Executes the file</summary>
+            <param name="commandLine">Parameters to provide on the command line</param>
+            <returns>Informations about the running process</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.GetVersion">
+            <summary>Obtains the version number of the file, if available</summary>
+            <returns>The file's version number</returns>
+        </member>
+        <member name="M:Nuclex.Setup.File.#ctor(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Initializes a new file</summary>
+            <param name="path">Path to an existing file to provide services for</param>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Revision">
+            <summary>Revision number</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Build">
+            <summary>Build number</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Minor">
+            <summary>Minor version number of the file</summary>
+        </member>
+        <member name="F:Nuclex.Setup.File.Version.Major">
+            <summary>Major version number of the file</summary>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_GreaterThan(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is greater than another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is greater than the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_LessThan(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is less than another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is less than the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_LessThanOrEqual(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is less or equal to another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is less or equal to the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.op_GreaterThanOrEqual(Nuclex.Setup.File.Version!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Determines whether one version is greater or equal to another</summary>
+            <param name="other">Version to compare against</param>
+            <return>True if this version is greater or equal to the other version</return>
+        </member>
+        <member name="M:Nuclex.Setup.File.Version.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Initializes a new file version structure</summary>
+            <param name="major">Major file version number</param>
+            <param name="minor">Minor file version number</param>
+            <param name="build">File build number</param>
+            <param name="revision">File revision number</param>
+        </member>
+        <member name="T:Nuclex.Setup.File.Version">
+            <summary>Stores a the version number of a file</summary>
+        </member>
+        <member name="T:Nuclex.Setup.File">
+            <summary>Encapsulates a file for easy handling</summary>
+        </member>
+        <member name="F:Nuclex.Setup.MsiHandle.installHandle">
+            <summary>MSIHANDLE this wrapper is providing services on</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.op_Assign(Nuclex.Setup.MsiHandle!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private assignment operator to disallow instance cloning</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.#ctor(Nuclex.Setup.MsiHandle!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Private copy constructor to disallow instance copying</summary>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.AddProgress(System.Int32)">
+            <summary>Adds the specified amount of ticks to the total expected progress</summary>
+            <param name="ticks">Number of ticks that will be added to the total progress</param>
+            <returns>
+  The result of the progress addition. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.ShowMessageBox(Nuclex.Setup.MessageSeverities,System.Int32,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32)">
+            <summary>Shows a message box in the installer</summary>
+            <param name="severity">Severity rating of the message</param>
+            <param name="errorTableMessageNumber">Number of this message in the error table</param>
+            <param name="message">Message inserted in the error template's placeholder</param>
+            <param name="type">Message box type (see MB_ enumeration values in Win32)</param>
+            <returns>
+  The result of the message box. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.ShowMessageBox(Nuclex.Setup.MessageSeverities,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32)">
+            <summary>Shows a message box in the installer</summary>
+            <param name="severity">Severity rating of the message</param>
+            <param name="message">Formatted message that is shown to the user</param>
+            <param name="type">Message box type (see MB_ enumeration values in Win32)</param>
+            <returns>
+  The result of the message box. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.LogMessage(Nuclex.Setup.LogSeverities,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Writes a message into the installation log</summary>
+            <param name="severity">Severity level of the message</param>
+            <param name="message">Message that will be written to the installation log</param>
+            <returns>
+  The result of the log publication. If this is IDCANCEL, the installation needs
+  to terminate with ERROR_INSTALL_USEREXIT as soon as possible.
+</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.SetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Boolean)">
+            <summary>Sets the specified property's value to be either true or false</summary>
+            <param name="name">Name of the property that will be set</param>
+            <param name="value">Value to set the property to</param>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.SetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Sets a property in the running installation</summary>
+            <param name="name">Name of the property to set</param>
+            <param name="value">Value to set the property to</param>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.IsPropertyTrue(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Checks whether the specified property's value evaluates to true</summary>
+            <param name="name">Name of the property that will be checked</param>
+            <returns>True if the specified property's value evaluates to true</returns>
+            <remarks>
+  To avoid unneccessary complexity, only property values that evaluate to
+  a numeric value other than 0 are considered being true. The string "true",
+  for example, would be evaluated as meaning false.
+</remarks>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.GetProperty(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Retrieves a property stored in the running installation</summary>
+            <param name="name">Name of the property to retrieve</param>
+            <returns>The contents of the property with the specified name</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.IsInMode(tagMSIRUNMODE)">
+            <summary>Determines whether the Windows Installer is in the specified mode</summary>
+            <param name="mode">Mode to be checked for</param>
+            <returns>True if the installer is in the specified mode, otherwise false</returns>
+        </member>
+        <member name="M:Nuclex.Setup.MsiHandle.#ctor(System.UInt32!System.Runtime.CompilerServices.IsLong)">
+            <summary>Initializes a new MSI wrapper</summary>
+            <param name="install">MSI installation handle for the wrapper to work on</param>
+        </member>
+        <member name="T:Nuclex.Setup.MsiHandle">
+            <summary>Provides convenient methods to work with the MSI API</summary>
+        </member>
+        <member name="T:Nuclex.Setup.LogSeverities">
+            <summary>How severe a message added to the install log is</summary>
+        </member>
+        <member name="F:LogSeverity_FatalExit">
+            <summary>The message indicates a fatal error in the installation process</summary>
+        </member>
+        <member name="F:LogSeverity_OutOfDiskSpace">
+            <summary>The message reports an out of disk space condition</summary>
+        </member>
+        <member name="F:LogSeverity_Info">
+            <summary>The message is for informative purposes only</summary>
+        </member>
+        <member name="T:Nuclex.Setup.MessageSeverities">
+            <summary>How severe a message shown to the user is</summary>
+        </member>
+        <member name="F:MessageSeverity_Error">
+            <summary>The message indicates an error</summary>
+        </member>
+        <member name="F:MessageSeverity_Warning">
+            <summary>The message warns the end-user</summary>
+        </member>
+        <member name="F:MessageSeverity_User">
+            <summary>User-defined message with no severity rating</summary>
+        </member>
+        <member name="M:Nuclex.Setup.AsciiFromUnicode(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Performs a string conversion from unicode to ascii</summary>
+            <param name="unicodeString">Unicode string that will be converted to ascii</param>
+            <returns>The ascii representation of the provided unicode string</returns>
+        </member>
+        <member name="M:Nuclex.Setup.UnicodeFromAscii(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Performs a string conversion from ascii to unicode</summary>
+            <param name="asciiString">Ascii string that will be converted to unicode</param>
+            <returns>The unicode equivalent of the provided ascii string</returns>
+        </member>
+        <member name="M:Nuclex.Setup.tokenize(std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.Char,std.char_traits{System.Char},std.allocator&lt;System.Char&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Chops a string to pieces cut at the delimiter characters</summary>
+            <param name="string">String that will be tokenized</param>
+            <param name="delimiter">Delimiter characters at which to cut the string</param>
+        </member>
+    </members>
+</doc>

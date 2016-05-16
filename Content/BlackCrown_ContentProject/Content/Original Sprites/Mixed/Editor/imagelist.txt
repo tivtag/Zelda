@@ -1,0 +1,17 @@
+8
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_DepthMinus.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_DepthPlus.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_FallUnsafe.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_Solid.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_Solid_ForAll.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_Solid_NotAffectingRanged.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_WaterSwimable.tga
+C:\Users\Paul\Documents\Visual Studio 2008\Projects\Games\BlackCrown\Content\BlackCrown_ContentProject\Content\Original Sprites\Editor\Tile_WaterWalkable.tga
+Tile_DepthMinus
+Tile_DepthPlus
+Tile_FallUnsafe
+Tile_Solid
+Tile_Solid_ForAll
+Tile_Solid_NotAffectingRanged
+Tile_WaterSwimable
+Tile_WaterWalkable

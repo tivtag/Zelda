@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+  
+  <Recipe name="Recipe_Belt_HeroesRage">
+    <Requires>
+      <RecipeItem name="Belt_RudrasQuickStrikeBelt" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_RudrasSoulStone" amount="1" />
+      <RecipeItem name="Misc_Dye_Red" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Belt_HeroesRage" amount="1" applyAffixesOf="Belt_RudrasQuickStrikeBelt" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Belt_SlowMotion">
+    <Requires>
+      <RecipeItem name="Belt_RudrasQuickStrikeBelt" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_RudrasSoulStone" amount="1" />
+      <RecipeItem name="Misc_Dye_Blue" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Belt_SlowMotion" amount="1" applyAffixesOf="Belt_RudrasQuickStrikeBelt" />
+    </Results>
+  </Recipe>
+  
+   <Recipe name="Recipe_Belt_Wizard">
+    <Requires>
+      <RecipeItem name="Belt_RudrasQuickStrikeBelt" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_RudrasSoulStone" amount="1" />
+      <RecipeItem name="Misc_Silk_Expensive" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Belt_Wizard" amount="1" applyAffixesOf="Belt_RudrasQuickStrikeBelt" />
+    </Results>
+  </Recipe>
+
+</Recipes>

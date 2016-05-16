@@ -1,0 +1,588 @@
+﻿
+
+
+
+
+            //var lm = game.Graphics.lightMap;
+
+            //if( keyState.IsKeyDown( Keys.F1 ) && oldKeyState.IsKeyUp( Keys.F1 ) )
+            //{
+            //    int i = ((int)lm.baseBlendState.AlphaDestinationBlend + 1) % 13;
+            //    lm.baseBlendState.AlphaDestinationBlend = (Blend)i;
+
+            //    Console.WriteLine( "AlphaDestinationBlend: " + lm.baseBlendState.AlphaDestinationBlend );
+            //    return;
+            //}
+
+            //if( keyState.IsKeyDown( Keys.F2 ) && oldKeyState.IsKeyUp( Keys.F2 ) )
+            //{
+            //    int i = ((int)lm.baseBlendState.AlphaSourceBlend + 1) % 13;
+            //    lm.baseBlendState.AlphaSourceBlend = (Blend)i;
+
+            //    Console.WriteLine( "AlphaSourceBlend: " + lm.baseBlendState.AlphaSourceBlend );
+            //    return;
+            //}
+
+            //if( keyState.IsKeyDown( Keys.F3 ) && oldKeyState.IsKeyUp( Keys.F3 ) )
+            //{
+            //    int i = ((int)lm.baseBlendState.ColorDestinationBlend + 1) % 13;
+            //    lm.baseBlendState.ColorDestinationBlend = (Blend)i;
+
+            //    Console.WriteLine( "ColorDestinationBlend: " + lm.baseBlendState.ColorDestinationBlend );
+            //    return;
+            //}
+
+            //if( keyState.IsKeyDown( Keys.F4 ) && oldKeyState.IsKeyUp( Keys.F4 ) )
+            //{
+            //    int i = ((int)lm.baseBlendState.ColorSourceBlend + 1) % 13;
+            //    lm.baseBlendState.ColorSourceBlend = (Blend)i;
+
+            //    Console.WriteLine( "ColorSourceBlend: " + lm.baseBlendState.ColorSourceBlend );
+            //    return;
+            //}
+
+
+
+
+
+#if DEV
+                    case Keys.F11:
+                        if( oldKeyState.IsKeyUp( Keys.F11 ) )
+                            ZeldaScene.EventTriggersAreDrawn = !ZeldaScene.EventTriggersAreDrawn;
+                        break;
+
+                    case Keys.F12:
+                        if( oldKeyState.IsKeyUp( Keys.F12 ) )
+                            scene.ToggleVisibilityStateActionLayer();
+                        break;
+#endif
+
+
+                    //case Keys.NumPad1:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad1 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.toneMapKey += 0.05f * speed;
+                    //            Console.WriteLine( "toneMapKey: " + pipeline.Effect.toneMapKey );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad2:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad2 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.blurSigma += 0.05f * speed;
+                    //            Console.WriteLine( "blurSigma: " + pipeline.Effect.blurSigma );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad3:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad3 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.bloomThreshold += 0.05f * speed;
+                    //            Console.WriteLine( "bloomThreshold: " + pipeline.Effect.bloomThreshold );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad4:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad4 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.bloomMultiplier += 0.05f * speed;
+                    //            Console.WriteLine( "bloomMultiplier: " + pipeline.Effect.bloomMultiplier );
+                    //        }
+                    //    }
+                    //    break;
+
+
+                    //case Keys.NumPad5:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad5 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.maxLuminance += 10.1f * speed;
+                    //            Console.WriteLine( "maxLuminance: " + pipeline.Effect.maxLuminance );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad6:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad6 ) )
+                    //    {
+                    //        if( graphics.Pipeline is Graphics.HighDynamicRangeDrawingPipeline )
+                    //        {
+                    //            graphics.ChangePipeline( Graphics.DrawingPipeline.Normal );
+                    //        }
+                    //        else
+                    //        {
+                    //            graphics.ChangePipeline( Graphics.DrawingPipeline.HighDynamicRange );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad7:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad7 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.Threshold += 0.05f * speed;
+                    //            Console.WriteLine( "Threshold: " + pipeline.Effect.Threshold );
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.NumPad8:
+                    //    if( oldKeyState.IsKeyUp( Keys.NumPad8 ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.HighDynamicRangeDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            float speed = keyState.IsKeyDown( Keys.LeftAlt ) ? -1.0f : 1.0f;
+
+                    //            pipeline.Effect.Exposure += 0.05f * speed;
+                    //            Console.WriteLine( "Exposure: " + pipeline.Effect.Exposure );
+                    //        }
+                    //    }
+                    //    break;
+
+                    ////case Keys.Enter:
+                    //    if( oldKeyState.IsKeyUp( Keys.Enter ) )
+                    //    {
+                    //        var pipeline = graphics.Pipeline as Zelda.Graphics.BloomDrawingPipeline;
+
+                    //        if( pipeline != null )
+                    //        {
+                    //            pipeline.Settings = Atom.Xna.Effects.PostProcess.BloomSettings.Default;
+                    //        }
+                    //    }
+                    //    break;
+
+                    //case Keys.F3:
+                    //    if( oldKeyState.IsKeyUp( Keys.F3 ) )
+                    //    {
+                    //        // Shield_Quiver_Chicken
+                    //        // Trinket_OfExploitivePower
+                    //        // Weapon_Dagger_Crystal
+                    //        // Relic_MysticalShell
+                    //        {
+                    //            var item = game.ItemManager.Get( "Misc_MusicCross" );
+                    //            if( item.DropRequirement != null && !item.DropRequirement.IsFulfilledBy( player ) )
+                    //            {
+                    //                // throw new InvalidOperationException();
+                    //            }
+
+                    //            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+                    //            mapItem.Transform.Position = player.Transform.Position;
+                    //            mapItem.ItemInstance.Count = 1;
+                    //            scene.Add( mapItem );
+                    //        }
+                    //    }
+                    //    break;
+
+                    // case Keys.F4:
+                        //    if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                   //     {
+                   //         player.Statable.AddExperience( 10000 );
+                        //     }
+                    //     break;
+#if DEV
+
+                    case Keys.F3:
+                        if( oldKeyState.IsKeyUp( Keys.F3 ) )
+                        {
+                            player.Statable.AddExperience( (int)(player.Statable.ExperienceNeeded - player.Statable.Experience) );
+                        }
+                        break;
+
+
+
+                    case Keys.F4:
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Gem_Water_NayrusExperience" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+
+                            mapItem.Transform.Position = player.Transform.Position;
+                            mapItem.ItemInstance.Count = 1;
+
+                            scene.Add( mapItem );
+                        }
+
+                        break;
+
+                    case Keys.R:
+                        if( oldKeyState.IsKeyUp( Keys.R ) )
+                            scene.WeatherMachine.SetWeather( typeof( Weather.Creators.SnowCreator ) );
+                        break;
+
+                    case Keys.F2:
+                        if( oldKeyState.IsKeyUp( Keys.F2 ) )
+                            scene.WeatherMachine.SetWeather( typeof( Weather.Creators.RainCreator ) );
+                        break;
+
+
+
+                    case Keys.R:
+                        if( oldKeyState.IsKeyUp( Keys.R ) )
+                        {
+                            var aura = new Zelda.Status.PermanentAura(
+                                new Zelda.Status.StatEffect( 1000.0f, Zelda.Status.StatusManipType.Fixed, Zelda.Status.Stat.Agility )
+                            );
+
+                            this.player.Statable.AuraList.Add( aura );
+                        }
+                        break;
+
+                    case Keys.F4:
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var song = new Zelda.Ocarina.Songs.Teleportation.RouteOfDinTeleportationSong();
+                            song.Setup( this.game );
+
+                            this.player.OcarinaBox.AddSong( song );
+                        }
+                        break;
+
+
+
+                        break;
+                    case Keys.R:
+                        if( oldKeyState.IsKeyUp( Keys.R ) )
+                        {
+                            this.player.FactionStates.GetState( "TownFolk" ).AddReputation( 1000 );
+                        }
+
+                        break;
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Head_WizardDark" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+
+                            mapItem.Transform.Position = player.Transform.Position;
+                            mapItem.ItemInstance.Count = 1;
+
+                            scene.Add( mapItem );
+                        }
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Boots_UndeadHunter" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+
+                            mapItem.Transform.Position = player.Transform.Position;
+                            mapItem.ItemInstance.Count = 1;
+
+                            scene.Add( mapItem );
+                        }
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Necklace_UndeadHunter" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+
+                            mapItem.Transform.Position = player.Transform.Position;
+                            mapItem.ItemInstance.Count = 1;
+
+                            scene.Add( mapItem );
+                        }
+                    case Keys.F1:
+                        if( oldKeyState.IsKeyUp( Keys.F1 ) )
+                        {
+                            var files = System.IO.Directory.GetFiles( "Content\\Items" );
+
+                            var errorFiles = new System.Collections.Generic.List<string>();
+
+                            foreach( var file in files )
+                            {
+                                try
+                                {
+                                    string itemName = file.Replace( "Content\\Items\\", string.Empty );
+                                    itemName = System.IO.Path.ChangeExtension( itemName, null );
+
+                                    var item = game.ItemManager.Get( itemName ).CreateInstance();
+                                    if( item.Item.StackSize == 0 )
+                                        continue;
+
+                                    var useEffect = item.Item.UseEffect;
+                                    if( useEffect != null )
+                                    {
+                                        game.Log.WriteLine(
+                                            itemName + " " + useEffect.Cooldown.Id + " " + useEffect.GetType().ToString() + " for " + useEffect.Cooldown.TotalTime + " secs"
+                                        );
+                                    }
+
+                                    player.Inventory.FailSafeInsert( item );
+                                }
+                                catch( Exception exc )
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine( exc.ToString() );
+                                    Console.WriteLine();
+
+                                    errorFiles.Add( file );
+                                }
+                            }
+
+                            if( errorFiles.Count > 0 )
+                            {
+                                Console.WriteLine();
+                            }
+                        }
+                        break;
+
+                        
+                 
+
+       
+
+                    case Keys.F4:
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var baseItem = game.ItemManager.Get( "Potion_BoneHardening" );
+                            var item = Items.ItemCreationHelper.Create( baseItem, game.Rand );
+
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+                    case Keys.F1:
+                        if( oldKeyState.IsKeyUp( Keys.F1 ) )
+                        {
+                            this.player.Statable.Rubies += 100;
+                        }
+
+                        break;
+                        
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Misc_SkeletonBonePowder" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Misc_Bottle_SmallEmpty" );
+
+                            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+
+
+
+
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Misc_Mucus_Octorok" ).CreateInstance();
+                            item.Count = 20;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Misc_Card_LuckyGoron_Two" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Misc_Card_LuckyGoron_Three" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+      
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Necklace_Ghost" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+
+                    case Keys.F6:
+                        if( oldKeyState.IsKeyUp( Keys.F6 ) )
+                        {
+                            var baseItem = game.ItemManager.Get( "Ring_Critical" );
+                            var prefix = Zelda.Items.Affixes.AffixDatabase.Instance.GetRandomFittingPrefix( baseItem, game.Rand );
+                            var suffix = Zelda.Items.Affixes.AffixDatabase.Instance.GetRandomFittingSuffix( baseItem, game.Rand );
+
+                            var itmz = new Zelda.Items.Affixes.AffixedItem( baseItem, prefix, suffix );
+
+                            var item = itmz.CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+
+
+                        
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Gem_Shadow_DoomStone" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Gem_Fire_DinsFieryArmor" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+
+                        if( oldKeyState.IsKeyUp( Keys.F4 ) )
+                        {
+                            var item = game.ItemManager.Get( "Gem_Nature_Grasp" ).CreateInstance();
+                            item.Count = 1;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        
+                        break;
+
+
+
+                    case Keys.F6:
+                        if( oldKeyState.IsKeyUp( Keys.F6 ) )
+                        {
+                            var item = game.ItemManager.Get( "Bottle_Mana_Small" ).CreateInstance();
+                            item.Count = 0;
+
+                            var mapItem = new MapItem( item );
+                            mapItem.Transform.Position = player.Transform.Position;
+
+                            scene.Add( mapItem );
+                        }
+                        break;
+
+           //         /*
+
+                //     */
+                        /*          
+                   */
+                    /*
+                    case Keys.F2:
+                        if( oldKeyState.IsKeyUp( Keys.F2 ) )
+                        {
+                            {
+                                var item = game.ItemManager.Get( "Misc_Dye_Black" ).CreateInstance();
+                                item.Count = 1;
+
+                                var mapItem = new MapItem( item );
+                                mapItem.Transform.Position = player.Transform.Position;
+
+                                scene.Add( mapItem );
+                            }
+                            {
+                                var item = game.ItemManager.Get( "Misc_Fabric" ).CreateInstance();
+                                item.Count = 20;
+
+                                var mapItem = new MapItem( item );
+                                mapItem.Transform.Position = player.Transform.Position;
+
+                                scene.Add( mapItem );
+                            }
+                            {
+                                var item = game.ItemManager.Get( "Misc_Thread_Ghost" ).CreateInstance();
+                                item.Count = 1;
+
+                                var mapItem = new MapItem( item );
+                                mapItem.Transform.Position = player.Transform.Position;
+
+                                scene.Add( mapItem );
+                            }
+                        }
+                        break;
+
+                 */
+               //     /*   
+      
+                    //   */
+                    /*
+                    */
+
+#endif

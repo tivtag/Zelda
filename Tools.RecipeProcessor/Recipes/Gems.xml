@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Gem_Prismatic_Ocean">
+    <Requires>
+      <RecipeItem name="Misc_Clam_MysteriousBlue" amount="1" />
+      <RecipeItem name="Misc_Mucus_Octorok" amount="15" />   
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Prismatic_Ocean" amount="1" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Fire_Gems" desc="Transforms three Fire gems into another Fire gem of the same average quality."
+        level="5" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Fire" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Fire" amount="1" />
+    </Results>
+    <Handler>
+      <TransformGems color="Fire" />
+    </Handler>
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Nature_Gems" desc="Transforms three Nature gems into another Nature gem of the same average quality."
+        level="10" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Nature" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Nature" amount="1" />
+    </Results>
+    <Handler>
+      <TransformGems color="Nature" />
+    </Handler>
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Water_Gems" desc="Transforms three Water gems into another Water gem of the same average quality." 
+          level="15" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Water" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Water" amount="1" />
+    </Results>    
+    <Handler>
+      <TransformGems color="Water" />
+    </Handler>    
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Light_Gems" desc="Transforms three Light gems into another Light gem of the same average quality."
+        level="20" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Light" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Light" amount="1" />
+    </Results>
+    <Handler>
+      <TransformGems color="Light" />
+    </Handler>
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Shadow_Gems" desc="Transforms three Shadow gems into another Shadow gem of the same average quality."
+        level="25" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Shadow" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Shadow" amount="1" />
+    </Results>
+    <Handler>
+      <TransformGems color="Shadow" />
+    </Handler>
+  </Recipe>
+
+  <Recipe name="SpecialRecipe_Transform_Prismatic_Gems" desc="Transforms three Prismatic gems into another Prismatic gem of the same average quality."
+      level="30" >
+    <Requires>
+      <RecipeItem name="Gem_Fake_Prismatic" amount="3" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Gem_Fake_Prismatic" amount="1" />
+    </Results>
+    <Handler>
+      <TransformGems color="All" />
+    </Handler>
+  </Recipe>
+
+</Recipes>

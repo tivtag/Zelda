@@ -1,0 +1,80 @@
+﻿
+
+*********************************		*********************************
+					The Legend of Zelda - Black Crown
+							      To Do
+*********************************		*********************************
+
+
+# Audio
+	* More ambient sound effects: Crows, Zirben,
+	* Battle Sounds
+	* Menu Sounds
+	* Navy Sound
+
+# Story
+	- Implement cutscene technology
+	- Thinktank a story
+
+# Help
+	- Add more Navy random help chatter
+		- Explaination on how to best spec a character
+		- Damage Meter
+		- Shift + Left Click to move items between your inventory and your bottle
+		- fun stuff
+		Where? Before boss fights...
+
+# Zones
+	- Fill empty Tia Woods areas !!!
+	- Hyrule River short cut
+	- Add signpost infront of hyrule Rivers
+
+# Gameplay
+	- Increase gameplay speed somewhat
+
+# Customization
+
+# Crafting
+	+ Add low level craftable staff
+
+# Items
+	! Change Triforce thingy text
+	+ new gems
+	+ More green low-level gems
+	+ new character & fairy tinting useable
+	+ Add spell effects on on-hit status effect
+	+ Add Life/Mana Leech on-hit status effect
+
+# Skills
+
+# User Interface
+	* Merchant Window should support ruby toggle
+	! Gemming should also work on the equipment screen by adding an upgradeable "bag" system
+	+ Left-click to progress dialog
+	- draw GemType in the gem color.
+	~ Skill Book (Hero, General, Melee, Ranged, Magic, Support)
+	+ Add chat feature with fairy response
+
+# Quests
+	~ cancel quest so one can restart a quest
+
+# Talents
+	+ Reduce cooldown of all talents by XX
+
+# Optimization:
+	- cache Moveable.IsSwimming
+	- use one Flying Text Manager for all Scenes.
+
+# Misc
+	- Verify collision boxes for low-level enemies
+	- Don't allow game/updater to run multiple times.
+	~ Change Keyboard Layout using GUI
+	~ Free Flying/Riding for transportation
+	- navi stuck on a tree and mobs as well while chasing the player 
+
+
+ By equipping
+bags you can extend your available inventory space by additional slots.
+
+The additional inventory slots are visible in the Equipment Status screen
+and allow socketing of equipment or storing of often switched equipment.

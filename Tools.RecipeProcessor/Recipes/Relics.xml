@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+
+  <Recipe name="Recipe_Relic_FireBone">
+    <Requires>
+      <RecipeItem name="Misc_SkeletonBone" amount="1" />
+      <RecipeItem name="Gem_Fake_Fire" amount="1">
+        <GemMatch color="Fire" />
+      </RecipeItem>
+    </Requires>
+    <Results>
+      <RecipeItem name="Relic_FireBone" amount="1" />
+    </Results>
+  </Recipe>
+    
+  <Recipe name="Recipe_Relic_Crystal_Skeletal">
+    <Requires>
+      <RecipeItem name="Misc_Crystal_Fragment_Skeletal_Red" amount="1" />
+      <RecipeItem name="Misc_Crystal_Fragment_Skeletal_Green" amount="1" />
+      <RecipeItem name="Misc_Crystal_Fragment_Skeletal_Yellow" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Relic_Crystal_Skeletal" amount="1" />
+    </Results>
+  </Recipe>  
+  
+  <Recipe name="Recipe_Relic_CardSet_LuckyGoron">
+    <Requires>
+      <RecipeItem name="Misc_Card_LuckyGoron_Ace" amount="1" />
+      <RecipeItem name="Misc_Card_LuckyGoron_Two" amount="1" />
+      <RecipeItem name="Misc_Card_LuckyGoron_Three" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Relic_CardSet_LuckyGoron" amount="1" />
+    </Results>
+  </Recipe>  
+
+</Recipes>

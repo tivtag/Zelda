@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog
+        Id="WrongOperatingSystemDialog"
+        Width="260"
+        Height="100"
+        Title="[ProductName] [Setup]"
+        NoMinimize="yes"
+      >
+
+        <Control Id="DesignedForText" Type="Text" X="20" Y="15" Width="221" Height="10">
+          <Text>This application is designed for Windows XP SP2 and later.</Text>
+        </Control>
+
+        <Control Id="DoesntMeetRequirementsText" Type="Text" X="20" Y="34" Width="221" Height="31">
+          <Text>We're sorry but your operating system does not meet the minimum requirements to run this application.</Text>
+        </Control>
+
+        <Control
+          Id="No"
+          Type="PushButton"
+          X="105"
+          Y="72"
+          Width="56"
+          Height="17"
+          Default="yes"
+          Cancel="yes"
+          Text="&amp;Ok"
+        >
+          <Publish Event="EndDialog" Value="Exit">1</Publish>
+        </Control>
+
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>
+

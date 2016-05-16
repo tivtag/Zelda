@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+
+    <!--
+      Defined in Setup.wxs, the "TARGETDIR" is not actually created, it's just a crutch
+      in WiX to allow the files to share a common root
+    -->
+    <DirectoryRef Id="TARGETDIR">
+      <!--
+        ProgramMenuFolder is a special name that resolves to the start menu folder.
+        The files (see below) can indicate that they want a shortcut created in
+        another folder. By defining this folder, we can make them put a shortcut
+        into the start menu!
+      -->
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="GameProgramMenuFolder" Name="The Legend of Zelda - Black Crown">
+
+          <Component Id="StartMenuEntriesComponent" Guid="e49557f2-545b-46bc-a647-0af76e6ed8e2" DiskId="1">
+            <RemoveFolder Id="GameProgramMenuFolder" On="uninstall" />
+            <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+          </Component>
+        </Directory>
+      </Directory>
+      
+      <!--
+        ProgramFilesFolder is a special name that is resolved to the system's
+        programs folder. This entry makes sure that INSTALLDIR, displayed in
+        directory selection dialog, initially points to "C:\Program files\MyGame".
+        Note that this does not prevent the user from selecting an entirely
+        different path like "D:\Games\MyGame".
+      -->
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="INSTALLDIR" Name="The Legend of Zelda - Black Crown">
+          <Component Id="AppFolder" Guid="cc509cb7-c1a1-46cf-8c62-7cbb0017783c">
+            <CreateFolder />
+            <RemoveFile Id="PurgeAppFolder" Name="*.*" On="uninstall" />
+          </Component>
+
+          <Component Id="MainComponent" Guid="c13e9961-6a30-43f5-8363-3091073bc188" DiskId="1">
+            <File Id="GameExecutable" Name="TLoZ - Black Crown.exe" Source="Content/TLoZ - Black Crown.exe" />
+            <File Id="Updater" Source="Content\Zelda Updater.exe" Name="Zelda Updater.exe" />
+            <File Source="Content\Controls.txt" Name="Controls.txt" Id="Controls.txt" />
+            <File Source="Content\Recipes.txt" Name="Recipes.txt" Id="Recipes.txt" />
+            <File Source="Content\Credits.txt" Name="Credits.txt" Id="Credits.txt" />
+            <File Source="Content\Read Me.txt" Name="Read Me.txt" Id="ReadMe.txt" />
+          </Component>
+
+          <Component Id="ShortcutsComponent" Guid="c13e9961-6a30-43f5-8363-4091073bc188">
+            <Shortcut Id="GameShortcut" Directory="GameProgramMenuFolder"
+              Name="The Legend of Zelda - Black Crown" Description="Click to start the game! \o/"
+              Target="[INSTALLDIR]TLoZ - Black Crown.exe"
+              WorkingDirectory="INSTALLDIR"/>
+
+            <Shortcut Id="UpdaterShortcut" Directory="GameProgramMenuFolder"
+              Name="Zelda Updater"
+              Description="Downloads and applies the latest game patches."
+              Target="[INSTALLDIR]Zelda Updater.exe"
+              WorkingDirectory="INSTALLDIR"/>
+
+            <Shortcut Id="ReadMeShortcut" Directory="GameProgramMenuFolder"
+              Name="Read Me"
+              Description="Some starting pointers."
+              Target="[INSTALLDIR]Read Me.txt" 
+              WorkingDirectory="INSTALLDIR" />
+
+            <Shortcut Id="ControlsShortcut" Directory="GameProgramMenuFolder"
+              Name="Controls"
+              Description="Explains the ingame controls."
+              Target="[INSTALLDIR]Controls.txt"
+              WorkingDirectory="INSTALLDIR"/>
+
+            <Shortcut Id="RecipesShortcut" Directory="GameProgramMenuFolder"
+              Name="Recipes"
+              Description="Lists all crafting recipes."
+              Target="[INSTALLDIR]Recipes.txt"
+              WorkingDirectory="INSTALLDIR"/>
+
+            <Shortcut Id="CreditsShortcut" Directory="GameProgramMenuFolder"
+              Name="Credits" Description="Special thanks and legal notices."
+              Target="[INSTALLDIR]Credits.txt"
+              WorkingDirectory="INSTALLDIR"/>
+            <RegistryValue Root="HKCU" Key="Software\federrot\Zelda" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+          </Component>
+          
+          <Component Id="OtherComponent" Guid="c24e9961-6a30-43f5-8363-3091073bc188" DiskId="1">
+            <File Source="Content\Atom.dll" Name="Atom.dll" Id="Atom.dll" />
+            <File Source="Content\Atom.AI.dll" Name="Atom.AI.dll" Id="Atom.AI.dll" />
+            <File Source="Content\Atom.Mail.dll" Name="Atom.Mail.dll" Id="Atom.Mail.dll" />
+            <File Source="Content\Atom.Math.dll" Name="Atom.Math.dll" Id="Atom.Math.dll" />
+            <File Source="Content\Atom.Math.Graph.dll" Name="Atom.Math.Graph.dll" Id="Atom.Math.Graph.dll" />
+            <File Source="Content\Atom.ErrorReporting.dll" Name="Atom.ErrorReporting.dll" Id="Atom.ErrorReporting.dll" />
+            <File Source="Content\Atom.ErrorReporting.Forms.dll" Name="Atom.ErrorReporting.Forms.dll" Id="Atom.ErrorReporting.Forms.dll" />
+            <File Source="Content\Atom.Fmod.dll" Name="Atom.Fmod.dll" Id="Atom.Fmod.dll" />
+            <File Source="Content\Atom.Game.dll" Name="Atom.Game.dll" Id="Atom.Game.dll" />
+            <File Source="Content\Atom.Game.Waypoints.dll" Name="Atom.Game.Waypoints.dll" Id="Atom.Game.Waypoints.dll" />
+            <File Source="Content\Atom.Game.Xna.dll" Name="Atom.Game.Xna.dll" Id="Atom.Game.Xna.dll" />
+            <File Source="Content\Atom.Scripting.dll" Name="Atom.Scripting.dll" Id="Atom.Scripting.dll" />
+            <File Source="Content\Atom.Xna.dll" Name="Atom.Xna.dll" Id="Atom.Xna.dll" />
+            <File Source="Content\Atom.Xna.Particles.dll" Name="Atom.Xna.Particles.dll" Id="Atom.Xna.Particles.dll" />
+            <File Source="Content\Atom.Xna.UI.dll" Name="Atom.Xna.UI.dll" Id="Atom.Xna.UI.dll" />
+
+            <File Source="Content\Microsoft.Dynamic.dll" Name="Microsoft.Dynamic.dll" Id="Microsoft.Dynamic.dll" />
+            <File Source="Content\Microsoft.Scripting.dll" Name="Microsoft.Scripting.dll" Id="Microsoft.Scripting.dll" />
+            <File Source="Content\IronRuby.dll" Name="IronRuby.dll" Id="IronRuby.dll" />
+            <File Source="Content\IronRuby.Libraries.dll" Name="IronRuby.Libraries.dll" Id="IronRuby.Libraries.dll" />
+
+            <File Source="Content\PatchNotes.txt" Name="PatchNotes.txt" Id="PatchNotes.txt" />
+            <File Source="Content\PatchNotes_Old.txt" Name="PatchNotes_Old.txt" Id="PatchNotes_Old.txt" />
+            <File Source="Content\fmodex.dll" Name="fmodex.dll" Id="fmodex.dll" />
+            <File Source="Content\Talent Trees.txt" Name="Talent Trees.txt" Id="Talent_Trees.txt" />
+            <File Source="Content\ZeldasLibrary.dll" Name="ZeldasLibrary.dll" Id="ZeldasLibrary.dll" />
+            <File Source="Content\TLoZ - Black Crown.exe.config" Name="TLoZ - Black Crown.exe.config" Id="TLoZ_Black_Crown.exe.config" />
+          </Component>
+          
+          <Directory Id="ContentFolder" Name="Content">
+            <Component Id="ContentComponent" Guid="d58b2ccf-4623-4992-9da8-3e742be7a00d" DiskId="1">
+              <CreateFolder />
+              <RemoveFile Id="PurgeContentFolder" Name="*.*" On="uninstall" />              
+            </Component>
+
+            <Directory Id="UpdaterFolder" Name="Updater">
+              <Component Id="UpdaterComponent" Guid="f846af14-3a2a-4b69-acd1-14383670866b" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeUpdaterFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+
+            <Directory Id="FontzFolder" Name="Fonts">
+              <Component Id="FontzComponent" Guid="3910be50-8afc-4beb-b4b7-fdabb441e923" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeFontzFolder" Name="*.*" On="uninstall" />                
+              </Component>
+            </Directory>
+            
+            <Directory Id="EffectsFolder" Name="Effects">
+              <Component Id="EffectsComponent" Guid="6fb21827-0eef-4fe6-bae8-3bc4c7888ec3" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeEffectsFolder" Name="*.*" On="uninstall" />                
+              </Component>
+            </Directory>
+            
+            <Directory Id="ItemsFolder" Name="Items">
+              <Component Id="ItemsComponent" Guid="a5d7e7f4-18d2-442c-9c45-ee5fadf347ea" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeItemsFolder" Name="*.*" On="uninstall" />                
+              </Component>
+              <Directory Id="SetsFolder" Name="Sets">
+                <Component Id="SetsComponent" Guid="c1822ee5-90fa-466f-8db2-ae5afebfa71c" DiskId="1">
+                  <CreateFolder />
+                  <RemoveFile Id="PurgeSetsFolder" Name="*.*" On="uninstall" />
+                </Component>
+              </Directory>
+            </Directory>
+            
+            <Directory Id="MusicFolder" Name="Music">
+              <Component Id="MusicComponent" Guid="86de2aca-c65d-477f-9e21-d1ccb44b11f5" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeMusicFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+
+            <Directory Id="QuestsFolder" Name="Quests">
+              <Component Id="QuestsComponent" Guid="e0f7e7f3-5308-4b8f-ade8-1363acf5e888" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeQuestsFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+            
+            <Directory Id="ScenesFolder" Name="Scenes">
+              <Component Id="ScenesComponent" Guid="a778e455-1089-47c8-8085-071a64c67ccf" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeScenesFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+            
+            <Directory Id="SheetsFolder" Name="Sheets">
+              <Component Id="SheetsComponent" Guid="42d3cee8-5add-4666-8ad1-06bfacdbb4a9" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeSheetsFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+
+            <Directory Id="ObjectsFolder" Name="Objects">
+              <Component Id="ObjectsComponent" Guid="0952e35f-1709-4c66-a38d-0132616b20bb" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeObjectsFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+
+            <Directory Id="SamplesFolder" Name="Samples">
+              <Component Id="SamplesComponent" Guid="7671d6a3-8f9b-449a-8784-8cc3a51d94fe" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeSamplesFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+
+            <Directory Id="SpritesFolder" Name="Sprites">
+              <Component Id="SpritesComponent" Guid="69885986-f5b2-4c4e-b736-01e700fec18e" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeSpritesFolder" Name="*.*" On="uninstall" />
+              </Component>
+            </Directory>
+            
+            <Directory Id="TexturesFolder" Name="Textures">
+              <Component Id="TexturesComponent" Guid="1bce0384-d3cc-4c68-91d7-60f0d345c6ac" DiskId="1">
+                <CreateFolder />
+                <RemoveFile Id="PurgeTexturesFolder" Name="*.*" On="uninstall" />
+              </Component>
+              
+              <Directory Id="ParticleTexturesFolder" Name="Particles">
+                <Component Id="ParticleTexturesComponent" Guid="499346f8-62da-45c3-a063-bdb34c682260" DiskId="1">
+                  <CreateFolder />
+                  <RemoveFile Id="PurgeParticleTexturesFolder" Name="*.*" On="uninstall" />
+                </Component>
+              </Directory>              
+            </Directory>            
+          </Directory>
+        </Directory>
+      </Directory>
+    </DirectoryRef>
+
+  </Fragment>
+</Wix>

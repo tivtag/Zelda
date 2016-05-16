@@ -1,0 +1,2119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ID_Armor_Ghost_Black" xml:space="preserve">
+    <value>'The spooky feel won't go away
+even after washing it over ten times.'
+ </value>
+  </data>
+  <data name="ID_Armor_KokirianNovice" xml:space="preserve">
+    <value>'Clothes moths' favorite meal.'
+ </value>
+  </data>
+  <data name="ID_Armor_Mantle_Ninja" xml:space="preserve">
+    <value>'Are you going to be a NINJA WARRIOR ?!!'
+ </value>
+  </data>
+  <data name="ID_Belt_BadLeather" xml:space="preserve">
+    <value>'The worst quality, but cheap.'</value>
+  </data>
+  <data name="ID_Belt_HeroesRage" xml:space="preserve">
+    <value>'To be able to restrain your rage 
+in battle is an important step to
+become a master fighter.'</value>
+  </data>
+  <data name="ID_Belt_SlowMotion" xml:space="preserve">
+    <value>'From the makers of Matrix (tm).'</value>
+  </data>
+  <data name="ID_Boots_Fairy" xml:space="preserve">
+    <value>'Are those boots for girls ... ?'
+ </value>
+  </data>
+  <data name="ID_Boots_Fairy_Cursed" xml:space="preserve">
+    <value>'The darkness lies on these boots.'
+ </value>
+  </data>
+  <data name="ID_Boots_HyruleLeather" xml:space="preserve">
+    <value>It says: 'Made in Hyrule.'
+ </value>
+  </data>
+  <data name="ID_Boots_IronCoatedLeather" xml:space="preserve">
+    <value>'A kick with those boots shall hurt.'
+ </value>
+  </data>
+  <data name="ID_Boots_UndeadHunter" xml:space="preserve">
+    <value>How stinky!
+They really should get cleaned ...</value>
+  </data>
+  <data name="ID_Bow_Ballista_Strong" xml:space="preserve">
+    <value>'Just the perfect ranged weapon for a warrior.'
+ </value>
+  </data>
+  <data name="ID_Bow_KokiriNovice" xml:space="preserve">
+    <value>A simple bow.</value>
+  </data>
+  <data name="ID_Bow_RudrasEnhancedDemon" xml:space="preserve">
+    <value>'The sinew of the bow has been
+ replaced by the hair of demons. Deadly!'</value>
+  </data>
+  <data name="ID_Buff_LuckyCandy" xml:space="preserve">
+    <value>'Don't ruin your teeth!'
+ </value>
+  </data>
+  <data name="ID_Cloak_Battle" xml:space="preserve">
+    <value>'This one has been used in many battles.'
+ </value>
+  </data>
+  <data name="ID_Cloak_Cape_DemonMarquess" xml:space="preserve">
+    <value>'A tale tells that in the old times parts
+of Hyrule's royal family were abducted
+and transformed into true demons.'
+ </value>
+  </data>
+  <data name="ID_Cloak_Coat_Skeleton" xml:space="preserve">
+    <value>'U-aakh, it's smelling like a rotten skeleton!'
+ </value>
+  </data>
+  <data name="ID_Cloak_Coat_SlimyGhost" xml:space="preserve">
+    <value>'Green slime keeps coming out.
+One day it will fill all earth!'</value>
+  </data>
+  <data name="ID_Cloak_Muffler_Demon" xml:space="preserve">
+    <value>'Watch out! It may turn your mind evil~'
+ </value>
+  </data>
+  <data name="ID_Food_Burrito_Ghost" xml:space="preserve">
+    <value>'Yummy! Too bad that it's hard to eat.'
+ </value>
+  </data>
+  <data name="ID_Gloves_BloodyGhostMittens" xml:space="preserve">
+    <value>'The blood seems to be fresh~'
+ </value>
+  </data>
+  <data name="ID_Gloves_Gauntlets_StrongPush" xml:space="preserve">
+    <value>'It allows the wearer to easily break any wall.'
+ </value>
+  </data>
+  <data name="ID_Gloves_StrongBow" xml:space="preserve">
+    <value>'Steady aim + these gloves = profit!'
+ </value>
+  </data>
+  <data name="ID_Head_CowboyHat" xml:space="preserve">
+    <value>'Where's my horse?'
+ </value>
+  </data>
+  <data name="ID_Head_DemonStrawHat" xml:space="preserve">
+    <value>'Oh dear! It's surrounded  by an evil aura.'
+ </value>
+  </data>
+  <data name="ID_Head_FakeHeavenRing" xml:space="preserve">
+    <value>'Ghost, zombies, demons and so on are
+all bullshit. When do you finally get that
+they don't exist? Trust me on that one.'
+ </value>
+  </data>
+  <data name="ID_Head_PooPoo" xml:space="preserve">
+    <value>'The horrible smell makes 'em
+hesitate to attack you.'</value>
+  </data>
+  <data name="ID_Head_SimpleHat" xml:space="preserve">
+    <value>A cheap hat.
+ </value>
+  </data>
+  <data name="ID_Key_TiaWoods_StoneIsland" xml:space="preserve">
+    <value>'Opens the path leading to the
+ Stone Tombs in the Tia Woods.'</value>
+  </data>
+  <data name="ID_Misc_Apple_Big_Green" xml:space="preserve">
+    <value>'From a tree in the Hyrule Gardens.'
+ </value>
+  </data>
+  <data name="ID_Misc_Apple_Small_Red" xml:space="preserve">
+    <value>'One bite will make you smile all day. :)'
+ </value>
+  </data>
+  <data name="ID_Misc_Bottle_SmallEmpty" xml:space="preserve">
+    <value>"Of great use for every alchemist."
+ </value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_1" xml:space="preserve">
+    <value>An old story tells that there once existed a sword,
+which captured the forces of the great winds.
+...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_2" xml:space="preserve">
+    <value>... A sword that allowed its wielder to master the powers
+that helped to form the very lands of Hyrule. It's name
+was ...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_3" xml:space="preserve">
+    <value>... the Wind Sword of Hyrule. The protectors of time and
+space were entrusted to keep the sword hidden of the evils
+that have been foreseen to come. ...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_4" xml:space="preserve">
+    <value>... And those times came, the great evil in form of
+Ganon emerged to destroy all we loved.
+His avaricious mind wanted almost nothing else
+than to get his hands on the mighty sword. ...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_5" xml:space="preserve">
+    <value>... Using the powers of the sword he could shape Hyrule
+as he wishes. And it almost came that way ...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_6" xml:space="preserve">
+    <value>... Today we call it the Legend of the Winds, but I tell you
+it is far from a legend. Thunder and rain were moaning for
+weeks after Ganondorf has found the Temple of Time. ...</value>
+  </data>
+  <data name="ID_Misc_BrokenWindSword_Part_7" xml:space="preserve">
+    <value>... But as Ganondorf reached for the sword, a great light,
+brighter than anything you've seen before, filled the temple.
+Din herself, the goddess of power, broke the sword into seven
+pieces and spread them all over Hyrule. The story ends by
+presaging that one day a young boy will come and reforge 
+the mighty Wind Sword of Hyrule to fight the evils. One day.</value>
+  </data>
+  <data name="ID_Misc_Clam_MysteriousBlue" xml:space="preserve">
+    <value>'It's apparent use stays hidden.'
+ </value>
+  </data>
+  <data name="ID_Misc_Clover_FourLeaf" xml:space="preserve">
+    <value>'It is said that Four Leaf Clovers can 
+be used to create lucky charms!'
+ </value>
+  </data>
+  <data name="ID_Misc_Crystal_DarkMatter" xml:space="preserve">
+    <value>'It consists of a strange material that
+usually can't be found in Hyrule.'
+ </value>
+  </data>
+  <data name="ID_Misc_Crystal_Fragment_Skeletal" xml:space="preserve">
+    <value>'An old story tells that the Skeleton Crystals were
+each shattered into three crystal fragments. Could it be?'
+ </value>
+  </data>
+  <data name="ID_Misc_DeadFish" xml:space="preserve">
+    <value>'This fish has been thrown around a lot.'</value>
+  </data>
+  <data name="ID_Misc_Doll_Yoyo" xml:space="preserve">
+    <value>'Lovely toy for any child. Made in Hyrule.'
+ </value>
+  </data>
+  <data name="ID_Misc_Dye_Black" xml:space="preserve">
+    <value>'Some people like to wear black clothes.
+This dye is just perfect for them.'
+ </value>
+  </data>
+  <data name="ID_Misc_Dye_Blue" xml:space="preserve">
+    <value>'An expensive magical-enchanted blue dye.'
+ </value>
+  </data>
+  <data name="ID_Misc_Dye_Green" xml:space="preserve">
+    <value>'Pretty cheap green dye.'</value>
+  </data>
+  <data name="ID_Misc_Dye_Red" xml:space="preserve">
+    <value>'An effective red dye.'</value>
+  </data>
+  <data name="ID_Misc_Fabric" xml:space="preserve">
+    <value>'It has a spooky feel to it.'</value>
+  </data>
+  <data name="ID_Misc_Iron" xml:space="preserve">
+    <value>'Of great use for any blacksmith.'</value>
+  </data>
+  <data name="ID_Misc_Keese_Tooth" xml:space="preserve">
+    <value>'A bat's sharp tooth.'</value>
+  </data>
+  <data name="ID_Misc_Keese_Wing" xml:space="preserve">
+    <value>'It's STILL moving...'</value>
+  </data>
+  <data name="ID_Misc_Key_SmallUniversalWind" xml:space="preserve">
+    <value>'By the powers of the winds, be open!</value>
+  </data>
+  <data name="ID_Misc_Leaf_Great" xml:space="preserve">
+    <value>'The essence of these leaves
+can easily be extracted.'</value>
+  </data>
+  <data name="ID_Misc_Leaf_Small_Black" xml:space="preserve">
+    <value>'Can be used to create Black Dye.'</value>
+  </data>
+  <data name="ID_Misc_Leaf_Small_Fresh" xml:space="preserve">
+    <value>Its fresh smell is yummy~!</value>
+  </data>
+  <data name="ID_Misc_Ore_Iron" xml:space="preserve">
+    <value>'To create Iron combine
+three units of Iron Ore.'
+ </value>
+  </data>
+  <data name="ID_Misc_RudrasSoulStone" xml:space="preserve">
+    <value>'A part of Rudra's soul has been
+captured in this crystal stone.'</value>
+  </data>
+  <data name="ID_Misc_Scale_Snake_Green" xml:space="preserve">
+    <value>'Watch out! It's still poisoned~'</value>
+  </data>
+  <data name="ID_Misc_Silk_Expensive" xml:space="preserve">
+    <value>'A rumour says that this silk
+comes from the golden realm .'
+ </value>
+  </data>
+  <data name="ID_Misc_SkeletonBone" xml:space="preserve">
+    <value>A leg bone of a skeleton.</value>
+  </data>
+  <data name="ID_Misc_SkeletonBonePowder" xml:space="preserve">
+    <value>'This fine powder is of
+great use for any alchemist.'</value>
+  </data>
+  <data name="ID_Misc_SmallFreshLeaf" xml:space="preserve">
+    <value>Its fresh smell is yummy.</value>
+  </data>
+  <data name="ID_Misc_Tablet_OfWisdom" xml:space="preserve">
+    <value>'Studying the ancient words may uncover many secrets.'
+ </value>
+  </data>
+  <data name="ID_Necklace_LostFamily" xml:space="preserve">
+    <value>'This necklace has been doomed
+lost by the Tia Woods family.'
+ </value>
+  </data>
+  <data name="ID_Necklace_SmallLucky" xml:space="preserve">
+    <value>'Buy it and the luck of the
+world shall all be yours.'</value>
+  </data>
+  <data name="ID_Necklace_TrueBloodCore" xml:space="preserve">
+    <value>'Stores the blood of a fallen warrior.'
+ </value>
+  </data>
+  <data name="ID_OffhandDagger" xml:space="preserve">
+    <value>'Some fighters prefer to give up
+defense for pure brutal power.'
+ </value>
+  </data>
+  <data name="ID_OldShirt" xml:space="preserve">
+    <value>It really needs a wash up!</value>
+  </data>
+  <data name="ID_PhaseShifting" xml:space="preserve">
+    <value>'It seems to be partially shifted out from
+our realm of existence. How can this be.. ?'
+ </value>
+  </data>
+  <data name="ID_Potion_BoneHardening" xml:space="preserve">
+    <value>'Don't forget that even hardened bones can break.'
+ </value>
+  </data>
+  <data name="ID_Potion_GhostlyShroom" xml:space="preserve">
+    <value>'You may feel strange after drinking it!'
+ </value>
+  </data>
+  <data name="ID_Potion_Small_Strength" xml:space="preserve">
+    <value>"Be careful to not overdose."
+ </value>
+  </data>
+  <data name="ID_Quest_StoneTempleSecretMap" xml:space="preserve">
+    <value>Shows every single secret of
+the family tombs of the local rulers.
+Sadly it's encoded.</value>
+  </data>
+  <data name="ID_Quest_TiaWoodsFamilyPortrait" xml:space="preserve">
+    <value>'This painting has only got a sentimental value.'</value>
+  </data>
+  <data name="ID_Quest_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>'This doll needs to be repaired or it could
+actually hurt the children that play with it.'
+ </value>
+  </data>
+  <data name="ID_Quest_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>'The letter has been sealed carefully.
+Do you really want to open it?'</value>
+  </data>
+  <data name="ID_Relic_Bloody_Heirloom" xml:space="preserve">
+    <value>'It's the hand of Billy's grandfather.'
+ </value>
+  </data>
+  <data name="ID_Relic_BombBag_Tinted" xml:space="preserve">
+    <value>'I'd rather not use it to store bombs.
+Or do you want to explode?'</value>
+  </data>
+  <data name="ID_Relic_Crystal_Skeletal" xml:space="preserve">
+    <value>'Once upon a time there was a force that kept the balance
+in place. It created the Skeletal Crystals to protect the citizen
+of Hyrule from the dangers of the Skeleton Realm.
+... Until the crystals were scattered over the lands.
+Since then skeletons started again to appear in all parts of Hyrule.
+ </value>
+  </data>
+  <data name="ID_Relic_Paper_Skeleton_Special" xml:space="preserve">
+    <value>'Skeletons can read and write?!'</value>
+  </data>
+  <data name="ID_Ring_ArrowInfusingBracelets" xml:space="preserve">
+    <value>'The power of the bracelets infuses your arrows.'
+ </value>
+  </data>
+  <data name="ID_Ring_Copper" xml:space="preserve">
+    <value>'Its simple look can easily fool one.'
+ </value>
+  </data>
+  <data name="ID_Ring_KanesLooter" xml:space="preserve">
+    <value>'Has been stolen and abused by demons.
+Poor Kane!'</value>
+  </data>
+  <data name="ID_Ring_PowerBracelets" xml:space="preserve">
+    <value>'You feel the power flow through your veins.'
+ </value>
+  </data>
+  <data name="ID_Ring_TheOne" xml:space="preserve">
+    <value>'The one and only ...'
+ </value>
+  </data>
+  <data name="ID_Ring_TheTwo" xml:space="preserve">
+    <value>'The two and only ...'
+               </value>
+  </data>
+  <data name="ID_ShieldNut" xml:space="preserve">
+    <value>A simple shield.
+ </value>
+  </data>
+  <data name="ID_Shield_MagicBuffer" xml:space="preserve">
+    <value>'This shield can partially absorb spells.'
+ </value>
+  </data>
+  <data name="ID_Shield_Nut" xml:space="preserve">
+    <value>'It burns like hell, beware!'
+ </value>
+  </data>
+  <data name="ID_SongScroll_FamilyTombsTeleportation" xml:space="preserve">
+    <value>Left.. Right.. Left.. Right..</value>
+  </data>
+  <data name="ID_Staff_Cursed_Executer" xml:space="preserve">
+    <value>'Execute your enemies without mercy.'
+ </value>
+  </data>
+  <data name="ID_Staff_DemonSkull" xml:space="preserve">
+    <value>'The demonic power still flows through the staff.'
+ </value>
+  </data>
+  <data name="ID_Staff_Iron" xml:space="preserve">
+    <value>'Warriors may find it useful. Good to crush bones.'
+ </value>
+  </data>
+  <data name="ID_Staff_Ruby" xml:space="preserve">
+    <value>'I wonder why it is so cheap ... ?!'
+ </value>
+  </data>
+  <data name="ID_Staff_Shroom_Demon" xml:space="preserve">
+    <value>'Watch out! It's easily inflammable.'
+ </value>
+  </data>
+  <data name="ID_Staff_VerySimple" xml:space="preserve">
+    <value>PS.: 'It's really very very simple.' 
+ </value>
+  </data>
+  <data name="ID_Staff_Ward_KokirianNovice" xml:space="preserve">
+    <value>'You won't do many wonders with this one.
+But it'll get you started.'</value>
+  </data>
+  <data name="ID_SwordKokirianTrainings" xml:space="preserve">
+    <value>A simple wooden sword.</value>
+  </data>
+  <data name="ID_Sword_Demonic" xml:space="preserve">
+    <value>'Only a demon can unleash the
+true power of this weapon.'</value>
+  </data>
+  <data name="ID_Sword_Demonic_Enhanced" xml:space="preserve">
+    <value>'Only a demon can unleash the true
+power of this weapon. But it has been
+enhanced to make it easier to wield.'</value>
+  </data>
+  <data name="ID_Sword_FuryOfTheWarrior" xml:space="preserve">
+    <value>"Actually, only exalted guardians of the
+Hyrule Temple are allowed to use it."</value>
+  </data>
+  <data name="ID_Sword_KokiriNovice" xml:space="preserve">
+    <value>A simple wooden sword.</value>
+  </data>
+  <data name="ID_WindOfHyrule" xml:space="preserve">
+    <value>The legend became true.. it changes shape in the bottle.</value>
+  </data>
+  <data name="ID_Tainted_ByRudra" xml:space="preserve">
+    <value>'The touch of Rudra has tainted this item.'
+ </value>
+  </data>
+  <data name="ID_Trinket_CursedLuck" xml:space="preserve">
+    <value>'The curse may be lifted with the
+power of a Four Leaf Clover.'
+ </value>
+  </data>
+  <data name="ID_Trinket_CursedLuck_Cleansed" xml:space="preserve">
+    <value>'The power of a four leaf clove
+has cleansed the charm.'
+ </value>
+  </data>
+  <data name="ID_Trinket_FlurryCompass" xml:space="preserve">
+    <value>'It's spinning like crazy!'
+ </value>
+  </data>
+  <data name="ID_Trinket_Lantern_Iron" xml:space="preserve">
+    <value>'The demon hunters of Hyrule used to identify
+themself by having such an iron lantern.'
+ </value>
+  </data>
+  <data name="ID_Trinket_LittleRareManaBroche" xml:space="preserve">
+    <value>'Infuses the wearer with pure mana.'
+ </value>
+  </data>
+  <data name="ID_Trinket_OfLight" xml:space="preserve">
+    <value>'The Light shall be with you.'
+- The Brotherhood</value>
+  </data>
+  <data name="ID_Trinket_RudrasHeart" xml:space="preserve">
+    <value>'It's just one of many. He'll simply extract 
+a new one from one of his followers.'
+ </value>
+  </data>
+  <data name="ID_Trinket_StrangeIronDevice" xml:space="preserve">
+    <value>'Its function is still a mystery.'
+ </value>
+  </data>
+  <data name="ID_Weapon_Dagger_FishKnife" xml:space="preserve">
+    <value>'It's still dropping in blood ...'</value>
+  </data>
+  <data name="ID_Weapon_Dagger_Kokiri" xml:space="preserve">
+    <value>'Don't cut yourself!'</value>
+  </data>
+  <data name="ID_Weapon_Dagger_QuickStrikeCombat" xml:space="preserve">
+    <value>'As an assassin you'll have to
+adjust your fight-style.'</value>
+  </data>
+  <data name="IN_Armor_Ghost_Black" xml:space="preserve">
+    <value>Black Ghost Armor</value>
+  </data>
+  <data name="IN_Armor_Kokirian" xml:space="preserve">
+    <value>Kokirian Armor</value>
+  </data>
+  <data name="IN_Armor_KokirianNovice" xml:space="preserve">
+    <value>Kokirian Novice Armor</value>
+  </data>
+  <data name="IN_Armor_Mail_Wooden" xml:space="preserve">
+    <value>Wooden Mail Armor</value>
+  </data>
+  <data name="IN_Armor_Mantle_Ninja" xml:space="preserve">
+    <value>Extraordinary Ninja Mantle</value>
+  </data>
+  <data name="IN_Armor_Robe_Rudras" xml:space="preserve">
+    <value>Rudra's Magical Robe</value>
+  </data>
+  <data name="IN_Armor_RudrasProtectionArmor" xml:space="preserve">
+    <value>Rudra's Protection Armor</value>
+  </data>
+  <data name="IN_Armor_RudrasThievesClothes" xml:space="preserve">
+    <value>Rudra's Thieves Clothes</value>
+  </data>
+  <data name="IN_Belt_BadLeather" xml:space="preserve">
+    <value>Bad Leather Belt</value>
+  </data>
+  <data name="IN_Belt_HeroesRage" xml:space="preserve">
+    <value>The Hero's Rage</value>
+  </data>
+  <data name="IN_Belt_Leather_Shady" xml:space="preserve">
+    <value>Shady Leather Belt</value>
+  </data>
+  <data name="IN_Belt_RudrasCheapLeather" xml:space="preserve">
+    <value>Cheap Leather Belt</value>
+  </data>
+  <data name="IN_Belt_RudrasQuickStrikeBelt" xml:space="preserve">
+    <value>Rudra's Quick-Strike Belt</value>
+  </data>
+  <data name="IN_Belt_SlowMotion" xml:space="preserve">
+    <value>Slow-Motion Belt</value>
+  </data>
+  <data name="IN_Boots_BadLeather" xml:space="preserve">
+    <value>Bad Leather Boots</value>
+  </data>
+  <data name="IN_Boots_Fairy" xml:space="preserve">
+    <value>Fairy Boots</value>
+  </data>
+  <data name="IN_Boots_Fairy_Cursed" xml:space="preserve">
+    <value>Cursed Fairy Boots</value>
+  </data>
+  <data name="IN_Boots_HyruleLeather" xml:space="preserve">
+    <value>Hyrule Leather Boots</value>
+  </data>
+  <data name="IN_Boots_IronCoatedLeather" xml:space="preserve">
+    <value>Iron-Coated Leather Boots</value>
+  </data>
+  <data name="IN_Boots_UndeadHunter" xml:space="preserve">
+    <value>Boots of the Undead Hunter</value>
+  </data>
+  <data name="IN_BowKokirianTrainings" xml:space="preserve">
+    <value>Kokirian Trainings Bow</value>
+  </data>
+  <data name="IN_Bow_Ballista_Strong" xml:space="preserve">
+    <value>Strong Ballista</value>
+  </data>
+  <data name="IN_Bow_HurricaneOfTheSniper" xml:space="preserve">
+    <value>Hurricane of the Sniper</value>
+  </data>
+  <data name="IN_Bow_Kokiri" xml:space="preserve">
+    <value>Kokirian Bow</value>
+  </data>
+  <data name="IN_Bow_KokiriNovice" xml:space="preserve">
+    <value>Kokirian Novice Bow</value>
+  </data>
+  <data name="IN_Bow_RudrasDemon" xml:space="preserve">
+    <value>Rudra's Demon Bow</value>
+  </data>
+  <data name="IN_Bow_RudrasEnhancedDemon" xml:space="preserve">
+    <value>Enhanced Rudra's Demon Bow</value>
+  </data>
+  <data name="IN_Bow_ShadyHyrule" xml:space="preserve">
+    <value>Shady Hyrule Bow</value>
+  </data>
+  <data name="IN_Bow_SimpleHyrule" xml:space="preserve">
+    <value>Simple Hyrule Bow</value>
+  </data>
+  <data name="IN_Bow_TaintedHurricaneOfTheSniper" xml:space="preserve">
+    <value>Tainted Hurricane Of The Sniper</value>
+  </data>
+  <data name="IN_Buff_LuckyCandy" xml:space="preserve">
+    <value>Lucky Candy</value>
+  </data>
+  <data name="IN_Cloak_Battle" xml:space="preserve">
+    <value>Battle Cloak</value>
+  </data>
+  <data name="IN_Cloak_Cape_DemonMarquess" xml:space="preserve">
+    <value>Demon Marquess Cape</value>
+  </data>
+  <data name="IN_Cloak_Coat_Skeleton" xml:space="preserve">
+    <value>Skeleton Coat</value>
+  </data>
+  <data name="IN_Cloak_Coat_SlimyGhost" xml:space="preserve">
+    <value>Slimy Ghost Coat</value>
+  </data>
+  <data name="IN_Cloak_Muffler_Bad" xml:space="preserve">
+    <value>Bad Muffler</value>
+  </data>
+  <data name="IN_Cloak_Muffler_Demon" xml:space="preserve">
+    <value>Demon Muffler</value>
+  </data>
+  <data name="IN_Food_Burrito_Ghost" xml:space="preserve">
+    <value>Ghost Burrito</value>
+  </data>
+  <data name="IN_Gloves_BloodyGhostMittens" xml:space="preserve">
+    <value>Bloody Ghost Mittens</value>
+  </data>
+  <data name="IN_Gloves_BoneCrusher" xml:space="preserve">
+    <value>Bone Crusher</value>
+  </data>
+  <data name="IN_Gloves_Gauntlets_StrongPush" xml:space="preserve">
+    <value>Strong-Push Gauntlets</value>
+  </data>
+  <data name="IN_Gloves_StrongBow" xml:space="preserve">
+    <value>Strong-Bow Gloves</value>
+  </data>
+  <data name="IN_Head_CowboyHat" xml:space="preserve">
+    <value>Cowboy Hat</value>
+  </data>
+  <data name="IN_Head_DemonStrawHat" xml:space="preserve">
+    <value>Demon Straw Hat</value>
+  </data>
+  <data name="IN_Head_FakeHeavenRing" xml:space="preserve">
+    <value>Fake Heaven Ring</value>
+  </data>
+  <data name="IN_Head_PooPoo" xml:space="preserve">
+    <value>Poo Poo Hat</value>
+  </data>
+  <data name="IN_Head_RudrasSlaveMask" xml:space="preserve">
+    <value>Slave Mask</value>
+  </data>
+  <data name="IN_Head_SimpleHat" xml:space="preserve">
+    <value>Simple Hat</value>
+  </data>
+  <data name="IN_Key_TiaWoods_StoneIsland" xml:space="preserve">
+    <value>Stone Island Key</value>
+  </data>
+  <data name="IN_Misc_Apple_Big_Green" xml:space="preserve">
+    <value>Green Hyrule Garden Apple</value>
+  </data>
+  <data name="IN_Misc_Apple_Small_Red" xml:space="preserve">
+    <value>Delicious Small Red Apple</value>
+  </data>
+  <data name="IN_Misc_Bottle_SmallEmpty" xml:space="preserve">
+    <value>Small Empty Bottle</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_1" xml:space="preserve">
+    <value>First Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_2" xml:space="preserve">
+    <value>Second Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_3" xml:space="preserve">
+    <value>Third Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_4" xml:space="preserve">
+    <value>Fourth Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_5" xml:space="preserve">
+    <value>Fifth Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_6" xml:space="preserve">
+    <value>Sixth Sword Piece</value>
+  </data>
+  <data name="IN_Misc_BrokenWindSword_Part_7" xml:space="preserve">
+    <value>Seventh Sword Piece</value>
+  </data>
+  <data name="IN_Misc_Clam_MysteriousBlue" xml:space="preserve">
+    <value>Mysterious Blue Clam</value>
+  </data>
+  <data name="IN_Misc_Clover_FourLeaf" xml:space="preserve">
+    <value>Four Leaf Clover</value>
+  </data>
+  <data name="IN_Misc_Crystal_DarkMatter" xml:space="preserve">
+    <value>Blackrock Crystal</value>
+  </data>
+  <data name="IN_Misc_Crystal_Fragment_Skeletal_Green" xml:space="preserve">
+    <value>Green Skeletal Crystal Fragment</value>
+  </data>
+  <data name="IN_Misc_Crystal_Fragment_Skeletal_Red" xml:space="preserve">
+    <value>Red Skeletal Crystal Fragment</value>
+  </data>
+  <data name="IN_Misc_Crystal_Fragment_Skeletal_Yellow" xml:space="preserve">
+    <value>Yellow Skeletal Crystal Fragment</value>
+  </data>
+  <data name="IN_Misc_DeadFish" xml:space="preserve">
+    <value>Dead Fish</value>
+  </data>
+  <data name="IN_Misc_DemonHair" xml:space="preserve">
+    <value>Demon Hair</value>
+  </data>
+  <data name="IN_Misc_Doll_Yoyo" xml:space="preserve">
+    <value>Yoyo Doll</value>
+  </data>
+  <data name="IN_Misc_Dye_Black" xml:space="preserve">
+    <value>Black Dye</value>
+  </data>
+  <data name="IN_Misc_Dye_Blue" xml:space="preserve">
+    <value>Blue Dye</value>
+  </data>
+  <data name="IN_Misc_Dye_Green" xml:space="preserve">
+    <value>Green Dye</value>
+  </data>
+  <data name="IN_Misc_Dye_Red" xml:space="preserve">
+    <value>Red Dye</value>
+  </data>
+  <data name="IN_Misc_Fabric" xml:space="preserve">
+    <value>Fabric</value>
+  </data>
+  <data name="IN_Misc_Iron" xml:space="preserve">
+    <value>Iron</value>
+  </data>
+  <data name="IN_Misc_Keese_Tooth" xml:space="preserve">
+    <value>Keese Tooth</value>
+  </data>
+  <data name="IN_Misc_Keese_Wing" xml:space="preserve">
+    <value>Keese Wing</value>
+  </data>
+  <data name="IN_Misc_Key_SmallUniversalWind" xml:space="preserve">
+    <value>Small Universal Wind Key</value>
+  </data>
+  <data name="IN_Misc_Leaf_Great" xml:space="preserve">
+    <value>Great Leaf</value>
+  </data>
+  <data name="IN_Misc_Leaf_Small_Black" xml:space="preserve">
+    <value>Small Black Leaf</value>
+  </data>
+  <data name="IN_Misc_Leaf_Small_Fresh" xml:space="preserve">
+    <value>Small Fresh Leaf</value>
+  </data>
+  <data name="IN_Misc_Mushroom_Ghost" xml:space="preserve">
+    <value>Ghost Mushroom</value>
+  </data>
+  <data name="IN_Misc_Ore_Iron" xml:space="preserve">
+    <value>Iron Ore</value>
+  </data>
+  <data name="IN_Misc_RudrasChest" xml:space="preserve">
+    <value>Rudra's Treasure Chest</value>
+  </data>
+  <data name="IN_Misc_RudrasSoulStone" xml:space="preserve">
+    <value>Rudra's Soul Stone</value>
+  </data>
+  <data name="IN_Misc_Scale_Snake_Green" xml:space="preserve">
+    <value>Green Snake Scale</value>
+  </data>
+  <data name="IN_Misc_Silk_Expensive" xml:space="preserve">
+    <value>Expensive Silk</value>
+  </data>
+  <data name="IN_Misc_SkeletonBone" xml:space="preserve">
+    <value>Skeleton Bone</value>
+  </data>
+  <data name="IN_Misc_SkeletonBonePowder" xml:space="preserve">
+    <value>Skeleton Bone Powder</value>
+  </data>
+  <data name="IN_Misc_SmallFreshLeaf" xml:space="preserve">
+    <value>Small Fresh Leaf</value>
+  </data>
+  <data name="IN_Misc_Tablet_OfWisdom" xml:space="preserve">
+    <value>Stone Tablet of Wisdom</value>
+  </data>
+  <data name="IN_Misc_Thread_Ghost" xml:space="preserve">
+    <value>Ghost Thread</value>
+  </data>
+  <data name="IN_Misc_TreasureChest" xml:space="preserve">
+    <value>Treasure Chest</value>
+  </data>
+  <data name="IN_Necklace_Crystal_Demon" xml:space="preserve">
+    <value>Demon Crystal Necklace</value>
+  </data>
+  <data name="IN_Necklace_Ghost" xml:space="preserve">
+    <value>Ghost Necklace</value>
+  </data>
+  <data name="IN_Necklace_LostFamily" xml:space="preserve">
+    <value>Lost Family Necklace</value>
+  </data>
+  <data name="IN_Necklace_MothersPearl" xml:space="preserve">
+    <value>Mothers Pearl</value>
+  </data>
+  <data name="IN_Necklace_SimpleBloodCore" xml:space="preserve">
+    <value>Simple Blood Core</value>
+  </data>
+  <data name="IN_Necklace_SmallLucky" xml:space="preserve">
+    <value>Small Lucky Necklace</value>
+  </data>
+  <data name="IN_Necklace_TrueBloodCore" xml:space="preserve">
+    <value>True Blood Core Necklace</value>
+  </data>
+  <data name="IN_Potion_Blue" xml:space="preserve">
+    <value>Blue Potion</value>
+  </data>
+  <data name="IN_Potion_Blue_Strong" xml:space="preserve">
+    <value>Strong Blue Potion</value>
+  </data>
+  <data name="IN_Potion_BoneHardening" xml:space="preserve">
+    <value>Bone Hardening Potion</value>
+  </data>
+  <data name="IN_Potion_Dexterity" xml:space="preserve">
+    <value>Goron Potion of Perfect Aim</value>
+  </data>
+  <data name="IN_Potion_GhostlyShroom" xml:space="preserve">
+    <value>Ghostly Shroom Potion</value>
+  </data>
+  <data name="IN_Potion_Red" xml:space="preserve">
+    <value>Red Potion</value>
+  </data>
+  <data name="IN_Potion_Red_Strong" xml:space="preserve">
+    <value>Strong Red Potion</value>
+  </data>
+  <data name="IN_Potion_Small_Blue" xml:space="preserve">
+    <value>Small Blue Potion</value>
+  </data>
+  <data name="IN_Potion_Small_Dexterity" xml:space="preserve">
+    <value>Small Potion of Perfect Aim</value>
+  </data>
+  <data name="IN_Potion_Small_Red" xml:space="preserve">
+    <value>Small Red Potion</value>
+  </data>
+  <data name="IN_Potion_Small_Strength" xml:space="preserve">
+    <value>Small Potion of Muscles</value>
+  </data>
+  <data name="IN_Potion_Small_Violet" xml:space="preserve">
+    <value>Small Violet Potion</value>
+  </data>
+  <data name="IN_Potion_Strong_Blue" xml:space="preserve">
+    <value>Strong Blue Potion</value>
+  </data>
+  <data name="IN_Potion_Strong_Red" xml:space="preserve">
+    <value>Strong Red Potion</value>
+  </data>
+  <data name="IN_Potion_Strong_Violet" xml:space="preserve">
+    <value>Strong Violet Potion</value>
+  </data>
+  <data name="IN_Potion_Violet" xml:space="preserve">
+    <value>Violet Potion</value>
+  </data>
+  <data name="IN_Quest_StoneTempleSecretMap" xml:space="preserve">
+    <value>Secret-Map of the Stone Temple</value>
+  </data>
+  <data name="IN_Quest_TiaWoodsFamilyPortrait" xml:space="preserve">
+    <value>Tia Woods Family Portrait</value>
+  </data>
+  <data name="IN_Quest_TiaWoods_BrokenYoyoDoll" xml:space="preserve">
+    <value>Broken Yoyo Doll</value>
+  </data>
+  <data name="IN_Quest_TiaWoods_MurderLetter" xml:space="preserve">
+    <value>Sealed Letter</value>
+  </data>
+  <data name="IN_Relic_Bloody_Heirloom" xml:space="preserve">
+    <value>Bloody Heirloom</value>
+  </data>
+  <data name="IN_Relic_BombBag_Tinted" xml:space="preserve">
+    <value>Tainted Bomb Bag</value>
+  </data>
+  <data name="IN_Relic_Crystal_Skeletal" xml:space="preserve">
+    <value>Skeletal Crystal</value>
+  </data>
+  <data name="IN_Relic_Leaf_Magic" xml:space="preserve">
+    <value>Magic Leaf</value>
+  </data>
+  <data name="IN_Relic_Paper_Skeleton_Special" xml:space="preserve">
+    <value>Special Skeleton Paper</value>
+  </data>
+  <data name="IN_Ring_ArrowInfusingBracelets" xml:space="preserve">
+    <value>Arrow-Infusing Bracelets</value>
+  </data>
+  <data name="IN_Ring_Copper" xml:space="preserve">
+    <value>Copper Ring</value>
+  </data>
+  <data name="IN_Ring_KanesLooter" xml:space="preserve">
+    <value>Kane's Looter Ring</value>
+  </data>
+  <data name="IN_Ring_PowerBracelets" xml:space="preserve">
+    <value>Power Bracelets</value>
+  </data>
+  <data name="IN_Ring_RudrasProtection" xml:space="preserve">
+    <value>Protection Ring</value>
+  </data>
+  <data name="IN_Ring_RustyCopper" xml:space="preserve">
+    <value>Rusty Copper Ring</value>
+  </data>
+  <data name="IN_Ring_ShadyArcher" xml:space="preserve">
+    <value>Shady Ring of the Archer</value>
+  </data>
+  <data name="IN_Ring_ShadyWarrior" xml:space="preserve">
+    <value>Shady Ring of the Warrior</value>
+  </data>
+  <data name="IN_Ring_SmallStrength" xml:space="preserve">
+    <value>Ring of Small Strength</value>
+  </data>
+  <data name="IN_Ring_TheOne" xml:space="preserve">
+    <value>The One Ring</value>
+  </data>
+  <data name="IN_Ring_TheTwo" xml:space="preserve">
+    <value>The Two Ring</value>
+  </data>
+  <data name="IN_Shield_DarkNut" xml:space="preserve">
+    <value>Dark Nut Shield</value>
+  </data>
+  <data name="IN_Shield_MagicBuffer" xml:space="preserve">
+    <value>Magic Buffer Shield</value>
+  </data>
+  <data name="IN_Shield_Nut" xml:space="preserve">
+    <value>Nut Shield</value>
+  </data>
+  <data name="IN_Shield_RudrasHyrule" xml:space="preserve">
+    <value>Rudra's Hyrule Shield</value>
+  </data>
+  <data name="IN_Shield_SimpleWoodDefender" xml:space="preserve">
+    <value>Simple Wood Defender</value>
+  </data>
+  <data name="IN_Shield_TaintedHyrule" xml:space="preserve">
+    <value>Tainted Hyrule Shield</value>
+  </data>
+  <data name="IN_Shield_TaintedQuiver" xml:space="preserve">
+    <value>Tainted Quiver</value>
+  </data>
+  <data name="IN_Shield_Wpn_ShieldBreaker" xml:space="preserve">
+    <value>Shield Breaker</value>
+  </data>
+  <data name="IN_SongScroll_FamilyTombsTeleportation" xml:space="preserve">
+    <value>Song Scroll of the Stones</value>
+  </data>
+  <data name="IN_Staff_Cursed_Executer" xml:space="preserve">
+    <value>Cursed Executer Staff</value>
+  </data>
+  <data name="IN_Staff_DemonSkull" xml:space="preserve">
+    <value>Demon Skull Staff</value>
+  </data>
+  <data name="IN_Staff_Iron" xml:space="preserve">
+    <value>Iron Staff</value>
+  </data>
+  <data name="IN_Staff_Ruby" xml:space="preserve">
+    <value>Ruby Staff</value>
+  </data>
+  <data name="IN_Staff_Shroom_Demon" xml:space="preserve">
+    <value>Demon Shroom</value>
+  </data>
+  <data name="IN_Staff_VerySimple" xml:space="preserve">
+    <value>Very Simple Staff</value>
+  </data>
+  <data name="IN_Staff_Ward_KokirianNovice" xml:space="preserve">
+    <value>Kokirian Novice Ward</value>
+  </data>
+  <data name="IN_SwordGuardLong" xml:space="preserve">
+    <value>Long Guard Sword</value>
+  </data>
+  <data name="IN_SwordHardenedKokirian" xml:space="preserve">
+    <value>Hardened Kokirian Sword</value>
+  </data>
+  <data name="IN_SwordKokirianTrainings" xml:space="preserve">
+    <value>Kokirian Trainings Sword</value>
+  </data>
+  <data name="IN_Sword_Demonic" xml:space="preserve">
+    <value>Demonic Sword</value>
+  </data>
+  <data name="IN_Sword_Demonic_Enhanced" xml:space="preserve">
+    <value>Enhanced Demonic Sword</value>
+  </data>
+  <data name="IN_Sword_FuryOfTheWarrior" xml:space="preserve">
+    <value>Fury of the Warrior</value>
+  </data>
+  <data name="IN_Sword_Kokiri" xml:space="preserve">
+    <value>Kokirian Sword</value>
+  </data>
+  <data name="IN_Sword_KokirianSlayer" xml:space="preserve">
+    <value>Kokirian Slayer Sword</value>
+  </data>
+  <data name="IN_Sword_KokiriNovice" xml:space="preserve">
+    <value>Kokirian Novice Sword</value>
+  </data>
+  <data name="IN_Sword_LongLong" xml:space="preserve">
+    <value>Long Longsword</value>
+  </data>
+  <data name="IN_Sword_WindOfHyrule" xml:space="preserve">
+    <value>Wind Sword of Hyrule</value>
+  </data>
+  <data name="IN_Trinket_CursedLuck" xml:space="preserve">
+    <value>Cursed Lucky Charm</value>
+  </data>
+  <data name="IN_Trinket_CursedLuck_Cleansed" xml:space="preserve">
+    <value>Purified Lucky Charm</value>
+  </data>
+  <data name="IN_Trinket_FlurryCompass" xml:space="preserve">
+    <value>Flurry Compass</value>
+  </data>
+  <data name="IN_Trinket_Lantern_Iron" xml:space="preserve">
+    <value>Iron Lantern</value>
+  </data>
+  <data name="IN_Trinket_LittleRareManaBroche" xml:space="preserve">
+    <value>Little Rare Mana Broche</value>
+  </data>
+  <data name="IN_Trinket_LittleTalisman" xml:space="preserve">
+    <value>Little Talisman</value>
+  </data>
+  <data name="IN_Trinket_OfLight" xml:space="preserve">
+    <value>Trinket of Light</value>
+  </data>
+  <data name="IN_Trinket_RudrasHeart" xml:space="preserve">
+    <value>Rudra's Heart</value>
+  </data>
+  <data name="IN_Trinket_StrangeIronDevice" xml:space="preserve">
+    <value>Strange Iron Device</value>
+  </data>
+  <data name="IN_Weapon_Dagger_FishKnife" xml:space="preserve">
+    <value>Bloody Fish Knife</value>
+  </data>
+  <data name="IN_Weapon_Dagger_Kokiri" xml:space="preserve">
+    <value>Rusty Kokirian Dagger</value>
+  </data>
+  <data name="IN_Weapon_Dagger_QuickStrikeCombat" xml:space="preserve">
+    <value>Quick-Strike Combat Dagger</value>
+  </data>
+  <data name="IN_Weapon_SkinningKnife" xml:space="preserve">
+    <value>Skinning Knife</value>
+  </data>
+  <data name="ID_Misc_Buff_ManaDeliciousGem" xml:space="preserve">
+    <value>'Not only are they terribly addicting,
+but they also have additional uses.'</value>
+  </data>
+  <data name="IN_Misc_Buff_ManaDeliciousGem" xml:space="preserve">
+    <value>Delicious Mana Gem</value>
+  </data>
+  <data name="ID_Ring_Critical" xml:space="preserve">
+    <value>'It's magical properties are enormous.'
+ </value>
+  </data>
+  <data name="IN_Ring_Critical" xml:space="preserve">
+    <value>Critical Ring</value>
+  </data>
+  <data name="ID_Misc_BloodiedGoronShackleBall" xml:space="preserve">
+    <value>'These Gorons seem to have changed
+ ... or how can you explain this ..?'
+ </value>
+  </data>
+  <data name="ID_Misc_Skull_Goron" xml:space="preserve">
+    <value>'These Gorons are using skulls of
+ their own kind in bloody rituals.'
+ </value>
+  </data>
+  <data name="ID_Misc_Steel_BrokenGoronPiece" xml:space="preserve">
+    <value>'Why did they break the precious steel ..?'
+ </value>
+  </data>
+  <data name="ID_Shield_DarkMatter" xml:space="preserve">
+    <value>'It would guard you even against rock monsters!'</value>
+  </data>
+  <data name="ID_Shield_Prototype_Dark" xml:space="preserve">
+    <value>'It's still missing some finishing touches.'</value>
+  </data>
+  <data name="IN_Misc_BloodiedGoronShackleBall" xml:space="preserve">
+    <value>Bloodied Shackle Ball</value>
+  </data>
+  <data name="IN_Misc_Skull_Goron" xml:space="preserve">
+    <value>Goron Skull</value>
+  </data>
+  <data name="IN_Misc_Steel_BrokenGoronPiece" xml:space="preserve">
+    <value>Broken Goron Steel Piece</value>
+  </data>
+  <data name="IN_Shield_DarkMatter" xml:space="preserve">
+    <value>Blackrock Shield</value>
+  </data>
+  <data name="IN_Shield_Prototype_Dark" xml:space="preserve">
+    <value>Prototype Shield</value>
+  </data>
+  <data name="ID_Misc_Steel_Goron" xml:space="preserve">
+    <value>'Additional refinement is required for
+ it to have any magical properties.'
+ </value>
+  </data>
+  <data name="IN_Misc_Steel_Goron" xml:space="preserve">
+    <value>Goron Steel</value>
+  </data>
+  <data name="ID_Potion_Goron_Blue" xml:space="preserve">
+    <value>You feel refreshed...
+ </value>
+  </data>
+  <data name="ID_Potion_Goron_Red" xml:space="preserve">
+    <value>You feel reborn ...
+ </value>
+  </data>
+  <data name="IN_Potion_Goron_Blue" xml:space="preserve">
+    <value>Blue Goron Potion</value>
+  </data>
+  <data name="IN_Potion_Goron_Red" xml:space="preserve">
+    <value>Red Goron Potion</value>
+  </data>
+  <data name="ID_Misc_Feather_Chicken_White" xml:space="preserve">
+    <value>'It's unusually soft for a chicken feather.'
+ </value>
+  </data>
+  <data name="IN_Misc_Feather_Chicken_White" xml:space="preserve">
+    <value>White Chicken Feather</value>
+  </data>
+  <data name="ID_Boots_Shackles_Prototype" xml:space="preserve">
+    <value>'Still requires additional refinement...'
+ </value>
+  </data>
+  <data name="ID_Ring_GoronPower" xml:space="preserve">
+    <value>'It proves that the wearer has amazing powers.'
+ </value>
+  </data>
+  <data name="IN_Boots_Shackles_Prototype" xml:space="preserve">
+    <value>Goron Shackles Prototype</value>
+  </data>
+  <data name="IN_Misc_Gold_Goron" xml:space="preserve">
+    <value>Goron Gold</value>
+  </data>
+  <data name="IN_Ring_GoronPower" xml:space="preserve">
+    <value>Goron Power Ring</value>
+  </data>
+  <data name="IN_Misc_Feather_Chicken_Red" xml:space="preserve">
+    <value>Blood-Chicken Feather</value>
+  </data>
+  <data name="ID_SongScroll_ZoneReset" xml:space="preserve">
+    <value>Up.. Down.. Down.. Up..</value>
+  </data>
+  <data name="IN_SongScroll_ZoneReset" xml:space="preserve">
+    <value>Song Scroll of the Past</value>
+  </data>
+  <data name="ID_Armor_StoneSpirit" xml:space="preserve">
+    <value>'A life-force tries to emerge from the stone.'
+ </value>
+  </data>
+  <data name="IN_Armor_StoneSpirit" xml:space="preserve">
+    <value>Stone Spirit Armor</value>
+  </data>
+  <data name="ID_Shield_Quiver_Goron" xml:space="preserve">
+    <value>'Yes, Gorons use bows'n arrows too!'
+ </value>
+  </data>
+  <data name="IN_Shield_Quiver_Goron" xml:space="preserve">
+    <value>Goron Quiver</value>
+  </data>
+  <data name="ID_Key_RouteOfDin_Goron" xml:space="preserve">
+    <value>'It just might open one of those black blocks.'</value>
+  </data>
+  <data name="IN_Key_RouteOfDin_Goron" xml:space="preserve">
+    <value>Black Goron Key</value>
+  </data>
+  <data name="ID_Belt_GirdleOfArnold" xml:space="preserve">
+    <value>His second last words were:
+'Don't let them get da girdle!'
+ </value>
+  </data>
+  <data name="IN_Belt_GirdleOfArnold" xml:space="preserve">
+    <value>Girdle of Arnold</value>
+  </data>
+  <data name="ID_Ring_BloodMyth" xml:space="preserve">
+    <value>'A myth tells that each year a young virgin
+is taken from Hyrule Town to be sacrificed
+in order to appease the blood gods.'</value>
+  </data>
+  <data name="IN_Ring_BloodMyth" xml:space="preserve">
+    <value>Blood-Myth Ring</value>
+  </data>
+  <data name="ID_Food_MilkPack_Demon" xml:space="preserve">
+    <value>'Milk is for babies. When you grow up you have to
+drink beer. But I admit that this one here is different.'</value>
+  </data>
+  <data name="ID_Misc_Gold_Goron" xml:space="preserve">
+    <value>'This gold ore has been mined in
+the Death Mountains near Goronia.'
+ </value>
+  </data>
+  <data name="ID_Potion_Buff_BloodCourage" xml:space="preserve">
+    <value>'I didn't expect the kinda Spanish inquisition.'
+...
+</value>
+  </data>
+  <data name="ID_Weapon_Dagger_GoronAssassination" xml:space="preserve">
+    <value>'Nowhere, absolutely nowhere, has there ever been a hint,
+not even a whisper, that a Goron was involved in the
+assassination of our beloved king.'</value>
+  </data>
+  <data name="IN_Food_MilkPack_Demon" xml:space="preserve">
+    <value>Demon Milk Pack</value>
+  </data>
+  <data name="IN_Potion_Buff_BloodCourage" xml:space="preserve">
+    <value>Blood Courage Potion</value>
+  </data>
+  <data name="IN_Weapon_Dagger_GoronAssassination" xml:space="preserve">
+    <value>Goron Assassination Dagger</value>
+  </data>
+  <data name="ID_GemFire" xml:space="preserve">
+    <value>'Fire gems empower an item with
+the greatness of the goddess Din.'
+ </value>
+  </data>
+  <data name="IN_Gem_Fire_DinsBlazing" xml:space="preserve">
+    <value>Din's Blazing Fire</value>
+  </data>
+  <data name="ID_GemWater" xml:space="preserve">
+    <value>'Water gems impart divine wisdom
+upon an item and its holder.'
+ </value>
+  </data>
+  <data name="IN_Gem_Fire_DinsFieryArmor" xml:space="preserve">
+    <value>Din's Fiery Armor</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusTear" xml:space="preserve">
+    <value>Nayru's Tear</value>
+  </data>
+  <data name="ID_GemNature" xml:space="preserve">
+    <value>'Nature gems inherit the magic
+of life itself to an item.'
+ </value>
+  </data>
+  <data name="IN_Gem_Nature_Grasp" xml:space="preserve">
+    <value>Nature's Grasp</value>
+  </data>
+  <data name="ID_GemLight" xml:space="preserve">
+    <value>'Light gems imbue an item with
+the sacred essence of the goddesses.'
+ </value>
+  </data>
+  <data name="ID_GemPrismatic" xml:space="preserve">
+    <value>'Fire, Water, Shadow, Light and Nature
+I call you forth to aid me in my deeds.'
+ </value>
+  </data>
+  <data name="ID_GemShadow" xml:space="preserve">
+    <value>'Shadow gems envelop an item with
+the mystical powers of the underworld.'
+ </value>
+  </data>
+  <data name="IN_Gem_Light_PurifyingWill" xml:space="preserve">
+    <value>Purifying Will</value>
+  </data>
+  <data name="IN_Gem_Prismatic_EnrichedWorldGem" xml:space="preserve">
+    <value>Enriched Worldgem</value>
+  </data>
+  <data name="IN_Gem_Shadow_DoomStone" xml:space="preserve">
+    <value>Doom Stone</value>
+  </data>
+  <data name="IN_Gem_Fire_DinsWrath" xml:space="preserve">
+    <value>Din's Wrath</value>
+  </data>
+  <data name="IN_Gem_Nature_Swiftness" xml:space="preserve">
+    <value>Nature's Swiftness</value>
+  </data>
+  <data name="ID_Misc_GemPouch" xml:space="preserve">
+    <value>'Be aware that the other gems inside the pouch will
+disappear once you've chosen to take out a gem.'
+ </value>
+  </data>
+  <data name="IN_Gem_Shadow_LifeSuckingStone" xml:space="preserve">
+    <value>Life-Sucking Stone</value>
+  </data>
+  <data name="IN_Misc_GemPouch_35" xml:space="preserve">
+    <value>Gem Pouch</value>
+  </data>
+  <data name="IN_Gem_Prismatic_Flickering" xml:space="preserve">
+    <value>Flickering Prisma</value>
+  </data>
+  <data name="ID_Boots_Shackles_Blood" xml:space="preserve">
+    <value>'You'll leave a trace of blood on the
+ground if you wear those shackles.'
+ </value>
+  </data>
+  <data name="ID_Misc_Card_LuckyGoron" xml:space="preserve">
+    <value>'Combine an Ace, a Two and a Three
+ to create a card set.'</value>
+  </data>
+  <data name="ID_Relic_CardSet_LuckyGoron" xml:space="preserve">
+    <value>'Don't waste all your rubies even when you
+think that you have all the luck of the world.'
+ </value>
+  </data>
+  <data name="IN_Boots_Shackles_Blood" xml:space="preserve">
+    <value>Goron Blood Shackles</value>
+  </data>
+  <data name="IN_Gem_Light_Lucky" xml:space="preserve">
+    <value>Lucky Gem</value>
+  </data>
+  <data name="IN_Misc_Card_LuckyGoron_Ace" xml:space="preserve">
+    <value>Lucky Goron Card - Ace</value>
+  </data>
+  <data name="IN_Misc_Card_LuckyGoron_Three" xml:space="preserve">
+    <value>Lucky Goron Card - Three</value>
+  </data>
+  <data name="IN_Misc_Card_LuckyGoron_Two" xml:space="preserve">
+    <value>Lucky Goron Card - Two</value>
+  </data>
+  <data name="IN_Potion_Goron_Violet" xml:space="preserve">
+    <value>Violet Goron Potion</value>
+  </data>
+  <data name="IN_Relic_CardSet_LuckyGoron" xml:space="preserve">
+    <value>Lucky Goron Card Set</value>
+  </data>
+  <data name="ID_SongScroll_TimeWarp" xml:space="preserve">
+    <value>Up.. Down.. Left.. Right.. Up.. Down..</value>
+  </data>
+  <data name="IN_SongScroll_TimeWarp" xml:space="preserve">
+    <value>Futile Song Scroll of Time</value>
+  </data>
+  <data name="IN_Gem_Prismatic_Bloody" xml:space="preserve">
+    <value>Bloody Prisma</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusJustice" xml:space="preserve">
+    <value>Nayru's Justice</value>
+  </data>
+  <data name="ID_Sword_Protector" xml:space="preserve">
+    <value>'If you find the right balance between offense
+and defense, then you will come out victorious
+even in the most uneven battle.'</value>
+  </data>
+  <data name="IN_Gem_Light_Heavy" xml:space="preserve">
+    <value>Heavy Light Gem</value>
+  </data>
+  <data name="IN_Sword_Protector" xml:space="preserve">
+    <value>Protector Sword</value>
+  </data>
+  <data name="IN_Gem_Nature_Celerity" xml:space="preserve">
+    <value>Celerity of Nature</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusSorrow" xml:space="preserve">
+    <value>Nayru's Sorrow</value>
+  </data>
+  <data name="ID_Gloves_NinjaExtraction" xml:space="preserve">
+    <value>'Extracting all useful information before
+finishing the job is preferred.'
+ </value>
+  </data>
+  <data name="IN_Gem_Fire_DinsPassingFancy" xml:space="preserve">
+    <value>Din's Passing Fancy</value>
+  </data>
+  <data name="IN_Gloves_NinjaExtraction" xml:space="preserve">
+    <value>Ninja Extraction Gloves</value>
+  </data>
+  <data name="ID_Misc_Mucus_Octorok" xml:space="preserve">
+    <value>'Those are sticky! Please clean your hands ...'
+ </value>
+  </data>
+  <data name="ID_Relic_OctorokStone" xml:space="preserve">
+    <value>'This stone has something unusual to it.
+Could it be the mucus that is covering it ..?'
+ </value>
+  </data>
+  <data name="IN_Misc_Mucus_Octorok" xml:space="preserve">
+    <value>Octorok Mucus</value>
+  </data>
+  <data name="IN_Relic_OctorokStone" xml:space="preserve">
+    <value>Octorok Stone</value>
+  </data>
+  <data name="ID_Potion_Buff_OctorokMucus" xml:space="preserve">
+    <value>'Risk: Might clog the blood flow in your body.'
+ </value>
+  </data>
+  <data name="IN_Misc_Bottle_LongEmpty" xml:space="preserve">
+    <value>Long Empty Bottle</value>
+  </data>
+  <data name="IN_Potion_Buff_OctorokMucus" xml:space="preserve">
+    <value>Octorok Mucus Potion</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusBalance" xml:space="preserve">
+    <value>Nayru's Balance</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusBalanceTrue" xml:space="preserve">
+    <value>Nayru's True Balance</value>
+  </data>
+  <data name="IN_Gem_Nature_Care" xml:space="preserve">
+    <value>Nature's Care</value>
+  </data>
+  <data name="IN_Gem_Nature_Diligence" xml:space="preserve">
+    <value>Nature's Diligence</value>
+  </data>
+  <data name="IN_Misc_GemPouch_10" xml:space="preserve">
+    <value>Cheap Gem Pouch</value>
+  </data>
+  <data name="ID_GemLight_Skeleton" xml:space="preserve">
+    <value>'Light gems attract and capture the souls of the fallen.'
+ </value>
+  </data>
+  <data name="IN_Gem_Light_SkeletonImbued" xml:space="preserve">
+    <value>Imbued Skeleton Gem</value>
+  </data>
+  <data name="ID_Armor_Robe_Silk" xml:space="preserve">
+    <value>'You don't have to feel strange
+for wearing a pink robe.. !'</value>
+  </data>
+  <data name="IN_Armor_Robe_Silk" xml:space="preserve">
+    <value>Silk Robe</value>
+  </data>
+  <data name="ID_Ring_ConcentratedEnergy" xml:space="preserve">
+    <value>'The energy may unload at any time.'
+ </value>
+  </data>
+  <data name="IN_Ring_ConcentratedEnergy" xml:space="preserve">
+    <value>Concentrated Energy Ring</value>
+  </data>
+  <data name="ID_Relic_FreyasChant" xml:space="preserve">
+    <value>'Watch out! The agglomerated magic stored 
+in this relic might discharge at any time.'
+ </value>
+  </data>
+  <data name="IN_Relic_FreyasChant" xml:space="preserve">
+    <value>Freya's Chant</value>
+  </data>
+  <data name="ID_Trinket_FuryCompass" xml:space="preserve">
+    <value>'This one is spinning like crazy too!'
+ </value>
+  </data>
+  <data name="IN_Trinket_FuryCompass" xml:space="preserve">
+    <value>Fury Compass</value>
+  </data>
+  <data name="ID_Sword_Mage_Stardust" xml:space="preserve">
+    <value>'The glittering dust vanishes instantly when it lands.'
+ </value>
+  </data>
+  <data name="IN_Gem_Shadow_ManaSuckingStone" xml:space="preserve">
+    <value>Mana Sucking Stone</value>
+  </data>
+  <data name="IN_Sword_Mage_Stardust" xml:space="preserve">
+    <value>Stardust Sword</value>
+  </data>
+  <data name="IN_Ring_Novice" xml:space="preserve">
+    <value>Novice Ring</value>
+  </data>
+  <data name="IN_Gem_Shadow_DarkGhostSkeleton" xml:space="preserve">
+    <value>Dark Ghost Skeleton Gem</value>
+  </data>
+  <data name="ID_Head_Chains_DarkGhostSkeleton" xml:space="preserve">
+    <value>Silent moonlight, in fades of grey,
+Spoken memories, that always stay,
+Whisper sweetly, in words so clear,
+But only of sorrow, pain and fear..</value>
+  </data>
+  <data name="IN_Head_Chains_DarkGhostSkeleton" xml:space="preserve">
+    <value>Dark-Ghost Skeleton Chains</value>
+  </data>
+  <data name="ID_Potion_Buff_SchottlanderFish" xml:space="preserve">
+    <value>'This drink is like a rush on a horse
+and then a really loooooooong fall.'
+ </value>
+  </data>
+  <data name="IN_Potion_Buff_SchottlanderFish" xml:space="preserve">
+    <value>Schottlander Fish Potion</value>
+  </data>
+  <data name="IUE_Schottlander" xml:space="preserve">
+    <value>On Use: 
+  {0} for {1} seconds and then
+  {2} for {3} seconds.</value>
+  </data>
+  <data name="ID_Sword_HyruleBroad" xml:space="preserve">
+    <value>'The finest metal in all of Hyrule. Trust me.'
+- Tingle </value>
+  </data>
+  <data name="IN_Armor_KokirianFire" xml:space="preserve">
+    <value>Kokirian Fire Armor</value>
+  </data>
+  <data name="IN_Sword_HyruleBroad" xml:space="preserve">
+    <value>Hyrule Broad Sword</value>
+  </data>
+  <data name="ID_Ring_WeakMind" xml:space="preserve">
+    <value>'You should know that it is not the mind
+that is weak; but the ring itself.'</value>
+  </data>
+  <data name="IN_Ring_WeakMind" xml:space="preserve">
+    <value>Weak Mind Ring</value>
+  </data>
+  <data name="ID_Necklace_FlareDancer" xml:space="preserve">
+    <value>'Furea Dansaa ... as they are called.'
+ </value>
+  </data>
+  <data name="IN_Necklace_FlareDancer" xml:space="preserve">
+    <value>Flare Dancer Necklace</value>
+  </data>
+  <data name="IN_Gem_Fire_DinsSmallMagicPokey" xml:space="preserve">
+    <value>Din's Small Magic Pokey</value>
+  </data>
+  <data name="ID_Belt_Mana" xml:space="preserve">
+    <value>'Mana is leaking out of it. How sticky!'
+ </value>
+  </data>
+  <data name="IN_Belt_Mana" xml:space="preserve">
+    <value>Mana Belt</value>
+  </data>
+  <data name="ID_Gloves_GoronMage" xml:space="preserve">
+    <value>'Even the most untalented individual can
+learn to be a master with enough training.'
+ </value>
+  </data>
+  <data name="IN_Gloves_GoronMage" xml:space="preserve">
+    <value>Goron-Mage Gloves</value>
+  </data>
+  <data name="IN_Gem_Prismatic_Critical" xml:space="preserve">
+    <value>Critical Prisma</value>
+  </data>
+  <data name="ID_Belt_Wizard" xml:space="preserve">
+    <value>'I'd say that us manipulating nature
+as we wish is fully justified.'</value>
+  </data>
+  <data name="IN_Belt_Wizard" xml:space="preserve">
+    <value>Wizard Belt</value>
+  </data>
+  <data name="ID_Armor_Robe_GoronWizard" xml:space="preserve">
+    <value>'The vacuum is actually a highly dense structure.'
+ </value>
+  </data>
+  <data name="ID_Head_WizardDark" xml:space="preserve">
+    <value>'All what I say is wrong. Is it?'
+ </value>
+  </data>
+  <data name="IN_Armor_Robe_GoronWizard" xml:space="preserve">
+    <value>Goron Wizard Robe</value>
+  </data>
+  <data name="IN_Head_WizardDark" xml:space="preserve">
+    <value>Dark Wizard Hat</value>
+  </data>
+  <data name="SN_Wizard" xml:space="preserve">
+    <value>Wizard Set</value>
+  </data>
+  <data name="ID_Necklace_UndeadHunter" xml:space="preserve">
+    <value>'If you trust the legends then most of these skeletons
+here actually have been undead hunters before..'
+ </value>
+  </data>
+  <data name="IN_Necklace_UndeadHunter" xml:space="preserve">
+    <value>Necklace of the Undead Hunter</value>
+  </data>
+  <data name="SN_UndeadHunter" xml:space="preserve">
+    <value>Undead Hunter Set</value>
+  </data>
+  <data name="IUE_AwardsOneStatusPoint" xml:space="preserve">
+    <value>On Use: Awards '1' status point.</value>
+  </data>
+  <data name="IUE_AwardsXStatusPoints" xml:space="preserve">
+    <value>On Use: Awards '{0}' status point(s).</value>
+  </data>
+  <data name="IUE_SpawnRandomGemMinLevelXMaxLevelY" xml:space="preserve">
+    <value>On Use: Randomly spawns a gem. (level {0} to {1}).</value>
+  </data>
+  <data name="IUE_SpawnRandomItem" xml:space="preserve">
+    <value>On Use: Randomly spawns an item.</value>
+  </data>
+  <data name="IUE_SpawnRandomItemMinLevelXMaxLevelY" xml:space="preserve">
+    <value>On Use: Randomly spawns an item. (level {0} to {1}).</value>
+  </data>
+  <data name="ID_Staff_DirectedEnergy" xml:space="preserve">
+    <value>'The energy is in proportion to the resistance it meets.'
+ </value>
+  </data>
+  <data name="IN_Gem_Nature_SeedOfRampantGrowth" xml:space="preserve">
+    <value>Seed of Rampant Growth</value>
+  </data>
+  <data name="IN_Staff_DirectedEnergy" xml:space="preserve">
+    <value>Staff of Directed Energy</value>
+  </data>
+  <data name="IN_Gem_Light_Aureate" xml:space="preserve">
+    <value>Aureate Gem</value>
+  </data>
+  <data name="IUE_TeleportToX" xml:space="preserve">
+    <value>On Use: Teleports to '{0}'.</value>
+  </data>
+  <data name="ID_Quest_TeleportStone_RouteOfDin_Boss" xml:space="preserve">
+    <value>As you touch the stone a voice speaks to you:
+"I am awaiting you. You are nothing."</value>
+  </data>
+  <data name="IN_Quest_TeleportStone_RouteOfDin_Boss" xml:space="preserve">
+    <value>The Will of Darkness</value>
+  </data>
+  <data name="IN_Misc_TreasureChest_55" xml:space="preserve">
+    <value>Hellish Treasure Chest</value>
+  </data>
+  <data name="ID_Key_RouteOfDin_SShaped" xml:space="preserve">
+    <value>'The S-shape of this key seems to remind you of something ..'</value>
+  </data>
+  <data name="ID_Necklace_DemonRogue" xml:space="preserve">
+    <value>'If you wear that necklace for too long then I assure
+you that it will corrupt you. And then not even your 
+best friends will be safe from you. Do you want that?'
+ </value>
+  </data>
+  <data name="IN_Key_RouteOfDin_SShaped" xml:space="preserve">
+    <value>Bloody S-Shaped Key</value>
+  </data>
+  <data name="IN_Necklace_DemonRogue" xml:space="preserve">
+    <value>Demon-Rogue Necklace</value>
+  </data>
+  <data name="ID_Cloak_Pauldrons_Avenger" xml:space="preserve">
+    <value>'Vengeance is bitter sweet.'
+ </value>
+  </data>
+  <data name="IN_Cloak_Pauldrons_Avenger" xml:space="preserve">
+    <value>Avenger's Pauldrons</value>
+  </data>
+  <data name="ID_Ring_CriticalMass" xml:space="preserve">
+    <value>'We don't know why those rings have such a
+broad amount of different magical properties.'
+  </value>
+  </data>
+  <data name="IN_Ring_CriticalMass" xml:space="preserve">
+    <value>Critical-Mass Ring</value>
+  </data>
+  <data name="ID_Shield_Quiver_Chicken" xml:space="preserve">
+    <value>'Hurting those poor chickens is just cruel.'
+ </value>
+  </data>
+  <data name="ID_Trinket_OfExploitivePower" xml:space="preserve">
+    <value>'Boom Boom Boom ..! Or wait.. nooooooooo.'
+ </value>
+  </data>
+  <data name="ID_Weapon_Dagger_Crystal" xml:space="preserve">
+    <value>'No, it is really not meant for stabbing.'
+ </value>
+  </data>
+  <data name="IN_Shield_Quiver_Chicken" xml:space="preserve">
+    <value>Chicken Quiver</value>
+  </data>
+  <data name="IN_Trinket_OfExploitivePower" xml:space="preserve">
+    <value>Talisman of Exploitive Power</value>
+  </data>
+  <data name="IN_Weapon_Dagger_Crystal" xml:space="preserve">
+    <value>Crystal Dagger</value>
+  </data>
+  <data name="ID_Relic_MysticalShell" xml:space="preserve">
+    <value>'This is not an ordinary shell, but something more..'
+ </value>
+  </data>
+  <data name="IN_Relic_MysticalShell" xml:space="preserve">
+    <value>Mystical Shell</value>
+  </data>
+  <data name="ID_Gloves_DeathChicken" xml:space="preserve">
+    <value>'Every time a chicken dies ...
+.. worms! Waaaaaah.'
+ </value>
+  </data>
+  <data name="IN_Gloves_DeathChicken" xml:space="preserve">
+    <value>Death-Chicken Gloves</value>
+  </data>
+  <data name="IN_Gem_Shadow_BlackIron" xml:space="preserve">
+    <value>Black Iron Gem</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusExperience" xml:space="preserve">
+    <value>Nayru's Experience</value>
+  </data>
+  <data name="IUE_LearnSong" xml:space="preserve">
+    <value>On Use: Learns the '{0}'.</value>
+  </data>
+  <data name="ID_Cloak_ChickenManteau" xml:space="preserve">
+    <value>'When I see a bird that walks like a duck and
+swims like a duck and quacks like a duck, 
+then I call that bird a duck. Oh wait.. damn!'
+ </value>
+  </data>
+  <data name="IN_Cloak_ChickenManteau" xml:space="preserve">
+    <value>Chicken Manteau</value>
+  </data>
+  <data name="ID_Head_Blinkers_Demon" xml:space="preserve">
+    <value>'Let the force be your guide.'
+ </value>
+  </data>
+  <data name="IN_Head_Blinkers_Demon" xml:space="preserve">
+    <value>Demon Blinkers</value>
+  </data>
+  <data name="IUE_AwardsXExperience" xml:space="preserve">
+    <value>On Use: Awards {0} experience points.</value>
+  </data>
+  <data name="ID_Food_Carrot" xml:space="preserve">
+    <value>'Om nom nom nom.. !'
+ </value>
+  </data>
+  <data name="IN_Food_Carrot_Small_Exp" xml:space="preserve">
+    <value>Small Carrot of Experience</value>
+  </data>
+  <data name="ID_Misc_Triforce_Small" xml:space="preserve">
+    <value>The three great goddesses, their labors completed,
+departed for the heavens.
+And golden sacred triangles remained at the point
+where the goddesses left the world.</value>
+  </data>
+  <data name="IN_Misc_Triforce_Small" xml:space="preserve">
+    <value>Small Triforce Piece</value>
+  </data>
+  <data name="ID_Boots_Iron_Skeleton" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IN_Boots_Iron_Skeleton" xml:space="preserve">
+    <value>Iron Skeleton Boots</value>
+  </data>
+  <data name="SN_SkeletonWarrior" xml:space="preserve">
+    <value>Skeleton Warrior Set</value>
+  </data>
+  <data name="IN_Teach_SecondSharedChestTier" xml:space="preserve">
+    <value>Chest Enlarger</value>
+  </data>
+  <data name="ID_Misc_ChickenFeed" xml:space="preserve">
+    <value>A chickens favourite meal.</value>
+  </data>
+  <data name="IN_Misc_ChickenFeed" xml:space="preserve">
+    <value>Chicken Feed</value>
+  </data>
+  <data name="ID_Key_Crystal_Shimmering" xml:space="preserve">
+    <value>'It's a key... which doesn't look like a a key.'
+ </value>
+  </data>
+  <data name="IN_Key_Crystal_Shimmering" xml:space="preserve">
+    <value>Shimmering Crystal Key</value>
+  </data>
+  <data name="IN_Misc_GemPouch_55" xml:space="preserve">
+    <value>Exquisite Gem Pouch</value>
+  </data>
+  <data name="ID_Ring_SilverRuby" xml:space="preserve">
+    <value>'The power of the demon world.. intriguing.'</value>
+  </data>
+  <data name="ID_Ring_SilverSapphire" xml:space="preserve">
+    <value>'To aquire the true power Light and Darkness
+must be in equilibrium.'</value>
+  </data>
+  <data name="IN_Ring_SilverRuby" xml:space="preserve">
+    <value>Silver Ruby Ring</value>
+  </data>
+  <data name="IN_Ring_SilverSapphire" xml:space="preserve">
+    <value>Silver Sapphire Ring</value>
+  </data>
+  <data name="SN_RingHell" xml:space="preserve">
+    <value>Hell Ring Set</value>
+  </data>
+  <data name="IN_Gem_Water_SmallExperience" xml:space="preserve">
+    <value>Gem of Small Experience</value>
+  </data>
+  <data name="ID_Necklace_River" xml:space="preserve">
+    <value>o_o!!!</value>
+  </data>
+  <data name="IN_Necklace_River" xml:space="preserve">
+    <value>River Necklace</value>
+  </data>
+  <data name="IN_Shield_HyruleMaster" xml:space="preserve">
+    <value>Hyrule Master Shield</value>
+  </data>
+  <data name="IN_Necklace_Skeleton" xml:space="preserve">
+    <value>Skeleton Necklace</value>
+  </data>
+  <data name="ID_Staff_WarriorMage" xml:space="preserve">
+    <value>'Bszzzzzz ..' - 'Wha! Who is that?'
+ </value>
+  </data>
+  <data name="IN_Staff_WarriorMage" xml:space="preserve">
+    <value>Warrior-Mage Staff</value>
+  </data>
+  <data name="IN_Shield_Wpn_Teaser" xml:space="preserve">
+    <value>The Teaser</value>
+  </data>
+  <data name="IN_Gem_Prismatic_Ocean" xml:space="preserve">
+    <value>Ocean Gem</value>
+  </data>
+  <data name="IN_Misc_Bottle_GoronEmpty" xml:space="preserve">
+    <value>Empty Goron Bottle</value>
+  </data>
+  <data name="IN_Misc_Bottle_SmallWater" xml:space="preserve">
+    <value>Small Water Bottle</value>
+  </data>
+  <data name="IUE_UseBottle" xml:space="preserve">
+    <value>On Use: Fill with water.</value>
+  </data>
+  <data name="IN_Bow_HyruleIron" xml:space="preserve">
+    <value>Hyrule Iron Bow</value>
+  </data>
+  <data name="IN_Misc_MusicCross" xml:space="preserve">
+    <value>Cross of Teleport</value>
+  </data>
+  <data name="ID_Misc_MusicCross" xml:space="preserve">
+    <value>Play the Song of the Cross to teleport.</value>
+  </data>
+  <data name="IUE_SaveTeleportPosition" xml:space="preserve">
+    <value>On Use: Stores the current location. Won't work everywhere.</value>
+  </data>
+  <data name="ID_Potion_ResetStatsGoron" xml:space="preserve">
+    <value>'Nom nom nom' x3</value>
+  </data>
+  <data name="IN_Potion_ResetStatsGoron" xml:space="preserve">
+    <value>Potion of Oblivion</value>
+  </data>
+  <data name="IN_Misc_Bottle_GoronWater" xml:space="preserve">
+    <value>Goron Water Bottle</value>
+  </data>
+  <data name="ID_Misc_Potion_VirginBlood" xml:space="preserve">
+    <value>'You know what? I respect women! I love women!
+I respect them so much that I completely stay away
+from them and instead ..!'</value>
+  </data>
+  <data name="IN_Misc_Potion_VirginBlood" xml:space="preserve">
+    <value>Blood of a Virgin</value>
+  </data>
+  <data name="ID_Potion_ResetTalentsSmall" xml:space="preserve">
+    <value>"Your Sins Are Forgiven"</value>
+  </data>
+  <data name="IN_Potion_ResetTalentsSmall" xml:space="preserve">
+    <value>Small Potion of Respec</value>
+  </data>
+  <data name="ID_Food_WholeRoast" xml:space="preserve">
+    <value>Crunchy!</value>
+  </data>
+  <data name="IN_Food_Exp_WholeRoast" xml:space="preserve">
+    <value>Whole Roast</value>
+  </data>
+  <data name="ID_Armor_Robe_Scale" xml:space="preserve">
+    <value>'The perfectly woven scales in this garment
+appear to collect natural light, providing a
+boost in magical ability to the wearer.'</value>
+  </data>
+  <data name="IN_Armor_Robe_Scale" xml:space="preserve">
+    <value>Scale Robe</value>
+  </data>
+  <data name="ID_Scroll_Teleport_FST_Boss" xml:space="preserve">
+    <value>'The treasure awaits you'</value>
+  </data>
+  <data name="IN_Scroll_Teleport_FST_Boss" xml:space="preserve">
+    <value>Scroll of the Stone Tombs</value>
+  </data>
+  <data name="IN_Staff_HellIron" xml:space="preserve">
+    <value>Hell Iron Staff</value>
+  </data>
+  <data name="ID_Relic_Hammer_BloodSmith" xml:space="preserve">
+    <value>*smash smash smash*
+ </value>
+  </data>
+  <data name="ID_Trinket_Flute_Snake" xml:space="preserve">
+    <value>'Aua! Way too sharp!'
+ </value>
+  </data>
+  <data name="IN_Relic_Hammer_BloodSmith" xml:space="preserve">
+    <value>Blood-Smith Hammer</value>
+  </data>
+  <data name="IN_Trinket_Flute_Snake" xml:space="preserve">
+    <value>Snake Flute</value>
+  </data>
+  <data name="ID_Head_ScaleHat" xml:space="preserve">
+    <value>'Something is moving inside it... ugh!'</value>
+  </data>
+  <data name="IN_Head_ScaleHat" xml:space="preserve">
+    <value>Scale Hat</value>
+  </data>
+  <data name="IN_Gem_Fire_DinsVengeance" xml:space="preserve">
+    <value>Din's Vengeance</value>
+  </data>
+  <data name="IN_Gem_Nature_Acute" xml:space="preserve">
+    <value>Acute Gem of Nature</value>
+  </data>
+  <data name="ID_Relic_Crest_BloodRuby" xml:space="preserve">
+    <value>'That ruby could be your ticket out of this God forsaken continent.'</value>
+  </data>
+  <data name="IN_Relic_Crest_BloodRuby" xml:space="preserve">
+    <value>Blood-Ruby Crest</value>
+  </data>
+  <data name="IN_Gem_Fake_Fire" xml:space="preserve">
+    <value>Fire Gem</value>
+  </data>
+  <data name="IN_Gem_Fake_Light" xml:space="preserve">
+    <value>Light Gem</value>
+  </data>
+  <data name="IN_Gem_Fake_Nature" xml:space="preserve">
+    <value>Nature Gem</value>
+  </data>
+  <data name="IN_Gem_Fake_Prismatic" xml:space="preserve">
+    <value>Prismatic Gem</value>
+  </data>
+  <data name="IN_Gem_Fake_Shadow" xml:space="preserve">
+    <value>Shadow Gem</value>
+  </data>
+  <data name="IN_Gem_Fake_Water" xml:space="preserve">
+    <value>Water Gem</value>
+  </data>
+  <data name="IN_Gem_Fire_DinsBlisteringWeak" xml:space="preserve">
+    <value>Din's Weak-Blistering Gem</value>
+  </data>
+  <data name="IN_Gem_Nature_Squeeze" xml:space="preserve">
+    <value>Nature's Squeeze</value>
+  </data>
+  <data name="IN_Gem_Shadow_Eburnated" xml:space="preserve">
+    <value>Eburnated Shadow Gem</value>
+  </data>
+  <data name="IN_Gem_Nature_Beast" xml:space="preserve">
+    <value>Nature's Beast</value>
+  </data>
+  <data name="ID_Misc_Leaf_Small_Fire" xml:space="preserve">
+    <value>'Autsch! It's really hot!'</value>
+  </data>
+  <data name="IN_Misc_Leaf_Small_Fire" xml:space="preserve">
+    <value>Small Fire Leaf</value>
+  </data>
+  <data name="IN_Gem_Fire_DinsMagicPokey" xml:space="preserve">
+    <value>Din's Magic Pokey</value>
+  </data>
+  <data name="IN_Weapon_Dagger_KokiriNovice" xml:space="preserve">
+    <value>Kokirian Novice Dagger</value>
+  </data>
+  <data name="IN_Ring_SmallDex" xml:space="preserve">
+    <value>Ring of Small Dexterity</value>
+  </data>
+  <data name="IN_Bow_WindOfHyrule" xml:space="preserve">
+    <value>Wind Bow of Hyrule</value>
+  </data>
+  <data name="IN_Staff_WindOfHyrule" xml:space="preserve">
+    <value>Wind Staff of Hyrule</value>
+  </data>
+  <data name="IN_Gem_Fire_SmallCritical" xml:space="preserve">
+    <value>Din's Small Critical Gem</value>
+  </data>
+  <data name="IN_Gem_Water_NayrusExudation" xml:space="preserve">
+    <value>Nayru's Exudation</value>
+  </data>
+  <data name="IN_Potion_ShadowProt_Small" xml:space="preserve">
+    <value>Small Potion of Shadow Protection</value>
+  </data>
+  <data name="ID_Potion_ShadowProt_Small" xml:space="preserve">
+    <value>'The essence of evil, captured in a simple bottle.'</value>
+  </data>
+  <data name="ID_Relic_NanoHamster" xml:space="preserve">
+    <value>The girl lost this kernel in a furious attack by an illogical zen.
+Also adds: +100 Cuteness Rating</value>
+  </data>
+  <data name="IN_Relic_NanoHamster" xml:space="preserve">
+    <value>Nano's Hamster Kernel</value>
+  </data>
+  <data name="ID_Misc_Chains_Loose" xml:space="preserve">
+    <value>These tools have worn loose as a result from their countless uses.
+The surface is rugged, and... a little oily?</value>
+  </data>
+  <data name="IN_Misc_Chains_Loose" xml:space="preserve">
+    <value>Loose Iron Chains</value>
+  </data>
+  <data name="ID_Sword_Claymore" xml:space="preserve">
+    <value>Made from solid goron steel.</value>
+  </data>
+  <data name="IN_Sword_Claymore" xml:space="preserve">
+    <value>Claymore</value>
+  </data>
+  <data name="ID_Relic_FireBone" xml:space="preserve">
+    <value>'Sockets and gems are the best friends' - Guild Alchemist</value>
+  </data>
+  <data name="IN_Relic_FireBone" xml:space="preserve">
+    <value>Fire Bone</value>
+  </data>
+  <data name="ID_Armor_FullPlate_Scale" xml:space="preserve">
+    <value>Full body armor made from scale-iron. Heavy.</value>
+  </data>
+  <data name="IN_Armor_FullPlate_Scale" xml:space="preserve">
+    <value>Full Scale Plate</value>
+  </data>
+  <data name="ID_SongScroll_ExecuteTrigger" xml:space="preserve">
+    <value>Left.. Left.. Right.. Down..</value>
+  </data>
+  <data name="IN_SongScroll_ExecuteTrigger" xml:space="preserve">
+    <value>Carillon of Secrets</value>
+  </data>
+  <data name="ID_SongScroll_HomeTeleportation" xml:space="preserve">
+    <value>Up.. Down.. Up.. Up.. Left.. Right..</value>
+  </data>
+  <data name="IN_SongScroll_HomeTeleportation" xml:space="preserve">
+    <value>Song Scroll of the Lament of Hyrule</value>
+  </data>
+  <data name="ID_Quest_Goron_Croissant" xml:space="preserve">
+    <value>Not something humans should eat.</value>
+  </data>
+  <data name="IN_Quest_Goron_Croissant" xml:space="preserve">
+    <value>Goron Stone Crossaint</value>
+  </data>
+  <data name="ID_Sword_HyruleLight" xml:space="preserve">
+    <value>Stick them with the pointy end.</value>
+  </data>
+  <data name="IN_Sword_HyruleLight" xml:space="preserve">
+    <value>Light Hyrule Sword</value>
+  </data>
+  <data name="IN_Weapon_Dagger_WindOfHyrule" xml:space="preserve">
+    <value>Wind Dagger of Hyrule</value>
+  </data>
+  <data name="ID_Sword_Protector_Hyrule" xml:space="preserve">
+    <value>Honor is the courage to stand for the truth, against any odds.</value>
+  </data>
+  <data name="IN_Sword_Protector_Hyrule" xml:space="preserve">
+    <value>Hyrule Protector Sword</value>
+  </data>
+  <data name="ID_Sword_KokiriIron" xml:space="preserve">
+    <value>A simple iron sword.</value>
+  </data>
+  <data name="IN_Sword_KokiriIron" xml:space="preserve">
+    <value>Kokirian Iron Sword</value>
+  </data>
+  <data name="ID_Key_Locket_Triforce" xml:space="preserve">
+    <value>Whisper-whisper: 'Use me to unlock a secret..'</value>
+  </data>
+  <data name="IN_Food_Egg_Small_Exp" xml:space="preserve">
+    <value>Egg of Small Experience</value>
+  </data>
+  <data name="IN_Key_Locket_Triforce" xml:space="preserve">
+    <value>Triforce Locket</value>
+  </data>
+  <data name="IN_Bag_Deku" xml:space="preserve">
+    <value>Deku Bag</value>
+  </data>
+  <data name="ID_Misc_Herb_Sticky" xml:space="preserve">
+    <value>A smell-resistant crafter can use it as glue by grinding it down.</value>
+  </data>
+  <data name="IN_Misc_Herb_Sticky" xml:space="preserve">
+    <value>Sticky Herb</value>
+  </data>
+  <data name="ID_Misc_Leaf_Sharp" xml:space="preserve">
+    <value>A very sharp leaf. Don't cut yourself.</value>
+  </data>
+  <data name="IN_Misc_Leaf_Sharp" xml:space="preserve">
+    <value>Sharp Leaf</value>
+  </data>
+  <data name="ID_Bag_Deku" xml:space="preserve">
+    <value>A small slightly-slimy belt bag.</value>
+  </data>
+</root>

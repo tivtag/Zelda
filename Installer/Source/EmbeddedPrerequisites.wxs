@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?include "Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Fragment>
+
+    <?if $(var.InstallPrerequisitesIfRequired) = "1" ?>
+
+      <!--
+        Installs the XNA 4.0 Redistributable
+      -->
+      <CustomAction
+        Id='InstallXna'
+        BinaryKey='Xna4_0'
+        DllEntry='MsiInstallXna'
+        Execute='immediate'
+        Return='check'
+      />
+
+      <!--
+        Set IntegratedBuild if you integrated WiX into your build process together with
+        the Nuclex.Setup Visual C++ projects. This is mainly intended for debugging and
+        will assume that the Visual C++ projects are stored in parallel to the folder
+        holding your setup.
+      -->
+      <?if $(var.IntegratedBuild) = "1" ?>
+        <?ifdef $(var.DEBUG) ?>
+          <Binary
+            Id='Xna4_0'
+            SourceFile='$(sys.SOURCEFILEDIR)/../../Nuclex.Setup.Xna4_0/bin/x86/Debug/Nuclex.Setup.Xna4_0.dll'
+          />
+        <?else ?>
+          <Binary
+            Id='Xna4_0'
+            SourceFile='$(sys.SOURCEFILEDIR)/../../Nuclex.Setup.Xna4_0/bin/x86/Release/Nuclex.Setup.Xna4_0.dll'
+          />
+        <?endif ?>
+      <?endif ?><!-- Integrated -->
+
+      <!--
+        Standalone build you'd get when you download a public release of this
+        installer template. Assumes the Nuclex.Setup libraries are contained in
+        the References folder of the installer.
+      -->
+      <?if $(var.IntegratedBuild) != "1" ?>
+        <Binary
+          Id='Xna4_0'
+          SourceFile='$(sys.SOURCEFILEDIR)/../References/Nuclex.Setup/Nuclex.Setup.Xna4_0.dll'
+        />
+      <?endif ?><!-- NOT Integrated -->
+
+    <?endif ?><!-- InstallPrerequisitesIfRequired -->
+  
+  </Fragment>
+
+</Wix>

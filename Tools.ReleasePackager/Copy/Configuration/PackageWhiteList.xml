@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<whitelist>
+  <files>
+    <file>app.config</file>
+    <file>TLoZ - Black Crown.exe</file> 
+    <file>Zelda.Updater.Gui.exe</file>
+    <file>Zelda Updater.exe</file>  
+    <file>TLoZ - Black Crown.exe.config</file>
+  </files>  
+  <extensions>   
+  </extensions>
+  <directories>
+  </directories>
+</whitelist>

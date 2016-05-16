@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recipes>
+  
+  <Recipe name="Recipe_Boots_Fairy">
+    <Requires>
+      <RecipeItem name="Boots_Fairy_Cursed" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Clover_FourLeaf" amount="2" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Boots_Fairy" amount="1" applyAffixesOf="Boots_Fairy_Cursed" />
+    </Results>
+  </Recipe>
+
+  <Recipe name="Recipe_Boots_Shackles_Blood">
+    <Requires>
+      <RecipeItem name="Boots_Shackles_Prototype" amount="1" allowsAffixes="true" />
+      <RecipeItem name="Misc_Feather_Chicken_Red" amount="10" />
+      <RecipeItem name="Misc_Feather_Chicken_White" amount="10" />
+      <RecipeItem name="Misc_Gold_Goron" amount="4" />
+      <RecipeItem name="Misc_Steel_Goron" amount="4" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Boots_Shackles_Blood" amount="1" applyAffixesOf="Boots_Shackles_Prototype" />
+    </Results>
+  </Recipe>
+  
+</Recipes>

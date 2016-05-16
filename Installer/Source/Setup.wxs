@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<?include "Config.wxi"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--
+    From the WiX docs: The <Product /> element is analogous to the main function in
+    a C program. When linking, only one Product section can be given to the linker
+    to produce a successful result. Using this element creates an msi file.
+    http://wix.sourceforge.net/manual-wix2/wix_xsd_product.htm
+  -->
+  <Product
+    Id="c7f444c5-8251-4cfc-a69f-657aaf6fa147"
+    Name="The Legend of Zelda : Black Crown"
+    Language="1033"
+    Version="1.4.7"
+    UpgradeCode="c044418f-de38-493e-bc23-cb0d47baebad"
+    Manufacturer="federrot Software"
+  >
+    <!--
+      From the WiX docs: Properties about the package to be placed in the Summary
+      Information Stream. These are visible from COM through the IStream interface,
+      and these properties can be seen on the package in Explorer.
+      http://wix.sourceforge.net/manual-wix2/wix_xsd_package.htm
+    -->
+    <Package
+      Description="Setup for The Legend of Zelda : Black Crown"
+      Comments="Installs 'The Legend of Zelda : Black Crown' on the system"
+      InstallerVersion="200"
+      Compressed="yes">
+  	</Package>
+  	
+  	<MajorUpgrade DowngradeErrorMessage="You aleady have a newer version of Black Crown installed." />
+  	  	
+  
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+    <!--
+      Everything below here is specific to the installer template. You do not
+      need to modify anything below this point unless you're a WiX guru that
+      wishes to customize the setup template even further ;-)
+    -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+    <!--
+      Requirements we want our GameSetupHelper library to check for. Only components
+      you ask for are checked by the GameSetupHelper library to avoid loading tons
+      of DLLs and browsing up and down the registry when the setup isn't even
+      interested in the results.
+    -->
+    <Property Id="Check_At_Least_Windows_XP_SP2">1</Property>
+    <?if $(var.RequiredShaderModel) = "1.0" ?>
+      <Property Id="Check_Shader_Model_1.0">1</Property>
+    <?endif ?>
+    <?if $(var.RequiredShaderModel) = "1.1" ?>
+      <Property Id="Check_Shader_Model_1.1">1</Property>
+    <?endif ?>
+    <?if $(var.RequiredShaderModel) = "1.3" ?>
+      <Property Id="Check_Shader_Model_1.3">1</Property>
+    <?endif ?>
+    <?if $(var.RequiredShaderModel) = "2.0" ?>
+      <Property Id="Check_Shader_Model_2.0">1</Property>
+    <?endif ?>
+    <?if $(var.RequiredShaderModel) = "3.0" ?>
+      <Property Id="Check_Shader_Model_3.0">1</Property>
+    <?endif ?>
+    <Property Id="Check_Xna_4.0">1</Property>
+    <Property Id="Check_DirectX_Xna_4.0">1</Property>
+    <?if $(var.RequiredDotNetProfile) = "Client" ?>
+      <Property Id="Check_DotNet_4.0_Client_Profile">1</Property>
+    <?endif ?>
+    <?if $(var.RequiredDotNetProfile) = "Full" ?>
+      <Property Id="Check_DotNet_4.0_Full">1</Property>
+    <?endif ?>
+
+    <!--
+      Whether the user has accepted the license. Having this as a property is useful
+      for silent installations because the administrator can set this property
+      externally and thus allow the install to proceed without user intervention.
+    -->
+    <Property Id="AcceptLicense">No</Property>
+
+    <Property Id="ALLUSERS" Value="1"/>
+    
+    <!--BUTTON TEXT-->
+    <Property Id="Button_Back">&lt; &amp;Back</Property>
+    <Property Id="Button_Next">&amp;Next &gt;</Property>
+    <Property Id="Button_Finish">&amp;Finish</Property>
+    
+    <Property Id="Button_OK">OK</Property>
+    <Property Id="Button_Cancel">Cancel</Property>
+    
+    <Property Id="Button_Browse">Br&amp;owse...</Property>
+    <Property Id="Button_Exit">&amp;Exit</Property>
+    <Property Id="Button_Ignore">&amp;Ignore</Property>
+    <Property Id="Button_Install">&amp;Install</Property>
+    <Property Id="Button_Remove">&amp;Remove</Property>
+    <Property Id="Button_Repair">&amp;Repair</Property>
+    <Property Id="Button_Reset">&amp;Reset</Property>
+    <Property Id="Button_Resume">&amp;Resume</Property>
+    <Property Id="Button_Retry">&amp;Retry</Property>
+    <Property Id="Button_Return">&amp;Return</Property>
+    
+    <Property Id="Button_Yes">&amp;Yes</Property>
+    <Property Id="Button_No">&amp;No</Property>
+    <!--END BUTTON TEXT-->
+
+    <CustomAction
+      Id="SET_INSTALLDIR"
+      Property="INSTALLDIR"
+      Value="[INSTALLDIR]"
+      Execute="firstSequence"
+    />
+
+
+    <!-- INSTALL DESCRIPTION -->
+    <Media Id="1" Cabinet="contents.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir"/>
+
+    <Feature Id="MyFeature" AllowAdvertise="no" Title="Required Files" Level="1">
+      <ComponentRef Id="StartMenuEntriesComponent" />
+      <ComponentRef Id="AppFolder" />
+      <ComponentRef Id="MainComponent" />
+      <ComponentRef Id="ShortcutsComponent" />    	
+      <ComponentRef Id="UpdaterComponent" />
+    	
+      <ComponentRef Id="ContentComponent" />
+      <ComponentRef Id="OtherComponent" />
+    	
+      <ComponentRef Id="EffectsComponent" />
+      <ComponentRef Id="FontzComponent" />
+      <ComponentRef Id="ItemsComponent" />
+      <ComponentRef Id="SetsComponent" />
+      <ComponentRef Id="MusicComponent" />
+      <ComponentRef Id="ObjectsComponent" />
+      <ComponentRef Id="QuestsComponent" />
+      <ComponentRef Id="ScenesComponent" />
+      <ComponentRef Id="SheetsComponent" />
+      <ComponentRef Id="SamplesComponent" />
+      <ComponentRef Id="SpritesComponent" />
+      <ComponentRef Id="TexturesComponent" />
+      <ComponentRef Id="ParticleTexturesComponent" />
+    </Feature>  
+    <!-- END INSTALL DESCRIPTION -->
+    
+    <!--
+      Execution sequence for local installs. A local installation is the normal process
+      of installing the msi file on a system for usage on the same system.
+    -->
+    <InstallExecuteSequence>
+      <!--
+        Run the custom actions for checking the game's requirements before evaluating
+        the launch conditions. If you customize this setup, you can therefore fail
+        the installation at will when one of the components is not installed (the
+        template actually uses them to install the neccessary components if the user
+        doesn't have them on his system and you selected the integrated install).
+      -->
+      <Custom Action='CheckOperatingSystem' Before='CheckShaderModel' />
+      <Custom Action='CheckShaderModel' Before='CheckDirectX' />
+      <Custom Action='CheckDirectX' Before='CheckD3DX' />
+      <Custom Action='CheckD3DX' Before='CheckDotNet' />
+      <Custom Action='CheckDotNet' Before='CheckXna' />
+      <Custom Action='CheckXna' Before='LaunchConditions' />
+    </InstallExecuteSequence>
+
+    <!--
+      Execution sequence for administrative installs. An adminstrative
+      install creates a source image in a network share which can then
+      subsequently be installed to local network users.
+    -->
+    <AdminExecuteSequence>
+    </AdminExecuteSequence>
+
+    <!-- Includes the user interface definition defined in another file -->
+    <UIRef Id="UserInterface"/>
+  	
+	<Icon Id="AppIcon.exe" SourceFile="Content\TLoZ - Black Crown.exe"/>
+  	
+  	<!--
+	<Icon Id="UpdaterIcon.exe" SourceFile="Content\Zelda Updater.exe"/>
+	<Icon Id="TextIcon.txt" SourceFile="Content\Controls.txt"/>-->
+  	
+	<Property Id="ARPPRODUCTICON" Value="AppIcon.exe" />
+		
+
+  </Product>
+
+</Wix>

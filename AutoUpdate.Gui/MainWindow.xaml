@@ -1,0 +1,51 @@
+﻿<Window x:Class="Zelda.Updater.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="The Legend of Zelda - Black Crown UPDATER" 
+    Height="500" Width="500" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+    KeyDown="OnKeyDown"> 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Height="20" Padding="0,2,0,0">Patch Notes:</TextBlock>
+
+            <TextBox IsReadOnly="True" Name="textBoxPatchNotes" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="360"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="138*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Left" Name="textFile" Height="20" Padding="0,2,0,0"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Name="textDownloadProgress" Height="20" Padding="0,2,0,0"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />                    
+                </Grid.RowDefinitions>
+                <ProgressBar Name="progressBarCurrentFile" Minimum="0" Maximum="100" Height="20" />
+
+                <Button Name="buttonStartGame" Content="- Close -" Padding="0" Height="20" Visibility="Collapsed" Click="OnStartGameButtonClicked" />
+                <ProgressBar Name="progressBar" Minimum="0" Maximum="100" Height="20" Grid.Row="1" />
+            </Grid>
+        </StackPanel>
+
+        <StatusBar Grid.ColumnSpan="3" Grid.Row="1">
+            <StatusBarItem Name="statusBarItemInfo" Height="22" />
+        </StatusBar>
+    </Grid>
+</Window>

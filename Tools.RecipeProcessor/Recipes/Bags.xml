@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Recipes>
+
+  <Recipe name="Recipe_Bag_Deku">
+    <Requires>
+      <RecipeItem name="Misc_Herb_Sticky" amount="1" />
+      <RecipeItem name="Misc_Leaf_Sharp" amount="2" />
+      <RecipeItem name="Misc_SkeletonBonePowder" amount="1" />
+    </Requires>
+    <Results>
+      <RecipeItem name="Bag_Deku" amount="1" />
+    </Results>
+  </Recipe>
+
+</Recipes>

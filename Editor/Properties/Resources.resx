@@ -1,0 +1,846 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonText_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonText_MoveToObject" xml:space="preserve">
+    <value>Move To</value>
+  </data>
+  <data name="ButtonText_NewObject" xml:space="preserve">
+    <value>New Object</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonText_SetSpriteSheet" xml:space="preserve">
+    <value>Set Sheet</value>
+  </data>
+  <data name="DialogTitle_NewScene" xml:space="preserve">
+    <value>New Scene</value>
+  </data>
+  <data name="FileLogName" xml:space="preserve">
+    <value>Editor's Log.log</value>
+  </data>
+  <data name="Format_FloorNameIndexX" xml:space="preserve">
+    <value>Floor '{0}'</value>
+  </data>
+  <data name="Headline_SelecteObject" xml:space="preserve">
+    <value>Selected Object</value>
+  </data>
+  <data name="Info_AllFieldsRequired" xml:space="preserve">
+    <value>All fields are required to have an value.</value>
+  </data>
+  <data name="Info_HeightMustBeGreaterThanX" xml:space="preserve">
+    <value>Height must be greater than {0}.</value>
+  </data>
+  <data name="Info_WidthMustBeGreaterThanX" xml:space="preserve">
+    <value>Width must be greater than {0}.</value>
+  </data>
+  <data name="Label_FloorCount" xml:space="preserve">
+    <value>Floor Count:</value>
+  </data>
+  <data name="Label_Floors" xml:space="preserve">
+    <value>FLOORS</value>
+  </data>
+  <data name="Label_LayerName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Label_SpriteLayers" xml:space="preserve">
+    <value>SPRITE LAYERS</value>
+  </data>
+  <data name="Label_LayerSettings" xml:space="preserve">
+    <value>LAYER SETTINGS</value>
+  </data>
+  <data name="Label_LayerSpriteSheet" xml:space="preserve">
+    <value>Sprite Sheet:</value>
+  </data>
+  <data name="Label_LayerType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="Label_LayerVisability" xml:space="preserve">
+    <value>Is Visible:</value>
+  </data>
+  <data name="Label_SceneHeight" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="Label_SceneName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Label_SceneWidth" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="MenuHeader_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuHeader_File_Close" xml:space="preserve">
+    <value>Close Scene</value>
+  </data>
+  <data name="MenuHeader_File_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuHeader_File_New" xml:space="preserve">
+    <value>New Scene</value>
+  </data>
+  <data name="MenuHeader_File_Open" xml:space="preserve">
+    <value>Open Scene</value>
+  </data>
+  <data name="MenuHeader_File_Save" xml:space="preserve">
+    <value>Save Scene</value>
+  </data>
+  <data name="MenuHeader_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuHeader_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="PropCate_Identification" xml:space="preserve">
+    <value>Identification</value>
+  </data>
+  <data name="PropDesc_Name" xml:space="preserve">
+    <value>The (unique) name of the Object.</value>
+  </data>
+  <data name="TabHeader_Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="TabHeader_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="TabHeader_Object" xml:space="preserve">
+    <value>Object</value>
+  </data>
+  <data name="TabHeader_Tile" xml:space="preserve">
+    <value>Tile</value>
+  </data>
+  <data name="TabHeader_Waypoint" xml:space="preserve">
+    <value>Waypoint</value>
+  </data>
+  <data name="ButtonText_AddFloor" xml:space="preserve">
+    <value>Add Floor</value>
+  </data>
+  <data name="ButtonText_AddLayer" xml:space="preserve">
+    <value>Add Layer</value>
+  </data>
+  <data name="ButtonText_MoveFloorDown" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="ButtonText_MoveFloorUp" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="ButtonText_MoveLayerDown" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="ButtonText_MoveLayerUp" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="ButtonText_RemoveFloor" xml:space="preserve">
+    <value>Remove Floor</value>
+  </data>
+  <data name="ButtonText_RemoveLayer" xml:space="preserve">
+    <value>Remove Layer</value>
+  </data>
+  <data name="AssetPath_ActionSheet" xml:space="preserve">
+    <value>ActionSheet</value>
+    <comment>Defines the SpriteSheet used by all Action layers.</comment>
+  </data>
+  <data name="Error_ActionLayerOfFloorIsNull" xml:space="preserve">
+    <value>The action layer of the floor is null. An action layer is required.</value>
+  </data>
+  <data name="Error_GivenLayerIsNoActionLayer" xml:space="preserve">
+    <value>The given TileMapDataLayer is not an action layer. This is required.</value>
+  </data>
+  <data name="Error_GivenFloorIsNotPartOfTileMap" xml:space="preserve">
+    <value>The given TileMapFloor is not part of this TileMap. This is required.</value>
+  </data>
+  <data name="Error_GivenLayerIsNotPartOfFloor" xml:space="preserve">
+    <value>The given TileMapSpriteDataLayer is not part of this TileMapFloor. This is required.</value>
+  </data>
+  <data name="DialogTitle_SetSheet" xml:space="preserve">
+    <value>Select a SpriteSheet resource.</value>
+  </data>
+  <data name="Filter_SpriteSheet" xml:space="preserve">
+    <value>SpriteSheet Resources (*.sprsh)|*.sprsh</value>
+  </data>
+  <data name="NullSprite" xml:space="preserve">
+    <value>}null sprite{</value>
+  </data>
+  <data name="ButtonText_FillLayer" xml:space="preserve">
+    <value>Fill Layer</value>
+  </data>
+  <data name="DialogTitle_OpenScene" xml:space="preserve">
+    <value>Select the Scene to open.</value>
+  </data>
+  <data name="Filter_Scene" xml:space="preserve">
+    <value>Scene Files (*.zs)|*.zs</value>
+  </data>
+  <data name="Info_SceneXSaved" xml:space="preserve">
+    <value>Scene '{0}' has been successfully saved.</value>
+  </data>
+  <data name="Question_ReallyFillLayerXOfFloorYWithSpriteZIndexW" xml:space="preserve">
+    <value>Do you really wish to fill the Layer '{0}' of Floor '{1}' with the '{2}' Sprite (index='{3}'). This can't be undone.</value>
+  </data>
+  <data name="Question_SaveTheOpenScene" xml:space="preserve">
+    <value>Do you wish to save the currently open Scene?</value>
+  </data>
+  <data name="Label_SceneName_Large" xml:space="preserve">
+    <value>Scene Name</value>
+  </data>
+  <data name="ButtonText_AddBackgroundMusic" xml:space="preserve">
+    <value>Add BGM</value>
+  </data>
+  <data name="ButtonText_RemoveBackgroundMusic" xml:space="preserve">
+    <value>Remove BGM</value>
+  </data>
+  <data name="DialogTitle_AddBackgroundMusic" xml:space="preserve">
+    <value>Select the music tracks to add to the Scene.</value>
+  </data>
+  <data name="Label_AmbientColor" xml:space="preserve">
+    <value>Ambient Color</value>
+  </data>
+  <data name="Label_BackgroundMusic" xml:space="preserve">
+    <value>Background Music</value>
+  </data>
+  <data name="Label_SceneType" xml:space="preserve">
+    <value>Scene Type</value>
+  </data>
+  <data name="Qeestion_ReallyRemoveLayerXOfFloorY" xml:space="preserve">
+    <value>Do you really wish to remove the selected Layer '{0}' of Floor '{1}'? This can't be undone.</value>
+  </data>
+  <data name="Text_LightOff" xml:space="preserve">
+    <value>Light Off</value>
+  </data>
+  <data name="Text_LightOn" xml:space="preserve">
+    <value>Light On</value>
+  </data>
+  <data name="ToolTip_AmbientColor" xml:space="preserve">
+    <value>The AmbientColor setting has only effect in Indoor-Scenes.</value>
+  </data>
+  <data name="ToolTip_BackgroundMusic" xml:space="preserve">
+    <value>The music that is played in the background of the Scene. The current track is selected randomly.</value>
+  </data>
+  <data name="ToolTip_FillLayer" xml:space="preserve">
+    <value>Fills the currently selected Layer with the currently selected Sprite.</value>
+  </data>
+  <data name="ToolTip_LayerName" xml:space="preserve">
+    <value>The name of the currently selected Layer. This field is optional.</value>
+  </data>
+  <data name="ToolTip_LayerSpriteSheet" xml:space="preserve">
+    <value>The SpriteSheet is responsible for converting the data of the Layer into actual Sprites.
+This field must be set.</value>
+  </data>
+  <data name="ToolTip_LayerVisability" xml:space="preserve">
+    <value>This field indicates whether the currently selected Layer is visible.</value>
+  </data>
+  <data name="ToolTip_SceneName" xml:space="preserve">
+    <value>The name of the scene. The scene is saved under its name.</value>
+  </data>
+  <data name="ToolTip_SceneType" xml:space="preserve">
+    <value>The type of a scene has various effects.
+Outdoor-Scenes have a Day/Night - Cycle and Weather.
+Indoor-Scenes use the AmbientColor setting and show no Weather.</value>
+  </data>
+  <data name="PropCate_Transform" xml:space="preserve">
+    <value>Transformation</value>
+  </data>
+  <data name="PropDesc_Scale" xml:space="preserve">
+    <value>The scaling factor applied to the Object.</value>
+  </data>
+  <data name="PropCate_Collision" xml:space="preserve">
+    <value>Collision</value>
+  </data>
+  <data name="PropCate_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="PropDesc_CollisionRectangle" xml:space="preserve">
+    <value>Represents the collision area of the Object.</value>
+  </data>
+  <data name="PropDesc_LightColor" xml:space="preserve">
+    <value>The color tainting applied to the Light.</value>
+  </data>
+  <data name="PropDesc_LightSprite" xml:space="preserve">
+    <value>The sprite that represents the shape, base brightness and base color of the Light.</value>
+  </data>
+  <data name="PropDesc_Position" xml:space="preserve">
+    <value>The position of the Object in the scene.</value>
+  </data>
+  <data name="PropDisp_CollisionRectangle" xml:space="preserve">
+    <value>Collision Rectangle</value>
+  </data>
+  <data name="PropDisp_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="PropDisp_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PropDisp_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="PropDisp_Scale" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="DialogTitle_SelectSprite" xml:space="preserve">
+    <value>Select a Sprite resource.</value>
+  </data>
+  <data name="PropDisp_Sprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="PropDesc_RotationDegree" xml:space="preserve">
+    <value>The rotation of the Object in degrees.</value>
+  </data>
+  <data name="PropDisp_Rotation" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="ButtonText_AddEvent" xml:space="preserve">
+    <value>Add Event</value>
+  </data>
+  <data name="ButtonText_AddEventTrigger" xml:space="preserve">
+    <value>Add Event Trigger</value>
+  </data>
+  <data name="Label_EventProperties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Label_Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="Label_EventTriggers" xml:space="preserve">
+    <value>Triggers</value>
+  </data>
+  <data name="DialogTitle_EntityTypeSelection" xml:space="preserve">
+    <value>Select the type of the Entity.</value>
+  </data>
+  <data name="PropDesc_SpawnArea" xml:space="preserve">
+    <value>The spawning area.</value>
+  </data>
+  <data name="PropDisp_SpawnArea" xml:space="preserve">
+    <value>Spawn Area</value>
+  </data>
+  <data name="PropDesc_RespawnGroups" xml:space="preserve">
+    <value>The list of EnemyRespawnGroups which determine what and how often Enemies spawn.</value>
+  </data>
+  <data name="PropDisp_RespawnGroups" xml:space="preserve">
+    <value>Respawn Groups</value>
+  </data>
+  <data name="Question_ReallyRemoveFloorX" xml:space="preserve">
+    <value>Do you really wish to remove the floor '{0}' from the tile map?
+This can't be undone.</value>
+  </data>
+  <data name="DialogTitle_SelectEntityTemplate" xml:space="preserve">
+    <value>Select the entity template to use.</value>
+  </data>
+  <data name="PropDesc_Direction" xml:space="preserve">
+    <value>The direction of the entity.</value>
+  </data>
+  <data name="PropDesc_FloorNumber" xml:space="preserve">
+    <value>The number of the floor the entity is placed on.</value>
+  </data>
+  <data name="PropDesc_TemplateName" xml:space="preserve">
+    <value>The name of the entity template that is used to create the related Entity.</value>
+  </data>
+  <data name="PropDisp_Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="PropDisp_FloorNumber" xml:space="preserve">
+    <value>Floor Number</value>
+  </data>
+  <data name="PropDisp_TemplateName" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="PropDesc_MaximumRazorBounceCount" xml:space="preserve">
+    <value>The maximum number of times the razor entity bounces back and forth before it starts to rest again.</value>
+  </data>
+  <data name="PropDesc_RazorBehaviourType" xml:space="preserve">
+    <value>States how the razor entity behaves.</value>
+  </data>
+  <data name="PropDisp_MaximumRazorBounceCount" xml:space="preserve">
+    <value>Bounce Count</value>
+  </data>
+  <data name="PropDisp_RazorBehaviourType" xml:space="preserve">
+    <value>Behaviour Type</value>
+  </data>
+  <data name="PropDesc_SpawnDirection" xml:space="preserve">
+    <value>The direction the entity is spawning. Setting this value to None makes the entity maintain its original direction</value>
+  </data>
+  <data name="PropDisp_SpawnDirection" xml:space="preserve">
+    <value>Spawn Direction</value>
+  </data>
+  <data name="Question_ReallyRemoveSelectedObjectX" xml:space="preserve">
+    <value>Do you really wish to remove the selected object '{0}'?</value>
+  </data>
+  <data name="DialogTitle_SelectItem" xml:space="preserve">
+    <value>Select the Item Resource to use.</value>
+  </data>
+  <data name="Filter_ItemResources" xml:space="preserve">
+    <value>Item Resources (*.zitm)|*.zitm</value>
+  </data>
+  <data name="PropDesc_MapItem" xml:space="preserve">
+    <value>The item resource whose instance is placed in the scene.</value>
+  </data>
+  <data name="PropDisp_MapItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="PropDesc_RedBlueBlockTrigger_SpriteOff" xml:space="preserve">
+    <value>The sprite that is shown when the trigger is switched off.</value>
+  </data>
+  <data name="PropDesc_RedBlueBlockTrigger_SpriteOn" xml:space="preserve">
+    <value>The sprite that is shown when the trigger is switched on.</value>
+  </data>
+  <data name="PropDesc_RedBlueBlockTrigger_SwitchEvent" xml:space="preserve">
+    <value>The DualSwitchEvent that gets triggered when the player attacks the RedBlueBlockTrigger.</value>
+  </data>
+  <data name="PropDisp_SpriteOff" xml:space="preserve">
+    <value>Sprite Off</value>
+  </data>
+  <data name="PropDisp_SpriteOn" xml:space="preserve">
+    <value>Sprite On</value>
+  </data>
+  <data name="PropDisp_SwitchEvent" xml:space="preserve">
+    <value>Switch Event</value>
+  </data>
+  <data name="PropDesc_IsRemovingPersistanceOnPickUp" xml:space="preserve">
+    <value>States whether the persistance of this entity is removed once the player has picked it up.</value>
+  </data>
+  <data name="PropDisp_IsRemovingPersistanceOnPickUp" xml:space="preserve">
+    <value>Is Persistance Removed On Pick-Up</value>
+  </data>
+  <data name="PropDesc_TypeName" xml:space="preserve">
+    <value>The name that uniquely identifies the type of the object.</value>
+  </data>
+  <data name="PropDisp_TypeName" xml:space="preserve">
+    <value>Type Name</value>
+  </data>
+  <data name="Error_ThereAlreadyExistsEntityWithNameX" xml:space="preserve">
+    <value>There already exists an entity with the name '{0}'. Names must be unique.</value>
+  </data>
+  <data name="PropCate_DrawSettings" xml:space="preserve">
+    <value>Draw Settings</value>
+  </data>
+  <data name="PropDesc_FirePlace_HasLight" xml:space="preserve">
+    <value>States whether there is a Light associated with the FirePlace.</value>
+  </data>
+  <data name="PropDesc_FirePlace_IsSwitchable" xml:space="preserve">
+    <value>States whether the player can unlit/lit the FirePlace by using it.</value>
+  </data>
+  <data name="PropDesc_FirePlace_IsSwitched" xml:space="preserve">
+    <value>States whether the FirePlace is currently lit.</value>
+  </data>
+  <data name="PropDesc_FirePlace_Light" xml:space="preserve">
+    <value>The Light that is associated with the FirePlace.</value>
+  </data>
+  <data name="PropDesc_FirePlace_SpriteOff" xml:space="preserve">
+    <value>The sprite that is shown when the FirePlace is unlit.</value>
+  </data>
+  <data name="PropDesc_FirePlace_SpriteOn" xml:space="preserve">
+    <value>The sprite that is shown when the FirePlace is lit.</value>
+  </data>
+  <data name="PropDisp_FirePlace_IsSwitchable" xml:space="preserve">
+    <value>Is Lit/Unlit-able</value>
+  </data>
+  <data name="PropDisp_FirePlace_IsSwitched" xml:space="preserve">
+    <value>Is Lit</value>
+  </data>
+  <data name="PropDisp_HasLight" xml:space="preserve">
+    <value>Has Light</value>
+  </data>
+  <data name="PropDisp_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Info_TheEntityXCantBeRemoved" xml:space="preserve">
+    <value>The entity {0} can't be manually removed from the scene.</value>
+  </data>
+  <data name="PropDesc_Sound" xml:space="preserve">
+    <value>The sound resource.</value>
+  </data>
+  <data name="PropDisp_Sound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="PropCate_LightSettings" xml:space="preserve">
+    <value>Light Settings</value>
+  </data>
+  <data name="PropCate_SoundSettings" xml:space="preserve">
+    <value>Sound Settings</value>
+  </data>
+  <data name="PropDesc_FirePlace_HasSoundEmitter" xml:space="preserve">
+    <value>States whether the FirePlace is emitting a sound using a SoundEmitter.</value>
+  </data>
+  <data name="PropDesc_FirePlace_SoundEmitter" xml:space="preserve">
+    <value>The positional SoundEmitter that is attached to the FirePlace.</value>
+  </data>
+  <data name="PropDesc_Sound_Audibility" xml:space="preserve">
+    <value>The combined volume of the sound after 3d sound, volume and channel group volume  calculations have been performed on it.</value>
+  </data>
+  <data name="PropDesc_Sound_MaximumDistance" xml:space="preserve">
+    <value>The maximum distance the sound stops attenuating at. 
+Beyond this point it will stay at the volume it would be at MaximumDistance units from the listener and will not attenuate any more.</value>
+  </data>
+  <data name="PropDesc_Sound_MinimumDistance" xml:space="preserve">
+    <value>The minimum distance that the sound emitter will cease to continue growing louder at (as it approaches the listener).</value>
+  </data>
+  <data name="PropDesc_Sound_Volumne" xml:space="preserve">
+    <value>The volume of the sound; where 0 = silent and 1 = full volumne.</value>
+  </data>
+  <data name="PropDisp_Audibility" xml:space="preserve">
+    <value>Audibility</value>
+  </data>
+  <data name="PropDisp_HasSoundEmitter" xml:space="preserve">
+    <value>Has Sound Emitter</value>
+  </data>
+  <data name="PropDisp_MaximumDistance" xml:space="preserve">
+    <value>Maximum Distance</value>
+  </data>
+  <data name="PropDisp_MinimumDistance" xml:space="preserve">
+    <value>Minimum Distance</value>
+  </data>
+  <data name="PropDisp_SoundEmitter" xml:space="preserve">
+    <value>Sound Emitter</value>
+  </data>
+  <data name="PropDisp_Volumne" xml:space="preserve">
+    <value>Volumne</value>
+  </data>
+  <data name="PropDesc_PositionTile" xml:space="preserve">
+    <value>The position of the entity in tile-space.</value>
+  </data>
+  <data name="PropDesc_Sprite" xml:space="preserve">
+    <value>The sprite of the entity.</value>
+  </data>
+  <data name="PropDesc_TileBlock_IsSolid" xml:space="preserve">
+    <value>States whether the TileBlock entity is solid; and as such blocks all moveable entities.</value>
+  </data>
+  <data name="PropDisp_IsSolid" xml:space="preserve">
+    <value>Is Solid</value>
+  </data>
+  <data name="PropDisp_PositionTile" xml:space="preserve">
+    <value>Position Tile</value>
+  </data>
+  <data name="PropCate_Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="PropDesc_IsRemovingPersistanceOnUnlock" xml:space="preserve">
+    <value>States whether the object completly goes away after it has been unlocked, even if the scene has been reloaded.</value>
+  </data>
+  <data name="PropDesc_UnlockableDoor_NotUnlockedEvent" xml:space="preserve">
+    <value>The event that gets triggered when the player didn't manage to unlock the door. For example when he was missing the required key.</value>
+  </data>
+  <data name="PropDesc_UnlockableDoor_RequiredKeyItemName" xml:space="preserve">
+    <value>The name of the item that is required to unlock the door.</value>
+  </data>
+  <data name="PropDesc_UnlockableDoor_UnlockedEvent" xml:space="preserve">
+    <value>The event that gets triggered when the player has unlocked the door.</value>
+  </data>
+  <data name="PropDisp_IsRemovingPersistanceOnUnlock" xml:space="preserve">
+    <value>Remove Persistance On Unlock</value>
+  </data>
+  <data name="PropDisp_UnlockableDoor_NotUnlockedEvent" xml:space="preserve">
+    <value>Not Unlocked Event</value>
+  </data>
+  <data name="PropDisp_UnlockableDoor_RequiredKeyItemName" xml:space="preserve">
+    <value>Required Key</value>
+  </data>
+  <data name="PropDisp_UnlockableDoor_UnlockedEvent" xml:space="preserve">
+    <value>Unlocked Event</value>
+  </data>
+  <data name="PropDesc_Offset" xml:space="preserve">
+    <value>The offset from the position of the object to the beginning of the collision area.</value>
+  </data>
+  <data name="PropDesc_Size" xml:space="preserve">
+    <value>The size of the object.</value>
+  </data>
+  <data name="PropDesc_WantedSignPost_QuestName" xml:space="preserve">
+    <value>The name that uniquely identifies the Quest given by the Wanted Sign Post.</value>
+  </data>
+  <data name="PropDisp_Offset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="PropDisp_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="PropDisp_WantedSignPost_QuestName" xml:space="preserve">
+    <value>Quest Name</value>
+  </data>
+  <data name="DialogTitle_SelectQuest" xml:space="preserve">
+    <value>Select a Quest Definition File.</value>
+  </data>
+  <data name="Filter_QuestResources" xml:space="preserve">
+    <value>Quest Resources (*.zq)|*.zq</value>
+  </data>
+  <data name="PropDesc_TextResourceId" xml:space="preserve">
+    <value>The unique id that identifies the text resource.</value>
+  </data>
+  <data name="PropDesc_WantedSignPost_LocalizedText" xml:space="preserve">
+    <value>The text shown when the Player gets no Quest from the Wanted Sign Post.</value>
+  </data>
+  <data name="PropDisp_LocalizedText" xml:space="preserve">
+    <value>Localized Text</value>
+  </data>
+  <data name="PropDisp_TextResourceId" xml:space="preserve">
+    <value>Text Resource Id</value>
+  </data>
+  <data name="Question_ReallyRemoveSelectedEventTriggerX" xml:space="preserve">
+    <value>Do you really wish to remove the selected event trigger '{0}'?</value>
+  </data>
+  <data name="Question_ReallyRemoveSelectedEventX" xml:space="preserve">
+    <value>Do you really wish to remove the selected event '{0}'?</value>
+  </data>
+  <data name="PropDesc_UseTemplate" xml:space="preserve">
+    <value>States whether the EntitySpawn should 
+clone an template entity to create the entity;
+or directly load it from the hard-disc.</value>
+  </data>
+  <data name="PropDisp_UseTemplate" xml:space="preserve">
+    <value>Use Template</value>
+  </data>
+  <data name="Label_Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Label_Waypoints" xml:space="preserve">
+    <value>Waypoints</value>
+  </data>
+  <data name="Error_NameMustBeUnique" xml:space="preserve">
+    <value>The name is required to be unique.</value>
+  </data>
+  <data name="Label_PathSegments" xml:space="preserve">
+    <value>Path Segments</value>
+  </data>
+  <data name="PropDisp_TileDistance" xml:space="preserve">
+    <value>Tile Distance</value>
+  </data>
+  <data name="Label_Paths" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="PropDisp_WaypointDescription" xml:space="preserve">
+    <value>Waypoint Description</value>
+  </data>
+  <data name="Question_ReallyResetSelectedPathX" xml:space="preserve">
+    <value>Do you really wish to reset the selected Path '{0}'?</value>
+  </data>
+  <data name="PropDesc_HasToFaceToUse" xml:space="preserve">
+    <value>States whether the player has to face the entity to use it.</value>
+  </data>
+  <data name="PropDesc_UseAction" xml:space="preserve">
+    <value>The action that is executed when the entity is used.</value>
+  </data>
+  <data name="PropDesc_UseArea" xml:space="preserve">
+    <value>The area in which the entity can be used.</value>
+  </data>
+  <data name="PropDisp_DrawDataAndStrategy" xml:space="preserve">
+    <value>Draw Strategy</value>
+  </data>
+  <data name="PropDisp_DrawDataAndStrategyType" xml:space="preserve">
+    <value>Draw Strategy Type</value>
+  </data>
+  <data name="PropDisp_HasToFaceToUse" xml:space="preserve">
+    <value>Has To Face To Use</value>
+  </data>
+  <data name="PropDisp_UseArea" xml:space="preserve">
+    <value>Use Area</value>
+  </data>
+  <data name="PropCate_Visuals" xml:space="preserve">
+    <value>Visualization</value>
+  </data>
+  <data name="PropDesc_DrawDataAndStrategy" xml:space="preserve">
+    <value>The object that contains the drawing data and logic for the entity.</value>
+  </data>
+  <data name="PropDesc_DrawDataAndStrategyType" xml:space="preserve">
+    <value>The full name of the type that contains the drawing data and logic for the entity.</value>
+  </data>
+  <data name="PropDesc_LoadDrawDataAndStrategyToggle" xml:space="preserve">
+    <value>Press to reload the current Draw Data and Strategy.</value>
+  </data>
+  <data name="PropDisp_LoadDrawDataAndStrategyToggle" xml:space="preserve">
+    <value>Load Draw Strategy</value>
+  </data>
+  <data name="PropDesc_EntityModifier" xml:space="preserve">
+    <value>The modifier that is applied to the entity.</value>
+  </data>
+  <data name="PropDesc_IsEntitySpawnActive" xml:space="preserve">
+    <value>States  whether the EntitySpawn is active, and should spawn the entity.</value>
+  </data>
+  <data name="PropDisp_EntityModifier" xml:space="preserve">
+    <value>Entity Modifier</value>
+  </data>
+  <data name="PropDisp_IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="PropDesc_CollisionArea" xml:space="preserve">
+    <value>The area in which this entity is considered to collide with other entities.</value>
+  </data>
+  <data name="PropDesc_FloorRelativity" xml:space="preserve">
+    <value>Influences how items on the same floor are sorted on the z-axes.</value>
+  </data>
+  <data name="PropDisp_CollisionArea" xml:space="preserve">
+    <value>Collision Area</value>
+  </data>
+  <data name="PropDisp_FloorRelativity" xml:space="preserve">
+    <value>Floor Relativity</value>
+  </data>
+  <data name="TabHeader_Story" xml:space="preserve">
+    <value>Story</value>
+  </data>
+  <data name="Label_IncidentProperties" xml:space="preserve">
+    <value>Incident Properties</value>
+  </data>
+  <data name="Label_Incidents" xml:space="preserve">
+    <value>Incidents</value>
+  </data>
+  <data name="Label_Timelines" xml:space="preserve">
+    <value>Timelines</value>
+  </data>
+  <data name="Label_TimelineProperties" xml:space="preserve">
+    <value>Timeline Properties</value>
+  </data>
+  <data name="PropDesc_SaveLocationAtSpawn" xml:space="preserve">
+    <value>States whether the current location of the player is set as the spawn point upon loading the game when he spawn at this spawn point.</value>
+  </data>
+  <data name="PropDisp_SaveLocationAtSpawn" xml:space="preserve">
+    <value>Saves Location at spawn</value>
+  </data>
+  <data name="PropDesc_Sound_MaximumArea" xml:space="preserve">
+    <value>The maximum area the sound stops attenuating at. 
+Beyond this point it will stay at the volume it would be at MaximumDistance units from the listener and will not attenuate any more.</value>
+  </data>
+  <data name="PropDesc_Sound_MinimumArea" xml:space="preserve">
+    <value>The minimum area that the sound emitter will cease to continue growing louder at (as it approaches the listener).</value>
+  </data>
+  <data name="PropDesc_Sound_PanLevel3D" xml:space="preserve">
+    <value>States how much the 3d engine has an effect on the channel, versus that set by Channel::setPan, Channel::setSpeakerMix, Channel::setSpeakerLevels.  1 = Sound pans and attenuates according to 3d position. 0 = Attenuation is ignored and pan/speaker levels are defined by Channel::setPan, Channel::setSpeakerMix, Channel::setSpeakerLevels.</value>
+  </data>
+  <data name="PropDisp_MaximumArea" xml:space="preserve">
+    <value>Maximum Area</value>
+  </data>
+  <data name="PropDisp_MinimumArea" xml:space="preserve">
+    <value>Minimum Area</value>
+  </data>
+  <data name="PropDisp_PanLevel3D" xml:space="preserve">
+    <value>Pan Level 3D</value>
+  </data>
+  <data name="PropDesc_Sound_MaximumAreaOffset" xml:space="preserve">
+    <value>The offset applied to the Maximum Sound Area.</value>
+  </data>
+  <data name="PropDisp_MaximumAreaOffset" xml:space="preserve">
+    <value>Maximum Area Offset</value>
+  </data>
+  <data name="PropDesc_BlockTrigger_Event" xml:space="preserve">
+    <value>The event that gets executed when the block is triggered.</value>
+  </data>
+  <data name="PropDesc_Sound_TriggerPeriod" xml:space="preserve">
+    <value>The time between two triggers of the sound emitter.</value>
+  </data>
+  <data name="PropDisp_TriggerPeriod" xml:space="preserve">
+    <value>Trigger Period</value>
+  </data>
+</root>
