@@ -2,13 +2,17 @@
 ---------------------------------------
 ## About The Game
 The Legend of Zelda - Black Crown is a free fan game that combines ideas from The Legend of Zelda, Diablo and Ragnarok Online.
-Development of started around the year 2008 with various prototypes done in C++/OpenGL.
+Development started around the year 2008 with various prototypes previously done in C++/OpenGL.
 The large code base has undergone various transformations, but like with any old codebase there are some historically grown pieces.
 
 Game Code: C#
+
 Script Code: IronRuby
+
 Graphics: Microsoft XNA
+
 Audio: FMOD Ex
+
 UI framework for dev tools: Windows Presentation Foundation
 
 ## What is the Game about
