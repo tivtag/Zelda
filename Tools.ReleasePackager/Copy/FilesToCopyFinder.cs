@@ -32,10 +32,10 @@ namespace Tools.ReleasePackager.Copy
             var originalFiles = this.GetOriginalFiles();
             var filesToCopy = new List<string>();
 
-            foreach( var file in originalFiles )
+            foreach( string file in originalFiles )
             {
                 if( this.ShouldCopyFile( file ) )
-                {                    
+                {
                     filesToCopy.Add( file );
                 }
             }

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.ErrorReporting.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.ErrorReporting.Wpf.ErrorReportDialog">
+            <summary>
+            </summary>
+            <summary>
+            ErrorReportDialog
+            </summary>
+        </member>
+        <member name="M:Atom.ErrorReporting.Wpf.ErrorReportDialog.#ctor(Atom.ErrorReporting.IErrorReporter)">
+            <summary>
+            Initializes a new instance of the ErrorReportDialog class.
+            </summary>
+            <param name="mailReporter"></param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Wpf.ErrorReportDialog.ShowDialog(Atom.ErrorReporting.IError)">
+            <summary>
+            
+            </summary>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.ErrorReporting.Wpf.ErrorReportDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IronRuby.Libraries.Yaml</name>
+    </assembly>
+    <members>
+        <member name="F:IronRuby.StandardLibrary.Yaml.FlowStyle.Inline">
+            <summary>
+            A collection is formatted to a single line.
+            </summary>
+        </member>
+        <member name="F:IronRuby.StandardLibrary.Yaml.FlowStyle.Block">
+            <summary>
+            Each item of the collection is emitted on a new line.
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.YamlObjectOps.ToYamlProperties(IronRuby.Runtime.RubyContext,System.Object)">
+            <summary>
+            Returns an array of sorted instance variable names.
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.YamlMutableStringOps.ContainsBinaryData(IronRuby.Builtins.MutableString)">
+            <summary>
+            Returns true if the string binary representation contains bytes from set: 0..0x1f + 0x7f..0xff - [0x0a, 0x0d].
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.YamlMutableStringOps.IsComplexYaml(IronRuby.Runtime.CallSiteStorage{System.Func{System.Runtime.CompilerServices.CallSite,System.Object,IronRuby.Builtins.MutableString}},IronRuby.Runtime.CallSiteStorage{System.Func{System.Runtime.CompilerServices.CallSite,System.Object,IronRuby.Builtins.RubyArray}},IronRuby.Builtins.MutableString)">
+            <summary>
+            True if the string representation is multi-line, i.e. if
+            - the string contains \n followed by data, 
+            - any YAML properties has been attached to the string (to_yaml_properties returns non-null),
+            - to_yaml_style returns true value (???)
+            </summary>
+        </member>
+        <member name="T:IronRuby.StandardLibrary.Yaml.NodeProvider">
+            <summary>
+            Provides YAML nodes for Ruby object constructor.
+            </summary>
+        </member>
+        <member name="T:IronRuby.StandardLibrary.Yaml.SimpleNodeProvider">
+            <summary>
+            Simple NodeProvider implementation. Provides only one given node.
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.BaseConstructor.ConstructScalar(IronRuby.StandardLibrary.Yaml.Node)">
+            <summary>
+            Returns the value of the scalar.
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.Emitter.DetermineChomp(System.String)">
+            <summary>
+            Chomping controls how final line breaks and trailing empty lines are interpreted.
+            1) Clip ("")
+               The final line break is preserved in the scalar’s content. Any trailing empty lines are excluded from the scalar’s content. 
+            2) Strip ("-")
+               The final line break and any trailing empty lines are excluded from the scalar’s content. 
+            3) Keep ("+")
+               The final line break and any trailing empty lines are considered to be part of the scalar’s content. 
+               These additional lines are not subject to folding. 
+            </summary>
+        </member>
+        <member name="P:IronRuby.StandardLibrary.Yaml.CollectionStartEvent.Tag">
+            <summary>
+            A tag or null if the implicit tag should be used.
+            </summary>
+        </member>
+        <member name="P:IronRuby.StandardLibrary.Yaml.CollectionStartEvent.FlowStyle">
+            <summary>
+            False if formatted as a block (each item on its own line). 
+            </summary>
+        </member>
+        <member name="T:IronRuby.StandardLibrary.Yaml.LiteralParser">
+            <summary>
+            This must be hooked to allow big integer parsing
+            </summary>
+        </member>
+        <member name="F:IronRuby.StandardLibrary.Yaml.LiteralParser.ParseInteger">
+            <summary>
+            Parses an integer/biginteger given sign, base, and digit string.
+            The sign, base prefix, and numeric seperator characters are already stripped off
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.RubyConstructor.ConstructRubyString(IronRuby.StandardLibrary.Yaml.RubyConstructor,IronRuby.StandardLibrary.Yaml.Node)">
+            <summary>
+            Returns MutableString or RubySymbol.
+            </summary>
+        </member>
+        <member name="M:IronRuby.StandardLibrary.Yaml.RubyRepresenter.ToYamlProperties(System.Object)">
+            <summary>
+            Dynamically calls to_yaml_properties on a given object. The method should return a list of 
+            instance variable names (Symbols or Strings) of the object that should be serialized into the output stream.
+            </summary>
+        </member>
+        <member name="T:IronRuby.StandardLibrary.Yaml.RubyYaml.YamlStream">
+            <summary>
+            YAML documents collection. Allows to collect and emit YAML documents.
+            </summary>
+        </member>
+    </members>
+</doc>

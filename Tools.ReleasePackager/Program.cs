@@ -22,15 +22,16 @@ namespace Tools.ReleasePackager
     {
         static void Main( string[] args )
         {
+            // ToDo: Use relative paths
             var packager = new Packager(
                 // Compiled 
-                @"C:\Projects\Games\Zelda\Compiled\Release",
+                @"C:\Projects\Zelda\Compiled\Release",
 
                 // Packaged
-                @"C:\Projects\Games\Zelda\Packaged",
+                @"C:\Projects\Zelda\Packaged",
 
                 // Installer
-                @"C:\Projects\Games\Zelda\Installer"
+                @"C:\Projects\Zelda\Installer"
             );
             
             bool hadError = !packager.Run();
@@ -39,6 +40,7 @@ namespace Tools.ReleasePackager
             {
                 Console.ReadKey();
             }
+            Console.ReadKey();
         }
     }
 }

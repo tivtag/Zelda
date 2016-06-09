@@ -35,6 +35,8 @@ namespace Tools.ReleasePackager
             this.compiledDirectory = compiledDirectory;
             this.packagedDirectory = packagedDirectory;
             this.installerDirectory = installerDirectory;
+
+            Directory.CreateDirectory( packagedDirectory );
         }
 
         /// <summary>
@@ -48,14 +50,18 @@ namespace Tools.ReleasePackager
         {
             var copyToPackageProcedure = this.CreateCopyFromCompiledToPackegedProcedure();
             if( !RunProcedure( copyToPackageProcedure, "Copy files from Compiled to Packaged" ) )
+            {
                 return false;
+            }
 
             var installerProcedure = new InstallerProcedure( this.packagedDirectory, this.installerDirectory );
             RunProcedure( installerProcedure );
 
             var manifestCreationProcedure = new ManifestCreationProcedure( this.packagedDirectory );
             if( !RunProcedure( manifestCreationProcedure, "Create Manifest" ) )
+            {
                 return false;
+            }
 
             OpenExplorer( this.packagedDirectory );
             return true;

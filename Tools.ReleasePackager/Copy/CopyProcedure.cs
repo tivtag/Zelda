@@ -57,7 +57,7 @@ namespace Tools.ReleasePackager.Copy
         {
             var filesToCopy = this.filesToCopyFinder.GetFilesToCopy();
 
-            foreach( var file in filesToCopy )
+            foreach( string file in filesToCopy )
             {
                 string destinationFile = GetDestinationFileName( file );
                 string destinationDirectory = Path.GetDirectoryName( destinationFile );

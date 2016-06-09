@@ -92,40 +92,40 @@
   <ItemGroup>
     <Reference Include="Atom, Version=1.0.3640.30603, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.dll</HintPath>
     </Reference>
     <Reference Include="Atom.AI, Version=1.0.3708.23864, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.AI.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.AI.dll</HintPath>
     </Reference>
     <Reference Include="Atom.ErrorReporting, Version=1.0.3649.3010, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.ErrorReporting.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.ErrorReporting.dll</HintPath>
     </Reference>
     <Reference Include="Atom.ErrorReporting.Wpf">
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.ErrorReporting.Wpf.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.ErrorReporting.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Fmod, Version=4.0.26.9, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Fmod.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Fmod.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Game, Version=1.0.3708.23862, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Game.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Game.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Math, Version=1.0.3640.30605, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Math.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Math.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Wpf">
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Wpf.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Xna, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Xna.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Xna.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Xna.Wpf">
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Xna.Wpf.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Xna.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />

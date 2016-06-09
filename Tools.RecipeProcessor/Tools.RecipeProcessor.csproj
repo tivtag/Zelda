@@ -107,11 +107,11 @@
   <ItemGroup>
     <Reference Include="Atom, Version=1.0.3640.30603, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Xna, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Xna.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Xna.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />

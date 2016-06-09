@@ -67,10 +67,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Atom">
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Game">
-      <HintPath>..\..\..\Libraries\Atom\Binaries\Release\Atom.Game.dll</HintPath>
+      <HintPath>..\Dependencies\Atom.Game.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
