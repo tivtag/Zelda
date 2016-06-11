@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Game.Xna</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Scene.Tiles.TileMapSpriteDataLayer">
+            <summary>
+            Represents a <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> that is visualized using a <see cref="T:Atom.Xna.SpriteSheet"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapSpriteDataLayer.Sheet">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.SpriteSheet"/> that is used 
+            to convert the interal data stored in this <see cref="T:Atom.Scene.Tiles.TileMapSpriteDataLayer"/>
+            into drawable <see cref="T:Atom.Xna.ISprite"/>s.
+            </summary>
+            <value>The default value is null.</value>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapSpriteDataLayer"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.#ctor(System.String,Atom.Scene.Tiles.TileMapFloor,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapSpriteDataLayer"/> class.
+            </summary>
+            <param name="name">
+            The name of the new TileMapSpriteDataLayer.
+            </param>
+            <param name="floor">
+            The floor that owns the new TileMapSpriteDataLayer.
+            </param>
+            <param name="width">
+            The width of the new TileMapSpriteDataLayer (in tile-space).
+            </param>
+            <param name="height">
+            The height of the new TileMapSpriteDataLayer (in tile-space).
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="floor"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.Draw(System.Int32,System.Int32,System.Int32,System.Int32,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this TileMapSpriteDataLayer.
+            </summary>
+            <param name="scrollX">The scroll value on the x-axis.</param>
+            <param name="scrollY">The scroll value on the y-axis.</param>
+            <param name="screenW">The width of the viewable area.</param>
+            <param name="screenH">The height of the viewable area.</param>
+            <param name="drawContext">
+            The current draw context.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.DrawOffset(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws thisTileMapSpriteDataLayer, with the specified offset.
+            </summary>
+            <param name="scrollX">The scroll value on the x-axis.</param>
+            <param name="scrollY">The scroll value on the y-axis.</param>
+            <param name="screenW">The width of the viewable area.</param>
+            <param name="screenH">The height of the viewable area.</param>
+            <param name="offsetX">The drawing offset applied on the x-axis.</param>
+            <param name="offsetY">The drawing offset applied on the y-axis.</param>
+            <param name="drawContext">The current draw context.</param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.Serialize(Atom.Storage.ISerializationContext)">
+            <summary>
+            Serializes this TileMapSpriteDataLayer.
+            </summary>
+            <param name="context">
+            The context that provides everything required for the serialization process.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.Deserialize(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Deserializes this TileMapSpriteDataLayer.
+            </summary>
+            <param name="context">
+            The context that provides everything required for the deserialization process.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapSpriteDataLayer.LoadSpriteSheet(System.String,Atom.Storage.IDeserializationContext)">
+            <summary>
+            Loads the SpriteSheet of this TileMapSpriteDataLayer.
+            </summary>
+            <param name="sheetName">
+            The name of the SpriteSheet to load.
+            </param>
+            <param name="context">
+            The context that provides everything required for the deserialization process.
+            </param>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TileMapSpriteDataLayer.sheet">
+            <summary>
+            The <see cref="T:Atom.Xna.SpriteSheet"/> that is used to convert 
+            the interal data stored in this <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/>
+            into drawable <see cref="T:Atom.Xna.ISprite"/>s.
+            </summary>
+        </member>
+        <member name="T:Atom.Scene.Xna.QuadTreeVisualizer2">
+            <summary>
+            Implements a mechanism that visualizes the structure of a <see cref="T:Atom.Scene.QuadTree2"/>
+            using simple lines.
+            </summary>
+        </member>
+        <member name="M:Atom.Scene.Xna.QuadTreeVisualizer2.#ctor(Atom.Xna.Batches.ITextureDrawBatch)">
+            <summary>
+            Initializes a new instance of the QuadTreeVisualizer2 class.
+            </summary>
+            <param name="drawBatch">
+            The ITextureDrawBatch that is used to draw the lines that visualize a <see cref="T:Atom.Scene.QuadTree2"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Xna.QuadTreeVisualizer2.Draw(Atom.Scene.QuadTree2,Atom.Xna.IXnaDrawContext)">
+            <summary>
+            Visualizes the specified QuadTree2.
+            </summary>
+            <param name="tree">
+            The QuadTree2 to visualize.
+            </param>
+            <param name="drawContext">
+            The current IXnaDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Xna.QuadTreeVisualizer2.DrawNode(Atom.Scene.QuadTreeNode2,System.Int32)">
+            <summary>
+            Draws the specified QuadTreeNode2.
+            </summary>
+            <param name="node">
+            The QuadTreeNode2 to draw.
+            </param>
+            <param name="depth">
+            The current depth of the QuadTreeNode2.
+            </param>
+        </member>
+        <member name="F:Atom.Scene.Xna.QuadTreeVisualizer2.tree">
+            <summary>
+            The QuadTree2 that is currently beeing drawing by this QuadTreeVisualizer2.
+            </summary>
+        </member>
+        <member name="F:Atom.Scene.Xna.QuadTreeVisualizer2.drawBatch">
+            <summary>
+            The ITextureDrawBatch that is used to draw the lines that visualize a <see cref="T:Atom.Scene.QuadTree2"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

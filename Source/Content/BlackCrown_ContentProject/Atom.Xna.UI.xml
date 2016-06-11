@@ -1,0 +1,3117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Xna.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Xna.UI.Controls.Button">
+            <summary>
+            Represent the abstract base class of all Buttons in the UserInterface framework.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Controls.Button.Clicked">
+            <summary>
+            Fired after the user has clicked on this <see cref="T:Atom.Xna.UI.Controls.Button"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.Button.IsSelected">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Xna.UI.Controls.Button"/> is currently selected.
+            </summary>
+            <value>The default value is false.</value>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.Button"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.Button"/> class.
+            </summary>
+            <param name="name">
+            The name of the new <see cref="T:Atom.Xna.UI.Controls.Button"/>.
+            </param> 
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="name"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.Click">
+            <summary>
+            Simulates clicking on this Button by executing the Clicked event.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.Click(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Simulates clicking on this Button by executing the Clicked event.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.HandleRelatedMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Overriden to handle 'clicking' of the button.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <returns>
+            True if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.Button.WasClicked(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Gets a value indicating whether the user has just clicked.
+            </summary>
+            <param name="mouseState">
+            The current state of the mouse.
+            </param>
+            <param name="oldMouseState">
+            The state of the mouse last frame.
+            </param>
+            <returns>
+            True if the button has been clicked on;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.DynamicSpriteButton">
+            <summary>
+            Defines a button whose Sprite resources are received every frame on the fly.
+            </summary>
+            <remarks>
+            The SpiteReceiver delegate is sued to receive the Sprite Data.
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.DynamicSpriteButton.SpriteReceiver">
+            <summary>
+            Gets or sets the delegate that is used to receive sprite data on the fly.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.DynamicSpriteButton.ColorDefault">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the Button is tinted in its default state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.DynamicSpriteButton.ColorSelected">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the Button is tinted in its selected state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.DynamicSpriteButton.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.DynamicSpriteButton"/> class.
+            </summary>
+            <param name="name"> The name of the <see cref="T:Atom.Xna.UI.Controls.Button"/>. </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.DynamicSpriteButton.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.Xna.UI.Controls.DynamicSpriteButton"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.DynamicSpriteButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.Controls.DynamicSpriteButton"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.DynamicSpriteButton.colorDefault">
+            <summary>
+            The color the button is tinted.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.DynamicSpriteButton.colorSelected">
+            <summary>
+            The color the button is tinted.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.DynamicSpriteButtonSpriteReceiver">
+            <summary>
+            Defines the delegate that is used to get sprite data for the <see cref="T:Atom.Xna.UI.Controls.DynamicSpriteButton"/>.
+            </summary>
+            <param name="sender">
+            The button which wants to receive sprite data.
+            </param>
+            <param name="spriteDefault">
+            The sprite to display when the button is in default state.
+            </param>
+            <param name="spriteSelected">
+            The sprite to display when the button is in selected state
+            .</param>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.SpriteButton">
+            <summary>
+            Defines a <see cref="T:Atom.Xna.UI.Controls.Button"/> that is visualized using Sprites.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteButton.SpriteDefault">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.ISprite"/> that is usually displayed.
+            </summary>
+            <remarks>
+            Setting this value also refreshes the ClientArea.
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteButton.SpriteSelected">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.ISprite"/> that is displayed when 
+            the <see cref="T:Atom.Xna.UI.Controls.Button"/> is either selected or if the mouse is over it.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteButton.ColorDefault">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the Button is tinted in its default state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteButton.ColorSelected">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the Button is tinted in its selected state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.#ctor(System.String,Atom.Xna.ISprite,Atom.Xna.ISprite)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/> class.
+            </summary>
+            <param name="name"> The name of the <see cref="T:Atom.Xna.UI.Controls.Button"/>. </param> 
+            <param name="spriteDefault"> The sprite of the button in its default state. </param>
+            <param name="spriteSelected"> The sprite of the button when the mouse is over/selected the button. </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/> class.
+            </summary>
+            <param name="name"> The name of the <see cref="T:Atom.Xna.UI.Controls.Button"/>. </param> 
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.RefreshButtonClientArea">
+            <summary>
+            Refreshes the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of this <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/>
+            based on the currently set <see cref="P:Atom.Xna.UI.Controls.SpriteButton.SpriteDefault"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteButton.spriteDefault">
+            <summary> 
+            Stores the sprites of this <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteButton.spriteSelected">
+            <summary> 
+            Stores the sprites of this <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteButton.colorDefault">
+            <summary>
+            The color the button is tinted.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteButton.colorSelected">
+            <summary>
+            The color the button is tinted.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.LambdaButton">
+            <summary>
+            Represents a button that redirects the update and drawing operations
+            to external lambdas / delegates.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.#ctor(System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.IUpdateContext},System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.Xna.ISpriteDrawContext})">
+            <summary>
+            Initializes a new instance of the LambdaButton class.
+            </summary>
+            <param name="onUpdate">
+            The action that should be executed when the new LabdaButton is updating itself.
+            </param>
+            <param name="onDraw">
+            The action that should be executed when the new LabdaButton is drawing itself.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is updating.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is drawing.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onUpdate">
+            <summary>
+            The action that is executed when this LabdaButton is updating itself.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onDraw">
+            <summary>
+            The action that is executed when this LabdaButton is drawing itself.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.SpriteTextButton">
+            <summary>
+            Represents a combination of a <see cref="T:Atom.Xna.UI.Controls.SpriteButton"/> and a <see cref="T:Atom.Xna.UI.Controls.TextButton"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.Text">
+            <summary>
+            Gets or sets the <see cref="T:System.String"/> that is displayed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.TextAlign">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Controls.SpriteTextButton.TextAlign"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.Font">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.Fonts.IFont"/> object that is used to draw the string.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.ColorTextDefault">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the text of the Button is tinted in its default state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.ColorTextSelected">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the text of the Button is tinted in its selected state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextButton.TextOffset">
+            <summary>
+            The offset from the Position of this TextButton to the point at which the text is rendered.
+            </summary>
+            <value>
+            The default value is Vector2.Zero.
+            </value>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextButton.#ctor(System.String,Atom.Xna.ISprite,Atom.Xna.ISprite)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteTextButton"/> class.
+            </summary>
+            <param name="name"> The name of the <see cref="T:Atom.Xna.UI.Controls.Button"/>. </param> 
+            <param name="spriteDefault"> The sprite of the button in its default state. </param>
+            <param name="spriteSelected"> The sprite of the button when the mouse is over/selected the button. </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextButton.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteTextButton"/> class.
+            </summary>
+            <param name="name"> The name of the <see cref="T:Atom.Xna.UI.Controls.Button"/>. </param> 
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteTextButton"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.Controls.TextButton"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteTextButton.text">
+            <summary>
+            Stores the text that is displayed by the TextButton.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteTextButton.aligmentMode">
+            <summary>
+            Specifies the used text alogment mode.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteTextButton.font">
+            <summary>
+            The font object that is used to draw the string.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteTextButton.colorTextDefault">
+            <summary>
+            The color the text is tinted in.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.SpriteTextButton.colorTextSelected">
+            <summary>
+            The color the text is tinted in.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.TextButton">
+            <summary>
+            Defines a simple <see cref="T:Atom.Xna.UI.Controls.Button"/> that is visualized by a String.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.Text">
+            <summary>
+            Gets or sets the <see cref="T:System.String"/> that is displayed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.TextAlign">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Controls.TextButton.TextAlign"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.TextOffset">
+            <summary>
+            The offset from the Position of this TextButton to the point at which the text is rendered.
+            </summary>
+            <value>
+            The default value is Vector2.Zero.
+            </value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.Font">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.Fonts.IFont"/> object that is used to draw the string.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.ColorDefault">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the text of the Button is tinted in its default state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.ColorSelected">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> the text of the Button is tinted in its selected state.
+            </summary>
+            <value>The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.BackgroundColorDefault">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> that the background of the Button is tinted in its default state.
+            </summary>
+            <value>The default value is null.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.BackgroundColorSelected">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Color"/> that the background of the Button is tinted in its selected state.
+            </summary>
+            <value>The default value is null.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextButton.ShouldShowAsSelected">
+            <summary>
+            Gets a value indicating whether this TextButton should
+            use the selected foreground and background colors.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.TextButton"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.TextButton"/> class.
+            </summary>
+            <param name="name">
+            The name of the new <see cref="T:Atom.Xna.UI.Controls.TextButton"/>.
+            </param> 
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.Xna.UI.Controls.TextButton"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.Controls.TextButton"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.DrawBackground(Microsoft.Xna.Framework.Color,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws the background of this TextButton.
+            </summary>
+            <param name="color">
+            The color of the background.
+            </param>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextButton.RefreshButtonClientArea">
+            <summary>
+            Refreshes the collision rectangle based on the set properties.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextButton.text">
+            <summary>
+            Stores the text that is displayed by the TextButton.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextButton.aligmentMode">
+            <summary>
+            Specifies the used text alogment mode.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextButton.font">
+            <summary>
+            The font object that is used to draw the string.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextButton.colorDefault">
+            <summary>
+            The color the text is tinted in.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextButton.colorSelected">
+            <summary>
+            The color the text is tinted in.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.ListBox`1">
+            <summary>
+            Represents a scroll-able list of ListItem{T}s.
+            </summary>
+            <remarks>
+            This default base implementation doesn't contain any
+            drawing logic.
+            </remarks>
+            <typeparam name="T">
+            The type of the value stored in an ListItem{T}s of the ListBox{T}.
+            </typeparam>
+        </member>
+        <member name="E:Atom.Xna.UI.Controls.ListBox`1.SelectedItemChanged">
+            <summary>
+            Raised when the currently <see cref="P:Atom.Xna.UI.Controls.ListBox`1.SelectedItem"/> has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.ItemCount">
+            <summary>
+            Gets the number of items this ListBox{T, TListItem} contains.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.Items">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.UI.Controls.ListItem`1"/>s this ListBox{T, TListItme} contains.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.SelectedItem">
+            <summary>
+            Gets the ListItem{T} that is currently selected in this ListBox{T}.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.SelectedValue">
+            <summary>
+            Gets the value of the currently <see cref="P:Atom.Xna.UI.Controls.ListBox`1.SelectedItem"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.Orientation">
+            <summary>
+            Gets or sets a value indicating into which direction this ListBox grows.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.TotalItemArea">
+            <summary>
+            Gets the total area the ListItem{T}s of this ListBox{T} take up.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.TotalItemSize">
+            <summary>
+            Gets the total number of pixels the items take up,
+            related to the orientation of this ListBox.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.AvailableItemSize">
+            <summary>
+            Gets the total number of pixels the items take up,
+            related to the orientation of this ListBox.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.ScrollBar">
+            <summary>
+            Gets the <see cref="P:Atom.Xna.UI.Controls.ListBox`1.ScrollBar"/> that allows scrolling the content of this ListBox.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.ScrollValue">
+            <summary>
+            Gets the number of pixels this ListBox is scrolled by.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListBox`1.ScrolledArea">
+            <summary>
+            Gets the sub-area this ListBox{T} currently shows;
+            based on the current scrolling value.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.#ctor(Atom.Xna.UI.Controls.ScrollBar)">
+            <summary>
+            Initializes a new instance of the ListBox{T} class.
+            </summary>
+            <param name="scrollBar">
+            Represents the object that is responsible for managing the scrolling in this ListBox.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.CreateItem(`0)">
+            <summary>
+            Creates a new instance of the ListItem{T} class that contains
+            the specified value.
+            </summary>
+            <param name="value">
+            The value te new ListItem{T} should contain.
+            </param>
+            <returns>
+            The newly created ListItem{T}.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.AddItem(`0)">
+            <summary>
+            Adds a new ListItem{T} to this ListBox{T} that contains
+            the specified value.
+            </summary>
+            <param name="value">
+            The value to add.
+            </param>
+            <returns>
+            The newly added ListItem{T}.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.ClearItems">
+            <summary>
+            Removes all items from this ListBox{T}.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.OnThumbPositionChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user has changed the position of the scroll thumb.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The EventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.ScrollBy(System.Single)">
+            <summary>
+            Scrolls this ListBox up/left or down/right by the specified
+            percentage.
+            </summary>
+            <param name="percentage">
+            The percentrage to move. E.g. "-20.0f" to move the thumb up by 20%.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.Refresh">
+            <summary>
+            Fully refreshes the internal layout of this ListBox{T}.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.RefreshScroll">
+            <summary>
+            Refreshes the scrolling related properties of this ListBox{T}.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.RefreshScrolledItemPosition">
+            <summary>
+            Refreshes the actual position of the ListItem{T}s this ListBox{T} owns.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.ShowAllItems">
+            <summary>
+            Shows and enables all of the ListItem{T}s of this ListBox{T}.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.ShowItemsIn(Atom.Math.RectangleF)">
+            <summary>
+            Shows and enables all of the ListItem{T}s that intersect the given area of this ListBox{T},
+            while hiding and disabling those that don't.
+            </summary>
+            <param name="area">
+            The current area of this.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.RefreshTotalItemArea">
+            <summary>
+            Refreshes the <see cref="F:Atom.Xna.UI.Controls.ListBox`1.totalItemArea"/> field.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.LayoutItems">
+            <summary>
+            Positions all of the items within this ListBox.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.LayoutItemsVertically">
+            <summary>
+            Positions all of the items within this ListBox;
+            stacking them ontop of eachother downwards.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.OnIsVisibleChanged">
+            <summary>
+            Called when this ListBox{T} has been shown or hidden.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.OnIsEnabledChanged">
+            <summary>
+            Called when this ListBox{T} has been enabled or disabled.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.OnAdded(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Called when this ListBox was added to the specified UserInterface.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.OnRemoved(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Called when this ListBox was removed from the specified UserInterface.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.HandleRelatedMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when MouseInput happens that is related to this <see cref="T:Atom.Xna.UI.UIElement"/>;
+            aka. inside the Element.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListBox`1.Select(Atom.Xna.UI.Controls.ListItem{`0})">
+            <summary>
+            Selects the specified ListItem{T}.
+            </summary>
+            <param name="item">
+            The ListItem{T} to select. Can be null.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListBox`1.totalItemArea">
+            <summary>
+            Stores the total area the ListItem{T}s of this ListBox{T} take up.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListBox`1.scrollBar">
+            <summary>
+            Represents the object that is responsible for managing the scrolling in this ListBox.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListBox`1.orientation">
+            <summary>
+            Represents the storage field of the Orientation property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListBox`1.selectedItem">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Xna.UI.Controls.ListBox`1.SelectedItem"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListBox`1.items">
+            <summary>
+            Stores the <see cref="T:Atom.Xna.UI.Controls.ListItem`1"/> this ListBox{T} contains.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.ListItem`1">
+            <summary>
+            Represents an item in a <see cref="T:Atom.Xna.UI.Controls.ListBox`1"/>.
+            </summary>
+            <typeparam name="T">
+            The type of the value stored in an ListItem{T}.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.Value">
+            <summary>
+            Gets or sets the value that is stored in this ListItem{T}.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.UnscrolledClientArea">
+            <summary>
+            Gets the area this ListItem{T} covers in its default position;
+            when no scrolling is applied.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.UnscrolledPosition">
+            <summary>
+            Gets the default position of this ListItem{T};
+            when no scrolling is applied.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.IsSelected">
+            <summary>
+            Gets a value indicating whether this ListItem{T} is currently selected by the user.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.List">
+            <summary>
+            Gets the ListBox{T} that owns this ListItem{T}.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ListItem`1.ListIndex">
+            <summary>
+            Gets the zero-based index of this ListItem{T} into the ListBox{T} that owns it.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListItem`1.#ctor(Atom.Xna.UI.Controls.ListBox{`0})">
+            <summary>
+            Initializes a new instance of the ListItem{T} class.
+            </summary>
+            <param name="list">
+            The ListBox{T} that owns the new ListItem{T}.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListItem`1.OnValueChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Controls.ListItem`1.Value"/> of this ListItem{T} has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListItem`1.Layout(System.Int32,Atom.Math.Vector2)">
+            <summary>
+            Positions this ListItem{T} during the layout phase of the ListBox{T}
+            that owns it.
+            </summary>
+            <param name="listIndex">
+            The index of this ListItem{T} into the ListBox{T} that owns it.
+            </param>
+            <param name="unscrolledPosition">
+            The initial position of this ListItem{T}.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListItem`1.HandleRelatedMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when MouseInput happens that is related to this <see cref="T:Atom.Xna.UI.UIElement"/>;
+            aka. inside the Element.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ListItem`1.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this ListItem{T} is updating itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListItem`1.value">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Xna.UI.Controls.ListItem`1.Value"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListItem`1.unscrolledPosition">
+            <summary>
+            Caches the initial position of this ListItem;
+            with the scrolling value not applied.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ListItem`1.list">
+            <summary>
+            The ListBox{T} that owns the new ListItem.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.ScrollBar">
+            <summary>
+            Represents a scroll bar.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Controls.ScrollBar.ThumbPositionChanged">
+            <summary>
+            Raised when the position of the scroll thumb has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.RelativeThumbPosition">
+            <summary>
+            Gets or sets the relative position of the thumb within this ScrollBar.
+            </summary>
+            <value>
+            A value between 0 and 1; where 0 = top/left and 1 = bottom/right.
+            </value>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.TotalValue">
+            <summary>
+            Gets or sets the total value that can be maxmally be reached
+            by setting the RelativeThumbPosition to 1.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.VisibleValue">
+            <summary>
+            Gets or sets the amount of the value currently visible on the screen;
+            this determines the size of the thumb.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.ScrollValue">
+            <summary>
+            Gets a value that represents the amount the VisibleValue has been moved.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.Orientation">
+            <summary>
+            Gets or sets a value indicating how this ScrollBar is oriented.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.HalfThumbSize">
+            <summary>
+            Gets the half size of scroll thumb.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.SliderArea">
+            <summary>
+            Gets the area the actual slider takes up.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.ScrollBar.ThumbArea">
+            <summary>
+            Gets the area the thumb take sup.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.#ctor">
+            <summary>
+            Initializes a new instance of the ScrollBar class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.Refresh">
+            <summary>
+            Refreshes the various sub areas of this ScrollBar.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this ScrollBar is updating itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.HandleDrag">
+            <summary>
+            Handles a dragging operation of the user.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.MoveScrollTo(Atom.Math.Point2,Atom.Math.Point2)">
+            <summary>
+            Moves the position of the thumb to the given position.
+            </summary>
+            <param name="position">
+            The position to move the thumb to.
+            </param>
+            <param name="offset">
+            The offset to apply.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.ScrollBy(System.Single)">
+            <summary>
+            Scrolls this ScrollBar up/left or down/right by the specified
+            percentage.
+            </summary>
+            <param name="percentage">
+            The percentrage to move. E.g. "-20.0f" to move the thumb up by 20%.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.ScrollByValue(System.Int32)">
+            <summary>
+            Scrolls this ScrollBar up/left or down/right by the specified
+            value.
+            </summary>
+            <param name="value">
+            The amount to move.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.HandleMouseWheelInput(System.Int32,System.Int32)">
+            <summary>
+            Handles mouse wheel input of the user.
+            </summary>
+            <param name="scrollWheelValue">
+            The current value of the scroll wheel.
+            </param>
+            <param name="oldScrollWheelValue">
+            The value of the scroll wheel one frame ago.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Handles the mouse input of the user.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBar.OnIsEnabledChanged">
+            <summary>
+            Called when the IsEnabled state of this ScrollBar has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ScrollBar.relativeThumbPosition">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Xna.UI.Controls.ScrollBar.RelativeThumbPosition"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ScrollBar.dragDropCapturer">
+            <summary>
+            Implements a simple mechanism that captures dragging operations
+            of the user.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.ScrollBarDragDropCapturer">
+            <summary>
+            Represents the <see cref="T:Atom.Xna.UI.DragDropCapturer"/> that is used internally by a <see cref="T:Atom.Xna.UI.Controls.ScrollBar"/>. 
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBarDragDropCapturer.#ctor(Atom.Xna.UI.Controls.ScrollBar)">
+            <summary>
+            Initializes a new instance of the ScrollBarDragDropCapturer class.
+            </summary>
+            <param name="scrollBar">
+            The ScrollBar that uses the new ScrollBarDragDropCapturer to capture drag-drop events.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.ScrollBarDragDropCapturer.ShouldStartCapturing(Atom.Math.Point2)">
+            <summary>
+            Gets a value indicating whether capturing of input should start.
+            </summary>
+            <param name="mousePosition">
+            The position of the mouse when the user began dragging.
+            </param>
+            <returns>
+            true if this DragDropCapturer should starting capturing;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.ScrollBarDragDropCapturer.scrollBar">
+            <summary>
+            The ScrollBar that uses this ScrollBarDragDropCapturer to capture drag-drop events.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.SpriteTextField">
+            <summary>
+            Represents a <see cref="T:Atom.Xna.UI.Controls.TextField"/> that has got a <see cref="T:Atom.Xna.ISprite"/>
+            drawn in the background.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextField.Sprite">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Controls.SpriteTextField.Sprite"/> displayed in the background of this SpriteTextField.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.SpriteTextField.SpriteOffset">
+            <summary>
+            Gets or sets the offset applied when drawing the <see cref="P:Atom.Xna.UI.Controls.SpriteTextField.Sprite"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextField.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteTextField"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextField.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.SpriteTextField"/> class.
+            </summary>
+            <param name="name">The name of the new <see cref="T:Atom.Xna.UI.Controls.SpriteTextField"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="name"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextField.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this SpriteTextField is drawing itself.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.SpriteTextField.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this SpriteTextField is updating itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.UI.Controls.TextField">
+            <summary>
+            Represents a simple UIElement
+            that provides a mechanism to draw <see cref="P:Atom.Xna.UI.Controls.TextField.Text"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Controls.TextField.Text">
+            <summary>
+            Gets or sets the text stored within this <see cref="T:Atom.Xna.UI.Controls.TextField"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextField.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.TextField"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextField.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Controls.TextField"/> class.
+            </summary>
+            <param name="name">The name of the new <see cref="T:Atom.Xna.UI.Controls.TextField"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="name"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextField.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this TextField is drawing itself.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextField.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this TextField is updating itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.TextField.RefreshTextClientArea">
+            <summary>
+            Refreshes the client area based on the currently set <see cref="P:Atom.Xna.UI.Controls.TextField.Text"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.TextField.text">
+            <summary>
+            Stores the text data.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.DragDropCapturer">
+            <summary>
+            Implements a simple mechanism that captures dragging operations
+            of the user.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.DragDropCapturer.IsDragging">
+            <summary>
+            Gets a value indicating whether the use is currently executing
+            a dragging operation with his mouse.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.DragDropCapturer.DeltaMovement">
+            <summary>
+            Gets the number of pixels the user has moved his mouse last frame.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.DragDropCapturer.Position">
+            <summary>
+            Gets the last captured mouse position.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.DragDropCapturer.DragOffset">
+            <summary>
+            Gets or sets the drag offset that has been captured.
+            </summary>
+            <remarks>
+            This is usually an offset value starting from the upper left corner of the object
+            about to be dragged to the drag starting point.
+            </remarks>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Handles the mouse input of the user.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.Capture(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Captures the given input data.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.Release">
+            <summary>
+            Releases the capturing of movement information;
+            manually stopping the dragging operation.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.StartCapture">
+            <summary>
+            Starts capturing a dragging operation.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.IsMousePressed(Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Gets a value indicating whether the user is currently
+            pressing the mouse button that starts a dragging operation.
+            </summary>
+            <param name="mouseState">
+            The current state of the mouse.
+            </param>
+            <returns>
+            true if the mouse is pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.IsMouseReleased(Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Gets a value indicating whether the user is currently
+            pressing the mouse button that ends a dragging operation.
+            </summary>
+            <param name="mouseState">
+            The current state of the mouse.
+            </param>
+            <returns>
+            true if the mouse is not pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.DragDropCapturer.ShouldStartCapturing(Atom.Math.Point2)">
+            <summary>
+            Gets a value indicating whether capturing of input should start.
+            </summary>
+            <param name="mousePosition">
+            The position of the mouse when the user began dragging.
+            </param>
+            <returns>
+            true if this DragDropCapturer should starting capturing;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement">
+            <summary>
+            Represents an abstract base implementation of the ITooltipDrawElement interface.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the Tooltip this BaseTooltipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChangedCore">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.activeTooltip">
+            <summary>
+            The Tooltip this BaseTooltipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement">
+            <summary>
+            Implements an <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> that draws <see cref="T:Atom.Xna.UI.Tooltips.TextTooltip"/>s using a <see cref="T:Atom.Xna.UI.Controls.TextField"/>.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Atom#Xna#UI#Tooltips#ITooltipDrawElement#Tooltip">
+            <summary>
+            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChangedCore">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.activeTooltip">
+            <summary>
+            The Tooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement">
+            <summary>
+            Provides a mechanism to draw a tooltip string.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.ITooltipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> this ITooltipDrawElement 
+            is visualizing.
+            </summary>
+            <value>The Tooltip to visualize. Set to null to not visualize any Tooltip.</value>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement">
+            <summary>
+            Represents an ITooltipDrawElement that delegates the drawing logic into a lambda function / delegate.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.#ctor(System.Action{Atom.Xna.UI.Tooltips.Tooltip,Atom.Xna.ISpriteDrawContext})">
+            <summary>
+            Initializes a new instance of the LambdaTooltipDrawElement class.
+            </summary>
+            <param name="drawAction">
+            The action that is called when drawing the new LambdaTooltipDrawElement.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.Draw(Atom.IDrawContext)">
+            <summary>
+            Draws this LambdaTooltipDrawElement.
+            </summary>
+            <param name="drawContext">
+            The current IDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.drawAction">
+            <summary>
+            The action that is called when drawing this LambdaTooltipDrawElement.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.TextTooltip">
+            <summary>
+            A TextTooltip (by default) shows some <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
+            when the mouse is hovering over the Tooltip's <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextTooltip.Text">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> shown by this Tooltip.
+            </summary>
+            <value>The default value is null.</value>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextTooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
+            <summary>
+            Initializes a new instance of the TextTooltip class.
+            </summary>
+            <param name="tooltipDrawElement">
+            The UIElement that is responsible for drawing the tooltip.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.Tooltip">
+            <summary>
+            A TextTooltip (by default) draws some information using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
+            when the mouse is hovering over the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of the Tooltip or the UIElement it is attached to.
+            </summary>
+            <remarks>
+            The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> is drawn inline if it implements <see cref="T:Atom.IDrawable"/> and
+            is not an <see cref="T:Atom.Xna.UI.UIElement"/>.
+            (<see cref="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement"/> for example)
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.DrawElement">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses to visualize its <see cref="T:Atom.Xna.UI.Text"/>.
+            </summary>
+            <value>The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.AttachedTo">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.UI.UIElement"/> this Tooltip is attached to.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.IsTooltipVisible">
+            <summary>
+            Gets a value indicating whether the Tooltip is currently visible.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
+            <summary>
+            Initializes a new instance of the Tooltip class.
+            </summary>
+            <param name="tooltipDrawElement">
+            The UIElement that is responsible for drawing the tooltip.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called once every frame, allows this <see cref="T:Atom.Xna.UI.UIElement"/> to
+            react to mouse input.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.GetTooltipVisibility(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Gets a value indicating whether the tooltip is currently visible.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if the Tooltip is currently visible;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this UIElement is drawing itself.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this UIElement is drawing itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.Tooltip.drawElement">
+            <summary>
+            The UIElement that is actually responsible for drawing the tooltip.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.IUIColorProvider">
+            <summary>
+            Provides a mechanis to receive a <see cref="T:Microsoft.Xna.Framework.Color"/> for a <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.IUIColorProvider.GetColorFor(Atom.Xna.UI.UIElement)">
+            <summary>
+            Gets a color for the given UIElement.
+            </summary>
+            <param name="element">
+            The input UIElement this color operation is relevant to.
+            </param>
+            <returns>
+            The color.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.IUISpriteProvider">
+            <summary>
+            Provides a mechanis to receive an <see cref="T:Atom.Xna.ISprite"/> for a <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.IUISpriteProvider.GetSpriteFor(Atom.Xna.UI.UIElement)">
+            <summary>
+            Gets a ISprite for the given UIElement.
+            </summary>
+            <param name="element">
+            The input UIElement this color operation is relevant to.
+            </param>
+            <returns>
+            The Sprite.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.KeyboardInputEventHandler">
+            <summary>
+            Defines the delegate that handles Keyboard Input.
+            </summary>
+            <param name="sender">
+            The object that is the 'owner' of event.
+            </param>
+            <param name="keyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/>.
+            Do NOT modify this value, unless you know exactly what you do.
+            </param>
+            <param name="oldKeyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/> one frame ago.
+            Do NOT modify this value, unless you know exactly what you do.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.UI.MouseInputEventHandler">
+            <summary>
+            Defines the delegate that handles MouseInput.
+            </summary>
+            <param name="sender">
+            The object that is the 'owner' of event.
+            </param>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know exactly what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know exactly what you do.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.UI.AnimatedTypeWriterText">
+            <summary>
+            Represents a <see cref="T:Atom.Xna.UI.PartiallyShownText"/> that
+            is animated to look like someone would write it on a typewriter.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.AnimatedTypeWriterText.TimeSpendPerCharacter">
+            <summary>
+            Gets or sets the time it should take to write one character TypeWriter style.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.AnimatedTypeWriterText.HasReachedEndOfBlock">
+            <summary>
+            Gets a value indicating whether the end of the current visible block has been reached.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.AnimatedTypeWriterText.HasReachedEnd">
+            <summary>
+            Gets a value indicating whether this AnimatedTypeWriterText has reached the last line of the Text.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new AnimatedTypeWriterText.
+            </param>
+            <param name="align">
+            The AnimatedTypeWriterText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new AnimatedTypeWriterText.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new AnimatedTypeWriterText.
+            </param>
+            <param name="text">
+            The string the new AnimatedTypeWriterText may draw.
+            </param>
+            <param name="align">
+            The AnimatedTypeWriterText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new AnimatedTypeWriterText.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new AnimatedTypeWriterText.
+            </param>
+            <param name="align">
+            The AnimatedTypeWriterText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new AnimatedTypeWriterText.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the AnimatedTypeWriterText into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new AnimatedTypeWriterText.
+            </param>
+            <param name="text">
+            The string the new AnimatedTypeWriterText may draw.
+            </param>
+            <param name="align">
+            The AnimatedTypeWriterText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new AnimatedTypeWriterText.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the AnimatedTypeWriterText into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.Xna.UI.AnimatedTypeWriterText"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.Draw(Atom.Math.Vector2,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this AnimatedTypeWriterText at the specified position.
+            </summary>
+            <param name="position">
+            The position to draw this Text at.
+            </param>
+            <param name="drawContext">
+            The current <see cref="T:Atom.Xna.ISpriteDrawContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.Reset">
+            <summary>
+            Resets the character currently displayed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.JumpBlock">
+            <summary>
+            Jumps one full block.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.JumpToEndOfBlock">
+            <summary>
+            Jumps to the end of the current text block.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.AnimatedTypeWriterText.ReachedEndOfBlock">
+            <summary>
+            Called when the this AnimatedTypeWriterText has reached 
+            the end of the current text block.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.AnimatedTypeWriterText.charIndex">
+            <summary>
+            The index of the character currently animated.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.AnimatedTypeWriterText.fullLineCount">
+            <summary>
+            The number of full lines which have been drawn.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.AnimatedTypeWriterText.timeTick">
+            <summary>
+            The current time tick.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.AnimatedTypeWriterText.hasReachedEndOfBlock">
+            <summary>
+            States whether this AnimatedTypeWriterText has reached the end of the current text block.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.PartiallyShownText">
+            <summary>
+            Represents some <see cref="T:Atom.Xna.UI.Text"/> that shows 
+            only a part of the text block.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.PartiallyShownText.TextBlockWidth">
+            <summary>
+            Gets or sets the width (in pixels) of the text block.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.PartiallyShownText.LinesShown">
+            <summary>
+            Gets or sets the maximum number of text lines to show at a time.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.PartiallyShownText.LineIndex">
+            <summary>
+            Gets the index of the line the currently shown partial text block starts.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.PartiallyShownText.TextBlockSize">
+            <summary>
+            Gets the size of the text block that is descriped by this <see cref="T:Atom.Xna.UI.PartiallyShownText"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.PartiallyShownText.HasReachedEnd">
+            <summary>
+            Gets a value indicating whether the last line 
+            of the Text in the PartiallyShownText has been reached.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.PartiallyShownText"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.PartiallyShownText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new PartiallyShownText.
+            </param>
+            <param name="align">
+            The PartiallyShownText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new PartiallyShownText.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.PartiallyShownText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new PartiallyShownText.
+            </param>
+            <param name="text">
+            The string the new PartiallyShownText may draw.
+            </param>
+            <param name="align">
+            The PartiallyShownText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new PartiallyShownText.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.PartiallyShownText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new PartiallyShownText.
+            </param>
+            <param name="align">
+            The PartiallyShownText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new PartiallyShownText.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the PartiallyShownText into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.PartiallyShownText"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new PartiallyShownText.
+            </param>
+            <param name="text">
+            The string the new PartiallyShownText may draw.
+            </param>
+            <param name="align">
+            The PartiallyShownText alignment mode.
+            </param>
+            <param name="color">
+            The color of the new PartiallyShownText.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the PartiallyShownText into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.Reset">
+            <summary>
+            Resets the index into the text block.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.MoveLineIndexDown">
+            <summary>
+            Moves the LineIndex down by one line.
+            </summary>
+            <returns>
+            Returns <see langword="true"/> if it was possible to move to the next line;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.JumpBlock">
+            <summary>
+            Jumps one full block of size <see cref="P:Atom.Xna.UI.PartiallyShownText.LinesShown"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.MoveLineIndexUp">
+            <summary>
+            Moves the LineIndex up by one line.
+            </summary>
+            <returns>
+            Returns <see langword="true"/> if it was possible to move to the previous line;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.PartiallyShownText.Draw(Atom.Math.Vector2,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this PartiallyShownText at the specified position.
+            </summary>
+            <param name="position">
+            The position to draw this Text at.
+            </param>
+            <param name="drawContext">
+            The current <see cref="T:Atom.Xna.ISpriteDrawContext"/>.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.PartiallyShownText.lineIndex">
+            <summary>
+            The current line index.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.DefaultTextBlockSplitter">
+            <summary>
+            The default <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> simply splits
+            the text using specific separators.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.DefaultTextBlockSplitter.DefaultSeparators">
+            <summary>
+            The default separators which are used to split the text.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.DefaultTextBlockSplitter.separators">
+            <summary>
+            The separators which are used to split the text.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.DefaultTextBlockSplitter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.DefaultTextBlockSplitter"/> class,
+            using the default Seperators.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.DefaultTextBlockSplitter.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.DefaultTextBlockSplitter"/> class.
+            </summary>
+            <param name="separators">
+            The separators to use. The default separators are used if null.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.DefaultTextBlockSplitter.Split(System.String)">
+            <summary>
+            Splits the text string.
+            </summary>
+            <param name="text"> The text to split. Can be null. </param>
+            <returns>
+            The split text block; or null.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.ITextBlockSplitter">
+            <summary>
+            Provides a mechanism to split a text string into a block of strings.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.ITextBlockSplitter.Split(System.String)">
+            <summary>
+            Splits the given <paramref name="text"/> string.
+            </summary>
+            <param name="text">
+            The text to split. Can be null.
+            </param>
+            <returns>
+            The split text block; or null.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter">
+            <summary>
+            Defines a <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> that splits text 
+            so that it stay inside a specific area.
+            Line breaks are done by complete word or on manual delimiters
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.MaximumAllowedWidth">
+            <summary>
+            Gets or sets the maximum allowed width one text block row is allowed to have.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.#ctor(Atom.Xna.Fonts.IFont,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter"/> class.
+            </summary>
+            <param name="font">The font which is later used to render the text.</param>
+            <param name="maximumAllowedWidth">
+            The maximum allowed width one text block row is allowed to have.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.#ctor(Atom.Xna.Fonts.IFont,System.Single,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter"/> class.
+            </summary>
+            <param name="font">The font which is later used to render the text.</param>
+            <param name="maximumAllowedWidth">
+            The maximum allowed width one text block row is allowed to have.
+            </param>
+            <param name="delimiters">
+            The split delimiters that decide when a string is split.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.Split(System.String)">
+            <summary>
+            Splits the specified text string.
+            </summary>
+            <param name="text">
+            The text to split. Can be null.
+            </param>
+            <returns>
+            The split text block; or null.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.maximumAllowedWidth">
+            <summary>
+            The maximum allowed width one text block row is allowed to have.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.font">
+            <summary>
+            The font to use to find out how long a single word is.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.ManuallyLimitedTextBlockSplitter.delimeters">
+            <summary>
+            Additional delimiters which can be used to split the text further.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Text">
+            <summary>
+            Encapsulates the settings needed to be known
+            to draw a text string.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.TextString">
+            <summary>
+            Gets or sets the text string.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.BlockSplitter">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.Font">
+            <summary>
+            Gets or sets the font which is used to display the <see cref="P:Atom.Xna.UI.Text.TextString"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.Color">
+            <summary>
+            Gets or sets the color of this Text.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.Align">
+            <summary>
+            Gets or sets how the text is aligned relative to its position.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.LayerDepth">
+            <summary>
+            Gets or sets the layer depth the Text is drawn at.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Text.TextBlockSize">
+            <summary>
+            Gets the size of the text block that is descriped by this <see cref="T:Atom.Xna.UI.Text"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Text"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Text"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new Text.
+            </param>
+            <param name="align">
+            The text alignment mode.
+            </param>
+            <param name="color">
+            The color of the new Text.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Text"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new Text.
+            </param>
+            <param name="text">
+            The string the new Text may draw.
+            </param>
+            <param name="align">
+            The text alignment mode.
+            </param>
+            <param name="color">
+            The color of the new Text.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.#ctor(Atom.Xna.Fonts.IFont,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Text"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new Text.
+            </param>
+            <param name="align">
+            The text alignment mode.
+            </param>
+            <param name="color">
+            The color of the new Text.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the text into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.#ctor(Atom.Xna.Fonts.IFont,System.String,Atom.Xna.Fonts.TextAlign,Microsoft.Xna.Framework.Color,Atom.Xna.UI.ITextBlockSplitter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.Text"/> class.
+            </summary>
+            <param name="font">
+            The font to use for the new Text.
+            </param>
+            <param name="text">
+            The string the new Text may draw.
+            </param>
+            <param name="align">
+            The text alignment mode.
+            </param>
+            <param name="color">
+            The color of the new Text.
+            </param>
+            <param name="blockSplitter">
+            The <see cref="T:Atom.Xna.UI.ITextBlockSplitter"/> to use when splitting the text into blocks.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.Xna.UI.Text"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.SplitIntoBlock(System.String)">
+            <summary>
+            Splits the specified text line into a block of lines to render to the screen.
+            </summary>
+            <param name="text">
+            The text string to split into a block of independent lines. Can be null.
+            </param>
+            <returns>The split block of lines. Can be null. </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.Draw(Atom.Math.Vector2,Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this Text at the specified position.
+            </summary>
+            <param name="position">
+            The position to draw this Text at.
+            </param>
+            <param name="drawContext">
+            The current <see cref="T:Atom.Xna.ISpriteDrawContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.AddColorEffect(Atom.Xna.Effects.ITimedColorEffect)">
+            <summary>
+            Adds the specified <see cref="T:Atom.Xna.Effects.IColorEffect"/> to this <see cref="T:Atom.Xna.UI.Text"/>
+            to manibulate its <see cref="T:Microsoft.Xna.Framework.Color"/> over-time.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="effect"/> is null. </exception>
+            <param name="effect"> The effect to add. </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.RemoveColorEffect(Atom.Xna.Effects.ITimedColorEffect)">
+            <summary>
+            Tries to remove the specified <see cref="T:Atom.Xna.Effects.IColorEffect"/> from this <see cref="T:Atom.Xna.UI.Text"/>.
+            </summary>
+            <param name="effect"> The effect to remove. </param>
+            <returns>Whether it has been removed.</returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.ContainsColorEffect(Atom.Xna.Effects.ITimedColorEffect)">
+            <summary>
+            Returns whether this Text contains the specified <see cref="T:Atom.Xna.Effects.IColorEffect"/>.
+            </summary>
+            <param name="effect">
+            The effect to .locate.
+            </param>
+            <returns>
+            true if it contains the effect;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.ClearColorEffects">
+            <summary>
+            Removes all <see cref="T:Atom.Xna.Effects.IColorEffect"/>s from this Text.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Text.ResetColorEffects">
+            <summary>
+            Resets all <see cref="T:Atom.Xna.Effects.IColorEffect"/>s of this Text.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Text.text">
+            <summary>
+            The text to display.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Text.textBlock">
+            <summary>
+            Contains the text split into lines if there is more than one line.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Text.colorEffects">
+            <summary>
+            The list of effects that are applied to this <see cref="T:Atom.Xna.UI.Text"/>s color.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Text.DefaultBlockSplitter">
+            <summary>
+            The splitter which is used by default.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.UIContainerElement">
+            <summary>
+            Represents an <see cref="T:Atom.Xna.UI.UIElement"/> that contains other UIElements.
+            </summary>
+            <remarks>
+            When <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> or <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> state of this UIContainerElement
+            change then the respective states of all its child <see cref="T:Atom.Xna.UI.UIElement"/>s also change.
+            </remarks>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UIContainerElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UIContainerElement"/> class.
+            </summary>
+            <param name="capacity">
+            The initial number of child UIElements the new UIContainerElement can contain.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UIContainerElement"/> class.
+            </summary>
+            <param name="name">
+            The name of the new UIContainerElement.
+            </param>
+            <param name="capacity">
+            The initial number of child UIElements the new UIContainerElement can contain.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.AddChild(Atom.Xna.UI.UIElement)">
+            <summary>
+            Adds the given UIElement to this UIContainerElement.
+            </summary>
+            <param name="element">
+            The UIElement to add.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="element"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.OnIsVisibleChanged(Atom.Xna.UI.UIElement)">
+            <summary>
+            Called when this UIContainerElement has been shown or hidden.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.OnIsEnabledChanged(Atom.Xna.UI.UIElement)">
+            <summary>
+            Called when this UIContainerElement has been enabled or disabled.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.OnAdded(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Called when this UIContainerElement has been added to the given UserInterface.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIContainerElement.OnRemoved(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Called when this UIContainerElement has been removed from the given UserInterface.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.UIContainerElement.children">
+            <summary>
+            The child UIElements of this UIContainerElement.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.UIElement">
+            <summary>
+            Represents the abtract base class of all elements in a <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UIElement.IsEnabledChanged">
+            <summary>
+            Fired when the <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> state of
+            this this <see cref="T:Atom.Xna.UI.UIElement"/> has changed.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UIElement.IsVisibleChanged">
+            <summary>
+            Fired when the <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> state of
+            this this <see cref="T:Atom.Xna.UI.UIElement"/> has changed.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UIElement.FloorNumberChanged">
+            <summary>
+            Fired when the <see cref="P:Atom.Xna.UI.UIElement.FloorNumber"/> of this <see cref="T:Atom.Xna.UI.UIElement"/> has changed.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UIElement.MouseEntering">
+            <summary>
+            Fired when the mouse is entering this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UIElement.MouseLeaving">
+            <summary>
+            Fired when the mouse is leaving this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Name">
+            <summary>
+            Gets or sets the name of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            If the given value is null.
+            </exception>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:Atom.Xna.UI.UIElement"/> is enabled.
+            </summary>
+            <value>The default value is true.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:Atom.Xna.UI.UIElement"/> is visible.
+            </summary>
+            <value>The default value is true.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.IsMouseOver">
+            <summary>
+            Gets a value indicating whether the mouse is currently over this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.PassInputToSubElements">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Xna.UI.UIElement"/> passes input to elements behind it.
+            </summary>
+            <value>The default value is true. Returns true if the element if disabled.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.FloorNumber">
+            <summary>
+            Gets or sets the value that indicates on what layer this <see cref="T:Atom.Xna.UI.UIElement"/> is on.
+            </summary>
+            <value>The default value is zero.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.RelativeDrawOrder">
+            <summary>
+            Gets or sets the draw order of this <see cref="T:Atom.Xna.UI.UIElement"/> relative to other <see cref="T:Atom.Xna.UI.UIElement"/>s
+            that have the same <see cref="P:Atom.Xna.UI.UIElement.FloorNumber"/>. This is a value between 0.0f and 1.0f.
+            </summary>
+            <value>The default value is zero.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If the given value is outside of the valid range of [0; 1].
+            </exception>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Position">
+            <summary>
+            Gets or sets the position of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <value>The position of the element.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.X">
+            <summary>
+            Gets the position of this <see cref="T:Atom.Xna.UI.UIElement"/> on the x-axis.
+            </summary>
+            <value>The position on the x-axis of the element.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Y">
+            <summary>
+            Gets the position of this <see cref="T:Atom.Xna.UI.UIElement"/> on the y-axis.
+            </summary>
+            <value>The position on the y-axis of the element.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Offset">
+            <summary>
+            Gets or sets the offset from the <see cref="P:Atom.Xna.UI.UIElement.Position"/> 
+            of this <see cref="T:Atom.Xna.UI.UIElement"/> to the start of the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/>.
+            </summary>
+            <value>The offset from the Position of the element to the start of the ClientArea.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Size">
+            <summary>
+            Gets or sets the size of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <value>The size of the element in pixels.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Width">
+            <summary>
+            Gets the width of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <value>The width of the element in pixels.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Height">
+            <summary>
+            Gets the height of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <value>The height of the element in pixels.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.ClientArea">
+            <summary>
+            Gets the area this UIEelement covers.
+            </summary>
+            <remarks>
+            Related mouse input is only passed to the UIElement 
+            if the mouse is inside the UIElements ClientArea.
+            </remarks>
+            <value>The area the elements covers.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Owner">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.UI.UserInterface"/> that owns this UIElement.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIElement.Tag">
+            <summary>
+            Gets or sets an optional user object.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UIElement"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UIElement"/> class.
+            </summary>
+            <param name="name">
+            The name of the new <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.Update(Atom.IUpdateContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is updating.
+            </summary>
+            <param name="updateContext">
+            The current <see cref="T:Atom.IUpdateContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.PreUpdateInternal">
+            <summary>
+            Called at the beginning of a new frame - before the real update.
+            Mostly used to reset items.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnPreUpdate">
+            <summary>
+            Called at the beginning of a new frame - before the real update.
+            Mostly used to reset items.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.Draw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.Atom#IDrawable#Draw(Atom.IDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is drawing.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnIsEnabledChangedPrivate">
+            <summary>
+            Fires the <see cref="E:Atom.Xna.UI.UIElement.IsEnabledChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnIsEnabledChanged">
+            <summary>
+            Gets called when this UIElement has been enabled or disabled.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnIsVisibleChangedPrivate">
+            <summary>
+            Fires the <see cref="E:Atom.Xna.UI.UIElement.IsVisibleChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnIsVisibleChanged">
+            <summary>
+            Gets called when this UIElement <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> state has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.ShowAndEnable">
+            <summary>
+            Shows and enables this UIElement 
+            by setting <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> and <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> to true.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HideAndDisable">
+            <summary>
+            Hides and disables this UIElement 
+            by setting <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> and <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> to false.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HideAndDisableNoEvent">
+            <summary>
+            Hides and disables this UIElement by setting <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> and <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> to false.
+            No events are triggered.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnAddedInternal(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Internal method that gets called when the <see cref="T:Atom.Xna.UI.UIElement"/>
+            was added to the given <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnRemovedInternal(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Internal method that gets called when the <see cref="T:Atom.Xna.UI.UIElement"/>
+            was removed from the given <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnAdded(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Gets called when the <see cref="T:Atom.Xna.UI.UIElement"/>
+            was added to the given <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface object.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnRemoved(Atom.Xna.UI.UserInterface)">
+            <summary>
+            Gets called when the <see cref="T:Atom.Xna.UI.UIElement"/>
+            was removed from the given <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="userInterface">
+            The related UserInterface object.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.MouseOverInternal(Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when the mouse is over the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="mouseState"> 
+            The state of the mouse at the moment of entering. 
+            Passed by reference to reduce overhead.
+            </param>
+            <returns> 
+            Returns <see langword="true"/> if mouse input should be passed 
+            to elements that are behind this <see cref="T:Atom.Xna.UI.UIElement"/>;
+            or otherwise <see langword="false"/> if input handling should stop.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleRelatedMouseInputCore(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when MouseInput happens that is related to this <see cref="T:Atom.Xna.UI.UIElement"/>;
+            aka. inside the Element.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleKeyInputCore(Microsoft.Xna.Framework.Input.KeyboardState@,Microsoft.Xna.Framework.Input.KeyboardState@)">
+            <summary>
+            Called every frame when this <see cref="T:Atom.Xna.UI.UIElement"/> is focused by its owning <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="keyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldKeyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleMouseInputCore(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called once every frame, allows this <see cref="T:Atom.Xna.UI.UIElement"/> to
+            react to mouse input.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleRelatedMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when MouseInput happens that is related to this <see cref="T:Atom.Xna.UI.UIElement"/>;
+            aka. inside the Element.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleKeyInput(Microsoft.Xna.Framework.Input.KeyboardState@,Microsoft.Xna.Framework.Input.KeyboardState@)">
+            <summary>
+            Called every frame when this <see cref="T:Atom.Xna.UI.UIElement"/> is focused by its owning <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="keyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldKeyState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called once every frame, allows this <see cref="T:Atom.Xna.UI.UIElement"/> to
+            react to mouse input.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnMouseOver(Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called when the mouse is over the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="mouseState">
+            The state of the mouse. Passed by reference to reduce overhead.
+            </param>
+            <returns>
+            True if input should be passed to elements that are behind 
+            the <see cref="T:Atom.Xna.UI.UIElement"/>, otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.SetTransform(Atom.Math.Vector2,Atom.Math.Vector2,Atom.Math.Vector2)">
+            <summary>
+            Sets all of the transform settings of this UIElement all at once.
+            </summary>
+            <param name="position">
+            The position to set.
+            </param>
+            <param name="offset">
+            The offset to set.
+            </param>
+            <param name="size">
+            The size to set.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.RefreshClientArea">
+            <summary>
+            Refreshes the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of this UIElement.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UIElement.OnClientAreaChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of this UIElement has been refreshed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._position">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.Position"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._offset">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.Offset"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._size">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.Size"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._clientArea">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement.name">
+            <summary>
+            The name of this <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._floorNumber">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.FloorNumber"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._relativeDrawOrder">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.RelativeDrawOrder"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._isEnabled">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.IsEnabled"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement._isVisible">
+            <summary>
+            Internal storage of the <see cref="P:Atom.Xna.UI.UIElement.IsVisible"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement.passInputToSubElements">
+            <summary>
+            States whether the input is passed to elements behind this UIElement.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement.isMouseOver">
+            <summary> 
+            States whether the mouse is currently over the <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UIElement.wasMouseOver">
+            <summary> 
+            States whether the mouse was over the <see cref="T:Atom.Xna.UI.UIElement"/> last frame.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.UIErrorStrings">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIErrorStrings.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIErrorStrings.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UIErrorStrings.CantGetTextBlockSizeFontIsNull">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t receive the size of the Text Block. The font is null. ähnelt.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.UserInterface">
+            <summary>
+            Manages the drawing, updating and overall input handling
+            of the UserInterface of an application. 
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UserInterface.KeyboardInput">
+            <summary>
+            The events which are triggered every frame if the <see cref="T:Atom.Xna.UI.UserInterface"/>
+            has focus.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.UserInterface.MouseInput">
+            <summary>
+            The events which are triggered every frame if the <see cref="T:Atom.Xna.UI.UserInterface"/>
+            has focus.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.HasFocus">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:Atom.Xna.UI.UserInterface"/> has focus of the user.
+            </summary>
+            <remarks>
+            Input will only be processed by the UserInterface if this property is true.
+            </remarks>
+            <value>The default value is true.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.FocusedElement">
+            <summary>
+            Gets or sets the currently focused <see cref="T:Atom.Xna.UI.UIElement"/>.
+            Only this element can receive keyboard input.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.Elements">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.UI.UIElement"/> that this UserInterface contains.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.MousePosition">
+            <summary>
+            Gets the current position of the Mouse relative to the Game's window.
+            </summary>
+            <value>The position of the mouse.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.IsShiftDown">
+            <summary>
+            Gets a value indicating whether the user currently
+            presses any of the Shift modifier keys.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.WasShiftDown">
+            <summary>
+            Gets a value indicating whether the user pressed any of the Shift modifier keys in the last frame.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.IsAltDown">
+            <summary>
+            Gets a value indicating whether the user currently
+            presses any of the Alt modifier keys.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.WasAltDown">
+            <summary>
+            Gets a value indicating whether the user pressed any of the Alt modifier keys in the last frame.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.IsControlDown">
+            <summary>
+            Gets a value indicating whether the user currently
+            presses any of the Control modifier keys.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.WasControlDown">
+            <summary>
+            Gets a value indicating whether the user pressed any of the Control modifier keys in the last frame.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.KeyState">
+            <summary>
+            Gets the current state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.OldKeyState">
+            <summary>
+            Gets the state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard"/> one frame ago.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.MouseState">
+            <summary>
+            Gets or sets the current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.OldMouseState">
+            <summary>
+            Gets or sets the state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.UserInterface.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether this UserInterface is drawn
+            when Draw is called.
+            </summary>
+            <value>
+            The default value is true.
+            </value>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.UI.UserInterface"/> class.
+            </summary>
+            <param name="elementCapacity"> 
+            The initial number of elements the <see cref="T:Atom.Xna.UI.UserInterface"/> can contain.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.Draw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.Xna.UI.UserInterface"/> and its visible <see cref="T:Atom.Xna.UI.UIElement"/>s.
+            </summary>
+            <param name="drawContext">
+            The current <see cref="T:Atom.Xna.ISpriteDrawContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this UserInterface.
+            </summary>
+            <param name="updateContext">
+            The current <see cref="T:Atom.IUpdateContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.AddElement(Atom.Xna.UI.UIElement)">
+            <summary>
+            Adds the given <see cref="T:Atom.Xna.UI.UIElement"/> to this <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="element">
+            The element to add.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.AddElementUnsafe(Atom.Xna.UI.UIElement)">
+            <summary>
+            Adds the specified UIElement without validating it.
+            </summary>
+            <param name="element">
+            The element to add.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.AddElements(System.Collections.Generic.IEnumerable{Atom.Xna.UI.UIElement})">
+            <summary>
+            Adds the given <see cref="T:Atom.Xna.UI.UIElement"/>s to this <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="elementsToAdd">
+            The elements to add.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.RemoveElement(Atom.Xna.UI.UIElement)">
+            <summary>
+            Tries to remove the specified <see cref="T:Atom.Xna.UI.UIElement"/> from this <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+            <param name="element">
+            The element to remove.
+            </param>
+            <returns> 
+            Returns <see langword="true"/> if it has been removed;
+            otherwhise <see langword="false"/>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.RemoveElements(System.Collections.Generic.IEnumerable{Atom.Xna.UI.UIElement})">
+            <summary>
+            Attempts to removes the specified UIElements from this UserInterface.
+            </summary>
+            <param name="elementsToRemove">
+            The UIElement to remove.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.RemoveAllElements">
+            <summary>
+            Removes all <see cref="T:Atom.Xna.UI.UIElement"/>s from the <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.GetElement(System.String)">
+            <summary>
+            Gets the first <see cref="T:Atom.Xna.UI.UIElement"/> that has the specified <paramref name="name"/>.
+            </summary>
+            <param name="name"> The name of the element to get. Can be null. </param>
+            <returns> The element if found; otherwise null. </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.GetElement``1">
+            <summary>
+            Gets the first <see cref="T:Atom.Xna.UI.UIElement"/> that has the specified <see cref="T:System.Type"/>.
+            </summary>
+            <typeparam name="T">
+            The type of the element to receive.
+            </typeparam>
+            <returns> The element if found; otherwise null. </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.GetElement(System.Type)">
+            <summary>
+            Gets the first <see cref="T:Atom.Xna.UI.UIElement"/> that has the specified <see cref="T:System.Type"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="type"/> is null.
+            </exception>
+            <param name="type">
+            The type of the element to receive.
+            </param>
+            <returns>
+            The element if found; otherwise null.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.ContainsElement(Atom.Xna.UI.UIElement)">
+            <summary>
+            Gets a value indicating whether this UserInterface contains the specified <see cref="T:Atom.Xna.UI.UIElement"/>.
+            </summary>
+            <param name="element">
+            The UIElement to locate.
+            </param>
+            <returns>
+            True if this UserInterface contains the given UIElement;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.NotifyElementSortNeeded">
+            <summary>
+            Notifies this <see cref="T:Atom.Xna.UI.UserInterface"/> that its UIElements need to be sorted.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.SortElements">
+            <summary>
+            Sorts the UIElements of this <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.CompareElements(Atom.Xna.UI.UIElement,Atom.Xna.UI.UIElement)">
+            <summary> 
+            Compares two <see cref="T:Atom.Xna.UI.UIElement"/> instances.
+            </summary>
+            <param name="x">The first UIElement instance.</param>
+            <param name="y">The second UIElement instance.</param>
+            <returns>A value that can be used for comparison.</returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.IsKeyDown(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Gets a value indicating whether the specified Key is currently being pressed.
+            </summary>
+            <param name="key">
+            The key to query.
+            </param>
+            <returns>
+            true if they key is currently being pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.IsKeyUp(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Gets a value indicating whether the specified Key is currently not being pressed.
+            </summary>
+            <param name="key">
+            The key to query.
+            </param>
+            <returns>
+            true if they key is currently not being pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.WasKeyDown(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Gets a value indicating whether the specified Key was being pressed one frame ago.
+            </summary>
+            <param name="key">
+            The key to query.
+            </param>
+            <returns>
+            true if they key was being pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.WasKeyUp(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Gets a value indicating whether the specified Key was not being pressed one frame ago.
+            </summary>
+            <param name="key">
+            The key to query.
+            </param>
+            <returns>
+            true if they key was not being pressed;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.ShouldHandleInput">
+            <summary>
+            Gets a value indicating whether this UserInterface should
+            be currentl handle input from the user. Can be overwritten to customize.
+            </summary>
+            <returns>
+            Always returns true by default.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.RefreshMouseInputState">
+            <summary>
+            Refreshes the current input state values
+            without processing the result.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.HandleMouseInput">
+            <summary>
+            Handles mouse input.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.ProcessMouseInput">
+            <summary>
+            Processes the current state of the mouse for all UIElements.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.GetCurrentMouseState">
+            <summary>
+            Gets the current state of the mouse
+            which will get used and cached by the UserInterface.
+            </summary>
+            <returns>
+            The current state of the mouse.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.HandleKeyInput">
+            <summary>
+            Handles keyboard input.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.UserInterface.RefreshElementsInRange(System.Int32,System.Int32)">
+            <summary>
+            Refreshes the list of <see cref="T:Atom.Xna.UI.UIElement"/>s which are in range 
+            of the mouse.
+            </summary>
+            <param name="mouseX">The position of the mouse on the x-axis.</param>
+            <param name="mouseY">The position of the mouse on the y-axis.</param>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.mouseState">
+            <summary>
+            The state of the Mouse.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.oldMouseState">
+            <summary>
+            The state of the Mouse.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.keyState">
+            <summary>
+            The state of the Keyboard.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.oldKeyState">
+            <summary>
+            The state of the Keyboard.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.mousePosition">
+            <summary>
+            The last known position of the mouse.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.hasFocus">
+            <summary>
+            States whether the <see cref="T:Atom.Xna.UI.UserInterface"/> has focus of the user currently.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.focusedElement">
+            <summary>
+            The element which is currently focused by the user if any.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.elements">
+            <summary>
+            The list of all elements in this <see cref="T:Atom.Xna.UI.UserInterface"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.elementsInRange">
+            <summary>
+            The list of elements that are currently in range of the Input Device.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.isElementSortNeeded">
+            <summary>
+            States whether this UserInterface needs to sort its elements.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.UserInterface.ElementSortComparision">
+            <summary>
+            Stores the delegate that is used to compare two UIElements while sorting.
+            </summary>
+        </member>
+    </members>
+</doc>

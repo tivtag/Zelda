@@ -1,0 +1,1325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08F95E1C-389B-450B-982D-4F1E1C473844}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zelda</RootNamespace>
+    <AssemblyName>ZeldasLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\x86\Debug\ZeldasLibrary.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsPlatformPath />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsRuntimeCheckingLevel>None</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsContainerAnalysis>False</CodeContractsContainerAnalysis>
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\x86\Debug\ZeldasLibrary.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\Zeldas Library.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atom, Version=1.0.3640.30603, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.AI, Version=1.0.3640.30611, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.AI.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.ErrorReporting, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.ErrorReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Fmod, Version=4.0.26.9, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Fmod.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game, Version=1.0.3640.30608, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game.Waypoints, Version=1.0.3640.30613, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Game.Waypoints.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game.Xna">
+      <HintPath>..\..\Dependencies\Atom.Game.Xna.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Mail, Version=1.0.3640.30607, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Math, Version=1.0.3640.30605, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Math.Graph, Version=1.0.3640.30610, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Math.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Scripting">
+      <HintPath>..\..\Dependencies\Atom.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna.Particles, Version=1.0.0.30632, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna.UI, Version=1.0.3640.30623, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby, Version=1.1.2.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\IronRuby.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby.Libraries">
+      <HintPath>..\..\Dependencies\IronRuby.Libraries.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Actions\ActionResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\BaseAction.cs" />
+    <Compile Include="Actions\Design\ActionEditor.cs" />
+    <Compile Include="Actions\Player\BaserPlayerAction.cs" />
+    <Compile Include="Actions\Player\ResetAction.cs" />
+    <Compile Include="Actions\Player\TalentResetAction.cs" />
+    <Compile Include="Actions\ExecuteEventAction.cs" />
+    <Compile Include="Attacks\Methods\FixedShadowSpellDamageMethod.cs" />
+    <Compile Include="Attacks\Methods\MagicSpellDamageMethod.cs" />
+    <Compile Include="Attacks\PlayerMultiFrameAttackTracker.cs" />
+    <Compile Include="BubbleText.cs" />
+    <Compile Include="BubbleTextManager.cs" />
+    <Compile Include="Casting\FireTail.cs" />
+    <Compile Include="Casting\Spells\FirewallPillarHitEffect.cs" />
+    <Compile Include="Core\Difficulties\Implementations\InsaneDifficulty.cs" />
+    <Compile Include="Core\Interfaces\IReloadable.cs" />
+    <Compile Include="Core\Timing\ResetableRangeTimer.cs" />
+    <Compile Include="Crafting\GemItemMatcher.cs" />
+    <Compile Include="Crafting\Handlers\TransformGemsRecipeHandler.cs" />
+    <Compile Include="Crafting\IRecipeHandler.cs" />
+    <Compile Include="Crafting\IRecipeItem.cs" />
+    <Compile Include="Crafting\Handlers\NormalRecipeHandler.cs" />
+    <Compile Include="Crafting\IRecipeItemMatcher.cs" />
+    <Compile Include="Crafting\NameItemMatcher.cs" />
+    <Compile Include="Entities\Audio\AreaSoundEmitter.cs" />
+    <Compile Include="Entities\Audio\PositionalShotSoundEmitter.cs" />
+    <Compile Include="Entities\Audio\ShotSoundEmitter.cs" />
+    <Compile Include="Entities\Behaviours\FairyMovementBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\LambdaBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RandomSinusMovementBehaviour.cs" />
+    <Compile Include="Entities\BlockTrigger.cs" />
+    <Compile Include="Entities\Components\SceneStatusStoreable.cs" />
+    <Compile Include="Entities\Components\Spawnable.cs" />
+    <Compile Include="Entities\Drawing\Implementation\LinkSpriteColorTint.cs" />
+    <Compile Include="Entities\Drawing\Implementation\LinkSprites.cs" />
+    <Compile Include="Entities\Fairy.cs" />
+    <Compile Include="Entities\Interfaces\ISceneStatusStorableEntity.cs" />
+    <Compile Include="Entities\Interfaces\ISpawnableEntity.cs" />
+    <Compile Include="Entities\Modifiers\ScaleCurveEntityModifier.cs" />
+    <Compile Include="Entities\Modifiers\IAttachedEntityModifier.cs" />
+    <Compile Include="Events\Triggers\SongTileAreaEventTrigger.cs" />
+    <Compile Include="IPostLoad.cs" />
+    <Compile Include="Events\Other\SetWeatherEvent.cs" />
+    <Compile Include="Events\Scripts\ScriptedEvent.cs" />
+    <Compile Include="Items\Affixes\Prefixes\AcutePrefix.cs" />
+    <Compile Include="Core\Requirements\Implementations\NeverRequirement.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Bad\UselessPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\GoldenPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\ImpetuosPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\OiledPrefix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfFeathersAffix.cs" />
+    <Compile Include="Ocarina\Songs\ExecuteTriggerSong.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\HomeTeleportationSong.cs" />
+    <Compile Include="Saving\Storage\BooleanStorage.cs" />
+    <Compile Include="Scene\ISceneProvider.cs" />
+    <Compile Include="Graphics\AspectRatio.cs" />
+    <Compile Include="Graphics\IResolutionService.cs" />
+    <Compile Include="Saving\SceneEntitiesStorage.cs" />
+    <Compile Include="Scripting\Design\IScriptEditor.cs" />
+    <Compile Include="Scripting\Design\ScriptCodeEditor.cs" />
+    <Compile Include="Scripting\DSLHelper.cs" />
+    <Compile Include="Scripting\ZeldaScript.cs" />
+    <Compile Include="Scripting\ZeldaScriptEnvironment.cs" />
+    <Compile Include="Status\Effects\ColorEffect.cs" />
+    <Compile Include="Status\PlayerStatistics.cs" />
+    <Compile Include="Talents\Ranged\FireBombChainTalent.cs" />
+    <Compile Include="Talents\TalentCategory.cs" />
+    <Compile Include="Talents\TalentType.cs" />
+    <Compile Include="UI\CheckBox.cs" />
+    <Compile Include="UI\IItemInfoVisualizer.cs" />
+    <Compile Include="Actions\Player\StatResetAction.cs" />
+    <Compile Include="Actions\Player\TeachSharedChestTierAction.cs" />
+    <Compile Include="Actions\Scene\BaseSceneAction.cs" />
+    <Compile Include="Actions\Scene\ActivateEntityAction.cs" />
+    <Compile Include="Actions\UI\BaseUserInterfaceAction.cs" />
+    <Compile Include="Actions\UI\OpenSharedChestAction.cs" />
+    <Compile Include="Attacks\Methods\FixedLightSpellDamageMethod.cs" />
+    <Compile Include="Audio\BackgroundMusic.cs" />
+    <Compile Include="Casting\Spells\Lightning\LightningBoltEntity.cs" />
+    <Compile Include="Casting\Spells\Lightning\LightningSparkEntity.cs" />
+    <Compile Include="Core\Difficulties\BaseDifficulty.cs" />
+    <Compile Include="Core\Difficulties\DifficultyId.cs" />
+    <Compile Include="Core\Difficulties\DifficultyIndicatorDrawer.cs" />
+    <Compile Include="Core\Difficulties\GameDifficulty.cs" />
+    <Compile Include="Core\Difficulties\Implementations\NormalDifficulty.cs" />
+    <Compile Include="Core\Difficulties\Implementations\NightmareDifficulty.cs" />
+    <Compile Include="Core\Difficulties\Implementations\EasyDifficulty.cs" />
+    <Compile Include="Core\Difficulties\Implementations\HellDifficulty.cs" />
+    <Compile Include="Core\Interfaces\IActivatable.cs" />
+    <Compile Include="Core\Interfaces\IReadOnlyLocalizedNameable.cs" />
+    <Compile Include="Core\Predicates\AggregatePredicate.cs" />
+    <Compile Include="Core\Predicates\Design\KnownPredicate.cs" />
+    <Compile Include="Core\Predicates\Design\PredicateEditor.cs" />
+    <Compile Include="Core\Predicates\Entity\InDeepWaterPredicate.cs" />
+    <Compile Include="Core\Predicates\Entity\InShallowWaterPredicate.cs" />
+    <Compile Include="Core\Predicates\Entity\InShallowOrDeepWaterPredicate.cs" />
+    <Compile Include="Core\Predicates\WrappingPredicate.cs" />
+    <Compile Include="Core\Predicates\OrPredicate.cs" />
+    <Compile Include="Core\Predicates\IPredicate.T.cs" />
+    <Compile Include="Core\Predicates\Predicate.T.cs" />
+    <Compile Include="Core\Properties\Scene\DungeonProperty.cs" />
+    <Compile Include="Core\Requirements\Implementations\MinimumDifficultyRequirement.cs" />
+    <Compile Include="Core\Timing\ResetableTimer.cs" />
+    <Compile Include="Core\Requirements\Implementations\SpecificTimeOfDayRequirement.cs" />
+    <Compile Include="Crafting\RecipeCategory.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\LightPolarity.cs" />
+    <Compile Include="Entities\Behaviours\Design\BehaviourEditor.cs" />
+    <Compile Include="Entities\Behaviours\TravellingSalesmanBehaviour.cs" />
+    <Compile Include="Entities\Data\ActivatableData.cs" />
+    <Compile Include="Entities\Decoration.cs" />
+    <Compile Include="Entities\Drawing\Design\DrawDataAndStrategyTypeEditor.cs" />
+    <Compile Include="Entities\ILight.cs" />
+    <Compile Include="Entities\Modifiers\Design\EntityModifierEditor.cs" />
+    <Compile Include="Entities\Modifiers\IEntityModifier.cs" />
+    <Compile Include="Entities\Modifiers\SetBehaviourEntityModifier.cs" />
+    <Compile Include="Entities\Templates\EntityTemplate.cs" />
+    <Compile Include="Entities\Templates\IEntityTemplate.cs" />
+    <Compile Include="Entities\UseableActionEntity.cs" />
+    <Compile Include="Errors\ZeldaErrorReporter.cs" />
+    <Compile Include="Errors\ZeldaMailErrorReporter.cs" />
+    <Compile Include="Core\Difficulties\IDifficulty.cs" />
+    <Compile Include="Events\Graphics\InterpolateSceneAmbientEvent.cs" />
+    <Compile Include="Events\InputTileAreaEventTrigger.cs" />
+    <Compile Include="Events\Other\ActionEvent.cs" />
+    <Compile Include="Events\Triggers\OnKeyDownTileAreaEventTrigger.cs" />
+    <Compile Include="Events\Triggers\OnUseTileAreaEventTrigger.cs" />
+    <Compile Include="Events\ZeldaTileAreaEventTrigger.cs" />
+    <Compile Include="Graphics\Design\SpriteAssetEditor.cs" />
+    <Compile Include="Graphics\Design\SpriteNameEditor.cs" />
+    <Compile Include="Graphics\TilePathDrawer.cs" />
+    <Compile Include="IoC.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheeHastyAvatar.cs" />
+    <Compile Include="Items\SharedChest.cs" />
+    <Compile Include="Items\SharedChestTier.cs" />
+    <Compile Include="Items\UseEffects\AwardExperienceEffect.cs" />
+    <Compile Include="Items\UseEffects\Bottle\UseBottleEffectPart.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\CrossTeleportLocationStorage.cs" />
+    <Compile Include="Items\UseEffects\ExecuteActionEffect.cs" />
+    <Compile Include="Items\UseEffects\Bottle\UseBottleEffect.cs" />
+    <Compile Include="Items\UseEffects\SaveTeleportPositionEffect.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\MusicCrossSong.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\TeleportationSong.cs" />
+    <Compile Include="Quests\Profiles\GameProfile.cs" />
+    <Compile Include="Quests\Profiles\IGameProfile.cs" />
+    <Compile Include="Quests\Profiles\ShortGameProfile.cs" />
+    <Compile Include="Properties\GameFolders.cs" />
+    <Compile Include="Quests\Events\ExecuteActionEvent.cs" />
+    <Compile Include="Saving\Context\Deserialization\IZeldaEventDeserializationContext.cs" />
+    <Compile Include="Saving\Context\Deserialization\ZeldaEventDeserializationContext.cs" />
+    <Compile Include="Saving\Context\Serialization\IZeldaEventSerializationContext.cs" />
+    <Compile Include="Saving\Context\Serialization\ZeldaEventSerializationContext.cs" />
+    <Compile Include="Saving\Storage\Entity\BaseEntityDataStorage.cs" />
+    <Compile Include="Saving\Storage\Entity\EntityDataStore.cs" />
+    <Compile Include="Saving\Storage\Entity\IEntityDataStorage.cs" />
+    <Compile Include="Saving\ZeldaEventTypeActivator.cs" />
+    <Compile Include="Scene\InactiveSceneUpdater.cs" />
+    <Compile Include="Skills\PlayerAttackSkill.cs" />
+    <Compile Include="Skills\PlayerBuffSkill.cs" />
+    <Compile Include="Skills\PlayerSpellSkill.cs" />
+    <Compile Include="Skills\PlayerTalentSkill.cs" />
+    <Compile Include="Skills\Skillable.cs" />
+    <Compile Include="Status\Cost\ManaCost.cs" />
+    <Compile Include="Status\Cost\NullManaCost.cs" />
+    <Compile Include="Story\ZeldaIncident.cs" />
+    <Compile Include="Story\ZeldaStoryboard.cs" />
+    <Compile Include="Story\ZeldaTimeline.cs" />
+    <Compile Include="Talents\Ranged\ArrowRushTalent.cs" />
+    <Compile Include="Tiles\ActionTileId.cs" />
+    <Compile Include="Attacks\IProjectileAttack.cs" />
+    <Compile Include="Attacks\Melee\BladestormAttack.cs" />
+    <Compile Include="Attacks\Melee\Methods\FrustrationDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\ShieldBreakerDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\HeadshotDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\RangedDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\RangedEnemyAttackSettings.cs" />
+    <Compile Include="Audio\MusicFadeIner.cs" />
+    <Compile Include="Audio\SoundSampleSettings.cs" />
+    <Compile Include="Status\Cost\FixedManaCost.cs" />
+    <Compile Include="Status\Cost\IManaCost.cs" />
+    <Compile Include="Status\Cost\ManaCostBase.cs" />
+    <Compile Include="Status\Cost\PercentageOfBaseManaCost.cs" />
+    <Compile Include="Casting\Spells\Methods\CorrosiveFireDamageMethod.cs" />
+    <Compile Include="Casting\Spells\Methods\FirewhirlDamageMethod.cs" />
+    <Compile Include="Casting\Spells\ProjectilePlayerSpell.cs" />
+    <Compile Include="Crafting\RequiredRecipeItem.cs" />
+    <Compile Include="Crafting\ResultRecipeItem.cs" />
+    <Compile Include="Attacks\DamageMeter.cs" />
+    <Compile Include="Entities\Behaviours\Enums\AggressionType.cs" />
+    <Compile Include="Entities\Behaviours\Interfaces\IRangedEnemyBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RangedEnemyBehaviour.cs" />
+    <Compile Include="Entities\Drawing\Implementation\4D\RangedEnemyDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\Horizontal\HorizontalMoveRandomStandAttackDDS.cs" />
+    <Compile Include="Entities\Drawing\Implementation\Horizontal\LeftRightMoveStandDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\TintedOneDirAnimMoveStandDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\AnimatedProjectileSprites.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\IProjectileSprites.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\ProjectileDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\ProjectileSprites.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\ProjectileSpritesHelper.cs" />
+    <Compile Include="Entities\Projectiles\Drawing\SingleAnimatedProjectileSprites.cs" />
+    <Compile Include="Entities\Interfaces\IAttackableEntity.cs" />
+    <Compile Include="Entities\Projectiles\ProjectileHitSettings.cs" />
+    <Compile Include="Entities\Projectiles\ProjectilePiercingChanceMode.cs" />
+    <Compile Include="Entities\Projectiles\ProjectileSettings.cs" />
+    <Compile Include="Entities\SignPost.cs" />
+    <Compile Include="Entities\WantedSignPost.cs" />
+    <Compile Include="Events\Other\ToggleTileMapLayerVisabilityEvent.cs" />
+    <Compile Include="Events\Other\TurnEntityEvent.cs" />
+    <Compile Include="Events\Player\SetPlayerDirectionEvent.cs" />
+    <Compile Include="Events\Player\WarpPlayerEvent.cs" />
+    <Compile Include="Graphics\Particles\RainEmitter.cs" />
+    <Compile Include="Graphics\Particles\RainSnowParticleEffect.cs" />
+    <Compile Include="Graphics\Particles\SnowEmitter.cs" />
+    <Compile Include="Graphics\Particles\ZeldaParticleRenderer.cs" />
+    <Compile Include="Graphics\Tinting\CombineColorTint.cs" />
+    <Compile Include="Graphics\Tinting\ColorTintList.cs" />
+    <Compile Include="Graphics\Tinting\IColorTint.cs" />
+    <Compile Include="Items\Affixes\AffixDatabase.cs" />
+    <Compile Include="Items\Affixes\AffixedEquipmentInstance.cs" />
+    <Compile Include="Items\Affixes\AffixedWeaponInstance.cs" />
+    <Compile Include="Items\Affixes\AffixResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AffixResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Attacks\Attack.cs" />
+    <Compile Include="Attacks\AttackDamageMethod.cs" />
+    <Compile Include="Attacks\AttackDamageResult.cs" />
+    <Compile Include="Attacks\AttackReceiveType.cs" />
+    <Compile Include="Attacks\AttackType.cs" />
+    <Compile Include="Attacks\HitEffects\DamageOverTimeAttackHitEffect.cs" />
+    <Compile Include="Attacks\HitEffects\IAttackHitEffect.cs" />
+    <Compile Include="Attacks\Melee\Methods\BashDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\CounterAttackDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\DefaultMeleeDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\NormalPlayerMeleeDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\PlayerMeleeDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\Methods\WhirlwindDamageMethod.cs" />
+    <Compile Include="Attacks\Melee\MeleeAttack.cs" />
+    <Compile Include="Attacks\Melee\PlayerMeleeAttack.cs" />
+    <Compile Include="Attacks\Melee\WhirlwindAttack.cs" />
+    <Compile Include="Attacks\Ranged\ArrowShowerAttack.cs" />
+    <Compile Include="Attacks\Ranged\Methods\FireBombDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\NormalPlayerRangedDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\LightArrowDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\MultiShotDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\PlayerRangedDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\Methods\RangedNatureDotDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\LightArrowAttack.cs" />
+    <Compile Include="Attacks\Ranged\MultiShotAttack.cs" />
+    <Compile Include="Attacks\Ranged\RangedPlayerAttack.cs" />
+    <Compile Include="Attacks\Ranged\RangedAttack.cs" />
+    <Compile Include="Audio\BackgroundMusicComponent.cs" />
+    <Compile Include="Casting\Castable.cs" />
+    <Compile Include="Casting\CastBar.cs" />
+    <Compile Include="Casting\PlayerSpell.cs" />
+    <Compile Include="Casting\Spell.cs" />
+    <Compile Include="Core\Controls\PlayerControl.cs" />
+    <Compile Include="Cooldown.cs" />
+    <Compile Include="Crafting\CraftingBottle.cs" />
+    <Compile Include="Crafting\Recipe.cs" />
+    <Compile Include="Crafting\RecipeDatabase.cs" />
+    <Compile Include="Crafting\RecipeItem.cs" />
+    <Compile Include="DayNightCycle.cs" />
+    <Compile Include="Entities\Traps\Bomb.cs" />
+    <Compile Include="Entities\Design\EntitySelectionEditor.cs" />
+    <Compile Include="Entities\Design\SwitchableEntitySelectionEditor.cs" />
+    <Compile Include="Entities\Drawing\Implementation\DualSwitchableDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\OneDirAnimMoveStandDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\TintedAndScaledOneDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\EntityReaderWriter.cs" />
+    <Compile Include="Entities\Behaviours\BehaviourManager.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\StoneTombsBossBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\EnemyChasePlayerBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\Interfaces\IEntityBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\Interfaces\ISubEntityBehaviourContainer.cs" />
+    <Compile Include="Entities\Behaviours\MeleeEnemyBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RandomEnemyMovementBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RandomMovementBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RazorMovementBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\TurnToPlayerOnSightBehaviour.cs" />
+    <Compile Include="Entities\Components\Attackable.cs" />
+    <Compile Include="Entities\Components\Behaveable.cs" />
+    <Compile Include="Entities\Components\Killable.cs" />
+    <Compile Include="Entities\Components\Lootable.cs" />
+    <Compile Include="Entities\Components\Moveable.cs" />
+    <Compile Include="Entities\Components\Collideable.cs" />
+    <Compile Include="Entities\Components\QuestsGiveable.cs" />
+    <Compile Include="Entities\Components\Respawnable.cs" />
+    <Compile Include="Entities\Components\Talkable.cs" />
+    <Compile Include="Entities\Components\Transformable.cs" />
+    <Compile Include="Entities\Components\Visionable.cs" />
+    <Compile Include="Entities\Components\ZeldaComponent.cs" />
+    <Compile Include="Entities\Drawing\Draw Objects\BasicDrawObject.cs" />
+    <Compile Include="Entities\Drawing\DrawStrategyManager.cs" />
+    <Compile Include="Entities\Drawing\Implementation\4D\FourDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\4D\FourDirDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\IDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\Horizontal\LeftRightMoveAttackDDS.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\OneDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\OneDirDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\PlayerDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\TintedDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\4D\TintedFourDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\Horizontal\TintedLeftRightMoveAttackDDS.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\TintedOneDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\TintedOneDirDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Enemy.cs" />
+    <Compile Include="Entities\FirePlace.cs" />
+    <Compile Include="Entities\FriendlyNpc.cs" />
+    <Compile Include="Entities\Interfaces\IAttackingEntity.cs" />
+    <Compile Include="Entities\PersistentMapItem.cs" />
+    <Compile Include="Entities\Plant.cs" />
+    <Compile Include="Entities\Audio\PositionalSoundEmitter.cs" />
+    <Compile Include="Entities\RedBlueBlockTrigger.cs" />
+    <Compile Include="Entities\Audio\SoundEmitter.cs" />
+    <Compile Include="Entities\Spawning\Groups\EnemyRespawnGroup.cs" />
+    <Compile Include="Entities\Spawning\EnemySpawnPoint.cs" />
+    <Compile Include="Entities\EntityFloorRelativity.cs" />
+    <Compile Include="Entities\Spawning\EntitySpawn.cs" />
+    <Compile Include="Entities\Templates\EntityTemplateManager.cs" />
+    <Compile Include="Entities\Interfaces\INotifyKilledEntity.cs" />
+    <Compile Include="Entities\Interfaces\IEntityReaderWriter.cs" />
+    <Compile Include="Entities\Interfaces\IPersistentEntity.cs" />
+    <Compile Include="Entities\Interfaces\IPickupableEntity.cs" />
+    <Compile Include="Entities\Spawning\ISpawnPoint.cs" />
+    <Compile Include="Core\Interfaces\IUseable.cs" />
+    <Compile Include="Entities\Light.cs" />
+    <Compile Include="Entities\MapItem.cs" />
+    <Compile Include="Entities\EntityReaderWriterManager.cs" />
+    <Compile Include="Entities\PlayerEntity.cs" />
+    <Compile Include="Entities\Drawing\Draw Objects\TileAreaTriggerDrawObject.cs" />
+    <Compile Include="Entities\Projectiles\Projectile.cs" />
+    <Compile Include="Entities\Interfaces\ICollisionWithPlayerNotifier.cs" />
+    <Compile Include="Entities\Spawning\PlayerSpawnPoint.cs" />
+    <Compile Include="Entities\Spawning\RazorEntitySpawn.cs" />
+    <Compile Include="Entities\Spawning\RespawnableEntitySpawn.cs" />
+    <Compile Include="Entities\Spawning\SpawnPoint.cs" />
+    <Compile Include="Entities\TileBlock.cs" />
+    <Compile Include="Entities\UnlockableDoorTileBlock.cs" />
+    <Compile Include="Events\GameLogicEvent.cs" />
+    <Compile Include="Events\Audio\ChangeBackgroundMusicEvent.cs" />
+    <Compile Include="Events\Audio\ChangeToRandomBackgroundMusicEvent.cs" />
+    <Compile Include="Events\Other\SwitchEntityEvent.cs" />
+    <Compile Include="Events\Other\ShowDialogTextEvent.cs" />
+    <Compile Include="Events\Other\DoubleFullTileChangeEvent.cs" />
+    <Compile Include="Events\ExternalEvent.cs" />
+    <Compile Include="Events\ExternalTileAreaEventTrigger.cs" />
+    <Compile Include="Events\ExternalEventTrigger.cs" />
+    <Compile Include="Events\Audio\PlayAudioSampleEvent.cs" />
+    <Compile Include="Events\Other\RemoveEntityEvent.cs" />
+    <Compile Include="Events\Graphics\SceneAmbientChangeEvent.cs" />
+    <Compile Include="Events\Other\SceneChangeEvent.cs" />
+    <Compile Include="Events\Other\SpawnEntityEvent.cs" />
+    <Compile Include="Events\Logic\SwitchPatternGameLogic.cs" />
+    <Compile Include="Events\ZeldaEvent.cs" />
+    <Compile Include="Factions\Faction.cs" />
+    <Compile Include="Factions\FactionList.cs" />
+    <Compile Include="Factions\FactionState.cs" />
+    <Compile Include="Factions\FactionStates.cs" />
+    <Compile Include="Factions\ReputationLevel.cs" />
+    <Compile Include="Factions\ReputationLevelChangedEventArgs.cs" />
+    <Compile Include="FlyingText.cs" />
+    <Compile Include="FlyingTextManager.cs" />
+    <Compile Include="FogOfWarStatus.cs" />
+    <Compile Include="Core\Interfaces\IDescriptionProvider.cs" />
+    <Compile Include="Core\Interfaces\IEditModeDrawable.cs" />
+    <Compile Include="Core\Interfaces\IIngameState.cs" />
+    <Compile Include="Core\Interfaces\IRemoveableState.cs" />
+    <Compile Include="IngameDateTime.cs" />
+    <Compile Include="Core\Interfaces\IManualEditNotifier.cs" />
+    <Compile Include="Scene\ISceneChangeListener.cs" />
+    <Compile Include="Tiles\IZeldaFloorDrawable.cs" />
+    <Compile Include="Items\Affixes\AffixedItem.cs" />
+    <Compile Include="Items\Affixes\AffixType.cs" />
+    <Compile Include="Items\Affixes\IAffix.cs" />
+    <Compile Include="Items\Affixes\IAffixedItemInstance.cs" />
+    <Compile Include="Items\Affixes\IPrefix.cs" />
+    <Compile Include="Items\Affixes\ISuffix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Bad\RetardingPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\CemeteryPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\DeadlyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\EdgedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\EnragingPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\FlexiblePrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\ForcefulPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\HauntingPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\HeavyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\InflamedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\OrnatePrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PenetratingPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PerforatedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PiercingPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PoisonedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PrecisePrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Resistences\BlackenedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Resistences\EmeraldPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Resistences\RainbowPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Resistences\RubyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\RiskyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\RuggedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Bad\RustyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\Bad\StrondPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\SlipperyPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\SturdyPrefix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfAssassinationSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfBerserkerRageSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfCorruptionSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfCourageSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfDefensivenesSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfDoomSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfEaseSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfEquilibriumSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfFortuneSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfHasteSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfImmediacySuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfKingsSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfPowerSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfProtectionSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfRageSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfRecklesnessSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfRecoverySuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfRuptureSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfSorcerySuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheBlockadeSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheHawkSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheHolySpiritSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheSagesSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheSeasonsSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfTheTitansSuffix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfWitchCraftSuffix.cs" />
+    <Compile Include="Items\Equipment\Equipment.cs" />
+    <Compile Include="Items\Equipment\EquipmentInstance.cs" />
+    <Compile Include="Items\Equipment\EquipmentSlot.cs" />
+    <Compile Include="Items\Equipment\EquipmentStatus.cs" />
+    <Compile Include="Items\Equipment\EquipmentStatusSlot.cs" />
+    <Compile Include="Items\Gem\Gem.cs" />
+    <Compile Include="Items\Gem\GemInstance.cs" />
+    <Compile Include="Items\Inventory.cs" />
+    <Compile Include="Items\ItemCreationHelper.cs" />
+    <Compile Include="Items\ItemExtensions.cs" />
+    <Compile Include="Items\ItemManager.cs" />
+    <Compile Include="Items\ItemResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Items\Item\DropRequirements\DoesntHaveItemsRequirement.cs" />
+    <Compile Include="Items\Item\DropRequirements\DoesntKnowSongRequirement.cs" />
+    <Compile Include="Items\Item\DropRequirements\QuestNotActiveNorCompletedRequirement.cs" />
+    <Compile Include="Items\Item\Item.cs" />
+    <Compile Include="Items\Item\ItemDropMode.cs" />
+    <Compile Include="Items\Item\ItemInstance.cs" />
+    <Compile Include="Items\Item\ItemQuality.cs" />
+    <Compile Include="Items\Item\ItemType.cs" />
+    <Compile Include="Items\LootTable.cs" />
+    <Compile Include="Items\Sockets\ItemSocketProperties.cs" />
+    <Compile Include="Items\UseEffects\AwardStatusPointEffect.cs" />
+    <Compile Include="Items\UseEffects\Interfaces\IItemUseEffect.cs" />
+    <Compile Include="Items\UseEffects\Interfaces\IRestoreEffect.cs" />
+    <Compile Include="Items\UseEffects\LearnSongEffect.cs" />
+    <Compile Include="Items\ItemUseEffect.cs" />
+    <Compile Include="Items\UseEffects\NewQuestEffect.cs" />
+    <Compile Include="Items\UseEffects\RestoreEffect.cs" />
+    <Compile Include="Items\UseEffects\RestoreLifeEffect.cs" />
+    <Compile Include="Items\UseEffects\RestoreLifeManaEffect.cs" />
+    <Compile Include="Items\UseEffects\RestoreManaEffect.cs" />
+    <Compile Include="Items\UseEffects\SpawnRandomItemEffect.cs" />
+    <Compile Include="Items\PickedupItemContainer.cs" />
+    <Compile Include="Items\Sockets\Socket.cs" />
+    <Compile Include="Items\Weapon\Weapon.cs" />
+    <Compile Include="Items\Weapon\WeaponAttackType.cs" />
+    <Compile Include="Items\Weapon\WeaponTypeGroup.cs" />
+    <Compile Include="Items\Weapon\WeaponInstance.cs" />
+    <Compile Include="Items\Weapon\WeaponType.cs" />
+    <Compile Include="Core\Interfaces\IZeldaSetupable.cs" />
+    <Compile Include="KeySettings.cs" />
+    <Compile Include="LocalizableTextResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizableTextResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedEnums.cs" />
+    <Compile Include="Ocarina\Instrument.cs" />
+    <Compile Include="Ocarina\OcarinaBox.cs" />
+    <Compile Include="Ocarina\Song.cs" />
+    <Compile Include="Ocarina\SongDescriptionData.cs" />
+    <Compile Include="Ocarina\SongMusic.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\FamilyTombsTeleportationSong.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\SceneTeleportationSong.cs" />
+    <Compile Include="Ocarina\Songs\TimeWarpSong.cs" />
+    <Compile Include="Ocarina\Songs\ZoneResetSong.cs" />
+    <Compile Include="Ocarina\Note.cs" />
+    <Compile Include="Overlays\EdgeDetectionOverlay.cs" />
+    <Compile Include="Overlays\ISceneOverlay.cs" />
+    <Compile Include="Overlays\NoiseOverlay.cs" />
+    <Compile Include="Overlays\ParticleEffectOverlay.cs" />
+    <Compile Include="Overlays\ScrollingParticleEffectOverlay.cs" />
+    <Compile Include="Overlays\ScrollingTextureOverlay.cs" />
+    <Compile Include="Core\Pathing\TilePathFollower.cs" />
+    <Compile Include="Quests\Events\RemovePersistentObjectEvent.cs" />
+    <Compile Include="Quests\Events\GiveQuestItemEvent.cs" />
+    <Compile Include="Quests\Goals\GetItemsGoal.cs" />
+    <Compile Include="Quests\Goals\KillEnemiesGoal.cs" />
+    <Compile Include="Quests\IQuestEvent.cs" />
+    <Compile Include="Quests\IQuestGoal.cs" />
+    <Compile Include="Quests\IQuestReward.cs" />
+    <Compile Include="Quests\Quest.cs" />
+    <Compile Include="Quests\QuestDeliverType.cs" />
+    <Compile Include="Quests\QuestLog.cs" />
+    <Compile Include="Quests\QuestResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Quests\QuestType.cs" />
+    <Compile Include="Quests\Requirements\QuestCompletedRequirement.cs" />
+    <Compile Include="Quests\Rewards\ExperienceReward.cs" />
+    <Compile Include="Quests\Rewards\ItemReward.cs" />
+    <Compile Include="Quests\Rewards\ReputationReward.cs" />
+    <Compile Include="Quests\Rewards\RubyReward.cs" />
+    <Compile Include="QuickActions\UseItemAction.cs" />
+    <Compile Include="Saving\ISavedState.cs" />
+    <Compile Include="Saving\IStateSaveable.cs" />
+    <Compile Include="Saving\ISaveable.cs" />
+    <Compile Include="Saving\ShortSaveGameInfo.cs" />
+    <Compile Include="Saving\WorldStatus.cs" />
+    <Compile Include="Core\Interfaces\IZeldaServiceProvider.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Saving\SaveFile.cs" />
+    <Compile Include="Saving\SavePoint.cs" />
+    <Compile Include="Saving\SceneStatus.cs" />
+    <Compile Include="Core\ChangeType.cs" />
+    <Compile Include="Scene\SceneType.cs" />
+    <Compile Include="SharedCooldownMap.cs" />
+    <Compile Include="Skills\Magic\FirewhirlSkill.cs" />
+    <Compile Include="Skills\Melee\BashSkill.cs" />
+    <Compile Include="Skills\Melee\BattleShoutSkill.cs" />
+    <Compile Include="Skills\Melee\BladestormSkill.cs" />
+    <Compile Include="Skills\Melee\CounterAttackSkill.cs" />
+    <Compile Include="Skills\Melee\FrustrationSkill.cs" />
+    <Compile Include="Skills\Melee\FurorSkill.cs" />
+    <Compile Include="Skills\Melee\PushingAttackSkill.cs" />
+    <Compile Include="Skills\Melee\QuickStrikeSkill.cs" />
+    <Compile Include="Skills\Melee\RecoverWoundsSkill.cs" />
+    <Compile Include="Skills\Melee\ShieldBlockSkill.cs" />
+    <Compile Include="Skills\Melee\ShieldBreakerSkill.cs" />
+    <Compile Include="Skills\Melee\ShieldWallSkill.cs" />
+    <Compile Include="Skills\Melee\WhirlwindSkill.cs" />
+    <Compile Include="Skills\Ranged\ArrowShowerSkill.cs" />
+    <Compile Include="Skills\Ranged\FireBombSkill.cs" />
+    <Compile Include="Skills\Ranged\HeadshotSkill.cs" />
+    <Compile Include="Status\Auras\FixedManaRegenerationAura.cs" />
+    <Compile Include="Status\Auras\Pooling\AuraPool.cs" />
+    <Compile Include="Status\Auras\IAura.cs" />
+    <Compile Include="Status\Auras\Pooling\PooledDamageOverTimeAura.cs" />
+    <Compile Include="Status\Auras\Pooling\PooledTimedAura.cs" />
+    <Compile Include="Status\Auras\TickingAura.cs" />
+    <Compile Include="Status\CombatEventArgs.cs" />
+    <Compile Include="Status\Effects\ArmorEffect.cs" />
+    <Compile Include="Status\Effects\ArmorIgnoreEffect.cs" />
+    <Compile Include="Status\Effects\AttackSpeedEffect.cs" />
+    <Compile Include="Status\Auras\Aura.cs" />
+    <Compile Include="Status\Auras\AuraList.cs" />
+    <Compile Include="Status\Auras\DamageOverTimeAura.cs" />
+    <Compile Include="Status\Auras\PermanentAura.cs" />
+    <Compile Include="Status\Auras\PermanentDamageOverTimeAura.cs" />
+    <Compile Include="Status\Auras\TimedAura.cs" />
+    <Compile Include="Status\Effects\BlockValueEffect.cs" />
+    <Compile Include="Status\Effects\ChanceToBeStatusEffect.cs" />
+    <Compile Include="Status\Effects\ChanceToResistEffect.cs" />
+    <Compile Include="Status\Effects\ChanceToStatusEffect.cs" />
+    <Compile Include="Status\Effects\EquipmentSlotStatModifierEffect.cs" />
+    <Compile Include="Status\Effects\ExperienceGainedEffect.cs" />
+    <Compile Include="Status\Effects\LifeManaPotionEffectivenessEffect.cs" />
+    <Compile Include="Status\Effects\MagicFindEffect.cs" />
+    <Compile Include="Status\Effects\WeaponDamageTypeBasedEffect.cs" />
+    <Compile Include="Status\ExtendedStatable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Status\Statable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Status\StatusCalc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Skills\Melee\NormalMeleeAttackSkill.cs" />
+    <Compile Include="Skills\PlayerSkill.cs" />
+    <Compile Include="Skills\Ranged\LightArrowSkill.cs" />
+    <Compile Include="Skills\Ranged\MultiShotSkill.cs" />
+    <Compile Include="Skills\Ranged\NormalRangedAttackSkill.cs" />
+    <Compile Include="Skills\Ranged\PoisonedShotSkill.cs" />
+    <Compile Include="Skills\Ranged\RapidFireSkill.cs" />
+    <Compile Include="Skills\Ranged\SprintSkill.cs" />
+    <Compile Include="Skills\Skill.cs" />
+    <Compile Include="Status\Effects\LifeManaEffect.cs" />
+    <Compile Include="Status\Effects\LifeManaRegenEffect.cs" />
+    <Compile Include="Status\Effects\MovementSpeedEffect.cs" />
+    <Compile Include="Status\Effects\PushingForceEffect.cs" />
+    <Compile Include="Status\Effects\StatEffect.cs" />
+    <Compile Include="Status\Effects\StatusEffect.cs" />
+    <Compile Include="Status\Effects\StatusValueEffect.cs" />
+    <Compile Include="Status\Enumerations\ChanceToStatus.cs" />
+    <Compile Include="Status\Enumerations\DebuffFlags.cs" />
+    <Compile Include="Status\Enumerations\ElementalSchool.cs" />
+    <Compile Include="Status\Enumerations\LifeMana.cs" />
+    <Compile Include="Status\Enumerations\RaceType.cs" />
+    <Compile Include="Status\Enumerations\Stat.cs" />
+    <Compile Include="Status\Enumerations\StatusManipType.cs" />
+    <Compile Include="Talents\ArmorTalent.cs" />
+    <Compile Include="Talents\ChanceToStatusTalent.cs" />
+    <Compile Include="Talents\Magic\CorrosiveFireTalent.cs" />
+    <Compile Include="Talents\Magic\FirewhirlTalent.cs" />
+    <Compile Include="Talents\Magic\MagicTrainingTalent.cs" />
+    <Compile Include="Talents\Melee\BashTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\BattleAwarenessTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\BattleShoutTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\BladestormTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\CounterAttackTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\DoubleAttackTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\EnrageTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\FrenzyTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\FrustrationTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\FurorTalent.cs" />
+    <Compile Include="Talents\Melee\ImprovedBashTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\MeleeTrainingTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\PushingAttackTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\QuickStrikeTalent.cs" />
+    <Compile Include="Talents\Melee\RecoverWoundsTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\ShieldBlockTalent.cs" />
+    <Compile Include="Talents\Melee\ShieldBreakerTalent.cs" />
+    <Compile Include="Talents\Melee\ShieldMasteryTalent.cs" />
+    <Compile Include="Talents\Melee\ShieldWallTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\ToughnessTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\VitalityTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Melee\WhirlwindTalent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Talents\Ranged\AgilityTrainingTalent.cs" />
+    <Compile Include="Talents\Ranged\ArrowShowerTalent.cs" />
+    <Compile Include="Talents\Ranged\DodgeTrainingTalent.cs" />
+    <Compile Include="Talents\Ranged\FireBombTalent.cs" />
+    <Compile Include="Talents\Ranged\GoForTheHeadTalent.cs" />
+    <Compile Include="Talents\Ranged\HandEyeCoordinationTalent.cs" />
+    <Compile Include="Talents\Ranged\HeadshotTalent.cs" />
+    <Compile Include="Talents\Ranged\ImprovedMultiShotTalent.cs" />
+    <Compile Include="Talents\Ranged\LightArrowTalent.cs" />
+    <Compile Include="Talents\Ranged\MultiShotTalent.cs" />
+    <Compile Include="Talents\Ranged\PiercingArrowsTalent.cs" />
+    <Compile Include="Talents\Ranged\PoisonedShotTalent.cs" />
+    <Compile Include="Talents\Ranged\QuickHandsTalent.cs" />
+    <Compile Include="Talents\Ranged\RangedTrainingTalent.cs" />
+    <Compile Include="Talents\Ranged\RapidFireTalent.cs" />
+    <Compile Include="Talents\Ranged\RogueWeaponMasteryTalent.cs" />
+    <Compile Include="Talents\Ranged\SprintTalent.cs" />
+    <Compile Include="Talents\SkillTalent.cs" />
+    <Compile Include="Talents\StatRootTalent.cs" />
+    <Compile Include="Talents\StatTalent.cs" />
+    <Compile Include="Talents\Support\ConcentrateOnTheFactsTalent.cs" />
+    <Compile Include="Talents\Support\CriticalBalanceTalent.cs" />
+    <Compile Include="Talents\Support\LuckyBastardTalent.cs" />
+    <Compile Include="Talents\Support\AngelEmbracementTalent.cs" />
+    <Compile Include="Talents\Support\ManaHullTalent.cs" />
+    <Compile Include="Talents\Support\MeditationTalent.cs" />
+    <Compile Include="Talents\Support\PoisonMasteryTalent.cs" />
+    <Compile Include="Talents\Support\PotionMasteryTalent.cs" />
+    <Compile Include="Talents\Support\SmoothedEmblazonmentTalent.cs" />
+    <Compile Include="Talents\Support\SwiftFightStyleTalent.cs" />
+    <Compile Include="Talents\Talent.cs" />
+    <Compile Include="Talents\TalentRequirement.cs" />
+    <Compile Include="Talents\TalentResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TalentResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Talents\TalentTree.cs" />
+    <Compile Include="LocalizableText.cs" />
+    <Compile Include="Core\ToggleMode.cs" />
+    <Compile Include="Tiles\StaticRangedTileHandler.cs" />
+    <Compile Include="Trading\Restocking\Modes\ToSpecificRestocker.cs" />
+    <Compile Include="Trading\Restocking\Requirements\Design\RestockRequirementEditor.cs" />
+    <Compile Include="Trading\Restocking\Requirements\IRestockRequirement.cs" />
+    <Compile Include="Trading\Restocking\Requirements\SharedChestHasSpecificTierRestockRequirement.cs" />
+    <Compile Include="UI\Dialog.cs" />
+    <Compile Include="UI\DialogTextField.cs" />
+    <Compile Include="UI\FullBlendInOutUIElement.cs" />
+    <Compile Include="QuickActions\IQuickAction.cs" />
+    <Compile Include="QuickActions\QuickActionSlot.cs" />
+    <Compile Include="QuickActions\QuickActionSlotList.cs" />
+    <Compile Include="QuickActions\UseSkillAction.cs" />
+    <Compile Include="UI\IInventoryService.cs" />
+    <Compile Include="UI\ItemInfoDisplay.cs" />
+    <Compile Include="UI\ItemInfoVisualizationDrawContext.cs" />
+    <Compile Include="UI\TextBlockSplitter.cs" />
+    <Compile Include="UI\UIColors.cs" />
+    <Compile Include="UI\UIFonts.cs" />
+    <Compile Include="UI\VolumeControl.cs" />
+    <Compile Include="UI\ZeldaScrollBar.cs" />
+    <Compile Include="UI\ZeldaUIElement.cs" />
+    <Compile Include="UI\ZeldaUserInterface.cs" />
+    <Compile Include="Waypoints\Design\ZeldaPathEditor.cs" />
+    <Compile Include="Waypoints\WaypointPathFollower.cs" />
+    <Compile Include="Waypoints\ZeldaPath.cs" />
+    <Compile Include="Waypoints\ZeldaPathSegment.cs" />
+    <Compile Include="Waypoints\ZeldaPathSegmentTileHandler.cs" />
+    <Compile Include="Waypoints\ZeldaWaypoint.cs" />
+    <Compile Include="Waypoints\ZeldaWaypointGraphDataFactory.cs" />
+    <Compile Include="Waypoints\ZeldaWaypointMap.cs" />
+    <Compile Include="Waypoints\ZeldaWaypointMap.ReaderWriter.cs" />
+    <Compile Include="Weather\Creators\AmbientRainStormCreator.cs" />
+    <Compile Include="Weather\Creators\BaseWeatherCreator.cs" />
+    <Compile Include="Weather\Creators\Design\WeatherCreatorTypeNameEditor.cs" />
+    <Compile Include="Weather\Creators\FogCreator.cs" />
+    <Compile Include="Weather\Creators\FogNoiseCreator.cs" />
+    <Compile Include="Weather\Creators\LinearEffectWeatherCreator.cs" />
+    <Compile Include="Weather\Creators\MistCreator.cs" />
+    <Compile Include="Weather\Creators\NoiseCreator.cs" />
+    <Compile Include="Weather\Creators\RainCreator.cs" />
+    <Compile Include="Weather\Creators\RainStormCreator.cs" />
+    <Compile Include="Weather\Creators\SnowCreator.cs" />
+    <Compile Include="Weather\Implementation\NoisyWeather.cs" />
+    <Compile Include="Weather\Implementation\FoggyWeather.cs" />
+    <Compile Include="Weather\Implementation\AmbientRainWeather.cs" />
+    <Compile Include="Weather\Implementation\RainyWeather.cs" />
+    <Compile Include="Weather\Implementation\SnowyWeather.cs" />
+    <Compile Include="Weather\IWeather.cs" />
+    <Compile Include="Weather\IWeatherCreator.cs" />
+    <Compile Include="Weather\Implementation\LinearEffectWeather.cs" />
+    <Compile Include="Weather\Implementation\BaseWeather.cs" />
+    <Compile Include="Weather\Creators\MultiWeatherCreator.cs" />
+    <Compile Include="Weather\Settings\DefaultWeatherMachineSettings.cs" />
+    <Compile Include="Weather\WeatherMachine.cs" />
+    <Compile Include="Events\ZeldaEventManager.cs" />
+    <Compile Include="Scene\ZeldaScenesCache.cs" />
+    <Compile Include="Scene\ZeldaScene.Storage.cs" />
+    <Compile Include="Tiles\ZeldaTileMapFloorTag.cs" />
+    <Compile Include="Errors\LogHelper.cs" />
+    <Compile Include="Entities\ZeldaCamera.cs" />
+    <Compile Include="ZeldaDrawContext.cs" />
+    <Compile Include="Entities\ZeldaEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\ZeldaScene.cs" />
+    <Compile Include="Saving\ZeldaTypeActivator.cs" />
+    <Compile Include="ZeldaUpdateContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actions\ActionResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActionResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Affixes\AffixResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AffixResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizableTextResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizableTextResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quests\QuestResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuestResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talents\Classes\ClassResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClassResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talents\TalentResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TalentResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tiles\IZeldaTileHandler.cs" />
+    <Compile Include="Attacks\Ranged\Methods\ProjectileDamageMethod.cs" />
+    <Compile Include="Attacks\Ranged\ProjectileMeleeAttack.cs" />
+    <Compile Include="Audio\ZeldaAudioSystem.cs" />
+    <Compile Include="Status\Cost\PercentageOfBaseAndTotalManaCost.cs" />
+    <Compile Include="Status\Cost\PercentageOfTotalManaCost.cs" />
+    <Compile Include="Design\DesignTime.cs" />
+    <Compile Include="Design\BaseZeldaObjectCreationEditor.cs" />
+    <Compile Include="Entities\Interfaces\ILaternOwner.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfLightSuffix.cs" />
+    <Compile Include="Latern.cs" />
+    <Compile Include="Graphics\Design\SpriteEditor.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\RandomOneDirAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Drawing\ITintedDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\Interfaces\IEntityOwned.cs" />
+    <Compile Include="Entities\Interfaces\IEntityUpdateLogic.cs" />
+    <Compile Include="Entities\Interfaces\IStatefulEntityUpdateLogic.cs" />
+    <Compile Include="Entities\Interfaces\IZeldaEntity.cs" />
+    <Compile Include="Entities\Projectiles\Interfaces\IProjectileUpdateLogic.cs" />
+    <Compile Include="Entities\Projectiles\Interfaces\IStatefulProjectileUpdateLogic.cs" />
+    <Compile Include="Entities\Spawning\Groups\DayNightSpecificEnemyRespawnGroup.cs" />
+    <Compile Include="Entities\Spawning\Groups\IEnemyRespawnGroup.cs" />
+    <Compile Include="Entities\Spawning\SpawnConstants.cs" />
+    <Compile Include="Factions\Design\FactionEditor.cs" />
+    <Compile Include="Graphics\Tinting\BlendInColorTint.cs" />
+    <Compile Include="Graphics\Tinting\BlendOutColorTint.cs" />
+    <Compile Include="Graphics\Tinting\TimedColorTint.cs" />
+    <Compile Include="Core\Interfaces\IZeldaUpdateable.cs" />
+    <Compile Include="Items\Affixes\Prefixes\EnrichedPrefix.cs" />
+    <Compile Include="Items\Affixes\Prefixes\ScintillantPrefix.cs" />
+    <Compile Include="Items\Affixes\Suffixes\OfFluencySuffix.cs" />
+    <Compile Include="Items\Design\ItemEditor.cs" />
+    <Compile Include="Items\Design\ItemNameEditor.cs" />
+    <Compile Include="Items\ItemSounds.cs" />
+    <Compile Include="Items\Item\SpecialItemType.cs" />
+    <Compile Include="Items\Sets\Design\SetEditor.cs" />
+    <Compile Include="Items\Sets\EquipmentSetProperties.cs" />
+    <Compile Include="Items\Sets\ISet.cs" />
+    <Compile Include="Items\Sets\ISetBonus.cs" />
+    <Compile Include="Items\Sets\ISetItem.cs" />
+    <Compile Include="Items\Sets\IStatusSetBonus.cs" />
+    <Compile Include="Items\Sets\Set.cs" />
+    <Compile Include="Items\Sets\ISetDatabase.cs" />
+    <Compile Include="Items\Sets\SetDatabase.cs" />
+    <Compile Include="Items\Sets\SetItem.cs" />
+    <Compile Include="Items\Sets\StatusSetBonus.cs" />
+    <Compile Include="Items\UseEffects\SchottlanderEffect.cs" />
+    <Compile Include="Items\UseEffects\TemporaryStatusEffect.cs" />
+    <Compile Include="Saving\Context\Deserialization\DeserializationContext.cs" />
+    <Compile Include="Saving\Context\Deserialization\IZeldaDeserializationContext.cs" />
+    <Compile Include="Saving\Context\Deserialization\ISceneDeserializationContext.cs" />
+    <Compile Include="Saving\Context\ContextExtensions.cs" />
+    <Compile Include="Saving\Context\Serialization\ISceneSerializationContext.cs" />
+    <Compile Include="Saving\Context\Serialization\IZeldaSerializationContext.cs" />
+    <Compile Include="Saving\Context\Deserialization\SceneDeserializationContext.cs" />
+    <Compile Include="Saving\Context\Serialization\SceneSerializationContext.cs" />
+    <Compile Include="Saving\Context\Serialization\SerializationContext.cs" />
+    <Compile Include="Saving\IMaybeSaved.cs" />
+    <Compile Include="Saving\IWorldStatusProvider.cs" />
+    <Compile Include="Saving\Storage\IntegerStorage.cs" />
+    <Compile Include="Saving\Storage\IStorage.cs" />
+    <Compile Include="Saving\Storage\IValueStorage.cs" />
+    <Compile Include="Saving\Storage\DataStore.cs" />
+    <Compile Include="Skills\Magic\FirevortexSkill.cs" />
+    <Compile Include="Status\Containers\ChanceToBeContainer.cs" />
+    <Compile Include="Status\Containers\ChanceToContainer.cs" />
+    <Compile Include="Status\Containers\EquipmentSlotStatModifierContainer.cs" />
+    <Compile Include="Status\Containers\ExtendedChanceToBeContainer.cs" />
+    <Compile Include="Status\Containers\ExtendedChanceToContainer.cs" />
+    <Compile Include="Status\Containers\SpellPowerContainer.cs" />
+    <Compile Include="Status\Containers\SpellResistanceContainer.cs" />
+    <Compile Include="Status\Damage\Containers\DamageSourceContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\CriticalDamageBonusContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\DamageDoneAgainstRaceContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\DamageDoneContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\DamageDoneWithSchoolContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\DamageDoneWithSourceContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\ElementalDamageDoneContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\ExtendedDamageDoneContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Done\SpecialDamageDoneContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Taken\DamageTakenContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Taken\DamageTakenFromSchoolContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Taken\DamageTakenFromSourceContainer.cs" />
+    <Compile Include="Status\Damage\Containers\DamageSchoolContainer.cs" />
+    <Compile Include="Status\Damage\Containers\Taken\ElementalDamageTakenContainer.cs" />
+    <Compile Include="Status\Damage\Containers\ElementalSchoolContainer.cs" />
+    <Compile Include="Status\Damage\DamageTypeInfo.cs" />
+    <Compile Include="Status\Damage\Effects\Done\CriticalDamageBonusEffect.cs" />
+    <Compile Include="Status\Damage\Effects\DamageSchoolEffect.cs" />
+    <Compile Include="Status\Damage\Effects\DamageSourceEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Done\DamageDoneAgainstRaceEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Done\DamageDoneWithSchoolEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Done\DamageDoneWithSourceEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Done\ElementalDamageDoneEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Done\SpecialDamageDoneEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Taken\DamageTakenFromSchoolEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Taken\DamageTakenFromSourceEffect.cs" />
+    <Compile Include="Status\Damage\Effects\Taken\ElementalDamageTakenEffect.cs" />
+    <Compile Include="Status\Damage\Effects\ElementalSchoolEffect.cs" />
+    <Compile Include="Status\Damage\Enumerations\DamageSchool.cs" />
+    <Compile Include="Status\Damage\Enumerations\DamageSource.cs" />
+    <Compile Include="Status\Damage\Enumerations\SpecialDamageType.cs" />
+    <Compile Include="Status\Effects\LightRadiusEffect.cs" />
+    <Compile Include="Status\Effects\SpellHasteEffect.cs" />
+    <Compile Include="Status\Effects\Design\KnownStatusEffect.cs" />
+    <Compile Include="Status\Effects\Design\StatusEffectEditor.cs" />
+    <Compile Include="Status\Effects\SpellPenetrationEffect.cs" />
+    <Compile Include="Status\Effects\SpellPowerEffect.cs" />
+    <Compile Include="Status\Hooks\Design\StatusHookEditor.cs" />
+    <Compile Include="Status\Hooks\HitCritHookMode.cs" />
+    <Compile Include="Status\Hooks\OnAttackHook.cs" />
+    <Compile Include="Status\Hooks\OnCastHook.cs" />
+    <Compile Include="Status\Hooks\StatusHook.cs" />
+    <Compile Include="Status\Procs\Chances\Design\ProcChanceEditor.cs" />
+    <Compile Include="Status\Procs\Chances\FixedProcChance.cs" />
+    <Compile Include="Status\Procs\Chances\IProcChance.cs" />
+    <Compile Include="Status\Procs\Chances\PerMinuteProcChance.cs" />
+    <Compile Include="Status\Procs\Chances\PerMinuteAttackSpeedRelatedProcChance.cs" />
+    <Compile Include="Status\Hooks\IStatusHook.cs" />
+    <Compile Include="Status\Procs\ProcEffect.cs" />
+    <Compile Include="Status\Procs\TimedStatusProcEffect.cs" />
+    <Compile Include="Talents\Magic\AppliedImpactResearch.cs" />
+    <Compile Include="Talents\Magic\FirevortexTalent.cs" />
+    <Compile Include="Talents\Magic\ImpactTheoryTalent.cs" />
+    <Compile Include="Talents\Magic\MagicalBalanceTalent.cs" />
+    <Compile Include="Talents\Magic\RazorWindsTalent.cs" />
+    <Compile Include="Talents\Melee\RevitalizingStrikesTalent.cs" />
+    <Compile Include="Talents\Support\RackingPainsTalent.cs" />
+    <Compile Include="Core\Timing\ITimer.cs" />
+    <Compile Include="Core\Timing\Timer.cs" />
+    <Compile Include="Core\Timing\TimerMap.cs" />
+    <Compile Include="Core\Timing\UnsavedTimer.cs" />
+    <Compile Include="Trading\IMerchant.cs" />
+    <Compile Include="Trading\Merchant.cs" />
+    <Compile Include="Trading\Restocking\Methods\AfterWorldTimeAndOnCreationRestockMethod.cs" />
+    <Compile Include="Trading\Restocking\Methods\AfterWorldTimeRestockMethod.cs" />
+    <Compile Include="Trading\Restocking\Methods\Design\RestockMethodEditor.cs" />
+    <Compile Include="Trading\Restocking\Methods\IRestockMethod.cs" />
+    <Compile Include="Trading\MerchantItem.cs" />
+    <Compile Include="Trading\MerchantSellList.cs" />
+    <Compile Include="Trading\Restocking\Methods\OnMerchantCreatedRestockMethod.cs" />
+    <Compile Include="Trading\Restocking\Methods\RestockMethod.cs" />
+    <Compile Include="Trading\Restocking\Modes\ByOneButLimitToInitialRestocker.cs" />
+    <Compile Include="Trading\Restocking\Modes\Design\RestockerEditor.cs" />
+    <Compile Include="Trading\Restocking\Modes\IRestocker.cs" />
+    <Compile Include="Trading\Restocking\Modes\ByOneRestocker.cs" />
+    <Compile Include="Trading\Restocking\Modes\ToInitialRestocker.cs" />
+    <Compile Include="Trading\UI\IMerchantWindowService.cs" />
+    <Compile Include="Weather\IPauseableWeather.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attacks\HitEffects\UniqueTimedAuraAttackHitEffectWrapper.cs" />
+    <Compile Include="Attacks\Limiter\FreelyFireNtimesThenTimedAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\InitiallyLimitThenRedirectToOtherAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\MeleeAttackSpeedBasedAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\IAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\RangedAttackSpeedbasedAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\StubAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\TimedAttackLimiter.cs" />
+    <Compile Include="Attacks\Limiter\TimedForEachTargetAttackLimiter.cs" />
+    <Compile Include="Casting\Spells\FlamesOfPhlegethonSpell.cs" />
+    <Compile Include="Casting\Spells\Methods\FireSpellDamageMethod.cs" />
+    <Compile Include="Attacks\Methods\FixedFireSpellDamageMethod.cs" />
+    <Compile Include="Attacks\Methods\FixedPoisonOverTimeSpellDamageMethod.cs" />
+    <Compile Include="Casting\Spells\FirePillarSpell.cs" />
+    <Compile Include="Casting\Spells\FirewallSpell.cs" />
+    <Compile Include="Casting\Spells\Methods\FirewallDamageMethod.cs" />
+    <Compile Include="Casting\Spells\PoisonCloudSpell.cs" />
+    <Compile Include="Core\Pathing\PathFollowState.cs" />
+    <Compile Include="Core\Properties\IProperty.cs" />
+    <Compile Include="Core\Properties\IPropertyList.cs" />
+    <Compile Include="Core\Properties\PropertyList.cs" />
+    <Compile Include="Core\Properties\Scene\AlsoResetAnotherZoneOnZoneResetProperty.cs" />
+    <Compile Include="Core\Properties\Scene\RedirectZoneResetProperty.cs" />
+    <Compile Include="Core\Properties\UniquePropertyAttribute.cs" />
+    <Compile Include="Core\Requirements\Design\RequirementEditor.cs" />
+    <Compile Include="Design\SceneNameEditor.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\FirePolarity.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\MagicalPolarity.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\NaturePolarity.cs" />
+    <Compile Include="Entities\Behaviours\DespawnAfterAnimationEndedBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RemoveAfterAnimationEndedBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\RemoveAfterAnimationEndedNtimesBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\DespawnAfterBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\MultiBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\ResizeToCurrentSpriteBehaviour.cs" />
+    <Compile Include="Entities\DamageEffectEntity.cs" />
+    <Compile Include="Entities\Drawing\IAnimatedDrawDataAndStrategy.cs" />
+    <Compile Include="Entities\EntityPool.cs" />
+    <Compile Include="Entities\Traps\DamageTrap.cs" />
+    <Compile Include="Graphics\BloomDrawingPipeline.cs" />
+    <Compile Include="Graphics\NormalDrawingPipeline.cs" />
+    <Compile Include="Graphics\Design\TextureEditor.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\BossPolarity.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\BossBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\IncreaseSizeAndStrengthOnPolarityChangeBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\Polarity\PolarityBehaviour.cs" />
+    <Compile Include="Entities\Behaviours\Bosses\HellChicken\SpawnAddsOnPolarityChangeBehaviour.cs" />
+    <Compile Include="Entities\Drawing\Implementation\1D\OneDirMoveStandAttackAnimDrawDataAndStrategy.cs" />
+    <Compile Include="Core\Interfaces\ICooldownDependant.cs" />
+    <Compile Include="Core\Requirements\IRequirement.cs" />
+    <Compile Include="Core\Requirements\Implementations\IsUseableInSpecificScene.cs" />
+    <Compile Include="Entities\Interfaces\IMoveableEntity.cs" />
+    <Compile Include="Entities\Spawning\SpawnHelper.cs" />
+    <Compile Include="Events\Other\TileAreaClearEvent.cs" />
+    <Compile Include="Events\Player\TeleportPlayerEvent.cs" />
+    <Compile Include="Graphics\DrawingPipeline.cs" />
+    <Compile Include="Graphics\HighDynamicRangeDrawingPipeline.cs" />
+    <Compile Include="Graphics\IDrawingPipeline.cs" />
+    <Compile Include="Graphics\IViewToWindowRescaler.cs" />
+    <Compile Include="Graphics\Particles\Settings\DefaultRainEmitterSettings.cs" />
+    <Compile Include="Graphics\Particles\Settings\DefaultSnowEmitterSettings.cs" />
+    <Compile Include="Graphics\Particles\Settings\Design\EmitterSettingsEditor.cs" />
+    <Compile Include="Graphics\Particles\Settings\Design\KnownEmitterSetting.cs" />
+    <Compile Include="Graphics\Particles\Settings\EmitterSettings.cs" />
+    <Compile Include="Graphics\Particles\Settings\IEmitterSettings.cs" />
+    <Compile Include="Graphics\Particles\Settings\RandomFromListEmitterSettings.cs" />
+    <Compile Include="Graphics\Tinting\Design\ColorTintEditor.cs" />
+    <Compile Include="Graphics\Tinting\Design\KnownColorTint.cs" />
+    <Compile Include="Graphics\Tinting\LinearColorReplacementTint.cs" />
+    <Compile Include="Graphics\Tinting\LinearColorTint.cs" />
+    <Compile Include="Graphics\Tinting\RandomFromListColorTint.cs" />
+    <Compile Include="Graphics\Tinting\ReplacementTint.cs" />
+    <Compile Include="Items\Affixes\Prefixes\PulsatingPrefix.cs" />
+    <Compile Include="Items\Item\IItemDestructionSettings.cs" />
+    <Compile Include="Items\UseEffects\TeleportationEffect.cs" />
+    <Compile Include="Ocarina\Songs\Design\SongTypeNameEditor.cs" />
+    <Compile Include="Ocarina\Songs\Teleportation\RouteOfDinTeleportationSong.cs" />
+    <Compile Include="Quests\Events\LearnSongEvent.cs" />
+    <Compile Include="Scene\SceneSettings.cs" />
+    <Compile Include="Scene\ZeldaSceneDrawer.cs" />
+    <Compile Include="Skills\ISkillProvider.cs" />
+    <Compile Include="Skills\Magic\FirewallSkill.cs" />
+    <Compile Include="Skills\Magic\FlamesOfPhlegethonSkill.cs" />
+    <Compile Include="Skills\Magic\PyromaniaSkill.cs" />
+    <Compile Include="Skills\SkillCooldownEffect.cs" />
+    <Compile Include="Talents\Classes\CharacterClass.cs" />
+    <Compile Include="Talents\Classes\CharacterClassKey.cs" />
+    <Compile Include="Talents\Classes\CharacterClassTalentKey.cs" />
+    <Compile Include="Talents\Classes\CharacterClassList.cs" />
+    <Compile Include="Talents\Classes\CharacterClassTalentMap.cs" />
+    <Compile Include="Talents\Classes\ClassResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Talents\Magic\FirewallTalent.cs" />
+    <Compile Include="Talents\Magic\FlamesOfPhlegethonTalent.cs" />
+    <Compile Include="Talents\Magic\PiercingFireTalent.cs" />
+    <Compile Include="Talents\Magic\PyromaniaTalent.cs" />
+    <Compile Include="Talents\SkillTalent.TSkill.cs" />
+    <Compile Include="Talents\TalentTreeStatistics.cs" />
+    <Compile Include="Tiles\DefaultTileHandler.cs" />
+    <Compile Include="Tiles\FlyingTileHandler.cs" />
+    <Compile Include="Trading\IMerchantSellList.cs" />
+    <Compile Include="Weather\Creators\IWeatherCreatorMap.cs" />
+    <Compile Include="Weather\Creators\WeatherCreatorMap.cs" />
+    <Compile Include="Weather\Creators\Providers\IWeatherCreatorProvider.cs" />
+    <Compile Include="Weather\IWeatherMachine.cs" />
+    <Compile Include="Weather\Settings\IWeatherMachineSettings.cs" />
+    <Compile Include="Weather\Creators\Providers\MonthBasedRandomWeatherCreatorProvider.cs" />
+    <Compile Include="Weather\Settings\WeatherMachineSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\Enchants\" />
+    <Folder Include="Items\Affixes\Suffixes\Bad\" />
+    <Folder Include="Items\Item\DestructionSettings\" />
+    <Folder Include="Skills\Support\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripting\DSL.rb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

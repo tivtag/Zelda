@@ -1,0 +1,2478 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Math.Graph</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Math.Graph.Algorithms.AStar`2">
+            <summary>
+            Implements the A* algorithm for <see cref="T:Atom.Math.Graph.Graph`2"/>s
+            that store <see cref="T:Atom.Math.IPositionable2"/> data in their vertices.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored by the vertices of the <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            Must implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.Algorithms.AStar`2.Source">
+            <summary>
+            Gets the source <see cref="T:Atom.Math.Graph.Vertex`2"/> of the last <see cref="M:Atom.Math.Graph.Algorithms.AStar`2.Search(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})"/>.
+            </summary>
+            <value>The source vertex of the last AStar search.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Algorithms.AStar`2.Target">
+            <summary>
+            Gets the target <see cref="T:Atom.Math.Graph.Vertex`2"/> of the last <see cref="M:Atom.Math.Graph.Algorithms.AStar`2.Search(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})"/>.
+            </summary>
+            <value>The target vertex of the last AStar search.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Algorithms.AStar`2.IsPathFound">
+            <summary>
+            Gets a value indicating whether a path has been found for the last <see cref="M:Atom.Math.Graph.Algorithms.AStar`2.Search(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})"/>.
+            </summary>
+            <value>
+            Returns <see langword="true"/> if a path could be found; otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.GetFoundPath">
+            <summary>
+            Gets the array of <see cref="T:Atom.Math.Graph.Edge`2"/>s representing
+            the path found in the last <see cref="M:Atom.Math.Graph.Algorithms.AStar`2.Search(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})"/>.
+            </summary>
+            <returns>
+            The found path; or null if no path has been found.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.#ctor(Atom.Math.Graph.Graph{`0,`1})">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Algorithms.AStar`2"/> class.
+            </summary>
+            <param name="graph">
+            The graph on which the A* algorithm will perform the search.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.Initialize(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Initializes AStar before performing a search.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">StartNode and EndNode cannot be null.</exception>
+            <param name="source">The node from which the path must start.</param>
+            <param name="target">The node to which the path must end.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.Search(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Searches the best path from the <paramref name="source"/> vertex to the <paramref name="target"/> vertex.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="source"/> or <paramref name="target"/> is null.
+            </exception>
+            <param name="source">The vertex from which the path must start.</param>
+            <param name="target">The vertex to which the path must end.</param>
+            <returns>
+            Returns <see langword="true"/> if a path could be found; or
+            otherwise, if the search has failed, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.NextStep">
+            <summary>
+            Does the next step in the A* search.
+            </summary>
+            <returns>
+            Returns <see langword="true"/> if the search should continue;
+            or otherwise <see langword="false"/> if the search has failed or completed.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.AStar`2.Propagate(Atom.Math.Graph.Track{`0,`1})">
+            <summary>
+            Continues the search.
+            </summary>
+            <param name="bestTrack">
+            The currently best track.
+            </param>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.source">
+            <summary>
+            The source vertex at which the search has started.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.target">
+            <summary>
+            The target vertex at which the search should end.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.heuristic">
+            <summary>
+            The heuristic used to find the the path.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.leafToGoBackUp">
+            <summary>
+            The currently processed track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.open">
+            <summary>
+            The open and closed lists of nodes used by the A* algorithm.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.closed">
+            <summary>
+            The open and closed lists of nodes used by the A* algorithm.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.graph">
+            <summary>
+            The graph this A* algorithm searches in. 
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Algorithms.AStar`2.trackComparer">
+            <summary>
+            The comparer which is used to identify the better of two tracks.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Algorithms.Cycles">
+            <summary>
+            Provides algorithms that discover information
+            about the cycles in a Graph.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.Find``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Finds the cycles in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="graph">
+            The graph to investigate.
+            </param>
+            <returns>
+            A new list that contains all cycles in this Graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.Find``2(Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Finds all cyclic walks starting and ending at the given <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="vertex">
+            The start vertex.
+            </param>
+            <returns>
+            The list of cyclic walks.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.FindWalks``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},System.Collections.Generic.Stack{Atom.Math.Graph.Vertex{``0,``1}},System.Collections.Generic.IList{System.Collections.Generic.IList{Atom.Math.Graph.Vertex{``0,``1}}})">
+            <summary>
+            Helper method that finds the cycles in a graph recursively.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="startVertex">
+            The start vertex.
+            </param>
+            <param name="currentVertex">
+            The current vertex.
+            </param>
+            <param name="previousVertex">
+            The previously visited vertex.
+            </param>
+            <param name="currentWalk">
+            The current walk in the graph.
+            </param>
+            <param name="cycles">
+            The list of all cycles.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.FindStatus``2(Atom.Math.Graph.Graph{``0,``1},System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Finds information about the cycles in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <remarks>
+            This function is a-lot faster and memory efficient than 'Find'.
+            </remarks>
+            <param name="graph">
+            The graph to investigate.
+            </param>
+            <param name="minimum">Will contain the length of the minimum cycle.</param>
+            <param name="maximum">Will contain the length of the maximum cycle.</param>
+            <param name="cycleCount">WIll contain the number of cycles in the graph.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.FindStatus``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},System.Collections.Generic.Stack{Atom.Math.Graph.Vertex{``0,``1}},System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Helper method that finds information about the cycles in a graph recursively.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="startVertex">
+            The start vertex.
+            </param>
+            <param name="currentVertex">
+            The current vertex.
+            </param>
+            <param name="previousVertex">
+            The previously visited vertex.
+            </param>
+            <param name="currentWalk">
+            The current walk in the graph.
+            </param>
+            <param name="minimum">Will contain the length of the minimum cycle.</param>
+            <param name="maximum">Will contain the length of the maximum cycle.</param>
+            <param name="cycleCount">WIll contain the number of cycles in the graph.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.FindMinimumLength``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},System.Collections.Generic.Stack{Atom.Math.Graph.Vertex{``0,``1}},System.Int32@)">
+            <summary>
+            Helper method that finds the length of the minimum cycle.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <remarks>
+            We can break the search for a smaller cycle if we found a cycle of length 3
+            because the <see cref="T:Atom.Math.Graph.Graph`2"/> class doesn't allow self-loops or double-edges.
+            </remarks>
+            <param name="startVertex">
+            The start vertex.
+            </param>
+            <param name="currentVertex">
+            The current vertex.
+            </param>
+            <param name="previousVertex">
+            The previously visited vertex.
+            </param>
+            <param name="currentWalk">
+            The current walk in the graph.
+            </param>
+            <param name="minimum">
+            Will contain the length of the minimum cycle.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.FindUsingTarjan``2(Atom.Math.Graph.Graph{``0,``1},System.Boolean)">
+            <summary>
+            Finds cycles in a graph using Tarjan's strongly connected components algorithm.
+            See http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="graph">
+            The input graph.
+            </param>
+            <param name="excludeSingleItems">
+            if set to <c>true</c> nodes with no edges are excluded.
+            </param>
+            <returns>
+            A list of of vertice arrays (paths) that form cycles in the graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Cycles.TarjansStronglyConnectedComponentsAlgorithm``2(System.Boolean,Atom.Math.Graph.Vertex{``0,``1},System.Collections.Generic.IDictionary{Atom.Math.Graph.Vertex{``0,``1},System.Int32},System.Collections.Generic.IDictionary{Atom.Math.Graph.Vertex{``0,``1},System.Int32},System.Collections.Generic.ICollection{Atom.Math.Graph.Vertex{``0,``1}[]},System.Collections.Generic.Stack{Atom.Math.Graph.Vertex{``0,``1}},System.Int32)">
+            <summary>
+            Executes Tarjan's algorithm on the graph.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="excludeSinlgeItems">if set to <c>true</c> [exclude sinlge items].</param>
+            <param name="vertex">The vertex to start with.</param>
+            <param name="indices">The current indices.</param>
+            <param name="lowLinks">The current lowlinks.</param>
+            <param name="connected">The connected components.</param>
+            <param name="stack">The stack.</param>
+            <param name="index">The current index.</param>
+        </member>
+        <member name="T:Atom.Math.Graph.Algorithms.Dijkstra`2">
+            <summary>
+            Provides an implementation of Dijkstra's algorithm 
+            that finds the shortest paths to all other vertices from the specified source vertex.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            Must implement IDistanceData.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Dijkstra`2.FindShortestPaths(Atom.Math.Graph.Graph{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Finds the shortest paths to all other vertices from the specified source vertex using Dijkstra's Algorithm.
+            </summary>
+            <param name="graph">The weighted graph.</param>
+            <param name="source">The source vertex.</param>
+            <returns>A graph representing the shortest paths from the source node to all other nodes in the graph.</returns>  
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="graph"/> or <paramref name="source"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            If the specified <paramref name="source"/> Vertex is not part of the specified <paramref name="graph"/>.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Dijkstra`2.BuildGraph(Atom.Math.Graph.Graph{`0,`1},Atom.Math.Graph.Vertex{`0,`1},System.Collections.Generic.Dictionary{Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.VertexInfo{`0,`1}})">
+            <summary>
+            Builds the graph for Dijkstra's algorithm with the edges followed.
+            </summary>
+            <param name="graph">The weighted graph.</param>
+            <param name="source">The from vertex.</param>
+            <param name="vertexStatus">The vertex status.</param>
+            <returns>The Dijkstra graph.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Algorithms.MinimalSpanningTree">
+            <summary>
+            Provides mechanisms to calculate the minimal spanning tree of a given
+            input <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.MinimalSpanningTree.Prim``2(Atom.Math.Graph.Graph{``0,``1},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Finds the minimal spanning tree of the supplied graph using Prim's algorithm.
+            </summary>
+            <param name="inputGraph">The weighted input graph.</param>
+            <param name="fromVertex">The vertex to start from.</param>
+            <returns>A graph representing the minimal spanning tree of the graph supplied.</returns>
+            <typeparam name="TVertexData">
+            The type of data stored by the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="inputGraph"/> and/or <paramref name="fromVertex"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            If the specified <paramref name="fromVertex"/> could not be found in the specified <paramref name="inputGraph"/>.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.MinimalSpanningTree.BuildPrimGraph``2(Atom.Math.Graph.Graph{``0,``1},System.Collections.Generic.Dictionary{Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.VertexInfo{``0,``1}})">
+            <summary>
+            Helper method that builds a new graph.
+            </summary>
+            <param name="inputGraph">The weighted input graph.</param>
+            <param name="vertexStatus">The vertex status.</param>
+            <returns>A new graph from the edges followed.</returns>
+            <typeparam name="TVertexData">
+            The type of data stored by the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.MinimalSpanningTree.Kruskal``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Finds the minimal spanning tree of the given Graph using
+            Kruskal's algorithm.
+            </summary>
+            <remarks>
+            Taken (and then modified) from the great library 'NGenerics' http://www.codeplex.com/NGenerics/.
+            Thanks for the great work!
+            </remarks>
+            <param name="inputGraph">The weighted input graph.</param>
+            <returns>
+            A graph representing the minimal spanning tree of the graph supplied.
+            </returns>
+            <typeparam name="TVertexData">
+            The type of data stored by the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="T:Atom.Math.Graph.Algorithms.Traversal">
+            <summary>
+            Provides mechanism for traversing over the vertices and edges of a Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Traversal.DepthFirst``2(Atom.Patterns.Visitor.OrderedVisitor{Atom.Math.Graph.Vertex{``0,``1}},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Performs a depth-first traversal, starting at the specified vertex.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="visitor">
+            The visitor to use. Note that in-order is not applicable in a graph.
+            </param>
+            <param name="startVertex">
+            The vertex to start from.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Traversal.DepthFirstCore``2(Atom.Patterns.Visitor.OrderedVisitor{Atom.Math.Graph.Vertex{``0,``1}},Atom.Math.Graph.Vertex{``0,``1},System.Collections.Generic.List{Atom.Math.Graph.Vertex{``0,``1}})">
+            <summary>
+            Performs a depth-first traversal.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="visitor">The visitor.</param>
+            <param name="startVertex">The start vertex.</param>
+            <param name="visitedVertices">The visited vertices.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Traversal.BreadthFirst``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Patterns.Visitor.IVisitor{Atom.Math.Graph.Vertex{``0,``1}})">
+            <summary>
+            Performs a breadth-first traversal from the specified vertex.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="startVertex">The vertex to start from.</param>
+            <param name="visitor">The visitor to use.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Traversal.Topological``2(Atom.Math.Graph.Graph{``0,``1},Atom.Patterns.Visitor.IVisitor{Atom.Math.Graph.Vertex{``0,``1}})">
+            <summary>
+            Allows a visitor to visit each vertex in topological order.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="graph">
+            The input graph to visit.
+            </param>
+            <param name="visitor">
+            The visitor to use.
+            </param>
+            <returns>
+            The number of items visited. If less than graph.VertexCount then
+            the specified graph has circles.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Algorithms.Voltage">
+            <summary>
+            Provides a mechanism to receive the (right) derivation of a Voltage Graph.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Voltage.Derive``2(Atom.Math.Graph.Graph{``0,``1},System.Int32)">
+            <summary>
+            Returns the (right) derivation of the given voltage graph.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored in the vertices. 
+            Must implement <see cref="T:Atom.INameable"/> and <see cref="T:System.IEquatable`1"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored in the edges. 
+            Must implement <see cref="T:Atom.Math.Graph.Data.IVoltageData"/>.
+            </typeparam>
+            <param name="voltageGraph">
+            The input voltage graph.
+            </param>
+            <param name="voltageOrder">
+            The order of the input voltage graph.
+            </param>
+            <returns>
+            The derived voltage graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Voltage.Verify``2(Atom.Math.Graph.Graph{``0,``1},System.Int32)">
+            <summary>
+            Verifies that the given input voltage data is correct.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored in the vertices. 
+            Must implement <see cref="T:Atom.INameable"/> and <see cref="T:System.IEquatable`1"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored in the edges. 
+            Must implement <see cref="T:Atom.Math.Graph.Data.IVoltageData"/>.
+            </typeparam>
+            <param name="voltageGraph">
+            The input voltage graph.
+            </param>
+            <param name="voltageOrder">
+            The order of the input voltage graph.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Algorithms.Voltage.VerifyEdge``2(Atom.Math.Graph.Edge{``0,``1},System.Int32)">
+            <summary>
+            Verifies that the given edge of a voltage graph has valid data.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored in the vertices. 
+            Must implement <see cref="T:Atom.INameable"/> and <see cref="T:System.IEquatable`1"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored in the edges. 
+            Must implement <see cref="T:Atom.Math.Graph.Data.IVoltageData"/>.
+            </typeparam>
+            <param name="edge">
+            The voltage edge to verify.
+            </param>
+            <param name="voltageOrder">
+            The order of the input voltage graph.
+            </param>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.VoltageData">
+            <summary>
+            Defines a basic implementation of the <see cref="T:Atom.Math.Graph.Data.IVoltageData"/> interface.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.VoltageData.Voltage">
+            <summary>
+            Gets or sets the associated voltage value.
+            </summary>
+            <value>The voltage value.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.VoltageData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Data.VoltageData"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.VoltageData.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Data.VoltageData"/> class.
+            </summary>
+            <param name="voltage">The associated voltage value.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.VoltageData.ToString">
+            <summary>
+            Returns a string representation of this instance.
+            </summary>
+            <returns>A string representation of this instance.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.IDistanceData">
+            <summary>
+            Enables the storage of distance information in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.IDistanceData.Distance">
+            <summary>
+            Gets or sets the associated distance value.
+            </summary>
+            <value>The associated distance value.</value>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.IReadOnlyDistanceData">
+            <summary>
+            Enables the receiving of distance information stored in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.IReadOnlyDistanceData.Distance">
+            <summary>
+            Gets the associated distance value.
+            </summary>
+            <value>The associated distance value.</value>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.IReadOnlyWeightData">
+            <summary>
+            Enables the receiving of weight information stored in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.IReadOnlyWeightData.Weight">
+            <summary>
+            Gets the weight stored in this IReadOnlyWeightableData.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.ISignData">
+            <summary>
+            Enables the storage of <see cref="P:Atom.Math.Graph.Data.ISignData.Sign"/> information
+            in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.ISignData.Sign">
+            <summary>
+            Gets or sets the associated <see cref="P:Atom.Math.Graph.Data.ISignData.Sign"/> value.
+            </summary>
+            <value>The associated sign.</value>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.IVoltageData">
+            <summary>
+            Enables the storage of voltage information
+            in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.IVoltageData.Voltage">
+            <summary>
+            Gets or sets the associated voltage value.
+            </summary>
+            <value>The voltage value.</value>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.IWeightData">
+            <summary>
+            Enables the storage of weight information in a Vertex or Edge.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.IWeightData.Weight">
+            <summary>
+            Gets or sets the weight stored in this IWeightableData.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.NameableData">
+            <summary>
+            Provides a basic implementation of the <see cref="T:Atom.INameable"/> interface,
+            mostly used to give vertices in a graph an (unique) name.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.NameableData.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>That name that (should) uniquely identify the Edge or Vertex.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Data.NameableData"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Data.NameableData"/> class.
+            </summary>
+            <param name="name">
+            The name that (should) uniquely identify the Edge or Vertex..
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.Equals(System.Object)">
+            <summary>
+            Returns whether this <see cref="T:Atom.Math.Graph.Data.NameableData"/> object
+            is equal to the given <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">The object to test against.</param>
+            <returns>
+            Returns <see langword="true"/> if they are equal;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.Equals(Atom.Math.Graph.Data.NameableData)">
+            <summary>
+            Returns whether this <see cref="T:Atom.Math.Graph.Data.NameableData"/> object
+            is equal to the given <see cref="T:Atom.Math.Graph.Data.NameableData"/>.
+            </summary>
+            <param name="other">The <see cref="T:Atom.Math.Graph.Data.NameableData"/> to test against.</param>
+            <returns>
+            Returns <see langword="true"/> if they are equal;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.GetHashCode">
+            <summary>
+            Gets the hash code of this <see cref="T:Atom.Math.Graph.Data.NameableData"/> instance.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.NameableData.ToString">
+            <summary>
+            Returns a string representation of this instance.
+            </summary>
+            <returns>A string representation of this instance.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Data.Positonal2VertexData">
+            <summary>
+            Defines Vertex data which represents a position in 2d space.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Data.Positonal2VertexData.Position">
+            <summary>
+            Gets or sets the position stored within this <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/>.
+            </summary>
+            <value>The position stored within this <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/>.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.Positonal2VertexData.#ctor(Atom.Math.Vector2)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/> class.
+            </summary>
+            <param name="position">The position stored within the new <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/>. </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.Positonal2VertexData.ToString">
+            <summary>
+            Returns a string representation of this <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/> instance.
+            </summary>
+            <returns>A string that represents the Positonal2VertexData.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Data.Positonal2VertexData.ToString(System.IFormatProvider)">
+            <summary>
+            Returns a string representation of this <see cref="T:Atom.Math.Graph.Data.Positonal2VertexData"/> instance.
+            </summary>
+            <param name="formatProvider">
+            Provides access to culture-sensitive formatting information.
+            </param>
+            <returns>A string that represents the Positonal2VertexData.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.DefaultGraphDataFactory`2">
+            <summary>
+            Implements an <see cref="T:Atom.Math.Graph.IGraphDataFactory`2"/> that returns default values.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="F:Atom.Math.Graph.DefaultGraphDataFactory`2.Instance">
+            <summary>
+            Represents an instance of the DefaultGraphDataFactory{TVertexData, TEdgeData} class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.DefaultGraphDataFactory`2.BuildVertexData">
+            <summary>
+            Builds the TVertexData stored in a <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <returns>
+            The TVertexData that will be assigned to the Vertex{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.DefaultGraphDataFactory`2.BuildEdgeData">
+            <summary>
+            Builds the TEdgeData stored in a <see cref="T:Atom.Math.Graph.Edge`2"/>.
+            </summary>
+            <returns>
+            The TEdgeData that will be assigned to the Edge{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Edge`2">
+            <summary>
+            Represents an weighted edge in a graph. 
+            An edge connects two vertices (<see cref="T:Atom.Math.Graph.Vertex`2"/>).
+            This class can't be inherited.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data contained within the vertices of the Edge. 
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the Edge.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.Edge`2.From">
+            <summary>
+            Gets the vertex this <see cref="T:Atom.Math.Graph.Edge`2"/> starts from.
+            </summary>
+            <value>The vertex this Edge goes away from.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Edge`2.To">
+            <summary> 
+            Gets the vertex this <see cref="T:Atom.Math.Graph.Edge`2"/> ends at.
+            </summary>
+            <value>The vertex this Edge goes to.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Edge`2.IsDirected">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Edge`2"/> is directed.
+            </summary>
+            <remarks>
+            An edge which is directed only goes from his <see cref="P:Atom.Math.Graph.Edge`2.From"/> to his <see cref="P:Atom.Math.Graph.Edge`2.To"/>.
+            An undirected vertex goes in both directions.
+            </remarks>
+            <value>States whether this Edge is a directed Edge.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Edge`2.Data">
+            <summary>
+            Gets or sets the custom data associated with this <see cref="T:Atom.Math.Graph.Edge`2"/>.
+            </summary>
+            <remarks>
+            If the specified TEdgeData object implements <see cref="T:Atom.IOwnedBy"/>{Edge{TVertexData, TEdgeData}} then the owner
+            is set to this Edge.
+            </remarks>
+            <value>The additional data associated with this Edge.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.Edge`2.#ctor(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1},System.Boolean,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Edge`2"/> class.
+            </summary>
+            <param name="fromVertex"> 
+            The vertex the new Edge starts from.
+            </param>
+            <param name="toVertex"> 
+            The vertex the new Edge ends at. 
+            </param>
+            <param name="data">
+            The data associated with the new Edge.
+            </param>
+            <param name="isDirected"> 
+            Specifies whether the new Edge is a directed edge.
+            </param>
+            <exception cref="T:System.ArgumentNullException"> 
+            If <paramref name="fromVertex"/> or <paramref name="toVertex"/> is null. 
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Edge`2.GetPartnerVertex(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Gets the partner vertex in this Edge relationship.
+            </summary>
+            <exception cref="T:System.ArgumentException"> 
+            If the specified <paramref name="vertex"/> is not part of this Edge. 
+            </exception>
+            <param name="vertex">The vertex.</param>
+            <returns>
+            The partner of the vertex specified in this edge relationship.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Edge`2.ToString">
+            <summary>
+            Returns a string representation of this <see cref="T:Atom.Math.Graph.Edge`2"/>.
+            </summary>
+            <returns>A string representation of this <see cref="T:Atom.Math.Graph.Edge`2"/>.</returns>
+        </member>
+        <member name="F:Atom.Math.Graph.Edge`2._data">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Math.Graph.Edge`2.Data"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Edge`2.from">
+            <summary>
+            Stores the vertex this <see cref="T:Atom.Math.Graph.Edge`2"/> starts from.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Edge`2.to">
+            <summary>
+            Stores the vertex this <see cref="T:Atom.Math.Graph.Edge`2"/> ends at.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Edge`2.isDirected">
+            <summary>
+            States whether this Edge{TVertexData, TEdgeData} is directed.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.GraphFactory">
+            <summary>
+            Provides static methods to create various different <see cref="T:Atom.Math.Graph.Graph`2"/>s.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateStar``2(Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Creates a new indirected <see cref="T:Atom.Math.Graph.Graph`2"/> that contains the given <paramref name="vertex"/>
+            and all edges and vertices the vertex connects to.
+            </summary>
+            <param name="vertex">The input vertex.</param>
+            <returns>A new Graph, with cloned vertices.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertex"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateStar``2(System.Int32,Atom.Math.Graph.VertexCreationFunction{``0})">
+            <summary>
+            Creates a new indirected <see cref="T:Atom.Math.Graph.Graph`2"/> that contains N vertices and N-1 edges,
+            where the first vertex connects with all the other vertices.
+            </summary>
+            <param name="order">
+            The order of the star to create.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex given an index.
+            </param>
+            <returns>A new Graph.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="order"/> is less than 1.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreatePath``2(System.Int32,Atom.Math.Graph.VertexCreationFunction{``0})">
+            <summary>
+            Creates a new indirected <see cref="T:Atom.Math.Graph.Graph`2"/> that contains a connected path of N vertices and N-1 edges.
+            </summary>
+            <param name="vertexCount">
+            The number of outer vertices.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex given an index.
+            </param>
+            <returns>A new Graph.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="vertexCount"/> is less than 2.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateComplete``2(System.Int32,Atom.Math.Graph.VertexCreationFunction{``0})">
+            <summary>
+            Creates the Nth complete <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="vertexCount">
+            The number of vertices.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex given an index.
+            </param>
+            <returns>
+            A new complete <see cref="T:Atom.Math.Graph.Graph`2"/> with <paramref name="vertexCount"/> vertices.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="vertexCount"/> is less than 1.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateCompleteBipartite``2(System.Int32,System.Int32,System.Func{System.Int32,System.Boolean,``0})">
+            <summary>
+            Creates the complete bipartite <see cref="T:Atom.Math.Graph.Graph`2"/> Km,n.
+            </summary>
+            <param name="upperVertexCount">
+            The number of vertices on the upper part.
+            </param>
+            <param name="lowerVertexCount">
+            The number of vertices on the lower part.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex.
+            The intager represents the index of the vertex,
+            and the bool represents whether the vertex is part of the upper (true) or the lower (false) sub-graph.
+            </param>
+            <returns>
+            A new complete-bipartite <see cref="T:Atom.Math.Graph.Graph`2"/> with 
+            <paramref name="upperVertexCount"/> + <paramref name="lowerVertexCount"/> vertices.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="upperVertexCount"/> or <paramref name="lowerVertexCount"/> is less than 1.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateCircle``2(System.Int32,Atom.Math.Graph.VertexCreationFunction{``0})">
+            <summary>
+            Creates the cyclic <see cref="T:Atom.Math.Graph.Graph`2"/> with N vertices.
+            </summary>
+            <param name="vertexCount">
+            The number of vertices.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex given an index.
+            </param>
+            <returns>
+            A new complete <see cref="T:Atom.Math.Graph.Graph`2"/> with <paramref name="vertexCount"/> vertices.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="vertexCount"/> is less than 3.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphFactory.CreateBanana``2(System.Int32,System.Int32,Atom.Math.Graph.VertexCreationFunction{``0})">
+            <summary>
+            Creates a Banana <see cref="T:Atom.Math.Graph.Graph`2"/> with N leaves and k-stars.
+            </summary>
+            <param name="leafCount">
+            The number of leaves the new banana graph.
+            </param>
+            <param name="starOrder">
+            The order of the star sub-graphs.
+            </param>
+            <param name="vertexFunction">
+            The function that creates a new Vertex given an index.
+            </param>
+            <returns>
+            A new <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="leafCount"/> is less than 2;
+            or if <paramref name="starOrder"/> is less than 0;
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="vertexFunction"/> is null.
+            </exception>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="T:Atom.Math.Graph.GraphOperations">
+            <summary>
+            Defines operations that act on <see cref="T:Atom.Math.Graph.Graph`2"/>s.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphOperations.Contract``2(Atom.Math.Graph.Edge{``0,``1},Atom.Math.Graph.Graph{``0,``1},System.Boolean)">
+            <summary>
+            Removes the specified Edge{TVertexData, TEdgeData} from the specified Graph{TVertexData, TEdgeData};
+            contracting the graph along the removed edge in the process.
+            </summary>
+            <remarks>
+            A "contraction" of a graph G along the edge e is the result of deleting the edge e from G and then
+            identifying its endpoints. We imagine that the edge e is topologically shrunk ("contracted") to a point,
+            and we denote the result by G/e. The word "contraction" refers to the operation aswell as to the resulting graph.
+            </remarks>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="edge">
+            The edge to remove.
+            </param>
+            <param name="graph">
+            The graph to operate on.
+            </param>
+            <param name="discardExtraAdjacentEdges">
+            States whether double edges are discarded.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphOperations.Cut``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Removes the specified Vertex{TVertexData, TEdgeData} and the Edge{TVertexData, TEdgeData}s that are connected
+            to it. After that the vertices previously connected over the removed vertex are connected using new edges.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="vertex">
+            The vertex to cut out.
+            </param>
+            <param name="graph">
+            The graph to operate on.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphOperations.EdgeComplement``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the edge complement Graph of the specified <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <returns>
+            The edge-complement graph of the graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphOperations.Cross``2(Atom.Math.Graph.Graph{``0,``1},Atom.Math.Graph.Graph{``0,``1},System.Func{Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1},``0})">
+            <summary>
+            Calculates the cartesian product of the given Graphs.
+            </summary>
+            <remarks>
+            The cartesian product of the graphs G and G' is denoted G x G' and
+            defined to be the graph with the vertex set Vg x Vg' and the edge set (Eg x Vg')u(Vg x Eg').
+            </remarks>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="left">The <see cref="T:Atom.Math.Graph.Graph`2"/> on the left side.</param>
+            <param name="right">The <see cref="T:Atom.Math.Graph.Graph`2"/> on the right side.</param>
+            <param name="vertexFunction">
+            The function that is responsible for mapping two vertices together.
+            </param>
+            <returns>
+            The cartesian product of the given Graphs.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphOperations.Join``2(Atom.Math.Graph.Graph{``0,``1},Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Joins (also sometimes called suspense) the given Graphs into a single Graph
+            by connecting all vertices of the <paramref name="first"/> Graph with all vertices of the <paramref name="second"/> Graph.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="first">
+            The first <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </param>
+            <param name="second">
+            The second <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </param>
+            <returns>
+            The suspension of the given graphs.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.GraphMatrices">
+            <summary>
+            Defines static <see cref="T:Atom.Math.Matrix"/> factory methods that take a <see cref="T:Atom.Math.Graph.Graph`2"/> as input.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphMatrices.Adjacency``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the adjacency <see cref="T:Atom.Math.Matrix"/> (VertexCount-X-VertexCount) of the <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>The adjacency matrix of the graph.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphMatrices.WeightedAdjacency``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the (weighted) adjacency <see cref="T:Atom.Math.Matrix"/> (VertexCount-X-VertexCount) of the <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>The weighted adjacency matrix of the graph.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphMatrices.SeidelAdjacency``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the seidel adjacency <see cref="T:Atom.Math.Matrix"/> (VertexCount-X-VertexCount) of the <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            This operation is only valid on simplistic Graphs.
+            </exception>
+            <value>The seidel adjacency matrix of the graph.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphMatrices.Incidence``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the incidence <see cref="T:Atom.Math.Matrix"/> (VertexCount-X-EdgeCount) of the <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>
+            The incidence matrix of the graph.
+            </value>
+        </member>
+        <member name="M:Atom.Math.Graph.GraphMatrices.Laplacian``2(Atom.Math.Graph.Graph{``0,``1})">
+            <summary>
+            Gets the laplacian <see cref="T:Atom.Math.Matrix"/> (VertexCount-X-VertexCount) of the specified <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>
+            The laplacian matrix of the graph.
+            </value>
+        </member>
+        <member name="T:Atom.Math.Graph.IGraphDataFactory`2">
+            <summary>
+            Provides a mechanism for building the objects that contain data in a Vertex or Edge
+            of a Graph.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Math.Graph.IGraphDataFactory`2.BuildVertexData">
+            <summary>
+            Builds the TVertexData stored in a <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <returns>
+            The TVertexData that will be assigned to the Vertex{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.IGraphDataFactory`2.BuildEdgeData">
+            <summary>
+            Builds the TEdgeData stored in a <see cref="T:Atom.Math.Graph.Edge`2"/>.
+            </summary>
+            <returns>
+            The TEdgeData that will be assigned to the Edge{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.EdgeWeightComparer`2">
+            <summary>
+            Imeplement the comparing of weights of <see cref="T:Atom.Math.Graph.Edge`2"/> instances.
+            This is a sealed class.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of the data contained within the vertices of the edges to compare.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.EdgeWeightComparer`2.Instance">
+            <summary>
+            Gets the singleton-instance of the <see cref="T:Atom.Math.Graph.EdgeWeightComparer`2"/> class.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.EdgeWeightComparer`2.instance">
+            <summary>
+            The instance of the <see cref="T:Atom.Math.Graph.EdgeWeightComparer`2"/> class. This is a read-only field.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.EdgeWeightComparer`2.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Atom.Math.Graph.EdgeWeightComparer`2"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.EdgeWeightComparer`2.Compare(Atom.Math.Graph.Edge{`0,`1},Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>
+            Value Condition Less than zerox is less than y.Zerox equals y.Greater than zerox is greater than y.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Graph`2">
+            <summary>
+            An implementation of a Graph data structure.
+            The graph can be either directed or undirected.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="E:Atom.Math.Graph.Graph`2.VertexAdded">
+            <summary>
+            Raised when a Vertex has been added to this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="E:Atom.Math.Graph.Graph`2.EdgeAdded">
+            <summary>
+            Raised when an Edge has been added to this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="E:Atom.Math.Graph.Graph`2.VertexRemoved">
+            <summary>
+            Raised when a Vertex has been removed from this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="E:Atom.Math.Graph.Graph`2.EdgeRemoved">
+            <summary>
+            Raised when an Edge has been removed from this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.Vertices">
+            <summary>
+            Gets the vertices contained in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>The vertices contained in this <see cref="T:Atom.Math.Graph.Graph`2"/>.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.Edges">
+            <summary>
+            Gets the edges contained in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>The edges contained in this <see cref="T:Atom.Math.Graph.Graph`2"/>.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.DataFactory">
+            <summary>
+            Gets the <see cref="T:Atom.Math.Graph.IGraphDataFactory`2"/> responsible for creating TVertexData and TEdgeData objects.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.VertexCount">
+            <summary>
+            Gets the number of vertices in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>
+            The 'order' of a graph is the number of vertices in its vertex set.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.EdgeCount">
+            <summary> 
+            Gets the number of edges in this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <value>The number of edges.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.FaceCount">
+            <summary>
+            Gets the number of regions an imbedding of this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            into the Sphere would have.
+            </summary>
+            <remarks>
+            Uses Eulers equation:
+            #V - #E + #F = 2
+            </remarks>
+            <value>The number of faces.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.VertexCapacity">
+            <summary>
+            Gets or sets the number of vertices this Graph{TVertexData, TEdgeData} can contain
+            without having to re-allocate memory.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.EdgeCapacity">
+            <summary>
+            Gets or sets the number of edges this Graph{TVertexData, TEdgeData} can contain
+            without having to re-allocate memory.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.Girth">
+            <summary>
+            Gets the girth of this <see cref="T:Atom.Math.Graph.Graph`2"/>,
+            which is the number of edges in its shortest cycle.
+            </summary>
+            <remarks>
+            The girth of a graph is -1 if no cycles are found.
+            </remarks>
+            <value>The number of edges in the shortest cycle.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsDirected">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is a directed graph.
+            </summary>
+            <value>
+            Returns <see langword="true"/> is this Graph is directed;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.AllowsSelfLoops">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            allows Edges that start and end at the same Vertex.
+            </summary>
+            <value>The default value is false.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.AllowsMultipleEdges">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            allows multiple edges to start and end at the same vertices.
+            </summary>
+            <value>The default value is false.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsSimplistic">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is simplistic.
+            </summary>
+            <remarks>
+            A "simple" Graph contains no double edges or edges that start and end at the same vertex.
+            </remarks>
+            <value>
+            Returns <see langword="true"/> is this Graph is simplistic;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.ContainsSelfLoops">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            contains any edges that start and end at the same Vertex.
+            </summary>
+            <value>
+            Returns <see langword="true"/> if this Graph contains self loops;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.ContainsMultipleEdges">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            contains any multiple edges.
+            </summary>
+            <value>
+            Returns <see langword="true"/> is this Graph contains multiple edges;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsRegular">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is regular.
+            </summary>
+            <remarks>
+            In a regular Graph every vertex has the same number of neighbours.
+            </remarks>
+            <value>
+            Returns <see langword="true"/> if this Graph is regular;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsWeaklyConnected">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is weakly connected.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"> 
+            If the Graph is empty.
+            </exception>
+            <value>
+            Returns <see langword="true"/> if this Graph is weakly connected;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsStronglyConnected">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is strongly connected.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            This operation is only valid on a directed graph. For undirected graphs, rather test for weak connectedness.
+            or if the graph is empty.
+            </exception>
+            <value>
+            Returns <see langword="true"/> if this Graph is strongly connected;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsCyclic">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is cyclic (contains cycles).
+            </summary>
+            <value>
+            Returns <see langword="true"/> if this Graph contains cycles;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsTree">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/> is a tree.
+            </summary>
+            <value>
+            Returns <see langword="true"/> is this Graph is a tree;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.Graph`2.IsPlanar">
+            <summary>
+            Gets a value indicating whether this <see cref="T:Atom.Math.Graph.Graph`2"/>
+            has an imbedding in the Sphere/Plane.
+            </summary>
+            <remarks>
+            This operation only works for simple graphs.
+            </remarks>
+            <value>
+            Returns <see langword="true"/> if this Graph is planar;
+            otherwise <see langword="false"/>.
+            </value>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Graph`2"/> class, using an instance
+            of the <see cref="T:Atom.Math.Graph.DefaultGraphDataFactory`2"/>.
+            </summary>
+            <param name="isDirected">
+            Specifies whether the new Graph is going to be a directed graph, or not.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.#ctor(Atom.Math.Graph.IGraphDataFactory{`0,`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Graph`2"/> class.
+            </summary>
+            <param name="dataFactory">
+            The factory that is used to create TVertexData and TEdgeData.
+            </param>
+            <param name="isDirected">
+            Specifies whether the new Graph is going to be a directed graph, or not.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.TopologicalSort">
+            <summary>
+            Computes the topological sort of this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <remarks>
+            The topological sort algorithm is only valid for a directed, acyclic (cycle free) graph.
+            </remarks>
+            <returns>A list of vertices in topological order.</returns>
+            <exception cref="T:System.ArgumentException">
+            The graph is not directed.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The graph contains cycles.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.IndexOfVertex(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Searches for the specified Vertex{TVertexData, TEdgeData} and returns the zero-based index of the vertex
+            in the vertex list of this Graph{TVertexData, TEdgeData}.
+            </summary>
+            <param name="vertex">
+            The vertex to search.
+            </param>
+            <returns>
+            The zero-based index of the vertex in the vertex list of this Graph{TVertexData, TEdgeData};
+            or -1.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.FindVertices(System.Predicate{`0})">
+            <summary>
+            Finds all vertices that match the supplied <paramref name="predicate"/>.
+            </summary>
+            <param name="predicate">
+            The predicate (condition) to use.
+            </param>
+            <returns>
+            All vertices that match the specified <paramref name="predicate"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.Clear">
+            <summary>
+            Removes all vertices and edges from this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveAllEdges">
+            <summary>
+            Removes all edges from this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveAllVertices">
+            <summary>
+            Removes all vertices from this Graph{TVertexData, TEdgeData}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddVertex">
+            <summary>
+            Adds a vertex to the graph with the specified data item.
+            </summary>
+            <returns>The vertex created and added to the graph.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddVertex(`0)">
+            <summary>
+            Adds a vertex to the graph with the specified data item.
+            </summary>
+            <param name="data">
+            The data to store in the vertex.
+            </param>
+            <returns>The vertex created and added to the graph.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddVertex(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Adds the vertex specified to the graph.
+            </summary>
+            <param name="vertex">
+            The vertex to add.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdge(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Adds a new <see cref="T:Atom.Math.Graph.Edge`2"/> to this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="from">The from vertex.</param>
+            <param name="to">The to vertex.</param>
+            <returns>The newly created edge.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdge(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1},`1)">
+            <summary>
+            Adds a new <see cref="T:Atom.Math.Graph.Edge`2"/> to this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="from">The from vertex.</param>
+            <param name="to">The to vertex.</param>
+            <param name="edgeData">The data stored in the new Edge.</param>
+            <returns>The newly created edge.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdge(`0,`0)">
+            <summary>
+            Adds a new <see cref="T:Atom.Math.Graph.Edge`2"/> to this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="fromData">
+            The from vertex.
+            </param>
+            <param name="toData">
+            The to vertex.
+            </param>
+            <returns>The newly created edge.</returns> 
+            <exception cref="T:System.ArgumentException">
+            If no Vertex has been found that matches the given TVertexData.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdge(`0,`0,`1)">
+            <summary>
+            Adds a new <see cref="T:Atom.Math.Graph.Edge`2"/> to this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="fromData">
+            The from vertex.
+            </param>
+            <param name="toData"
+            >The to vertex.
+            </param>
+            <param name="edgeData">
+            The data to store in the edge.
+            </param>
+            <returns>The newly created edge.</returns> 
+            <exception cref="T:System.ArgumentException">
+            If no Vertex has been found that matches the given TVertexData.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdge(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Adds the specified <see cref="T:Atom.Math.Graph.Edge`2"/> to this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <param name="edge">The edge to add.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveVertex(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Removes the specified vertex from the graph.
+            </summary>
+            <param name="vertex">The vertex to be removed.</param>
+            <returns>
+            A value indicating whether the vertex was found (and removed) in the graph.
+            </returns>
+            <exception cref="T:System.ArgumentNullException"> If <paramref name="vertex"/> is null. </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveVertex(`0)">
+            <summary>
+            Removes the vertex with the specified data from the graph.
+            </summary>
+            <param name="vertexData">
+            The data of the vertex to remove.
+            </param>
+            <returns>
+            A value indicating whether a vertex with the value specified was found (and removed) in the graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveEdge(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Removes the edge specified from the graph.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"> If <paramref name="edge"/> is null. </exception>
+            <param name="edge">The edge to be removed.</param>
+            <returns>
+            Returns <see langword="true"/> if the specified <paramref name="edge"/> was removed;
+            or otherwise <see langword="false"/> if the <paramref name="edge"/> could not be found (and removed).
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.RemoveEdge(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Removes an edge that starts and ends at the specified vertices from this Graph.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"> If <paramref name="from"/> or <paramref name="to"/> is null. </exception>
+            <param name="from">
+            The from vertex.
+            </param>
+            <param name="to">
+            The to vertex.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if the specified edge was removed;
+            or otherwise <see langword="false"/> if the edge could not be found (and removed).
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ContainsVertex(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Determines whether this graph contains the specified vertex.
+            </summary>
+            <param name="vertex">
+            The vertex to look for.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if this Graph contains the given vertex;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ContainsVertex(`0)">
+            <summary>
+            Determines whether the specified item is contained in the Fraph.
+            </summary>
+            <param name="vertexData">
+            The data of the Vertex to look for.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if this Graph contains a vertex that
+            has the given <paramref name="vertexData"/>;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ContainsEdge(`0,`0)">
+            <summary>
+            Determines whether the vertex with the specified from value has an edge to a vertex with the specified to value.
+            </summary>
+            <param name="fromValue">The from vertex value.</param>
+            <param name="toValue">The to vertex value.</param>
+            <returns>
+            Returns <see langword="true"/> if the vertex with the specified from value has
+            an edge to a vertex with the specified to value; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ContainsEdge(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Determines whether the specified vertex has a edge to the to vertex.
+            </summary>
+            <param name="from">The from vertex.</param>
+            <param name="to">The to vertex.</param>
+            <returns>
+            Returns <see langword="true"/> if the specified from vertex has an edge to the to vertex;
+            otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ContainsEdge(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Determines whether the specified edge is contained in this graph.
+            </summary>
+            <param name="edge">The edge to look for.</param>
+            <returns>
+            Returns <see langword="true"/> if the specified edge is contained in the graph;
+            otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetVertex(`0)">
+            <summary>
+            Returns to get the first occurence of a Vertex
+            that has the specified TVertexData.
+            </summary>
+            <param name="vertexData">
+            The data of the vertex to search for.
+            </param>
+            <returns>
+            The vertex; or null if not found.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetVertexAt(System.Int32)">
+            <summary>
+            Gets the Vertex{TVertexData, TEdgeData} at the given zero-based <paramref name="index"/>.
+            </summary>
+            <param name="index">
+            The zero-based index of the Vertex{TVertexData, TEdgeData} to get.
+            </param>
+            <returns>
+            The respective Vertex{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetEdge(`0,`0)">
+            <summary>
+            Gets the edge specified by the two vertices.
+            </summary>
+            <param name="fromData">The data contained by the from vertex.</param>
+            <param name="toData">The data contained by the to vertex.</param>
+            <returns>The edge between the two specified vertices if found.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetEdge(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Gets the edge specified by the two vertices.
+            </summary>
+            <param name="from">The from vertex.</param>
+            <param name="to">The to vertex.</param>
+            <returns>The edge between the two specified vertices if found.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetEdgeAt(System.Int32)">
+            <summary>
+            Gets the Edge{TVertexData, TEdgeData} at the given zero-based <paramref name="index"/>.
+            </summary>
+            <param name="index">
+            The zero-based index of the Edge{TVertexData, TEdgeData} to get.
+            </param>
+            <returns>
+            The respective Edge{TVertexData, TEdgeData}.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of this <see cref="T:Atom.Math.Graph.Graph`2"/> to the specified array,
+            starting at a particular array index.
+            </summary>
+            <param name="array">The one-dimensional array that is the destination of the elements copied from <see cref="T:Atom.Math.Graph.Graph`2"/>. The array must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">arrayIndex is less than 0.</exception>
+            <exception cref="T:System.ArgumentNullException">array is null.</exception>
+            <exception cref="T:System.ArgumentException">array is multidimensional.-or-arrayIndex is equal to or greater than 
+            the length of array.-or-The number of elements in the source <see cref="T:Atom.Math.Graph.Graph`2"/> is greater than the available space from arrayIndex to the end of the destination array.-or-TriangleType TVertexData cannot be cast automatically to the type of the destination array.</exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.CloneWithVertices">
+            <summary>
+            Creates a new Graph{TVertexData, TEdgeData} that contains the vertices of this Graph,
+            and has the same isDirected setting.
+            </summary>
+            <returns>
+            A newly cloned Graph.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.CloneVertices(Atom.Math.Graph.Graph{`0,`1})">
+            <summary>
+            Clones the vertices of this Graph and inserts them into the given <paramref name="outputGraph"/>.
+            </summary>
+            <param name="outputGraph">
+            The Graph into which the vertices should be inserted into.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.AddEdgeToVertices(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Utility method that adds the edge to the vertices in the edge.
+            </summary>
+            <param name="edge">The edge to add.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetAnyVertex">
+            <summary>
+            Utlity method that gets any vertex of the Graph.
+            </summary>
+            <returns>The first Vertex in the Graph.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.ToString">
+            <summary>
+            Returns a human-readable string representation of this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </summary>
+            <returns>
+            A human-readable string representation of this <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the data
+            stored by the vertices of the Grapth.
+            </summary>
+            <returns>A new enumerator that iterates over the data in this Graph.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Graph`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the data
+            stored by the vertices of the Grapth.
+            </summary>
+            <returns>A new enumerator that iterates over the data in this Graph.</returns>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.selfLoopCount">
+            <summary>
+            Stores the number of edges that start and end at the same vertex in this Graph.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.multipleEdgeCount">
+            <summary>
+            Stores the number of multiple edges in this Graph.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.multipleSelfLoopCount">
+            <summary>
+            Stores the number of multiple self loops in this Graph.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.isDirected">
+            <summary>
+            Indicates whether this Graph is a directed Graph or not.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.dataFactory">
+            <summary>
+            The factory that is used to create TVertexData and TEdgeData.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.vertices">
+            <summary>
+            Represents the VertexSet of this Graph.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Graph`2.edges">
+            <summary>
+            Represents the EdgeSet of this Graph.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Heuristic`2">
+            <summary>
+            A heuristic is a function that associates a value with a node to gauge it considering the node to reach.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="source">The source vertex.</param>
+            <param name="target">The target vertex.</param>
+            <returns>
+            A value that tells how hard it is to reach the <paramref name="target"/> vertex;
+            starting at the <paramref name="source"/> vertex.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Heuristics.Positionable2">
+            <summary>
+            Provides heuristics for vertices that contain TVertexData that implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Heuristics.Positionable2.EuclidianDistance``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Returns the euclidian distance between two nodes: Sqrt(Dx²+Dy²+Dz²).
+            </summary>
+            <typeparam name="TVertexData">
+            The type of vertex data. Must implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="left">The first node.</param>
+            <param name="right">The second node.</param>
+            <returns>The calculated distance.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Heuristics.Positionable2.SquareEuclidianDistance``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Returns the square euclidian distance between two nodes: Dx²+Dy².
+            </summary>
+            <typeparam name="TVertexData">
+            The type of vertex data. Must implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="left">The first node.</param>
+            <param name="right">The second node.</param>
+            <returns>The calculated distance.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Heuristics.Positionable2.ManhattanDistance``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Returns the manhattan distance between two nodes: |Dx|+|Dy|.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of vertex data. Must implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="left">The first node.</param>
+            <param name="right">The second node.</param>
+            <returns>The calculated distance.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Heuristics.Positionable2.MaxDistanceAlongAxis``2(Atom.Math.Graph.Vertex{``0,``1},Atom.Math.Graph.Vertex{``0,``1})">
+            <summary>
+            Returns the maximum distance between two nodes: Max(|Dx|, |Dy|).
+            </summary>
+            <typeparam name="TVertexData">
+            The type of vertex data. Must implement <see cref="T:Atom.Math.IPositionable2"/>.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+            <param name="left">The first node.</param>
+            <param name="right">The second node.</param>
+            <returns>The calculated distance.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.GraphErrorStrings">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeAlreadyExists">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Such an Edge already exists ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeAlreadyExistsFromXToY">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die There already exists an edge from Vertex &apos;{0}&apos; to Vertex &apos;{1}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeDataIsNull">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The data stored in an Edge of the Graph is null. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeGraphDirectedMismatch">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Edge &lt;-&gt; Graph - IsDirected mismatch. A directed graph can only contain directed edges and visa versa. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphDirectionMismatch">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die This operation requires the Graphs to be both directed or undirected. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphDoesntAllowSelfLoopAdded">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die This Graph doesn&apos;t allow Edges that start and end at the same Vertex.  (Self Loops) ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphHasCycles">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Graph contains cycles. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphIsEmpty">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Graph is empty. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.NoMatchingVertexFoundInGraph">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die No matching Vertex has been found in the Graph. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.OperationOnlyValidonDirectedGraph">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die This operation is only valid on a directed Graph. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.OperationOnlyValidOnSimpleGraphs">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die This operation is only valid on simple graphs that contain no self-loops or multiple edges. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexAlreadyExistsInGraph">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Vertex already exists in the Graph. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexCouldNotBeFound">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Vertex could not be found. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexCountIsZero">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The vertex-count is zero. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexNotPartOfEdge">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Vertex is not part of the Edge. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.GraphErrorStrings.VoltageXOfVoltageGraphNotPartOfSpecifiedVoltageGroupOrderY">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Voltage &apos;{0}&apos; of the Voltage Graph is not part of the Voltage Group of Order &apos;{1}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Track`2">
+            <summary>
+            A track is a succession of vertices which have been visited.
+            Thus when it leads to the target node, it is easy to return the result path.
+            These objects are contained in Open and Closed lists.
+            This class can't be inherited.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored within the vertices of the Graph.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.End">
+            <summary>
+            Gets or sets the Vertex at which this Track ends.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.PreviousTrack">
+            <summary>
+            Gets or sets the Track prior of this Track.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.Target">
+            <summary>
+            Gets or sets the targeted track.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.Heuristic">
+            <summary>
+            Gets or sets the heuristic that is used to calcualte the <see cref="P:Atom.Math.Graph.Track`2.Evaluation"/> value.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value"/> is null.
+            </exception>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.Weight">
+            <summary>
+            Gets the weight of this Track.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.Succeed">
+            <summary>
+            Gets a value indicating whether this Track has reached its end.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.NumberOfEdgesVisited">
+            <summary>
+            Gets the number of edges that have been visited
+            after traversing the Track queue until this Track.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.DijkstraHeuristicBalance">
+            <summary>
+            Gets or sets the coefficient which balances the respective influences of Dijkstra and the Heuristic must belong to [0; 1].
+            -&gt; 0 will minimize the number of nodes explored but will not take the real cost into account.
+            -&gt; 0.5 will minimize the cost without developing more nodes than necessary.
+            -&gt; 1 will only consider the real cost without estimating the remaining cost.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.Graph.Track`2.Evaluation">
+            <summary>
+            Gets the evaluation value.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.#ctor(Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Heuristic{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Track`2"/> class.
+            </summary>
+            <param name="source">
+            The source vertex of this Track.
+            </param>
+            <param name="target">
+            The target of the Search.
+            </param>
+            <param name="heuristic">
+            The heuristic that is used to calcualte the <see cref="P:Atom.Math.Graph.Track`2.Evaluation"/> value.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.#ctor(Atom.Math.Graph.Track{`0,`1},Atom.Math.Graph.Edge{`0,`1},Atom.Math.Graph.Vertex{`0,`1},Atom.Math.Graph.Heuristic{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Track`2"/> class.
+            </summary>
+            <param name="previousTrack">
+            The track prior of the new Track.</param>
+            <param name="transition">
+            The edge from the previous Track to the new Track.
+            </param>
+            <param name="target">
+            The target of the Search.
+            </param>
+            <param name="heuristic">
+            The heuristic that is used to calcualte the <see cref="P:Atom.Math.Graph.Track`2.Evaluation"/> value.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.CompareTo(System.Object)">
+            <summary>
+            Compares this Track to the given Object.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>The comparisation result.</returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.CompareTo(Atom.Math.Graph.Track{`0,`1})">
+            <summary>
+            Compares this Track to the given Track.
+            </summary>
+            <param name="other">The Track to compare to.</param>
+            <returns>The comparisation result.</returns>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.target">
+            <summary>
+            The target and end of this Track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.end">
+            <summary>
+            The target and end of this Track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.heuristic">
+            <summary>
+            The heurestic used to calcualte the weight of this Track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.previousTrack">
+            <summary>
+            The Track prior of this Track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.coefficient">
+            <summary>
+            The coefficient of this Track.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.numberOfEdgesVisited">
+            <summary>
+            The number of edges that have been visited so far.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Track`2.weight">
+            <summary>
+            The weight of this Track, calculate using the Heuristic.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.Track`2.SameEndNodeComparer">
+            <summary>
+            Compares the end nodes of two tracks.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.SameEndNodeComparer.Equals(Atom.Math.Graph.Track{`0,`1},Atom.Math.Graph.Track{`0,`1})">
+            <summary>
+            Determines whether the given Tracks are equal.
+            </summary>
+            <param name="x">The first Track.</param>
+            <param name="y">The second Track.</param>
+            <returns>
+            Returns true if the given Tracks are equal;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Track`2.SameEndNodeComparer.GetHashCode(Atom.Math.Graph.Track{`0,`1})">
+            <summary>
+            Gets the hash code of the given Track.
+            </summary>
+            <param name="obj">The given Track.</param>
+            <returns>The hash code of the given Track.</returns>
+        </member>
+        <member name="T:Atom.Math.Graph.Vertex`2">
+            <summary> 
+            Represents a vertex in a <see cref="T:Atom.Math.Graph.Graph`2"/>.
+            This class can't be inherited.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored in the Vertex.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.IncidentEdges">
+            <summary> 
+            Gets the edges incident(incoming) on this Vertex.
+            </summary>
+            <value>An enumeration that contains the edges that come in to this Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.EmanatingEdges">
+            <summary>
+            Gets the emanating(outgoing) edges on this Vertex. 
+            </summary>
+            <value>An enumeration that contains the edges that come out of this Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.Data">
+            <summary>
+            Gets or sets the data contained in this <see cref="T:Atom.Math.Graph.Vertex`2"/>. 
+            </summary>
+            <remarks>
+            If the specified TVertexData object implements <see cref="T:Atom.IOwnedBy"/>{Vertex{TVertexData, TEdgeData}} then the owner
+            is set to this Vertex.
+            </remarks>
+            <value>The additonal data that has been associated with this Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.Degree">
+            <summary> 
+            Gets a value that represents the number of edges that are incident on this Vertex. 
+            </summary>
+            <remarks>
+            Loops count for two edges.
+            </remarks>
+            <value>The number of edges that are incident on this Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.IncomingEdgeCount">
+            <summary>
+            Gets the number of the incoming <see cref="T:Atom.Math.Graph.Edge`2"/>s on this Vertex.
+            </summary>
+            <value>The number of incoming edges resident on the Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.Vertex`2.OutgoingEdgeCount">
+            <summary>
+            Gets the number of outgoing <see cref="T:Atom.Math.Graph.Edge`2"/>s on this Vertex.
+            </summary>
+            <value>The number of edges that are going out of this Vertex.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Vertex`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.Vertex`2"/> class.
+            </summary>
+            <param name="data">
+            The data contained in the new Vertex{TVertexData, TEdgeData}.
+            </param>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.HasEmanatingEdgeTo(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Determines whether this vertex has an emanating(outgoing) edge to the specified vertex.
+            </summary>
+            <param name="vertex"> The vertex to test connectivity with. </param>
+            <returns>
+            <c>true</c> if this vertex has an emanating edge to the specified vertex; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.HasIncidentEdgeWith(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Determines whether this vertex has an incident(incoming) edge 
+            that connects the specified vertex with this vertex.
+            </summary>
+            <param name="vertex">The vertex to test connectivity.</param>
+            <returns>
+            <c>true</c> if [has incident edge with] [the specified from vertex]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.GetEmanatingEdgeTo(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Gets the emanating(outgoing) edge to the specified <paramref name="vertex"/>.
+            </summary>
+            <param name="vertex">The vertex.</param>
+            <returns>
+            The emanating edge to the vertex specified if found; otherwise null.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the specified <paramref name="vertex"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.GetIncidentEdgeWith(Atom.Math.Graph.Vertex{`0,`1})">
+            <summary>
+            Gets the incident(incoming) edge to the specified vertex.
+            </summary>
+            <param name="vertex">The to vertex.</param>
+            <returns>
+            The incident edge to the vertex specified if found; otherwise null.
+            </returns>     
+             <exception cref="T:System.ArgumentNullException">
+            If the specified <paramref name="vertex"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.GetEmanatingEdge(System.Int32)">
+            <summary>
+            Receives the emanating edge at the given <paramref name="index"/>.
+            </summary>
+            <param name="index">
+            The index of the edge to receive.
+            </param>
+            <returns>The edge to receive.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If the given <paramref name="index"/> is invalid.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.GetIncidentEdge(System.Int32)">
+            <summary>
+            Receives the incident edge at the given <paramref name="index"/>.
+            </summary>
+            <param name="index">
+            The index of the edge to receive.
+            </param>
+            <returns>The edge to receive.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If the given <paramref name="index"/> is invalid.
+            </exception>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.RemoveEdge(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Removes the edge specified from the vertex.
+            </summary>
+            <param name="edge">The edge to be removed.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.AddEdge(Atom.Math.Graph.Edge{`0,`1})">
+            <summary>
+            Adds the edge to this <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <param name="edge">The edge to add.</param>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.ToString">
+            <summary>
+            Returns a string representation of this <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <returns>
+            A humen readable description of the Vertex.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.System#ICloneable#Clone">
+            <summary>
+            Returns a clone of this <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <returns>
+            The cloned <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.Graph.Vertex`2.Clone">
+            <summary>
+            Returns a clone of this <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </summary>
+            <remarks>
+            The <see cref="P:Atom.Math.Graph.Vertex`2.Data"/> of the Vertex is cloned if it implements <see cref="T:System.ICloneable"/>.
+            </remarks>
+            <returns>
+            The cloned <see cref="T:Atom.Math.Graph.Vertex`2"/>.
+            </returns>
+        </member>
+        <member name="F:Atom.Math.Graph.Vertex`2._data">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Math.Graph.Vertex`2.Data"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Vertex`2.incidentEdges">
+            <summary>
+            The incoming edges.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.Graph.Vertex`2.emanatingEdges">
+            <summary>
+            The outgoing edges.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.Graph.VertexCreationFunction`1">
+            <summary>
+            Represents a function that creates the data for a new Vertex given an (unique) input index. 
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored in the new Vertex.
+            </typeparam>
+            <param name="index">
+            The (unique) input index.
+            </param>
+            <returns>
+            The data of the new Vertex.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Graph.VertexInfo`2">
+            <summary>
+            Utlity class that stores information about a Vertex.
+            </summary>
+            <typeparam name="TVertexData">
+            The type of data stored by the Vertex.
+            </typeparam>
+            <typeparam name="TEdgeData">
+            The type of data stored within the edges of the Graph.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Graph.VertexInfo`2.Distance">
+            <summary>
+            Gets or sets the distance from the Vertex to the next goal/etc. 
+            </summary>
+            <value>
+            The distance from the Vertex to the next goal/etc. 
+            Can be interpreted depending how the VertexInfo is used.
+            </value>
+        </member>
+        <member name="P:Atom.Math.Graph.VertexInfo`2.EdgeFollowed">
+            <summary>
+            Gets or sets the edge that follows the Vertex.
+            </summary>
+            <value>The edge that follows the Vertex.</value>
+        </member>
+        <member name="P:Atom.Math.Graph.VertexInfo`2.IsFinalised">
+            <summary>
+            Gets or sets a value indicating whether the VertexInfo and/or the related operation has been finalized.
+            </summary>
+            <value>States whether the VertexInfo and/or the related operation has been finalized.</value>
+        </member>
+        <member name="M:Atom.Math.Graph.VertexInfo`2.#ctor(System.Single,Atom.Math.Graph.Edge{`0,`1},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.Graph.VertexInfo`2"/> class.
+            </summary>
+            <param name="distance">The distance from the Vertex to the next goal/etc.</param>
+            <param name="edgeFollowed">The edge that follows the Vertex.</param>
+            <param name="isFinalised">States whether the VertexInfo and/or the related operation is finalized.</param>
+        </member>
+    </members>
+</doc>

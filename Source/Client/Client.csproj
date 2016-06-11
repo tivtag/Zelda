@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B9A42A0-40CE-435A-94BE-4B75281FB9DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zelda</RootNamespace>
+    <AssemblyName>TLoZ - Black Crown</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Zelda.Program</StartupObject>
+    <ApplicationIcon>Properties\icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Compiled\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\Compiled\Debug\TLoZ - Black Crown.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\Compiled\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>..\..\Compiled\Release\TLoZ - Black Crown.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsPlatformPath />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsContainerAnalysis>False</CodeContractsContainerAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>..\Compiled\Debug\TLoZ - Black Crown.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\Compiled\Release\TLoZ - Black Crown.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atom, Version=1.0.3640.30603, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.AI, Version=1.0.3640.30611, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.AI.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.ErrorReporting, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.ErrorReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.ErrorReporting.Forms, Version=1.0.3640.30622, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.ErrorReporting.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Fmod, Version=4.0.26.9, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Fmod.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game, Version=1.0.3640.30608, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game.Waypoints, Version=1.0.3640.30613, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Game.Waypoints.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Game.Xna, Version=1.0.3640.30633, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Game.Xna.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Mail, Version=1.0.3640.30607, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Math, Version=1.0.3640.30605, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Math.Graph, Version=1.0.3640.30610, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Math.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Scripting, Version=1.5.4099.33894, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna.Particles, Version=1.0.0.30632, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.Particles.dll</HintPath>
+    </Reference>
+    <Reference Include="Atom.Xna.UI, Version=1.0.3640.30623, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Atom.Xna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby, Version=1.1.2.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\IronRuby.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronRuby.Libraries, Version=1.1.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\IronRuby.Libraries.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Microsoft.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Microsoft.Scripting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="GameStates\SettingsState.cs" />
+    <Compile Include="Graphics\ResolutionService.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="GameStates\BaseOutgameState.cs" />
+    <Compile Include="GameStates\CharacterCreationState.cs" />
+    <Compile Include="GameStates\CharacterSelectionState.cs" />
+    <Compile Include="GameStates\IngameMenuState.cs" />
+    <Compile Include="GameStates\IngameState.cs" />
+    <Compile Include="Graphics\GameGraphics.cs" />
+    <Compile Include="UI\ColorComponentSlider.cs" />
+    <Compile Include="UI\ColorSelector.cs" />
+    <Compile Include="UI\Crafting\RecipeDetailsControl.cs" />
+    <Compile Include="UI\Crafting\RecipeListBox.cs" />
+    <Compile Include="UI\Crafting\RecipesWindow.cs" />
+    <Compile Include="UI\Items\Boxes\BoxModel.cs" />
+    <Compile Include="UI\Items\Boxes\Compression\CompressedSingleLineTextBox.cs" />
+    <Compile Include="UI\Items\Boxes\Compression\BeginCompressionGroupSpacer.cs" />
+    <Compile Include="UI\Items\Boxes\Compression\EndCompressionGroupSpacer.cs" />
+    <Compile Include="UI\Items\Boxes\IBox.cs" />
+    <Compile Include="UI\Items\Boxes\NoOpBox.cs" />
+    <Compile Include="UI\Items\Boxes\SingleLineLeftRightTextBox.cs" />
+    <Compile Include="UI\Items\Boxes\MultiLineTextBox.cs" />
+    <Compile Include="UI\Items\Boxes\SingleLineTextBox.cs" />
+    <Compile Include="UI\Items\Boxes\Specific\ItemBoxModel.cs" />
+    <Compile Include="UI\Items\Boxes\Specific\ItemNameTextBox.cs" />
+    <Compile Include="UI\Items\Boxes\TextBox.cs" />
+    <Compile Include="UI\Items\Boxes\Specific\RubyBox.cs" />
+    <Compile Include="UI\Items\ItemInfo.cs" />
+    <Compile Include="UI\Items\ItemInfoCache.cs" />
+    <Compile Include="UI\Items\ItemInfoColors.cs" />
+    <Compile Include="UI\Items\ItemInfoRenderer.cs" />
+    <Compile Include="UI\Items\ItemInfoResources.cs" />
+    <Compile Include="UI\Items\Boxes\Specific\ItemInfoBoxBuilder.cs" />
+    <Compile Include="UI\Displays\DamageMeterDisplay.cs" />
+    <Compile Include="UI\IngameUserInterface.cs" />
+    <Compile Include="UI\Items\ItemInfoVisualizer.cs" />
+    <Compile Include="UI\Items\ItemSocketRenderer.cs" />
+    <Compile Include="UI\Items\ItemTooltip.cs" />
+    <Compile Include="UI\Items\ItemTooltipDrawElement.cs" />
+    <Compile Include="UI\Items\ItemTooltipGroup.cs" />
+    <Compile Include="UI\Items\OpenInventoryService.cs" />
+    <Compile Include="UI\NavButton.cs" />
+    <Compile Include="UI\Ocarina\ComposedSongListElement.cs" />
+    <Compile Include="UI\Ocarina\NoteVisualizer.cs" />
+    <Compile Include="UI\Ocarina\SongDescriptionElement.cs" />
+    <Compile Include="UI\Ocarina\SongSelectionElement.cs" />
+    <Compile Include="UI\QuickAction\QuickActionSlotDrawer.cs" />
+    <Compile Include="UI\QuickAction\QuickActionSlotElement.cs" />
+    <Compile Include="UI\QuickAction\QuickActionSlotsDisplay.cs" />
+    <Compile Include="UI\Trading\MerchantItemContainer.cs" />
+    <Compile Include="UI\Trading\MerchantItemElement.cs" />
+    <Compile Include="UI\Trading\MerchantWindow.cs" />
+    <Compile Include="UI\Trading\MerchantWindowProvider.cs" />
+    <Compile Include="UI\Displays\BuffBarDisplay.cs" />
+    <Compile Include="UI\Displays\CastBarDisplay.cs" />
+    <Compile Include="UI\UIConstants.cs" />
+    <Compile Include="UI\Windows\BaseCharacterWindow.cs" />
+    <Compile Include="UI\Windows\CharacterCreationStatusWindow.cs" />
+    <Compile Include="UI\Windows\CharacterDetailsWindow.cs" />
+    <Compile Include="UI\Windows\CharacterWindow.cs" />
+    <Compile Include="UI\Crafting\CraftingBottleWindow.cs" />
+    <Compile Include="UI\Displays\EnteringRegionDisplay.cs" />
+    <Compile Include="UI\Windows\EquipmentWindow.cs" />
+    <Compile Include="UI\Windows\InventoryBaseWindow.cs" />
+    <Compile Include="UI\Windows\InventoryWindow.cs" />
+    <Compile Include="GameStates\TitleScreenState.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\CooldownVisualizer.cs" />
+    <Compile Include="UI\Bars\HeartBar.cs" />
+    <Compile Include="UI\Windows\IngameWindow.cs" />
+    <Compile Include="UI\Items\ItemInfoDisplay.cs" />
+    <Compile Include="UI\Bars\ManaBar.cs" />
+    <Compile Include="UI\Windows\MiniMapWindow.cs" />
+    <Compile Include="UI\Items\PickedupItemDisplay.cs" />
+    <Compile Include="UI\Ocarina\OcarinaWindow.cs" />
+    <Compile Include="UI\Windows\QuestLogWindow.cs" />
+    <Compile Include="UI\Displays\RespawnTextDisplay.cs" />
+    <Compile Include="UI\Displays\RubyDisplay.cs" />
+    <Compile Include="UI\Bars\SideBar.cs" />
+    <Compile Include="UI\Windows\SharedChestWindow.cs" />
+    <Compile Include="UI\Windows\TalentWindow.cs" />
+    <Compile Include="UI\Displays\TimeDisplay.cs" />
+    <Compile Include="Graphics\ViewToWindowRescaler.cs" />
+    <Compile Include="Saving\WorldStatusProvider.cs" />
+    <Compile Include="ZeldaGame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{08F95E1C-389B-450B-982D-4F1E1C473844}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PatchNotes_Old.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Credits.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Talent Trees.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PatchNotes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Read Me.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\XnaNative.dll">
+      <Link>XnaNative.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Temp Key Handlers.txt" />
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

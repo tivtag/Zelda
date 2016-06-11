@@ -1,0 +1,2877 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IronRuby</name>
+    </assembly>
+    <members>
+        <member name="P:IronRuby.Builtins.Binding.LocalScope">
+            <summary>
+            Local scope captured by the binding.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.Binding.SelfObject">
+            <summary>
+            Self object captured by the binding. Can be different from LocalScope.SelfObject in MRI 1.8.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.ConsoleStream">
+            <summary>
+            A custom Stream class that forwards calls to Console In/Out/Error based on ConsoleType
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyIO">
+            <summary>
+            IO builtin class. Wraps a BCL Stream object. Implementation of Ruby methods is in IoOps.cs in IronRuby.Libraries assembly.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.RubyIO.ConsoleStreamType">
+            <summary>
+            Returns true if the IO object represents stdin/stdout/stderr (no matter whether or not the actual streams are redirected).
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyBufferedStream">
+            <summary>
+            Not thread-safe.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyBufferedStream.PeekByte(System.Int32)">
+            <summary>
+            Peeks i-th byte. Assumes small <c>i</c>.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyBufferedStream.AppendBytes(IronRuby.Builtins.MutableString,System.Int32,System.Boolean)">
+            <summary>
+            Reads <paramref name="count"/> bytes from the stream and appends them to the given <paramref name="buffer"/>.
+            If <paramref name="count"/> is <c>Int32.MaxValue</c> the stream is read to the end.
+            Unless <paramref name="preserveEndOfLines"/> is set the line endings in the appended data are normalized to "\n".
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.Hash">
+            <summary>
+            TODO: ordered dictionary
+            TODO: all operations should check frozen state!
+            
+            Dictionary inherits from Object, mixes in Enumerable.
+            Ruby hash is a Dictionary{object, object}, but it adds default value/proc
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Hash.CreateInstance(IronRuby.Builtins.RubyClass)">
+            <summary>
+            Creates a blank instance of a RubyArray or its subclass given the Ruby class object.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Hash.CreateInstance">
+            <summary>
+            Creates an empty instance.
+            Doesn't copy instance data.
+            Preserves the class of the Hash.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RegexpTransformer">
+            <summary>
+            Converts a Ruby regexp pattern to a CLR pattern
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyArray">
+            <summary>
+            Implements Ruby array.
+            Not thread safe (even when frozen).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyArray.CreateInstance(IronRuby.Builtins.RubyClass)">
+            <summary>
+            Creates a blank instance of a RubyArray or its subclass given the Ruby class object.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyArray.CreateInstance">
+            <summary>
+            Creates an empty instance.
+            Doesn't copy instance data.
+            Preserves the class of the Array.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyArray.ResizeForAppend(System.Int32,System.Boolean)">
+            <summary>
+            Adds count to _count and resizes the storage to make space for count elements if necessary.
+            </summary>
+            <param name="additionalCount">The number of elements that will be appended.</param>
+            <param name="clear">
+            True if the slots should be cleared (null initialized). 
+            The caller isn't filling the slots with non-null values.
+            </param>
+            <returns>The index of the first slot that will contain the new elements.</returns>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyArray.AddCapacity(System.Int32)">
+            <summary>
+            Ensures that the underlying storage is prepared to store at least the current number plus capacity items.
+            </summary>
+            <param name="capacity">Additional capacity.</param>
+            <returns>Self.</returns>
+            <remarks>
+            Use to avoid reallocation of the underlying storage if the number of elements that will eventually by added to this array is known.
+            Doesn't increase the number of elements in the array.
+            Call <see cref="M:IronRuby.Builtins.RubyArray.AddMultiple(System.Int32,System.Object)"/> to add multiple (possibly null) elements into the array.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.Copy">
+            <summary>
+            Creates a copy of the proc that has the same target, context, self object as this instance.
+            Doesn't copy instance data.
+            Preserves the class of the Regexp.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.HasEscapedNonAsciiBytes(IronRuby.Builtins.MutableString)">
+            <summary>
+            Searches the pattern for hexadecimal and octal character escapes that represent a non-ASCII character.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.Match(IronRuby.Builtins.MutableString,System.Int32,System.Boolean)">
+            <summary>
+            Start is a number of bytes if kcode is given, otherwise it's a number of characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.LastMatch(IronRuby.Builtins.MutableString,System.Int32)">
+            <summary>
+            Finds the last match whose index is less than or equal to "start".
+            Captures are ordered in the same way as with forward match. This is different from .NET reverse matching.
+            Start is a number of bytes if kcode is given, otherwise it's a number of characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.LastMatch(System.Text.RegularExpressions.Regex,System.String,System.Int32)">
+            <summary>
+            Binary searches "str" for the last match whose index is within the range [0, start].
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.Matches(IronRuby.Builtins.MutableString,System.Boolean)">
+            <summary>
+            Returns a collection of fresh MatchData objects.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyRegex.Escape(IronRuby.Builtins.MutableString)">
+            <summary>
+            Returns a new instance of MutableString that contains escaped content of the given string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetCharCount">
+            <summary>
+            Returns the number of characters in the string.
+            Counts surrogates as two characters.
+            </summary>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid character.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetCharacterCount">
+            <summary>
+            Returns the number of true Unicode characters in the string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetByteCount">
+            <summary>
+            Returns the number of bytes in the string.
+            Throws if the string includes invalid characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetChar(System.Int32)">
+            <summary>
+            Gets index'th character of the string.
+            Throws if the string includes invalid characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetByte(System.Int32)">
+            <summary>
+            Gets index'th byte of the string.
+            Throws if the string includes invalid characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Content.GetSlice(System.Int32,System.Int32)">
+            <summary>
+            Returns a slice of the content. The size of the slice could be less than the requested count if there is not enough data in the content.
+            Returns an empty content if start is greater than the size of the content.
+            The owner of the result is the current owner.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.MutableString.BinaryContent">
+            <summary>
+            Mutable byte array. 
+            All indices and counts are in bytes.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.BinaryContent.SwitchToChars">
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid character.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.BinaryContent.SwitchToChars(System.Int32)">
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid character.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.BinaryContent.DataToChars(System.Int32,System.Text.Encoding)">
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid character.</exception>
+        </member>
+        <member name="T:IronRuby.Builtins.MutableString.CharArrayContent">
+            <summary>
+            Mutable character array. 
+            All indices and counts are in characters. Surrogate pairs are treated as 2 separate characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.SetContent(IronRuby.Builtins.MutableString.Content)">
+            <summary>
+            Sets content to a different but equivalent representation.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.CreateAscii(System.String)">
+            <summary>
+            Creates an instace initialized with given ASCII string.
+            </summary>
+            <remarks>
+            The ASCII-ness of <paramref name="str"/> is not verified (unless compiled in debug build).
+            If the string contains any non-ASCII characters subsequent operations might produce incorrect results.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Create(IronRuby.Builtins.MutableString)">
+            <summary>
+            Creates an instance of MutableString with content and taint copied from a given string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.CreateInstance">
+            <summary>
+            Creates a blank instance of self type with no flags set.
+            Copies encoding from the current class.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Clone">
+            <summary>
+            Creates a copy of this instance, including content and taint.
+            Doesn't copy frozen state and instance variables. 
+            Preserves the class of the String.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Duplicate(IronRuby.Runtime.RubyContext,System.Boolean,IronRuby.Builtins.MutableString)">
+            <summary>
+            Creates an empty copy of this instance, taint and instance variables. 
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.MutableString.HasByteCharacters">
+            <summary>
+            Returns true if the characters included in the string map 1:1 to their encoded repr (bytes).
+            (the encoding is binary or the string includes ASCII only).
+            Returns false if the string encoding is not ASCII-identity.
+            Doesn't inspect the content of the string if the ASCII flag is not valid.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.MutableString.HasSingleByteCharacters">
+            <summary>
+            All characters in the string are encoded as single bytes.
+            Returns false if the string encoding is not ASCII-identity.
+            Doesn't inspect the content of the string if the ASCII flag is not valid.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Mutate">
+            <summary>
+            Non-specific mutation. Can affect ascii-ness and surrogate-ness of the string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.MutateOne(System.Char)">
+            <summary>
+            Set, append or insert a single char.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.MutateOne(System.Byte)">
+            <summary>
+            Set, append or insert a single byte.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.MutatePreserveAsciiness">
+            <summary>
+            Operation preserves ascii-ness and surrogate-ness of the string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.MutateRemove">
+            <summary>
+            Operation removes characters or bytes.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Mutate(IronRuby.Builtins.MutableString)">
+            <summary>
+            Prepares the string for mutation that combines its content with content of another mutable string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetCompatibleEncoding(IronRuby.Builtins.MutableString)">
+            <summary>
+            Checks if the other string's encoding is compatible with this string's encoding.
+            If it is returns the encoding that should be used for the result of the operation.
+            Returns a <c>null</c> reference otherwise.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ForceEncoding(IronRuby.Builtins.RubyEncoding)">
+            <summary>
+            Changes encoding to the specified one. 
+            The resulting string might contain byte-sequences that don't represent valid characters in the target encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Transcode(IronRuby.Builtins.RubyEncoding,IronRuby.Builtins.RubyEncoding)">
+            <summary>
+            Assumes the content to be encoded in fromEncoding and trancodes it into toEncoding.
+            </summary>
+            <exception cref="T:System.Text.EncoderFallbackException">Invalid data.</exception>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid data.</exception>
+            <exception cref="T:IronRuby.Builtins.RuntimeError">The string is frozen.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetHashCode">
+            <summary>
+            Returns hash code of the string. The hash code is the same regardless of the internal string representation 
+            and also equal to <see cref="M:System.String.GetHashCode"/> if the string only contains ASCII characters, is binary-encoded,
+            or UTF8 encoded. The hash code is not cached.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.IsAscii">
+            <summary>
+            Returns true if the string only contains characters U+007F or lower.
+            Scans the string unless the information is cached (<see cref="P:IronRuby.Builtins.MutableString.KnowsAscii"/>).
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.MutableString.KnowsAscii">
+            <summary>
+            Returns true if a subsequent call to <see cref="M:IronRuby.Builtins.MutableString.IsAscii"/> will be O(1) operation, otherwise it is O(N) operation,
+            where N is the number of bytes or characters of the string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.HasSurrogates">
+            <summary>
+            Returns true if the string contains any surrogate characters.
+            Scans the string unless the information is cached (<see cref="P:IronRuby.Builtins.MutableString.KnowsSurrogates"/>).
+            The property is pre-set for encodings whose decoders don't produce surrogates.
+            The result is undefined if the string representation is binary.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.MutableString.KnowsSurrogates">
+            <summary>
+            Returns true if a subsequent call to <see cref="M:IronRuby.Builtins.MutableString.HasSurrogates"/> will be O(1) operation, otherwise it is O(N) operation,
+            where N is the number of characters of the string (the property has no meaning for binary represented strings).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.CheckEncoding">
+            <summary>
+            Checks if the string content is correctly encoded.
+            </summary>
+            <exception cref="T:System.Text.EncoderFallbackException"></exception>
+            <exception cref="T:System.Text.DecoderFallbackException"></exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.TaintBy(IronRuby.Builtins.MutableString)">
+            <summary>
+            Makes this string tainted if the specified string is tainted.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.TaintBy(IronRuby.Runtime.IRubyObjectState)">
+            <summary>
+            Makes this string tainted if the specified object is tainted.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.TaintBy(System.Object,IronRuby.Runtime.RubyContext)">
+            <summary>
+            Makes this string tainted if the specified object is tainted.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.TaintBy(System.Object,IronRuby.Runtime.RubyScope)">
+            <summary>
+            Makes this string tainted if the specified object is tainted.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToString">
+            <summary>
+            Returns a copy of the content in a form of an read-only string.
+            The internal representation of the MutableString is preserved.
+            </summary>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid characters present.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToString(System.Text.Encoding)">
+            <summary>
+            Switches the content to a byte array using the current encoding and decodes the binary into a string using the given encoding.
+            </summary>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid characters present.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToString(System.Text.Encoding,System.Int32,System.Int32)">
+            <summary>
+            Switches the content to a byte array using the current encoding and decodes the binary into a string using the given encoding.
+            </summary>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid characters present.</exception>
+        </member>
+        <member name="P:IronRuby.Builtins.MutableString.Dump">
+            <summary>
+            This property can be viewed using a string visualizer in a debugger, making it easy to inspect large or multi-line strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToByteArray">
+            <summary>
+            Returns a copy of the content in a form of an byte array.
+            The internal representation of the MutableString is preserved.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ConvertToString">
+            <summary>
+            Switches internal representation to textual.
+            </summary>
+            <returns>A copy of the internal representation unless it is read-only (string).</returns>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ConvertToBytes">
+            <summary>
+            Switches internal representation to binary.
+            </summary>
+            <returns>A copy of the internal representation.</returns>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.SwitchToBytes">
+            <summary>
+            Switches the underlying representation to bytes.
+            </summary>
+            <returns>Self.</returns>
+            <exception cref="T:IronRuby.Builtins.InvalidByteSequenceError">
+            String content contains a character that isn't valid in the current encoding.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.SwitchToCharacters">
+            <summary>
+            Switches the underlying representation to characters.
+            </summary>
+            <returns>Self.</returns>
+            <exception cref="T:IronRuby.Builtins.InvalidByteSequenceError">
+            String content is binary and contains byte sequence that doesn't represent a valid character in the current encoding.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.PrepareForCharacterRead">
+            <summary>
+            Prepares the string for read-only character based operations.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            String content is binary and contains byte sequence that doesn't represent a valid character.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.PrepareForCharacterWrite">
+            <summary>
+            Prepares the string for mutating character based operations that can potentially write arbitrary characters to the string.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            String content is binary and contains byte sequence that doesn't represent a valid character.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetCharCount">
+            <summary>
+            Returns the number of UTF16 characters.
+            </summary>
+            <exception cref="T:System.Text.DecoderFallbackException">Invalid characters.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetCharacterCount">
+            <summary>
+            Returns the number of UTF32 characters.
+            Each invalid byte sequence is counted as a single character.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetCharacters">
+            <summary>
+            Enumerates over characters contained in the string. 
+            Yields both valid characters and invalid byte sequences.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetChar(System.Int32)">
+            <exception cref="T:System.IndexOutOfRangeException">Index is out of range.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetByte(System.Int32)">
+            <exception cref="T:System.IndexOutOfRangeException">Index is out of range.</exception>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.GetSlice(System.Int32)">
+            <summary>
+            Returns a new mutable string containing a substring of the current one.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Concat(IronRuby.Builtins.MutableString)">
+            <summary>
+            Returns a concatenation of this string with other.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.Char)">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.Char,System.Int32)">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.Char[])">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.String)">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.String,System.Int32,System.Int32)">
+            <summary>
+            Value should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads at most "count" bytes from "source" stream and appends them to this string.
+            Allocates space for "count" bytes, so the string might need to be trimmed after the operation.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.Append(IronRuby.Builtins.MutableString,System.Int32,System.Int32)">
+            <summary>
+            Appends a substring of a given string to this string.
+            <c>start</c> and <c>count</c> are specified
+            in characters if the <c>value</c> is represented in characters and 
+            in bytes if the <c>value</c> is represented in bytes.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.AppendFormat(System.String,System.Object[])">
+            <summary>
+            Format and values should only contain characters that can be represented in the string's encoding.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.MutableString.Escape.NonAscii">
+            <summary>
+            Escape all non-ASCII characters.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.MutableString.Escape.Special">
+            <summary>
+            Escape #{, #$, #@ and \.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.MutableString.Escape.Octal">
+            <summary>
+            Use octal escapes. Hexadecimal are used if not specified.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToAsciiString">
+            <summary>
+            Returns a string with all non-ASCII characters replaced by escaped Unicode or hexadecimal numeric sequences.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.ToStringWithEscapedInvalidCharacters(IronRuby.Builtins.RubyEncoding)">
+            <summary>
+            Returns a copy of the content in a form of a read-only UTF16 string with escaped invalid characters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.MutableString.FormatMessage(System.String,IronRuby.Builtins.MutableString[])">
+            <summary>
+            Formats an error message that can be loaded from resources and thus localized.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Proc.Create(IronRuby.Builtins.Proc)">
+            <summary>
+            Creates a copy of the proc that has the same target, context and self object as this block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Proc.ToLambda(IronRuby.Runtime.Calls.RubyLambdaMethodInfo)">
+            <summary>
+            Creates a lambda Proc that has the same target, context and self object as this block.
+            Doesn't preserve the class of the Proc.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Proc.Copy">
+            <summary>
+            Creates a copy of the proc that has the same target, context, self object as this instance.
+            Doesn't copy instance data.
+            Preserves the class of the Proc.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Proc.BuildCall(IronRuby.Runtime.Calls.MetaObjectBuilder,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,IronRuby.Runtime.Calls.CallArguments)">
+            <summary>
+            From control flow perspective it "calls" the proc.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.Proc.CreateMethodInvoker(IronRuby.Runtime.RubyScope,System.String)">
+            <summary>
+            Creates a proc that invokes a method of given name.
+            <code>
+            Proc.new do |*args| 
+              raise ArgumentException if args.size == 0
+              obj.methodName(args.delete_at(0), args) 
+            end
+            </code>
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.PrepareExtensionMethodsUpdate(System.Collections.Generic.List{Microsoft.Scripting.Utils.ExtensionMethodInfo})">
+            <summary>
+            Invalidates
+            - failure cache on RubyClass via incrementing extension version
+            - groups 
+            - call sites via incrementing method version
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.Duplicate(System.Object)">
+            <summary>
+            Duplicates this class object. When duplicating singleton class a new "singletonClassOf" reference needs to be provided.
+            NOT thread safe.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.IsSubclassOf(IronRuby.Builtins.RubyClass)">
+            <summary>
+            Returns true if this class is equal to super or it is its descendant.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.RubyClass._clrFailedMemberLookupCache">
+            <summary>
+            Stores unsucessfull look-ups of CLR type members.
+            Reflection is not efficient at caching look-ups and we do multiple of them (due to mangling) each time a method is being resolved.
+            { (declaring-type, method-name, isStatic) -> (type-extension-version) }
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.RubyClass._clrMethodsByName">
+            <summary>
+            GetRuntimeMethods includes
+            1) methods declared on the queried type
+            2) non-virtual non-private instance methods inherited to the queried type
+            3) virtual methods that are not overridden in an ancestor of queried type
+            
+            Note that inherited static methods are not included.
+            RTSpecialName methods (including ctors) are also not included.
+            
+            See System.RuntimeType.RuntimeTypeCache.MemberInfoCache{T}.PopulateMethods.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.TryGetClrMember(System.Type,System.String,System.Boolean,System.Boolean,System.Boolean,IronRuby.Runtime.Calls.RubyMemberInfo@)">
+            <summary>
+            Returns a fresh instance of RubyMemberInfo each time it is called. The caller needs to cache it if appropriate.
+            May add or use method groups to/from super-clases if BindingFlags.DeclaredOnly is used.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.TryGetClrMethod(System.Type,System.Reflection.BindingFlags,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String,IronRuby.Runtime.Calls.RubyMemberInfo@)">
+            <summary>
+            There are basically 4 cases:
+            1) CLR method of the given name is not defined in the specified type.
+               Do nothing, the method will be found as we traverse the hierarhy towards the Kernel module.
+            2) Otherwise
+               1) There is no RubyMemberInfo of given <c>name</c> present in the (type..Kernel] ancestors.
+                  We need to search all types in (type..Object] for CLR method overloads.
+               2) There is a RubyMemberInfo in a class, say C, in (type..Kernel]. 
+                  We need to get CLR methods from (type..C) in addition to the members in the type.
+                   1) C.HidesInheritedOverloads == true
+                      All overloads of the method we look for are in [type..C).
+                   2) C.HidesInheritedOverloads == false
+                      All overloads of the method we look for are in [type..C) and in the RubyMemberInfo.
+            </summary>
+            <remarks>
+            Doesn't include explicitly implemented interface methods. Including them would allow to call them directly (obj.foo) 
+            if the overload resolution succeeds. However, the interface methods are probably implemented explicitly for a reason:
+            1) There is a conflict in signatures -> the overload resolution would probably fail.
+            2) The class was designed with an intention to not expose the implementations directly.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.BuildObjectAllocation(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments,System.String)">
+            <summary>
+            Implements Class#allocate feature.
+            </summary>  
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.BuildObjectConstruction(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments,System.String)">
+            <summary>
+            Implements Class#new feature.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyClass.BuildClrObjectConstruction(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments,System.String)">
+            <summary>
+            Implements Class#clr_new feature.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyEncoding">
+            <summary>
+            All encodings in Ruby are represented by instances of a single class. Therefore we need to wrap .NET Encoding class in RubyEncoding.
+            Instances of this class are app-domain singletons. That's all right as far as the class is readonly and doesn't implement IRubyObject.
+            Taint, frozen flags and instance variables need to be stored in per-runtime lookaside table.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.RubyEncoding.Name">
+            <summary>
+            Name as displayed by MRI.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.MatchData.Encoding">
+            <summary>
+            The encoding of the match data is always the same as encoding of the input string 
+            (even if the regex has a different compatible encoding).
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.RubyModule.IsDummySingletonClass">
+            <summary>
+            A dummy singleton class is an immutable class that has no members and is used to terminate singleton class chain.
+            </summary>
+            <remarks>
+            A method invoked on the last class in the singleton class chain before the dummy singleton is searched in the inheritance hierarchy of the dummy singleton:
+            [dummy singleton, singleton(Class), singleton(Module), singleton(Object), Class, Module, Object].
+            The ImmediateClass reference cannot be null (that would cause null-ref exception in rules), so we need to set it to the dummy.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.ForEachRecursivelyDependentClass(System.Func{IronRuby.Builtins.RubyModule,System.Boolean})">
+            <summary>
+            Calls given action on all modules that are directly or indirectly nested into this module.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.CreateSingletonClass(IronRuby.Builtins.RubyClass,System.Action{IronRuby.Builtins.RubyModule})">
+            <summary>
+            Create a new singleton class for this module. 
+            Doesn't attach this module to it yet, the caller needs to do so.
+            </summary>
+            <remarks>Thread safe.</remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.SetConstantChecked(System.String,System.Object)">
+            <summary>
+            Sets constant of this module. 
+            Returns true if the constant is already defined in the module and it is not an autoloaded constant.
+            </summary>
+            <remarks>
+            Thread safe.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.TryGetConstant(IronRuby.Runtime.RubyGlobalScope,System.String,IronRuby.Runtime.ConstantStorage@)">
+            <summary>
+            Get constant defined in this module.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.TryGetConstantNoLock(IronRuby.Runtime.RubyGlobalScope,System.String,IronRuby.Runtime.ConstantStorage@)">
+            <summary>
+            Get constant defined in this module.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.TryResolveConstant(IronRuby.Runtime.RubyGlobalScope,System.String,IronRuby.Runtime.ConstantStorage@)">
+            <summary>
+            Get constant defined in this module or any of its ancestors. 
+            Autoloads if autoloadScope is not null.
+            </summary>
+            <remarks>
+            Thread safe.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.TryResolveConstantNoLock(IronRuby.Runtime.RubyGlobalScope,System.String,IronRuby.Runtime.ConstantStorage@)">
+            <summary>
+            Get constant defined in this module or any of its ancestors.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.AddMethodNoCacheInvalidation(System.String,IronRuby.Runtime.Calls.RubyMemberInfo)">
+            <summary>
+            Direct addition to the method table. Used only for core method table operations.
+            Do not use unless absolutely sure there is no overriding method used in a dynamic site.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.RemoveMethodNoCacheInvalidation(System.String)">
+            <summary>
+            Direct removal from the method table. Used only for core method table operations.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.ForEachMember(System.Boolean,IronRuby.Runtime.RubyMethodAttributes,System.Collections.Generic.IEnumerable{System.String},System.Action{System.String,IronRuby.Builtins.RubyModule,IronRuby.Runtime.Calls.RubyMemberInfo})">
+            <summary>
+            inherited == false, attributes  attr == Instance:
+              - get methods in the "self" module
+              - also include methods on singleton ancestor classes until a non-singleton class is reached
+            inherited == false, attributes  attr == Singleton:
+              - get methods only in the "self" module if it's a singleton class
+              - do not visit mixins nor super classes 
+            inherited == true, attributes attr == Singleton:
+              - walk all ancestors until a non-singleton class is reached (do not include non-singleton's methods)
+            inherited == true, attributes  attr == None:
+              - walk all ancestors until an Object is reached
+            
+            Methods are filtered by visibility specified in attributes (mutliple visibilities could be specified).
+            A name undefined in a module is not visible in that module and its ancestors.
+            Method names are not duplicated in the result.
+            </summary>
+            <remarks>
+            Not thread safe.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.IsModuleType(System.Type)">
+            <summary>
+            Returns true if the CLR type is treated as Ruby module (as opposed to a Ruby class)
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyModule.IsSuperClassAncestor(IronRuby.Builtins.RubyModule)">
+            <summary>
+            Returns true if given module is an ancestor of the superclass of this class (provided that this is a class).
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyStruct.Info">
+            <summary>
+            This class represents the type information of a Struct. There is one
+            instance of this per Struct RubyClass; all instances of that class shares
+            one instance of StructInfo.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.RubySymbol.String">
+            <summary>
+            Returns a frozen string.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.BasicObject">
+            <summary>
+            Represents BasicObject class.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.BasicObject.#ctor(IronRuby.Builtins.RubyClass)">
+            <summary>
+            Implements BasicObject#new.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.BasicObject.#ctor(IronRuby.Builtins.RubyClass,System.Object[])">
+            <summary>
+            Implements BasicObject#new.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.Kernel">
+            <summary>
+            Represents Kernel module mixed into Object class.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.MultiDimensionalArray">
+            <summary>
+            Represents a module mixed into all multi-dimensional CLR arrays.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.FlagEnumeration">
+            <summary>
+            Represents a module mixed into all flag enums.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Builtins.RubyObject">
+            <summary>
+            The type to represent user objects that inherit from Object
+            
+            Note that for classes that inherit from some other class, RubyTypeDispenser gets used
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyObject.#ctor(IronRuby.Builtins.RubyClass)">
+            <summary>
+            Implements Object#new.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Builtins.RubyObject.#ctor(IronRuby.Builtins.RubyClass,System.Object[])">
+            <summary>
+            Implements Object#new.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Builtins.LocalJumpError.SkipFrame">
+            <summary>
+            The exception cannot be rescued in this frame if set.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.NoOverrides">
+            <summary>
+            Module doesn't allow its methods to be overridden.
+            Used for built-ins, except for Object.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.NoNameMapping">
+            <summary>
+            Module doesn't allow its methods to be called by mangled (FooBar -> foo_bar) or mapped ([] -> get_Item) names.
+            Used for built-ins.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.NotPublished">
+            <summary>
+            Module is not published in the runtime global scope.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.NoUnderlyingType">
+            <summary>
+            Module doesn't expose the underlying CLR type. The behavior is the same as if it was written in Ruby.
+            (clr_new and clr_ctor won't work on such class/module, CLR methods won't be visible, etc.).
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.AllowReopening">
+            <summary>
+            By default a non-builtin library load fails if it defines a class whose name conflicts with an existing constant name.
+            If this restriction is applied to a class it can reopen an existing Ruby class of the same name but it can't specify an underlying type.
+            This is required so that the library load doesn't depend on whether or not any instances of the existing Ruby class already exist. 
+            </summary>
+        </member>
+        <member name="F:IronRuby.Builtins.ModuleRestrictions.Builtin">
+            <summary>
+            Default restrictions for built-in modules.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.LambdaDefinition">
+            <summary>
+            Represents definition of a lambda:
+            <code>
+            ->{parameters} { }
+            </code>
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ConditionalJumpExpression">
+            <summary>
+            Represents {condition} {and/or/&amp;&amp;/||} {jump-statement}, 
+            or {condition} ? {jump-statement} : {value}.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.FileLiteral">
+            <summary>
+            Represents __FILE__ literal encoded by the containing source file encoding.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.Placeholder">
+            <summary>
+            Used as a null LHS without backing storage.
+            E.g. 'a, = 1' is represented as 'ParallelAssignment(CoumpoundLeftValue(Variable, Placeholder), CompoundRightValue(Constant))
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ConditionalStatement">
+            <summary>
+            Represents if- and unless- statements.
+            Also used for (condition) ? jump-statement : jump-statement.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.CallSiteBuilder">
+            <summary>
+            Simple helper for building up method call actions.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.Ast.CallSiteBuilder.HiddenArgumentCount">
+            <summary>
+            [scope, instance, block?]
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.ModuleDefinition._qualifiedName">
+            <summary>
+            Singleton classes don't have a name.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.MethodDefinition._target">
+            <summary>
+            Non-null for singleton/class methods.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.AndExpression">
+            <summary>
+            TODO: unify with OrExpression (?)
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ArrayConstructor">
+            <summary>
+            [ args ]
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ConditionalExpression">
+            <summary>
+            Lightweight form of if-then-else-end expression. 
+            Used for ternary ?: operator.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.StringLiteral">
+            <summary>
+            Represents a string literal.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.SymbolLiteral">
+            <summary>
+            Represents a symbol literal encoded by the containing source file encoding.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.MethodCall">
+            <summary>
+            target.method_id(args)
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.RangeCondition.TransformRead(IronRuby.Compiler.Ast.AstGenerator)">
+            <code>
+            End-exclusive range:
+              if state
+                state = IsFalse({end})  
+                true
+              else
+                state = IsTrue({begin})
+              end
+                
+            End-inclusive range:
+              if state || IsTrue({begin})  
+                state = IsFalse({end})
+                true
+              else  
+                false
+              end  
+            </code>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.SelfReference">
+            <summary>
+            self
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.StringConstructor">
+            <summary>
+            Sequence of string literals and/or string embedded expressions.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.SuperCall">
+            <summary>
+            super(args)
+            super
+            
+            The former case passes the arguments explicitly.
+            The latter passes all of the arguments that were passed to the current method (including the block, if any)
+            
+            Also works from a method defined using define_method.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.Ast.SuperCall.HasImplicitArguments">
+            <summary>
+            All non-block arguments are passed implicitly.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.YieldCall">
+            <summary>
+            yield(args)
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.CompoundLeftValue.EmptyBlockSignature">
+            <summary>
+            Empty LHS - used by blocks.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.CompoundLeftValue.UnspecifiedBlockSignature">
+            <summary>
+            Unspecified LHS - used by blocks.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.CompoundLeftValue._leftValues">
+            <summary>
+            List of l-values, possibly compound.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.CompoundLeftValue._unsplattedValueIndex">
+            <summary>
+            The index in _leftValues of *args l-value. 
+            _leftValues.Length if there is none.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.ConstantVariable.#ctor(System.String,Microsoft.Scripting.SourceSpan)">
+            <summary>
+            Unbound constant (Foo).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.ConstantVariable.#ctor(IronRuby.Compiler.Ast.Expression,System.String,Microsoft.Scripting.SourceSpan)">
+            <summary>
+            Bound constant (::Foo - bound to Object, qualifier.Foo - bound to qualifier object).
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ParallelAssignmentExpression">
+            <summary>
+            lhs = compound-rhs
+            compound-lhs = rhs
+            compound-lhs = compound-rhs
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.SimpleAssignmentExpression">
+            <summary>
+            lhs = rhs
+            lhs op= rhs
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.ShutdownHandlerStatement">
+            <summary>
+            Implements END block. This block behaves like Kernel#at_exit with a true block definition. 
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.FileInitializerStatement">
+            <summary>
+            Represents a file initializer - BEGIN { ... } block.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.Ast.ElseIfClause._condition">
+            <summary>
+            Null means a simple else.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.AstGenerator.GetCurrentLambdaScope">
+            <summary>
+            Gets the inner most scope that compiles to a lambda expression.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.AstGenerator.MakeMethodBlockParameterRead">
+            <summary>
+            Makes a read of the current method's block parameter. 
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.AstGenerator.MakeMethodBlockParameterSelfRead">
+            <summary>
+            Makes a read of the Self property of the current method's block parameter. 
+            Returns Null constant in top-level code.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Arguments.TransformToCallInternal(IronRuby.Compiler.Ast.AstGenerator,System.Collections.Generic.ICollection{System.Linq.Expressions.Expression})">
+            <summary>
+            Adds arguments to the given collection (result) and returns a transformed splatted argument.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.AssignmentExpression">
+            <summary>
+            lhs = rhs
+            lhs op= rhs
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Ast.Expression">
+            <summary>
+            Represents expressions. Statements are considered special cases of expressions in AST class hierarchy.
+            Unlike syntactic expression a syntactic statement cannot be assigned to a left value.
+            However certain Ruby constructs (e.g. block-expression) allow to read the value of a statement. 
+            Usually such value is null (e.g. undef, alias, while/until statements), 
+            although some syntactic statements evaluate to a non-null value (e.g. if/unless-statements).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.TransformRead(IronRuby.Compiler.Ast.AstGenerator)">
+            <summary>
+            Transform as expression (value is read).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.TransformReadStep(IronRuby.Compiler.Ast.AstGenerator)">
+            <summary>
+            Transform as expression (value is read) and mark sequence point.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.TransformReadBoolean(IronRuby.Compiler.Ast.AstGenerator,System.Boolean)">
+            <summary>
+            Transform as expression whose value is read as Boolean.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.TransformCondition(IronRuby.Compiler.Ast.AstGenerator,System.Boolean)">
+            <summary>
+            Transform as expression whose value is read as Boolean and mark a sequence point.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.Transform(IronRuby.Compiler.Ast.AstGenerator)">
+            <summary>
+            Transform as statement (value is not read). Marks sequnce point.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Ast.Expression.TransformResult(IronRuby.Compiler.Ast.AstGenerator,IronRuby.Compiler.ResultOperation)">
+            <summary>
+            Transform and handle the result according to the specified result operation. Marks sequence point.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Generation.IRubyType">
+            <summary>
+            Implemented by types generated by Ruby type builder.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Generation.TypeDescription">
+            <summary>
+            TypeDescription captures the minimal information required by TypeDispenser to define a distinct CLS type
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Generation.ClsTypeEmitter.OverrideMethods(System.Type)">
+            <summary>
+            Overrides methods - this includes all accessible virtual methods as well as protected non-virtual members
+            including statics and non-statics.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Generation.ClsTypeEmitter.EmitBaseMethodDispatch(System.Reflection.MethodInfo,Microsoft.Scripting.Generation.ILGen)">
+            <summary>
+            Loads all the incoming arguments and forwards them to mi which
+            has the same signature and then returns the result
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Generation.ClsTypeEmitter.EmitConvertFromObject(Microsoft.Scripting.Generation.ILGen,System.Type)">
+            <summary>
+            Emit code to convert object to a given type. This code is semantically equivalent
+            to PythonBinder.EmitConvertFromObject, except this version accepts ILGen whereas
+            PythonBinder accepts Compiler. The Binder will chagne soon and the two will merge.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Generation.ClsTypeEmitter.CreateSuperCallHelper(System.Reflection.MethodInfo)">
+            <summary>
+            Creates a method for doing a base method dispatch.  This is used to support
+            super(type, obj) calls.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Generation.ClsTypeEmitter.EmitClrCallStub(Microsoft.Scripting.Generation.ILGen,System.Reflection.MethodInfo,System.String)">
+            <summary>
+            Generates stub to receive the CLR call and then call the dynamic language code.
+            This code is similar to that in DelegateSignatureInfo.cs in the Microsoft.Scripting.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Generation.ReturnFixer">
+            <summary>
+            Same as the DLR ReturnFixer, but accepts lower level constructs,
+            such as LocalBuilder, ParameterInfos and ILGen.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Generation.EmittedAttribute">
+            <summary>
+            Marks methods and properties that are emitted into the generated code.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.Generation.ReflectionCachedAttribute">
+            <summary>
+            Marks types whose [Emitted] members should be stored in Reflection Cache.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.UnsignedBigIntegerParser">
+            <summary>
+            TODO: move to DLR.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.LexicalScope">
+            <summary>
+            Represents a lexical scope in Ruby AST.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.LexicalScope.IsTop">
+            <summary>
+            Variable lookup ends in this scope.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.LexicalScope.IsStaticTop">
+            <summary>
+            The top static scope for local variable lookup.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.LexicalScope.ResolveVariable(System.String)">
+            <summary>
+            Looks the scope chain for a variable of a given name.
+            Includes runtime scope in the lookup if available.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.TopStaticLexicalScope">
+            <summary>
+            BEGIN block and source unit scopes.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.TopStaticLexicalScope.IsTop">
+            <summary>
+            Local variable lookup ends here if there is no runtime outer scope.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.MethodLexicalScope">
+            <summary>
+            Instance method scope.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.ClassLexicalScope">
+            <summary>
+            Class scope.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.TopLocalDefinitionLexicalScope">
+            <summary>
+            Singleton method, singleton class and module. 
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.BlockLexicalScope">
+            <summary>
+            Block scope.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Compiler.PaddingLexicalScope">
+            <summary>
+            for-loop scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Parser.EnterNestedScope">
+            <summary>
+            Block scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Parser.EnterPaddingScope">
+            <summary>
+            for-loop scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Parser.EnterFileInitializerScope">
+            <summary>
+            BEGIN block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Parser.EnterTopStaticScope">
+            <summary>
+            Source unit scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Compiler.Tokenizer.UnicodeCodePointToString(System.Int32)">
+            <summary>
+            Converts all codepoints in range [0, 0x10ffff] to a string.
+            Undefined for codepoint greater than 0x10ffff.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.Hosted">
+            <summary>
+            Simple scope with or without DLR Scope binding.
+            Used by Execute("code") and Execute("code", scope).
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.Main">
+            <summary>
+            Main script scope w/o DLR Scope binding.
+            The factory sets TOPLEVEL_BINDING and DATA constants.
+            Used by ExecuteProgram. 
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.None">
+            <summary>
+            Top scope is passed by parameter to the top-level lambda, it is not scope is created.
+            Used by eval("code"), eval("code", binding).
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.ModuleEval">
+            <summary>
+            Creates a module scope with parent scope passed into the top-level lambda.
+            Used by module_eval("code")/instance_eval("code").
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.File">
+            <summary>
+            File executed via load(false) or require.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Compiler.TopScopeFactoryKind.WrappedFile">
+            <summary>
+            File executed via load(true).
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.RubyCompilerOptions.IsEval">
+            <summary>
+            Embedded code. The code being compiled is embedded into an already compiled code.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.RubyCompilerOptions.TopLevelMethodName">
+            <summary>
+            Method name used by blocks.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.RubyCompilerOptions.TopLevelParameterNames">
+            <summary>
+            Used by super-calls with implicit parameters.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Compiler.RubyCompilerOptions.LocalNames">
+            <summary>
+            Used by dynamic variable look-up.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Hosting.RubyService.RequireFile(System.String)">
+            <summary>
+            Loads a given script file using the semantics of Kernel#require method.
+            </summary>
+            <param name="path">The path to the file to load.</param>
+            <returns>Whether the file has already been required.</returns>
+            <remarks>
+            If a relative path is given the current search paths are used to locate the script file.
+            The current search paths could be read and modified via <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.GetSearchPaths"/> and <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.SetSearchPaths(System.Collections.Generic.ICollection{System.String})"/>,
+            respectively.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Hosting.RubyService.RequireFile(System.String,Microsoft.Scripting.Hosting.ScriptScope)">
+            <summary>
+            Loads a given script file using the semantics of Kernel#require method.
+            The script is executed within the context of a given <see cref="T:Microsoft.Scripting.Hosting.ScriptScope"/>.
+            </summary>
+            <param name="path">The path to the file to load.</param>
+            <param name="scope">The scope to use for the script execution.</param>
+            <returns>Whether the file has already been required.</returns>
+            <remarks>
+            If a relative path is given the current search paths are used to locate the script file.
+            The current search paths could be read and modified via <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.GetSearchPaths"/> and <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.SetSearchPaths(System.Collections.Generic.ICollection{System.String})"/>,
+            respectively.
+            </remarks>
+        </member>
+        <member name="T:IronRuby.Hosting.RubyCommandLine">
+            <summary>
+            A simple Ruby command-line should mimic the standard irb.exe
+            </summary>
+        </member>
+        <member name="M:IronRuby.Hosting.RubyOptionsParser.ParseArgument(System.String)">
+            <exception cref="T:System.Exception">On error.</exception>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.InteropBinder.Invoke">
+            <summary>
+            Attempts to invoke the member, falls back to InvokeMember("call")
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.InteropBinder.TryGetMemberExact">
+            <summary>
+            GetMember with a fallback that returns OperationFailed singleton.
+            No name mangling is performed.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.InteropBinder.Splat">
+            <summary>
+            Tries convert to IList. If the covnersion is not implemented by the target meta-object wraps it into an object[].
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyLibraryMethodInfo">
+            <summary>
+            Performs method binding for calling CLR methods.
+            Currently this is used for all builtin libary methods and interop calls to CLR methods
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyLibraryMethodInfo.#ctor(IronRuby.Runtime.Calls.LibraryOverload[],IronRuby.Runtime.RubyMemberFlags,IronRuby.Builtins.RubyModule)">
+            <summary>
+            Creates a Ruby method implemented by a method group of CLR methods.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.Calls.RubyMetaBinder._context">
+            <summary>
+            Cross-runtime checks are emitted if the action is not bound to the context.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMetaBinder.BindPrecompiled(System.Type,System.Object[])">
+            <summary>
+            Returns a precompiled rule delegate or null, if not available for the given delegate type and arguments.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMetaBinderFactory.Shared">
+            <summary>
+            Sites shared across runtimes.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyMethodGroupBase">
+            <summary>
+            Performs method binding for calling CLR methods.
+            Currently this is used for all builtin libary methods and interop calls to CLR methods
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMethodGroupBase.TrySelectOverload(System.Type[])">
+            <summary>
+            Filters out methods that don't exactly match parameter types except for hidden parameters (RubyContext, RubyScope, site local storage).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMethodGroupBase.BuildCallNoFlow(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments,System.String,System.Collections.Generic.IList{Microsoft.Scripting.Actions.Calls.OverloadInfo},IronRuby.Runtime.Calls.SelfCallConvention,System.Boolean)">
+            <summary>
+            Resolves an library method overload and builds call expression.
+            The resulting expression on meta-builder doesn't handle block control flow yet.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMethodGroupBase.RuleControlFlowBuilder(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments)">
+            <summary>
+            Takes current result and wraps it into try-filter(MethodUnwinder)-finally block that ensures correct "break" behavior for 
+            library method calls with block given in bfcVariable (BlockParam).
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyMethodBody">
+            <summary>
+            Represents a Ruby method body AST. Multiple RubyMethodInfos can share the same instance.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyOverloadGroupInfo">
+            <summary>
+            A group of CLR method overloads that might be declared in multiple types and partially hidden by Ruby method definitions.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyOverloadResolver.BindToUnexpandedParams(Microsoft.Scripting.Actions.Calls.MethodCandidate)">
+            <summary>
+            We expand params arrays for library methods. Splat operator needs to be used to pass content of an array/list into params array method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyOverloadResolver.CanConvertFrom(System.Type,System.Dynamic.DynamicMetaObject,Microsoft.Scripting.Actions.Calls.ParameterWrapper,Microsoft.Scripting.Actions.Calls.NarrowingLevel)">
+            <summary>
+            Returns true if fromArg of type fromType can be assigned to toParameter with a conversion on given narrowing level.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.SuperForwarderInfo">
+            <summary>
+            Used internally for implementation of methods defined by Kernel#public/protected/private.
+            Such a method is just a stub that calls "super" - a method resolution thus forwards to its super method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.ArgsBuilder.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <param name="implicitParamCount">Parameters for which arguments are provided implicitly, i.e. not specified by user.</param>
+            <param name="mandatoryParamCount">Number of parameters for which an actual argument must be specified.</param>
+            <param name="leadingMandatoryParamCount">Number of mandatory parameters that precede any optional parameters.</param>
+            <param name="optionalParamCount">Number of optional parameters.</param>
+            <param name="hasUnsplatParameter">Method has * parameter (accepts any number of additional parameters).</param>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.CallArguments">
+            <summary>
+            Wraps the arguments of a dynamic call site
+            Includes the actual arguments, the expressions that produced those arguments,
+            and the call signature.
+            
+            These three things are grouped together to ensure that they are all in sync
+            when we want to shift the arguments around during the method binding process.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.MetaObjectBuilder.ControlFlowBuilder">
+            <summary>
+            A rule builder sets this up if the resulting rule is required to be wrapped in a non-local control flow handler.
+            This delegate must be called exactly once (<see cref="M:IronRuby.Runtime.Calls.MetaObjectBuilder.BuildControlFlow(IronRuby.Runtime.Calls.CallArguments)"/> method).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyCallAction.Make(IronRuby.Runtime.RubyContext,System.String,System.Int32)">
+            <summary>
+            Creates a runtime-bound call site binder.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyCallAction.Make(IronRuby.Runtime.RubyContext,System.String,IronRuby.Runtime.Calls.RubyCallSignature)">
+            <summary>
+            Creates a runtime-bound call site binder.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyCallAction.MakeShared(System.String,IronRuby.Runtime.Calls.RubyCallSignature)">
+            <summary>
+            Creates a call site binder that can be used from multiple runtimes. The site it binds for can be called from multiple runtimes.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.Calls.RubyCallFlags.HasBlock">
+            <summary>
+            The site must propagate return from the block as implemented in <see cref="M:IronRuby.Runtime.RubyOps.MethodPropagateReturn(IronRuby.Runtime.RubyScope,IronRuby.Builtins.Proc,IronRuby.Runtime.BlockReturnResult)"/>.
+            This means that if the method that uses the site itself takes a block no action is needed, just pass the return value thru.
+            If it doesn't take a block but is yielding to a user block (a rare case) it needs to throw <see cref="T:IronRuby.Runtime.MethodUnwinder"/> exception
+            if the yielded block returns.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyCallSignature">
+            <summary>
+            RubyScope/RubyContext, (self), (argument){ArgumentCount}, (splatted-argument)?, (block)?
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyCallSignature.#ctor(IronRuby.Runtime.Calls.RubyCallFlags)">
+            <summary>
+            Used by defined? operator applied on methods.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsProtected">
+            <summary>
+            True if the member is Ruby-protected. 
+            </summary>
+            <remarks>
+            Ruby-protected members can only be called from a scope whose self immediate class is a descendant of the method owner.
+            CLR-protected members can only be called if the receiver is a descendant of the method owner. 
+            </remarks>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsPrivate">
+            <summary>
+            True if the member is Ruby-private. 
+            </summary>
+            <remarks>
+            Ruby-private members can only be called with an implicit receiver (self).
+            CLR-private members can only be called if in PrivateBinding mode, the receiver might be explicit or implicit.
+            </remarks>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsPublic">
+            <summary>
+            True if the member is Ruby-public. 
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsRubyMember">
+            <summary>
+            True if the member is defined in Ruby or for undefined and hidden members.
+            False for members representing CLR members.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsDataMember">
+            <summary>
+            True if the member behaves like a property/field: GetMember invokes the member.
+            Otherwise the member behaves like a method: GetMember returns the method.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.IsRemovable">
+            <summary>
+            True if the member can be permanently removed.
+            True for attached CLR members, i.e. real CLR members and extension methods.
+            False for detached CLR members and extension methods.
+            If the member cannot be removed we hide it.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.InvalidateGroupsOnRemoval">
+            <summary>
+            True if the method should invalidate groups below it in the inheritance hierarchy. 
+            </summary>
+            <remarks>
+            Set when a Ruby method is defined that hides a CLR overload that is used in a method group below the definition.
+            Set when an extension method is added above the Ruby method definition and the change isn't propagated below.
+            Undefined and Hidden method singletons cannot be removed so they don't need to be marked.
+            </remarks>
+        </member>
+        <member name="P:IronRuby.Runtime.Calls.RubyMemberInfo.InvalidateSitesOnOverride">
+            <summary>
+            Method definition that replaces/overrides this method will cause version update of all dependent subclasses/modules, which
+            triggers invalidation of sites that are bound to those classes.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMemberInfo.GetMembers">
+            <summary>
+            Gets all the CLR members represented by this member info. 
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMemberInfo.GetRubyParameterArray">
+            <summary>
+            Returns a Ruby array describing parameters of the method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMemberInfo.TryBindGenericParameters(System.Type[])">
+            <summary>
+            Returns a copy of this member info that groups only those members of this member info that are generic
+            and of generic arity equal to the length of the given array of type arguments. Returns null if there are no such generic members.
+            All the members in the resulting info are constructed generic methods bound to the given type arguments.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Calls.RubyMethodGroupInfo">
+            <summary>
+            A group of CLR methods that are treated as a single Ruby method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Calls.RubyMethodInfo.RuleControlFlowBuilder(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments)">
+            <summary>
+            Takes current result and wraps it into try-filter(MethodUnwinder)-finally block that ensures correct "break" behavior for 
+            Ruby method calls with a block given in arguments.
+            
+            Sets up a RFC frame similarly to MethodDeclaration.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.TrySplatAction`1">
+            <summary>
+            Splats the target value. Returns the value if it cannot be splatted.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.SplatAction`1">
+            <summary>
+            Splats the target value. Wraps the value in a RubyArray if the value cannot be splatted.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ExplicitTrySplatAction">
+            <summary>
+            Returns result of "to_a" if the object responds to "to_a" or the target object itself otherwise.
+            Throws an exception if "to_a" doesn't return IList.
+            </summary>
+            <remarks>See also http://redmine.ruby-lang.org/issues/show/3680 </remarks>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ImplicitTrySplatAction">
+            <summary>
+            Returns result of "to_ary" if the object responds to "to_ary" or the target object itself otherwise.
+            Throws an exception if "to_ary" doesn't return IList.
+            </summary>
+            <remarks>See also http://redmine.ruby-lang.org/issues/show/3680 </remarks>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ExplicitSplatAction">
+            <summary>
+            Returns result of "to_a" if the object responds to "to_a" or the target object itself otherwise.
+            Throws an exception if "to_a" doesn't return IList.
+            </summary>
+            <remarks>See also http://redmine.ruby-lang.org/issues/show/3680 </remarks>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ImplicitSplatAction">
+            <summary>
+            Returns result of "to_ary" if the object responds to "to_ary" or the target object itself otherwise.
+            Throws an exception if "to_ary" doesn't return IList.
+            </summary>
+            <remarks>See also http://redmine.ruby-lang.org/issues/show/3680 </remarks>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ConvertToIntAction">
+            <summary>
+            Calls to_int and wraps the result (Fixnum or Bignum) into IntegerValue.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ConvertToIAction">
+            <summary>
+            Calls to_i and wraps the result (Fixnum or Bignum) into IntegerValue.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Conversions.ConvertToFloatingPointAction`1">
+            <summary>
+            Calls to_f (in most cases) and wraps the result into double. It directly calls Kernel.Float for String, Fixnum and Bignum.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.CheckedMonitor">
+            <summary>
+            TODO: use ReaderWriterLockSlim on CLR4?
+            Queryable recursive lock.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.ClrName">
+            <summary>
+            Represents a CLR member name that is subject to name mangling.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.CustomTypeDescHelpers">
+            <summary>
+            Helper class that all custom type descriptor implementations call for
+            the bulk of their implementation.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyAttribute.BuildConfig">
+            <summary>
+            If set, indicates what build configurations this module should be available under
+            Can be any string that is valid after a #if
+            Default is to be available under all configurations
+            
+            typical usage: BuildConfig = "!SILVERLIGHT"
+            
+            TODO: is there a better way to do this?
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyAttribute.Compatibility">
+            <summary>
+            Which language version supports the feature
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyLibraryAttribute">
+            <summary>
+            Applied to assemblies containing Ruby library methods.
+            Specifies an initializer for the library, which is a type that publishes RubyModules and RubyClasses defined in the assembly.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttribute.CompatibilityEncodingShift">
+            <summary>
+            RubyCompatibility is encoded along with the method attributes in the initialization code
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyModuleAttribute.Name">
+            <summary>
+            If an extension type doesn't specify Ruby name its name is inferred from the CLR 
+            non-generic qualified name of the type being extended. No constant is added to the Object class.
+            
+            Otherwise, the qualified name is the qualified name of the outer Ruby type within which the type is nested
+            or the simple name of the type only if it is not a nested type (non-Ruby types and namespaces are ignored).
+            The constant defined for such module/class is set on the declaring Ruby type or on Object if it is not nested in a Ruby type.
+            
+            Examples:
+            1)
+            namespace Ruby.Extensions {
+                [RubyClass(Extends = System.Collections.Generic.IDictionary{K,V}]
+                public static class IDictionaryOps {}
+            }
+            
+            Ruby name is "System::Collections::Generic::IDictionary"
+            
+            2)
+            namespace Ruby.Builtins {
+                [RubyClass("Exception", Extends = typeof(Exception))]
+                public static class ExceptionOps {}
+            }
+            
+            Ruby name is "Exception". Constant "Exception" is defined on Object.
+            
+            3) 
+            namespace Ruby.MyLibrary {
+                public class MyType {
+                    [RubyModule]
+                    public class MyClass {
+                        [RubyClass("Foo")]
+                        public class Bar {
+                           [RubyClass]
+                           public class Baz {
+                           }
+                           
+                           [RubyClass("Goo", Extends = typeof(int))]
+                           public class Gaz {
+                           }
+                           
+                           [RubyClass(Extends = typeof(int))]
+                           public class IntOps {
+                             
+                               [RubyClass]
+                               public class C {
+                               }
+                           }
+                        }
+                    }
+                }
+            }
+            
+            names are (full CLR name -> Ruby name):
+            Ruby.MyLibrary.MyType.MyClass            -> "MyClass" 
+            Ruby.MyLibrary.MyType.MyClass.Bar        -> "MyClass::Foo" 
+            Ruby.MyLibrary.MyType.MyClass.Bar.Baz    -> "MyClass::Foo::Baz" 
+            Ruby.MyLibrary.MyType.MyClass.Bar.Gaz    -> "MyClass::Foo::Goo" 
+            Ruby.MyLibrary.MyType.MyClass.Bar.IntOps -> "System::Int32"
+            Ruby.MyLibrary.MyType.MyClass.Bar.IntOps -> "System::Int32::C"
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyModuleAttribute.Extends">
+            <summary>
+            The CLR type extended by this RubyModule.
+            </summary>
+            <remarks>
+            A Ruby class/module defined by this attribute can either <c>extend</c> an existing CLR type, specified by this property, 
+            or be <c>self-contained</c>, in which case the value of <see cref="P:IronRuby.Runtime.RubyModuleAttribute.Extends"/> property is <c>null</c>. 
+            A self-contained class/module has <see cref="!:ModuleRestriction.NoUnderlyingType"/> set by default.
+            </remarks>
+        </member>
+        <member name="T:IronRuby.Runtime.HideMethodAttribute">
+            <summary>
+            Hides CLR method when called using give name. 
+            Doesn't apply on calls using a different (mangled/unmangled) name.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.BinaryEncoding">
+            <summary>
+            ASCII-8BIT encoding: 
+            0xmn -> \u00mn
+            \u00mn -> 0xmn, error otherwise
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.BlockParam.BlockJumped(System.Object)">
+            <summary>
+            Must be called on the result of RubyOps.Yield. Implements post-yield control flow operation.
+            </summary>
+            <remarks>
+            Used by library methods that take a block. The binder creates an instance of BlockParam holding on RFC if necessary.
+            A library method that creates a block yet doesn't take one needs to manage RFC on its own.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Runtime.BlockParam.PropagateFlow(IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Propagates control flow (break/return) from the yielded block to the enclosing block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.BlockParam.Break(System.Object)">
+            <summary>
+            Breaks from the current block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.BlockParam.BuildInvoke(IronRuby.Runtime.Calls.MetaObjectBuilder,IronRuby.Runtime.Calls.CallArguments)">
+            <summary>
+            "yields" to the proc.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.GlobalVariable.IsEnumerated">
+            <summary>
+            Whether the variable is listed in the globals_variable result.
+            For hosts and libraries global variables are good way how to associate arbitrary data with execution context.
+            They can use this property to hide such data from user.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.GlobalVariable.IsDefined">
+            <summary>
+            Implements semantics if the defined? keyword.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.IDuplicable">
+            <summary>
+            Implemented by classes that are capable of creating their subclass clones.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.IRubyObject.ImmediateClass">
+            <summary>
+            Gets or sets the immediate class of this object.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyInstanceData">
+            <summary>
+            Stores the per-instance data that all Ruby objects need (frozen?, tainted?, untrusted?, instance_variables, etc)
+            Stored in a lookaside weak hashtable for types that don't implement IRubyObject (i.e. .NET types).
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyInstanceData.ImmediateClass">
+            <summary>
+            Null - uninitialized (lazy init'd) => object doesn't have an instance singleton.
+            Class - object doesn't have an instance singleton
+            Singleton - object has an instance singleton
+            
+            Not used by implementations of IRubyObject.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyInstanceData.ObjectId">
+            <summary>
+            WARNING: not all objects store their ID here.
+            Use ObjectOps.GetObjectId instead.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyInstanceData.GetInstanceVariables">
+            <summary>
+            Gets the instance variables dictionary, initializing it if it was null.
+            Only use this if you want to set something into the dictionary, otherwise
+            just use the _instanceVars field
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.Protocols">
+            <summary>
+            Class for implementing standard Ruby conversion logic
+            
+            Ruby conversion rules aren't always consistent, but we should try to capture all
+            common conversion patterns here. They're more likely to be correct than something
+            created by hand.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.Normalize(Microsoft.Scripting.Math.BigInteger)">
+            <summary>
+            Converts a BigInteger to int if it is small enough
+            </summary>
+            <param name="x">The value to convert</param>
+            <returns>An int if x is small enough, otherwise x.</returns>
+            <remarks>
+            Use this helper to downgrade BigIntegers as necessary.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToString(IronRuby.Runtime.ConversionStorage{IronRuby.Builtins.MutableString},System.Object)">
+            <summary>
+            Converts an object to string using to_str protocol (<see cref="T:IronRuby.Runtime.Conversions.ConvertToStrAction"/>).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToString(System.Runtime.CompilerServices.CallSite{System.Func{System.Runtime.CompilerServices.CallSite,System.Object,IronRuby.Builtins.MutableString}},System.Object)">
+            <summary>
+            Converts an object to string using to_str protocol (<see cref="T:IronRuby.Runtime.Conversions.ConvertToStrAction"/>).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToPath(IronRuby.Runtime.ConversionStorage{IronRuby.Builtins.MutableString},System.Object)">
+            <summary>
+            Converts an object to string using to_path-to_str protocol.
+            Protocol:
+            ? to_path => to_path() and to_str conversion on the result
+            ? to_str => to_str()
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToPath(System.Runtime.CompilerServices.CallSite{System.Func{System.Runtime.CompilerServices.CallSite,System.Object,IronRuby.Builtins.MutableString}},System.Object)">
+            <summary>
+            Converts an object to string using to_path-to_str protocol.
+            Protocol:
+            ? to_path => to_path() and to_str conversion on the result
+            ? to_str => to_str()
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.TryCastToString(IronRuby.Runtime.ConversionStorage{IronRuby.Builtins.MutableString},System.Object)">
+            <summary>
+            Converts an object to string using try-to_str protocol (<see cref="T:IronRuby.Runtime.Conversions.TryConvertToStrAction"/>).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.ConvertToString(IronRuby.Runtime.ConversionStorage{IronRuby.Builtins.MutableString},System.Object)">
+            <summary>
+            Convert to string using to_s protocol (<see cref="T:IronRuby.Runtime.Conversions.ConvertToSAction"/>).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.ToClrStringNoThrow(IronRuby.Runtime.RubyContext,System.Object)">
+            <summary>
+            Converts an object to a string via to_s and catches all exceptions this conversion might throw.
+            If the string returned by to_s is a binary string, converts it to a UTF16 string using UTF8 encoding and escapes 
+            all invalid byte sequences.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToUInt32Unchecked(IronRuby.Runtime.ConversionStorage{IronRuby.Runtime.IntegerValue},System.Object)">
+            <summary>
+            Like CastToInteger, but converts the result to an unsigned int.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CastToInt64Unchecked(IronRuby.Runtime.ConversionStorage{IronRuby.Runtime.IntegerValue},System.Object)">
+            <summary>
+            Like CastToInteger, but converts the result to an unsigned int.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.Compare(IronRuby.Runtime.ComparisonStorage,System.Object,System.Object)">
+            <summary>
+            Try to compare the lhs and rhs. Throws and exception if comparison returns null. Returns -1/0/+1 otherwise.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.IsTrue(System.Object)">
+            <summary>
+            Protocol for determining truth in Ruby (not null and not false)
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.IsEqual(IronRuby.Runtime.BinaryOpStorage,System.Object,System.Object)">
+            <summary>
+            Protocol for determining value equality in Ruby (uses IsTrue protocol on result of == call)
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.IsEqual(System.Runtime.CompilerServices.CallSite{System.Func{System.Runtime.CompilerServices.CallSite,System.Object,System.Object,System.Object}},System.Object,System.Object)">
+            <summary>
+            Protocol for determining value equality in Ruby (uses IsTrue protocol on result of == call)
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CoerceAndCompare(IronRuby.Runtime.BinaryOpStorage,IronRuby.Runtime.BinaryOpStorage,System.Object,System.Object)">
+            <summary>
+            Try to coerce the values of self and other (using other as the target object) then dynamically invoke "&lt;=&gt;".
+            </summary>
+            <returns>
+            Result of &lt;=&gt; on coerced values or <c>null</c> if "coerce" method is not defined, throws a subclass of SystemException, 
+            or returns something other than a pair of objects.
+            </returns>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CoerceAndRelate(IronRuby.Runtime.BinaryOpStorage,IronRuby.Runtime.BinaryOpStorage,System.String,System.Object,System.Object)">
+            <summary>
+            Applies given operator on coerced values and converts its result to Ruby truth (using Protocols.IsTrue).
+            </summary>
+            <exception cref="!:ArgumentError">
+            "coerce" method is not defined, throws a subclass of SystemException, or returns something other than a pair of objects.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.CoerceAndApply(IronRuby.Runtime.BinaryOpStorage,IronRuby.Runtime.BinaryOpStorage,System.String,System.Object,System.Object)">
+            <summary>
+            Applies given operator on coerced values and returns the result.
+            </summary>
+            <exception cref="!:TypeError">
+            "coerce" method is not defined, throws a subclass of SystemException, or returns something other than a pair of objects.
+            </exception>
+        </member>
+        <member name="M:IronRuby.Runtime.Protocols.TryCoerceAndApply(IronRuby.Runtime.BinaryOpStorage,IronRuby.Runtime.BinaryOpStorage,System.String,System.Object,System.Object)">
+            <summary>
+            Applies given operator on coerced values and returns the result.
+            </summary>
+            <exception cref="!:TypeError">
+            "coerce" method is not defined, throws a subclass of SystemException, or returns something other than a pair of objects.
+            </exception>
+        </member>
+        <member name="T:IronRuby.Runtime.MissingBlockParam.Meta">
+            <remarks>
+            LimitType must be MissingBlockParam (overload resolution, <see cref="!:RubyParameterBinder.PrepareParametersBinding"/>).
+            Restriction should be empty: used only for !HasBlock call-sites => the site will never be reused for a call with a block.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.InitializeBlock(IronRuby.Builtins.Proc)">
+            <summary>
+            Used in a method call with a block to reset proc-kind when the call is retried
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.RegisterShutdownHandler(IronRuby.Builtins.Proc)">
+            <summary>
+            Implements END block - like if it was a call to at_exit { ... } library method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.GetUnqualifiedConstant(IronRuby.Runtime.RubyScope,IronRuby.Runtime.ConstantSiteCache,System.String,System.Boolean)">
+            <summary>
+            A
+            ::A
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.GetQualifiedConstant(IronRuby.Runtime.RubyScope,IronRuby.Runtime.ConstantSiteCache,System.String[],System.Boolean)">
+            <summary>
+            A1::..::AN
+            ::A1::..::AN
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.GetExpressionQualifiedConstant(System.Object,IronRuby.Runtime.RubyScope,IronRuby.Runtime.ExpressionQualifiedConstantSiteCache,System.String[])">
+            <summary>
+            {expr}::A1::..::AN
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.IsDefinedUnqualifiedConstant(IronRuby.Runtime.RubyScope,IronRuby.Runtime.IsDefinedConstantSiteCache,System.String)">
+            <summary>
+            defined? A
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.IsDefinedGlobalConstant(IronRuby.Runtime.RubyScope,IronRuby.Runtime.IsDefinedConstantSiteCache,System.String)">
+            <summary>
+            defined? ::A
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.IsDefinedQualifiedConstant(IronRuby.Runtime.RubyScope,IronRuby.Runtime.IsDefinedConstantSiteCache,System.String[],System.Boolean)">
+            <summary>
+            defined? A1::..::AN
+            defined? ::A1::..::AN
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.IsDefinedExpressionQualifiedConstant(System.Object,IronRuby.Runtime.RubyScope,IronRuby.Runtime.ExpressionQualifiedIsDefinedConstantSiteCache,System.String[])">
+            <summary>
+            defined? {expr}::A
+            defined? {expr}::A1::..::AN
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyOps.MakeStringParamCount">
+            <summary>
+            Specialized signatures exist for upto the following number of string parts
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.FilterBlockException(IronRuby.Runtime.RubyScope,System.Exception)">
+            <summary>
+            Called in try-filter that wraps the entire body of a block. 
+            We just need to capture stack trace, should not filter out any exception.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.TraceTopLevelCodeFrame(IronRuby.Runtime.RubyScope,System.Exception)">
+            <summary>
+            Called in try-filter that wraps the entire top-level code. 
+            We just need to capture stack trace, should not filter out any exception.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.CanRescue(IronRuby.Runtime.RubyScope,System.Exception)">
+            <summary>
+            Filters exceptions raised from EH-body, EH-rescue and EH-else clauses.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.SetCurrentException(IronRuby.Runtime.RubyScope,System.Exception)">
+            <summary>
+            Sets $!. Used in EH finally clauses to restore exception stored in oldExceptionVariable local.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.HookupEvent(IronRuby.Runtime.Calls.RubyEventInfo,System.Object,IronRuby.Builtins.Proc)">
+            <summary>
+            Hooks up an event to call a proc at hand.
+            EventInfo is passed in as object since it is an internal type.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.BlockRetry(IronRuby.Runtime.BlockParam)">
+            <summary>
+            Implements retry statement in a block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.MethodRetry(IronRuby.Runtime.RubyScope,IronRuby.Builtins.Proc)">
+            <summary>
+            Implements retry statement in a method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.EvalRetry(IronRuby.Runtime.RubyScope)">
+            <summary>
+            Implements retry statement in eval'd code.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.BlockBreak(IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Implements break statement in a block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.MethodBreak(System.Object)">
+            <summary>
+            Implements break statement in a method.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.EvalBreak(IronRuby.Runtime.RubyScope,System.Object)">
+            <summary>
+            Implements break statement in eval'd code.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.BlockReturn(IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Implements return statement in a block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.EvalReturn(IronRuby.Runtime.RubyScope,System.Object)">
+            <summary>
+            Implements return statement in eval'd code.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.BlockYield(IronRuby.Runtime.RubyScope,IronRuby.Runtime.BlockParam,IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Implements post-yield dispatch for yield in a block.
+            </summary>
+            <returns>True if the block should terminate returning the result of yield.</returns>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.MethodYield(IronRuby.Runtime.RubyScope,IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Implements post-yield dispatch for yield in a method.
+            </summary>
+            <returns>True if the method should terminate returning the result of yield.</returns>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.EvalYield(IronRuby.Runtime.RubyScope,IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Implements post-yield dispatch for yield in eval'd code.
+            </summary>
+            <returns>True if the current frame should terminate returning the result of yield.</returns>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.MethodProcCall(IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Post-proc-call: Handles break and return from the called block.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.MethodPropagateReturn(IronRuby.Runtime.RubyScope,IronRuby.Builtins.Proc,IronRuby.Runtime.BlockReturnResult)">
+            <summary>
+            Post-call-with-block in a method: propagates MethodUnwinder.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.BlockPropagateReturn(IronRuby.Runtime.BlockParam,System.Object)">
+            <summary>
+            Post-call-with-block in a block: propagates MethodUnwinder.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyOps.EvalPropagateReturn(System.Object)">
+            <summary>
+            Post-call-with-block in a eval'd code: propagates MethodUnwinder.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttributes.Empty">
+            <summary>
+            Method does nothing.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttributes.Instance">
+            <summary>
+            Method is defined in the type's instance method table.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttributes.Singleton">
+            <summary>
+            Method is defined in the type's static method table.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttributes.NoEvent">
+            <summary>
+            Do not trigger method_added when the method is defined.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyMethodAttributes.ModuleFunction">
+            <summary>
+            Set by module_function. Subsequently defined methods are private instance and public singleton. 
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.LoadFlags.ResolveLoaded">
+            <summary>
+            Returns a scope or assembly of already loaded targets.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Loader.LoadPaths">
+            <summary>
+            TODO: Thread safety: the user of this object is responsible for locking it.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Loader.LoadedFiles">
+            <summary>
+            TODO: Thread safety: the user of this object is responsible for locking it.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.Loader.LoadedScripts">
+            <summary>
+            Contains all loaded foreign language scripts. Maps path to scope created for each loaded script.
+            A script is published here as soon as its scope is created just before it is executed.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.LoadFile(Microsoft.Scripting.Runtime.Scope,System.Object,IronRuby.Builtins.MutableString,IronRuby.Runtime.LoadFlags,System.Object@)">
+            <summary>
+            Returns <b>true</b> if a Ruby file is successfully loaded, <b>false</b> if it is already loaded.
+            </summary>
+            <param name="globalScope">
+            A scope against which the file should be executed or null to create a new scope.
+            </param>
+            <param name="self"></param>
+            <param name="path"></param>
+            <param name="flags"></param>
+            <param name="loaded"></param>
+            <returns>True if the file was loaded/executed by this call.</returns>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.FindFile(System.String,System.Boolean,System.String[])">
+            <summary>
+            Searches file in load directories and then appends extensions.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.ResolveFile(System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            Appends extensions if applicable.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.AddScriptLines(Microsoft.Scripting.SourceUnit)">
+            <summary>
+            If the SCRIPT_LINES__ constant is set, we need to publish the file being loaded,
+            along with the contents of the file
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.AlreadyLoaded(System.String,System.Collections.Generic.IEnumerable{IronRuby.Runtime.Loader.ResolvedFile},IronRuby.Runtime.LoadFlags)">
+            <summary>
+            Return true if any of the files has alraedy been loaded.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.LoadBuiltins">
+            <exception cref="T:IronRuby.Builtins.LoadError"></exception>
+        </member>
+        <member name="M:IronRuby.Runtime.Loader.LoadLibrary(System.Type,System.Boolean)">
+            <exception cref="T:IronRuby.Builtins.LoadError"></exception>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyExceptionData">
+            <summary>
+            Stores extra instance data associated with Ruby exceptions
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyExceptionData.CaptureExceptionTrace(IronRuby.Runtime.RubyScope)">
+            <summary>
+            Builds backtrace for the exception if it wasn't built yet. 
+            Captures a full stack trace starting with the current frame and combines it with the trace of the exception.
+            Called from compiled code.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyExceptionData.DynamicSetBacktrace(IronRuby.Runtime.RubyContext,IronRuby.Builtins.RubyArray)">
+            <summary>
+            This is called by the IronRuby runtime to set the backtrace for an exception that has being raised. 
+            Note that the backtrace may be set directly by user code as well. However, that uses a different code path.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyExceptionData.GetInstance(System.Exception)">
+            <summary>
+            Gets the instance data associated with the exception
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyExceptions">
+            <summary>
+            Helper class for creating the corresponding .NET exceptions from the Ruby error names
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyGlobalScope">
+            <summary>
+            DLR scope extension.
+            Thread safe.
+            </summary>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyContext.CommandLineProgramPath">
+            <summary>
+            $0
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._childProcessExitStatus">
+            <summary>
+            $? of type Process::Status
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._inputSeparator">
+            <summary>
+            $/, $-O
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._outputSeparator">
+            <summary>
+            $\
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._stringSeparator">
+            <summary>
+            $;, $-F
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._itemSeparator">
+            <summary>
+            $,
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._moduleCache">
+            <summary>
+            Maps CLR types to Ruby classes/modules.
+            Doesn't contain classes defined in Ruby.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._namespaceCache">
+            <summary>
+            Maps CLR namespace trackers to Ruby modules.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.ClearThreadStatics">
+            <summary>
+            Clears thread static variables.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetClrMixinsNoLock(System.Type)">
+            <summary>
+            An interface is mixed into the type that implements it.
+            A generic type definition is mixed into its instantiations.
+            
+            In both cases these modules don't themselves contribute any callable CLR methods 
+            yet they might contribute CLR extension methods and Ruby methods defined on them.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.CreateClass(System.String,System.Type,System.Object,System.Action{IronRuby.Builtins.RubyModule},System.Action{IronRuby.Builtins.RubyModule},System.Action{IronRuby.Builtins.RubyModule},System.Delegate[],IronRuby.Builtins.RubyClass,IronRuby.Builtins.RubyModule[],Microsoft.Scripting.Actions.TypeTracker,IronRuby.Builtins.RubyStruct.Info,System.Boolean,System.Boolean,IronRuby.Builtins.ModuleRestrictions)">
+            <summary>
+            Class factory. Do not use RubyClass constructor except for special cases (Object, Class, Module, singleton classes).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.CreateModule(System.String,System.Action{IronRuby.Builtins.RubyModule},System.Action{IronRuby.Builtins.RubyModule},System.Action{IronRuby.Builtins.RubyModule},IronRuby.Builtins.RubyModule[],Microsoft.Scripting.Actions.NamespaceTracker,Microsoft.Scripting.Actions.TypeTracker,IronRuby.Builtins.ModuleRestrictions)">
+            <summary>
+            Module factory. Do not use RubyModule constructor except special cases (Kernel).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetOrCreateSingletonClass(System.Object)">
+            <summary>
+            Creates a singleton class for specified object unless it already exists. 
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.DefineModule(IronRuby.Builtins.RubyModule,System.String)">
+            <summary>
+            Defines a new module nested in the given owner.
+            The module is published into the global scope if the owner is Object.
+            
+            Thread safe.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.DefineClass(IronRuby.Builtins.RubyModule,System.String,IronRuby.Builtins.RubyClass,IronRuby.Builtins.RubyStruct.Info)">
+            <summary>
+            Defines a new class nested in the given owner.
+            The module is published into the global scope it if is not anonymous and the owner is Object.
+            
+            Thread safe.
+            Triggers "inherited" event.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetClassOf(System.Object)">
+            <summary>
+            Gets a class of the specified object (skips any singletons).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetImmediateClassOf(System.Object)">
+            <summary>
+            Gets a singleton or class for <c>obj</c>.
+            Might return a class object from a foreign runtime (if obj is a runtime bound object).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetClassName(System.Object)">
+            <summary>
+            Gets the Ruby name of the class of the given object.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetClassDisplayName(System.Object)">
+            <summary>
+            Gets the display name of the class of the given object.
+            Includes singleton names.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.Inspect(System.Object)">
+            <summary>
+            Calls "inspect" and converts its result to a string using "to_s" protocol (<see cref="T:IronRuby.Runtime.Conversions.ConvertToSAction"/>).
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._currentException">
+            <summary>
+            $!
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyContext._currentSafeLevel">
+            <summary>
+            $SAFE
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.CreateSymbol(IronRuby.Builtins.MutableString,System.Boolean)">
+            <summary>
+            Creates a symbol that holds on a given string or its copy, if <c>clone</c> is true.
+            Freezes the string the symbol holds on.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.FindSymbol(System.Int32)">
+            <summary>
+            Searches symbol table for a symbol of given id - slow operation (linear search).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetIdentifierEncoding">
+            <summary>
+            TODO
+            Ruby 1.9 allows arbitrarily encoded identifiers. We could use a RubySymbol in internal tables, however that would also require
+            dynamic sites to use RubySymbols and CLR methods cached in the tables to be represented by RubySymbols. Seems like too much overhead.
+            
+            For now we take the same approach as with file system paths. We represent the identifiers as CLR strings and whenever we convert 
+            them to RubySymbol or MutableString we use either the current KCODE or (K)UTF8 encoding. This doesn't guarantee a correct roundtrip 
+            in the case that a method is defined under K-UTF8, its name is retrieved under K-SJIS, converted to a string and the bytes are examined. 
+            The conversion might blow up if it contains a character that is not available in SJIS.
+            
+            <para>
+            Note that the way how 1.9 works makes non-ascii identifiers encoded by non-UTF-8 encoding almost useless. 
+            Libraries written in such encoding are only usable from code written in the same encoding. 
+            Thus the common case would probably be that all scripts use UTF-8. For example,
+            <code>
+            lib1.rb:
+            #encoding: UTF-8
+            class C; def S; end; end
+            
+            lib2.rb:
+            #encoding: SJIS
+            class D; def S; end; end
+            
+            c.rb:
+            #encoding: UTF-8
+            require 'lib1'
+            require 'lib2'
+            C.new.S             # works
+            D.new.S             # error: no method S
+            </code>
+            </para>
+            
+            <para>
+            Ruby 1.9 also allows incorrectly encoded method names (not identifiers in source code though):
+            <code>
+            #encoding: UTF-8
+            class C
+              define_method(:"foo\xce") { }
+            end
+            </code>
+            There seems to be no reason why we should support this.
+            </para>
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.StringifyIdentifier(System.String)">
+            <summary>
+            Returns an identifier encoded as MutableStrings (Ruby 1.8) or Symbols (Ruby 1.9).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.StringifyIdentifiers(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Returns an array of identifiers encoded as MutableStrings (Ruby 1.8) or Symbols (Ruby 1.9).
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.EncodePath(System.String)">
+            <summary>
+            Creates a mutable string encoded using the path (file system) encoding.
+            </summary>
+            <exception cref="T:System.Text.EncoderFallbackException">Invalid characters present.</exception>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.DecodePath(IronRuby.Builtins.MutableString)">
+            <summary>
+            Transcodes given mutable string to Unicode path that can be passed to the .NET IO system (or host).
+            </summary>
+            <exception cref="T:IronRuby.Builtins.InvalidError">Invalid characters present.</exception>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.InitializeGlobalScope(Microsoft.Scripting.Runtime.Scope,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a scope extension for a DLR scope unless it already exists for the given scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.FormatException(System.Exception)">
+            <summary>
+            Formats exceptions like Ruby does.
+            </summary>
+            <remarks>
+            For example,
+            <code>
+            repro.rb:2:in `fetch': wrong number of arguments (0 for 1) (ArgumentError)
+                from repro.rb:2:in `test'
+                from repro.rb:5
+            </code>
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetEncodingByRubyName(System.String)">
+            <exception cref="T:System.ArgumentException">Unknown encoding.</exception>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetRubyEncoding(IronRuby.Builtins.MutableString)">
+            <exception cref="T:System.ArgumentException">Unknown encoding.</exception>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyContext.GetRubyEncoding(System.String)">
+            <exception cref="T:System.ArgumentException">Unknown encoding.</exception>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyOptions.DebugVariable">
+            <summary>
+            The initial value of $DEBUG variable.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.ScopeKind.BlockMethod">
+            <summary>
+            Block scope used by defined_method.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.ScopeKind.BlockModule">
+            <summary>
+            Block scope used by module_eval.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.ScopeKind.FileInitializer">
+            <summary>
+            BEGIN block scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyScope.DefineDynamicVariable(System.String,System.Object)">
+            <summary>
+            Defines dynamic variable in this scope.
+            module-eval scopes need to override this since they should set the variable in their parent scope.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyScope.GetSuperCallTarget(IronRuby.Builtins.RubyModule@,System.String@,IronRuby.Runtime.RubyScope@)">
+            <summary>
+            Returns 
+            -1 if there is no method or block-method scope,
+            0 if the target scope is a method scope,
+            id > 0 of the target lambda for block-method scopes.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyModuleEvalScope">
+            <summary>
+            String based module_eval injects a module scope (represented by this class) into the lexical scope chain.
+            </summary>
+            <remarks>
+            Note that block-based module_eval is different:
+            
+            <code>
+            class A
+              X = 1
+            end
+            
+            A.module_eval { p X }  # error
+            A.module_eval "p X"    # 1
+            </code>
+            </remarks>
+        </member>
+        <member name="P:IronRuby.Runtime.RubyTopLevelScope.MethodLookupModule">
+            <summary>
+            Method and class lookup in top-level hosted scope behave like if it was instance_eval'd as a proc in MRI 1.8, i.e.
+            methods are resolved in the singleton class of the main object.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.IsRubyValueType(System.Object)">
+            <summary>
+            Ruby value types:
+            
+            NilClass
+            TrueClass
+            FalseClass
+            Fixnum
+            Symbol
+            + CLR structs
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.HasObjectState(System.Object)">
+            <summary>
+            The object maintains a state (frozen, tainted flags and instance variables).
+            <code>
+            obj.instance_variable_set(:@foo, 'bar')
+            puts obj.instance_variable_get(:@foo)     # => 'bar'
+            puts obj.taint.tainted?                   # => true
+            </code>
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.CanClone(System.Object)">
+            <summary>
+            Can the object be cloned?
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.CanDefineSingletonMethod(System.Object)">
+            <summary>
+            Is it allowed to define a sigleton method for the object?
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.HasSingletonClass(System.Object)">
+            <summary>
+            Does the object have a sigleton class?
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.TryUnmangleName(System.String)">
+            <summary>
+            Converts a Ruby name to PascalCase name (foo_bar -> FooBar).
+            Returns null if the name is not a well-formed Ruby name (it contains upper-case latter or subsequent underscores).
+            Characters that are not upper case letters are treated as lower-case letters.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.TryMangleName(System.String)">
+            <summary>
+            Converts a camelCase or PascalCase name to a Ruby name (FooBar -> foo_bar).
+            Returns null if the name is not in camelCase or PascalCase (FooBAR, foo, etc.).
+            Characters that are not upper case letters are treated as lower-case letters.
+            </summary>
+        </member>
+        <member name="F:IronRuby.Runtime.RubyUtils.NotUnmangledObject">
+            <summary>
+            A list of Kernel/Object methods that are expected by common Ruby libraries to work on all objects.
+            We don't unmangled them to allow Ruby programs work with .NET objects that define e.g. Class property. 
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RubyUtils.AsyncExceptionMarker">
+            <summary>
+            Thread#raise is implemented on top of System.Threading.Thread.ThreadAbort, and squirreling
+            the Ruby exception expected by the use in ThreadAbortException.ExceptionState.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.IsRubyThreadExit(System.Exception)">
+            <summary>
+            Thread#exit is implemented by calling Thread.Abort. However, we need to distinguish a call to Thread#exit
+            from a raw call to Thread.Abort.
+            
+            Note that if a finally block raises an exception while an Abort is pending, that exception can be propagated instead of a ThreadAbortException.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.GetVisibleException(System.Exception)">
+            <summary>
+            Can return null for Thread#kill
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.GetExtension(System.String)">
+            <summary>
+            Returns the extension of given path.
+            Equivalent to <see cref="M:System.IO.Path.GetExtension(System.String)"/> but it doesn't check for an invalid path and 
+            it considers ".foo" to be a file name with no extension rather than an extension with an empty file name.
+            </summary>
+            <returns>Null iff path is null. Empty string if the path doesn't have any extension.</returns>
+        </member>
+        <member name="M:IronRuby.Runtime.RubyUtils.Write(System.IO.Stream,IronRuby.Builtins.MutableString,System.Int32,System.Int32)">
+            <summary>
+            Writes binary content of <see cref="T:IronRuby.Builtins.MutableString"/> into the given buffer.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.RuntimeErrorSink">
+            <summary>
+            Thread-safe.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.MethodUnwinder">
+            <summary>
+            Return (thrown or passed as a return value) and retry (retry singleton).
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.EvalUnwinder">
+            <summary>
+            Retry/Break.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.BlockUnwinder">
+            <summary>
+            Redo/Next.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.BinaryDecoderFallback">
+            <summary>
+            Widens invalid bytes to 16 bits and uses them as characters.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Runtime.LosslessDecoderFallback">
+            <summary>
+            Decodes bytes with no information loss. Provides access to invalid byte sequences encountered in the string.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.GetCharacterCount(System.Char[],System.Int32)">
+            <summary>
+            Calculates the number of Unicode characters in given array.
+            Assumes that the content of the array beyond count chars doesn't contain significant data and can be overwritten.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.IndexOf(System.Byte[],System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.IndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.IndexOf(System.Char[],System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.IndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.IndexOf(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.IndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.IndexOf(System.Char[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.IndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.IndexOf(System.String,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.IndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.LastIndexOf(System.Byte[],System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.LastIndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.LastIndexOf(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.LastIndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.LastIndexOf(System.Char[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.LastIndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="M:IronRuby.Runtime.Utils.LastIndexOf(System.String,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Implements the same behavior as String.LastIndexOf on ASCII strings.
+            </summary>
+        </member>
+        <member name="T:IronRuby.Ruby">
+            <summary>
+            Implements IronRuby hosting APIs that enable embedding IronRuby in .NET application.
+            </summary>
+            <remarks>
+            This class provides convenience APIs for applications that host Ruby language specifically.
+            Use Dynamic Language Runtime (DLR) Hosting API from <see cref="N:Microsoft.Scripting.Hosting"/> namespace to implement a language agnostic host, i.e.
+            a host that doesn't depend on a particular language and can host any DLR based language.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateRuntime">
+            <summary>
+            Creates a new script runtime configured using .NET configuration files.
+            A default IronRuby configuration is added if not found anywhere in the .NET configuration files.
+            </summary>
+            <returns>A runtime that is capable of running IronRuby scripts and scripts of other languages specified in the .NET configuration files.</returns>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateRuntime(Microsoft.Scripting.Hosting.ScriptRuntimeSetup)">
+            <summary>
+            Creates a runtime given a runtime setup.
+            </summary>
+            <param name="setup">The setup to use to configure the runtime. It provides all information that's needed for the runtime initialization.</param>
+            <returns>A runtime that is capable of running scripts of languages listed in <paramref name="setup"/>.</returns>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateEngine">
+            <summary>
+            Creates a new script runtime and returns its IronRuby engine. The configuration of the runtime is loaded from .NET configuration files if available.
+            </summary>
+            <returns>A new IronRuby engine.</returns>
+            <remarks>Creates a runtime using <see cref="M:CreateRuntime()"/> method.</remarks>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateEngine(System.Action{Microsoft.Scripting.Hosting.LanguageSetup})">
+            <summary>
+            Creates a new script runtime and returns its IronRuby engine. The configuration of the runtime is loaded from .NET configuration files if available.
+            </summary>
+            <param name="setupInitializer">
+            Delegate that receives an instance of IronRuby's <see cref="T:Microsoft.Scripting.Hosting.LanguageSetup"/> loaded from the .NET configuration
+            and can set its properties before it is used for runtime configuration. 
+            If no IronRuby setup information is found in the .NET configuration a default one is created and passed to the initializer.
+            </param>
+            <returns>A new IronRuby engine.</returns>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateRubySetup">
+            <summary>
+            Creates IronRuby setup with default language names and file extensions.
+            </summary>
+            <returns>The IronRuby setup object.</returns>
+        </member>
+        <member name="M:IronRuby.Ruby.CreateRubySetup(System.Action{Microsoft.Scripting.Hosting.LanguageSetup})">
+            <summary>
+            Creates a default IronRuby setup and passes it to the given delegate for initialization.
+            </summary>
+            <param name="initializer">
+            A delegate that receives a fresh instance of IronRuby's <see cref="T:Microsoft.Scripting.Hosting.LanguageSetup"/> 
+            and can set its properties before it is used for runtime configuration. 
+            </param>
+            <returns>The IronRuby setup object initialized by <paramref name="initializer"/>.</returns>
+        </member>
+        <member name="M:IronRuby.Ruby.GetEngine(Microsoft.Scripting.Hosting.ScriptRuntime)">
+            <summary>
+            Retrieves an IronRuby engine from a given script runtime.
+            </summary>
+            <param name="runtime">The runtime to get the engine from.</param>
+            <returns>An IronRuby engine from the specified runtime.</returns>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="runtime"/> is not set up to run IronRuby. 
+            The <see cref="T:Microsoft.Scripting.Hosting.ScriptRuntimeSetup"/> doesn't contain IronRuby's <see cref="!:ScriptLanguageSetup"/>.
+            </exception>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.RequireFile(Microsoft.Scripting.Hosting.ScriptEngine,System.String)">
+            <summary>
+            Loads a script file using the semantics of Kernel#require method.
+            </summary>
+            <param name="engine">The Ruby engine.</param>
+            <param name="path">The path to the file to load.</param>
+            <returns>Whether the file has already been required.</returns>
+            <remarks>
+            If a relative path is given the current search paths are used to locate the script file.
+            The current search paths could be read and modified via <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.GetSearchPaths"/> and <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.SetSearchPaths(System.Collections.Generic.ICollection{System.String})"/>,
+            respectively.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.RequireFile(Microsoft.Scripting.Hosting.ScriptEngine,System.String,Microsoft.Scripting.Hosting.ScriptScope)">
+            <summary>
+            Loads a script file using the semantics of Kernel#require method.
+            The script is executed within the context of a given <see cref="T:Microsoft.Scripting.Hosting.ScriptScope"/>.
+            </summary>
+            <param name="engine">The Ruby engine.</param>
+            <param name="path">The path to the file to load.</param>
+            <param name="scope">The scope to use for the script execution.</param>
+            <returns>Whether the file has already been required.</returns>
+            <remarks>
+            If a relative path is given the current search paths are used to locate the script file.
+            The current search paths could be read and modified via <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.GetSearchPaths"/> and <see cref="M:Microsoft.Scripting.Hosting.ScriptEngine.SetSearchPaths(System.Collections.Generic.ICollection{System.String})"/>,
+            respectively.
+            </remarks>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.GetRubyEngine(Microsoft.Scripting.Hosting.ScriptRuntime)">
+            <summary>
+            Retrieves an IronRuby engine from this script runtime.
+            </summary>
+            <param name="runtime">The runtime to get the engine from.</param>
+            <returns>An existing IronRuby engine.</returns>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="runtime"/> is not set up to run IronRuby. 
+            The <see cref="T:Microsoft.Scripting.Hosting.ScriptRuntimeSetup"/> doesn't contain IronRuby's <see cref="!:ScriptLanguageSetup"/>.
+            </exception>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.GetRubySetup(Microsoft.Scripting.Hosting.ScriptRuntimeSetup)">
+            <summary>
+            Retrieves IronRuby setup from the script runtime setup.
+            </summary>
+            <param name="runtimeSetup">Runtime setup.</param>
+            <returns>IronRuby setup or <c>null</c> if the runtime setup doesn't contain one.</returns>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.AddRubySetup(Microsoft.Scripting.Hosting.ScriptRuntimeSetup)">
+            <summary>
+            Adds a new IronRuby setup into the runtime setup unless already included.
+            </summary>
+            <param name="runtimeSetup">The <see cref="T:Microsoft.Scripting.Hosting.ScriptRuntimeSetup"/> to update.</param>
+            <returns>The new setup or the existing setup object.</returns>
+        </member>
+        <member name="M:IronRuby.RubyHostingExtensions.AddRubySetup(Microsoft.Scripting.Hosting.ScriptRuntimeSetup,System.Action{Microsoft.Scripting.Hosting.LanguageSetup})">
+            <summary>
+            Adds a new IronRuby setup into the given runtime setup unless already included.
+            </summary>
+            <param name="runtimeSetup">The <see cref="T:Microsoft.Scripting.Hosting.ScriptRuntimeSetup"/> to update.</param>
+            <param name="newSetupInitializer">
+            If not <c>null</c>, <paramref name="newSetupInitializer"/> is used to initialize the new IronRuby <see cref="T:Microsoft.Scripting.Hosting.LanguageSetup"/>.
+            </param>
+            <returns>The new setup initialized by <paramref name="newSetupInitializer"/> or the existing setup object.</returns>
+        </member>
+    </members>
+</doc>
