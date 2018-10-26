@@ -185,8 +185,15 @@ namespace Zelda.Saving
 
             this.entityDataStore.InitializeEntities( scene.Entities.ToArray() );
 
-            foreach( var entity in this.addedEntities )
+            foreach( ZeldaEntity entity in this.addedEntities )
+            {
+                if( entity.Scene != null )
+                {
+                    entity.RemoveFromScene();
+                }
+
                 entity.AddToScene( scene );
+            }
         }
 
         /// <summary>
