@@ -818,51 +818,6 @@
             Stores the orgin of this <see cref="T:Atom.Components.Transform.Transform2"/> component.
             </summary>
         </member>
-        <member name="T:Atom.Events.Design.LocalizedCategoryAttribute">
-            <summary>
-            Defines a localized CategoryAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
-            resource manager to lock-up resource information.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.LocalizedCategoryAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedCategoryAttribute"/> class.
-            </summary>
-            <param name="resourceName">
-            The name of the string resource that is locked-up.
-            </param>
-        </member>
-        <member name="T:Atom.Events.Design.LocalizedDescriptionAttribute">
-            <summary>
-            Defines a localized DescriptionAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
-            resource manager to lock-up resource information.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.LocalizedDescriptionAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedDescriptionAttribute"/> class.
-            </summary>
-            <param name="resourceName">
-            The name of the string resource that is locked-up.
-            </param>
-        </member>
-        <member name="T:Atom.Events.Design.LocalizedDisplayNameAttribute">
-            <summary>
-            Defines a localized DisplayNameAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
-            resource manager to lock-up resource information.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.LocalizedDisplayNameAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedDisplayNameAttribute"/> class.
-            </summary>
-            <param name="resourceName">
-            The name of the string resource that is locked-up.
-            </param>
-        </member>
         <member name="T:Atom.Events.Design.BaseEventCreationEditor">
             <summary>
             Defines an <see cref="T:System.Drawing.Design.UITypeEditor"/> that
@@ -1120,6 +1075,51 @@
             The <see cref="T:Atom.Design.IItemSelectionDialog`1"/> that should be used by this ExistingItemCollectionEditor{TItem}.
             </returns>
         </member>
+        <member name="T:Atom.Events.Design.LocalizedCategoryAttribute">
+            <summary>
+            Defines a localized CategoryAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
+            resource manager to lock-up resource information.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Events.Design.LocalizedCategoryAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedCategoryAttribute"/> class.
+            </summary>
+            <param name="resourceName">
+            The name of the string resource that is locked-up.
+            </param>
+        </member>
+        <member name="T:Atom.Events.Design.LocalizedDescriptionAttribute">
+            <summary>
+            Defines a localized DescriptionAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
+            resource manager to lock-up resource information.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Events.Design.LocalizedDescriptionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedDescriptionAttribute"/> class.
+            </summary>
+            <param name="resourceName">
+            The name of the string resource that is locked-up.
+            </param>
+        </member>
+        <member name="T:Atom.Events.Design.LocalizedDisplayNameAttribute">
+            <summary>
+            Defines a localized DisplayNameAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
+            resource manager to lock-up resource information.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Events.Design.LocalizedDisplayNameAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Events.Design.LocalizedDisplayNameAttribute"/> class.
+            </summary>
+            <param name="resourceName">
+            The name of the string resource that is locked-up.
+            </param>
+        </member>
         <member name="T:Atom.Events.Design.TriggerCreationEditor">
             <summary>
             Defines an <see cref="T:System.Drawing.Design.UITypeEditor"/> that
@@ -1145,96 +1145,6 @@
         <member name="F:Atom.Events.EventDataType.Trigger">
             <summary>
             An <see cref="T:Atom.Events.EventTrigger"/> Type.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.LongTermLambdaEvent">
-            <summary>
-            Represents a LongTermEvent that is controlled using Lambda functions.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.LongTermLambdaEvent.Updated">
-            <summary>
-            Gets or sets the action that is executed when this LongTermLambdaEvent is updated.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.LongTermLambdaEvent.CanBeTriggered">
-            <summary>
-            Gets or sets the function that decides whether this LongTermLambdaEvent can be
-            triggered.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.LongTermLambdaEvent.Update(Atom.IUpdateContext)">
-            <summary>
-            Updates this LongTermLambdaEvent.
-            </summary>
-            <param name="updateContext">
-            The current IUpdateContext.
-            </param>
-        </member>
-        <member name="M:Atom.Events.LongTermLambdaEvent.CanBeTriggeredBy(System.Object)">
-            <summary>
-            Gets a value that indicates whether the 
-            specified <see cref="T:System.Object"/> can trigger this <see cref="T:Atom.Events.Event"/>.
-            </summary>
-            <param name="obj">
-            The object to test.
-            </param>
-            <returns>
-            Returns true if the object can trigger it; otherwise false.
-            </returns>
-        </member>
-        <member name="T:Atom.Events.EventDeserializationContext">
-            <summary>
-            Implements a mechanism that allows deserialization of <Desee cref="T:Atom.Events.Event"/>s, <Desee cref="T:Atom.Events.EventTrigger"/>s,
-            and <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/>s.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventDeserializationContext.EventManager">
-            <summary>
-            Gets the <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/> that is currently deserialized.
-            </summary>
-            <value>
-            Is null when deserializing an event that is not attached to an EventManager.
-            </value>
-        </member>
-        <member name="M:Atom.Events.EventDeserializationContext.#ctor(Atom.Events.EventManager,System.IO.BinaryReader)">
-            <summary>
-            Initializes a new instance of the EventDeserializationContext class.
-            </summary>
-            <param name="eventManager">
-            The EventManager that is going to be deserialized.
-            </param>
-            <param name="reader">
-            The BinaryReader that is going to be read with.
-            </param>
-        </member>
-        <member name="M:Atom.Events.EventDeserializationContext.GetEvent(System.String)">
-            <summary>
-            Gets the <Desee cref="T:Atom.Events.Event"/> with the given <paramref name="name"/>.
-            </summary>
-            <param name="name">
-            The name that uniquely identifies the Event to reveive.
-            </param>
-            <returns>
-            The requested Event;
-            or null.
-            </returns>
-        </member>
-        <member name="M:Atom.Events.EventDeserializationContext.GetTrigger(System.String)">
-            <summary>
-            Gets the <Desee cref="T:Atom.Events.EventTrigger"/> with the given <paramref name="name"/>.
-            </summary>
-            <param name="name">
-            The name that uniquely identifies the EventTrigger to reveive.
-            </param>
-            <returns>
-            The requested EventTrigger;
-            or null.
-            </returns>
-        </member>
-        <member name="F:Atom.Events.EventDeserializationContext.eventManager">
-            <summary>
-            The <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/> that is currently deserialized.
             </summary>
         </member>
         <member name="T:Atom.Events.EventManager">
@@ -1771,6 +1681,257 @@
             Provides a mechanism that is used to create instances of de-serialized Events and EventTriggers.
             </summary>
         </member>
+        <member name="T:Atom.Events.EventStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventTriggerXToYThereAlreadyExistsSuchAnEventTrigger">
+            <summary>
+              Looks up a localized string similar to Can&apos;t change the name of the EventTrigger &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an EventTrigger in the owning Event Manager. EventTrigger names must be unique..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventXToYThereAlreadyExistsSuchAnEvent">
+            <summary>
+              Looks up a localized string similar to Can&apos;t change the name of the Event &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an Event in the owning Event Manager. Event names must be unique..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_CantDoThisEventXTypeNameYHasNotBeenAddedToManager">
+            <summary>
+              Looks up a localized string similar to Can&apos;t do this. The event &apos;{0}&apos; (type-name=&apos;{1}&apos;) has not been added to an EventManager..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventManagerReturnedByEventServiceIsNull">
+            <summary>
+              Looks up a localized string similar to The EventManager returned by the existing IEventManagerService is null..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventNameIsNull">
+            <summary>
+              Looks up a localized string similar to The name of the Event is null..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventTriggerNameIsNull">
+            <summary>
+              Looks up a localized string similar to The name of the EventTrigger is null..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventTriggerXAlreadyAddedToAnEventManager">
+            <summary>
+              Looks up a localized string similar to The EventTrigger &apos;{0}&apos; already has been added to an EventManager..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventXAlreadyAddedToAnEventManager">
+            <summary>
+              Looks up a localized string similar to The Event &apos;{0}&apos; already has been added to an EventManager..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_EventXDoesNotExistInEventManager">
+            <summary>
+              Looks up a localized string similar to The requested Event &apos;{0}&apos; doesn&apos;t exist in the EventManager..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_FloorXIsInvalidFloorCountY">
+            <summary>
+              Looks up a localized string similar to The floor number &apos;{0} is invalid. Only values from 0 to {1} are valid..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_IEventManagerServiceIsMissing">
+            <summary>
+              Looks up a localized string similar to The IEventManagerService is missing. This is required for this operation..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_LongTermEventRequiresEventManager">
+            <summary>
+              Looks up a localized string similar to &quot;The LongTermEvent is required to be added to an EventManager.&quot;.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventNamedX">
+            <summary>
+              Looks up a localized string similar to There already exists an Event with the name &apos;{0}&apos;. Events must have unique names..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventTriggerNamedX">
+            <summary>
+              Looks up a localized string similar to There already exists an EventTrigger with the name &apos;{0}&apos;. EventTriggers must have unique names..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.MissingInformation">
+            <summary>
+              Looks up a localized string similar to Missing Information.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PleaseEnterName">
+            <summary>
+              Looks up a localized string similar to Please enter a name..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropCate_Identification">
+            <summary>
+              Looks up a localized string similar to Identification.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropCate_Settings">
+            <summary>
+              Looks up a localized string similar to Settings.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_AET_Area">
+            <summary>
+              Looks up a localized string similar to The area in which the AreaEventTrigger may get triggered..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_AET_TileArea">
+            <summary>
+              Looks up a localized string similar to The area in which the AreaEventTrigger may get triggered (in tile-space)..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOff">
+            <summary>
+              Looks up a localized string similar to The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is false..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOn">
+            <summary>
+              Looks up a localized string similar to The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is true..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitchable">
+            <summary>
+              Looks up a localized string similar to States whether the DualSwitchEvent can be switched on or off...
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitched">
+            <summary>
+              Looks up a localized string similar to States whether the DualSwitchEvent is initially in a switched state or not..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_E_Name">
+            <summary>
+              Looks up a localized string similar to The (unique) name of the Event. .
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_ET_Event">
+            <summary>
+              Looks up a localized string similar to The Event which gets triggered when the EventTrigger is triggered..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_ET_IsActive">
+            <summary>
+              Looks up a localized string similar to States whether the EventTrigger is initially in an active state or not. Only active Triggers can get triggered..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_ET_Name">
+            <summary>
+              Looks up a localized string similar to The (unique) name of the EventTrigger..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_Floor">
+            <summary>
+              Looks up a localized string similar to The floor this Object is part of..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_MultiEvent_Events">
+            <summary>
+              Looks up a localized string similar to The list of events this MultiEvent delegates all calls to Trigger to..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Event">
+            <summary>
+              Looks up a localized string similar to The event that gets triggered after Time seconds after the TimedEvent was triggered..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Time">
+            <summary>
+              Looks up a localized string similar to The time in seconds until the TimedEvent delegates a Trigger call onto the Event..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDesc_TypeName">
+            <summary>
+              Looks up a localized string similar to Specifies type information about the Object..
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_AET_Area">
+            <summary>
+              Looks up a localized string similar to Trigger Area.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_AET_TileArea">
+            <summary>
+              Looks up a localized string similar to Trigger Area (in tile-space).
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOff">
+            <summary>
+              Looks up a localized string similar to Event (when disabled).
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOn">
+            <summary>
+              Looks up a localized string similar to Event (when enabled).
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitchable">
+            <summary>
+              Looks up a localized string similar to Is Switchable.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitched">
+            <summary>
+              Looks up a localized string similar to Is Switched.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_Event">
+            <summary>
+              Looks up a localized string similar to Event.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_Floor">
+            <summary>
+              Looks up a localized string similar to Floor.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_IsActive">
+            <summary>
+              Looks up a localized string similar to Is Active.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_MultiEvent_Events">
+            <summary>
+              Looks up a localized string similar to Events.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_Name">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Event">
+            <summary>
+              Looks up a localized string similar to Event.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Time">
+            <summary>
+              Looks up a localized string similar to Time.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventStrings.PropDisp_TypeName">
+            <summary>
+              Looks up a localized string similar to Type Name.
+            </summary>
+        </member>
         <member name="T:Atom.Events.DualSwitchEvent">
             <summary>
             Represents an on/off switch which triggers <see cref="T:Atom.Events.Event"/>s based on its current state.
@@ -2090,6 +2251,42 @@
             States whether this <see cref="T:Atom.Events.LongTermEvent"/> is in a triggered state.
             </summary>
         </member>
+        <member name="T:Atom.Events.LongTermLambdaEvent">
+            <summary>
+            Represents a LongTermEvent that is controlled using Lambda functions.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.LongTermLambdaEvent.Updated">
+            <summary>
+            Gets or sets the action that is executed when this LongTermLambdaEvent is updated.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.LongTermLambdaEvent.CanBeTriggered">
+            <summary>
+            Gets or sets the function that decides whether this LongTermLambdaEvent can be
+            triggered.
+            </summary>
+        </member>
+        <member name="M:Atom.Events.LongTermLambdaEvent.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this LongTermLambdaEvent.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Events.LongTermLambdaEvent.CanBeTriggeredBy(System.Object)">
+            <summary>
+            Gets a value that indicates whether the 
+            specified <see cref="T:System.Object"/> can trigger this <see cref="T:Atom.Events.Event"/>.
+            </summary>
+            <param name="obj">
+            The object to test.
+            </param>
+            <returns>
+            Returns true if the object can trigger it; otherwise false.
+            </returns>
+        </member>
         <member name="T:Atom.Events.MultiEvent">
             <summary>
             Represents an <see cref="T:Atom.Events.Event"/> that delegates all calls to <see cref="M:Atom.Events.MultiEvent.Trigger(System.Object)"/>
@@ -2355,6 +2552,60 @@
             Gets the <see cref="P:Atom.Events.IEventManagerService.EventManager"/> instance provided by this IEventManagerService.
             </summary>
             <value>The EventManager instance provided by this IEventManagerService.</value>
+        </member>
+        <member name="T:Atom.Events.EventDeserializationContext">
+            <summary>
+            Implements a mechanism that allows deserialization of <Desee cref="T:Atom.Events.Event"/>s, <Desee cref="T:Atom.Events.EventTrigger"/>s,
+            and <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/>s.
+            </summary>
+        </member>
+        <member name="P:Atom.Events.EventDeserializationContext.EventManager">
+            <summary>
+            Gets the <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/> that is currently deserialized.
+            </summary>
+            <value>
+            Is null when deserializing an event that is not attached to an EventManager.
+            </value>
+        </member>
+        <member name="M:Atom.Events.EventDeserializationContext.#ctor(Atom.Events.EventManager,System.IO.BinaryReader)">
+            <summary>
+            Initializes a new instance of the EventDeserializationContext class.
+            </summary>
+            <param name="eventManager">
+            The EventManager that is going to be deserialized.
+            </param>
+            <param name="reader">
+            The BinaryReader that is going to be read with.
+            </param>
+        </member>
+        <member name="M:Atom.Events.EventDeserializationContext.GetEvent(System.String)">
+            <summary>
+            Gets the <Desee cref="T:Atom.Events.Event"/> with the given <paramref name="name"/>.
+            </summary>
+            <param name="name">
+            The name that uniquely identifies the Event to reveive.
+            </param>
+            <returns>
+            The requested Event;
+            or null.
+            </returns>
+        </member>
+        <member name="M:Atom.Events.EventDeserializationContext.GetTrigger(System.String)">
+            <summary>
+            Gets the <Desee cref="T:Atom.Events.EventTrigger"/> with the given <paramref name="name"/>.
+            </summary>
+            <param name="name">
+            The name that uniquely identifies the EventTrigger to reveive.
+            </param>
+            <returns>
+            The requested EventTrigger;
+            or null.
+            </returns>
+        </member>
+        <member name="F:Atom.Events.EventDeserializationContext.eventManager">
+            <summary>
+            The <Desee cref="P:Atom.Events.EventDeserializationContext.EventManager"/> that is currently deserialized.
+            </summary>
         </member>
         <member name="T:Atom.Events.EventSerializationContext">
             <summary>
@@ -2979,384 +3230,37 @@
             The number of the floor this <see cref="T:Atom.Events.TileAreaEventTrigger"/> is on.
             </summary>
         </member>
-        <member name="T:Atom.Events.EventStrings">
+        <member name="T:Atom.IAction">
             <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            Represents an undoable and storable action.
             </summary>
         </member>
-        <member name="P:Atom.Events.EventStrings.ResourceManager">
+        <member name="M:Atom.IAction.Execute">
             <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            Executes this IAction.
             </summary>
         </member>
-        <member name="P:Atom.Events.EventStrings.Culture">
+        <member name="M:Atom.IAction.Dexecute">
             <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            Immediately undoes this IAction.
             </summary>
         </member>
-        <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventTriggerXToYThereAlreadyExistsSuchAnEventTrigger">
+        <member name="M:Atom.IAction.CanExecute">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t change the name of the EventTrigger &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an EventTrigger in the owning Event Manager. EventTrigger names must be unique. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventXToYThereAlreadyExistsSuchAnEvent">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t change the name of the Event &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an Event in the owning Event Manager. Event names must be unique. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_CantDoThisEventXTypeNameYHasNotBeenAddedToManager">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t do this. The event &apos;{0}&apos; (type-name=&apos;{1}&apos;) has not been added to an EventManager. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventManagerReturnedByEventServiceIsNull">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The EventManager returned by the existing IEventManagerService is null. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventNameIsNull">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The name of the Event is null. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventTriggerNameIsNull">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The name of the EventTrigger is null. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventTriggerXAlreadyAddedToAnEventManager">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The EventTrigger &apos;{0}&apos; already has been added to an EventManager. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventXAlreadyAddedToAnEventManager">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Event &apos;{0}&apos; already has been added to an EventManager. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_EventXDoesNotExistInEventManager">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The requested Event &apos;{0}&apos; doesn&apos;t exist in the EventManager. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_FloorXIsInvalidFloorCountY">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The floor number &apos;{0} is invalid. Only values from 0 to {1} are valid. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_IEventManagerServiceIsMissing">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The IEventManagerService is missing. This is required for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_LongTermEventRequiresEventManager">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die &quot;The LongTermEvent is required to be added to an EventManager.&quot; ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventNamedX">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die There already exists an Event with the name &apos;{0}&apos;. Events must have unique names. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventTriggerNamedX">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die There already exists an EventTrigger with the name &apos;{0}&apos;. EventTriggers must have unique names. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.MissingInformation">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Missing Information ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PleaseEnterName">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Please enter a name. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropCate_Identification">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Identification ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropCate_Settings">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_AET_Area">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The area in which the AreaEventTrigger may get triggered. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_AET_TileArea">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The area in which the AreaEventTrigger may get triggered (in tile-space). ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOff">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is false. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOn">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is true. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitchable">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die States whether the DualSwitchEvent can be switched on or off.. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitched">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die States whether the DualSwitchEvent is initially in a switched state or not. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_E_Name">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The (unique) name of the Event.  ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_ET_Event">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Event which gets triggered when the EventTrigger is triggered. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_ET_IsActive">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die States whether the EventTrigger is initially in an active state or not. Only active Triggers can get triggered. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_ET_Name">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The (unique) name of the EventTrigger. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_Floor">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The floor this Object is part of. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_MultiEvent_Events">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The list of events this MultiEvent delegates all calls to Trigger to. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Event">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The event that gets triggered after Time seconds after the TimedEvent was triggered. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Time">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The time in seconds until the TimedEvent delegates a Trigger call onto the Event. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDesc_TypeName">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Specifies type information about the Object. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_AET_Area">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Trigger Area ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_AET_TileArea">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Trigger Area (in tile-space) ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOff">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Event (when disabled) ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOn">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Event (when enabled) ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitchable">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Is Switchable ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitched">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Is Switched ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_Event">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Event ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_Floor">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Floor ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_IsActive">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Is Active ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_MultiEvent_Events">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Events ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_Name">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Event">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Event ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Time">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Time ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.EventStrings.PropDisp_TypeName">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Type Name ähnelt.
-            </summary>
-        </member>
-        <member name="T:Atom.GameStateManager">
-            <summary>
-            Implements a mechanism that allows the management of the <see cref="T:Atom.IGameState"/>s of a game.
-            </summary>
-        </member>
-        <member name="P:Atom.GameStateManager.Current">
-            <summary>
-            Gets the current IGameState.
-            </summary>
-            <value>
-            The <see cref="T:Atom.IGameState"/> that is at the top of the IGameState stack;
-            or null.
-            </value>
-        </member>
-        <member name="M:Atom.GameStateManager.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.GameStateManager"/> class.
-            </summary>
-            <param name="initialStateCapacity"> 
-            The initial number of states the <see cref="T:Atom.GameStateManager"/> can contain. 
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManager.Add(Atom.IGameState)">
-            <summary>
-            Adds the specified <see cref="T:Atom.IGameState"/> to the list of aviable states of this <see cref="T:Atom.GameStateManager"/>.
-            </summary>
-            <param name="state"> The state to add. </param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="state"/> is null.</exception>
-            <exception cref="T:System.ArgumentException">
-            If there already exists a state with the same name as the specified.
-            </exception>
-        </member>
-        <member name="M:Atom.GameStateManager.Remove(System.Type)">
-            <summary>
-            Removes the <see cref="T:Atom.IGameState"/> that has the given <paramref name="type"/>
-            from the list of aviable states of the <see cref="T:Atom.GameStateManager"/>.
-            </summary>
-            <param name="type">
-            The type of the state to remove.
-            </param>
-            <returns>
-            true if the state has been removed;
-            -or- otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.GameStateManager.Replace(System.Type)">
-            <summary>
-            Replaces the current state with the one with the specified <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the state.
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManager.Push(System.Type)">
-            <summary>
-            Pushes the state with the specified <paramref name="type"/> ontop of the stack.
-            </summary>
-            <param name="type">
-            The type of the state.
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManager.Pop">
-            <summary>
-            Pops the current state from the stack and changes to the one before.
+            Gets a value indicating whether this IAction can be executed.
             </summary>
             <returns>
-            Returns <see langword="true"/> if a state has been poped from the stack;
-            otherwise <see langword="false"/>.
-            </returns>
-        </member>
-        <member name="M:Atom.GameStateManager.Get(System.Type)">
-            <summary>
-            Tries to get the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the <see cref="T:Atom.IGameState"/> to get.
-            </param>
-            <returns>
-            The requested IGameState.
-            </returns>
-        </member>
-        <member name="M:Atom.GameStateManager.Contains(System.Type)">
-            <summary>
-            Gets a value indicating whether this GameStateManager owns an <see cref="T:Atom.IGameState"/>
-            of the given <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the state to test for.
-            </param>
-            <returns>
-            True if this GameStateManager contains an <see cref="T:Atom.IGameState"/> of the given <paramref name="type"/>;
+            true if this IAction can be executed;
             otherwise false.
             </returns>
         </member>
-        <member name="M:Atom.GameStateManager.Clear">
+        <member name="M:Atom.IAction.GetDescription">
             <summary>
-            Pops all <see cref="T:Atom.IGameState"/> and then clears the list
-            of available states.
-            </summary>
-        </member>
-        <member name="M:Atom.GameStateManager.GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates over the
-            <see cref="T:Atom.IGameState"/>s available to this <see cref="T:Atom.GameStateManager"/>.
+            Gets a localized description text of this IAction.
             </summary>
             <returns>
-            A new enumerator.
+            The localized description of this IAction.
             </returns>
-        </member>
-        <member name="M:Atom.GameStateManager.System#Collections#IEnumerable#GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates over the
-            <see cref="T:Atom.IGameState"/>s available to this <see cref="T:Atom.GameStateManager"/>.
-            </summary>
-            <returns>
-            A new enumerator.
-            </returns>
-        </member>
-        <member name="F:Atom.GameStateManager.stateStack">
-            <summary>
-            The current stack of states. The uppermost is the current.
-            </summary>
-        </member>
-        <member name="F:Atom.GameStateManager.availableStates">
-            <summary>
-            All aviable states sorted by name.
-            </summary>
         </member>
         <member name="T:Atom.IFloorDrawable">
             <summary>
@@ -3373,201 +3277,6 @@
             The relative draw order of this IFloorDrawable.
             Is used when sorting the IDrawable objects for drawing.
             </value>
-        </member>
-        <member name="T:Atom.GameStateManagerExtensions">
-            <summary>
-            Defines extension methods for the <see cref="T:Atom.IGameStateManager"/> interface.
-            </summary>
-        </member>
-        <member name="M:Atom.GameStateManagerExtensions.PopAll(Atom.IGameStateManager)">
-            <summary>
-            Pops off all of the <see cref="T:Atom.IGameState"/>s of this <see cref="T:Atom.IGameStateManager"/>.
-            </summary>
-            <param name="manager">
-            The IGameStateManager from which all <see cref="T:Atom.IGameState"/>s
-            should be popped.
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManagerExtensions.Push``1(Atom.IGameStateManager)">
-            <summary>
-            Pushes the <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype ontop of the stack.
-            </summary>
-            <typeparam name="T">
-            The type of the IGameState to push.
-            </typeparam>
-            <param name="manager">
-            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
-            should be pushed.
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManagerExtensions.Replace``1(Atom.IGameStateManager)">
-            <summary>
-            Replaces the current <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype 
-            from this IGameStateManager.
-            </summary>
-            <typeparam name="T">
-            The type of the IGameState to remove.
-            </typeparam>
-            <param name="manager">
-            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
-            should be pushed.
-            </param>
-        </member>
-        <member name="M:Atom.GameStateManagerExtensions.Remove``1(Atom.IGameStateManager)">
-            <summary>
-            Attempts to remove the <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype 
-            from this IGameStateManager.
-            </summary>
-            <typeparam name="T">
-            The type of the IGameState to remove.
-            </typeparam>
-            <param name="manager">
-            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
-            should be pushed.
-            </param>
-            <returns>
-            True if the state was removed;
-            -or- otherwise false.
-            </returns>
-        </member>
-        <member name="T:Atom.IGameState">
-            <summary>
-            Defines the common properties and methods of a GameState.
-            </summary>
-            <remarks> 
-            Examples for game-states would be:
-            "Title Screen", "Option Screen",
-            "Mode Select Screen", "Ingame", ...
-            </remarks>
-        </member>
-        <member name="M:Atom.IGameState.Draw(Atom.IDrawContext)">
-            <summary>
-            Draws this <see cref="T:Atom.IGameState"/>.
-            </summary>
-            <param name="drawContext">
-            The current <see cref="T:Atom.IDrawContext"/>.
-            </param>
-        </member>
-        <member name="M:Atom.IGameState.Update(Atom.IUpdateContext)">
-            <summary>
-            Updates this <see cref="T:Atom.IGameState"/>.
-            </summary>
-            <param name="updateContext">
-            The current <see cref="T:Atom.IUpdateContext"/>.
-            </param>
-        </member>
-        <member name="M:Atom.IGameState.ChangedFrom(Atom.IGameState)">
-            <summary>
-            Called when changing from the <paramref name="oldState"/> to this <see cref="T:Atom.IGameState"/>.
-            </summary>
-            <param name="oldState">
-            The state before. Null means no state.
-            </param>
-        </member>
-        <member name="M:Atom.IGameState.ChangedTo(Atom.IGameState)">
-            <summary>
-            Called when changing from this <see cref="T:Atom.IGameState"/> to the <paramref name="newState"/>.
-            </summary>
-            <param name="newState">
-            The new state.
-            </param>
-        </member>
-        <member name="M:Atom.IGameState.Load">
-            <summary>
-            Loads this <see cref="T:Atom.IGameState"/>, if required.
-            </summary>
-        </member>
-        <member name="M:Atom.IGameState.Unload">
-            <summary>
-            Unloads this <see cref="T:Atom.IGameState"/>;
-            while still being able to reload it.
-            </summary>
-        </member>
-        <member name="T:Atom.IGameStateManager">
-            <summary> 
-            Provides a mechanism that allows the management of the <see cref="T:Atom.IGameState"/>s of a game.
-            </summary>
-        </member>
-        <member name="P:Atom.IGameStateManager.Current">
-            <summary>
-            Gets the current IGameState.
-            </summary>
-            <value>
-            The <see cref="T:Atom.IGameState"/> that is at the top of the IGameState stack;
-            or null.
-            </value>
-        </member>
-        <member name="M:Atom.IGameStateManager.Add(Atom.IGameState)">
-            <summary>
-            Adds the specified <see cref="T:Atom.IGameState"/> to the list of aviable states of this <see cref="T:Atom.GameStateManager"/>.
-            </summary>
-            <param name="state"> The state to add. </param>
-            <exception cref="T:System.ArgumentNullException">If <paramref name="state"/> is null.</exception>
-            <exception cref="T:System.ArgumentException">
-            If there already exists a state with the same name as the specified.
-            </exception>
-        </member>
-        <member name="M:Atom.IGameStateManager.Remove(System.Type)">
-            <summary>
-            Removes the <see cref="T:Atom.IGameState"/> that has the given <paramref name="type"/>
-            from the list of aviable states of the <see cref="T:Atom.GameStateManager"/>.
-            </summary>
-            <param name="type">
-            The type of the state to remove.
-            </param>
-            <returns>
-            true if the state has been removed;
-            -or- otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.IGameStateManager.Contains(System.Type)">
-            <summary>
-            Gets a value indicating whether this GameStateManager owns an <see cref="T:Atom.IGameState"/>
-            of the given <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the state to test for.
-            </param>
-            <returns>
-            True if this GameStateManager contains an <see cref="T:Atom.IGameState"/> of the given <paramref name="type"/>;
-            otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.IGameStateManager.Get(System.Type)">
-            <summary>
-            Tries to get the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the <see cref="T:Atom.IGameState"/> to get.
-            </param>
-            <returns>
-            The requested IGameState.
-            </returns>
-        </member>
-        <member name="M:Atom.IGameStateManager.Pop">
-            <summary>
-            Pops the current <see cref="T:Atom.IGameState"/> from the stack and changes to the one before.
-            </summary>
-            <returns>
-            Returns <see langword="true"/> if a state has been poped from the stack;
-            otherwise <see langword="false"/>.
-            </returns>
-        </member>
-        <member name="M:Atom.IGameStateManager.Push(System.Type)">
-            <summary>
-            Pushes the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/> ontop of the stack.
-            </summary>
-            <param name="type">
-            The type of the state.
-            </param>
-        </member>
-        <member name="M:Atom.IGameStateManager.Replace(System.Type)">
-            <summary>
-            Replaces the current <see cref="T:Atom.IGameState"/> with the one with the specified <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type of the state.
-            </param>
         </member>
         <member name="T:Atom.ISwitchable">
             <summary>
@@ -3672,6 +3381,189 @@
             </summary>
             <value>The <see cref="T:Atom.Scene.IScene"/> object provided by this ISceneProvider.</value>
         </member>
+        <member name="T:Atom.Scene.Tiles.TileMapFloor">
+            <summary>
+            Defines a single floor in a <see cref="T:Atom.Scene.Tiles.TileMap"/>.
+            </summary>
+            <remarks> 
+            <para>
+                A floor consists of multiple <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/>s 
+                and one single Action-<see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/>
+            </para>
+            <para>
+                The entities of a floor are usually rendered 
+                above all the layers of the floor.
+            </para>
+            </remarks>
+            <content>
+            Defines the <see cref="T:Atom.Storage.IObjectReaderWriter"/> for the TileMapFloor class.
+            </content>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloor.Layers">
+            <summary>
+            Gets a direct reference to the list of layers of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            WARNING: Don't modify this list directly.
+            </summary>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloor.ActionLayer">
+            <summary>
+            Gets or sets the action layer of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <value>
+            The action layer contains non-graphical data, such as collision information,
+            for every tile on this TileMapFloor.
+            </value>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloor.FloorNumber">
+            <summary>
+            Gets the floor number of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <value>
+            The floor number can be used to index into the floors 
+            of the <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this TileMapFloor.
+            </value>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloor.Map">
+            <summary>
+            Gets the <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <value>The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.</value>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloor.Tag">
+            <summary>
+            Gets or sets the (user-setable) tag of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <value>The dafault value is null.</value>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.#ctor(Atom.Scene.Tiles.TileMap,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> class.
+            </summary>
+            <param name="map">
+            The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns the new TileMapFloor.
+            </param>
+            <param name="initialLayerCapacity">
+            The initial number of layers the TileMapFloor can have without having to reallocate memory.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.Create(Atom.Scene.Tiles.TileMap,System.Int32)">
+            <summary>
+            Creates a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> class.
+            </summary>
+            <param name="map">
+            The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns the new TileMapFloor.
+            </param>
+            <param name="initialLayerCapacity">
+            The initial number of layers the TileMapFloor can have without having to reallocate memory.
+            </param>
+            <returns>The newly created TileMapFloor.</returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.AddLayer(Atom.Scene.Tiles.TileMapDataLayer)">
+            <summary>
+            Adds the given <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> to this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <param name="layer">
+            The layer to add to the TileMapFloor.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="layer"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            If the size/tilesize of the TileMapDataLayer doesn't match the size 
+            of the TileMap of this TileMapFloor.
+            </exception>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.RemoveLayer(Atom.Scene.Tiles.TileMapDataLayer)">
+            <summary>
+            Removes the first occurence of the given <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> from this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <param name="layer">
+            The TileMapDataLayer to remove.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if the <paramref name="layer"/> has been removed;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.GetLayer(System.Int32)">
+            <summary>
+            Gets the TileMapDataLayer at the given zero-based <paramref name="layerIndex"/>.
+            </summary>
+            <param name="layerIndex">
+            The zero-based index of the TileMapDataLayer to get.
+            </param>
+            <returns>
+            The TileMapDataLayer at the requested index;
+            otherwise null if the given layerIndex is invalid.
+            </returns>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TileMapFloor.actionLayer">
+            <summary>
+            The action layer of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TileMapFloor.layers">
+            <summary>
+            The collection of (graphical) layers.
+            </summary>
+        </member>
+        <member name="T:Atom.Scene.Tiles.TileMapFloor.ReaderWriter">
+            <summary>
+            Implements a mechanism that serializes / deserializes <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> objects.
+            </summary>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.#ctor(Atom.ITypeActivator)">
+            <summary>
+            Initializes a new instance of the ReaderWriter class.
+            </summary>
+            <param name="layerTypeActivator">
+            Responsible for creating the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> objects serialized in a TileMapFloor.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.Serialize(Atom.Scene.Tiles.TileMapFloor,Atom.Storage.ISerializationContext)">
+            <summary>
+            Serializes the specified TileMapFloor object.
+            </summary>
+            <param name="object">
+            The object to serialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the serialization process.
+            </param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.Deserialize(Atom.Scene.Tiles.TileMapFloor,Atom.Storage.IDeserializationContext)">
+            <summary>
+            Deserializes the specified TileMapFloor object.
+            </summary>
+            <param name="object">
+            The object to deserialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the deserialization process.
+            </param>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.layerTypeActivator">
+            <summary>
+            Responsible for creating the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> objects serialized in a TileMapFloor.
+            </summary>
+        </member>
+        <member name="T:Atom.Scene.Tiles.TileMapFloorTag">
+            <summary>
+            Defines a tag which can be applied to a <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>
+            which stores the <see cref="T:Atom.IFloorDrawable"/>s that are currently visible on that specific floor.
+            </summary>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TileMapFloorTag.VisibleDrawables">
+            <summary>
+            Gets the list of <see cref="T:Atom.IDrawable"/>s that are visible on the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
+            </summary>
+            <value>The reference of the actual list stored in this TileMapFloorTag.</value>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TileMapFloorTag.visibleDrawables">
+            <summary>
+            The list of <see cref="T:Atom.IFloorDrawable"/>s that are visible on the TileMapFloor.
+            </summary>
+        </member>
         <member name="T:Atom.Scene.Tiles.ITileHandler`1">
             <summary>
             Descripes the interface of an object that handles actions.
@@ -3728,6 +3620,140 @@
             <value>
             The <see cref="T:Atom.Scene.Tiles.TileMap"/> object this <see cref="T:Atom.Scene.Tiles.ITileMapProvider"/> provides.
             </value>
+        </member>
+        <member name="T:Atom.Scene.Tiles.TilePath">
+            <summary> 
+            Represents a path of (connected) tiles on a TileMap.
+            </summary>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TilePath.State">
+            <summary> 
+            Gets the state of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
+            </summary>
+            <value>The <see cref="T:Atom.Scene.Tiles.TilePathState"/> of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.</value>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TilePath.Item(System.Int32)">
+            <summary>
+            Gets the location (in tile-space) at the given index
+            of the <see cref="T:Atom.Scene.Tiles.TilePath"/>.
+            </summary>
+            <param name="index">The zero-based index of the tile location to receive.</param>
+            <returns>The location of the tile.</returns>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TilePath.Length">
+            <summary>
+            Gets the total length of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
+            </summary>
+            <value>The length of the <see cref="T:Atom.Scene.Tiles.TilePath"/>.</value>
+        </member>
+        <member name="P:Atom.Scene.Tiles.TilePath.Layer">
+            <summary>
+            Gets the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> that contains this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
+            </summary>
+            <value>The TileMapDataLayer that is related to this TilePath.</value>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.#ctor(Atom.Scene.Tiles.TileMapDataLayer,Atom.Scene.Tiles.TilePathState,Atom.Math.Point2[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TilePath"/> class.
+            </summary>
+            <param name="layer">The layer the new TilePath is part of.</param>
+            <param name="state">The state of the new TilePath.</param>
+            <param name="path">The actual path data of the new TilePath.</param>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.CreateFound(Atom.Scene.Tiles.TileMapDataLayer,Atom.Math.Point2[])">
+            <summary>
+            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
+            with the specified <paramref name="path"/>.
+            </summary>
+            <param name="layer">The layer the new path is in.</param>
+            <param name="path">
+            The path data.
+            </param>
+            <returns>
+            A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance.
+            </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.CreateFoundStartIsTarget(Atom.Scene.Tiles.TileMapDataLayer)">
+            <summary>
+            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
+            to indicate that the starting point is the end point.
+            </summary>
+            <param name="layer">The layer the new path is in.</param>
+            <returns> A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance. </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.CreateNotFound(Atom.Scene.Tiles.TileMapDataLayer)">
+            <summary>
+            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
+            to indicate that no path has been found.
+            </summary>
+            <param name="layer">The layer the new path is in.</param>
+            <returns> A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance. </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.GetDirToNext(System.Int32)">
+            <summary>
+            Gets the direction the next tile in this TilePath is facing.
+            </summary>
+            <param name="pathLocation"> The current position in the path. </param>
+            <returns> The direction from the current tile to the next. </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.GetDirToNext(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the direction from the given current tile to the next tile in this TilePath.
+            </summary>
+            <param name="currentX">
+            The current x position in tile-space.
+            </param>
+            <param name="currentY">
+            The current y position in tile-space.
+            </param>
+            <param name="pathLocation">
+            The current position in the path.
+            </param>
+            <returns>
+            The direction from the current tile to the next.
+            </returns>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.ReversePath">
+            <summary>
+            Reverses the path.
+            </summary>
+        </member>
+        <member name="M:Atom.Scene.Tiles.TilePath.GetPath">
+            <summary>
+            Gets the underlying path array.
+            </summary>
+            <returns>
+            The reference of the underlying path data array.
+            </returns>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TilePath.path">
+            <summary> 
+            The underlying path. 
+            </summary>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TilePath.layer">
+            <summary>
+            The layer that contains the path.
+            </summary>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TilePath.state">
+            <summary>
+            The state of the path.
+            </summary>
+        </member>
+        <member name="T:Atom.Scene.Tiles.TilePathState">
+            <summary>
+            Specifies the state of a <see cref="T:Atom.Scene.Tiles.TilePath"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TilePathState.Found">
+            <summary>
+            A path has been found.</summary>
+        </member>
+        <member name="F:Atom.Scene.Tiles.TilePathState.NotFound">
+            <summary>
+            No path has been found.
+            </summary>
         </member>
         <member name="T:Atom.Scene.Tiles.TileMap">
             <summary>
@@ -4420,323 +4446,6 @@
             An action layer which contains action data, such as collision information.
             </summary>
         </member>
-        <member name="T:Atom.Scene.Tiles.TileMapFloor">
-            <summary>
-            Defines a single floor in a <see cref="T:Atom.Scene.Tiles.TileMap"/>.
-            </summary>
-            <remarks> 
-            <para>
-                A floor consists of multiple <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/>s 
-                and one single Action-<see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/>
-            </para>
-            <para>
-                The entities of a floor are usually rendered 
-                above all the layers of the floor.
-            </para>
-            </remarks>
-            <content>
-            Defines the <see cref="T:Atom.Storage.IObjectReaderWriter"/> for the TileMapFloor class.
-            </content>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloor.Layers">
-            <summary>
-            Gets a direct reference to the list of layers of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            WARNING: Don't modify this list directly.
-            </summary>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloor.ActionLayer">
-            <summary>
-            Gets or sets the action layer of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <value>
-            The action layer contains non-graphical data, such as collision information,
-            for every tile on this TileMapFloor.
-            </value>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloor.FloorNumber">
-            <summary>
-            Gets the floor number of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <value>
-            The floor number can be used to index into the floors 
-            of the <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this TileMapFloor.
-            </value>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloor.Map">
-            <summary>
-            Gets the <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <value>The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.</value>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloor.Tag">
-            <summary>
-            Gets or sets the (user-setable) tag of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <value>The dafault value is null.</value>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.#ctor(Atom.Scene.Tiles.TileMap,System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> class.
-            </summary>
-            <param name="map">
-            The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns the new TileMapFloor.
-            </param>
-            <param name="initialLayerCapacity">
-            The initial number of layers the TileMapFloor can have without having to reallocate memory.
-            </param>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.Create(Atom.Scene.Tiles.TileMap,System.Int32)">
-            <summary>
-            Creates a new instance of the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> class.
-            </summary>
-            <param name="map">
-            The <see cref="T:Atom.Scene.Tiles.TileMap"/> that owns the new TileMapFloor.
-            </param>
-            <param name="initialLayerCapacity">
-            The initial number of layers the TileMapFloor can have without having to reallocate memory.
-            </param>
-            <returns>The newly created TileMapFloor.</returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.AddLayer(Atom.Scene.Tiles.TileMapDataLayer)">
-            <summary>
-            Adds the given <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> to this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <param name="layer">
-            The layer to add to the TileMapFloor.
-            </param>
-            <exception cref="T:System.ArgumentNullException">
-            If <paramref name="layer"/> is null.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-            If the size/tilesize of the TileMapDataLayer doesn't match the size 
-            of the TileMap of this TileMapFloor.
-            </exception>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.RemoveLayer(Atom.Scene.Tiles.TileMapDataLayer)">
-            <summary>
-            Removes the first occurence of the given <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> from this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <param name="layer">
-            The TileMapDataLayer to remove.
-            </param>
-            <returns>
-            Returns <see langword="true"/> if the <paramref name="layer"/> has been removed;
-            otherwise <see langword="false"/>.
-            </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.GetLayer(System.Int32)">
-            <summary>
-            Gets the TileMapDataLayer at the given zero-based <paramref name="layerIndex"/>.
-            </summary>
-            <param name="layerIndex">
-            The zero-based index of the TileMapDataLayer to get.
-            </param>
-            <returns>
-            The TileMapDataLayer at the requested index;
-            otherwise null if the given layerIndex is invalid.
-            </returns>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TileMapFloor.actionLayer">
-            <summary>
-            The action layer of this <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TileMapFloor.layers">
-            <summary>
-            The collection of (graphical) layers.
-            </summary>
-        </member>
-        <member name="T:Atom.Scene.Tiles.TileMapFloor.ReaderWriter">
-            <summary>
-            Implements a mechanism that serializes / deserializes <see cref="T:Atom.Scene.Tiles.TileMapFloor"/> objects.
-            </summary>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.#ctor(Atom.ITypeActivator)">
-            <summary>
-            Initializes a new instance of the ReaderWriter class.
-            </summary>
-            <param name="layerTypeActivator">
-            Responsible for creating the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> objects serialized in a TileMapFloor.
-            </param>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.Serialize(Atom.Scene.Tiles.TileMapFloor,Atom.Storage.ISerializationContext)">
-            <summary>
-            Serializes the specified TileMapFloor object.
-            </summary>
-            <param name="object">
-            The object to serialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the serialization process.
-            </param>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.Deserialize(Atom.Scene.Tiles.TileMapFloor,Atom.Storage.IDeserializationContext)">
-            <summary>
-            Deserializes the specified TileMapFloor object.
-            </summary>
-            <param name="object">
-            The object to deserialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the deserialization process.
-            </param>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TileMapFloor.ReaderWriter.layerTypeActivator">
-            <summary>
-            Responsible for creating the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> objects serialized in a TileMapFloor.
-            </summary>
-        </member>
-        <member name="T:Atom.Scene.Tiles.TileMapFloorTag">
-            <summary>
-            Defines a tag which can be applied to a <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>
-            which stores the <see cref="T:Atom.IFloorDrawable"/>s that are currently visible on that specific floor.
-            </summary>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TileMapFloorTag.VisibleDrawables">
-            <summary>
-            Gets the list of <see cref="T:Atom.IDrawable"/>s that are visible on the <see cref="T:Atom.Scene.Tiles.TileMapFloor"/>.
-            </summary>
-            <value>The reference of the actual list stored in this TileMapFloorTag.</value>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TileMapFloorTag.visibleDrawables">
-            <summary>
-            The list of <see cref="T:Atom.IFloorDrawable"/>s that are visible on the TileMapFloor.
-            </summary>
-        </member>
-        <member name="T:Atom.Scene.Tiles.TilePath">
-            <summary> 
-            Represents a path of (connected) tiles on a TileMap.
-            </summary>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TilePath.State">
-            <summary> 
-            Gets the state of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
-            </summary>
-            <value>The <see cref="T:Atom.Scene.Tiles.TilePathState"/> of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.</value>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TilePath.Item(System.Int32)">
-            <summary>
-            Gets the location (in tile-space) at the given index
-            of the <see cref="T:Atom.Scene.Tiles.TilePath"/>.
-            </summary>
-            <param name="index">The zero-based index of the tile location to receive.</param>
-            <returns>The location of the tile.</returns>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TilePath.Length">
-            <summary>
-            Gets the total length of this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
-            </summary>
-            <value>The length of the <see cref="T:Atom.Scene.Tiles.TilePath"/>.</value>
-        </member>
-        <member name="P:Atom.Scene.Tiles.TilePath.Layer">
-            <summary>
-            Gets the <see cref="T:Atom.Scene.Tiles.TileMapDataLayer"/> that contains this <see cref="T:Atom.Scene.Tiles.TilePath"/>.
-            </summary>
-            <value>The TileMapDataLayer that is related to this TilePath.</value>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.#ctor(Atom.Scene.Tiles.TileMapDataLayer,Atom.Scene.Tiles.TilePathState,Atom.Math.Point2[])">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Scene.Tiles.TilePath"/> class.
-            </summary>
-            <param name="layer">The layer the new TilePath is part of.</param>
-            <param name="state">The state of the new TilePath.</param>
-            <param name="path">The actual path data of the new TilePath.</param>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.CreateFound(Atom.Scene.Tiles.TileMapDataLayer,Atom.Math.Point2[])">
-            <summary>
-            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
-            with the specified <paramref name="path"/>.
-            </summary>
-            <param name="layer">The layer the new path is in.</param>
-            <param name="path">
-            The path data.
-            </param>
-            <returns>
-            A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance.
-            </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.CreateFoundStartIsTarget(Atom.Scene.Tiles.TileMapDataLayer)">
-            <summary>
-            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
-            to indicate that the starting point is the end point.
-            </summary>
-            <param name="layer">The layer the new path is in.</param>
-            <returns> A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance. </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.CreateNotFound(Atom.Scene.Tiles.TileMapDataLayer)">
-            <summary>
-            Creates a new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance initialized 
-            to indicate that no path has been found.
-            </summary>
-            <param name="layer">The layer the new path is in.</param>
-            <returns> A new <see cref="T:Atom.Scene.Tiles.TilePath"/> instance. </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.GetDirToNext(System.Int32)">
-            <summary>
-            Gets the direction the next tile in this TilePath is facing.
-            </summary>
-            <param name="pathLocation"> The current position in the path. </param>
-            <returns> The direction from the current tile to the next. </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.GetDirToNext(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Gets the direction from the given current tile to the next tile in this TilePath.
-            </summary>
-            <param name="currentX">
-            The current x position in tile-space.
-            </param>
-            <param name="currentY">
-            The current y position in tile-space.
-            </param>
-            <param name="pathLocation">
-            The current position in the path.
-            </param>
-            <returns>
-            The direction from the current tile to the next.
-            </returns>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.ReversePath">
-            <summary>
-            Reverses the path.
-            </summary>
-        </member>
-        <member name="M:Atom.Scene.Tiles.TilePath.GetPath">
-            <summary>
-            Gets the underlying path array.
-            </summary>
-            <returns>
-            The reference of the underlying path data array.
-            </returns>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TilePath.path">
-            <summary> 
-            The underlying path. 
-            </summary>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TilePath.layer">
-            <summary>
-            The layer that contains the path.
-            </summary>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TilePath.state">
-            <summary>
-            The state of the path.
-            </summary>
-        </member>
-        <member name="T:Atom.Scene.Tiles.TilePathState">
-            <summary>
-            Specifies the state of a <see cref="T:Atom.Scene.Tiles.TilePath"/>.
-            </summary>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TilePathState.Found">
-            <summary>
-            A path has been found.</summary>
-        </member>
-        <member name="F:Atom.Scene.Tiles.TilePathState.NotFound">
-            <summary>
-            No path has been found.
-            </summary>
-        </member>
         <member name="T:Atom.Scene.IQuadTreeItem2">
             <summary>
             Defines the interface that Objects must implement
@@ -5398,6 +5107,329 @@
             Only end leaves can contain items -> null if no end leaf.
             </summary>
         </member>
+        <member name="T:Atom.GameStateManager">
+            <summary>
+            Implements a mechanism that allows the management of the <see cref="T:Atom.IGameState"/>s of a game.
+            </summary>
+        </member>
+        <member name="P:Atom.GameStateManager.Current">
+            <summary>
+            Gets the current IGameState.
+            </summary>
+            <value>
+            The <see cref="T:Atom.IGameState"/> that is at the top of the IGameState stack;
+            or null.
+            </value>
+        </member>
+        <member name="M:Atom.GameStateManager.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.GameStateManager"/> class.
+            </summary>
+            <param name="initialStateCapacity"> 
+            The initial number of states the <see cref="T:Atom.GameStateManager"/> can contain. 
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManager.Add(Atom.IGameState)">
+            <summary>
+            Adds the specified <see cref="T:Atom.IGameState"/> to the list of aviable states of this <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <param name="state"> The state to add. </param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="state"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">
+            If there already exists a state with the same name as the specified.
+            </exception>
+        </member>
+        <member name="M:Atom.GameStateManager.Remove(System.Type)">
+            <summary>
+            Removes the <see cref="T:Atom.IGameState"/> that has the given <paramref name="type"/>
+            from the list of aviable states of the <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <param name="type">
+            The type of the state to remove.
+            </param>
+            <returns>
+            true if the state has been removed;
+            -or- otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.GameStateManager.Replace(System.Type)">
+            <summary>
+            Replaces the current state with the one with the specified <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the state.
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManager.Push(System.Type)">
+            <summary>
+            Pushes the state with the specified <paramref name="type"/> ontop of the stack.
+            </summary>
+            <param name="type">
+            The type of the state.
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManager.Pop">
+            <summary>
+            Pops the current state from the stack and changes to the one before.
+            </summary>
+            <returns>
+            Returns <see langword="true"/> if a state has been poped from the stack;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.GameStateManager.Get(System.Type)">
+            <summary>
+            Tries to get the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the <see cref="T:Atom.IGameState"/> to get.
+            </param>
+            <returns>
+            The requested IGameState.
+            </returns>
+        </member>
+        <member name="M:Atom.GameStateManager.Contains(System.Type)">
+            <summary>
+            Gets a value indicating whether this GameStateManager owns an <see cref="T:Atom.IGameState"/>
+            of the given <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the state to test for.
+            </param>
+            <returns>
+            True if this GameStateManager contains an <see cref="T:Atom.IGameState"/> of the given <paramref name="type"/>;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.GameStateManager.Clear">
+            <summary>
+            Pops all <see cref="T:Atom.IGameState"/> and then clears the list
+            of available states.
+            </summary>
+        </member>
+        <member name="M:Atom.GameStateManager.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates over the
+            <see cref="T:Atom.IGameState"/>s available to this <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <returns>
+            A new enumerator.
+            </returns>
+        </member>
+        <member name="M:Atom.GameStateManager.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates over the
+            <see cref="T:Atom.IGameState"/>s available to this <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <returns>
+            A new enumerator.
+            </returns>
+        </member>
+        <member name="F:Atom.GameStateManager.stateStack">
+            <summary>
+            The current stack of states. The uppermost is the current.
+            </summary>
+        </member>
+        <member name="F:Atom.GameStateManager.availableStates">
+            <summary>
+            All aviable states sorted by name.
+            </summary>
+        </member>
+        <member name="T:Atom.GameStateManagerExtensions">
+            <summary>
+            Defines extension methods for the <see cref="T:Atom.IGameStateManager"/> interface.
+            </summary>
+        </member>
+        <member name="M:Atom.GameStateManagerExtensions.PopAll(Atom.IGameStateManager)">
+            <summary>
+            Pops off all of the <see cref="T:Atom.IGameState"/>s of this <see cref="T:Atom.IGameStateManager"/>.
+            </summary>
+            <param name="manager">
+            The IGameStateManager from which all <see cref="T:Atom.IGameState"/>s
+            should be popped.
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManagerExtensions.Push``1(Atom.IGameStateManager)">
+            <summary>
+            Pushes the <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype ontop of the stack.
+            </summary>
+            <typeparam name="T">
+            The type of the IGameState to push.
+            </typeparam>
+            <param name="manager">
+            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
+            should be pushed.
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManagerExtensions.Replace``1(Atom.IGameStateManager)">
+            <summary>
+            Replaces the current <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype 
+            from this IGameStateManager.
+            </summary>
+            <typeparam name="T">
+            The type of the IGameState to remove.
+            </typeparam>
+            <param name="manager">
+            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
+            should be pushed.
+            </param>
+        </member>
+        <member name="M:Atom.GameStateManagerExtensions.Remove``1(Atom.IGameStateManager)">
+            <summary>
+            Attempts to remove the <see cref="T:Atom.IGameState"/> with the specified <typeparamref name="T"/>ype 
+            from this IGameStateManager.
+            </summary>
+            <typeparam name="T">
+            The type of the IGameState to remove.
+            </typeparam>
+            <param name="manager">
+            The IGameStateManager onto which a <see cref="T:Atom.IGameState"/>
+            should be pushed.
+            </param>
+            <returns>
+            True if the state was removed;
+            -or- otherwise false.
+            </returns>
+        </member>
+        <member name="T:Atom.IGameState">
+            <summary>
+            Defines the common properties and methods of a GameState.
+            </summary>
+            <remarks> 
+            Examples for game-states would be:
+            "Title Screen", "Option Screen",
+            "Mode Select Screen", "Ingame", ...
+            </remarks>
+        </member>
+        <member name="M:Atom.IGameState.Draw(Atom.IDrawContext)">
+            <summary>
+            Draws this <see cref="T:Atom.IGameState"/>.
+            </summary>
+            <param name="drawContext">
+            The current <see cref="T:Atom.IDrawContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.IGameState.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this <see cref="T:Atom.IGameState"/>.
+            </summary>
+            <param name="updateContext">
+            The current <see cref="T:Atom.IUpdateContext"/>.
+            </param>
+        </member>
+        <member name="M:Atom.IGameState.ChangedFrom(Atom.IGameState)">
+            <summary>
+            Called when changing from the <paramref name="oldState"/> to this <see cref="T:Atom.IGameState"/>.
+            </summary>
+            <param name="oldState">
+            The state before. Null means no state.
+            </param>
+        </member>
+        <member name="M:Atom.IGameState.ChangedTo(Atom.IGameState)">
+            <summary>
+            Called when changing from this <see cref="T:Atom.IGameState"/> to the <paramref name="newState"/>.
+            </summary>
+            <param name="newState">
+            The new state.
+            </param>
+        </member>
+        <member name="M:Atom.IGameState.Load">
+            <summary>
+            Loads this <see cref="T:Atom.IGameState"/>, if required.
+            </summary>
+        </member>
+        <member name="M:Atom.IGameState.Unload">
+            <summary>
+            Unloads this <see cref="T:Atom.IGameState"/>;
+            while still being able to reload it.
+            </summary>
+        </member>
+        <member name="T:Atom.IGameStateManager">
+            <summary> 
+            Provides a mechanism that allows the management of the <see cref="T:Atom.IGameState"/>s of a game.
+            </summary>
+        </member>
+        <member name="P:Atom.IGameStateManager.Current">
+            <summary>
+            Gets the current IGameState.
+            </summary>
+            <value>
+            The <see cref="T:Atom.IGameState"/> that is at the top of the IGameState stack;
+            or null.
+            </value>
+        </member>
+        <member name="M:Atom.IGameStateManager.Add(Atom.IGameState)">
+            <summary>
+            Adds the specified <see cref="T:Atom.IGameState"/> to the list of aviable states of this <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <param name="state"> The state to add. </param>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="state"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">
+            If there already exists a state with the same name as the specified.
+            </exception>
+        </member>
+        <member name="M:Atom.IGameStateManager.Remove(System.Type)">
+            <summary>
+            Removes the <see cref="T:Atom.IGameState"/> that has the given <paramref name="type"/>
+            from the list of aviable states of the <see cref="T:Atom.GameStateManager"/>.
+            </summary>
+            <param name="type">
+            The type of the state to remove.
+            </param>
+            <returns>
+            true if the state has been removed;
+            -or- otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.IGameStateManager.Contains(System.Type)">
+            <summary>
+            Gets a value indicating whether this GameStateManager owns an <see cref="T:Atom.IGameState"/>
+            of the given <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the state to test for.
+            </param>
+            <returns>
+            True if this GameStateManager contains an <see cref="T:Atom.IGameState"/> of the given <paramref name="type"/>;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.IGameStateManager.Get(System.Type)">
+            <summary>
+            Tries to get the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the <see cref="T:Atom.IGameState"/> to get.
+            </param>
+            <returns>
+            The requested IGameState.
+            </returns>
+        </member>
+        <member name="M:Atom.IGameStateManager.Pop">
+            <summary>
+            Pops the current <see cref="T:Atom.IGameState"/> from the stack and changes to the one before.
+            </summary>
+            <returns>
+            Returns <see langword="true"/> if a state has been poped from the stack;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.IGameStateManager.Push(System.Type)">
+            <summary>
+            Pushes the <see cref="T:Atom.IGameState"/> with the specified <paramref name="type"/> ontop of the stack.
+            </summary>
+            <param name="type">
+            The type of the state.
+            </param>
+        </member>
+        <member name="M:Atom.IGameStateManager.Replace(System.Type)">
+            <summary>
+            Replaces the current <see cref="T:Atom.IGameState"/> with the one with the specified <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type of the state.
+            </param>
+        </member>
         <member name="T:Atom.Story.Design.TimeTickConverter">
             <summary>
             Provides a unified way of converting <see cref="T:Atom.Story.TimeTick"/> values to other types, 
@@ -5646,6 +5678,59 @@
             Represents the storage field of the IsActive property.
             </summary>
         </member>
+        <member name="T:Atom.Story.TickTimer">
+            <summary>
+            Measures the flow of concrete tick time. 
+            </summary>
+        </member>
+        <member name="E:Atom.Story.TickTimer.Ticked">
+            <summary>
+            Raised when the <see cref="P:Atom.Story.TickTimer.Current"/> TimeTick of this TickTimer has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Story.TickTimer.Current">
+            <summary>
+            Gets or sets the current <see cref="T:Atom.Story.TimeTick"/> that has been recorded by this TickTimer.
+            </summary>
+        </member>
+        <member name="P:Atom.Story.TickTimer.Factor">
+            <summary>
+            Gets or sets a value indicating how real time flow influences the progress of tick time.
+            </summary>
+        </member>
+        <member name="M:Atom.Story.TickTimer.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this TickTimer.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Story.TickTimer.UpdateOnTick">
+            <summary>
+            Called when enough real time has flown for atleast one time tick.
+            </summary>
+        </member>
+        <member name="M:Atom.Story.TickTimer.OnTick">
+            <summary>
+            Called when a TimeTick has occurred.
+            </summary>
+        </member>
+        <member name="F:Atom.Story.TickTimer.timeUntilNextTick">
+            <summary>
+            The time (in seconds) until the next TimeTick occurs.
+            </summary>
+        </member>
+        <member name="F:Atom.Story.TickTimer.factor">
+            <summary>
+            Represents the storage field of the Factor property.
+            </summary>
+        </member>
+        <member name="F:Atom.Story.TickTimer.current">
+            <summary>
+            Stores the current TimeTick.
+            </summary>
+        </member>
         <member name="T:Atom.Story.Timeline">
             <summary>
             Represents an ordered series of <see cref="T:Atom.Story.Incident"/>, 
@@ -5773,59 +5858,6 @@
         <member name="F:Atom.Story.Timeline.isActive">
             <summary>
             Represents the storage field of the IsActive property.
-            </summary>
-        </member>
-        <member name="T:Atom.Story.TickTimer">
-            <summary>
-            Measures the flow of concrete tick time. 
-            </summary>
-        </member>
-        <member name="E:Atom.Story.TickTimer.Ticked">
-            <summary>
-            Raised when the <see cref="P:Atom.Story.TickTimer.Current"/> TimeTick of this TickTimer has changed.
-            </summary>
-        </member>
-        <member name="P:Atom.Story.TickTimer.Current">
-            <summary>
-            Gets or sets the current <see cref="T:Atom.Story.TimeTick"/> that has been recorded by this TickTimer.
-            </summary>
-        </member>
-        <member name="P:Atom.Story.TickTimer.Factor">
-            <summary>
-            Gets or sets a value indicating how real time flow influences the progress of tick time.
-            </summary>
-        </member>
-        <member name="M:Atom.Story.TickTimer.Update(Atom.IUpdateContext)">
-            <summary>
-            Updates this TickTimer.
-            </summary>
-            <param name="updateContext">
-            The current IUpdateContext.
-            </param>
-        </member>
-        <member name="M:Atom.Story.TickTimer.UpdateOnTick">
-            <summary>
-            Called when enough real time has flown for atleast one time tick.
-            </summary>
-        </member>
-        <member name="M:Atom.Story.TickTimer.OnTick">
-            <summary>
-            Called when a TimeTick has occurred.
-            </summary>
-        </member>
-        <member name="F:Atom.Story.TickTimer.timeUntilNextTick">
-            <summary>
-            The time (in seconds) until the next TimeTick occurs.
-            </summary>
-        </member>
-        <member name="F:Atom.Story.TickTimer.factor">
-            <summary>
-            Represents the storage field of the Factor property.
-            </summary>
-        </member>
-        <member name="F:Atom.Story.TickTimer.current">
-            <summary>
-            Stores the current TimeTick.
             </summary>
         </member>
         <member name="T:Atom.Story.TimelineWalker">
@@ -6168,38 +6200,6 @@
             <returns>
             true if the left TimeTick is not equal to the right TimeTick;
             -or- otherwise false.
-            </returns>
-        </member>
-        <member name="T:Atom.IAction">
-            <summary>
-            Represents an undoable and storable action.
-            </summary>
-        </member>
-        <member name="M:Atom.IAction.Execute">
-            <summary>
-            Executes this IAction.
-            </summary>
-        </member>
-        <member name="M:Atom.IAction.Dexecute">
-            <summary>
-            Immediately undoes this IAction.
-            </summary>
-        </member>
-        <member name="M:Atom.IAction.CanExecute">
-            <summary>
-            Gets a value indicating whether this IAction can be executed.
-            </summary>
-            <returns>
-            true if this IAction can be executed;
-            otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.IAction.GetDescription">
-            <summary>
-            Gets a localized description text of this IAction.
-            </summary>
-            <returns>
-            The localized description of this IAction.
             </returns>
         </member>
     </members>

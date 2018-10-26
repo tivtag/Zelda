@@ -1969,98 +1969,98 @@
         </member>
         <member name="T:Atom.Math.Graph.GraphErrorStrings">
             <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.ResourceManager">
             <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.Culture">
             <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeAlreadyExists">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Such an Edge already exists ähnelt.
+              Looks up a localized string similar to Such an Edge already exists.
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeAlreadyExistsFromXToY">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die There already exists an edge from Vertex &apos;{0}&apos; to Vertex &apos;{1}&apos;. ähnelt.
+              Looks up a localized string similar to There already exists an edge from Vertex &apos;{0}&apos; to Vertex &apos;{1}&apos;..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeDataIsNull">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The data stored in an Edge of the Graph is null. This is invalid for this operation. ähnelt.
+              Looks up a localized string similar to The data stored in an Edge of the Graph is null. This is invalid for this operation..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.EdgeGraphDirectedMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Edge &lt;-&gt; Graph - IsDirected mismatch. A directed graph can only contain directed edges and visa versa. ähnelt.
+              Looks up a localized string similar to Edge &lt;-&gt; Graph - IsDirected mismatch. A directed graph can only contain directed edges and visa versa..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphDirectionMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This operation requires the Graphs to be both directed or undirected. ähnelt.
+              Looks up a localized string similar to This operation requires the Graphs to be both directed or undirected..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphDoesntAllowSelfLoopAdded">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This Graph doesn&apos;t allow Edges that start and end at the same Vertex.  (Self Loops) ähnelt.
+              Looks up a localized string similar to This Graph doesn&apos;t allow Edges that start and end at the same Vertex.  (Self Loops).
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphHasCycles">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Graph contains cycles. This is invalid for this operation. ähnelt.
+              Looks up a localized string similar to The Graph contains cycles. This is invalid for this operation..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.GraphIsEmpty">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Graph is empty. This is invalid for this operation. ähnelt.
+              Looks up a localized string similar to The Graph is empty. This is invalid for this operation..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.NoMatchingVertexFoundInGraph">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die No matching Vertex has been found in the Graph. ähnelt.
+              Looks up a localized string similar to No matching Vertex has been found in the Graph..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.OperationOnlyValidonDirectedGraph">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This operation is only valid on a directed Graph. ähnelt.
+              Looks up a localized string similar to This operation is only valid on a directed Graph..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.OperationOnlyValidOnSimpleGraphs">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This operation is only valid on simple graphs that contain no self-loops or multiple edges. ähnelt.
+              Looks up a localized string similar to This operation is only valid on simple graphs that contain no self-loops or multiple edges..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexAlreadyExistsInGraph">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Vertex already exists in the Graph. ähnelt.
+              Looks up a localized string similar to The Vertex already exists in the Graph..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexCouldNotBeFound">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Vertex could not be found. ähnelt.
+              Looks up a localized string similar to The Vertex could not be found..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexCountIsZero">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The vertex-count is zero. ähnelt.
+              Looks up a localized string similar to The vertex-count is zero..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.VertexNotPartOfEdge">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Vertex is not part of the Edge. ähnelt.
+              Looks up a localized string similar to The Vertex is not part of the Edge..
             </summary>
         </member>
         <member name="P:Atom.Math.Graph.GraphErrorStrings.VoltageXOfVoltageGraphNotPartOfSpecifiedVoltageGroupOrderY">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Voltage &apos;{0}&apos; of the Voltage Graph is not part of the Voltage Group of Order &apos;{1}&apos;. ähnelt.
+              Looks up a localized string similar to The Voltage &apos;{0}&apos; of the Voltage Graph is not part of the Voltage Group of Order &apos;{1}&apos;..
             </summary>
         </member>
         <member name="T:Atom.Math.Graph.Track`2">

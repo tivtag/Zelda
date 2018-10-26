@@ -13624,153 +13624,153 @@
         </member>
         <member name="T:Atom.Math.MathErrorStrings">
             <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ResourceManager">
             <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.Culture">
             <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ArgumentInIntervalXYInclusive">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The argument is expected to be between {0} and {1} (including {0} and {1}). ähnelt.
+              Looks up a localized string similar to The argument is expected to be between {0} and {1} (including {0} and {1})..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ArgumentIsInfinityNaN">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The given argument is infinite or NaN. This is not allowed. ähnelt.
+              Looks up a localized string similar to The given argument is infinite or NaN. This is not allowed..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ArgumentTooLargeForIterationLimit">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The given argument is too large for the set iteration limit. ähnelt.
+              Looks up a localized string similar to The given argument is too large for the set iteration limit..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.CantReceiveValueVertexOrderIsNone">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t receive the value. The vertex order is &apos;TurnDirection.None&apos;. ähnelt.
+              Looks up a localized string similar to Can&apos;t receive the value. The vertex order is &apos;TurnDirection.None&apos;..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.CantSetVertexOrderToNone">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t set the vertex order to &apos;TurnDirection.None&apos;. ähnelt.
+              Looks up a localized string similar to Can&apos;t set the vertex order to &apos;TurnDirection.None&apos;..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.IncompatibleMatricesTimes">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The size of the matrices is incompatible for this operation. ähnelt.
+              Looks up a localized string similar to The size of the matrices is incompatible for this operation..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixDimensionsMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Dimensions mismatch. This operation requires the matrices to be of the same size. ähnelt.
+              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrices to be of the same size..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixIsSingular">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Matrix is singular/degenerated. (--&gt; The Matrix is not 	invertible) ähnelt.
+              Looks up a localized string similar to The Matrix is singular/degenerated. (--&gt; The Matrix is not 	invertible).
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSquare">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Matrix must be a square matrix. ähnelt.
+              Looks up a localized string similar to The Matrix must be a square matrix..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetric">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The matrix must be symmetric. ähnelt.
+              Looks up a localized string similar to The matrix must be symmetric..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetricPositiveDefinite">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Matrix must be symmetric positive definite for this operation. ähnelt.
+              Looks up a localized string similar to The Matrix must be symmetric positive definite for this operation..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixNotPositiveDefinite">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The matrix is not positive definite. ähnelt.
+              Looks up a localized string similar to The matrix is not positive definite..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixRankIsNotFull">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The matrix&apos;s rank is not full. ähnelt.
+              Looks up a localized string similar to The matrix&apos;s rank is not full..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixRowCountMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The number of rows of the Matrices doesn&apos;t match. ähnelt.
+              Looks up a localized string similar to The number of rows of the Matrices doesn&apos;t match..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.MatrixVectorDimensionsMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Dimensions mismatch. This operation requires the matrix and the vector to be of the same size. ähnelt.
+              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrix and the vector to be of the same size..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.NegativePlaneDistance">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The plane distance {0} is negative. This is not supported. ähnelt.
+              Looks up a localized string similar to The plane distance {0} is negative. This is not supported..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.OperationInvalidOnZeroVector">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This operation is invalid on a 0-vector. ähnelt.
+              Looks up a localized string similar to This operation is invalid on a 0-vector..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.OperationRequiresAtleastOnePoint">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This operation requires at least one point. ähnelt.
+              Looks up a localized string similar to This operation requires at least one point..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.OppositePlanes">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The near plane distance is larger than the far plane distance. This is not allowed. ähnelt.
+              Looks up a localized string similar to The near plane distance is larger than the far plane distance. This is not allowed..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.OutRangeFieldOfView">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The field of view value &apos;{0}&apos; is out of valid range of 0 and PI (180 degree). ähnelt.
+              Looks up a localized string similar to The field of view value &apos;{0}&apos; is out of valid range of 0 and PI (180 degree)..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.SpecifiedAngleXGreaterTwoPi">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified angle &apos;{0}&apos; is greater than two Pi. ähnelt.
+              Looks up a localized string similar to The specified angle &apos;{0}&apos; is greater than two Pi..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.TriangulationRequiresAtLeastThreeVertices">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Triangulation requires at least 3 vertices as its input. ähnelt.
+              Looks up a localized string similar to Triangulation requires at least 3 vertices as its input..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ValueGreaterThanMaximum">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The given value is greater than the maximum. ähnelt.
+              Looks up a localized string similar to The given value is greater than the maximum..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.ValueLessThanMinimum">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The given value is less than the minimum. ähnelt.
+              Looks up a localized string similar to The given value is less than the minimum..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.VectorLengthMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Vector length mismatch. This operation only works with Vectors that have the same number of elements. ähnelt.
+              Looks up a localized string similar to Vector length mismatch. This operation only works with Vectors that have the same number of elements..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.VectorSizeMatrixRowCountMismatch">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The vector must have the same number of elements as the number of rows of the matrix. ähnelt.
+              Looks up a localized string similar to The vector must have the same number of elements as the number of rows of the matrix..
             </summary>
         </member>
         <member name="P:Atom.Math.MathErrorStrings.VertexCountIsZero">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The vertex count is zero. ähnelt.
+              Looks up a localized string similar to The vertex count is zero..
             </summary>
         </member>
         <member name="T:Atom.Math.RandExtensions">

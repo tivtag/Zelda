@@ -2705,23 +2705,23 @@
         </member>
         <member name="T:Atom.Xna.UI.UIErrorStrings">
             <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Atom.Xna.UI.UIErrorStrings.ResourceManager">
             <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Atom.Xna.UI.UIErrorStrings.Culture">
             <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:Atom.Xna.UI.UIErrorStrings.CantGetTextBlockSizeFontIsNull">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t receive the size of the Text Block. The font is null. ähnelt.
+              Looks up a localized string similar to Can&apos;t receive the size of the Text Block. The font is null..
             </summary>
         </member>
         <member name="T:Atom.Xna.UI.UserInterface">

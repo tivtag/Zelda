@@ -73,11 +73,6 @@
             The mail to modify.
             </param>
         </member>
-        <member name="T:Atom.Mail.Modifiers.IMailMessageModifierContract">
-            <summary>
-            Defines the contract for the <see cref="T:Atom.Mail.Modifiers.IMailMessageModifier"/> interface.
-            </summary>
-        </member>
         <member name="T:Atom.Mail.MailMessage">
             <summary>
             Represents a message that can be send using an <see cref="T:Atom.Mail.IMailSender"/>.

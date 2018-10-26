@@ -1534,48 +1534,48 @@
         </member>
         <member name="T:Atom.Fmod.Properties.Resources">
             <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.ResourceManager">
             <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Culture">
             <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_NativeDllVersionXNotSupportedYRequired">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Version &apos;{0}&apos; of the native fmodex.dll is not supported. &apos;{1}&apos; or newer is required. ähnelt.
+              Looks up a localized string similar to Version &apos;{0}&apos; of the native fmodex.dll is not supported. &apos;{1}&apos; or newer is required..
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_NativeSoundObjectIsNull">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The native FMODex sound object is null. Consider loading the Sound Resource. ähnelt.
+              Looks up a localized string similar to The native FMODex sound object is null. Consider loading the Sound Resource..
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_ResourceXAtPathYDoesntExist">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The requested resource &apos;{0}&apos; doesn&apos;t exist at the file path &apos;{1}&apos;. ähnelt.
+              Looks up a localized string similar to The requested resource &apos;{0}&apos; doesn&apos;t exist at the file path &apos;{1}&apos;..
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_TheAudioSystemIsAlreadyInitialized">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The AudioSystem is already initialized. ähnelt.
+              Looks up a localized string similar to The AudioSystem is already initialized..
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_TheAudioSystemIsNotInitialized">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The AudioSystem is not initialized. ähnelt.
+              Looks up a localized string similar to The AudioSystem is not initialized..
             </summary>
         </member>
         <member name="P:Atom.Fmod.Properties.Resources.Error_TheChannelGroupHasNoChildGroups">
             <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The ChannelGroup has got no child ChannelGroups. ähnelt.
+              Looks up a localized string similar to The ChannelGroup has got no child ChannelGroups..
             </summary>
         </member>
         <member name="T:Atom.Fmod.Sound">

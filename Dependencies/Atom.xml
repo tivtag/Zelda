@@ -34,232 +34,6 @@
              The newly created IList{a'}.
              </returns>
         </member>
-        <member name="T:Atom.Math.RandListExtensions">
-            <summary>
-            Defines extension methods related to randomly selecting elements from IList{T}s.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RandListExtensions.RandomOrDefault``1(System.Collections.Generic.IList{``0},Atom.Math.IRand)">
-            <summary>
-            Gets a random element of the given collection.
-            </summary>
-            <typeparam name="T">
-            The type of element in the list.
-            </typeparam>
-            <param name="list">
-            The list to query.
-            </param>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <returns>
-            A random item from the given list or the default value of T if the given list is empty.
-            </returns>
-        </member>
-        <member name="T:Atom.Math.IRand">
-            <summary>
-            Provides a mechanism to receive various pseudo-random numbers.
-            </summary>
-            <remarks>
-            The default constructor of an object implementing this interface
-            should seed itself with the current time.
-            </remarks>
-        </member>
-        <member name="P:Atom.Math.IRand.RandomBoolean">
-            <summary>
-            Gets a random boolean state value.
-            </summary>
-            <value>
-            Returns <see langword="true"/> 50% of the time,
-            and <see langword="false"/> the other 50%.
-            </value>
-        </member>
-        <member name="P:Atom.Math.IRand.RandomInteger">
-            <summary>
-            Gets a random number in the interval [0,0x7fffffff].
-            </summary>
-            <value>A random integer.</value>
-        </member>
-        <member name="P:Atom.Math.IRand.RandomSingle">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random single-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.IRand.RandomDouble">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random double-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.IRand.RandomDecimal">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random decimal value.</value>
-        </member>
-        <member name="T:Atom.Math.RandRangeExtensions">
-            <summary>
-            Defines extension methods for the <see cref="T:Atom.Math.IRand"/> interface
-            that make it easier to get a random value within a specific range.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Int32,System.Int32)">
-            <summary>
-            Returns a random integer within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
-            <returns> 
-            A random integer greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Int64,System.Int64)">
-            <summary>
-            Returns a random long integer within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
-            <returns> 
-            A random integer greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.UInt32,System.UInt32)">
-            <summary>
-            Returns a random integer within the specified range.
-            </summary>
-            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns> 
-            A random integer greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Single,System.Single)">
-            <summary>
-            Returns a random floating point value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random single-precision floating-point greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Double,System.Double)">
-            <summary>
-            Returns a random floating point value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns> 
-            A random double-precision floating-point value greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Decimal,System.Decimal)">
-            <summary>
-            Returns a random floating point value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns> 
-            A random decimal greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.UncheckedRandomRange(Atom.Math.IRand,System.Single,System.Single)">
-            <summary>
-            Returns a random floating point value within the specified range,
-            doesn't check whether the given minimumValue and maximumValue are in the right order of minimumValue &lt;= maximumValue.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random integer greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandRangeExtensions.UncheckedRandomRange(Atom.Math.IRand,System.Int32,System.Int32)">
-            <summary>
-            Returns a random floating point value within the specified range,
-            doesn't check whether the given minimumValue and maximumValue are in the right order of minimumValue &lt;= maximumValue.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random integer greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="T:Atom.Threading.Timeout">
-            <summary>
-            Provides utility mechanism for working with timeoutable actions.
-            </summary>
-        </member>
-        <member name="M:Atom.Threading.Timeout.Invoke(System.TimeSpan,System.Action,System.Action)">
-            <summary>
-            Executes the specified action, giving it the specified time to complete
-            before it is aborted.
-            </summary>
-            <exception cref="T:System.TimeoutException">
-            Thrown when the timeout has been reached.
-            </exception>
-            <param name="timeout">
-            The TimeSpan the action is allowed to take at max.
-            </param>
-            <param name="action">
-            The action to execute.
-            </param>
-            <param name="abort">
-            The (optional) action that should be executed when the timeout has been reached.
-            </param>
-        </member>
-        <member name="T:Atom.TypeStringConverter">
-            <summary>
-            Implements an <see cref="T:Atom.IStringConverter"/> that uses ITypeConverters to
-            convert values to and from strings.
-            </summary>
-        </member>
-        <member name="M:Atom.TypeStringConverter.ConvertToString(System.Object)">
-            <summary>
-            Attempts to convert the given source object value into a string.
-            </summary>
-            <param name="value">
-            The input source value.
-            </param>
-            <returns>
-            The output value.
-            </returns>
-        </member>
-        <member name="M:Atom.TypeStringConverter.ConvertFromString(System.String,System.Type)">
-            <summary>
-            Attempts to convert the given target string value into
-            the a source value.
-            </summary>
-            <param name="value">
-            The input target value, encoded in a string.
-            </param>
-            <param name="targetType">
-            The type the target value encodes.
-            </param>
-            <returns>
-            The output source value.
-            </returns>
-        </member>
         <member name="T:Atom.ChangedValue`1">
             <summary>
             Defines a container that stores information on the change of a value.
@@ -403,6 +177,62 @@
             The item to insert.
             </param>
         </member>
+        <member name="T:Atom.Collections.Association`2">
+            <summary>
+            The Association performs the same function as a <see cref="T:System.Collections.Generic.KeyValuePair`2"/>,
+            but allows the <see cref="P:Atom.Collections.Association`2.Key"/> and <see cref="P:Atom.Collections.Association`2.Value"/> properties to be written to
+            and is a reference type.
+            </summary>
+            <typeparam name="TKey">The type of the key for the association.</typeparam>
+            <typeparam name="TValue">The type of the value for the association.</typeparam>
+        </member>
+        <member name="P:Atom.Collections.Association`2.Key">
+            <summary>
+            Gets or sets the key of this <see cref="T:Atom.Collections.Association`2"/>.
+            </summary>
+            <value>
+            The key that is associated to the <see cref="P:Atom.Collections.Association`2.Value"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Collections.Association`2.Value">
+            <summary>
+            Gets or sets the value of this <see cref="T:Atom.Collections.Association`2"/>.
+            </summary>
+            <value>
+            The value that is associated to the <see cref="P:Atom.Collections.Association`2.Key"/>.
+            </value>
+        </member>
+        <member name="M:Atom.Collections.Association`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Collections.Association`2"/> class.
+            </summary>
+            <param name="key">
+            The key that is associated to the <paramref name="value"/>.
+            </param>
+            <param name="value">
+            The value that is associated to the <paramref name="key"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Collections.Association`2.ToKeyValuePair">
+            <summary>
+            Construct a KeyValuePair{TKey, TValue} object from this Association{TKey, TValue}.
+            </summary>
+            <returns>A key value pair representation of this <see cref="T:Atom.Collections.Association`2"/>.</returns>
+        </member>
+        <member name="M:Atom.Collections.Association`2.GetHashCode">
+            <summary>
+            Returns the hash code of the Association&lt;TKey, TValue&gt;.
+            </summary>
+            <returns> The compined hashcode of all objects. </returns>
+        </member>
+        <member name="M:Atom.Collections.Association`2.ToString">
+            <summary> 
+            Returns a string representation of this <see cref="T:Atom.Collections.Association`2"/>.
+            </summary>
+            <returns>
+            A string in the format "Association( {0} -> {1} )".
+            </returns>
+        </member>
         <member name="T:Atom.Collections.Comparers.AssociationKeyComparer`2">
             <summary>
             Defines a comparer for comparing keys using the <see cref="T:Atom.Collections.Association`2"/> class.
@@ -423,6 +253,51 @@
             Zero x equals y.
             Greater than zero x is greater than y.
             </returns>
+        </member>
+        <member name="T:Atom.Collections.Comparers.ReverseComparer`1">
+            <summary>
+            A comparer that wraps the IComparer interface to reproduce the opposite comparison result.
+            This class can't be inherited.
+            </summary>
+            <typeparam name="T">
+            The type of the item the comparer can compare.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Collections.Comparers.ReverseComparer`1.Comparer">
+            <summary>
+            Gets or sets the comparer used in this instance.
+            </summary>
+            <value>The comparer.</value>
+        </member>
+        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Collections.Comparers.ReverseComparer`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Collections.Comparers.ReverseComparer`1"/> class.
+            </summary>
+            <param name="comparer">
+            The comparer to reverse.
+            </param>
+        </member>
+        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.Compare(`0,`0)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>
+            Less than zero, if x is less than y.
+            Zero if x equals y.
+            Greater than zero if x is greater than y.
+            </returns>
+        </member>
+        <member name="F:Atom.Collections.Comparers.ReverseComparer`1.comparer">
+            <summary>
+            The comparer that is reversed by this ReverseComparer.
+            </summary>
         </member>
         <member name="T:Atom.Collections.Comparers.TupleItem1Comparer`2">
             <summary>
@@ -476,51 +351,6 @@
             <returns>
             Value Condition Less than zerox is less than y.Zerox equals y.Greater than zerox is greater than y.
             </returns>
-        </member>
-        <member name="T:Atom.Collections.Comparers.ReverseComparer`1">
-            <summary>
-            A comparer that wraps the IComparer interface to reproduce the opposite comparison result.
-            This class can't be inherited.
-            </summary>
-            <typeparam name="T">
-            The type of the item the comparer can compare.
-            </typeparam>
-        </member>
-        <member name="P:Atom.Collections.Comparers.ReverseComparer`1.Comparer">
-            <summary>
-            Gets or sets the comparer used in this instance.
-            </summary>
-            <value>The comparer.</value>
-        </member>
-        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Collections.Comparers.ReverseComparer`1"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Collections.Comparers.ReverseComparer`1"/> class.
-            </summary>
-            <param name="comparer">
-            The comparer to reverse.
-            </param>
-        </member>
-        <member name="M:Atom.Collections.Comparers.ReverseComparer`1.Compare(`0,`0)">
-            <summary>
-            Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
-            </summary>
-            <param name="x">The first object to compare.</param>
-            <param name="y">The second object to compare.</param>
-            <returns>
-            Less than zero, if x is less than y.
-            Zero if x equals y.
-            Greater than zero if x is greater than y.
-            </returns>
-        </member>
-        <member name="F:Atom.Collections.Comparers.ReverseComparer`1.comparer">
-            <summary>
-            The comparer that is reversed by this ReverseComparer.
-            </summary>
         </member>
         <member name="T:Atom.Collections.ArrayExtensions">
             <summary>
@@ -847,6 +677,42 @@
             </param>
             <returns>
             True if the predicate holds atleast count times; -or- otherwise false.
+            </returns>
+        </member>
+        <member name="T:Atom.Collections.ListExtensions">
+            <summary>
+            Defines extension methods for the IList{T} interface.
+            </summary>
+        </member>
+        <member name="M:Atom.Collections.ListExtensions.SwapItems``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
+            <summary>
+            Swaps the items at the given zero-based indices of this IList{T}.
+            </summary>
+            <typeparam name="T">
+            The type of elements in the list.
+            </typeparam>
+            <param name="list">
+            The list to modify.
+            </param>
+            <param name="indexA">
+            The zero-based index of the first element to swap.
+            </param>
+            <param name="indexB">
+            The zero-based index of the second element to swap.
+            </param>
+        </member>
+        <member name="M:Atom.Collections.ListExtensions.AsReadOnly``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Returns a read-only instance of this <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T">
+            The type of elements in the list.
+            </typeparam>
+            <param name="list">
+            The list to wrap.
+            </param>
+            <returns>
+            A new read-only instance of this <see cref="T:System.Collections.Generic.IList`1"/>.
             </returns>
         </member>
         <member name="T:Atom.Collections.FastMultiMap`2">
@@ -1613,17 +1479,6 @@
             The smallest or greatest value of this Heap{T}; depending on its <see cref="P:Atom.Collections.IHeapContract`1.HeapType"/>.
             </returns>
         </member>
-        <member name="T:Atom.Collections.IMultiMapContract`2">
-            <summary>
-            Defines code contracts for the IMultiMap interface.
-            </summary>
-            <typeparam name="TKey">
-            The type of the key that identifies a group of elements.
-            </typeparam>
-            <typeparam name="TElement">
-            The type of the elements stored in the IMultiMap.
-            </typeparam>
-        </member>
         <member name="T:Atom.Collections.IMultiMap`2">
             <summary>
             Represents a generic collection that maps keys onto multiple values.
@@ -1704,42 +1559,6 @@
             <typeparam name="TElement">
             The type of the values in the IMutableGrouping{TKey, TElement}.
             </typeparam>
-        </member>
-        <member name="T:Atom.Collections.ListExtensions">
-            <summary>
-            Defines extension methods for the IList{T} interface.
-            </summary>
-        </member>
-        <member name="M:Atom.Collections.ListExtensions.SwapItems``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
-            <summary>
-            Swaps the items at the given zero-based indices of this IList{T}.
-            </summary>
-            <typeparam name="T">
-            The type of elements in the list.
-            </typeparam>
-            <param name="list">
-            The list to modify.
-            </param>
-            <param name="indexA">
-            The zero-based index of the first element to swap.
-            </param>
-            <param name="indexB">
-            The zero-based index of the second element to swap.
-            </param>
-        </member>
-        <member name="M:Atom.Collections.ListExtensions.AsReadOnly``1(System.Collections.Generic.IList{``0})">
-            <summary>
-            Returns a read-only instance of this <see cref="T:System.Collections.Generic.IList`1"/>.
-            </summary>
-            <typeparam name="T">
-            The type of elements in the list.
-            </typeparam>
-            <param name="list">
-            The list to wrap.
-            </param>
-            <returns>
-            A new read-only instance of this <see cref="T:System.Collections.Generic.IList`1"/>.
-            </returns>
         </member>
         <member name="T:Atom.Collections.MultiMap`2">
             <summary>
@@ -2881,6 +2700,7 @@
             Defines the conditions that should hold true on each instance of a class
             whenever that object is visible to a client.
             </summary>
+             [ContractInvariantMethod]
         </member>
         <member name="F:Atom.Collections.Pooling.PoolNode`1.item">
             <summary>
@@ -2926,62 +2746,6 @@
             The PoolNode{IPooledObjectWrapper{T}} that has just been created.
             This value is never null.
             </param>
-        </member>
-        <member name="T:Atom.Collections.Association`2">
-            <summary>
-            The Association performs the same function as a <see cref="T:System.Collections.Generic.KeyValuePair`2"/>,
-            but allows the <see cref="P:Atom.Collections.Association`2.Key"/> and <see cref="P:Atom.Collections.Association`2.Value"/> properties to be written to
-            and is a reference type.
-            </summary>
-            <typeparam name="TKey">The type of the key for the association.</typeparam>
-            <typeparam name="TValue">The type of the value for the association.</typeparam>
-        </member>
-        <member name="P:Atom.Collections.Association`2.Key">
-            <summary>
-            Gets or sets the key of this <see cref="T:Atom.Collections.Association`2"/>.
-            </summary>
-            <value>
-            The key that is associated to the <see cref="P:Atom.Collections.Association`2.Value"/>.
-            </value>
-        </member>
-        <member name="P:Atom.Collections.Association`2.Value">
-            <summary>
-            Gets or sets the value of this <see cref="T:Atom.Collections.Association`2"/>.
-            </summary>
-            <value>
-            The value that is associated to the <see cref="P:Atom.Collections.Association`2.Key"/>.
-            </value>
-        </member>
-        <member name="M:Atom.Collections.Association`2.#ctor(`0,`1)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Collections.Association`2"/> class.
-            </summary>
-            <param name="key">
-            The key that is associated to the <paramref name="value"/>.
-            </param>
-            <param name="value">
-            The value that is associated to the <paramref name="key"/>.
-            </param>
-        </member>
-        <member name="M:Atom.Collections.Association`2.ToKeyValuePair">
-            <summary>
-            Construct a KeyValuePair{TKey, TValue} object from this Association{TKey, TValue}.
-            </summary>
-            <returns>A key value pair representation of this <see cref="T:Atom.Collections.Association`2"/>.</returns>
-        </member>
-        <member name="M:Atom.Collections.Association`2.GetHashCode">
-            <summary>
-            Returns the hash code of the Association&lt;TKey, TValue&gt;.
-            </summary>
-            <returns> The compined hashcode of all objects. </returns>
-        </member>
-        <member name="M:Atom.Collections.Association`2.ToString">
-            <summary> 
-            Returns a string representation of this <see cref="T:Atom.Collections.Association`2"/>.
-            </summary>
-            <returns>
-            A string in the format "Association( {0} -> {1} )".
-            </returns>
         </member>
         <member name="T:Atom.Collections.PreconditionedList`1">
             <summary>
@@ -4203,11 +3967,6 @@
             this IEntity is composed of.
             </summary>
         </member>
-        <member name="T:Atom.Components.IEntityComponentCollectionContracts">
-            <summary>
-            Defines the code contracts for the IEntityComponentCollection interface.
-            </summary>
-        </member>
         <member name="T:Atom.Components.IEntityComponentCollection">
             <summary>
             Encapsulates the list of <see cref="T:Atom.Components.IComponent"/>s that compose an <see cref="T:Atom.Components.IEntity"/>.
@@ -4420,26 +4179,6 @@
             Removes all IComponents from this IEntityComponentCollection.
             </summary>
         </member>
-        <member name="T:Atom.Configuration.ConfigPropertyAttribute">
-            <summary>
-            Marks a property to be part of the configuration.
-            </summary>
-        </member>
-        <member name="P:Atom.Configuration.ConfigPropertyAttribute.DefaultValue">
-            <summary>
-            Gets or sets the default value of the property.
-            </summary>
-        </member>
-        <member name="P:Atom.Configuration.ConfigPropertyAttribute.StorageName">
-            <summary>
-            Gets or sets the (optional) name under which the property is stored.
-            </summary>
-        </member>
-        <member name="P:Atom.Configuration.ConfigPropertyAttribute.Comment">
-            <summary>
-            Gets or sets the (optional) comment that is associated with the property.
-            </summary>
-        </member>
         <member name="T:Atom.Configuration.Config">
             <summary>
             Represents an abstract base class of a configuration class.
@@ -4589,6 +4328,26 @@
             are stored in the IConfigStore.
             </summary>
         </member>
+        <member name="T:Atom.Configuration.ConfigPropertyAttribute">
+            <summary>
+            Marks a property to be part of the configuration.
+            </summary>
+        </member>
+        <member name="P:Atom.Configuration.ConfigPropertyAttribute.DefaultValue">
+            <summary>
+            Gets or sets the default value of the property.
+            </summary>
+        </member>
+        <member name="P:Atom.Configuration.ConfigPropertyAttribute.StorageName">
+            <summary>
+            Gets or sets the (optional) name under which the property is stored.
+            </summary>
+        </member>
+        <member name="P:Atom.Configuration.ConfigPropertyAttribute.Comment">
+            <summary>
+            Gets or sets the (optional) comment that is associated with the property.
+            </summary>
+        </member>
         <member name="T:Atom.Configuration.ConfigPropertySearcher">
             <summary>
             Implements a mechanism that finds all configuration properties of a type.
@@ -4674,11 +4433,6 @@
             The properties that have been found.
             </returns>
         </member>
-        <member name="T:Atom.Configuration.IConfigPropertySearcherContracts">
-            <summary>
-            Defines the contracts for the IConfigPropertySearcher interface.
-            </summary>
-        </member>
         <member name="T:Atom.Configuration.IConfigStore">
             <summary>
             Manages saving and loading of configuration properties.
@@ -4701,11 +4455,6 @@
             The properties to save in this IConfigStore; where the first string
             represents the name of the property and the second string the value of the property.
             </param>
-        </member>
-        <member name="T:Atom.Configuration.IConfigStoreContracts">
-            <summary>
-            Defines the code contracts for the <see cref="T:Atom.Configuration.IConfigStore"/> interface.
-            </summary>
         </member>
         <member name="T:Atom.Configuration.PlainTextConfigStore">
             <summary>
@@ -4792,6 +4541,243 @@
             <summary>
             The encoding to use when reading or writing the store.
             </summary>
+        </member>
+        <member name="T:Atom.Design.Descriptors.FieldPropertyDescriptor">
+            <summary>
+            Defines a <see cref="T:System.ComponentModel.PropertyDescriptor"/> that provides an abstraction of a field on a class.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.Descriptors.FieldPropertyDescriptor.PropertyType">
+            <summary>
+            Gets the type of the field wrapped by the <see cref="T:Atom.Design.Descriptors.FieldPropertyDescriptor"/>.
+            </summary>
+            <value>A System.Type that represents the type of the field.</value>
+        </member>
+        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.#ctor(System.Reflection.FieldInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.FieldPropertyDescriptor"/> class.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">
+            If the given FieldInfo is null.
+            </exception>
+            <param name="field">
+            The <see cref="T:System.Reflection.FieldInfo"/> that descripes the field wrapped by the FieldPropertyDescriptor.
+            </param>
+        </member>
+        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.GetValue(System.Object)">
+            <summary>
+            Returns the value of the field.
+            </summary>
+            <param name="component">
+            The object whose field value will be returned.
+            </param>
+            <returns>
+            The value of a field for a given component.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value of the field.
+            </summary>
+            <param name="component">The object whose field value will be set.</param>
+            <param name="value">The value to assign.</param>
+        </member>
+        <member name="F:Atom.Design.Descriptors.FieldPropertyDescriptor.field">
+            <summary>
+            The field information.
+            </summary>
+        </member>
+        <member name="T:Atom.Design.Descriptors.MemberPropertyDescriptor">
+            <summary>
+            Provides an abstraction of a member on a class.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.Descriptors.MemberPropertyDescriptor.ComponentType">
+            <summary>
+            Gets the type of the comonent descriped by the MemberPropertyDescriptor.
+            </summary>
+            <value>A System.Type that represents the type of the member.</value>
+        </member>
+        <member name="P:Atom.Design.Descriptors.MemberPropertyDescriptor.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the MemberPropertyDescriptor is read-only.
+            </summary>
+            <value>
+            Always returns false.
+            </value>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.MemberPropertyDescriptor"/> class.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            If the given MemberInfo is null.
+            </exception>
+            <param name="member">
+            The MemberInfo object that descripes the wrapped member.
+            </param>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.Equals(System.Object)">
+            <summary>
+            Overridden to return whether the given Object is equal to the <see cref="T:Atom.Design.Descriptors.MemberPropertyDescriptor"/>.
+            </summary>
+            <param name="obj">
+            The object to compare with.
+            </param>
+            <returns>
+            Returns true if they are equal; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.GetHashCode">
+            <summary>
+            Overriden to return the hash-code of the wrapped member.
+            </summary>
+            <returns>
+            The hash-code of this MemberPropertyDescriptor.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.CanResetValue(System.Object)">
+            <summary>
+            Gets whether the value can be reset.
+            </summary>
+            <param name="component">
+            This value is not used.
+            </param>
+            <returns>
+            Always returns false.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.ResetValue(System.Object)">
+            <summary>
+            This method is overridden to-do nothing.
+            </summary>
+            <param name="component">
+            This value is not used.
+            </param>
+        </member>
+        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.ShouldSerializeValue(System.Object)">
+            <summary>
+            Returns whether the value should be serialized.
+            </summary>
+            <param name="component">This value is not used.</param>
+            <returns>
+            Always returns true.
+            </returns>
+        </member>
+        <member name="F:Atom.Design.Descriptors.MemberPropertyDescriptor.member">
+            <summary>
+            Stores the member information of the abstracted property.
+            </summary>
+        </member>
+        <member name="T:Atom.Design.Descriptors.PropertyPropertyDescriptor">
+            <summary>
+            Defines a <see cref="T:System.ComponentModel.PropertyDescriptor"/> that provides an abstraction of a property on a class.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.Descriptors.PropertyPropertyDescriptor.PropertyType">
+            <summary>
+            Gets the type of the property wrapped by the <see cref="T:Atom.Design.Descriptors.PropertyPropertyDescriptor"/>.
+            </summary>
+            <value>A System.Type that represents the type of the property.</value>
+        </member>
+        <member name="P:Atom.Design.Descriptors.PropertyPropertyDescriptor.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the PropertyPropertyDescriptor is read-only.
+            </summary>
+            <value>
+            True if the underlying property is read-only; otherwise false.
+            </value>
+        </member>
+        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.PropertyPropertyDescriptor"/> class.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            If the given PropertyInfo is null.
+            </exception>
+            <param name="property">
+            The <see cref="T:System.Reflection.PropertyInfo"/> that descripes the property wrapped by the PropertyPropertyDescriptor.
+            </param>
+        </member>
+        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.GetValue(System.Object)">
+            <summary>
+            Returns the value of the property.
+            </summary>
+            <param name="component">The object whose property value will be returned.</param>
+            <returns>The requested value.</returns>
+        </member>
+        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value of the property.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            If the property is read-only.
+            </exception>
+            <param name="component">The object whose property value will be set.</param>
+            <param name="value">The value to assign.</param>
+        </member>
+        <member name="F:Atom.Design.Descriptors.PropertyPropertyDescriptor.property">
+            <summary>
+            Contains information about the abstracted property.
+            </summary>
+        </member>
+        <member name="T:Atom.Design.IItemSelectionDialog`1">
+            <summary>
+            Provides a mechanism that allows the user to select one or more nameable items of type <typeparamref name="TItem"/>.
+            </summary>
+            <typeparam name="TItem">
+            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Design.IItemSelectionDialog`1.SelectedItem">
+            <summary>
+            Gets or sets the item that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.IItemSelectionDialog`1.SelectedItems">
+            <summary>
+            Gets the items that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.IItemSelectionDialog`1.AllowMultipleSelection">
+            <summary>
+            Gets or sets a value indicating whether the user should
+            be allowed to select multiple items.
+            </summary>
+            <value>
+            The default value is false;
+            </value>
+        </member>
+        <member name="M:Atom.Design.IItemSelectionDialog`1.ShowDialog">
+            <summary>
+            Shows this IItemSelectionDialog{TItem}
+            </summary>
+            <returns>
+            true if the user has selected an item;
+            -or- false if the user has canceled the operatioon. 
+            </returns>
+        </member>
+        <member name="T:Atom.Design.IItemSelectionDialogFactory">
+            <summary>
+            Provides a machanism for creating IItemSelectionDialog{TIem} instances.
+            </summary>
+        </member>
+        <member name="M:Atom.Design.IItemSelectionDialogFactory.Build``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a new IItemSelectionDialog{TItem} that allows the user
+            to select the specified items.
+            </summary>
+            <typeparam name="TItem">
+            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
+            </typeparam>
+            <param name="items">
+            The items the user might select.
+            </param>
+            <returns>
+            The newly created IItemSelectionDialog{TItem}.
+            </returns>
         </member>
         <member name="T:Atom.Design.BaseItemCreationEditor">
             <summary>
@@ -4992,385 +4978,6 @@
             <returns>
             The respective type name.
             </returns>
-        </member>
-        <member name="T:Atom.Design.ToggleEditor">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that can be used as a simple toggle button
-            for a boolean value.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ToggleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Overriden. Edits the value of the specified object.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <param name="provider">An System.IServiceProvider that this editor can use to obtain services.</param>
-            <param name="value">The object to edit.</param>
-            <returns>
-            The new value of the object. If the value of the object has not changed,
-            this should return the same object it was passed.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.ToggleEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Overriden. Gets the editor style used by the EditValue method. 
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <returns>
-            Returns UITypeEditorEditStyle.Modal.
-            </returns>
-        </member>
-        <member name="T:Atom.Design.NameableObjectWrapper`1">
-            <summary>
-            Represents an object that wraps around another object, adding naming support to it.
-            </summary>
-            <typeparam name="TObject">
-            The type of the object that is wrapped.
-            </typeparam>
-        </member>
-        <member name="P:Atom.Design.NameableObjectWrapper`1.Name">
-            <summary>
-            Gets the name of the object.
-            </summary>
-        </member>
-        <member name="P:Atom.Design.NameableObjectWrapper`1.Object">
-            <summary>
-            Gets the actual object this NameableObjectWrapper{TObject} wraps around.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.NameableObjectWrapper`1.#ctor(`0,System.Func{`0,System.String})">
-            <summary>
-            Initializes a new instance of the NameableObjectWrapper{TObject} class.
-            </summary>
-            <param name="obj">
-            The actual object the new NameableObjectWrapper{TObject} wraps around.
-            </param>
-            <param name="nameMapper">
-            The map function the new NameableObjectWrapper{TObject} uses to receive the name of the object.
-            </param>
-        </member>
-        <member name="M:Atom.Design.NameableObjectWrapper`1.Equals(System.Object)">
-            <summary>
-            Indicates whether the current object is equal to another object.
-            </summary>
-            <param name="obj">
-            An object to compare with this object.
-            </param>
-            <returns>
-            true if the current object is equal to the other parameter; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.NameableObjectWrapper`1.Equals(Atom.Design.NameableObjectWrapper{`0})">
-            <summary>
-            Indicates whether the current object is equal to another object of the same type.
-            </summary>
-            <param name="other">
-            An object to compare with this object.
-            </param>
-            <returns>
-            true if the current object is equal to the other parameter; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.NameableObjectWrapper`1.GetHashCode">
-            <summary>
-            Gets the hashcode of this NameableObjectWrapper{TObject} instance.
-            </summary>
-            <returns>
-            The hashcode.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.NameableObjectWrapper`1.ToString">
-            <summary>
-            Overriden to return the Name this NameableObjectWrapper{TObject} provides.
-            </summary>
-            <returns>
-            The <see cref="P:Atom.Design.NameableObjectWrapper`1.Name"/> this NameableObjectWrapper{TObject} provides.
-            </returns>
-        </member>
-        <member name="F:Atom.Design.NameableObjectWrapper`1.obj">
-            <summary>
-            The actual object this NameableObjectWrapper{TObject} wraps around.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.NameableObjectWrapper`1.nameMapper">
-            <summary>
-            The map function that is used to receive the name of the object.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.BaseObjectPropertyWrapper">
-            <summary>
-            Represents an abstract base implementation of the <see cref="T:Atom.Design.IObjectPropertyWrapper"/> interface.
-            </summary>
-        </member>
-        <member name="E:Atom.Design.BaseObjectPropertyWrapper.PropertyChanged">
-            <summary>
-            Fired when any property of this IObjectPropertyWrapper has changed.
-            </summary>
-            <remarks>
-            Properties that wish to support binding, such as in Windows Presentation Foundation,
-            must notify the user that they have change.
-            </remarks>
-        </member>
-        <member name="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject">
-            <summary>
-            Gets or sets the object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
-            </summary>
-            <exception cref="T:System.ArgumentException">
-            If the type of the given value is not compatible with 
-            the <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedType"/> of this IObjectPropertyWrapper.
-            </exception>
-            <value>
-            The actual data object this IObjectPropertyWrapper wraps around.
-            </value>
-        </member>
-        <member name="P:Atom.Design.BaseObjectPropertyWrapper.WrappedType">
-            <summary>
-            Gets the <see cref="T:System.Type"/> this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.BaseObjectPropertyWrapper.Clone">
-            <summary>
-            Returns a clone of this <see cref="T:Atom.Design.IObjectPropertyWrapper"/>.
-            </summary>
-            <remarks>
-            The <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject"/> is not cloned, only the IObjectPropertyWrapper.
-            </remarks>
-            <returns>
-            The cloned IObjectPropertyWrapper.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseObjectPropertyWrapper.System#ICloneable#Clone">
-            <summary>
-            Returns a clone of this <see cref="T:Atom.Design.IObjectPropertyWrapper"/>.
-            </summary>
-            <remarks>
-            The <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject"/> is not cloned, only the IObjectPropertyWrapper.
-            </remarks>
-            <returns>
-            The cloned IObjectPropertyWrapper.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseObjectPropertyWrapper.OnPropertyChanged(System.String)">
-            <summary>
-            Raises the <see cref="E:Atom.Design.BaseObjectPropertyWrapper.PropertyChanged"/> event.
-            </summary>
-            <param name="propertyName">
-            The name of the property whose value has changed.
-            </param>
-        </member>
-        <member name="F:Atom.Design.BaseObjectPropertyWrapper.wrappedObject">
-            <summary>
-            The object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.BaseObjectPropertyWrapper`1">
-            <summary>
-            Represents an abstract base implementation of the <see cref="T:Atom.Design.IObjectPropertyWrapper"/> interface.
-            </summary>
-            <typeparam name="TObject">
-            The type of the object that is beeing wrapped by this IObjectPropertyWrapper.
-            </typeparam>
-        </member>
-        <member name="P:Atom.Design.BaseObjectPropertyWrapper`1.WrappedObject">
-            <summary>
-            Gets or sets the object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
-            </summary>
-            <value>
-            The actual data object this IObjectPropertyWrapper wraps around.
-            </value>
-        </member>
-        <member name="P:Atom.Design.BaseObjectPropertyWrapper`1.WrappedType">
-            <summary>
-            Gets the <see cref="T:System.Type"/> this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
-            </summary>
-            <value>
-            The type of the object this IObjectPropertyWrapper wraps around; <typeparamref name="TObject"/>.
-            </value>
-        </member>
-        <member name="T:Atom.Design.Descriptors.FieldPropertyDescriptor">
-            <summary>
-            Defines a <see cref="T:System.ComponentModel.PropertyDescriptor"/> that provides an abstraction of a field on a class.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="P:Atom.Design.Descriptors.FieldPropertyDescriptor.PropertyType">
-            <summary>
-            Gets the type of the field wrapped by the <see cref="T:Atom.Design.Descriptors.FieldPropertyDescriptor"/>.
-            </summary>
-            <value>A System.Type that represents the type of the field.</value>
-        </member>
-        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.#ctor(System.Reflection.FieldInfo)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.FieldPropertyDescriptor"/> class.
-            </summary>
-            <exception cref="T:System.ArgumentNullException">
-            If the given FieldInfo is null.
-            </exception>
-            <param name="field">
-            The <see cref="T:System.Reflection.FieldInfo"/> that descripes the field wrapped by the FieldPropertyDescriptor.
-            </param>
-        </member>
-        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.GetValue(System.Object)">
-            <summary>
-            Returns the value of the field.
-            </summary>
-            <param name="component">
-            The object whose field value will be returned.
-            </param>
-            <returns>
-            The value of a field for a given component.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.Descriptors.FieldPropertyDescriptor.SetValue(System.Object,System.Object)">
-            <summary>
-            Sets the value of the field.
-            </summary>
-            <param name="component">The object whose field value will be set.</param>
-            <param name="value">The value to assign.</param>
-        </member>
-        <member name="F:Atom.Design.Descriptors.FieldPropertyDescriptor.field">
-            <summary>
-            The field information.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.Descriptors.MemberPropertyDescriptor">
-            <summary>
-            Provides an abstraction of a member on a class.
-            </summary>
-        </member>
-        <member name="P:Atom.Design.Descriptors.MemberPropertyDescriptor.ComponentType">
-            <summary>
-            Gets the type of the comonent descriped by the MemberPropertyDescriptor.
-            </summary>
-            <value>A System.Type that represents the type of the member.</value>
-        </member>
-        <member name="P:Atom.Design.Descriptors.MemberPropertyDescriptor.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the MemberPropertyDescriptor is read-only.
-            </summary>
-            <value>
-            Always returns false.
-            </value>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.#ctor(System.Reflection.MemberInfo)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.MemberPropertyDescriptor"/> class.
-            </summary>
-            <exception cref="T:System.ArgumentException">
-            If the given MemberInfo is null.
-            </exception>
-            <param name="member">
-            The MemberInfo object that descripes the wrapped member.
-            </param>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.Equals(System.Object)">
-            <summary>
-            Overridden to return whether the given Object is equal to the <see cref="T:Atom.Design.Descriptors.MemberPropertyDescriptor"/>.
-            </summary>
-            <param name="obj">
-            The object to compare with.
-            </param>
-            <returns>
-            Returns true if they are equal; otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.GetHashCode">
-            <summary>
-            Overriden to return the hash-code of the wrapped member.
-            </summary>
-            <returns>
-            The hash-code of this MemberPropertyDescriptor.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.CanResetValue(System.Object)">
-            <summary>
-            Gets whether the value can be reset.
-            </summary>
-            <param name="component">
-            This value is not used.
-            </param>
-            <returns>
-            Always returns false.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.ResetValue(System.Object)">
-            <summary>
-            This method is overridden to-do nothing.
-            </summary>
-            <param name="component">
-            This value is not used.
-            </param>
-        </member>
-        <member name="M:Atom.Design.Descriptors.MemberPropertyDescriptor.ShouldSerializeValue(System.Object)">
-            <summary>
-            Returns whether the value should be serialized.
-            </summary>
-            <param name="component">This value is not used.</param>
-            <returns>
-            Always returns true.
-            </returns>
-        </member>
-        <member name="F:Atom.Design.Descriptors.MemberPropertyDescriptor.member">
-            <summary>
-            Stores the member information of the abstracted property.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.Descriptors.PropertyPropertyDescriptor">
-            <summary>
-            Defines a <see cref="T:System.ComponentModel.PropertyDescriptor"/> that provides an abstraction of a property on a class.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="P:Atom.Design.Descriptors.PropertyPropertyDescriptor.PropertyType">
-            <summary>
-            Gets the type of the property wrapped by the <see cref="T:Atom.Design.Descriptors.PropertyPropertyDescriptor"/>.
-            </summary>
-            <value>A System.Type that represents the type of the property.</value>
-        </member>
-        <member name="P:Atom.Design.Descriptors.PropertyPropertyDescriptor.IsReadOnly">
-            <summary>
-            Gets a value indicating whether the PropertyPropertyDescriptor is read-only.
-            </summary>
-            <value>
-            True if the underlying property is read-only; otherwise false.
-            </value>
-        </member>
-        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.#ctor(System.Reflection.PropertyInfo)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Design.Descriptors.PropertyPropertyDescriptor"/> class.
-            </summary>
-            <exception cref="T:System.ArgumentException">
-            If the given PropertyInfo is null.
-            </exception>
-            <param name="property">
-            The <see cref="T:System.Reflection.PropertyInfo"/> that descripes the property wrapped by the PropertyPropertyDescriptor.
-            </param>
-        </member>
-        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.GetValue(System.Object)">
-            <summary>
-            Returns the value of the property.
-            </summary>
-            <param name="component">The object whose property value will be returned.</param>
-            <returns>The requested value.</returns>
-        </member>
-        <member name="M:Atom.Design.Descriptors.PropertyPropertyDescriptor.SetValue(System.Object,System.Object)">
-            <summary>
-            Sets the value of the property.
-            </summary>
-            <exception cref="T:System.InvalidOperationException">
-            If the property is read-only.
-            </exception>
-            <param name="component">The object whose property value will be set.</param>
-            <param name="value">The value to assign.</param>
-        </member>
-        <member name="F:Atom.Design.Descriptors.PropertyPropertyDescriptor.property">
-            <summary>
-            Contains information about the abstracted property.
-            </summary>
         </member>
         <member name="T:Atom.Design.ExistingItemCollectionEditor`1">
             <summary>
@@ -5614,61 +5221,203 @@
             The button when clicked closes the editor while applying the changes to the underyling collection.
             </summary>
         </member>
-        <member name="T:Atom.Design.IItemSelectionDialog`1">
+        <member name="T:Atom.Design.ToggleEditor">
             <summary>
-            Provides a mechanism that allows the user to select one or more nameable items of type <typeparamref name="TItem"/>.
-            </summary>
-            <typeparam name="TItem">
-            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
-            </typeparam>
-        </member>
-        <member name="P:Atom.Design.IItemSelectionDialog`1.SelectedItem">
-            <summary>
-            Gets or sets the item that the user has selected.
+            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that can be used as a simple toggle button
+            for a boolean value.
             </summary>
         </member>
-        <member name="P:Atom.Design.IItemSelectionDialog`1.SelectedItems">
+        <member name="M:Atom.Design.ToggleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <summary>
-            Gets the items that the user has selected.
+            Overriden. Edits the value of the specified object.
             </summary>
-        </member>
-        <member name="P:Atom.Design.IItemSelectionDialog`1.AllowMultipleSelection">
-            <summary>
-            Gets or sets a value indicating whether the user should
-            be allowed to select multiple items.
-            </summary>
-            <value>
-            The default value is false;
-            </value>
-        </member>
-        <member name="M:Atom.Design.IItemSelectionDialog`1.ShowDialog">
-            <summary>
-            Shows this IItemSelectionDialog{TItem}
-            </summary>
+            <param name="context">
+            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
+            </param>
+            <param name="provider">An System.IServiceProvider that this editor can use to obtain services.</param>
+            <param name="value">The object to edit.</param>
             <returns>
-            true if the user has selected an item;
-            -or- false if the user has canceled the operatioon. 
+            The new value of the object. If the value of the object has not changed,
+            this should return the same object it was passed.
             </returns>
         </member>
-        <member name="T:Atom.Design.IItemSelectionDialogFactory">
+        <member name="M:Atom.Design.ToggleEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
             <summary>
-            Provides a machanism for creating IItemSelectionDialog{TIem} instances.
+            Overriden. Gets the editor style used by the EditValue method. 
             </summary>
-        </member>
-        <member name="M:Atom.Design.IItemSelectionDialogFactory.Build``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Creates a new IItemSelectionDialog{TItem} that allows the user
-            to select the specified items.
-            </summary>
-            <typeparam name="TItem">
-            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
-            </typeparam>
-            <param name="items">
-            The items the user might select.
+            <param name="context">
+            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
             </param>
             <returns>
-            The newly created IItemSelectionDialog{TItem}.
+            Returns UITypeEditorEditStyle.Modal.
             </returns>
+        </member>
+        <member name="T:Atom.Design.NameableObjectWrapper`1">
+            <summary>
+            Represents an object that wraps around another object, adding naming support to it.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object that is wrapped.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Design.NameableObjectWrapper`1.Name">
+            <summary>
+            Gets the name of the object.
+            </summary>
+        </member>
+        <member name="P:Atom.Design.NameableObjectWrapper`1.Object">
+            <summary>
+            Gets the actual object this NameableObjectWrapper{TObject} wraps around.
+            </summary>
+        </member>
+        <member name="M:Atom.Design.NameableObjectWrapper`1.#ctor(`0,System.Func{`0,System.String})">
+            <summary>
+            Initializes a new instance of the NameableObjectWrapper{TObject} class.
+            </summary>
+            <param name="obj">
+            The actual object the new NameableObjectWrapper{TObject} wraps around.
+            </param>
+            <param name="nameMapper">
+            The map function the new NameableObjectWrapper{TObject} uses to receive the name of the object.
+            </param>
+        </member>
+        <member name="M:Atom.Design.NameableObjectWrapper`1.Equals(System.Object)">
+            <summary>
+            Indicates whether the current object is equal to another object.
+            </summary>
+            <param name="obj">
+            An object to compare with this object.
+            </param>
+            <returns>
+            true if the current object is equal to the other parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.NameableObjectWrapper`1.Equals(Atom.Design.NameableObjectWrapper{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">
+            An object to compare with this object.
+            </param>
+            <returns>
+            true if the current object is equal to the other parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.NameableObjectWrapper`1.GetHashCode">
+            <summary>
+            Gets the hashcode of this NameableObjectWrapper{TObject} instance.
+            </summary>
+            <returns>
+            The hashcode.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.NameableObjectWrapper`1.ToString">
+            <summary>
+            Overriden to return the Name this NameableObjectWrapper{TObject} provides.
+            </summary>
+            <returns>
+            The <see cref="P:Atom.Design.NameableObjectWrapper`1.Name"/> this NameableObjectWrapper{TObject} provides.
+            </returns>
+        </member>
+        <member name="F:Atom.Design.NameableObjectWrapper`1.obj">
+            <summary>
+            The actual object this NameableObjectWrapper{TObject} wraps around.
+            </summary>
+        </member>
+        <member name="F:Atom.Design.NameableObjectWrapper`1.nameMapper">
+            <summary>
+            The map function that is used to receive the name of the object.
+            </summary>
+        </member>
+        <member name="T:Atom.Design.BaseObjectPropertyWrapper">
+            <summary>
+            Represents an abstract base implementation of the <see cref="T:Atom.Design.IObjectPropertyWrapper"/> interface.
+            </summary>
+        </member>
+        <member name="E:Atom.Design.BaseObjectPropertyWrapper.PropertyChanged">
+            <summary>
+            Fired when any property of this IObjectPropertyWrapper has changed.
+            </summary>
+            <remarks>
+            Properties that wish to support binding, such as in Windows Presentation Foundation,
+            must notify the user that they have change.
+            </remarks>
+        </member>
+        <member name="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject">
+            <summary>
+            Gets or sets the object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            If the type of the given value is not compatible with 
+            the <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedType"/> of this IObjectPropertyWrapper.
+            </exception>
+            <value>
+            The actual data object this IObjectPropertyWrapper wraps around.
+            </value>
+        </member>
+        <member name="P:Atom.Design.BaseObjectPropertyWrapper.WrappedType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
+            </summary>
+        </member>
+        <member name="M:Atom.Design.BaseObjectPropertyWrapper.Clone">
+            <summary>
+            Returns a clone of this <see cref="T:Atom.Design.IObjectPropertyWrapper"/>.
+            </summary>
+            <remarks>
+            The <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject"/> is not cloned, only the IObjectPropertyWrapper.
+            </remarks>
+            <returns>
+            The cloned IObjectPropertyWrapper.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.BaseObjectPropertyWrapper.System#ICloneable#Clone">
+            <summary>
+            Returns a clone of this <see cref="T:Atom.Design.IObjectPropertyWrapper"/>.
+            </summary>
+            <remarks>
+            The <see cref="P:Atom.Design.BaseObjectPropertyWrapper.WrappedObject"/> is not cloned, only the IObjectPropertyWrapper.
+            </remarks>
+            <returns>
+            The cloned IObjectPropertyWrapper.
+            </returns>
+        </member>
+        <member name="M:Atom.Design.BaseObjectPropertyWrapper.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Atom.Design.BaseObjectPropertyWrapper.PropertyChanged"/> event.
+            </summary>
+            <param name="propertyName">
+            The name of the property whose value has changed.
+            </param>
+        </member>
+        <member name="F:Atom.Design.BaseObjectPropertyWrapper.wrappedObject">
+            <summary>
+            The object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
+            </summary>
+        </member>
+        <member name="T:Atom.Design.BaseObjectPropertyWrapper`1">
+            <summary>
+            Represents an abstract base implementation of the <see cref="T:Atom.Design.IObjectPropertyWrapper"/> interface.
+            </summary>
+            <typeparam name="TObject">
+            The type of the object that is beeing wrapped by this IObjectPropertyWrapper.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Design.BaseObjectPropertyWrapper`1.WrappedObject">
+            <summary>
+            Gets or sets the object this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
+            </summary>
+            <value>
+            The actual data object this IObjectPropertyWrapper wraps around.
+            </value>
+        </member>
+        <member name="P:Atom.Design.BaseObjectPropertyWrapper`1.WrappedType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> this <see cref="T:Atom.Design.IObjectPropertyWrapper"/> wraps around.
+            </summary>
+            <value>
+            The type of the object this IObjectPropertyWrapper wraps around; <typeparamref name="TObject"/>.
+            </value>
         </member>
         <member name="T:Atom.Design.IObjectPropertyWrapper">
             <summary>
@@ -6096,65 +5845,6 @@
             The newly created TextWriter.
             </returns>
         </member>
-        <member name="T:Atom.Diagnostics.ILog">
-            <summary>
-            Provides a mechanism to log string messages.
-            </summary>
-        </member>
-        <member name="P:Atom.Diagnostics.ILog.DefaultSeverity">
-            <summary>
-            Gets the default <see cref="T:Atom.Diagnostics.LogSeverities"/> messages are logged as.
-            </summary>
-            <value>
-            The default value is <see cref="F:Atom.Diagnostics.LogSeverities.Info"/>.
-            </value>
-        </member>
-        <member name="M:Atom.Diagnostics.ILog.Write(System.String)">
-            <summary>
-            Writes the given message to this ILog using the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
-            </summary>
-            <param name="message">
-            The message to log.
-            </param>
-        </member>
-        <member name="M:Atom.Diagnostics.ILog.Write(Atom.Diagnostics.LogSeverities,System.String)">
-            <summary>
-            Writes the given message to this ILog using
-            the given <see cref="T:Atom.Diagnostics.LogSeverities"/>.
-            </summary>
-            <param name="severity">
-            The <see cref="T:Atom.Diagnostics.LogSeverities"/> of the <paramref name="message"/>.
-            </param>
-            <param name="message">
-            The message to log.
-            </param>
-        </member>
-        <member name="M:Atom.Diagnostics.ILog.WriteLine">
-            <summary>
-            Writes a new empty line to this ILog with the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
-            </summary>
-        </member>
-        <member name="M:Atom.Diagnostics.ILog.WriteLine(System.String)">
-            <summary>
-            Writes the given message, followed by a new line, to 
-            this ILog using the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
-            </summary>
-            <param name="message">
-            The message to log.
-            </param>
-        </member>
-        <member name="M:Atom.Diagnostics.ILog.WriteLine(Atom.Diagnostics.LogSeverities,System.String)">
-            <summary>
-            Writes the given message, followed by a new line, to 
-            this ILog using the given <see cref="T:Atom.Diagnostics.LogSeverities"/>.
-            </summary>
-            <param name="severity">
-            The <see cref="T:Atom.Diagnostics.LogSeverities"/> of the <paramref name="message"/>.
-            </param>
-            <param name="message">
-            The message to log.
-            </param>
-        </member>
         <member name="T:Atom.Diagnostics.Filters.ILogFilter">
             <summary>
             Provides a mechanism to filter <see cref="T:Atom.Diagnostics.ILog"/> messages.
@@ -6225,6 +5915,65 @@
             <summary>
             Stores the <see cref="T:Atom.Diagnostics.LogSeverities"/> that aren't filtered by this SeverityLogFilter.
             </summary>
+        </member>
+        <member name="T:Atom.Diagnostics.ILog">
+            <summary>
+            Provides a mechanism to log string messages.
+            </summary>
+        </member>
+        <member name="P:Atom.Diagnostics.ILog.DefaultSeverity">
+            <summary>
+            Gets the default <see cref="T:Atom.Diagnostics.LogSeverities"/> messages are logged as.
+            </summary>
+            <value>
+            The default value is <see cref="F:Atom.Diagnostics.LogSeverities.Info"/>.
+            </value>
+        </member>
+        <member name="M:Atom.Diagnostics.ILog.Write(System.String)">
+            <summary>
+            Writes the given message to this ILog using the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
+            </summary>
+            <param name="message">
+            The message to log.
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.ILog.Write(Atom.Diagnostics.LogSeverities,System.String)">
+            <summary>
+            Writes the given message to this ILog using
+            the given <see cref="T:Atom.Diagnostics.LogSeverities"/>.
+            </summary>
+            <param name="severity">
+            The <see cref="T:Atom.Diagnostics.LogSeverities"/> of the <paramref name="message"/>.
+            </param>
+            <param name="message">
+            The message to log.
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.ILog.WriteLine">
+            <summary>
+            Writes a new empty line to this ILog with the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Diagnostics.ILog.WriteLine(System.String)">
+            <summary>
+            Writes the given message, followed by a new line, to 
+            this ILog using the <see cref="P:Atom.Diagnostics.ILog.DefaultSeverity"/>.
+            </summary>
+            <param name="message">
+            The message to log.
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.ILog.WriteLine(Atom.Diagnostics.LogSeverities,System.String)">
+            <summary>
+            Writes the given message, followed by a new line, to 
+            this ILog using the given <see cref="T:Atom.Diagnostics.LogSeverities"/>.
+            </summary>
+            <param name="severity">
+            The <see cref="T:Atom.Diagnostics.LogSeverities"/> of the <paramref name="message"/>.
+            </param>
+            <param name="message">
+            The message to log.
+            </param>
         </member>
         <member name="T:Atom.Diagnostics.ILogProvider">
             <summary>
@@ -6723,6 +6472,272 @@
             The message to log.
             </param>
         </member>
+        <member name="T:Atom.ErrorStrings">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.AnUnhandledExceptionOccurred">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die An unhandled exception has occurred. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ArgumentsMayNotBeEqual">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified arguments may not be equal. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ArrayLengthOutOfValidRange">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The length of the array is out of valid range. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ArrayLengthOutOfValidRange1">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The length of the array is out of valid range. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.AttemptToReturnInActiveNode">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Attempted to return an inactive Node to the Atom.Collections.Pool. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.CantInsertItemIntoSortableListIfKeepSortedIsTrue">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die It&apos;s not allowed to insert an item into the SortableList if KeepSorted is true. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ComponentCollectionIsReadOnly">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The IEntityComponentCollection is read-only. As such this operation is invalid. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ComponentWasNotFound">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The component of type &apos;{0}&apos; could not be found. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.CriticalUnhandledExceptionHasOccurred">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die A critical unhandled exception has occurred. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.EntityAlreadyAddedToScene">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The entity &apos;{0}&apos; already has been added to a scene. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.EntityComponentCollectionIsOwnedByDifferentEntity">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The given IEntityComponentCollection is not owned by this Entity. This is invalid. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.EntityIsRequiredToHaveComponentType">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The entity is required to have a component of type {0}. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.EntityNotPartOfAScene">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The entity &apos;{0}&apos; is currently not part of any scene. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.Error">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ExpectedDifferentNumberOfElementsInStringXSeparatedByYGotZInsteadOfW">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Expected different number of elements in the string &apos;{0}&apos; separated by &apos;{1}&apos;. Got &apos;{2}&apos; instead of &apos;{3}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.Information">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Information ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.InvalidInternalNodeIndex">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Invalid Node. The node&apos;s internal node index is out of range. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.InvalidNodePoolMismatch">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Invalid Node. The  Pool of the Atom.Collections.PoolNode doesn&apos;t equal this Pool. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.InvalidOperationHeapIsEmpty">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Heap is empty. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.InvalidStringFormatXWithSeparatorY">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Invalid string format. Expected a string in the format &apos;{0}&apos;, separated by &apos;{1}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.InvalidStringXFormatYWithSeparatorZ">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The string &apos;{0}&apos; has an invalid format. The expected format &apos;{1}&apos;, separated by &apos;{2}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ItemDoesNotFulfillPredicate">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The item does not fulfill the predicate. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ListAlreadyConstainsSpecifiedItem">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The list already contains the specified item. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.MatrixDeleteOnlyColumn">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t delete the last column of the Matrix. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.MatrixDeleteOnlyRow">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t delete the last row of the Matrix. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.MaybeHasNoValue">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die This Maybe{T} instance has no value. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.MissingInformation">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Missing Information ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.NotEnoughSpaceInSourceArray">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The source array must have at least as many elements as the specified size. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.NotEnoughSpaceInTargetArray">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die There is not enough space in the targeted array. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ObjectXDoesntImplementY">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The object {0} doesn&apos;t implement &apos;{1}&apos;. This is required. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ParsingGivenStringXNotEnoughEntriesExpectedYHasZ">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die An error has occurred while parsing the given string &apos;{0}&apos;. Not enough entries. Expected &apos;{1}&apos;. Has &apos;{2}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.ServiceXNotFound">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The service {0} could not be found. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedEnumerableContainsNoElements">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified IEnumerable doesn&apos;t contain any elements. This is required. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedIndexIsInvalid">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified index is invalid. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedIndexIsOutOfValidRange">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified index is out of valid range. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedItemIsNull">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified item is null. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueIsInvalid">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value is invalid. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueIsNaN">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value is Not a Number. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueIsNegative">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value is negative. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueIsZero">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value is zero. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueIsZeroOrNegative">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value is zero or negative. This is invalid for this operation. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.SpecifiedValueMustBeWithinRangeZeroOne">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The specified value must be within the range zero .. one. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.TheUnderlyingPropertyIsReadOnly">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The underlying property is read-only. As such the value of the property can&apos;t be changed. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.TypeHasNoPublicConstructors">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The type &apos;{0}&apos; has no public constructors. This is required. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.TypeHasNoPublicConstructorWithParameters">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The type &apos;{0}&apos; has no public constructor with &apos;{1}&apos; parameters. This is required. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.TypeNotSupportedByPropertyWrapper">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The Type of the given Object is not supported by this IObjectPropertyWrapper. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.TypeXDoesntImplementY">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die The type {0} doesn&apos;t implement &apos;{1}&apos;. This is required. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.UnhandledExceptionHasOccurred">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die An unhandled exception has occurred. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.VersionXOfTypeYIsNotSupportedExpectedZ">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Version &apos;{0}&apos; of type {1} is not supported. Expected &apos;{2}&apos;. ähnelt.
+            </summary>
+        </member>
+        <member name="P:Atom.ErrorStrings.VersionXOfTypeYIsNotSupportedExpectedZToW">
+            <summary>
+              Sucht eine lokalisierte Zeichenfolge, die Version &apos;{0}&apos; of type {1} is not supported. Expected &apos;{2} to {3}&apos;. ähnelt.
+            </summary>
+        </member>
         <member name="T:Atom.EventHandlerExtensions">
             <summary>
             Static class that contains extension methods for EventHandlers.
@@ -7214,12 +7229,13 @@
             The additional message to display.
             </param>
         </member>
-        <member name="T:Atom.ICultureSensitiveToStringProviderContract">
+        <member name="T:Atom.ICultureSensitiveToStringProvider">
             <summary>
-            Defines the contracts for the ICultureSensitiveToStringProvider interface.
+            Provides a mechanism that allows to receive a
+            culture-sensitive string representation of the object.
             </summary>
         </member>
-        <member name="M:Atom.ICultureSensitiveToStringProviderContract.Atom#ICultureSensitiveToStringProvider#ToString(System.IFormatProvider)">
+        <member name="M:Atom.ICultureSensitiveToStringProvider.ToString(System.IFormatProvider)">
             <summary>
             Returns a human-readable version of the object
             using culture sensitive formatting.
@@ -7309,24 +7325,6 @@
             The container object.
             </summary>
         </member>
-        <member name="T:Atom.ICultureSensitiveToStringProvider">
-            <summary>
-            Provides a mechanism that allows to receive a
-            culture-sensitive string representation of the object.
-            </summary>
-        </member>
-        <member name="M:Atom.ICultureSensitiveToStringProvider.ToString(System.IFormatProvider)">
-            <summary>
-            Returns a human-readable version of the object
-            using culture sensitive formatting.
-            </summary>
-            <param name="formatProvider">
-            Provides access to culture sensitive formatting information.
-            </param>
-            <returns>
-            A string that represents this object.
-            </returns>
-        </member>
         <member name="T:Atom.HashCodeBuilder">
             <summary>
             Provides an mechanism that allows the creation of
@@ -7378,17 +7376,40 @@
             so far using this HashCodeBuilder{T}. 
             </summary>
         </member>
-        <member name="T:Atom.IIsDisposable">
+        <member name="T:Atom.IConverter`2">
             <summary>
-            Defines a method to release allocated resources, and receive
-            a value indicating whether this has been done.
+            Provides a mechanism for converting values between two types.
             </summary>
+            <typeparam name="Source">
+            The first type.
+            </typeparam>
+            <typeparam name="Target">
+            The second type.
+            </typeparam>
         </member>
-        <member name="P:Atom.IIsDisposable.IsDisposed">
+        <member name="M:Atom.IConverter`2.ConvertTo(`0)">
             <summary>
-            Gets a value indicating whether this <see cref="T:System.IDisposable"/> object
-            has been disposed.
+            Attempts to convert the given <typeparamref name="Source"/> value into
+            the <typeparamref name="Target"/> value.
             </summary>
+            <param name="value">
+            The input <typeparamref name="Source"/> value.
+            </param>
+            <returns>
+            The output <typeparamref name="Target"/> value.
+            </returns>
+        </member>
+        <member name="M:Atom.IConverter`2.ConvertFrom(`1)">
+            <summary>
+            Attempts to convert the given <typeparamref name="Target"/> value into
+            the <typeparamref name="Source"/> value.
+            </summary>
+            <param name="value">
+            The input <typeparamref name="Target"/> value.
+            </param>
+            <returns>
+            The output <typeparamref name="Source"/> value.
+            </returns>
         </member>
         <member name="T:Atom.IDrawable">
             <summary>
@@ -7412,16 +7433,17 @@
             </remarks>
             <seealso cref="T:Atom.IDrawable"/>
         </member>
-        <member name="T:Atom.IReadOnlyNameable">
+        <member name="T:Atom.IIsDisposable">
             <summary>
-            Provides a merchanism to get the name of the object.
+            Defines a method to release allocated resources, and receive
+            a value indicating whether this has been done.
             </summary>
         </member>
-        <member name="P:Atom.IReadOnlyNameable.Name">
+        <member name="P:Atom.IIsDisposable.IsDisposed">
             <summary>
-            Gets the name name of the object.
+            Gets a value indicating whether this <see cref="T:System.IDisposable"/> object
+            has been disposed.
             </summary>
-            <value>The (usually unique) name of the object.</value>
         </member>
         <member name="T:Atom.INameable">
             <summary>
@@ -7477,6 +7499,17 @@
             The current <see cref="T:Atom.IUpdateContext"/>.
             </param>
         </member>
+        <member name="T:Atom.IReadOnlyNameable">
+            <summary>
+            Provides a merchanism to get the name of the object.
+            </summary>
+        </member>
+        <member name="P:Atom.IReadOnlyNameable.Name">
+            <summary>
+            Gets the name name of the object.
+            </summary>
+            <value>The (usually unique) name of the object.</value>
+        </member>
         <member name="T:Atom.IUpdateable">
             <summary>
             Provides the mechanism of updating an object.
@@ -7509,40 +7542,22 @@
             The time the last frame took to execute (in seconds).
             </value>
         </member>
-        <member name="T:Atom.IConverter`2">
+        <member name="T:Atom.IOUtilities">
             <summary>
-            Provides a mechanism for converting values between two types.
+            Defines static I/O-related utility methods.
             </summary>
-            <typeparam name="Source">
-            The first type.
-            </typeparam>
-            <typeparam name="Target">
-            The second type.
-            </typeparam>
         </member>
-        <member name="M:Atom.IConverter`2.ConvertTo(`0)">
+        <member name="M:Atom.IOUtilities.CopyStream(System.IO.Stream,System.IO.Stream)">
             <summary>
-            Attempts to convert the given <typeparamref name="Source"/> value into
-            the <typeparamref name="Target"/> value.
+            Copies the complete content of the given <paramref name="input"/> <see cref="T:System.IO.Stream"/>
+            into the given <paramref name="output"/> <see cref="T:System.IO.Stream"/>.
             </summary>
-            <param name="value">
-            The input <typeparamref name="Source"/> value.
+            <param name="input">
+            The source stream.
             </param>
-            <returns>
-            The output <typeparamref name="Target"/> value.
-            </returns>
-        </member>
-        <member name="M:Atom.IConverter`2.ConvertFrom(`1)">
-            <summary>
-            Attempts to convert the given <typeparamref name="Target"/> value into
-            the <typeparamref name="Source"/> value.
-            </summary>
-            <param name="value">
-            The input <typeparamref name="Target"/> value.
+            <param name="output">
+            The target stream.
             </param>
-            <returns>
-            The output <typeparamref name="Source"/> value.
-            </returns>
         </member>
         <member name="T:Atom.IStringConverter">
             <summary>
@@ -7573,6 +7588,381 @@
             </param>
             <returns>
             The output source value.
+            </returns>
+        </member>
+        <member name="T:Atom.ITypeActivator">
+            <summary>
+            Provides a mechanism that creates new objects given a type name.
+            </summary>
+        </member>
+        <member name="M:Atom.ITypeActivator.CreateInstance(System.String)">
+            <summary>
+            Creates an instance of the type with the given typeName.
+            </summary>
+            <param name="typeName">
+            The name that uniquely identifies the type to initiate.
+            </param>
+            <returns>
+            The object that has been created.
+            </returns>
+        </member>
+        <member name="T:Atom.ManagedDisposable">
+            <summary>
+            Represents an abstract base class that implements the IDisposable pattern.
+            </summary>
+            <seealso cref="T:Atom.UnmanagedDisposable"/>
+        </member>
+        <member name="P:Atom.ManagedDisposable.IsDisposed">
+            <summary>
+            Gets a value indicating whether this <see cref="T:System.IDisposable"/> object
+            has been disposed.
+            </summary>
+        </member>
+        <member name="M:Atom.ManagedDisposable.#ctor">
+            <summary>
+            Initializes a new instance of the ManagedDisposable class.
+            </summary>
+        </member>
+        <member name="M:Atom.ManagedDisposable.Dispose">
+            <summary>
+            Immediately releases all managed and unmanaged resources this IDisposable object
+            has aquired.
+            </summary>
+        </member>
+        <member name="M:Atom.ManagedDisposable.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources this IDisposable object has aquired.
+            </summary>
+            <param name="releaseManaged">
+            States whether managed resources should be disposed.
+            </param>
+        </member>
+        <member name="M:Atom.ManagedDisposable.DisposeManagedResources">
+            <summary>
+            Releases all managed resources.
+            </summary>
+        </member>
+        <member name="M:Atom.ManagedDisposable.DisposeUnmanagedResources">
+            <summary>
+            Releases all unmanaged resources. Umanaged resources are disposed before managed resources.
+            </summary>
+        </member>
+        <member name="M:Atom.ManagedDisposable.ThrowIfDisposed">
+            <summary>
+            Throws a new <see cref="T:System.ObjectDisposedException"/> if this ManagedDisposable object has
+            been disposed.
+            </summary>
+        </member>
+        <member name="F:Atom.ManagedDisposable.disposeState">
+            <summary>
+            Stores whether the resources of IDisposable object have been released.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.IRand">
+            <summary>
+            Provides a mechanism to receive various pseudo-random numbers.
+            </summary>
+            <remarks>
+            The default constructor of an object implementing this interface
+            should seed itself with the current time.
+            </remarks>
+        </member>
+        <member name="P:Atom.Math.IRand.RandomBoolean">
+            <summary>
+            Gets a random boolean state value.
+            </summary>
+            <value>
+            Returns <see langword="true"/> 50% of the time,
+            and <see langword="false"/> the other 50%.
+            </value>
+        </member>
+        <member name="P:Atom.Math.IRand.RandomInteger">
+            <summary>
+            Gets a random number in the interval [0,0x7fffffff].
+            </summary>
+            <value>A random integer.</value>
+        </member>
+        <member name="P:Atom.Math.IRand.RandomSingle">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random single-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.IRand.RandomDouble">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random double-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.IRand.RandomDecimal">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random decimal value.</value>
+        </member>
+        <member name="T:Atom.Math.RandListExtensions">
+            <summary>
+            Defines extension methods related to randomly selecting elements from IList{T}s.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RandListExtensions.RandomOrDefault``1(System.Collections.Generic.IList{``0},Atom.Math.IRand)">
+            <summary>
+            Gets a random element of the given collection.
+            </summary>
+            <typeparam name="T">
+            The type of element in the list.
+            </typeparam>
+            <param name="list">
+            The list to query.
+            </param>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <returns>
+            A random item from the given list or the default value of T if the given list is empty.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.RandRangeExtensions">
+            <summary>
+            Defines extension methods for the <see cref="T:Atom.Math.IRand"/> interface
+            that make it easier to get a random value within a specific range.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Int32,System.Int32)">
+            <summary>
+            Returns a random integer within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
+            <returns> 
+            A random integer greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Int64,System.Int64)">
+            <summary>
+            Returns a random long integer within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
+            <returns> 
+            A random integer greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.UInt32,System.UInt32)">
+            <summary>
+            Returns a random integer within the specified range.
+            </summary>
+            <exception cref="T:System.OverflowException">If an overflow has occured.</exception>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns> 
+            A random integer greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Single,System.Single)">
+            <summary>
+            Returns a random floating point value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random single-precision floating-point greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Double,System.Double)">
+            <summary>
+            Returns a random floating point value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns> 
+            A random double-precision floating-point value greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.RandomRange(Atom.Math.IRand,System.Decimal,System.Decimal)">
+            <summary>
+            Returns a random floating point value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns> 
+            A random decimal greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.UncheckedRandomRange(Atom.Math.IRand,System.Single,System.Single)">
+            <summary>
+            Returns a random floating point value within the specified range,
+            doesn't check whether the given minimumValue and maximumValue are in the right order of minimumValue &lt;= maximumValue.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random integer greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandRangeExtensions.UncheckedRandomRange(Atom.Math.IRand,System.Int32,System.Int32)">
+            <summary>
+            Returns a random floating point value within the specified range,
+            doesn't check whether the given minimumValue and maximumValue are in the right order of minimumValue &lt;= maximumValue.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random integer greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="T:Atom.Maybe">
+            <summary>
+            Provides static utility method for the <see cref="T:Atom.Maybe`1"/> structure.
+            </summary>
+        </member>
+        <member name="M:Atom.Maybe.None``1">
+            <summary>
+            Gets an instance of the Maybe monad that contains "No Value".
+            </summary>
+            <typeparam name="T">
+            The type of the value.
+            </typeparam>
+            <returns>
+            The instance of the Maybe monad.
+            </returns>
+        </member>
+        <member name="M:Atom.Maybe.Some``1(``0)">
+            <summary>
+            Gets an instance of the Maybe monad that contains
+            the specified <paramref name="value"/>.
+            </summary>
+            <typeparam name="T">
+            The type of the value.
+            </typeparam>
+            <param name="value">
+            The value that the new instance of the Maybe monad
+            should have.
+            </param>
+            <returns>
+            The instance of the Maybe monad.
+            </returns>
+        </member>
+        <member name="T:Atom.Maybe`1">
+            <summary>
+            Represents an inmutable value that might or might not have any value.
+            </summary>
+            <typeparam name="T">
+            The type of the actual value.
+            </typeparam>
+        </member>
+        <member name="F:Atom.Maybe`1.None">
+            <summary>
+            Represents an empty instance of type <typeparamref name="T"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Maybe`1.Value">
+            <summary>
+            Gets the underlying value, if it is available.
+            </summary>
+        </member>
+        <member name="P:Atom.Maybe`1.HasValue">
+            <summary>
+            Gets a value indicating whether this instance has value.
+            </summary>
+            <value>
+            <c>true</c> if this instance has value; otherwise, 
+            <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Atom.Maybe`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the Maybe{T} structure.
+            </summary>
+            <param name="value">
+            The actual value.
+            </param>
+        </member>
+        <member name="M:Atom.Maybe`1.Equals(System.Object)">
+            <summary>
+            Indicates whether the current object is equal to another object.
+            </summary>
+            <param name="obj">
+            An object to compare with this object.
+            </param>
+            <returns>
+            true if the current object is equal to the other parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Maybe`1.Equals(Atom.Maybe{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">
+            An object to compare with this object.
+            </param>
+            <returns>
+            true if the current object is equal to the other parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Maybe`1.GetHashCode">
+            <summary>
+            Returns the hashcode of this Maybe{T} instance.
+            </summary>
+            <returns>
+            The hashcode.
+            </returns>
+        </member>
+        <member name="F:Atom.Maybe`1.value">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Maybe`1.Value"/> property.
+            </summary>
+        </member>
+        <member name="F:Atom.Maybe`1.hasValue">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Maybe`1.HasValue"/> property.
+            </summary>
+        </member>
+        <member name="T:Atom.NameOf`1">
+            <summary>
+            Implements a fluid operator that receives the
+            name of various elements of a type.
+            </summary>
+            <typeparam name="T">
+            The type to inspect.
+            </typeparam>
+        </member>
+        <member name="M:Atom.NameOf`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Gets the name of a property of the type <typeparamref name="T"/>.
+            </summary>
+            <example>
+            <code>
+            string name = NameOf&lt;String&gt;.Property( e => e.Length );
+            Assert.Equal( "Length", name );
+            </code>
+            </example>
+            <typeparam name="TProperty">
+            The type of the property.
+            </typeparam>
+            <param name="expression">
+            The expression that returns the property.
+            </param>
+            <returns>
+            The name of the property.
             </returns>
         </member>
         <member name="T:Atom.Patterns.Provider.DirectObjectProvider`1">
@@ -7620,11 +8010,6 @@
             <param name="provider">
             The provider to register.
             </param>
-        </member>
-        <member name="T:Atom.Patterns.Provider.IObjectProviderContainerRegistrarContract">
-            <summary>
-            Defines the contracts for the <see cref="T:Atom.IObjectProviderContainer"/> interface.
-            </summary>
         </member>
         <member name="T:Atom.Patterns.Provider.LambdaObjectProvider`1">
             <summary>
@@ -7788,43 +8173,37 @@
             The generic static instance of the <see cref="T:Atom.Patterns.Visitor.EmptyVisitor`1"/> class.
             </summary>
         </member>
-        <member name="T:Atom.Patterns.Visitor.VisitorExtensions">
+        <member name="T:Atom.Patterns.Visitor.InOrderVisitor`1">
             <summary>
-            Provides static extension methods that make the work with <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/>s easier.
+            Represents an <see cref="T:Atom.Patterns.Visitor.IOrderedVisitor`1"/> that redirects calls <see cref="M:Atom.Patterns.Visitor.IOrderedVisitor`1.VisitInOrder(`0)"/> calls
+            to another <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/>.
+            This class can't be inherited.
             </summary>
+            <typeparam name="T"> The type of items that can be visited by this visitor. </typeparam>
         </member>
-        <member name="M:Atom.Patterns.Visitor.VisitorExtensions.Visit``1(System.Collections.Generic.IEnumerable{``0},Atom.Patterns.Visitor.IVisitor{``0})">
+        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.#ctor(Atom.Patterns.Visitor.IVisitor{`0})">
             <summary>
-            Accepts the given <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/> to visit elements of this <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-            until the <see cref="P:Atom.Patterns.Visitor.IVisitor`1.HasCompleted"/> or all elements have been visited.
+            Initializes a new instance of the <see cref="T:Atom.Patterns.Visitor.InOrderVisitor`1"/> class.
             </summary>
-            <typeparam name="T">
-            The type of items to visit.
-            </typeparam>
-            <param name="collection">
-            The collection whose items to accept. 
-            </param>
             <param name="visitor">
-            The visitor to use.
+            The IVisitor{T} the new InOrderVisitor{T} redirects calls to.
             </param>
-            <exception cref="T:System.ArgumentNullException">
-            If <paramref name="visitor"/> is null.
-            </exception>
         </member>
-        <member name="M:Atom.Patterns.Visitor.VisitorExtensions.Visit(System.Collections.IEnumerable,Atom.Patterns.Visitor.IVisitor{System.Object})">
+        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.VisitPostOrder(`0)">
             <summary>
-            Accepts the given <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/> to visit elements of this <see cref="T:System.Collections.IEnumerable"/>
-            until the <see cref="P:Atom.Patterns.Visitor.IVisitor`1.HasCompleted"/> or all elements have been visited.
+            Has been overriden to do nothing.
             </summary>
-            <param name="collection">
-            The collection whose items to accept. 
+            <param name="obj">
+            The object to visit.
             </param>
-            <param name="visitor">
-            The visitor to use.
+        </member>
+        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.VisitPreOrder(`0)">
+            <summary>
+            Has been overriden to do nothing.
+            </summary>
+            <param name="obj">
+            The object to visit.
             </param>
-            <exception cref="T:System.ArgumentNullException">
-            If <paramref name="visitor"/> is null.
-            </exception>
         </member>
         <member name="T:Atom.Patterns.Visitor.IOrderedVisitor`1">
             <summary>
@@ -7897,38 +8276,6 @@
         <member name="M:Atom.Patterns.Visitor.IVisitor`1.Visit(`0)">
             <summary>
             Visits the specified object.
-            </summary>
-            <param name="obj">
-            The object to visit.
-            </param>
-        </member>
-        <member name="T:Atom.Patterns.Visitor.InOrderVisitor`1">
-            <summary>
-            Represents an <see cref="T:Atom.Patterns.Visitor.IOrderedVisitor`1"/> that redirects calls <see cref="M:Atom.Patterns.Visitor.IOrderedVisitor`1.VisitInOrder(`0)"/> calls
-            to another <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/>.
-            This class can't be inherited.
-            </summary>
-            <typeparam name="T"> The type of items that can be visited by this visitor. </typeparam>
-        </member>
-        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.#ctor(Atom.Patterns.Visitor.IVisitor{`0})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Patterns.Visitor.InOrderVisitor`1"/> class.
-            </summary>
-            <param name="visitor">
-            The IVisitor{T} the new InOrderVisitor{T} redirects calls to.
-            </param>
-        </member>
-        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.VisitPostOrder(`0)">
-            <summary>
-            Has been overriden to do nothing.
-            </summary>
-            <param name="obj">
-            The object to visit.
-            </param>
-        </member>
-        <member name="M:Atom.Patterns.Visitor.InOrderVisitor`1.VisitPreOrder(`0)">
-            <summary>
-            Has been overriden to do nothing.
             </summary>
             <param name="obj">
             The object to visit.
@@ -8117,6 +8464,44 @@
             to keep track of the items that have been visited.
             </summary>
         </member>
+        <member name="T:Atom.Patterns.Visitor.VisitorExtensions">
+            <summary>
+            Provides static extension methods that make the work with <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/>s easier.
+            </summary>
+        </member>
+        <member name="M:Atom.Patterns.Visitor.VisitorExtensions.Visit``1(System.Collections.Generic.IEnumerable{``0},Atom.Patterns.Visitor.IVisitor{``0})">
+            <summary>
+            Accepts the given <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/> to visit elements of this <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            until the <see cref="P:Atom.Patterns.Visitor.IVisitor`1.HasCompleted"/> or all elements have been visited.
+            </summary>
+            <typeparam name="T">
+            The type of items to visit.
+            </typeparam>
+            <param name="collection">
+            The collection whose items to accept. 
+            </param>
+            <param name="visitor">
+            The visitor to use.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="visitor"/> is null.
+            </exception>
+        </member>
+        <member name="M:Atom.Patterns.Visitor.VisitorExtensions.Visit(System.Collections.IEnumerable,Atom.Patterns.Visitor.IVisitor{System.Object})">
+            <summary>
+            Accepts the given <see cref="T:Atom.Patterns.Visitor.IVisitor`1"/> to visit elements of this <see cref="T:System.Collections.IEnumerable"/>
+            until the <see cref="P:Atom.Patterns.Visitor.IVisitor`1.HasCompleted"/> or all elements have been visited.
+            </summary>
+            <param name="collection">
+            The collection whose items to accept. 
+            </param>
+            <param name="visitor">
+            The visitor to use.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="visitor"/> is null.
+            </exception>
+        </member>
         <member name="T:Atom.IObjectProvider`1">
             <summary>
             Provides a simple mechanism for receiving an object of a specific type.
@@ -8150,227 +8535,6 @@
             <returns>
             The associated IObjectProvider; -or- null if no IObjectProvider has been registered
             at this IObjectProviderContainer for the specified <see cref="T:System.Type"/>.
-            </returns>
-        </member>
-        <member name="T:Atom.IOUtilities">
-            <summary>
-            Defines static I/O-related utility methods.
-            </summary>
-        </member>
-        <member name="M:Atom.IOUtilities.CopyStream(System.IO.Stream,System.IO.Stream)">
-            <summary>
-            Copies the complete content of the given <paramref name="input"/> <see cref="T:System.IO.Stream"/>
-            into the given <paramref name="output"/> <see cref="T:System.IO.Stream"/>.
-            </summary>
-            <param name="input">
-            The source stream.
-            </param>
-            <param name="output">
-            The target stream.
-            </param>
-        </member>
-        <member name="T:Atom.ITypeActivator">
-            <summary>
-            Provides a mechanism that creates new objects given a type name.
-            </summary>
-        </member>
-        <member name="M:Atom.ITypeActivator.CreateInstance(System.String)">
-            <summary>
-            Creates an instance of the type with the given typeName.
-            </summary>
-            <param name="typeName">
-            The name that uniquely identifies the type to initiate.
-            </param>
-            <returns>
-            The object that has been created.
-            </returns>
-        </member>
-        <member name="T:Atom.ManagedDisposable">
-            <summary>
-            Represents an abstract base class that implements the IDisposable pattern.
-            </summary>
-            <seealso cref="T:Atom.UnmanagedDisposable"/>
-        </member>
-        <member name="P:Atom.ManagedDisposable.IsDisposed">
-            <summary>
-            Gets a value indicating whether this <see cref="T:System.IDisposable"/> object
-            has been disposed.
-            </summary>
-        </member>
-        <member name="M:Atom.ManagedDisposable.#ctor">
-            <summary>
-            Initializes a new instance of the ManagedDisposable class.
-            </summary>
-        </member>
-        <member name="M:Atom.ManagedDisposable.Dispose">
-            <summary>
-            Immediately releases all managed and unmanaged resources this IDisposable object
-            has aquired.
-            </summary>
-        </member>
-        <member name="M:Atom.ManagedDisposable.Dispose(System.Boolean)">
-            <summary>
-            Releases all resources this IDisposable object has aquired.
-            </summary>
-            <param name="releaseManaged">
-            States whether managed resources should be disposed.
-            </param>
-        </member>
-        <member name="M:Atom.ManagedDisposable.DisposeManagedResources">
-            <summary>
-            Releases all managed resources.
-            </summary>
-        </member>
-        <member name="M:Atom.ManagedDisposable.DisposeUnmanagedResources">
-            <summary>
-            Releases all unmanaged resources. Umanaged resources are disposed before managed resources.
-            </summary>
-        </member>
-        <member name="M:Atom.ManagedDisposable.ThrowIfDisposed">
-            <summary>
-            Throws a new <see cref="T:System.ObjectDisposedException"/> if this ManagedDisposable object has
-            been disposed.
-            </summary>
-        </member>
-        <member name="F:Atom.ManagedDisposable.disposeState">
-            <summary>
-            Stores whether the resources of IDisposable object have been released.
-            </summary>
-        </member>
-        <member name="T:Atom.Maybe">
-            <summary>
-            Provides static utility method for the <see cref="T:Atom.Maybe`1"/> structure.
-            </summary>
-        </member>
-        <member name="M:Atom.Maybe.None``1">
-            <summary>
-            Gets an instance of the Maybe monad that contains "No Value".
-            </summary>
-            <typeparam name="T">
-            The type of the value.
-            </typeparam>
-            <returns>
-            The instance of the Maybe monad.
-            </returns>
-        </member>
-        <member name="M:Atom.Maybe.Some``1(``0)">
-            <summary>
-            Gets an instance of the Maybe monad that contains
-            the specified <paramref name="value"/>.
-            </summary>
-            <typeparam name="T">
-            The type of the value.
-            </typeparam>
-            <param name="value">
-            The value that the new instance of the Maybe monad
-            should have.
-            </param>
-            <returns>
-            The instance of the Maybe monad.
-            </returns>
-        </member>
-        <member name="T:Atom.Maybe`1">
-            <summary>
-            Represents an inmutable value that might or might not have any value.
-            </summary>
-            <typeparam name="T">
-            The type of the actual value.
-            </typeparam>
-        </member>
-        <member name="F:Atom.Maybe`1.None">
-            <summary>
-            Represents an empty instance of type <typeparamref name="T"/>.
-            </summary>
-        </member>
-        <member name="P:Atom.Maybe`1.Value">
-            <summary>
-            Gets the underlying value, if it is available.
-            </summary>
-        </member>
-        <member name="P:Atom.Maybe`1.HasValue">
-            <summary>
-            Gets a value indicating whether this instance has value.
-            </summary>
-            <value>
-            <c>true</c> if this instance has value; otherwise, 
-            <c>false</c>.
-            </value>
-        </member>
-        <member name="M:Atom.Maybe`1.#ctor(`0)">
-            <summary>
-            Initializes a new instance of the Maybe{T} structure.
-            </summary>
-            <param name="value">
-            The actual value.
-            </param>
-        </member>
-        <member name="M:Atom.Maybe`1.Equals(System.Object)">
-            <summary>
-            Indicates whether the current object is equal to another object.
-            </summary>
-            <param name="obj">
-            An object to compare with this object.
-            </param>
-            <returns>
-            true if the current object is equal to the other parameter; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Atom.Maybe`1.Equals(Atom.Maybe{`0})">
-            <summary>
-            Indicates whether the current object is equal to another object of the same type.
-            </summary>
-            <param name="other">
-            An object to compare with this object.
-            </param>
-            <returns>
-            true if the current object is equal to the other parameter; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Atom.Maybe`1.GetHashCode">
-            <summary>
-            Returns the hashcode of this Maybe{T} instance.
-            </summary>
-            <returns>
-            The hashcode.
-            </returns>
-        </member>
-        <member name="F:Atom.Maybe`1.value">
-            <summary>
-            Represents the storage field of the <see cref="P:Atom.Maybe`1.Value"/> property.
-            </summary>
-        </member>
-        <member name="F:Atom.Maybe`1.hasValue">
-            <summary>
-            Represents the storage field of the <see cref="P:Atom.Maybe`1.HasValue"/> property.
-            </summary>
-        </member>
-        <member name="T:Atom.NameOf`1">
-            <summary>
-            Implements a fluid operator that receives the
-            name of various elements of a type.
-            </summary>
-            <typeparam name="T">
-            The type to inspect.
-            </typeparam>
-        </member>
-        <member name="M:Atom.NameOf`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
-            <summary>
-            Gets the name of a property of the type <typeparamref name="T"/>.
-            </summary>
-            <example>
-            <code>
-            string name = NameOf&lt;String&gt;.Property( e => e.Length );
-            Assert.Equal( "Length", name );
-            </code>
-            </example>
-            <typeparam name="TProperty">
-            The type of the property.
-            </typeparam>
-            <param name="expression">
-            The expression that returns the property.
-            </param>
-            <returns>
-            The name of the property.
             </returns>
         </member>
         <member name="T:Atom.ObjectProviderExtensions">
@@ -8495,272 +8659,6 @@
             <param name="lambda">
             The lambda to register.
             </param>
-        </member>
-        <member name="T:Atom.ErrorStrings">
-            <summary>
-              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ResourceManager">
-            <summary>
-              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.Culture">
-            <summary>
-              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
-              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.AnUnhandledExceptionOccurred">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die An unhandled exception has occurred. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ArgumentsMayNotBeEqual">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified arguments may not be equal. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ArrayLengthOutOfValidRange">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The length of the array is out of valid range. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ArrayLengthOutOfValidRange1">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The length of the array is out of valid range. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.AttemptToReturnInActiveNode">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Attempted to return an inactive Node to the Atom.Collections.Pool. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.CantInsertItemIntoSortableListIfKeepSortedIsTrue">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die It&apos;s not allowed to insert an item into the SortableList if KeepSorted is true. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ComponentCollectionIsReadOnly">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The IEntityComponentCollection is read-only. As such this operation is invalid. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ComponentWasNotFound">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The component of type &apos;{0}&apos; could not be found. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.CriticalUnhandledExceptionHasOccurred">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die A critical unhandled exception has occurred. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.EntityAlreadyAddedToScene">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The entity &apos;{0}&apos; already has been added to a scene. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.EntityComponentCollectionIsOwnedByDifferentEntity">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The given IEntityComponentCollection is not owned by this Entity. This is invalid. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.EntityIsRequiredToHaveComponentType">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The entity is required to have a component of type {0}. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.EntityNotPartOfAScene">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The entity &apos;{0}&apos; is currently not part of any scene. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.Error">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ExpectedDifferentNumberOfElementsInStringXSeparatedByYGotZInsteadOfW">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Expected different number of elements in the string &apos;{0}&apos; separated by &apos;{1}&apos;. Got &apos;{2}&apos; instead of &apos;{3}&apos;. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.Information">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Information ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.InvalidInternalNodeIndex">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Invalid Node. The node&apos;s internal node index is out of range. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.InvalidNodePoolMismatch">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Invalid Node. The  Pool of the Atom.Collections.PoolNode doesn&apos;t equal this Pool. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.InvalidOperationHeapIsEmpty">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Heap is empty. This is invalid for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.InvalidStringFormatXWithSeparatorY">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Invalid string format. Expected a string in the format &apos;{0}&apos;, separated by &apos;{1}&apos;. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.InvalidStringXFormatYWithSeparatorZ">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The string &apos;{0}&apos; has an invalid format. The expected format &apos;{1}&apos;, separated by &apos;{2}&apos;. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ItemDoesNotFulfillPredicate">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The item does not fulfill the predicate. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ListAlreadyConstainsSpecifiedItem">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The list already contains the specified item. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.MatrixDeleteOnlyColumn">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t delete the last column of the Matrix. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.MatrixDeleteOnlyRow">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t delete the last row of the Matrix. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.MaybeHasNoValue">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die This Maybe{T} instance has no value. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.MissingInformation">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Missing Information ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.NotEnoughSpaceInSourceArray">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The source array must have at least as many elements as the specified size. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.NotEnoughSpaceInTargetArray">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die There is not enough space in the targeted array. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ObjectXDoesntImplementY">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The object {0} doesn&apos;t implement &apos;{1}&apos;. This is required. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ParsingGivenStringXNotEnoughEntriesExpectedYHasZ">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die An error has occurred while parsing the given string &apos;{0}&apos;. Not enough entries. Expected &apos;{1}&apos;. Has &apos;{2}&apos;. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.ServiceXNotFound">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The service {0} could not be found. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedEnumerableContainsNoElements">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified IEnumerable doesn&apos;t contain any elements. This is required. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedIndexIsInvalid">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified index is invalid. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedIndexIsOutOfValidRange">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified index is out of valid range. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedItemIsNull">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified item is null. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueIsInvalid">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value is invalid. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueIsNaN">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value is Not a Number. This is invalid for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueIsNegative">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value is negative. This is invalid for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueIsZero">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value is zero. This is invalid for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueIsZeroOrNegative">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value is zero or negative. This is invalid for this operation. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.SpecifiedValueMustBeWithinRangeZeroOne">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The specified value must be within the range zero .. one. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.TheUnderlyingPropertyIsReadOnly">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The underlying property is read-only. As such the value of the property can&apos;t be changed. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.TypeHasNoPublicConstructors">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The type &apos;{0}&apos; has no public constructors. This is required. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.TypeHasNoPublicConstructorWithParameters">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The type &apos;{0}&apos; has no public constructor with &apos;{1}&apos; parameters. This is required. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.TypeNotSupportedByPropertyWrapper">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The Type of the given Object is not supported by this IObjectPropertyWrapper. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.TypeXDoesntImplementY">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die The type {0} doesn&apos;t implement &apos;{1}&apos;. This is required. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.UnhandledExceptionHasOccurred">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die An unhandled exception has occurred. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.VersionXOfTypeYIsNotSupportedExpectedZ">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Version &apos;{0}&apos; of type {1} is not supported. Expected &apos;{2}&apos;. ähnelt.
-            </summary>
-        </member>
-        <member name="P:Atom.ErrorStrings.VersionXOfTypeYIsNotSupportedExpectedZToW">
-            <summary>
-              Sucht eine lokalisierte Zeichenfolge, die Version &apos;{0}&apos; of type {1} is not supported. Expected &apos;{2} to {3}&apos;. ähnelt.
-            </summary>
         </member>
         <member name="T:Atom.ReflectionExtensions">
             <summary>
@@ -9022,6 +8920,128 @@
             The context that provides everything required for the deserialization process.
             </param>
         </member>
+        <member name="T:Atom.Storage.BinaryDeserializationContext">
+            <summary>
+            Implements a mechanism that allows deserialization of build-in types
+            from a binary stream.
+            </summary>
+        </member>
+        <member name="P:Atom.Storage.BinaryDeserializationContext.Reader">
+            <summary>
+            Gets the <see cref="T:System.IO.BinaryReader"/> this BinarySerializationContext internally 
+            uses to read data.
+            </summary>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the BinaryDeserializationContext class.
+            </summary>
+            <param name="stream">
+            The stream of binary data from which will be read.
+            </param>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.#ctor(System.IO.BinaryReader)">
+            <summary>
+            Initializes a new instance of the BinaryDeserializationContext class.
+            </summary>
+            <param name="reader">
+            The BinaryReader that is going to be read with.
+            </param>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadBoolean">
+            <summary>
+            Reads a Boolean value.
+            </summary>
+            <returns>
+            The Boolean value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadByte">
+            <summary>
+            Reads a 8-bit unsigned integer.
+            </summary>
+            <returns>
+            The 8-bit unsigned integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt16">
+            <summary>
+            Reads a 16-bit signed integer.
+            </summary>
+            <returns>
+            The 16-bit signed integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt32">
+            <summary>
+            Reads a 32-bit signed integer.
+            </summary>
+            <returns>
+            The 32-bit signed integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt64">
+            <summary>
+            Reads a 64-bit signed integer.
+            </summary>
+            <returns>
+            The 64-bit signed integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadUInt32">
+            <summary>
+            Reads a 32-bit unsigned integer.
+            </summary>
+            <returns>
+            The 32-bit unsigned integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadUInt64">
+            <summary>
+            Reads a 64-bit unsigned integer.
+            </summary>
+            <returns>
+            The 64-bit unsigned integer that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadChar">
+            <summary>
+            Reads a Unicode character.
+            </summary>
+            <returns>
+            The Unicode character that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadString">
+            <summary>
+            Reads a series of Unicode characters.
+            </summary>
+            <returns>
+            The series of Unicode characters that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadSingle">
+            <summary>
+            Reads a single-precision floating-point number.
+            </summary>
+            <returns>
+            The single-precision floating-point number that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadDouble">
+            <summary>
+            Reads a double-precision floating-point number.
+            </summary>
+            <returns>
+            The double-precision floating-point number that has been read.
+            </returns>
+        </member>
+        <member name="F:Atom.Storage.BinaryDeserializationContext.reader">
+            <summary>
+            The <see cref="T:System.IO.BinaryReader"/> this BinarySerializationContext internally 
+            uses to read data.
+            </summary>
+        </member>
         <member name="T:Atom.Storage.IBinaryDeserializationContext">
             <summary>
             Provides a mechanism that allows deserialization of build-in types
@@ -9256,128 +9276,6 @@
             <param name="context">
             Provides access to the mechanisms required to deserialize this IStoreable object.
             </param>
-        </member>
-        <member name="T:Atom.Storage.BinaryDeserializationContext">
-            <summary>
-            Implements a mechanism that allows deserialization of build-in types
-            from a binary stream.
-            </summary>
-        </member>
-        <member name="P:Atom.Storage.BinaryDeserializationContext.Reader">
-            <summary>
-            Gets the <see cref="T:System.IO.BinaryReader"/> this BinarySerializationContext internally 
-            uses to read data.
-            </summary>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.#ctor(System.IO.Stream)">
-            <summary>
-            Initializes a new instance of the BinaryDeserializationContext class.
-            </summary>
-            <param name="stream">
-            The stream of binary data from which will be read.
-            </param>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.#ctor(System.IO.BinaryReader)">
-            <summary>
-            Initializes a new instance of the BinaryDeserializationContext class.
-            </summary>
-            <param name="reader">
-            The BinaryReader that is going to be read with.
-            </param>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadBoolean">
-            <summary>
-            Reads a Boolean value.
-            </summary>
-            <returns>
-            The Boolean value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadByte">
-            <summary>
-            Reads a 8-bit unsigned integer.
-            </summary>
-            <returns>
-            The 8-bit unsigned integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt16">
-            <summary>
-            Reads a 16-bit signed integer.
-            </summary>
-            <returns>
-            The 16-bit signed integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt32">
-            <summary>
-            Reads a 32-bit signed integer.
-            </summary>
-            <returns>
-            The 32-bit signed integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadInt64">
-            <summary>
-            Reads a 64-bit signed integer.
-            </summary>
-            <returns>
-            The 64-bit signed integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadUInt32">
-            <summary>
-            Reads a 32-bit unsigned integer.
-            </summary>
-            <returns>
-            The 32-bit unsigned integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadUInt64">
-            <summary>
-            Reads a 64-bit unsigned integer.
-            </summary>
-            <returns>
-            The 64-bit unsigned integer that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadChar">
-            <summary>
-            Reads a Unicode character.
-            </summary>
-            <returns>
-            The Unicode character that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadString">
-            <summary>
-            Reads a series of Unicode characters.
-            </summary>
-            <returns>
-            The series of Unicode characters that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadSingle">
-            <summary>
-            Reads a single-precision floating-point number.
-            </summary>
-            <returns>
-            The single-precision floating-point number that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Storage.BinaryDeserializationContext.ReadDouble">
-            <summary>
-            Reads a double-precision floating-point number.
-            </summary>
-            <returns>
-            The double-precision floating-point number that has been read.
-            </returns>
-        </member>
-        <member name="F:Atom.Storage.BinaryDeserializationContext.reader">
-            <summary>
-            The <see cref="T:System.IO.BinaryReader"/> this BinarySerializationContext internally 
-            uses to read data.
-            </summary>
         </member>
         <member name="T:Atom.Storage.IStorageContextFactory`5">
             <summary>
@@ -10016,6 +9914,29 @@
             The second item.
             </param>
         </member>
+        <member name="T:Atom.Threading.Timeout">
+            <summary>
+            Provides utility mechanism for working with timeoutable actions.
+            </summary>
+        </member>
+        <member name="M:Atom.Threading.Timeout.Invoke(System.TimeSpan,System.Action,System.Action)">
+            <summary>
+            Executes the specified action, giving it the specified time to complete
+            before it is aborted.
+            </summary>
+            <exception cref="T:System.TimeoutException">
+            Thrown when the timeout has been reached.
+            </exception>
+            <param name="timeout">
+            The TimeSpan the action is allowed to take at max.
+            </param>
+            <param name="action">
+            The action to execute.
+            </param>
+            <param name="abort">
+            The (optional) action that should be executed when the timeout has been reached.
+            </param>
+        </member>
         <member name="T:Atom.TypeActivator">
             <summary>
             Implements a mechanism that creates new objects given a type name.
@@ -10036,6 +9957,38 @@
             </param>
             <returns>
             The object that has been created.
+            </returns>
+        </member>
+        <member name="T:Atom.TypeStringConverter">
+            <summary>
+            Implements an <see cref="T:Atom.IStringConverter"/> that uses ITypeConverters to
+            convert values to and from strings.
+            </summary>
+        </member>
+        <member name="M:Atom.TypeStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Attempts to convert the given source object value into a string.
+            </summary>
+            <param name="value">
+            The input source value.
+            </param>
+            <returns>
+            The output value.
+            </returns>
+        </member>
+        <member name="M:Atom.TypeStringConverter.ConvertFromString(System.String,System.Type)">
+            <summary>
+            Attempts to convert the given target string value into
+            the a source value.
+            </summary>
+            <param name="value">
+            The input target value, encoded in a string.
+            </param>
+            <param name="targetType">
+            The type the target value encodes.
+            </param>
+            <returns>
+            The output source value.
             </returns>
         </member>
         <member name="T:Atom.UnmanagedDisposable">

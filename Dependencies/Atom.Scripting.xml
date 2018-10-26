@@ -250,6 +250,84 @@
             True if the variable exists; -or- otherwise false.
             </returns>
         </member>
+        <member name="T:Atom.Scripting.Script">
+            <summary>
+            Reprents a simple scoped script.
+            </summary>
+        </member>
+        <member name="P:Atom.Scripting.Script.Code">
+            <summary>
+            Gets or sets the code to execute.
+            </summary>
+        </member>
+        <member name="P:Atom.Scripting.Script.Scoped">
+            <summary>
+            Gets or sets a value indicating whether this Script has an own local scope; -or- otherwise only uses the global scope.
+            </summary>
+        </member>
+        <member name="P:Atom.Scripting.Script.WasCompiled">
+            <summary>
+            Gets a value indicating whether this Script was compiled.
+            </summary>
+        </member>
+        <member name="M:Atom.Scripting.Script.Compile(Atom.Scripting.IScriptingEnvironment)">
+            <summary>
+            Compiles this Script under the given IScriptingEnvironment;
+            allowing it to be executed.
+            </summary>
+            <param name="environment">
+            The environment under which this script is compiled.
+            </param>
+        </member>
+        <member name="M:Atom.Scripting.Script.Execute">
+            <summary>
+            Executes this Script.
+            </summary>
+        </member>
+        <member name="M:Atom.Scripting.Script.ExecuteQuery">
+            <summary>
+            Executes this Script, returning the return value of the executed code.
+            </summary>
+            <returns>
+            The value that was computed by the script.
+            </returns>
+        </member>
+        <member name="M:Atom.Scripting.Script.GetVariable(System.String)">
+            <summary>
+            Gets the value of the variable <paramref name="name"/> stored in this Script.
+            </summary>
+            <param name="name">
+            The name of the variable to receive.
+            </param>
+            <returns>
+            The value of the variable.
+            </returns>
+        </member>
+        <member name="M:Atom.Scripting.Script.SetVariable(System.String,System.Object)">
+            <summary>
+            Sets the value of the variable <paramref name="name"/> to the given <paramref name="value"/>.
+            </summary>
+            <param name="name">
+            The name of the variable to set.
+            </param>
+            <param name="value">
+            The value to set.
+            </param>
+            <returns>
+            This Script for method chaining.
+            </returns>
+        </member>
+        <member name="M:Atom.Scripting.Script.HasVariable(System.String)">
+            <summary>
+            Gets a value indicating whether this IScript contains a variable with the given <paramref name="name"/>.
+            </summary>
+            <param name="name">
+            The name of the variable to query.
+            </param>
+            <returns>
+            True if the variable exists; -or- otherwise false.
+            </returns>
+        </member>
         <member name="T:Atom.Scripting.ScriptingEnvironment">
             <summary>
             Implements an <see cref="T:Atom.Scripting.IScriptingEnvironment"/> based on IronRuby.
@@ -365,84 +443,6 @@
             </param>
             <returns>
             The newly created Script.
-            </returns>
-        </member>
-        <member name="T:Atom.Scripting.Script">
-            <summary>
-            Reprents a simple scoped script.
-            </summary>
-        </member>
-        <member name="P:Atom.Scripting.Script.Code">
-            <summary>
-            Gets or sets the code to execute.
-            </summary>
-        </member>
-        <member name="P:Atom.Scripting.Script.Scoped">
-            <summary>
-            Gets or sets a value indicating whether this Script has an own local scope; -or- otherwise only uses the global scope.
-            </summary>
-        </member>
-        <member name="P:Atom.Scripting.Script.WasCompiled">
-            <summary>
-            Gets a value indicating whether this Script was compiled.
-            </summary>
-        </member>
-        <member name="M:Atom.Scripting.Script.Compile(Atom.Scripting.IScriptingEnvironment)">
-            <summary>
-            Compiles this Script under the given IScriptingEnvironment;
-            allowing it to be executed.
-            </summary>
-            <param name="environment">
-            The environment under which this script is compiled.
-            </param>
-        </member>
-        <member name="M:Atom.Scripting.Script.Execute">
-            <summary>
-            Executes this Script.
-            </summary>
-        </member>
-        <member name="M:Atom.Scripting.Script.ExecuteQuery">
-            <summary>
-            Executes this Script, returning the return value of the executed code.
-            </summary>
-            <returns>
-            The value that was computed by the script.
-            </returns>
-        </member>
-        <member name="M:Atom.Scripting.Script.GetVariable(System.String)">
-            <summary>
-            Gets the value of the variable <paramref name="name"/> stored in this Script.
-            </summary>
-            <param name="name">
-            The name of the variable to receive.
-            </param>
-            <returns>
-            The value of the variable.
-            </returns>
-        </member>
-        <member name="M:Atom.Scripting.Script.SetVariable(System.String,System.Object)">
-            <summary>
-            Sets the value of the variable <paramref name="name"/> to the given <paramref name="value"/>.
-            </summary>
-            <param name="name">
-            The name of the variable to set.
-            </param>
-            <param name="value">
-            The value to set.
-            </param>
-            <returns>
-            This Script for method chaining.
-            </returns>
-        </member>
-        <member name="M:Atom.Scripting.Script.HasVariable(System.String)">
-            <summary>
-            Gets a value indicating whether this IScript contains a variable with the given <paramref name="name"/>.
-            </summary>
-            <param name="name">
-            The name of the variable to query.
-            </param>
-            <returns>
-            True if the variable exists; -or- otherwise false.
             </returns>
         </member>
     </members>
