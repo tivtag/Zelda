@@ -451,7 +451,9 @@ namespace Zelda.Entities
         public virtual void AddToScene( ZeldaScene scene )
         {
             if( scene == null )
+            {
                 throw new ArgumentNullException( "scene" );
+            }
 
             if( this.scene != null )
             {

@@ -272,7 +272,7 @@ namespace Zelda.GameStates
             #endregion
 
             // Load scene:
-            var newScene = ZeldaScene.Load( name, profile.SaveFile.WorldStatus, game );
+            ZeldaScene newScene = ZeldaScene.Load( name, profile.SaveFile.WorldStatus, game );
 
             ChangeScene( newScene );
 
@@ -432,7 +432,9 @@ namespace Zelda.GameStates
         public ZeldaScene RequestSceneReload()
         {
             if( this.scene == null )
+            {
                 throw new InvalidOperationException( Resources.Error_SceneIsNull );
+            }
 
             string sceneName = this.scene.Name;
 
@@ -441,7 +443,7 @@ namespace Zelda.GameStates
             this.scene = null;
 
             // Reload old scene
-            return this.RequestSceneChange( sceneName, false );
+            return this.RequestSceneChange( sceneName, cachePrevious: false );
         }
 
         /// <summary>
@@ -483,7 +485,7 @@ namespace Zelda.GameStates
             }
 
             // Load New
-            var cachedScene = scenesCache.Get( name );
+            ZeldaScene cachedScene = scenesCache.Get( name );
 
             if( cachedScene != null )
             {

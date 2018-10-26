@@ -166,7 +166,7 @@ namespace Zelda.Ocarina.Songs
         /// </param>
         private static void ReloadAndSpawn( PlayerEntity player )
         {
-            var newScene = player.IngameState.RequestSceneReload();
+            ZeldaScene newScene = player.IngameState.RequestSceneReload();
             Respawn( player, newScene );
         }
 
@@ -181,7 +181,7 @@ namespace Zelda.Ocarina.Songs
         /// </param>
         private static void Respawn( PlayerEntity player, ZeldaScene newScene )
         {
-            var spawnPoint = GetSpawnPoint( player, newScene );
+            ISpawnPoint spawnPoint = GetSpawnPoint( player, newScene );
 
             if( spawnPoint != null )
             {
