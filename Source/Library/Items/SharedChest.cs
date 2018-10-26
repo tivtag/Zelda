@@ -11,7 +11,7 @@
 namespace Zelda.Items
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.IO;
     using Atom;
     using Atom.Math;

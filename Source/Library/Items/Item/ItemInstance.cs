@@ -11,7 +11,7 @@
 namespace Zelda.Items
 {
     using System;
-using System.Diagnostics.Contracts;
+using Atom.Diagnostics.Contracts;
 using Atom;
 using Atom.Xna;
 using Microsoft.Xna.Framework.Graphics;

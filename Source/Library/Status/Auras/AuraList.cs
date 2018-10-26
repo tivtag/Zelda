@@ -14,7 +14,7 @@ namespace Zelda.Status
     using System.Collections.Generic;
     using System.Diagnostics;
     using Atom.Collections;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Manages the life-cycle of all <see cref="Aura"/>s

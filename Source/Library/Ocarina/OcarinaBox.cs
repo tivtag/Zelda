@@ -12,7 +12,7 @@ namespace Zelda.Ocarina
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Encapsulates all ocarina related functionality.

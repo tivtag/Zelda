@@ -9,7 +9,7 @@
 namespace Zelda.Attacks.Limiter
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Limits the usage of an Attack by not allowing the Attack to go

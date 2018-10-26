@@ -9,7 +9,7 @@
 namespace Zelda.Entities.Behaviours.Bosses
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Globalization;
     using Atom.Math;
     using Zelda.Entities.Spawning;

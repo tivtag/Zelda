@@ -12,7 +12,7 @@ namespace Zelda.UI.Items
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom.Xna.UI;
     using Zelda.Items;
 

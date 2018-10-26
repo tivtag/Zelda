@@ -11,7 +11,7 @@ namespace Zelda.Items
     using System;
     using Atom.Math;
     using Zelda.Items.Affixes;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Provides a mechanism to create instances of an <see cref="Item"/>,

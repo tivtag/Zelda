@@ -10,7 +10,7 @@
 
 namespace Zelda.Trading.Restocking
 {
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Implements an <see cref="IRestocker"/> that sets

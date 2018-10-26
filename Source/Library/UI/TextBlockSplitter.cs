@@ -12,7 +12,7 @@ namespace Zelda.UI
     using Atom.Xna;
     using Atom.Xna.Fonts;
     using Microsoft.Xna.Framework.Graphics;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// Defines a <see cref="Atom.Xna.UI.ITextBlockSplitter"/> that splits text 

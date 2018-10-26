@@ -11,7 +11,7 @@
 namespace Zelda.Editor.Object
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Linq;
     using Atom;
     using Atom.Math;

@@ -11,7 +11,7 @@
 namespace Zelda.UI.Items
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom.Xna.UI.Tooltips;
 
     /// <summary>

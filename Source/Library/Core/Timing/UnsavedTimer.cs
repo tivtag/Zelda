@@ -7,7 +7,7 @@
 namespace Zelda.Timing
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Zelda.Saving;
     
     /// <summary>

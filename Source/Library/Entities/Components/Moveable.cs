@@ -11,7 +11,7 @@
 namespace Zelda.Entities.Components
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom;
     using Atom.Components;
     using Atom.Math;

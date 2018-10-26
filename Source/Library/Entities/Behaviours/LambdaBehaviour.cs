@@ -1,7 +1,7 @@
 ﻿namespace Zelda.Entities.Behaviours
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Zelda.Saving.Storage;
 
     public sealed class LambdaBehaviour<TEntity> : IEntityBehaviour

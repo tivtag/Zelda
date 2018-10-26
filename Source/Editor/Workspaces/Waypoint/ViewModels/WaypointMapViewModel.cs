@@ -13,7 +13,7 @@ namespace Zelda.Editor.Waypoint
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Linq;
     using System.Windows.Data;
     using Atom.Math;

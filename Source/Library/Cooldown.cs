@@ -12,7 +12,7 @@ namespace Zelda
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Globalization;
 
     /// <summary>

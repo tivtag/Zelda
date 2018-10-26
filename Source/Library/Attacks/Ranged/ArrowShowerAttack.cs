@@ -9,7 +9,7 @@
 namespace Zelda.Attacks.Ranged
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom.Math;
     using Zelda.Entities.Drawing;
     using Zelda.Talents.Ranged;

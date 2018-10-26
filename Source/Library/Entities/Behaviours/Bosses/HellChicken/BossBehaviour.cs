@@ -9,7 +9,7 @@
 namespace Zelda.Entities.Behaviours.Bosses.HellChicken
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Zelda.Events;
     using Microsoft.Xna.Framework;
 

@@ -8,7 +8,7 @@ namespace Zelda.Saving
 {
     using System.Diagnostics;
     using Zelda.GameStates;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System;
     
     /// <summary>

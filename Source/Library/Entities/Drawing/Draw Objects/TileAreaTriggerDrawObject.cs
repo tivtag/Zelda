@@ -11,7 +11,7 @@
 namespace Zelda.Entities
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom;
     using Atom.Events;
     using Microsoft.Xna.Framework;

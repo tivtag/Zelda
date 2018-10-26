@@ -12,7 +12,7 @@ namespace Zelda.Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom;
     using Atom.Math;
     using Zelda.Attacks;

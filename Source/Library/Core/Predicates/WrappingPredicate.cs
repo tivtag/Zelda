@@ -11,7 +11,7 @@
 namespace Zelda.Core.Predicates
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     
     /// <summary>
     /// Represents an IPredicate{T} that wraps around another IPredicate{T}.

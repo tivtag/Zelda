@@ -10,7 +10,7 @@ namespace Zelda.Entities.Behaviours
 {
     using System;
     using System.Diagnostics;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom;
     using Atom.Events;
     using Atom.Math;

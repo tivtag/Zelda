@@ -3,7 +3,7 @@ namespace Zelda.Editor.Design
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom.Design;
     using Zelda.Design;
     using Zelda.Entities;

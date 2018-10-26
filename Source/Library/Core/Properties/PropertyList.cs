@@ -9,7 +9,7 @@
 namespace Zelda.Core.Properties
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Linq;
     using Atom.Collections;
     using Zelda.Saving;

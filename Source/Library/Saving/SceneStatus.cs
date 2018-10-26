@@ -12,7 +12,7 @@ namespace Zelda.Saving
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using System.Linq;
     using Zelda.Entities;
     using Zelda.Saving.Storage;

@@ -13,7 +13,7 @@ namespace Zelda
     using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.Contracts;
+using Atom.Diagnostics.Contracts;
 using Atom.Math;
 using Atom.Scene;
 using Atom.Xna;

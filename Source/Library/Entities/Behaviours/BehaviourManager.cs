@@ -10,7 +10,7 @@ namespace Zelda.Entities.Behaviours
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
 
     /// <summary>
     /// The <see cref="BehaviourManager"/> manages the creation of <see cref="IEntityBehaviour"/>s.

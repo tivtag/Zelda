@@ -11,7 +11,7 @@
 namespace Zelda.Core.Controls
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Microsoft.Xna.Framework.Input;
     using Zelda.Entities;
     using Zelda.Entities.Drawing;

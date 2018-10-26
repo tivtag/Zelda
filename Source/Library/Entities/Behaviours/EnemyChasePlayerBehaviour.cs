@@ -9,7 +9,7 @@
 namespace Zelda.Entities.Behaviours
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom.Math;
     using Atom.Scene.Tiles;
     using Zelda.Entities.Components;

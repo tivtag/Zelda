@@ -11,7 +11,7 @@
 namespace Zelda.Attacks.HitEffects
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Zelda.Status;
     using Zelda.Status.Auras;
 

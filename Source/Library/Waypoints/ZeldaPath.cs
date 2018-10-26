@@ -11,7 +11,7 @@
 namespace Zelda.Waypoints
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using Atom.Diagnostics.Contracts;
     using Atom;
     using Atom.Waypoints;
 
