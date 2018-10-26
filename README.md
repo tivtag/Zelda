@@ -39,17 +39,14 @@ The game currenly contains:
 
 ## Requirements
 The game requires you to have a graphics card/integrated graphics that supports atleast pixel shader 2.0.
-Besides that the game requires you to install the Microsoft .NET Framework 4.6.1.
+Besides that the game requires you to install the Microsoft .NET Framework 4.7.2
 
 ## Download
 Game Download: http://paul.ennemoser.com/files/zelda/TLoZ%20-%20Black%20Crown.zip
 
-Microsoft .NET Framework 4.6.1: https://www.microsoft.com/en-us/download/details.aspx?id=49981
+Microsoft .NET Framework 4.7.2: https://www.microsoft.com/net/download/dotnet-framework-runtime
 
 ## Related Source Code
 Atom Framework: https://github.com/tivtag/Atom
 
 Atom Sprite Tools: https://github.com/tivtag/Atom.Tools
-
-## Remarks
-The audio files are not included in the github release.
