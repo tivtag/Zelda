@@ -16,6 +16,7 @@ SourceAnalysis.Cache
 *.lastcodeanalysissucceeded
 *.vspx
 *.cachefile
+.vs
 
 Compiled/Release/*.dll
 Compiled/Release/*.exe
