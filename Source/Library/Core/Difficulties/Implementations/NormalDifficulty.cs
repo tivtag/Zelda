@@ -53,7 +53,7 @@ namespace Zelda.Difficulties
                 new DamageDoneWithSourceEffect( 15.0f, StatusManipType.Percental, DamageSource.All ),
                 new ChanceToBeStatusEffect( 1.0f, StatusManipType.Fixed, ChanceToStatus.Miss ),
                 new ChanceToResistEffect( 1.0f, StatusManipType.Fixed, ElementalSchool.All ),
-                new MovementSpeedEffect( 20.0f, StatusManipType.Percental ),
+                new MovementSpeedEffect( 26.0f, StatusManipType.Percental ),
                 new ArmorEffect( 5.0f, StatusManipType.Percental )
             };
         }

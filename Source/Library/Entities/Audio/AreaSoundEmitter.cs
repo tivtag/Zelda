@@ -140,7 +140,6 @@ namespace Zelda.Entities
         protected override void LoadSound( Sound sound )
         {
             var mode =
-                Atom.Fmod.Native.MODE.SOFTWARE |
                 Atom.Fmod.Native.MODE.LOOP_NORMAL;
 
             sound.LoadAsSample( mode );

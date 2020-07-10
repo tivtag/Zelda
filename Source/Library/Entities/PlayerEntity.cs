@@ -377,7 +377,7 @@ namespace Zelda.Entities
         {
             this.profile = profile;
 
-            const float BaseMovementSpeed = 58.6f;
+            const float BaseMovementSpeed = 62.0f;
 
             // Create additional components:
             this.moveable = new Moveable() {

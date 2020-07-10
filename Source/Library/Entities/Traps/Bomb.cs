@@ -16,7 +16,6 @@ namespace Zelda.Entities
     using Atom.Xna;
     using Zelda.Attacks;
     using Zelda.Entities.Components;
-    using Zelda.Audio;
     using Zelda.Status;
 
     public sealed class BombAudio
@@ -27,12 +26,19 @@ namespace Zelda.Entities
             this.bombExplosionSoundB = audioSystem.GetSample( "Bomb_Blow_2.ogg" );
 
             var mode =
-                Atom.Fmod.Native.MODE.SOFTWARE |
                 Atom.Fmod.Native.MODE._3D |
                 Atom.Fmod.Native.MODE._3D_LINEARROLLOFF;
 
-            this.bombExplosionSoundA.Load( mode );
-            this.bombExplosionSoundB.Load( mode );
+            if( bombExplosionSoundA != null )
+            {
+                this.bombExplosionSoundA.Load( mode );
+            }
+
+            if( bombExplosionSoundB != null )
+            {
+                this.bombExplosionSoundB.Load( mode );
+            }
+
             this.rand = rand;
         }
 
@@ -236,7 +242,10 @@ namespace Zelda.Entities
         /// </param>
         private void PlayExplosionSound( Vector2 explosionCenter )
         {
-            this.explosionSound.PlayAt( explosionCenter, new FloatRange( 16.0f, this.explosionRadius * 10.0f ) );
+            if( explosionSound != null )
+            {
+                this.explosionSound.PlayAt( explosionCenter, new FloatRange( 16.0f, this.explosionRadius * 10.0f ) );
+            }
         }
 
         /// <summary>

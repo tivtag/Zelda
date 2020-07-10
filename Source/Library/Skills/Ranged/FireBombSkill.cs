@@ -165,6 +165,8 @@ namespace Zelda.Skills.Ranged
         /// </summary>
         private int activeBombs;
 
+        private FireBombChainTalent chainTalent;
+
         /// <summary>
         /// The damage method used to calculate the damage of each bomb.
         /// </summary>
@@ -179,6 +181,5 @@ namespace Zelda.Skills.Ranged
         /// The sound to play when a bomb explodes.
         /// </summary>
         private readonly BombAudio bombAudio;
-        private FireBombChainTalent chainTalent;
     }
 }

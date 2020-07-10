@@ -26,7 +26,7 @@ namespace Zelda.Audio
         /// <summary>
         /// Fired when the currently playing background music has changed.
         /// </summary>
-        public event Atom.RelaxedEventHandler<Channel> Changed;
+        public event Atom.RelaxedEventHandler<Atom.Fmod.Channel> Changed;
 
         /// <summary>
         /// Gets or sets the current mode of this BackgroundMusicComponent.
@@ -109,7 +109,7 @@ namespace Zelda.Audio
         /// <summary>
         /// Gets the <see cref="ChannelGroup"/> all background music runs under.
         /// </summary>
-        public ChannelGroup ChannelGroup
+        public Atom.Fmod.ChannelGroup ChannelGroup
         {
             get
             {
@@ -151,7 +151,7 @@ namespace Zelda.Audio
         {
             if( audioSystem.IsInitialized )
             {
-                this.channelGroup = new ChannelGroup( "Background Music", audioSystem );
+                this.channelGroup = new Atom.Fmod.ChannelGroup( "Background Music", audioSystem );
                 this.audioSystem.MasterChannelGroup.AddChildGroup( this.channelGroup );
             }
 
@@ -271,7 +271,7 @@ namespace Zelda.Audio
         /// <param name="music">
         /// The music to change to. (Must be loaden!)
         /// </param>
-        public void ChangeTo( Sound music )
+        public void ChangeTo( Atom.Fmod.Sound music )
         {
             Contract.Requires<ArgumentNullException>( music != null );
 
@@ -290,12 +290,12 @@ namespace Zelda.Audio
         /// <param name="music">
         /// The music to change to. (Must be loaden!)
         /// </param>
-        private void RequestChangeTo( Sound music )
+        private void RequestChangeTo( Atom.Fmod.Sound music )
         {
             this.requestedChangeTo = music;
         }
 
-        private void ChangeToImpl( Sound music )
+        private void ChangeToImpl( Atom.Fmod.Sound music )
         {
             if( this.current == null || !this.currentChannel.IsPlaying )
             {
@@ -434,13 +434,13 @@ namespace Zelda.Audio
         /// <returns>
         /// The music that has been selected.
         /// </returns>
-        private Sound SelectRandomMusic()
+        private Atom.Fmod.Sound SelectRandomMusic()
         {
             BackgroundMusic music = this.ActuallySelectRandomMusic();
             if( music == null )
                 return null;
 
-            Sound musicResource = audioSystem.GetMusic( music.FileName );
+            Atom.Fmod.Sound musicResource = audioSystem.GetMusic( music.FileName );
 
             if( musicResource != null )
             {
@@ -493,7 +493,7 @@ namespace Zelda.Audio
         /// <param name="sender">
         /// The sender of the event.
         /// </param>
-        private void OnCurrentChannel_Ended( Channel sender )
+        private void OnCurrentChannel_Ended( Atom.Fmod.Channel sender )
         {
             if( this.next == null )
                 this.FindNext();
@@ -524,17 +524,17 @@ namespace Zelda.Audio
         /// <summary>
         /// Identifies the currently playing background music.
         /// </summary>
-        private Sound current;
+        private Atom.Fmod.Sound current;
 
         /// <summary>
         /// Identifies the channel the current background music is playing on.
         /// </summary>
-        private Channel currentChannel;
+        private Atom.Fmod.Channel currentChannel;
 
         /// <summary>
         /// The next music to play.
         /// </summary>
-        private Sound next;
+        private Atom.Fmod.Sound next;
 
         /// <summary>
         /// The current BackgroundMusicMode.
@@ -569,12 +569,12 @@ namespace Zelda.Audio
         /// <summary>
         /// The sound to which a change request has been noted. Change requests are progressed once per frame.
         /// </summary>
-        private Sound requestedChangeTo;
+        private Atom.Fmod.Sound requestedChangeTo;
 
         /// <summary>
         /// Idenfities the ChannelGroup under which the background music is grouped. 
         /// </summary>
-        private ChannelGroup channelGroup;
+        private Atom.Fmod.ChannelGroup channelGroup;
 
         /// <summary>
         /// Provides access to the current ingame state.

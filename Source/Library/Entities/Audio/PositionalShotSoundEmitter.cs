@@ -86,8 +86,6 @@ namespace Zelda.Entities
         protected override void LoadSound( Sound sound )
         {
             var mode =
-                Atom.Fmod.Native.MODE.SOFTWARE |
-                Atom.Fmod.Native.MODE._3D |
                 Atom.Fmod.Native.MODE._3D_LINEARROLLOFF;
             sound.LoadAsSample( mode );
         }
@@ -104,7 +102,9 @@ namespace Zelda.Entities
 
             channel.Set3DAttributes( this.Transform.X, this.Transform.Y );
             channel.Set3DMinMaxDistance( this.minimumDistance, this.maximumDistance );
-            channel.PanLevel3D = this.PanLevel3D;
+
+            // TODO
+            //// channel.PanLevel3D = this.PanLevel3D;
         }
         
         /// <summary>

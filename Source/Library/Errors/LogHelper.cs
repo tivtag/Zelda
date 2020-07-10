@@ -100,7 +100,7 @@ namespace Zelda
             sb.Append( audioSystem.AudioDriverName );
 
             sb.AppendLine();
-            sb.Append( "   FModEx Version: " );
+            sb.Append( "   FMod Version: " );
             sb.Append( audioSystem.NativeVersion );
 
             sb.AppendLine();

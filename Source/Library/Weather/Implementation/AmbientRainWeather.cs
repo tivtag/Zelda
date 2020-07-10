@@ -134,7 +134,6 @@ namespace Zelda.Weather
             {
                 var mode = Atom.Fmod.Native.MODE._3D_LINEARROLLOFF |
                            Atom.Fmod.Native.MODE.CREATESAMPLE |
-                           Atom.Fmod.Native.MODE.SOFTWARE |
                            Atom.Fmod.Native.MODE.LOOP_OFF;
                 try
                 {

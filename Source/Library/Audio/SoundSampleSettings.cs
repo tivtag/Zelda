@@ -124,8 +124,7 @@ namespace Zelda.Audio
             
             if( this.sound != null )
             {
-                var mode = 
-                    Atom.Fmod.Native.MODE.SOFTWARE | 
+                var mode =
                     Atom.Fmod.Native.MODE._3D |
                     Atom.Fmod.Native.MODE._3D_LINEARROLLOFF;
 

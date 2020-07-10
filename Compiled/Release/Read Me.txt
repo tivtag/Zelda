@@ -3,7 +3,7 @@ The Legend of Zelda - Black Crown
 *********************************
 Welcome to TLoZ - BC!
 
-1. Install the Microsoft .NET Framework 4.6.1: https://www.microsoft.com/en-us/download/details.aspx?id=49981
+1. Install the Microsoft .NET Framework 4.8: https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer
 2. Download the latest patch after installing the game by using the "Zelda Updater.exe".
 3. Start the game using "TLoZ - Black Crown.exe"
 4. Don't forget to read Controls.txt

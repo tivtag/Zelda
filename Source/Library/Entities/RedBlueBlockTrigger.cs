@@ -122,7 +122,7 @@ namespace Zelda.Entities
                 this.SpriteOff = serviceProvider.SpriteLoader.LoadSprite( "Trigger_Round_Blue" );
 
             this.audio = serviceProvider.AudioSystem.GetSample( "TrapDoor.wav" );
-            audio.LoadAsSample( MODE._3D | MODE.CREATESAMPLE | MODE.SOFTWARE );
+            audio.LoadAsSample( MODE._3D | MODE.CREATESAMPLE );
         }
 
         #endregion
@@ -222,7 +222,7 @@ namespace Zelda.Entities
         /// </summary>
         private void PlaySoundEffect()
         {
-            Channel channel = this.audio.Play( true );
+            Atom.Fmod.Channel channel = this.audio.Play( true );
             channel.Set3DAttributes( this.Collision.Center.X, this.Collision.Center.Y );
             channel.Set3DMinMaxDistance( 16, 56 );
             channel.Unpause();
@@ -259,7 +259,7 @@ namespace Zelda.Entities
         /// <summary>
         /// The audio sample that is played when triggered.
         /// </summary>
-        private Sound audio;
+        private Atom.Fmod.Sound audio;
 
         /// <summary>
         /// Identifies the Components.Attackable component of this RedBlueBlockTrigger.

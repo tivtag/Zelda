@@ -638,38 +638,38 @@ namespace Zelda.GameStates
                     TakeScreenshot();
                 }
 
-                //if( key == Keys.F3 && oldKeyState.IsKeyUp( Keys.F3 ) )
-                //{
-                //    // Shield_Quiver_Chicken
-                //    // Trinket_OfExploitivePower
-                //    // Weapon_Dagger_Crystal
-                //    // Relic_MysticalShell
-                //    // Shield_Quiver_Chicken" + game.Rand.RandomRange( 1, 7 ) Sword_Claymore
-                //    {
-                //        string[] items = new string[] {
-                //            "Misc_Herb_Sticky",
-                //        };
+                ////if( key == Keys.F3 && oldKeyState.IsKeyUp( Keys.F3 ) )
+                ////{
+                ////    // Shield_Quiver_Chicken
+                ////    // Trinket_OfExploitivePower
+                ////    // Weapon_Dagger_Crystal
+                ////    // Relic_MysticalShell
+                ////    // Shield_Quiver_Chicken" + game.Rand.RandomRange( 1, 7 ) Sword_Claymore
+                ////    {
+                ////        string[] items = new string[] {
+                ////            "Misc_Herb_Sticky",
+                ////        };
 
-                //        foreach( var itemName in items )
-                //        {
-                //            var item = game.ItemManager.Get( itemName );
-                //            if( item.DropRequirement != null && !item.DropRequirement.IsFulfilledBy( player ) )
-                //            {
-                //                // throw new InvalidOperationException();
-                //            }
+                ////        foreach( var itemName in items )
+                ////        {
+                ////            var item = game.ItemManager.Get( itemName );
+                ////            if( item.DropRequirement != null && !item.DropRequirement.IsFulfilledBy( player ) )
+                ////            {
+                ////                // throw new InvalidOperationException();
+                ////            }
 
-                //            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
-                //            mapItem.Transform.Position = player.Transform.Position;
-                //            mapItem.ItemInstance.Count = item.StackSize > 0 ? 1 : 0;
-                //            scene.Add( mapItem );
-                //        }
-                //    }
-                //}
+                ////            var mapItem = new MapItem( Zelda.Items.ItemCreationHelper.Create( item, game.Rand ) );
+                ////            mapItem.Transform.Position = player.Transform.Position;
+                ////            mapItem.ItemInstance.Count = item.StackSize > 0 ? 1 : 0;
+                ////            scene.Add( mapItem );
+                ////        }
+                ////    }
+                ////}
 
-                //if( key == Keys.F4 && oldKeyState.IsKeyUp( Keys.F4 ) )
-                //{
-                //    player.Statable.AddExperience( 50000 );
-                //}
+                ////if( key == Keys.F4 && oldKeyState.IsKeyUp( Keys.F4 ) )
+                ////{
+                ////    player.Statable.AddExperience( 50000 );
+                ////}
             }
 
             //switch( key )

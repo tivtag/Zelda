@@ -8,17 +8,19 @@
 //     Paul Ennemoser (Tick)
 // </author>
 
+using Zelda.Status;
+
 namespace Zelda.Difficulties
 {
     /// <summary>
     /// Represents the easiest IDifficulty of the game.
     /// </summary>
-    public sealed class EasyDifficulty : IDifficulty
+    public sealed class EasyDifficulty : BaseDifficulty
     {
         /// <summary>
         /// Gets the ID that uniquely identifies this IDifficulty.
         /// </summary>
-        public DifficultyId Id 
+        public override DifficultyId Id 
         {
             get
             {
@@ -29,34 +31,25 @@ namespace Zelda.Difficulties
         /// <summary>
         /// Gets the (localized) name of this IDifficulty.
         /// </summary>
-        public string Name
+        public override string Name
         {
             get 
             {
                 return Resources.Easy;
             }
         }
-
+        
         /// <summary>
-        /// Applies this IDifficulty to the specified Enemy.
+        /// Creates the StatusValueEffects that are applied to enemies.
         /// </summary>
-        /// <param name="enemy">
-        /// The enemy to apply this IDifficulty on.
-        /// </param>
-        public void ApplyOn( Entities.Enemy enemy )
+        /// <returns>
+        /// The newly created StatusValueEffects.
+        /// </returns>
+        protected override StatusValueEffect[] CreateStatusEffects()
         {
-            // no op.
-        }
-
-        /// <summary>
-        /// Called when this IDifficulty has been choosen or given up.
-        /// </summary>
-        /// <param name="changeType">
-        /// States whether this IDifficulty has been choosen or given up.
-        /// </param>
-        public void OnChange( ChangeType changeType )
-        {
-            // no op.
+            return new StatusValueEffect[] {
+                new MovementSpeedEffect( 10.0f, StatusManipType.Percental )
+            };
         }
     }
 }

@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Xna.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Xna.Wpf.HiddenXnaGame">
+            <summary>
+            Extends the Xna <see cref="T:Microsoft.Xna.Framework.Game"/> class to provide support for running
+            Xna silently, without a window, side-by-side with a WPF application.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.HiddenXnaGame.Graphics">
+            <summary>
+            Gets the <see cref="T:Microsoft.Xna.Framework.GraphicsDeviceManager"/> this HiddenXnaGame uses.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.HiddenXnaGame.#ctor">
+            <summary>
+            Initializes a new instance of the HiddenXnaGame class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.HiddenXnaGame.OnGraphicsPreparingDeviceSettings(System.Object,Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs)">
+            <summary>
+            Called when the Xna framework is preparing the GraphicsDevice.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The <see cref="T:Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.HiddenXnaGame.OnPreparingDeviceSettings(Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs)">
+            <summary>
+            Called when the Xna framework is preparing the GraphicsDevice.
+            </summary>
+            <param name="e">
+            The <see cref="T:Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.HiddenXnaGame.Initialize">
+            <summary>
+            Initializes this <see cref="T:Atom.Xna.Wpf.HiddenXnaGame"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.HiddenXnaGame.graphics">
+            <summary>
+            The Xna GraphicsDeviceManager object.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.TGAFormat">
+            <summary>
+            The Targa format of the file.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.TGAFormat.UNKNOWN">
+            <summary>
+            Unknown Targa Image format.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.TGAFormat.ORIGINAL_TGA">
+            <summary>
+            Original Targa Image format.
+            </summary>
+            <remarks>Targa Image does not have a Signature of ""TRUEVISION-XFILE"".</remarks>
+        </member>
+        <member name="F:Atom.Xna.Wpf.TGAFormat.NEW_TGA">
+            <summary>
+            New Targa Image format
+            </summary>
+            <remarks>Targa Image has a TargaFooter with a Signature of ""TRUEVISION-XFILE"".</remarks>
+        </member>
+        <member name="T:Atom.Xna.Wpf.ColorMapType">
+            <summary>
+            Indicates the type of color map, if any, included with the image file. 
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ColorMapType.NO_COLOR_MAP">
+            <summary>
+            No color map was included in the file.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ColorMapType.COLOR_MAP_INCLUDED">
+            <summary>
+            Color map was included in the file.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.ImageType">
+            <summary>
+            The type of image read from the file.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.NO_IMAGE_DATA">
+            <summary>
+            No image data was found in file.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.UNCOMPRESSED_COLOR_MAPPED">
+            <summary>
+            Image is an uncompressed, indexed color-mapped image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.UNCOMPRESSED_TRUE_COLOR">
+            <summary>
+            Image is an uncompressed, RGB image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.UNCOMPRESSED_BLACK_AND_WHITE">
+            <summary>
+            Image is an uncompressed, Greyscale image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.RUN_LENGTH_ENCODED_COLOR_MAPPED">
+            <summary>
+            Image is a compressed, indexed color-mapped image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.RUN_LENGTH_ENCODED_TRUE_COLOR">
+            <summary>
+            Image is a compressed, RGB image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.ImageType.RUN_LENGTH_ENCODED_BLACK_AND_WHITE">
+            <summary>
+            Image is a compressed, Greyscale image.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.VerticalTransferOrder">
+            <summary>
+            The top-to-bottom ordering in which pixel data is transferred from the file to the screen.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.VerticalTransferOrder.UNKNOWN">
+            <summary>
+            Unknown transfer order.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.VerticalTransferOrder.BOTTOM">
+            <summary>
+            Transfer order of pixels is from the bottom to top.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.VerticalTransferOrder.TOP">
+            <summary>
+            Transfer order of pixels is from the top to bottom.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.HorizontalTransferOrder">
+            <summary>
+            The left-to-right ordering in which pixel data is transferred from the file to the screen.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.HorizontalTransferOrder.UNKNOWN">
+            <summary>
+            Unknown transfer order.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.HorizontalTransferOrder.RIGHT">
+            <summary>
+            Transfer order of pixels is from the right to left.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.HorizontalTransferOrder.LEFT">
+            <summary>
+            Transfer order of pixels is from the left to right.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.FirstPixelDestination">
+            <summary>
+            Screen destination of first pixel based on the VerticalTransferOrder and HorizontalTransferOrder.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.FirstPixelDestination.UNKNOWN">
+            <summary>
+            Unknown first pixel destination.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.FirstPixelDestination.TOP_LEFT">
+            <summary>
+            First pixel destination is the top-left corner of the image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.FirstPixelDestination.TOP_RIGHT">
+            <summary>
+            First pixel destination is the top-right corner of the image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.FirstPixelDestination.BOTTOM_LEFT">
+            <summary>
+            First pixel destination is the bottom-left corner of the image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.FirstPixelDestination.BOTTOM_RIGHT">
+            <summary>
+            First pixel destination is the bottom-right corner of the image.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.RLEPacketType">
+            <summary>
+            The RLE packet type used in a RLE compressed image.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.RLEPacketType.RAW">
+            <summary>
+            A raw RLE packet type.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.RLEPacketType.RUN_LENGTH">
+            <summary>
+            A run-length RLE packet type.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.TargaImage">
+            <summary>
+            Reads and loads a Truevision TGA Format image file.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.#ctor">
+            <summary>
+            Creates a new instance of the TargaImage object.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Header">
+            <summary>
+            Gets a TargaHeader object that holds the Targa Header information of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.ExtensionArea">
+            <summary>
+            Gets a TargaExtensionArea object that holds the Targa Extension Area information of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Footer">
+            <summary>
+            Gets a TargaExtensionArea object that holds the Targa Footer information of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Format">
+            <summary>
+            Gets the Targa format of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Image">
+            <summary>
+            Gets a Bitmap representation of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Thumbnail">
+            <summary>
+            Gets the thumbnail of the loaded file if there is one in the file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.FileName">
+            <summary>
+            Gets the full path and filename of the loaded file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Stride">
+            <summary>
+            Gets the byte offset between the beginning of one scan line and the next. Used when loading the image into the Image Bitmap.
+            </summary>
+            <remarks>
+            The memory allocated for Microsoft Bitmaps must be aligned on a 32bit boundary.
+            The stride refers to the number of bytes allocated for one scanline of the bitmap.
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaImage.Padding">
+            <summary>
+            Gets the number of bytes used to pad each scan line to meet the Stride value. Used when loading the image into the Image Bitmap.
+            </summary>
+            <remarks>
+            The memory allocated for Microsoft Bitmaps must be aligned on a 32bit boundary.
+            The stride refers to the number of bytes allocated for one scanline of the bitmap.
+            In your loop, you copy the pixels one scanline at a time and take into 
+            consideration the amount of padding that occurs due to memory alignment.
+            </remarks>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the TargaImage object with strFileName as the image loaded.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadTGAFooterInfo(System.IO.BinaryReader)">
+            <summary>
+            Loads the Targa Footer information from the file.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadTGAHeaderInfo(System.IO.BinaryReader)">
+            <summary>
+            Loads the Targa Header information from the file.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadTGAExtensionArea(System.IO.BinaryReader)">
+            <summary>
+            Loads the Targa Extension Area from the file, if it exists.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadImageBytes(System.IO.BinaryReader)">
+            <summary>
+            Reads the image data bytes from the file. Handles Uncompressed and RLE Compressed image data. 
+            Uses FirstPixelDestination to properly align the image.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+            <returns>An array of bytes representing the image data in the proper alignment.</returns>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadTGAImage(System.IO.BinaryReader)">
+            <summary>
+            Reads the image data bytes from the file and loads them into the Image Bitmap object.
+            Also loads the color map, if any, into the Image Bitmap.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.Finalize">
+            <summary>
+            TargaImage deconstructor.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.GetPixelFormat">
+            <summary>
+            Gets the PixelFormat to be used by the Image based on the Targa file's attributes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadThumbnail(System.IO.BinaryReader,System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            Loads the thumbnail of the loaded image file, if any.
+            </summary>
+            <param name="binReader">A BinaryReader that points the loaded file byte stream.</param>
+            <param name="pfPixelFormat">A PixelFormat value indicating what pixel format to use when loading the thumbnail.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.ClearAll">
+            <summary>
+            Clears out all objects and resources.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.LoadTargaImage(System.String)">
+            <summary>
+            Loads a Targa image file into a Bitmap object.
+            </summary>
+            <param name="sFileName">The Targa image filename</param>
+            <returns>A Bitmap object with the Targa image loaded into it.</returns>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.Dispose">
+            <summary>
+            Disposes all resources used by this instance of the TargaImage class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaImage.Dispose(System.Boolean)">
+            <summary>
+            Dispose(bool disposing) executes in two distinct scenarios.
+            If disposing equals true, the method has been called directly
+            or indirectly by a user's code. Managed and unmanaged resources
+            can be disposed.
+            If disposing equals false, the method has been called by the 
+            runtime from inside the finalizer and you should not reference 
+            other objects. Only unmanaged resources can be disposed.
+            </summary>
+            <param name="disposing">If true dispose all resources, else dispose only release unmanaged resources.</param>
+        </member>
+        <member name="T:Atom.Xna.Wpf.TargaHeader">
+            <summary>
+            This class holds all of the header properties of a Targa image. 
+            This includes the TGA File Header section the ImageID and the Color Map.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ImageIDLength">
+            <summary>
+            Gets the number of bytes contained the ImageIDValue property. The maximum
+            number of characters is 255. A value of zero indicates that no ImageIDValue is included with the
+            image.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetImageIDLength(System.Byte)">
+            <summary>
+            Sets the ImageIDLength property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="bImageIDLength">The Image ID Length value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ColorMapType">
+            <summary>
+            Gets the type of color map (if any) included with the image. There are currently 2
+            defined values for this field:
+            NO_COLOR_MAP - indicates that no color-map data is included with this image.
+            COLOR_MAP_INCLUDED - indicates that a color-map is included with this image.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetColorMapType(Atom.Xna.Wpf.ColorMapType)">
+            <summary>
+            Sets the ColorMapType property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="eColorMapType">One of the ColorMapType enumeration values.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ImageType">
+            <summary>
+            Gets one of the ImageType enumeration values indicating the type of Targa image read from the file.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetImageType(Atom.Xna.Wpf.ImageType)">
+            <summary>
+            Sets the ImageType property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="eImageType">One of the ImageType enumeration values.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ColorMapFirstEntryIndex">
+            <summary>
+            Gets the index of the first color map entry. ColorMapFirstEntryIndex refers to the starting entry in loading the color map.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetColorMapFirstEntryIndex(System.Int16)">
+            <summary>
+            Sets the ColorMapFirstEntryIndex property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sColorMapFirstEntryIndex">The First Entry Index value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ColorMapLength">
+            <summary>
+            Gets total number of color map entries included.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetColorMapLength(System.Int16)">
+            <summary>
+            Sets the ColorMapLength property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sColorMapLength">The Color Map Length value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ColorMapEntrySize">
+            <summary>
+            Gets the number of bits per entry in the Color Map. Typically 15, 16, 24 or 32-bit values are used.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetColorMapEntrySize(System.Byte)">
+            <summary>
+            Sets the ColorMapEntrySize property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="bColorMapEntrySize">The Color Map Entry Size value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.XOrigin">
+            <summary>
+            Gets the absolute horizontal coordinate for the lower
+            left corner of the image as it is positioned on a display device having
+            an origin at the lower left of the screen (e.g., the TARGA series).
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetXOrigin(System.Int16)">
+            <summary>
+            Sets the XOrigin property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sXOrigin">The X Origin value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.YOrigin">
+            <summary>
+            These bytes specify the absolute vertical coordinate for the lower left
+            corner of the image as it is positioned on a display device having an
+            origin at the lower left of the screen (e.g., the TARGA series).
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetYOrigin(System.Int16)">
+            <summary>
+            Sets the YOrigin property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sYOrigin">The Y Origin value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.Width">
+            <summary>
+            Gets the width of the image in pixels.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetWidth(System.Int16)">
+            <summary>
+            Sets the Width property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sWidth">The Width value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.Height">
+            <summary>
+            Gets the height of the image in pixels.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetHeight(System.Int16)">
+            <summary>
+            Sets the Height property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="sHeight">The Height value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.PixelDepth">
+            <summary>
+            Gets the number of bits per pixel. This number includes
+            the Attribute or Alpha channel bits. Common values are 8, 16, 24 and 32.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetPixelDepth(System.Byte)">
+            <summary>
+            Sets the PixelDepth property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="bPixelDepth">The Pixel Depth value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ImageDescriptor">
+            <summary>
+            Gets or Sets the ImageDescriptor property. The ImageDescriptor is the byte that holds the 
+            Image Origin and Attribute Bits values.
+            Available only to objects in the same assembly as TargaHeader.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.FirstPixelDestination">
+            <summary>
+            Gets one of the FirstPixelDestination enumeration values specifying the screen destination of first pixel based on VerticalTransferOrder and HorizontalTransferOrder
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.VerticalTransferOrder">
+            <summary>
+            Gets one of the VerticalTransferOrder enumeration values specifying the top-to-bottom ordering in which pixel data is transferred from the file to the screen.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetVerticalTransferOrder(Atom.Xna.Wpf.VerticalTransferOrder)">
+            <summary>
+            Sets the VerticalTransferOrder property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="eVerticalTransferOrder">One of the VerticalTransferOrder enumeration values.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.HorizontalTransferOrder">
+            <summary>
+            Gets one of the HorizontalTransferOrder enumeration values specifying the left-to-right ordering in which pixel data is transferred from the file to the screen.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetHorizontalTransferOrder(Atom.Xna.Wpf.HorizontalTransferOrder)">
+            <summary>
+            Sets the HorizontalTransferOrder property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="eHorizontalTransferOrder">One of the HorizontalTransferOrder enumeration values.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.AttributeBits">
+            <summary>
+            Gets the number of attribute bits per pixel.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetAttributeBits(System.Byte)">
+            <summary>
+            Sets the AttributeBits property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="bAttributeBits">The Attribute Bits value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ImageIDValue">
+            <summary>
+            Gets identifying information about the image. 
+            A value of zero in ImageIDLength indicates that no ImageIDValue is included with the image.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaHeader.SetImageIDValue(System.String)">
+            <summary>
+            Sets the ImageIDValue property, available only to objects in the same assembly as TargaHeader.
+            </summary>
+            <param name="strImageIDValue">The Image ID value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ColorMap">
+            <summary>
+            Gets the Color Map of the image, if any. The Color Map is represented by a list of System.Drawing.Color objects.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.ImageDataOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the Image Data.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaHeader.BytesPerPixel">
+            <summary>
+            Gets the number of bytes per pixel.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.TargaFooter">
+            <summary>
+            Holds Footer infomation read from the image file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaFooter.ExtensionAreaOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the start of the Extension Area. 
+            If the ExtensionAreaOffset is zero, no Extension Area exists in the file.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaFooter.SetExtensionAreaOffset(System.Int32)">
+            <summary>
+            Sets the ExtensionAreaOffset property, available only to objects in the same assembly as TargaFooter.
+            </summary>
+            <param name="intExtensionAreaOffset">The Extension Area Offset value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaFooter.DeveloperDirectoryOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the start of the Developer Area.
+            If the DeveloperDirectoryOffset is zero, then the Developer Area does not exist
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaFooter.SetDeveloperDirectoryOffset(System.Int32)">
+            <summary>
+            Sets the DeveloperDirectoryOffset property, available only to objects in the same assembly as TargaFooter.
+            </summary>
+            <param name="intDeveloperDirectoryOffset">The Developer Directory Offset value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaFooter.Signature">
+            <summary>
+            This string is formatted exactly as "TRUEVISION-XFILE" (no quotes). If the
+            signature is detected, the file is assumed to be a New TGA format and MAY,
+            therefore, contain the Developer Area and/or the Extension Areas. If the
+            signature is not found, then the file is assumed to be an Original TGA format.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaFooter.SetSignature(System.String)">
+            <summary>
+            Sets the Signature property, available only to objects in the same assembly as TargaFooter.
+            </summary>
+            <param name="strSignature">The Signature value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaFooter.ReservedCharacter">
+            <summary>
+            A New Targa format reserved character "." (period)
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaFooter.SetReservedCharacter(System.String)">
+            <summary>
+            Sets the ReservedCharacter property, available only to objects in the same assembly as TargaFooter.
+            </summary>
+            <param name="strReservedCharacter">The ReservedCharacter value read from the file.</param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaFooter.#ctor">
+            <summary>
+            Creates a new instance of the TargaFooter class.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.TargaExtensionArea">
+            <summary>
+            This class holds all of the Extension Area properties of the Targa image. If an Extension Area exists in the file.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.ExtensionSize">
+            <summary>
+            Gets the number of Bytes in the fixed-length portion of the ExtensionArea. 
+            For Version 2.0 of the TGA File Format, this number should be set to 495
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetExtensionSize(System.Int32)">
+            <summary>
+            Sets the ExtensionSize property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intExtensionSize">The Extension Size value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.AuthorName">
+            <summary>
+            Gets the name of the person who created the image.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetAuthorName(System.String)">
+            <summary>
+            Sets the AuthorName property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="strAuthorName">The Author Name value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.AuthorComments">
+            <summary>
+            Gets the comments from the author who created the image.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetAuthorComments(System.String)">
+            <summary>
+            Sets the AuthorComments property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="strAuthorComments">The Author Comments value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.DateTimeStamp">
+            <summary>
+            Gets the date and time that the image was saved.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetDateTimeStamp(System.DateTime)">
+            <summary>
+            Sets the DateTimeStamp property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="dtDateTimeStamp">The Date Time Stamp value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.JobName">
+            <summary>
+            Gets the name or id tag which refers to the job with which the image was associated.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetJobName(System.String)">
+            <summary>
+            Sets the JobName property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="strJobName">The Job Name value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.JobTime">
+            <summary>
+            Gets the job elapsed time when the image was saved.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetJobTime(System.TimeSpan)">
+            <summary>
+            Sets the JobTime property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="dtJobTime">The Job Time value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.SoftwareID">
+            <summary>
+            Gets the Software ID. Usually used to determine and record with what program a particular image was created.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetSoftwareID(System.String)">
+            <summary>
+            Sets the SoftwareID property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="strSoftwareID">The Software ID value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.SoftwareVersion">
+            <summary>
+            Gets the version of software defined by the SoftwareID.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetSoftwareVersion(System.String)">
+            <summary>
+            Sets the SoftwareVersion property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="strSoftwareVersion">The Software Version value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.KeyColor">
+            <summary>
+            Gets the key color in effect at the time the image is saved.
+            The Key Color can be thought of as the "background color" or "transparent color".
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetKeyColor(System.Drawing.Color)">
+            <summary>
+            Sets the KeyColor property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="cKeyColor">The Key Color value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.PixelAspectRatioNumerator">
+            <summary>
+            Gets the Pixel Ratio Numerator.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetPixelAspectRatioNumerator(System.Int32)">
+            <summary>
+            Sets the PixelAspectRatioNumerator property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intPixelAspectRatioNumerator">The Pixel Aspect Ratio Numerator value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.PixelAspectRatioDenominator">
+            <summary>
+            Gets the Pixel Ratio Denominator.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetPixelAspectRatioDenominator(System.Int32)">
+            <summary>
+            Sets the PixelAspectRatioDenominator property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intPixelAspectRatioDenominator">The Pixel Aspect Ratio Denominator value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.PixelAspectRatio">
+            <summary>
+            Gets the Pixel Aspect Ratio.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.GammaNumerator">
+            <summary>
+            Gets the Gamma Numerator.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetGammaNumerator(System.Int32)">
+            <summary>
+            Sets the GammaNumerator property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intGammaNumerator">The Gamma Numerator value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.GammaDenominator">
+            <summary>
+            Gets the Gamma Denominator.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetGammaDenominator(System.Int32)">
+            <summary>
+            Sets the GammaDenominator property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intGammaDenominator">The Gamma Denominator value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.GammaRatio">
+            <summary>
+            Gets the Gamma Ratio.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.ColorCorrectionOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the start of the Color Correction table.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetColorCorrectionOffset(System.Int32)">
+            <summary>
+            Sets the ColorCorrectionOffset property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intColorCorrectionOffset">The Color Correction Offset value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.PostageStampOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the start of the Postage Stamp image data.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetPostageStampOffset(System.Int32)">
+            <summary>
+            Sets the PostageStampOffset property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intPostageStampOffset">The Postage Stamp Offset value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.ScanLineOffset">
+            <summary>
+            Gets the offset from the beginning of the file to the start of the Scan Line table.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetScanLineOffset(System.Int32)">
+            <summary>
+            Sets the ScanLineOffset property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intScanLineOffset">The Scan Line Offset value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.AttributesType">
+            <summary>
+            Gets the type of Alpha channel data contained in the file.
+            0: No Alpha data included.
+            1: Undefined data in the Alpha field, can be ignored
+            2: Undefined data in the Alpha field, but should be retained
+            3: Useful Alpha channel data is present
+            4: Pre-multiplied Alpha (see description below)
+            5-127: RESERVED
+            128-255: Un-assigned
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.TargaExtensionArea.SetAttributesType(System.Int32)">
+            <summary>
+            Sets the AttributesType property, available only to objects in the same assembly as TargaExtensionArea.
+            </summary>
+            <param name="intAttributesType">The Attributes Type value read from the file.</param>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.ScanLineTable">
+            <summary>
+            Gets a list of offsets from the beginning of the file that point to the start of the next scan line, 
+            in the order that the image was saved 
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.TargaExtensionArea.ColorCorrectionTable">
+            <summary>
+            Gets a list of Colors where each Color value is the desired Color correction for that entry.
+            This allows the user to store a correction table for image remapping or LUT driving.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.Wpf.Utilities">
+            <summary>
+            Utilities functions used by the TargaImage class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.Utilities.GetBits(System.Byte,System.Int32,System.Int32)">
+            <summary>
+            Gets an int value representing the subset of bits from a single Byte.
+            </summary>
+            <param name="b">The Byte used to get the subset of bits from.</param>
+            <param name="offset">The offset of bits starting from the right.</param>
+            <param name="count">The number of bits to read.</param>
+            <returns>
+            An int value representing the subset of bits.
+            </returns>
+            <remarks>
+            Given -> b = 00110101 
+            A call to GetBits(b, 2, 4)
+            GetBits looks at the following bits in the byte -> 00{1101}00
+            Returns 1101 as an int (13)
+            </remarks>
+        </member>
+        <member name="M:Atom.Xna.Wpf.Utilities.GetColorFrom2Bytes(System.Byte,System.Byte)">
+            <summary>
+            Reads ARGB values from the 16 bits of two given Bytes in a 1555 format.
+            </summary>
+            <param name="one">The first Byte.</param>
+            <param name="two">The Second Byte.</param>
+            <returns>A System.Drawing.Color with a ARGB values read from the two given Bytes</returns>
+            <remarks>
+            Gets the ARGB values from the 16 bits in the two bytes based on the below diagram
+            |   BYTE 1   |  BYTE 2   |
+            | A RRRRR GG | GGG BBBBB |
+            </remarks>
+        </member>
+        <member name="T:Atom.Xna.Wpf.ToXnaWpfExtensionMethods">
+            <summary>
+            Defines extension methods that convert between Xna and WPF types.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.ToXnaWpfExtensionMethods.ToXna(System.Windows.Media.Color)">
+            <summary>
+            Converts a WPF <see cref="T:System.Windows.Media.Color"/>
+            into a Xna <see cref="T:Microsoft.Xna.Framework.Color"/>.
+            </summary>
+            <param name="color">
+            The color to convert.
+            </param>
+            <returns>
+            The converted color.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.Wpf.ToXnaWpfExtensionMethods.ToWpf(Microsoft.Xna.Framework.Color)">
+            <summary>
+            Converts a Xna <see cref="T:Microsoft.Xna.Framework.Color"/>
+            into a WPF <see cref="T:System.Windows.Media.Color"/>.
+            </summary>
+            <param name="color">
+            The color to convert.
+            </param>
+            <returns>
+            The converted color.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.Wpf.XnaWpfGame">
+            <summary>
+            Extends the Xna <see cref="T:Microsoft.Xna.Framework.Game"/> class to provide support for running
+            side-by-side with a WPF application.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.Wpf.XnaWpfGame.WindowSize">
+            <summary>
+            Gets the size of the window/control xna is drawing.
+            </summary>
+            <remarks>
+            This value can't change because of limitation of the Xna framework.
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.Wpf.XnaWpfGame.Graphics">
+            <summary>
+            Gets the <see cref="T:Microsoft.Xna.Framework.GraphicsDeviceManager"/> of this WpfGame.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Wpf.XnaWpfGame.#ctor(Atom.Math.Point2,System.IntPtr)">
+            <summary>
+            Initializes a new instance of the XnaWpfGame class.
+            </summary>
+            <param name="windowSize">
+            The static size of the window/control that Xna draws into.
+            </param>
+            <param name="controlHandle">
+            The handle of the Control into which Xna is drawing.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.XnaWpfGame.OnGraphicsPreparingDeviceSettings(System.Object,Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs)">
+            <summary>
+            Called when the Xna framework is preparing the GraphicsDevice.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The <see cref="T:Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.XnaWpfGame.OnPreparingDeviceSettings(Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs)">
+            <summary>
+            Called when the Xna framework is preparing the GraphicsDevice.
+            </summary>
+            <param name="e">
+            The <see cref="T:Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Wpf.XnaWpfGame.Initialize">
+            <summary>
+            Initializes this <see cref="T:Atom.Xna.Wpf.XnaWpfGame"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.XnaWpfGame.windowSize">
+            <summary>
+            The size of the window/control xna is drawing.
+            This value can't change because of limitation of the Xna framework.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.XnaWpfGame.controlHandle">
+            <summary>
+            The handle of the Control into which Xna is drawing.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.Wpf.XnaWpfGame.graphics">
+            <summary>
+            The Xna GraphicsDeviceManager object.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UncachedTargaFromFileTexture2DLoader">
+            <summary>
+            Implements a mechanism that loads Texture2D objects directly from an image file,
+            without caching them.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UncachedTargaFromFileTexture2DLoader.RootDirectory">
+            <summary>
+            Gets or sets the root directory that is automatically
+            prefixed to assets loaded by this IAssetLoader.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UncachedTargaFromFileTexture2DLoader.#ctor(Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService)">
+            <summary>
+            Initializes a new instance of the UncachedTargaFromFileTexture2DLoader class.
+            </summary>
+            <param name="graphicsDeviceService">
+            Provides a mechanism that allows to receive the Xna GraphicsDevice.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UncachedTargaFromFileTexture2DLoader.Load(System.String)">
+            <summary>
+            Tries to load the <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D"/> with the given <paramref name="assetName"/>.
+            </summary>
+            <param name="assetName">
+            The name of the texture asset to load.
+            </param>
+            <returns>
+            The loaded Texture2D.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UncachedTargaFromFileTexture2DLoader.System#IDisposable#Dispose">
+            <summary>
+            This method is not required.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UncachedTargaFromFileTexture2DLoader.Atom#Xna#IAssetLoader#UnloadAll">
+            <summary>
+            Unloads all Texture2D resources that have been loaden.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UncachedTargaFromFileTexture2DLoader.graphicsDeviceService">
+            <summary>
+            Provides a mechanism that allows to receive the Xna GraphicsDevice.
+            </summary>
+        </member>
+    </members>
+</doc>
