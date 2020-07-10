@@ -25,13 +25,13 @@ namespace Tools.ReleasePackager
             // ToDo: Use relative paths
             var packager = new Packager(
                 // Compiled 
-                @"C:\Projects\Zelda\Compiled\Release",
+                @"D:\Projects\Zelda\Compiled\Release",
 
                 // Packaged
-                @"C:\Projects\Zelda\Packaged",
+                @"D:\Projects\Zelda\Packaged",
 
                 // Installer
-                @"C:\Projects\Zelda\Installer"
+                @"D:\Projects\Zelda\Source\Installer"
             );
             
             bool hadError = !packager.Run();

@@ -101,7 +101,7 @@
               <Component Id="UpdaterComponent" Guid="f846af14-3a2a-4b69-acd1-14383670866b" DiskId="1">
                 <CreateFolder />
                 <RemoveFile Id="PurgeUpdaterFolder" Name="*.*" On="uninstall" />
-              <File Source="Content\Content\Updater\Atom.AutoUpdate.dll" Name="Atom.AutoUpdate.dll" Id="Atom.AutoUpdate.dll" /><File Source="Content\Content\Updater\Zelda.Updater.Gui.exe" Name="Zelda.Updater.Gui.exe" Id="Zelda.Updater.Gui.exe" /></Component>
+              <File Source="Content\Content\Updater\Atom.AutoUpdate.dll" Name="Atom.AutoUpdate.dll" Id="Atom.AutoUpdate.dll" /><File Source="Content\Content\Updater\Zelda.Updater.Gui.exe" Name="Zelda.Updater.Gui.exe" Id="Zelda.Updater.Gui.exe" /><File Source="Content\Content\Updater\Zelda.Updater.Gui.exe.config" Name="Zelda.Updater.Gui.exe.config" Id="Zelda.Updater.Gui.exe.config" /></Component>
             </Directory>
 
             <Directory Id="FontzFolder" Name="Fonts">
