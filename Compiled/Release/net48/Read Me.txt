@@ -1,0 +1,21 @@
+﻿*********************************
+The Legend of Zelda - Black Crown
+*********************************
+Welcome to TLoZ - BC!
+
+1. Install the Microsoft .NET Framework 4.8: https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer
+2. Download the latest patch after installing the game by using the "Zelda Updater.exe".
+3. Start the game using "TLoZ - Black Crown.exe"
+4. Don't forget to read Controls.txt
+5. ..
+6. ?
+
+Important Files:
+* TLoZ - Black Crown.exe - The Game. Enjoy!
+* Zelda Updater.exe      - Downloads the latest game patches. Requires an online connection and admin rights
+* Controls.txt           - Lists all keyboard shortcuts, including some hidden ones. Please read it!
+* Credits.txt            - Lists all the great people that helped build the game
+* PatchNotes.txt         - Lists the changes to the game since the latest installed patch
+* PatchNotes_Old.txt     - Patch Notes from waaaay back then. Uff, that was a lot of work.
+* Recipes.txt            - Lists all crafting recipes
+* Talent Trees.txt       - Overview over all talent trees

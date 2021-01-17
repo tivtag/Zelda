@@ -10,7 +10,4 @@
 
 using System.Reflection;
 using System.Runtime.InteropServices;
-
-[assembly: AssemblyTitle( "The Legend of Zelda : Black Crown | Tools.Library" )]
-[assembly: AssemblyDescription( "" )]
 [assembly: Guid( "7e696362-1f35-482b-bc43-a960ab64e3db" )]

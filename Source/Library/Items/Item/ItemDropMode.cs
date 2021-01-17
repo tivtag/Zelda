@@ -30,7 +30,7 @@ namespace Zelda.Items
 
         /// <summary>
         /// In Bad mode enemies drop 0 to 1 items at once. More often 0 than 1.
-        /// </summary
+        /// </summary>
         Bad,
 
         /// <summary>

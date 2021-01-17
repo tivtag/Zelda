@@ -318,7 +318,7 @@ namespace Zelda.Weather
             this.RequestWeatherChange();
         }
         
-        // <summary>
+        /// <summary>
         /// Notifies this WeatherMachine that a scene change has occured.
         /// </summary>
         /// <param name="changeType">

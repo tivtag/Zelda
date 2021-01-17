@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tools.Library</name>
+    </assembly>
+    <members>
+        <member name="T:Zelda.ToolApplication">
+            <summary>
+            Represents the abstract base application class that all Zelda tool applications
+            inherit from.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.ViewSize">
+            <summary>
+            Gets or sets the size the view area takes up in pixels.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.WhiteTexture">
+            <summary>
+            Gets a texture that can be used to render arabitary colored rectangles.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.TextureLoader">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.ITexture2DLoader"/> responsible for loading texture resources.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.SpriteLoader">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.ISpriteLoader"/> responsible for loading sprite resources.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.SpriteSheetLoader">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.ISpriteSheetLoader"/> responsible for loading sprite sheet resources.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.EntityReaderWriterManager">
+            <summary>
+            Gets or sets the <see cref="T:Zelda.Entities.EntityReaderWriterManager"/> that manages the serialization of ZeldaEntities.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.EntityTemplateManager">
+            <summary>
+            Gets or sets the <see cref="T:Zelda.Entities.EntityTemplateManager"/> that manages the creation of
+            new ZeldaEntities based upon existing template entities.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.BehaviourManager">
+            <summary>
+            Gets or sets the <see cref="T:Zelda.Entities.Behaviours.BehaviourManager"/> that manages
+            the creation and initialization of IEntityBehaviour instances.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.DrawStrategyManager">
+            <summary>
+            Gets or sets the <see cref="T:Zelda.Entities.Drawing.DrawStrategyManager"/> that manages
+            the creation and initialization of IDrawDataAndStrategy instances.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.ItemManager">
+            <summary>
+            Gets or sets the <see cref="T:Zelda.Items.ItemManager"/> that manages
+            the loading and caching of Items.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.Log">
+            <summary>
+            Gets the ILog of this ToolApplication.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.Rand">
+            <summary>
+            Gets the random number generator this ToolApplication uses.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.Game">
+            <summary>
+            Gets the XNA Game object that runs in the background of this ToolApplication.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.Content">
+            <summary>
+            Gets the current ContentManager.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.AudioSystem">
+            <summary>
+            Gets or sets the FMOD AudioSystem responsible for loading and managing audio resources.
+            </summary>
+        </member>
+        <member name="P:Zelda.ToolApplication.ProviderContainer">
+            <summary>
+            Gets the <see cref="!:Atom.IObjectProviderContainerRegistrar"/> that can be used to receive
+            and register IObjectProviders.
+            </summary>
+        </member>
+        <member name="M:Zelda.ToolApplication.#ctor">
+            <summary>
+            Initializes a new instance of the ToolApplication class.
+            </summary>
+        </member>
+        <member name="M:Zelda.ToolApplication.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ToolApplication class.
+            </summary>
+            <param name="applicationName">
+            The name of the new ToolApplication.
+            </param>
+        </member>
+        <member name="M:Zelda.ToolApplication.GetService(System.Type)">
+            <summary>
+            Tries to receive the service object of the given <see cref="T:System.Type"/>.
+            </summary>
+            <param name="serviceType">
+            The type of the service object to receive.
+            </param>
+            <returns>
+            The requested service object;
+            or null if the service couldn't be found.
+            </returns>
+        </member>
+        <member name="M:Zelda.ToolApplication.TryGetObjectProvider(System.Type)">
+            <summary>
+            Attempts to receive the IObjectProvider for the specified object type.
+            </summary>
+            <param name="type">
+            The type of object for which an IObjectProvider should be requested.
+            </param>
+            <returns>
+            The associated IObjectProvider; -or- null if no IObjectProvider has been registered
+            at this IObjectProviderContainer for the specified <see cref="T:System.Type"/>.
+            </returns>
+        </member>
+        <member name="M:Zelda.ToolApplication.OnUnhandledException(System.Object,System.Boolean)">
+            <summary>
+            Gets called when an unhandled exception has occurred.
+            </summary>
+            <param name="exceptionObject">Th exception object.</param>
+            <param name="isCritical">Whether the exception was critical.</param>
+        </member>
+        <member name="M:Zelda.ToolApplication.OnAppDomainUnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Gets called when an unhandled exception occurred in the current AppDomain.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The UnhandledExceptionEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="M:Zelda.ToolApplication.OnApplicationDispatcherUnhandledException(System.Object,System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)">
+            <summary>
+            Gets called when an unhandled exception occurred in the app's dispatcher.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The DispatcherUnhandledExceptionEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="F:Zelda.ToolApplication.providerContainer">
+            <summary>
+            Provides a mechanism for receiving and registering IObjectProviders.
+            </summary>
+        </member>
+    </members>
+</doc>

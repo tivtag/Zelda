@@ -449,7 +449,7 @@ namespace Zelda.Entities.Projectiles
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Notifies this Projectile that a scene change has occured.
         /// </summary>
         /// <param name="changeType">

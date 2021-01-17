@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuestCreator</name>
+    </assembly>
+    <members>
+        <member name="T:Zelda.QuestCreator.App">
+            <summary>
+            The quest creator allows the creation and modification of Quests.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.App.XnaApp">
+            <summary>
+            Gets or sets the Xna application object.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.App.Game">
+            <summary>
+            Gets the Xna application object.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.App.Current">
+            <summary>
+            Gets the currently running application object.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.App.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.App"/> class.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Dialogs.GoalSelectionDialog">
+            <summary>
+            Defines a dialog that asks the user to select a IQuestGoal type.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.GoalSelectionDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.Dialogs.GoalSelectionDialog"/> class.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.Dialogs.GoalSelectionDialog.Types">
+            <summary>
+            The types available to be selected in the <see cref="T:Zelda.QuestCreator.Dialogs.GoalSelectionDialog"/>.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Dialogs.QuestEventSelectionDialog">
+            <summary>
+            Defines a dialog that asks the user to select a IQuestEvent type.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.QuestEventSelectionDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.Dialogs.QuestEventSelectionDialog"/> class.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.Dialogs.QuestEventSelectionDialog.Types">
+            <summary>
+            The types available to be selected in the <see cref="T:Zelda.QuestCreator.Dialogs.QuestEventSelectionDialog"/>.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Dialogs.RequirementSelectionDialog">
+            <summary>
+            Defines a dialog that asks the user to select a IQuestRequirement type.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.RequirementSelectionDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.Dialogs.RequirementSelectionDialog"/> class.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.Dialogs.RequirementSelectionDialog.Types">
+            <summary>
+            The types available to be selected in the <see cref="T:Zelda.QuestCreator.Dialogs.RequirementSelectionDialog"/>.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Dialogs.RewardSelectionDialog">
+            <summary>
+            Defines a dialog that asks the user to select a IQuestReward type.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.RewardSelectionDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.Dialogs.RewardSelectionDialog"/> class.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.Dialogs.RewardSelectionDialog.Types">
+            <summary>
+            The types available to be selected in the <see cref="T:Zelda.QuestCreator.Dialogs.RewardSelectionDialog"/>.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Dialogs.TypeSelectionDialog">
+            <summary>
+            Defines a dialog that allows the user to select a type.
+            </summary>
+            <summary>
+            TypeSelectionDialog
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.TypeSelectionDialog.#ctor(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.Dialogs.TypeSelectionDialog"/> class.
+            </summary>
+            <param name="types">
+            The Types that are selectable in the new TypeSelectionDialog.
+            </param>
+        </member>
+        <member name="P:Zelda.QuestCreator.Dialogs.TypeSelectionDialog.SelectedType">
+            <summary>
+            Gets or sets the Type the user has selected in this <see cref="!:DrawStrategySelectionDialog"/>.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.TypeSelectionDialog.OnOkButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user clicks on the "OK" button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.TypeSelectionDialog.OnCancelButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user clicks on the "Cancel" button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.Dialogs.TypeSelectionDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.MainWindow">
+            <summary>
+            Defines the main window of the Quest Creator tool.
+            </summary>
+            <remarks>
+            The Quest Creator allows the creation and edition of <see cref="T:Zelda.Quests.Quest"/>s.
+            </remarks>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Zelda.QuestCreator.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.RunXna">
+            <summary>
+            Starts up and initializes the XNA game loop.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OnMainWindowClosing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Gets called when the MainWindow is closing.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The CancelEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Zelda.QuestCreator.MainWindow.ServiceProvider">
+            <summary>
+            Gets the IZeldaServiceProvider that provides fast
+            access to game-related services.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OpenQuest(System.String)">
+            <summary>
+            Opens the quest at the given path.
+            </summary>
+            <param name="path">
+            The full path to the quest file.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.AddQuest(Zelda.Quests.Quest)">
+            <summary>
+            Adds the given Quest to the tab control.
+            </summary>
+            <param name="quest">
+            The quest to add.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OnNewMenuItemClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the "New Quest" menu item.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OnOpenMenuItemClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the "Open" menu item.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OnSaveMenuItemClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the "Save" menu item.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.OnExitMenuItemClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the "Exit" menu item.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contain the event data.</param>
+        </member>
+        <member name="F:Zelda.QuestCreator.MainWindow.xnaApp">
+            <summary>
+            The Xna application object.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.MainWindow.xnaThread">
+            <summary>
+            The thread the XNA logic runs in.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.ButtonText_Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.ButtonText_OK">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.DialogTitle_CompletionEventSelection">
+            <summary>
+              Looks up a localized string similar to Select the Quest Completion Event to add..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.DialogTitle_GoalSelection">
+            <summary>
+              Looks up a localized string similar to Select the Quest Goal to add..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.DialogTitle_OpenQuest">
+            <summary>
+              Looks up a localized string similar to Select the Quest to open..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.DialogTitle_RequirementSelection">
+            <summary>
+              Looks up a localized string similar to Select the Quest Requirement to add..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.DialogTitle_RewardSelection">
+            <summary>
+              Looks up a localized string similar to Select the Quest Reward to add..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Error_QuestNameMustBeSetForSave">
+            <summary>
+              Looks up a localized string similar to The name of the Quest must be set before it can be saved..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Filter_QuestFiles">
+            <summary>
+              Looks up a localized string similar to Quest Data Files (*.zq)|*.zq.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Info_QuestXSavedSuccessfully">
+            <summary>
+              Looks up a localized string similar to Quest &apos;{0}&apos; has been saved successfully..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Title">
+            <summary>
+              Looks up a localized string similar to Quest Creator for TLoZ - Black Crown.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_CompletedTextId">
+             <summary>
+               Looks up a localized string similar to The resource id that is used to receive the localized text
+            that is shown when the quest has been completed.
+            Should be in the format &apos;QC_X&apos;..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_DeliverLocation">
+             <summary>
+               Looks up a localized string similar to The location the quest must be delivered at.
+            Interpreted differently regarding the set Deliver Type.
+            
+                    Instant: This field can be left empty.
+                    NPC:     This field must contain the name that uniquely identifies the NPC.
+            .
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_DeliverType">
+            <summary>
+              Looks up a localized string similar to States how the player ends the quest..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_DescriptionId">
+             <summary>
+               Looks up a localized string similar to The resource id that is used to receive the localized description of the quest.
+            Should be in the format &apos;QD_X&apos;..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_IsRepeatable">
+             <summary>
+               Looks up a localized string similar to States whether the quest can be done over and over again.
+            After completing a repeatable quest it becomes available to be picked-up again..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_IsStateHidden">
+            <summary>
+              Looks up a localized string similar to States whether the quest&apos;s current state is hidden from the player..
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_Level">
+             <summary>
+               Looks up a localized string similar to The level of the quest. Quest difficulty can be induces by
+            looking at the level of the quest compared to the level of the player..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_Name">
+             <summary>
+               Looks up a localized string similar to The name that uniquely identifies the quest.
+            Localization is done by looking up the resource string similiar to &apos;QN_X&apos;,
+            where X is the name of the quest..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_NotCompletedTextId">
+             <summary>
+               Looks up a localized string similar to The resource id that is used to receive the localized text
+            that is shown when the quest has not been completed yet.
+            Should be in the format &apos;QNC_X&apos;..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_StartTextId">
+             <summary>
+               Looks up a localized string similar to The resource id that is used to receive the localized start text of the quest.
+            Should be in the format &apos;QS_X&apos;..
+             </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.Properties.Resources.Tooltip_Type">
+            <summary>
+              Looks up a localized string similar to The type of the quest..
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel">
+            <summary>
+            Defines the ViewModel over a <see cref="T:Zelda.Quests.Quest"/>.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.DeliverType">
+            <summary>
+            Gets or sets the bindable <see cref="T:Zelda.Quests.QuestDeliverType"/> of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.QuestType">
+            <summary>
+            Gets or sets the bindable <see cref="P:Zelda.QuestCreator.QuestViewModel.QuestType"/> of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.Level">
+            <summary>
+            Gets or sets the bindable level of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.IsRepeatable">
+            <summary>
+            Gets or sets a (bindable) value indicating whether
+            the Quest is repeatable.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.IsStateHidden">
+            <summary>
+            Gets or sets a (bindable) value indicating whether
+            the current state of the Quest is hidden.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.Name">
+            <summary>
+            Gets or sets the (bindable) name that
+            uniquely idenfities the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.TextDescription">
+            <summary>
+            Gets or sets the (bindable) resource id
+            that is used to receive the localized desciption of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.TextStart">
+            <summary>
+            Gets or sets the (bindable) resource id
+            that is used to receive the localized start text of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.TextNotCompleted">
+            <summary>
+            Gets or sets the (bindable) resource id
+            that is used to receive the localized text that is shown when 
+            the Quest has not been completed yet.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.TextCompleted">
+            <summary>
+            Gets or sets the (bindable) resource id
+            that is used to receive the localized end text of the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.DeliverLocation">
+            <summary>
+            Gets or sets the (bindable) name of the object/location the Quest must be delivered at.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.Requirements">
+            <summary>
+            Gets the bindable list of requirements that need to be fulfilled to get the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.Goals">
+            <summary>
+            Gets the bindable list of goals that need player needs to complete to complete the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.Rewards">
+            <summary>
+            Gets the bindable list of rewards that need player receives when he has completed the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.StartEvents">
+            <summary>
+            Gets the bindable list of events that are executed
+            when the player has accepted the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.CompletionEvents">
+            <summary>
+            Gets the bindable list of events that are executed
+            when the player has completed the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.AddRequirement">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestRequirement"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.RemoveRequirement">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestRequirement"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.AddGoal">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestGoal"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.RemoveGoal">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestGoal"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.AddReward">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestReward"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.RemoveReward">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestReward"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.AddStartEvent">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.RemoveStartEvent">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.AddCompletionEvent">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModel.RemoveCompletionEvent">
+            <summary>
+            Gets the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.#ctor(Zelda.Quests.Quest)">
+            <summary>
+            Initializes a new instance of the QuestViewModel class.
+            </summary>
+            <param name="model">
+            The Quest that is wrapped by the new QuestViewModel.
+            </param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.AddRequirementCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestRequirement"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddRequirementCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the AddRequirementCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new AddRequirementCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddRequirementCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.RemoveRequirementCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestRequirement"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRequirementCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the RemoveRequirementCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new RemoveRequirementCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRequirementCommand.CanExecute(System.Object)">
+            <summary>
+            Gets a value indicating whether this RemoveRequirementCommand can currently be executed.
+            </summary>
+            <param name="parameter">
+            The parameter send into this Command.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRequirementCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter">
+            The parameter send into this Command.
+            </param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.AddGoalCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestGoal"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddGoalCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the AddGoalCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new AddGoalCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddGoalCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.RemoveGoalCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestGoal"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveGoalCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the RemoveGoalCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new RemoveGoalCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveGoalCommand.CanExecute(System.Object)">
+            <summary>
+            Gets a value indicating whether this RemoveGoalCommand can currently be executed.
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveGoalCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.AddRewardCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestReward"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddRewardCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the AddRewardCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new AddRewardCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddRewardCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.RemoveRewardCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestReward"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRewardCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the RemoveRewardCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new RemoveRewardCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRewardCommand.CanExecute(System.Object)">
+            <summary>
+            Gets a value indicating whether this RemoveRewardCommand can currently be executed.
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveRewardCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.AddCompletionEventCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddCompletionEventCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the AddCompletionEventCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new AddCompletionEventCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddCompletionEventCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.RemoveCompletionEventCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestEvemt"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveCompletionEventCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the RemoveCompletionEventCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new RemoveCompletionEventCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveCompletionEventCommand.CanExecute(System.Object)">
+            <summary>
+            Gets a value indicating whether this RemoveCompletionEventCommand can currently be executed.
+            </summary>
+            <param name="parameter">
+            The parameter send into the Command.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveCompletionEventCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter">
+            The parameter send into the Command.
+            </param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.AddStartEventCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="T:Zelda.Quests.IQuestEvent"/> he wishes to add to the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddStartEventCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the AddStartEventCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new AddCompletionEventCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.AddStartEventCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModel.RemoveStartEventCommand">
+            <summary>
+            Defines the ICommand that when invoked allows
+            the user to select a <see cref="!:IQuestEvemt"/> he wishes to remove from the Quest.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveStartEventCommand.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the RemoveStartEventCommand class.
+            </summary>
+            <param name="viewModel">
+            The QuestViewModel the new RemoveStartEventCommand provides functionality for.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveStartEventCommand.CanExecute(System.Object)">
+            <summary>
+            Gets a value indicating whether this RemoveStartEventCommand can currently be executed.
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.RemoveStartEventCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModel.Save(Zelda.IZeldaServiceProvider)">
+            <summary>
+            Saves the Quest.
+            </summary>
+            <param name="serviceProvider">
+            Provides fast access to game-related services.
+            </param>
+            <returns>
+            true if the Quest has been saved;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.requirements">
+            <summary>
+            The view over the requirements of the Quest.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.goals">
+            <summary>
+            The view over the goals of the Quest.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.rewards">
+            <summary>
+            The view over the rewards of the Quest.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.startEvents">
+            <summary>
+            The view over the start events of the Quest.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.completionEvents">
+            <summary>
+            The view over the completion events of the Quest.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.requirementsView">
+            <summary>
+            The view over the requirements collection.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.goalsView">
+            <summary>
+            The view over the goals collection.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.rewardsView">
+            <summary>
+            The view over the rewards collection.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.startEventsView">
+            <summary>
+            The view over the startEvents collection.
+            </summary>
+        </member>
+        <member name="F:Zelda.QuestCreator.QuestViewModel.completionEventsView">
+            <summary>
+            The view over the completionEvents collection.
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.QuestViewModelControl">
+            <summary>
+            Defines the view over a <see cref="T:Zelda.QuestCreator.QuestViewModel"/>.
+            </summary>
+            <summary>
+            QuestViewModelControl
+            </summary>
+        </member>
+        <member name="P:Zelda.QuestCreator.QuestViewModelControl.BoundQuestViewModel">
+            <summary>
+            Gets the QuestViewModel this QuestViewModelControl is bound to.
+            </summary>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.#ctor(Zelda.QuestCreator.QuestViewModel)">
+            <summary>
+            Initializes a new instance of the QuestViewModelControl class.
+            </summary>
+            <param name="questViewModel">
+            The QuestViewModel the new QuestViewModelControl provides a view over.
+            </param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.ListBox_Requirements_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Called when the currently selected item in the requirements list box has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.ListBox_Goals_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Called when the currently selected item in the goals list box has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.ListBox_Rewards_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Called when the currently selected item in the rewards list box has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.ListBox_StartEvents_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Called when the currently selected item in the start events list box has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.ListBox_CompletionEvents_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Called when the currently selected item in the completion events list box has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
+        </member>
+        <member name="M:Zelda.QuestCreator.QuestViewModelControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Zelda.QuestCreator.XnaApp">
+            <summary>
+            Defines the class that handles all Xna-related logic.
+            </summary>
+        </member>
+    </members>
+</doc>
