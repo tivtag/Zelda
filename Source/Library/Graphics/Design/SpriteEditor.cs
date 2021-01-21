@@ -41,10 +41,9 @@ namespace Zelda.Graphics.Design
         /// <returns>
         /// The new value of the object.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override object EditValue( ITypeDescriptorContext context, IServiceProvider provider, object value )
         {
-            var dialog = BuildDialog( value );
+            IItemSelectionDialog<ISpriteAsset> dialog = BuildDialog( value );
 
             if( dialog.ShowDialog() )
             {
@@ -65,12 +64,12 @@ namespace Zelda.Graphics.Design
         /// </returns>
         private IItemSelectionDialog<ISpriteAsset> BuildDialog( object value )
         {
-            var serviceProvider = Zelda.Design.DesignTime.Services;
-            var spriteSource = serviceProvider.GetService<ISpriteSource>();
+            IZeldaServiceProvider serviceProvider = Zelda.Design.DesignTime.Services;
+            ISpriteSource spriteSource = serviceProvider.GetService<ISpriteSource>();
 
-            var dialogFactory = serviceProvider.GetService<IItemSelectionDialogFactory>();
-            var assets = spriteSource.Sprites.Concat<ISpriteAsset>( spriteSource.AnimatedSprites );
-            var dialog = dialogFactory.Build<ISpriteAsset>( assets );
+            IItemSelectionDialogFactory dialogFactory = serviceProvider.GetService<IItemSelectionDialogFactory>();
+            IEnumerable<ISpriteAsset> assets = spriteSource.Sprites.Concat<ISpriteAsset>( spriteSource.AnimatedSprites );
+            IItemSelectionDialog<ISpriteAsset> dialog = dialogFactory.Build<ISpriteAsset>( assets );
 
             dialog.SelectedItem = GetSelectedAsset( value, assets );
             return dialog;
@@ -137,7 +136,6 @@ namespace Zelda.Graphics.Design
         /// <returns>
         /// Returns UITypeEditorEditStyle.Modal.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle( ITypeDescriptorContext context )
         {
             return System.Drawing.Design.UITypeEditorEditStyle.Modal;

@@ -168,6 +168,9 @@ namespace Zelda.Attacks.Melee
         /// <param name="frameIndex">
         /// The index of the current frame.
         /// </param>
+        /// <param name="attackRectangle">
+        /// Will contain attack collision rectangle.
+        /// </param>
         private void GetAttackRectangle( int frameIndex, out RectangleF attackRectangle )
         {
             // This functions is hardcoded as it makes it easier to implement

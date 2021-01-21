@@ -91,9 +91,11 @@ namespace Zelda.Attacks.Melee
         protected override bool ShouldFire()
         {
             if( !this.IsUseable || this.player.IsCasting )
+            {
                 return false;
+            }
 
-            var specialAnimation = this.DrawStrategy.SpecialAnimation;
+            PlayerSpecialAnimation specialAnimation = this.DrawStrategy.SpecialAnimation;
 
             // Don't allow attacking if any other special animation is currently shown.
             if( specialAnimation != PlayerSpecialAnimation.None && 
@@ -151,8 +153,10 @@ namespace Zelda.Attacks.Melee
         /// <param name="frameIndex">
         /// The index of the current frame.
         /// </param>
-        /// <returns>The attack area for the given frame.</returns>
-        private void GetAttackRectangle(int frameIndex, out RectangleF attackRectangle)
+        /// <param name="attackRectangle">
+        /// The attack area for the given frame.
+        /// </param>
+        private void GetAttackRectangle(int frameIndex, out RectangleF attackRectangle )
         {
             // This functions is hardcoded as it makes it easier to implement
             // and because we will never ever have different values

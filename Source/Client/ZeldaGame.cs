@@ -271,6 +271,7 @@ namespace Zelda
         /// </summary>
         public ZeldaGame()
         {
+            System.Text.Encoding.RegisterProvider( System.Text.CodePagesEncodingProvider.Instance );
             this.IsMouseVisible = true;
 
             this.errorReporter = this.CreateErrorReporter();
@@ -303,7 +304,7 @@ namespace Zelda
         /// </summary>
         private void RegisterServices()
         {
-            var services = this.Services;
+            Microsoft.Xna.Framework.GameServiceContainer services = this.Services;
 
             services.AddService<ILog>( this.log );
             services.AddService<GameStateManager>( this.states );
@@ -480,8 +481,8 @@ namespace Zelda
         {
             if( this.isInitialized )
             {
-                var drawContext = this.graphics.DrawContext;
-                var gameState = this.states.Current;
+                ZeldaDrawContext drawContext = this.graphics.DrawContext;
+                IGameState gameState = this.states.Current;
 
                 if( gameState != null )
                 {
@@ -507,11 +508,15 @@ namespace Zelda
         public object GetService( Type serviceType )
         {
             if( serviceType.IsAssignableFrom( this.GetType() ) )
+            {
                 return this;
+            }
 
-            var service = this.providerContainer.TryResolve( serviceType );
+            object service = this.providerContainer.TryResolve( serviceType );
             if( service != null )
+            {
                 return service;
+            }
 
             return this.Services.GetService( serviceType );
         }

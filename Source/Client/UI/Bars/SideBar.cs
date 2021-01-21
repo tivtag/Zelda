@@ -107,8 +107,8 @@ namespace Zelda.UI
         /// </param>
         private void InitializeComponents( IZeldaServiceProvider serviceProvider )
         {
-            var spriteLoader = serviceProvider.SpriteLoader;
-            var viewSize = serviceProvider.ViewSize;
+            ISpriteLoader spriteLoader = serviceProvider.SpriteLoader;
+            Point2 viewSize = serviceProvider.ViewSize;
 
             float offsetX = viewSize.X - 4;
             float offsetY = viewSize.Y - 3;

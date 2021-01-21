@@ -52,36 +52,24 @@ namespace Zelda.Timing
         /// <summary>
         /// Gets the current ratio between time left and time.
         /// </summary>
-        public float Ratio
-        {
-            get
-            {
-                return this.timeLeft / this.lastTime;
-            }
-        }
+        public float Ratio => this.timeLeft / this.lastTime;
 
         /// <summary>
         /// Gets a value indicating whether this ITimer has ended.
         /// </summary>
-        public bool HasEnded
-        {
-            get
-            {
-                return this.timeLeft <= 0.0f;
-            }
-        }
+        public bool HasEnded => this.timeLeft <= 0.0f;
 
         /// <summary>
         /// Gets a value indicating whether this ITimer has not ended.
         /// </summary>
-        public bool HasNotEnded
-        {
-            get
-            {
-                return !this.HasEnded;
-            }
-        }
+        public bool HasNotEnded => !this.HasEnded;
 
+        /// <summary>
+        /// Setup this ResetableRangeTimer instance.
+        /// </summary>
+        /// <param name="serviceProvider">
+        /// Provides fast access to game-related services.
+        /// </param>
         public void Setup( IZeldaServiceProvider serviceProvider )
         {
             this.rand = serviceProvider.Rand;

@@ -1,16 +1,15 @@
-﻿using System;
-using System.ComponentModel;
-using Zelda.Items;
-
+﻿
 namespace Zelda.ItemCreator
 {
+    using System;
+    using System.ComponentModel;
+    using Zelda.Items;
+
     /// <summary>
     /// Defines the view-model/property wrapper around the <see cref="Weapon"/> class.
     /// </summary>
     internal sealed class WeaponViewModel : EquipmentViewModel
     {
-        #region [ Wrapped Properties ]
-
         [LocalizedCategory( "PropCate_Weapon" )]
         [LocalizedDisplayName( "PropDisp_WeaponType" )]
         [LocalizedDescription( "PropDesc_WeaponType" )]
@@ -63,10 +62,6 @@ namespace Zelda.ItemCreator
             get { return this.WrappedWeapon.DamagePerSecond; }
         }
 
-        #endregion
-
-        #region [ Wrapper ]
-
         /// <summary>
         /// Gets the Weapon this <see cref="WeaponViewModel"/> wraps around.
         /// </summary>
@@ -80,7 +75,7 @@ namespace Zelda.ItemCreator
         }
 
         /// <summary>
-        /// Gets the <see cref="Type"/> this <see cref="IObjectPropertyWrapper"/> wraps around.
+        /// Gets the <see cref="Type"/> this <see cref="WeaponViewModel"/> wraps around.
         /// </summary>
         public override Type WrappedType
         {
@@ -111,7 +106,5 @@ namespace Zelda.ItemCreator
         {
             return new WeaponViewModel( this.ServiceProvider );
         }
-
-        #endregion
     }
 }

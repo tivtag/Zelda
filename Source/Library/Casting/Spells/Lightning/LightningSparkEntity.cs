@@ -10,6 +10,7 @@
 
 namespace Zelda.Casting.Spells.Lightning
 {
+    using System.Collections.Generic;
     using Atom.Math;
     using Atom.Scene.Tiles;
     using Atom.Xna;
@@ -127,7 +128,7 @@ namespace Zelda.Casting.Spells.Lightning
                 ExteriorColor = Xna.Color.Blue.WithAlpha(200)
             };
 
-            var topology = this.settings.Topology;
+            List<LightningSubdivisionOp> topology = this.settings.Topology;
             topology.Clear();
             topology.Add( LightningSubdivisionOp.Jitter );
             topology.Add( LightningSubdivisionOp.JitterAndFork );
@@ -235,7 +236,7 @@ namespace Zelda.Casting.Spells.Lightning
 
             for( int i = 0; i < this.bolts.Length; ++i, angle += angleDelta )
             {
-                var bolt = this.bolts[i];
+                LightningBoltEntity bolt = this.bolts[i];
                 Vector2 direction = Vector2.FromAngle( angle );
 
                 float length = this.MaximumLength;                
@@ -267,9 +268,12 @@ namespace Zelda.Casting.Spells.Lightning
             }
         }
 
+        /// <summary>
+        /// Resets all bolts of this spark.
+        /// </summary>
         public void Reset()
         {
-            foreach( var bolt in this.bolts )
+            foreach( LightningBoltEntity bolt in this.bolts )
             {
                 bolt.Reset();
             }

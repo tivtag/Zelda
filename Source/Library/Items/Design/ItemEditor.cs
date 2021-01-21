@@ -35,7 +35,6 @@ namespace Zelda.Items.Design
         /// <returns>
         /// The new value of the object.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override object EditValue( ITypeDescriptorContext context, IServiceProvider provider, object value )
         {
             var dialog = new OpenFileDialog() {
@@ -64,8 +63,8 @@ namespace Zelda.Items.Design
         /// </returns>
         private static Item LoadItem( string fileName )
         {
-            var serviceProvider = Zelda.Design.DesignTime.Services;
-            var itemManager = serviceProvider.ItemManager;
+            IZeldaServiceProvider serviceProvider = Zelda.Design.DesignTime.Services;
+            ItemManager itemManager = serviceProvider.ItemManager;
 
             string itemName = System.IO.Path.GetFileNameWithoutExtension( fileName );
             return itemManager.Get( itemName );
@@ -83,7 +82,6 @@ namespace Zelda.Items.Design
         /// <returns>
         /// Returns UITypeEditorEditStyle.Modal.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle( ITypeDescriptorContext context )
         {
             return System.Drawing.Design.UITypeEditorEditStyle.Modal;

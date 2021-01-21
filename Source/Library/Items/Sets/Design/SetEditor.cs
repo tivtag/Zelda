@@ -36,7 +36,6 @@ namespace Zelda.Items.Sets.Design
         /// <returns>
         /// The new value of the object.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override object EditValue( ITypeDescriptorContext context, IServiceProvider provider, object value )
         {
             var dialog = new OpenFileDialog() {
@@ -83,7 +82,6 @@ namespace Zelda.Items.Sets.Design
         /// <returns>
         /// Returns UITypeEditorEditStyle.Modal.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle( ITypeDescriptorContext context )
         {
             return System.Drawing.Design.UITypeEditorEditStyle.Modal;

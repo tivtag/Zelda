@@ -10,9 +10,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <Platforms>x86</Platforms>
     <PlatformTarget>x86</PlatformTarget>
+    <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>Zelda</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -62,13 +65,15 @@
     <Reference Include="Atom.Xna.Wpf">
       <HintPath>..\..\Dependencies\Atom.Xna.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
+    <Reference Include="Microsoft.Xna.Framework">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup>

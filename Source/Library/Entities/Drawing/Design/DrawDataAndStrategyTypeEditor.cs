@@ -11,6 +11,7 @@
 namespace Zelda.Entities.Drawing.Design
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
     using Atom.Design;
@@ -40,14 +41,13 @@ namespace Zelda.Entities.Drawing.Design
         /// <returns>
         /// The new value of the object.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override object EditValue( ITypeDescriptorContext context, IServiceProvider provider, object value )
         {
-            var factory = DesignTime.GetService<IItemSelectionDialogFactory>();
-            var types = DesignTime.Services.DrawStrategyManager.KnownStrategies;
+            IItemSelectionDialogFactory factory = DesignTime.GetService<IItemSelectionDialogFactory>();
+            IEnumerable<Type> types = DesignTime.Services.DrawStrategyManager.KnownStrategies;
 
-            var wrappedTypes = types.Select( t => new NameableObjectWrapper<Type>( t, tt => tt.Name ) );
-            var dialog       = factory.Build<NameableObjectWrapper<Type>>( wrappedTypes );
+            IEnumerable<NameableObjectWrapper<Type>> wrappedTypes = types.Select( t => new NameableObjectWrapper<Type>( t, tt => tt.Name ) );
+            IItemSelectionDialog<NameableObjectWrapper<Type>> dialog       = factory.Build<NameableObjectWrapper<Type>>( wrappedTypes );
             
             var type = value as Type;
 
@@ -76,7 +76,6 @@ namespace Zelda.Entities.Drawing.Design
         /// <returns>
         /// Returns UITypeEditorEditStyle.Modal.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle( ITypeDescriptorContext context )
         {
             return System.Drawing.Design.UITypeEditorEditStyle.Modal;

@@ -9,8 +9,9 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <Platforms>x86</Platforms>
     <PlatformTarget>x86</PlatformTarget>
     <RootNamespace>Zelda</RootNamespace>
@@ -18,6 +19,7 @@
     <ApplicationIcon>Properties\icon.ico</ApplicationIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
+    <EnableUnsafeUTF7Encoding>true</EnableUnsafeUTF7Encoding>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -157,5 +159,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="Temp Key Handlers.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
   </ItemGroup>
 </Project>

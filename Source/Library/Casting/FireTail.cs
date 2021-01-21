@@ -1,10 +1,8 @@
 ﻿
 namespace Zelda.Casting
 {
-    using Atom.Fmod;
     using Atom.Math;
     using Zelda.Attacks;
-    using Zelda.Audio;
     using Zelda.Casting.Spells;
     using Zelda.Entities;
     using Zelda.Entities.Behaviours;
@@ -13,19 +11,33 @@ namespace Zelda.Casting
     using Zelda.Status;
     using Xna = Microsoft.Xna.Framework;
 
+    /// <summary>
+    /// Represents a tail of fire bombs that explore in a row.
+    /// </summary>
     public sealed class FireTail : ZeldaEntity
     {
         private const float TimeBetweenPillars = 0.5f;
         private const float SpellDuration = 15.0f;
         private const int ExplosionIndex = 5;
 
+        /// <summary>
+        /// Gets or sets the color tint of this FireTail. 
+        /// </summary>
         public Xna.Color Color
         {
             get;
             set;
         }
 
-        public FireTail( ZeldaEntity target, ZeldaEntity owner, AttackDamageMethod method, AttackDamageMethod explosionMethod, IZeldaServiceProvider serviceProvider )
+        /// <summary>
+        /// Initializes a new <see cref="FireTail"/> instance.
+        /// </summary>
+        public FireTail( 
+            ZeldaEntity target, 
+            ZeldaEntity owner, 
+            AttackDamageMethod method,
+            AttackDamageMethod explosionMethod,
+            IZeldaServiceProvider serviceProvider )
         {
             this.Color = Xna.Color.DimGray;
             this.target = target;
@@ -52,8 +64,8 @@ namespace Zelda.Casting
 
         private void SpawnPillar()
         {
-            var position = target.Transform.Position + new Vector2( 1.0f, 6.0f );
-            var pillar = spell.SpawnFirePillarAt( position, target.FloorNumber, target.Scene );
+            Vector2 position = target.Transform.Position + new Vector2( 1.0f, 6.0f );
+            DamageEffectEntity pillar = spell.SpawnFirePillarAt( position, target.FloorNumber, target.Scene );
 
             var removeBehaviour = new RemoveAfterAnimationEndedNtimesBehaviour( pillar ) {
                 TimesAnimationHasToEnded = 1
@@ -68,6 +80,12 @@ namespace Zelda.Casting
             SpawnHelper.AddBlendInColorTint( pillar );
         }
 
+        /// <summary>
+        /// Updates this FireTail.
+        /// </summary>
+        /// <param name="updateContext">
+        /// The current ZeldaUpdateContext.
+        /// </param>
         public override void Update( ZeldaUpdateContext updateContext )
         {
             timeUntilNextPillar -= updateContext.FrameTime;
@@ -137,6 +155,7 @@ namespace Zelda.Casting
 
         private float timeUntilNextPillar = TimeBetweenPillars;
         private float timeLeft = SpellDuration;
+
         private readonly ZeldaEntity target;
         private readonly FirePillarSpell spell;
         private readonly BombAudio bombAudio;

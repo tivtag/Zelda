@@ -20,6 +20,9 @@ namespace Zelda.Actions.Scene
             set;
         }
 
+        /// <summary>
+        /// Executes this IAction.
+        /// </summary>
         public override void Execute()
         {
             if( this.Event != null && this.Event.CanBeTriggeredBy( null ) )
@@ -28,16 +31,31 @@ namespace Zelda.Actions.Scene
             }
         }
 
+        /// <summary>
+        /// Deferredly undoes this IAction.
+        /// </summary>
         public override void Dexecute()
         {
         }
 
+        /// <summary>
+        /// Serializes this IStoreable object using the given ISerializationContext.
+        /// </summary>
+        /// <param name="context">
+        /// Provides access to the mechanisms required to serialize this IStoreable object.
+        /// </param>
         public override void Serialize( Atom.Storage.ISerializationContext context )
         {
             base.Serialize( context );
             context.Write( this.Event != null ? this.Event.Name : string.Empty );
         }
 
+        /// <summary>
+        /// Deserializes this IStoreable object using the given IDeserializationContext.
+        /// </summary>
+        /// <param name="context">
+        /// Provides access to the mechanisms required to deserialize this IStoreable object.
+        /// </param>
         public override void Deserialize( Atom.Storage.IDeserializationContext context )
         {
             base.Deserialize( context );

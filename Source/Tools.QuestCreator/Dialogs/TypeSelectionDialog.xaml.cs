@@ -24,19 +24,21 @@ namespace Zelda.QuestCreator.Dialogs
         protected TypeSelectionDialog( IEnumerable<Type> types )
         {
             if( types == null )
-                throw new ArgumentNullException( "types" );
+            {
+                throw new ArgumentNullException( nameof( types ) );
+            }
 
             this.InitializeComponent();
 
             this.listBox.Items.Add( null );
-            foreach( var type in types )
+            foreach( Type type in types )
             {
                 this.listBox.Items.Add( type );
             }
         }
 
         /// <summary>
-        /// Gets or sets the Type the user has selected in this <see cref="DrawStrategySelectionDialog"/>.
+        /// Gets or sets the Type the user has selected in this <see cref="TypeSelectionDialog"/>.
         /// </summary>
         public Type SelectedType
         {

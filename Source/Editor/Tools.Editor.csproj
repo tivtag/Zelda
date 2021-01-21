@@ -1,458 +1,119 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{63BB28B3-2729-41AD-8473-865D350E3298}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zelda.Editor</RootNamespace>
     <AssemblyName>Editor</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
+    <AssemblyTitle>The Legend of Zelda: Black Crown | World Editor</AssemblyTitle>
+    <Product>The Legend of Zelda: Black Crown</Product>
+    <Company>federrot Software</Company>
+    <Copyright>Copyright 2020 © federrot Software</Copyright>
+    <Authors>Paul Ennemoser</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <OutputType>WinExe</OutputType>
+    <Platforms>x86</Platforms>
+    <PlatformTarget>x86</PlatformTarget>
+    <RootNamespace>Zelda.Editor</RootNamespace>
     <ApplicationIcon>Properties\editor-icon.ico</ApplicationIcon>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>Zelda.Editor.EditorApp</StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>4.0</OldToolsVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\Compiled\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
+
+  <PropertyGroup>
+    <DebugType>portable</DebugType>
+    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Compiled\$(Configuration)\Editor.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>..\Compiled\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
-    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
-    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
-    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
-    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
-    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
-    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
-    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
-    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
-    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
-    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
-    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
-    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
-    <CodeContractsCustomRewriterAssembly />
-    <CodeContractsCustomRewriterClass />
-    <CodeContractsLibPaths />
-    <CodeContractsPlatformPath />
-    <CodeContractsExtraAnalysisOptions />
-    <CodeContractsBaseLineFile />
-    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
-    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
-    <CodeContractsExtraRewriteOptions />
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Atom, Version=1.0.3641.22943, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Atom">
       <HintPath>..\..\Dependencies\Atom.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.AI, Version=1.0.3641.23034, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.AI">
       <HintPath>..\..\Dependencies\Atom.AI.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Fmod, Version=4.0.26.9, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Fmod">
       <HintPath>..\..\Dependencies\Atom.Fmod.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Game, Version=1.0.3641.23031, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Game">
       <HintPath>..\..\Dependencies\Atom.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Game.Waypoints, Version=1.0.3641.23037, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Game.Waypoints">
       <HintPath>..\..\Dependencies\Atom.Game.Waypoints.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Game.Xna, Version=1.0.3641.23052, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Game.Xna">
       <HintPath>..\..\Dependencies\Atom.Game.Xna.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Mail, Version=1.0.3641.23092, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Mail">
       <HintPath>..\..\Dependencies\Atom.Mail.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Math, Version=1.0.3641.22945, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Math">
       <HintPath>..\..\Dependencies\Atom.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Math.Graph, Version=1.0.3641.22967, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Math.Graph">
       <HintPath>..\..\Dependencies\Atom.Math.Graph.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Scripting, Version=1.5.4111.37872, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Scripting">
       <HintPath>..\..\Dependencies\Atom.Scripting.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Wpf, Version=1.0.3640.30617, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Wpf">
       <HintPath>..\..\Dependencies\Atom.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Xna, Version=1.0.3641.23051, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Xna">
       <HintPath>..\..\Dependencies\Atom.Xna.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Xna.Particles, Version=1.0.3641.23000, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Xna.Particles">
       <HintPath>..\..\Dependencies\Atom.Xna.Particles.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Xna.UI, Version=1.0.3641.23012, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Xna.UI">
       <HintPath>..\..\Dependencies\Atom.Xna.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Atom.Xna.Wpf, Version=1.0.3640.30629, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Xna.Wpf">
       <HintPath>..\..\Dependencies\Atom.Xna.Wpf.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    <Reference Include="Microsoft.Xna.Framework">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UIAutomationProvider">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Game.dll</HintPath>
     </Reference>
-    <Reference Include="WindowsBase">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="PresentationCore">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsFormsIntegration">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Graphics.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="EditorApp.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="Dialogs\EntityTypeSelectionDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Dialogs\NewSceneDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_Brushes.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_LabelStyles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_ListBoxStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_MainMenuStyles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_ResourceDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_StatusBarStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Dark\DarkTheme_TabControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="..\SolutionInfo.cs">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
-    <Compile Include="Design\DrawStrategyEntityPropertyWrapper.cs" />
-    <Compile Include="EditorApp.xaml.cs">
-      <DependentUpon>EditorApp.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Workspaces\Event\EventWorkspaceControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Object\ObjectWorkspaceControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Scripts\ScriptEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Story\StoryWorkspaceControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Tile\TileWorkspaceControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Waypoint\DeletionConfirmationDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Workspaces\Waypoint\WaypointWorkspaceControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\Library\Library.csproj" />
+    <ProjectReference Include="..\Library.Design\Library.Design.csproj" />
+    <ProjectReference Include="..\Tools.Library\Tools.Library.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Design\QuestNameEditor.cs" />
-    <Compile Include="RefactorResult.cs" />
-    <Compile Include="Workspaces\CameraViewModel.cs" />
-    <Compile Include="Converters\CameraScrollToStringConverter.cs" />
-    <Compile Include="Converters\LightingStateToStringConverter.cs" />
-    <Compile Include="Converters\StringToPixelStringConverter.cs" />
-    <Compile Include="Converters\TileValueStringToWorldValueStringConverter.cs" />
-    <Compile Include="Design\EntityTemplateNameEditor.cs" />
-    <Compile Include="Design\LocalizedCategoryAttribute.cs" />
-    <Compile Include="Design\LocalizedDisplayNameAttribute.cs" />
-    <Compile Include="Dialogs\EntityTypeSelectionDialog.xaml.cs">
-      <DependentUpon>EntityTypeSelectionDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\NewSceneDialog.xaml.cs">
-      <DependentUpon>NewSceneDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Design\LocalizedDescriptionAttribute.cs" />
-    <Compile Include="Workspaces\Event\EventWorkspace.cs" />
-    <Compile Include="Workspaces\Event\EventWorkspaceControl.xaml.cs">
-      <DependentUpon>EventWorkspaceControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Event\ViewModels\EventManagerViewModel.cs" />
-    <Compile Include="Workspaces\IWorkspace.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SceneViewModel.cs" />
-    <Compile Include="Workspaces\Object\ObjectWorkspace.cs" />
-    <Compile Include="Workspaces\Object\ObjectWorkspaceControl.xaml.cs">
-      <DependentUpon>ObjectWorkspaceControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Object\PropertyWrappers\AreaSoundEmitter.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\BlockTriggerPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\DecorationPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\EnemySpawnPointPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\EntityPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\EntitySpawnPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\FirePlacePropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\LightPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\MapItemPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\PersistentMapItemPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\PlayerSpawnPointPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\PositionalShotSoundEmitterPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\PositionalSoundEmitterPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\RazorEntitySpawnPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\RedBlueBlockTriggerPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\RespawnableEntitySpawnPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\SpawnPointPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\TileBlockPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\UnlockableDoorTileBlockPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\UseableActionEntityPropertyWrapper.cs" />
-    <Compile Include="Workspaces\Object\PropertyWrappers\WantedSignPostPropertyWrapper.cs" />
-    <Compile Include="Workspaces\SceneScroller.cs" />
-    <Compile Include="Workspaces\Scripts\ScriptEditor.cs" />
-    <Compile Include="Workspaces\Scripts\ScriptEditorWindow.xaml.cs">
-      <DependentUpon>ScriptEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Story\StoryWorkspace.cs" />
-    <Compile Include="Workspaces\Story\StoryWorkspaceControl.xaml.cs">
-      <DependentUpon>StoryWorkspaceControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Story\ViewModels\IncidentViewModel.cs" />
-    <Compile Include="Workspaces\Story\ViewModels\StoryboardViewModel.Commands.cs" />
-    <Compile Include="Workspaces\Story\ViewModels\StoryboardViewModel.cs" />
-    <Compile Include="Workspaces\Story\ViewModels\TimelineViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ActionLayerVisabilityMode.cs" />
-    <Compile Include="Workspaces\Tile\SelectedSpriteContainer.cs" />
-    <Compile Include="Workspaces\Tile\TileLayingMode.cs" />
-    <Compile Include="Workspaces\Tile\TileMapFloorEditMode.cs" />
-    <Compile Include="Workspaces\Tile\TileWorkspace.cs" />
-    <Compile Include="Workspaces\Tile\TileWorkspaceControl.xaml.cs">
-      <DependentUpon>TileWorkspaceControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Tile\ViewModels\ActionLayerViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ViewModels\SpriteSheetViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ViewModels\TileMapFloorViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ViewModels\TileMapDataLayerViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ViewModels\TileMapSpriteDataLayerViewModel.cs" />
-    <Compile Include="Workspaces\Tile\ViewModels\TileMapViewModel.cs" />
-    <Compile Include="Workspaces\Object\EntityPropertyWrapperFactory.cs" />
-    <Compile Include="UniqueNameHelper.cs" />
-    <Compile Include="Workspaces\Waypoint\DeletionConfirmationDialog.xaml.cs">
-      <DependentUpon>DeletionConfirmationDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Waypoint\ViewModels\PathSegmentViewModel.cs" />
-    <Compile Include="Workspaces\Waypoint\PathTravelVisualizer.cs" />
-    <Compile Include="Workspaces\Waypoint\PathViewModel.cs" />
-    <Compile Include="Workspaces\Waypoint\WaypointMapDrawer.cs" />
-    <Compile Include="Workspaces\Waypoint\WaypointWorkspaceControl.xaml.cs">
-      <DependentUpon>WaypointWorkspaceControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Workspaces\Waypoint\WaypointWorkspaceEditMode.cs" />
-    <Compile Include="Workspaces\Waypoint\ViewModels\WaypointMapViewModel.cs" />
-    <Compile Include="Workspaces\Waypoint\ViewModels\WaypointViewModel.cs" />
-    <Compile Include="Workspaces\Waypoint\WaypointWorkspace.cs" />
-    <Compile Include="Converters\WorkspaceToBooleanConverter.cs" />
-    <Compile Include="Workspaces\WorkspaceType.cs" />
-    <Compile Include="XnaEditorApp.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library.Design\Library.Design.csproj">
-      <Project>{9DDCD795-4075-4BDC-A5C8-FFED324F210F}</Project>
-      <Name>Library.Design</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library\Library.csproj">
-      <Project>{08F95E1C-389B-450B-982D-4F1E1C473844}</Project>
-      <Name>Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tools.Library\Tools.Library.csproj">
-      <Project>{46BE2E19-1FF1-4F77-A5E6-47608B61964E}</Project>
-      <Name>Tools.Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Properties\editor-icon.ico" />
@@ -460,38 +121,4 @@
   <ItemGroup>
     <Resource Include="Properties\Todo.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-    <Folder Include="Workspaces\Object\ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
-      <Visible>False</Visible>
-      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -188,7 +188,7 @@ namespace Zelda
         }
 
         /// <summary>
-        /// Gets the <see cref="Atom.IObjectProviderContainerRegistrar"/> that can be used to receive
+        /// Gets the <see cref="Atom.Patterns.Provider.IObjectProviderContainerRegistrar"/> that can be used to receive
         /// and register IObjectProviders.
         /// </summary>
         public Atom.Patterns.Provider.IObjectProviderContainerRegistrar ProviderContainer
@@ -244,12 +244,16 @@ namespace Zelda
         /// </returns>
         public virtual object GetService( Type serviceType )
         {
-            if( serviceType.IsAssignableFrom( this.GetType() ) )
+            if( serviceType.IsAssignableFrom( GetType() ) )
+            {
                 return this;
+            }
 
-            var service = this.providerContainer.TryResolve( serviceType );
+            object service = providerContainer.TryResolve( serviceType );
             if( service != null )
+            {
                 return service;
+            }
 
             return this.Game.Services.GetService( serviceType );
         }

@@ -83,7 +83,7 @@ namespace Zelda
         Zelda.Items.ItemManager ItemManager { get; }
 
         /// <summary>
-        /// Gets the <see cref="Zelda.Audio.AudioSystem"/> object.
+        /// Gets the <see cref="Zelda.Audio.ZeldaAudioSystem"/> object.
         /// </summary>
         Zelda.Audio.ZeldaAudioSystem AudioSystem { get; }
     }

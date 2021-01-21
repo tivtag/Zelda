@@ -35,7 +35,6 @@ namespace Zelda.Graphics.Design
         /// <returns>
         /// The new value of the object.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override object EditValue( ITypeDescriptorContext context, IServiceProvider provider, object value )
         {
             var dialog = new OpenFileDialog() {
@@ -64,8 +63,8 @@ namespace Zelda.Graphics.Design
         /// </returns>
         private static Texture2D LoadTexture( string fileName )
         {
-            var serviceProvider = Zelda.Design.DesignTime.Services;
-            var textureLoader = serviceProvider.TextureLoader;
+            IZeldaServiceProvider serviceProvider = Zelda.Design.DesignTime.Services;
+            Atom.Xna.ITexture2DLoader textureLoader = serviceProvider.TextureLoader;
 
             string relativeFileName = fileName.Replace( AppDomain.CurrentDomain.BaseDirectory, string.Empty );
             string assetName = Path.ChangeExtension( relativeFileName, null );
@@ -85,7 +84,6 @@ namespace Zelda.Graphics.Design
         /// <returns>
         /// Returns UITypeEditorEditStyle.Modal.
         /// </returns>
-        [System.Security.Permissions.PermissionSet( System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust" )]
         public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle( ITypeDescriptorContext context )
         {
             return System.Drawing.Design.UITypeEditorEditStyle.Modal;

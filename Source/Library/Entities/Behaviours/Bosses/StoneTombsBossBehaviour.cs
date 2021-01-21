@@ -117,13 +117,17 @@ namespace Zelda.Entities.Behaviours.Bosses
         public override void Update( ZeldaUpdateContext updateContext )
         {
             if( !this.IsActive )
+            {
                 return;
+            }
 
             base.Update( updateContext );
 
             // Spawn Waves if the Boss is chasing the Player.
             if( !this.ChasePlayerBehaviour.IsActive || boss.Statable.IsDead )
+            {
                 return;
+            }
 
             if( !this.isEnraged )
             {
@@ -144,7 +148,7 @@ namespace Zelda.Entities.Behaviours.Bosses
         /// <returns>
         /// A ISpawnPoint.
         /// </returns>
-        private Entities.Spawning.ISpawnPoint GetRandomSpawnPoint()
+        private ISpawnPoint GetRandomSpawnPoint()
         {
             // There are 4 spawn points
             // for enemy waves in this boss fight.
@@ -158,7 +162,7 @@ namespace Zelda.Entities.Behaviours.Bosses
         /// </summary>
         private void SpawnWave()
         {
-            var spawnPoint = GetRandomSpawnPoint();
+            ISpawnPoint spawnPoint = GetRandomSpawnPoint();
 
             switch( waveCount )
             {
@@ -207,11 +211,11 @@ namespace Zelda.Entities.Behaviours.Bosses
 
         private void SpawnEntity( int fromCount, int toCount, string entityName, ISpawnPoint spawnPoint )
         {
-            var rand = this.serviceProvider.Rand;
-            var entityManager = this.serviceProvider.EntityTemplateManager;
+            RandMT rand = this.serviceProvider.Rand;
+            EntityTemplateManager entityManager = this.serviceProvider.EntityTemplateManager;
 
             IEntityTemplate template = entityManager.GetTemplate( entityName );
-            int count = rand.RandomRange( 2, 4 );
+            int count = rand.RandomRange( fromCount, toCount );
 
             for( int i = 0; i < count; ++i )
             {
@@ -242,15 +246,17 @@ namespace Zelda.Entities.Behaviours.Bosses
         private void PlayBossMusic()
         {
             // Receive.
-            var music = this.serviceProvider.AudioSystem.GetMusic( BossMusicName );
+            Atom.Fmod.Sound music = this.serviceProvider.AudioSystem.GetMusic( BossMusicName );
             if( music == null )
+            {
                 return;
+            }
 
             // Load.
             music.LoadAsMusic( false );
 
             // Play.
-            var backgroundMusic = ingameState.BackgroundMusic;
+            Audio.BackgroundMusicComponent backgroundMusic = ingameState.BackgroundMusic;
 
             backgroundMusic.Mode = Zelda.Audio.BackgroundMusicMode.Loop;
             backgroundMusic.ChangeTo( music );
@@ -262,7 +268,9 @@ namespace Zelda.Entities.Behaviours.Bosses
         private void EnableEnrage()
         {
             if( enrageAura.AuraList != null )
+            {
                 return;
+            }
 
             // Apply status StatusEffects.
             this.boss.Statable.AuraList.Add( enrageAura );
@@ -271,9 +279,11 @@ namespace Zelda.Entities.Behaviours.Bosses
             this.boss.Statable.AuraList.Add( secondaryEnrageAura );
 
             // Tint the boss redish.
-            var tintedDds = boss.DrawDataAndStrategy as Zelda.Entities.Drawing.ITintedDrawDataAndStrategy;
+            Drawing.ITintedDrawDataAndStrategy tintedDds = boss.DrawDataAndStrategy as Zelda.Entities.Drawing.ITintedDrawDataAndStrategy;
             if( tintedDds != null )
+            {
                 tintedDds.BaseColor = new Microsoft.Xna.Framework.Color( 255, 100, 100, 255 );
+            }
 
             this.isEnraged = true;
         }
@@ -298,10 +308,12 @@ namespace Zelda.Entities.Behaviours.Bosses
             }
             else
             {
-                if( this.ingameState == null )
+                if( ingameState == null )
+                {
                     return;
+                }
 
-                var backgroundMusic = this.ingameState.BackgroundMusic;
+                Audio.BackgroundMusicComponent backgroundMusic = this.ingameState.BackgroundMusic;
 
                 if( backgroundMusic.Mode != Audio.BackgroundMusicMode.Random )
                 {
@@ -322,9 +334,11 @@ namespace Zelda.Entities.Behaviours.Bosses
         private void OnBossAttacked( object sender, Zelda.Entities.Components.AttackEventArgs e )
         {
             if( this.boss == null )
+            {
                 return;
+            }
 
-            var statable = this.boss.Statable;
+            Statable statable = this.boss.Statable;
             if( statable.Life <= (statable.MaximumLife * 0.25) )
             {
                 this.EnableEnrage();
@@ -340,22 +354,28 @@ namespace Zelda.Entities.Behaviours.Bosses
         private void OnBossDied( Statable sender )
         {
             if( this.boss == null )
+            {
                 return;
+            }
 
-            var scene = this.boss.Scene;
+            ZeldaScene scene = this.boss.Scene;
             if( scene == null )
+            {
                 return;
+            }
 
             // 1. Move all red/blue blocks down.
-            var blockDownEvent = scene.EventManager.GetEvent( "Event_RedBlueBlocks_AllDown" );
+            Atom.Events.Event blockDownEvent = scene.EventManager.GetEvent( "Event_RedBlueBlocks_AllDown" );
             blockDownEvent.Trigger( scene.Player );
 
             // 2. Disable all triggers.
-            foreach( var entity in scene.Entities )
+            foreach( ZeldaEntity entity in scene.Entities )
             {
                 var trigger = entity as RedBlueBlockTrigger;
                 if( trigger != null )
+                {
                     trigger.IsEnabled = false;
+                }
             }
 
             // 3. Play Normal Music again.            
@@ -364,7 +384,7 @@ namespace Zelda.Entities.Behaviours.Bosses
 
         private void PlayNormalMusic()
         {
-            var backgroundMusic = ingameState.BackgroundMusic;
+            Audio.BackgroundMusicComponent backgroundMusic = ingameState.BackgroundMusic;
             backgroundMusic.Mode = Zelda.Audio.BackgroundMusicMode.Random;
             backgroundMusic.ChangeToRandom();
         }

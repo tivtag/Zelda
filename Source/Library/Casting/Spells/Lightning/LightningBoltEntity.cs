@@ -179,11 +179,11 @@ namespace Zelda.Casting.Spells.Lightning
         /// </param>
         public void Setup( IZeldaServiceProvider serviceProvider )
         {
-            var effectLoader = serviceProvider.GetService<IEffectLoader>();
-            var deviceService = serviceProvider.GetService<IGraphicsDeviceService>();
-            var renderTargetFactory = serviceProvider.GetService<IRenderTarget2DFactory>();
+            IEffectLoader effectLoader = serviceProvider.GetService<IEffectLoader>();
+            IGraphicsDeviceService deviceService = serviceProvider.GetService<IGraphicsDeviceService>();
+            IRenderTarget2DFactory renderTargetFactory = serviceProvider.GetService<IRenderTarget2DFactory>();
 
-            var device = deviceService.GraphicsDevice;
+            GraphicsDevice device = deviceService.GraphicsDevice;
             this.rand = serviceProvider.Rand;
             this.bolt = new LightningBolt( Vector3.Zero, Vector3.Zero, this.settings, null, serviceProvider.Rand );
 
@@ -204,8 +204,8 @@ namespace Zelda.Casting.Spells.Lightning
         /// </param>
         public void SetupPostProcess( IZeldaServiceProvider serviceProvider )
         {
-            var effectLoader = serviceProvider.GetService<IEffectLoader>();
-            var deviceService = serviceProvider.GetService<IGraphicsDeviceService>();
+            IEffectLoader effectLoader = serviceProvider.GetService<IEffectLoader>();
+            IGraphicsDeviceService deviceService = serviceProvider.GetService<IGraphicsDeviceService>();
 
             //this.glow = new Atom.Xna.Effects.PostProcess.Glow( effectLoader, renderTargetFactory, deviceService );
             //this.glow.LoadContent();
@@ -220,7 +220,7 @@ namespace Zelda.Casting.Spells.Lightning
         /// </summary>
         private void UpdateBoltPositions()
         {
-            var scroll = this.Scene.Camera.Scroll;
+            Vector2 scroll = this.Scene.Camera.Scroll;
             var size = new Point2( 360, 240 );
 
             this.bolt.Source = new Vector3(
@@ -234,6 +234,9 @@ namespace Zelda.Casting.Spells.Lightning
                 0.0f );
         }
 
+        /// <summary>
+        /// Resets this LightningBoltEntity.
+        /// </summary>
         public void Reset()
         {
             this.texture = null;
@@ -249,17 +252,19 @@ namespace Zelda.Casting.Spells.Lightning
         public override void Draw( ZeldaDrawContext drawContext )
         {
             if( !this.IsVisible )
+            {
                 return;
+            }
 
-            var delta = (this.area.LowerLeft - this.area.UpperRight);
-            var deltaLength = delta.Length;
+            Vector2 delta = (this.area.LowerLeft - this.area.UpperRight);
+            float deltaLength = delta.Length;
             
             if( this.texture != null && deltaLength > 21.0f )
             {
                 const float BlendInEnd = 32.0f;
                 float alpha = deltaLength <= BlendInEnd ? (1.0f - ((BlendInEnd - deltaLength) / BlendInEnd)) : 1.0f;
-                
-                var scroll = drawContext.Camera.Scroll;
+
+                Vector2 scroll = drawContext.Camera.Scroll;
 
                 drawContext.Batch.Draw(
                     texture,
@@ -286,10 +291,12 @@ namespace Zelda.Casting.Spells.Lightning
         public void DrawLight( ZeldaDrawContext drawContext )
         {
             if( !this.IsVisible || !this.IsLightningEnabled || this.lightTexture == null )
+            {
                 return;
+            }
 
-            var batch = drawContext.Batch;
-            var scroll = drawContext.Camera.Scroll;
+            Atom.Xna.Batches.IComposedSpriteBatch batch = drawContext.Batch;
+            Vector2 scroll = drawContext.Camera.Scroll;
 
             drawContext.Batch.Draw(
                 this.lightTexture,
@@ -328,8 +335,8 @@ namespace Zelda.Casting.Spells.Lightning
 
                 if( this.IsLightningEnabled && this.blur != null )
                 {
-                    var device = drawContext.Device;
-                    var oldRenderTarget = device.GetRenderTarget2D();
+                    GraphicsDevice device = drawContext.Device;
+                    RenderTarget2D oldRenderTarget = device.GetRenderTarget2D();
                     blur.PostProcess( this.texture, this.offscreenTarget, drawContext );
                     device.SetRenderTarget( oldRenderTarget );
 
@@ -344,11 +351,12 @@ namespace Zelda.Casting.Spells.Lightning
         protected override void TestCollision()
         {
             if( !this.MeleeAttack.IsReady || this.Creator == null )
+            {
                 return;
+            }
 
-            var rectangle = this.Collision.Rectangle;
-
-            foreach( var target in this.Scene.VisibleEntities )
+            RectangleF rectangle = this.Collision.Rectangle;
+            foreach( ZeldaEntity target in this.Scene.VisibleEntities )
             {
                 if( this.FloorNumber == target.FloorNumber )
                 {

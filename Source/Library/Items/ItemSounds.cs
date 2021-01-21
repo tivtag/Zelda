@@ -44,7 +44,7 @@ namespace Zelda.Items
         /// <param name="item">
         /// The item that is about to be picked-up/dropped down.
         /// </param>
-        /// <param name="volumneMultiplicator">
+        /// <param name="volumneMultiplicatorRange">
         /// The value the sound volume is multiplied with.
         /// </param>
         public static void PlayRandomPickUpOrDown( Item item, FloatRange volumneMultiplicatorRange )
@@ -74,7 +74,7 @@ namespace Zelda.Items
         public static void PlayPickUp( Item item, float volumneMultiplicator = 1.0f )
         {
             float volumne;
-            var sound = GetPickUp( item, out volumne );
+            Sound sound = GetPickUp( item, out volumne );
             PlaySound( sound, volumne * volumneMultiplicator );
         }
 
@@ -256,15 +256,7 @@ namespace Zelda.Items
                     return pickUpRing;
 
                 default:
-                    if( item.SoundOnPickupVolume != null )
-                    {
-                        volumne = item.SoundOnPickupVolume.GetRandomValue( rand );
-                    }
-                    else
-                    {
-                        volumne = 0.0f;
-                    }
-
+                    volumne = item.SoundOnPickupVolume.GetRandomValue( rand );
                     return item.SoundOnPickup;
             }
         }
@@ -282,7 +274,7 @@ namespace Zelda.Items
         public static void PlayPutDown( Item item, float volumneMultiplicator = 1.0f )
         {
             float volumne;
-            var sound = GetPutDown( item, out volumne );
+            Sound sound = GetPutDown( item, out volumne );
             PlaySound( sound, volumne * volumneMultiplicator );
         }
 
@@ -583,9 +575,11 @@ namespace Zelda.Items
         /// </returns>
         private static Sound LoadSample( string fullName, AudioSystem audioSystem )
         {
-            var sample = audioSystem.GetSample( fullName );
+            Sound sample = audioSystem.GetSample( fullName );
             if( sample == null )
+            {
                 return null;
+            }
 
             sample.LoadAsSample( false );
             return sample;

@@ -10,30 +10,23 @@
 
 namespace Zelda.Editor
 {
-    using System;
-    using System.Globalization;
     using System.Windows;
     using Atom;
-    using Atom.Diagnostics;
 
     /// <summary>
     /// The Zelda.Editor allows the creation and modification of ZeldaScenes.
     /// It is the main content creation tool of the game.
     /// </summary>
-    public partial class EditorApp
+    public partial class EditorApp : ToolApplication
     {
-        #region [ Properties ]
-
-        #region > Graphics <
-
         /// <summary>
         /// Gets the size of the (unscaled) game window.
         /// </summary>
         public override Atom.Math.Point2 ViewSize
         {
-            get 
+            get
             {
-                var bounds = this.AppObject.Window.ClientBounds;
+                Microsoft.Xna.Framework.Rectangle bounds = this.AppObject.Window.ClientBounds;
                 return new Atom.Math.Point2( bounds.Width, bounds.Height );
             }
         }
@@ -82,23 +75,15 @@ namespace Zelda.Editor
                 return this.xnaApp.SpriteSheetLoader;
             }
         }
-        
-        #endregion
-
-        #region > Managers <
 
         /// <summary>
-        /// Receives the <see cref="Zelda.Editor.Object.ObjectPropertyWrapperFactory"/> object.
+        /// Receives the <see cref="Zelda.Editor.Object.EntityPropertyWrapperFactory"/> object.
         /// </summary>
         internal Zelda.Editor.Object.EntityPropertyWrapperFactory ObjectPropertyWrapperFactory
         {
             get;
             private set;
         }
-
-        #endregion
-
-        #region > Misc <
 
         /// <summary>
         /// Receives the <see cref="EditorApp"/> object of the current AppDomain.
@@ -138,12 +123,6 @@ namespace Zelda.Editor
             }
         }
 
-        #endregion
-
-        #endregion
-
-        #region [ Initialiation ]
-
         /// <summary>
         /// Initializes a new instance of the <see cref="EditorApp"/> class.
         /// </summary>
@@ -164,8 +143,21 @@ namespace Zelda.Editor
             Zelda.Design.DesignTime.Initialize( this );
             Zelda.ZeldaScene.EditorMode = true;
 
-            GlobalServices.Container.AddService<IZeldaServiceProvider>( this );     
+            GlobalServices.Container.AddService<IZeldaServiceProvider>( this ); 
         }
+
+        /////// <summary>
+        /////// Application Entry Point.
+        /////// </summary>
+        ////[System.STAThreadAttribute()]
+        ////[System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        ////[System.CodeDom.Compiler.GeneratedCodeAttribute( "PresentationBuildTasks", "4.0.0.0" )]
+        ////public static void Main()
+        ////{
+        ////    Zelda.Editor.EditorApp app = new Zelda.Editor.EditorApp();
+        ////    app.InitializeComponent();
+        ////    app.Run();
+        ////}
 
         /// <summary>
         /// Initializes the application.
@@ -191,15 +183,9 @@ namespace Zelda.Editor
             base.OnExit( e );
         }
 
-        #endregion
-
-        #region [ Fields ]
-
         /// <summary>
         /// Reference ot the xna application object.
         /// </summary>
         private XnaEditorApp xnaApp;
-
-        #endregion
     }
 }

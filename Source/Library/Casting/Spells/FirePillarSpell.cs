@@ -32,16 +32,19 @@ namespace Zelda.Casting.Spells
             set;
         }
 
+        /// <summary>
+        /// The indices of the spell animation that are dealing damage.
+        /// </summary>
         public IntegerRange AllowedAnimationIndexRange
         {
             get { return allowedAnimationIndexRange; }
             set { allowedAnimationIndexRange = value; }
         }
 
-        public Zelda.Status.Statable OwnerStatable
-        {
-            get { return ownerStatable; }
-        } 
+        /// <summary>
+        /// The Statable component of the caster of this Spell.
+        /// </summary>
+        public Zelda.Status.Statable OwnerStatable => ownerStatable;
 
         /// <summary>
         /// Initializes a new instance of the FirePillarSpell class.
@@ -93,7 +96,7 @@ namespace Zelda.Casting.Spells
             entity.Collision.Set( new Vector2( -1.0f, -4.0f ), new Vector2( 16.0f, 16.0f ) );
 
             // Drawing
-            var animation = this.sprite.CreateInstance();
+            SpriteAnimation animation = this.sprite.CreateInstance();
             entity.DrawDataAndStrategy = new Zelda.Entities.Drawing.TintedOneDirAnimDrawDataAndStrategy( entity ) {
                 Animation = animation,
                 SpriteGroup = animationName
@@ -126,7 +129,7 @@ namespace Zelda.Casting.Spells
         /// </returns>
         private IPooledObjectWrapper<DamageEffectEntity> CreatePoolableFirePillarEntity()
         {
-            var entity = CreateFirePillarEntity();
+            DamageEffectEntity entity = CreateFirePillarEntity();
             return new PooledObjectWrapper<DamageEffectEntity>( entity );
         }
 
@@ -158,10 +161,10 @@ namespace Zelda.Casting.Spells
         public DamageEffectEntity SpawnFirePillarAt( Vector2 position, int floorNumber, ZeldaScene scene )
         {
             if( CanSpawnAt( position, floorNumber, scene ) )
-            { 
+            {
                 // Get from pool.
-                var firePillarNode = this.pool.Get();
-                var firePillar = firePillarNode.Item.PooledObject;
+                PoolNode<IPooledObjectWrapper<DamageEffectEntity>> firePillarNode = this.pool.Get();
+                DamageEffectEntity firePillar = firePillarNode.Item.PooledObject;
 
                 // Setup
                 firePillar.FloorNumber = floorNumber;
@@ -190,8 +193,8 @@ namespace Zelda.Casting.Spells
         /// <returns></returns>
         private static bool CanSpawnAt( Vector2 position, int floorNumber, ZeldaScene scene )
         {
-            var floor = scene.Map.Floors[floorNumber];
-            var tileId = floor.ActionLayer.GetTileAtSafe( (int)((position.X + 8.0f) / 16), (int)((position.Y + 8.0f) / 16) );
+            Atom.Scene.Tiles.TileMapFloor floor = scene.Map.Floors[floorNumber];
+            int tileId = floor.ActionLayer.GetTileAtSafe( (int)((position.X + 8.0f) / 16), (int)((position.Y + 8.0f) / 16) );
 
             return DefaultTileHandler.IsWalkable( tileId );
         }
@@ -224,6 +227,9 @@ namespace Zelda.Casting.Spells
             /// </param>
             /// <param name="animation">
             /// Identifies the animation of the Fire Pillar whose attacks are limited by the new FirePillarAttackLimiter.
+            /// </param>
+            /// <param name="allowedAnimationIndexRange">
+            /// The indices of the spell animation that are dealing damage.
             /// </param>
             public FirePillarAttackLimiter( float attackDelay, SpriteAnimation animation, IntegerRange allowedAnimationIndexRange )
             {
