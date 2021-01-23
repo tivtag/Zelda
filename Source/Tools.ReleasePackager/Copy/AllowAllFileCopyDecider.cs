@@ -11,9 +11,17 @@ namespace Tools.ReleasePackager.Copy
     /// </summary>
     public sealed class AllowAllFileCopyDecider : IFileCopyDecider
     {
-        public bool ShouldCopy( string fileName )
-        {
-            return true;
-        }
+        /// <summary>
+        /// Gets a value indicating whether the file with the 
+        /// specified fileName should be copied.
+        /// </summary>
+        /// <param name="fileName">
+        /// The relative full path of the file.
+        /// </param>
+        /// <returns>
+        /// true if it should be copied;
+        /// otherwise false.
+        /// </returns>
+        public bool ShouldCopy( string fileName ) => true;
     }
 }

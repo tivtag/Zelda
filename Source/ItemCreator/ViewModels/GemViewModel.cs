@@ -19,8 +19,6 @@ namespace Zelda.ItemCreator
     /// </summary>
     internal sealed class GemViewModel : ItemViewModel
     {
-        #region [ Wrapped Properties ]
-
         [LocalizedCategory( "PropCate_Gem" )]
         [LocalizedDisplayName( "PropDisp_GemEffects" )]
         [LocalizedDescription( "PropDesc_GemEffects" )]
@@ -47,12 +45,8 @@ namespace Zelda.ItemCreator
             set { this.WrappedGem.RequiredLevel = value; }
         }
 
-        #endregion
-
-        #region [ Wrapper ]
-
         /// <summary>
-        /// Gets the Gem this <see cref="EquipmentViewModel"/> wraps around.
+        /// Gets the Gem this <see cref="GemViewModel"/> wraps around.
         /// </summary>
         [Browsable( false )]
         public Gem WrappedGem
@@ -64,7 +58,7 @@ namespace Zelda.ItemCreator
         }
 
         /// <summary>
-        /// Gets the <see cref="Type"/> this <see cref="IObjectPropertyWrapper"/> wraps around.
+        /// Gets the <see cref="Type"/> this <see cref="GemViewModel"/> wraps around.
         /// </summary>
         public override Type WrappedType
         {
@@ -95,7 +89,5 @@ namespace Zelda.ItemCreator
         {
             return new GemViewModel( this.ServiceProvider );
         }
-
-        #endregion
     }
 }

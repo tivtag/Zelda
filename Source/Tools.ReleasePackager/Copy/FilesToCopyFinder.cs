@@ -15,6 +15,15 @@ namespace Tools.ReleasePackager.Copy
     /// </summary>
     public sealed class FilesToCopyFinder : IFilesToCopyFinder
     {
+        /// <summary>
+        /// Creates a new instance of the <see cref="FilesToCopyFinder"/> class.
+        /// </summary>
+        /// <param name="originalDirectory">
+        /// The directoy that contains the source files.
+        /// </param>
+        /// <param name="fileCopyDecider">
+        /// Decides which files to keep.
+        /// </param>
         public FilesToCopyFinder( string originalDirectory, IFileCopyDecider fileCopyDecider )
         {
             this.originalDirectory = originalDirectory;
@@ -29,7 +38,7 @@ namespace Tools.ReleasePackager.Copy
         /// </returns>
         public IEnumerable<string> GetFilesToCopy()
         {
-            var originalFiles = this.GetOriginalFiles();
+            IEnumerable<string> originalFiles = this.GetOriginalFiles();
             var filesToCopy = new List<string>();
 
             foreach( string file in originalFiles )

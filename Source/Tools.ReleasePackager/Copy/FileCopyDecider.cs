@@ -14,6 +14,15 @@ namespace Tools.ReleasePackager.Copy
     /// </summary>
     public sealed class FileCopyDecider : IFileCopyDecider
     {
+        /// <summary>
+        /// Creates a new instance of the <see cref="FileCopyDecider"/> class.
+        /// </summary>
+        /// <param name="blackList">
+        /// Contains the file to not include.
+        /// </param>
+        /// <param name="whiteList">
+        /// Contains the file to include.
+        /// </param>
         public FileCopyDecider( IBlackWhiteList blackList, IBlackWhiteList whiteList )
         {
             this.blackList = blackList;
@@ -55,13 +64,19 @@ namespace Tools.ReleasePackager.Copy
         private bool IsBlacklisted( string fileName )
         {
             if( this.blackList.HasFile( fileName ) )
+            {
                 return true;
+            }
 
             if( this.blackList.HasExtension( Path.GetExtension( fileName ) ) )
+            {
                 return true;
+            }
 
             if( this.blackList.HasDirectory( fileName ) )
+            {
                 return true;
+            }
 
             return false;
         }
@@ -79,10 +94,7 @@ namespace Tools.ReleasePackager.Copy
         /// </returns>
         private bool IsWhitelisted( string fileName )
         {
-            if( this.whiteList.HasFile( fileName ) )
-                return true;
-
-            return false;
+            return this.whiteList.HasFile( fileName );
         }
 
         private readonly IBlackWhiteList blackList;

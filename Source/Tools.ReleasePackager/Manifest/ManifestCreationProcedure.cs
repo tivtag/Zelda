@@ -15,19 +15,25 @@ namespace Tools.ReleasePackager.Manifest
     /// Defines an IProcedure that is responsible for creating an IManifest file
     /// used by the Auto Updater of the game.
     /// </summary>
-    public sealed class ManifestCreationProcedure : IProcedure    
+    public sealed class ManifestCreationProcedure : IProcedure
     {
-        public ManifestCreationProcedure(string workingDirectory)
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManifestCreationProcedure"/> class.
+        /// </summary>
+        /// <param name="workingDirectory">
+        /// The directory in which the manifest should be created.
+        /// </param>
+        public ManifestCreationProcedure( string workingDirectory )
             : this(
                 workingDirectory,
-                new ManifestBuilder(new FileSystem(workingDirectory)),
+                new ManifestBuilder( new FileSystem( workingDirectory ) ),
                 new BinaryManifestSerializer() { SerializeHash = true }
             )
         {
         }
 
-        public ManifestCreationProcedure(
-            string workingDirectory, 
+        private ManifestCreationProcedure(
+            string workingDirectory,
             IManifestBuilder manifestBuilder,
             IManifestSerializer manifestSerializer )
         {

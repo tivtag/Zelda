@@ -41,7 +41,7 @@ namespace Tools.ReleasePackager.Copy
         /// Gets a value indicating whether the specified fullPath
         /// is black or white listed because of its directory of sub directory.
         /// </summary>
-        /// <param name="directory">
+        /// <param name="fullPath">
         /// The relative full path of the file to check.
         /// </param>
         /// <returns>

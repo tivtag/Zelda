@@ -74,12 +74,16 @@ namespace Zelda.ItemCreator
             set
             {
                 if( value == this.AdditionalEffectsToggle )
+                {
                     return;
+                }
 
                 if( value == true )
                 {
                     if( cachedAdditionalEffects == null )
+                    {
                         cachedAdditionalEffects = new Zelda.Status.PermanentAura();
+                    }
 
                     this.WrappedEquipment.AdditionalEffectsAura = cachedAdditionalEffects;
                 }
@@ -251,7 +255,9 @@ namespace Zelda.ItemCreator
             set
             {
                 if( value != null )
+                {
                     this.HasSockets = true;
+                }
 
                 this.WrappedEquipment.SocketProperties.Sockets = value;
             }
@@ -279,15 +285,21 @@ namespace Zelda.ItemCreator
             set
             {
                 if( value == this.HasSockets )
+                {
                     return;
+                }
 
                 if( value )
                 {
                     if( this.WrappedEquipment.SocketProperties.Sockets == null )
+                    {
                         this.WrappedEquipment.SocketProperties.Sockets = new Socket[0];
+                    }
 
                     if( this.WrappedEquipment.SocketProperties.Bonus == null )
+                    {
                         this.WrappedEquipment.SocketProperties.Bonus = new Zelda.Status.PermanentAura();
+                    }
                 }
                 else
                 {
@@ -363,7 +375,7 @@ namespace Zelda.ItemCreator
         }
 
         /// <summary>
-        /// Gets the <see cref="Type"/> this <see cref="IObjectPropertyWrapper"/> wraps around.
+        /// Gets the <see cref="Type"/> this <see cref="EquipmentViewModel"/> wraps around.
         /// </summary>
         public override Type WrappedType
         {

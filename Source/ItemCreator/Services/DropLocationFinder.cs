@@ -9,41 +9,60 @@ namespace Zelda.ItemCreator.Services
     using Zelda.Entities;
     using Zelda.Items;
 
-    public class DropLocationFinder
+    /// <summary>
+    /// Responsible for finding all locations where an Item drops.
+    /// </summary>
+    public sealed class DropLocationFinder
     {
+        /// <summary>
+        /// Initializes a new instance of the DropLocationFinder class.
+        /// </summary>
+        /// <param name="serviceProvider">
+        /// Provides a mechanism to receive various game related services.
+        /// </param>
         public DropLocationFinder( IZeldaServiceProvider serviceProvider )
         {
             if( serviceProvider == null )
-                throw new ArgumentNullException( "serviceProvider" );
+            {
+                throw new ArgumentNullException( nameof( serviceProvider ) );
+            }
 
             this.serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// Returns a string that contains a description of the ingame locations
+        /// where the given Item drops.
+        /// </summary>
+        /// <param name="item">
+        /// The Item to search.
+        /// </param>
         public string FindLocations( Item item )
         {
             if( item == null )
-                throw new ArgumentNullException( "item" );
+            {
+                throw new ArgumentNullException( nameof( item ) );
+            }
 
             var sb = new StringBuilder();
-
             sb.AppendLine( "Dropped by:" );
 
-            foreach( var dropEntry in this.GetAllEnemiesThatDrop( item ) )
+            foreach( (Enemy enemy, double dropChance) in this.GetAllEnemiesThatDrop( item ) )
             {
-                string enemyName = dropEntry.Item1.Name;
-                string dropChance = dropEntry.Item2.ToString();
+                string enemyName = enemy.Name;
+                string dropChanceText = dropChance.ToString();
 
-                sb.AppendFormat( "    {0} - {1}%\n", enemyName, dropChance );
+                sb.AppendFormat( "    {0} - {1}%\n", enemyName, dropChanceText );
             }
-            
-            var locations = GetAllMapLocationsOf( item )
+
+            string[] locations = GetAllMapLocationsOf( item )
                 .ToArray();
 
             if( locations.Length > 0 )
             {
                 sb.AppendLine( "\nFound in:" );
                 
-                foreach( var location in locations )
+                foreach( string location in locations )
                 {
                     sb.Append( location );
                 }
@@ -52,7 +71,7 @@ namespace Zelda.ItemCreator.Services
             return sb.ToString();
         }
 
-        private IEnumerable<Tuple<Enemy, double>> GetAllEnemiesThatDrop( Item item )
+        private IEnumerable<(Enemy Enemy, double DropChance)> GetAllEnemiesThatDrop( Item item )
         {
             return
                 from enemy in this.GetAllEnemies()
@@ -61,7 +80,7 @@ namespace Zelda.ItemCreator.Services
                 where relevantEntries.Count() > 0
                     from entry in relevantEntries
                 let dropChance = Math.Round( (entry.Weight / loot.TotalWeight) * 100.0f, 2 )
-                select Tuple.Create( enemy, dropChance );
+                select (enemy, dropChance);
         }
 
         private IEnumerable<string> GetAllMapLocationsOf( Item item )
@@ -83,19 +102,11 @@ namespace Zelda.ItemCreator.Services
 
         private IEnumerable<Enemy> GetAllEnemies()
         {
-            return from name in this.GetAllObjectNames()
-                    let enemy = this.serviceProvider.EntityTemplateManager.LoadEntity( name ) as Enemy
-                    where enemy != null
-                    select enemy;
-
-
-            //if( this.enemies == null )
-            //{
-            //    this.enemies =
-            //        ().ToArray();      
-            //}
-
-            //return this.enemies;
+            return 
+                from name in this.GetAllObjectNames()
+                let enemy = this.serviceProvider.EntityTemplateManager.LoadEntity( name ) as Enemy
+                where enemy != null
+                select enemy;
         }
 
         private IEnumerable<ZeldaScene> GetAllScenes()
@@ -114,7 +125,7 @@ namespace Zelda.ItemCreator.Services
         private IEnumerable<string> GetAllObjectNames()
         {
             return Directory.EnumerateFiles( @"Content\Objects\" )
-                    .Select( fileName => Path.GetFileNameWithoutExtension( fileName ) );
+                .Select( fileName => Path.GetFileNameWithoutExtension( fileName ) );
         }
 
         private ZeldaScene[] scenes;

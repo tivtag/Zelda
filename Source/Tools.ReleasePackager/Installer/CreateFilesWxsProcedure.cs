@@ -20,6 +20,12 @@ namespace Tools.ReleasePackager.Installer
     /// </summary>
     public sealed class CreateFilesWxsProcedure : IProcedure
     {
+        /// <summary>
+        /// Creates a new instance of the <see cref="CreateFilesWxsProcedure"/> class.
+        /// </summary>
+        /// <param name="installerDirectory">
+        /// The directory in which the Windows Installer-XML is created.
+        /// </param>
         public CreateFilesWxsProcedure( string installerDirectory )
         {
             this.installerDirectory = installerDirectory;
@@ -35,10 +41,10 @@ namespace Tools.ReleasePackager.Installer
         /// </returns>
         public bool Run()
         {
-            var document = this.LoadBaseDocument();
+            XDocument document = this.LoadBaseDocument();
             var directories = this.GetRelevantDirectoryElements( document ).ToList();
 
-            foreach( var directory in directories )
+            foreach( XElement directory in directories )
             {
                 this.PopulateDirectory( directory );
             }
@@ -57,22 +63,18 @@ namespace Tools.ReleasePackager.Installer
         private XDocument LoadBaseDocument()
         {          
             var assembly = Assembly.GetExecutingAssembly();
-            var fullResourceName = string.Format(
+            string fullResourceName = string.Format(
                  CultureInfo.InvariantCulture,
                  @"{0}.Installer.Configuration.Files.wxs.xml", 
                  assembly.GetName().Name
             );
 
-            using( var stream = assembly.GetManifestResourceStream( fullResourceName ) )
+            using( Stream stream = assembly.GetManifestResourceStream( fullResourceName ) )
             {
                 return XDocument.Load( XmlReader.Create( stream ) );
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="document"></param>
         private void SaveDocument( XDocument document )
         {
             string savePath = Path.Combine( this.installerDirectory, @"Source\Files.wxs" );
@@ -99,9 +101,11 @@ namespace Tools.ReleasePackager.Installer
         /// <returns></returns>
         private bool IsRelevantDirectory( XElement directory )
         {
-            var id = directory.Attribute( "Id" );
+            XAttribute id = directory.Attribute( "Id" );
             if( id == null )
+            {
                 throw new InvalidOperationException( "The directory doesn't contain the Id attribute." );
+            }
 
             switch( id.Value )
             {
@@ -143,9 +147,9 @@ namespace Tools.ReleasePackager.Installer
                 (element) => element.Name.LocalName.Equals( "Component", StringComparison.InvariantCulture ) 
             );
 
-            foreach( var file in files )
+            foreach( string file in files )
             {
-                var fileElement = this.CreateFileElement( file );
+                XElement fileElement = this.CreateFileElement( file );
                 component.Add( fileElement );
             }
         }
@@ -177,7 +181,7 @@ namespace Tools.ReleasePackager.Installer
         /// <returns></returns>
         private string GetDirectoryPathOnHardDisc( XElement directory )
         {
-            var relative = this.GetRelativeDirectoryPathOnHardDisc( directory );
+            string relative = this.GetRelativeDirectoryPathOnHardDisc( directory );
             return Path.Combine( this.installerContentDirectory, relative );
         }
 
@@ -185,13 +189,13 @@ namespace Tools.ReleasePackager.Installer
         /// Gets the relative directory path on the harddisc that is related to the specified
         /// directory XElement.
         /// </summary>
-        /// <param name="directory"></param>
-        /// <returns></returns>
         private string GetRelativeDirectoryPathOnHardDisc( XElement directory )
         {
-            var name = directory.Attribute( "Name" );
+            XAttribute name = directory.Attribute( "Name" );
             if( name == null )
+            {
                 throw new InvalidOperationException( "The directory doesn't contain the Name attribute." );
+            }
 
             switch( name.Value )
             {

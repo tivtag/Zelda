@@ -15,10 +15,19 @@ namespace Tools.ReleasePackager.Installer
 
     /// <summary>
     /// Defines the ParentProcedure that encapsulates the logic related
-    /// to updating the Windows Installer Xml of the game.
+    /// to updating the Windows Installer-XML of the game.
     /// </summary>
     public sealed class InstallerProcedure : ParentProcedure
     {
+        /// <summary>
+        /// Creates a new instance of the <see cref="InstallerProcedure"/> class.
+        /// </summary>
+        /// <param name="packagedDirectory">
+        /// The directy that contains the packaged files.
+        /// </param>
+        /// <param name="installerDirectory">
+        /// The directory in which the Windows Installer-XML should be created.
+        /// </param>
         public InstallerProcedure( string packagedDirectory, string installerDirectory )
         {
             this.packagedDirectory = packagedDirectory;
@@ -34,13 +43,17 @@ namespace Tools.ReleasePackager.Installer
         /// </returns>
         public override bool Run()
         {
-            var copyToInstallerProcedure = this.CreateCopyFromPackegedToInstallerProcedure();
+            IProcedure copyToInstallerProcedure = this.CreateCopyFromPackegedToInstallerProcedure();
             if( !RunProcedure( copyToInstallerProcedure, "Copy files from Packaged to Installer" ) )
+            {
                 return false;
+            }
 
             var createFilexWxsProcedure = new CreateFilesWxsProcedure( this.installerDirectory );
             if( !RunProcedure( createFilexWxsProcedure, "Create Installer files" ) )
+            {
                 return false;
+            }
 
             return true;
         }
