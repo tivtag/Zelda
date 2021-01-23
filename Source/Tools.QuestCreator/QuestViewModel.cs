@@ -42,10 +42,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.DeliverType )
+                {
                     return;
+                }
 
                 this.Model.DeliverType = value;
-                this.OnPropertyChanged( "DeliverType" );
+                this.OnPropertyChanged( nameof( DeliverType ) );
             }
         }
 
@@ -62,10 +64,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.QuestType )
+                {
                     return;
+                }
 
                 this.Model.QuestType = value;
-                this.OnPropertyChanged( "QuestType" );
+                this.OnPropertyChanged( nameof( QuestType ) );
             }
         }
 
@@ -82,10 +86,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.Level )
+                {
                     return;
+                }
 
                 this.Model.Level = value;
-                this.OnPropertyChanged( "Level" );
+                this.OnPropertyChanged( nameof( Level ) );
             }
         }
 
@@ -103,10 +109,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.IsRepeatable )
+                {
                     return;
+                }
 
                 this.Model.IsRepeatable = value;
-                this.OnPropertyChanged( "IsRepeatable" );
+                this.OnPropertyChanged( nameof( IsRepeatable ) );
             }
         }
 
@@ -124,10 +132,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.IsStateHidden )
+                {
                     return;
+                }
 
                 this.Model.IsStateHidden = value;
-                this.OnPropertyChanged( "IsStateHidden" );
+                this.OnPropertyChanged( nameof( IsStateHidden ) );
             }
         }
 
@@ -149,10 +159,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.Name )
+                {
                     return;
+                }
 
                 this.Model.Name = value;
-                OnPropertyChanged( "Name" );
+                OnPropertyChanged( nameof( Name ) );
             }
         }
 
@@ -170,10 +182,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.TextDescription )
+                {
                     return;
+                }
 
                 this.Model.TextDescription = value;
-                OnPropertyChanged( "TextDescription" );
+                OnPropertyChanged( nameof( TextDescription ) );
             }
         }
 
@@ -191,10 +205,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.TextStart )
+                {
                     return;
+                }
 
                 this.Model.TextStart = value;
-                OnPropertyChanged( "TextStart" );
+                OnPropertyChanged( nameof( TextStart ) );
             }
         }
 
@@ -213,10 +229,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.TextNotCompleted )
+                {
                     return;
+                }
 
                 this.Model.TextNotCompleted = value;
-                OnPropertyChanged( "TextNotCompleted" );
+                OnPropertyChanged( nameof( TextNotCompleted ) );
             }
         }
 
@@ -234,10 +252,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.TextCompleted )
+                {
                     return;
+                }
 
                 this.Model.TextCompleted = value;
-                OnPropertyChanged( "TextCompleted" );
+                OnPropertyChanged( nameof( TextCompleted ) );
             }
         }
 
@@ -254,10 +274,12 @@ namespace Zelda.QuestCreator
             set
             {
                 if( value == this.DeliverLocation )
+                {
                     return;
+                }
 
                 this.Model.DeliverLocation = value;
-                OnPropertyChanged( "DeliverLocation" );
+                OnPropertyChanged( nameof( DeliverLocation ) );
             }
         }
 
@@ -328,7 +350,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Gets the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestRequirement"/> he wishes to add to the Quest.
+        /// the user to select a <see cref="IRequirement"/> he wishes to add to the Quest.
         /// </summary>
         public ICommand AddRequirement
         {
@@ -338,7 +360,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Gets the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestRequirement"/> he wishes to remove from the Quest.
+        /// the user to select a <see cref="IRequirement"/> he wishes to remove from the Quest.
         /// </summary>
         public ICommand RemoveRequirement
         {
@@ -442,16 +464,30 @@ namespace Zelda.QuestCreator
             : base( model )
         {
             // Fill lists.
-            foreach( var requirement in model.Requirements )
+            foreach( IRequirement requirement in model.Requirements )
+            {
                 requirements.Add( requirement );
-            foreach( var goal in model.Goals )
+            }
+
+            foreach( IQuestGoal goal in model.Goals )
+            {
                 goals.Add( goal );
-            foreach( var reward in model.Rewards )
+            }
+
+            foreach( IQuestReward reward in model.Rewards )
+            {
                 rewards.Add( reward );
-            foreach( var e in model.StartEvents )
+            }
+
+            foreach( IQuestEvent e in model.StartEvents )
+            {
                 startEvents.Add( e );
-            foreach( var e in model.CompletionEvents )
+            }
+
+            foreach( IQuestEvent e in model.CompletionEvents )
+            {
                 completionEvents.Add( e );
+            }
 
             // Create Views.
             this.requirementsView = new ListCollectionView( requirements );
@@ -480,7 +516,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Defines the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestRequirement"/> he wishes to add to the Quest.
+        /// the user to select a <see cref="IRequirement"/> he wishes to add to the Quest.
         /// </summary>
         private sealed class AddRequirementCommand : ViewModelCommand<QuestViewModel, Quest>
         {
@@ -516,7 +552,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Defines the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestRequirement"/> he wishes to remove from the Quest.
+        /// the user to select a <see cref="IRequirement"/> he wishes to remove from the Quest.
         /// </summary>
         private sealed class RemoveRequirementCommand : ViewModelCommand<QuestViewModel, Quest>
         {
@@ -555,7 +591,9 @@ namespace Zelda.QuestCreator
             public override void Execute( object parameter )
             {
                 if( !this.CanExecute( parameter ) )
+                {
                     return;
+                }
 
                 var requirement = this.ViewModel.requirementsView.CurrentItem as IRequirement;
 
@@ -638,7 +676,9 @@ namespace Zelda.QuestCreator
             public override void Execute( object parameter )
             {
                 if( !this.CanExecute( parameter ) )
+                {
                     return;
+                }
 
                 var goal = this.ViewModel.goalsView.CurrentItem as IQuestGoal;
 
@@ -721,7 +761,9 @@ namespace Zelda.QuestCreator
             public override void Execute( object parameter )
             {
                 if( !this.CanExecute( parameter ) )
+                {
                     return;
+                }
 
                 var reward = this.ViewModel.rewardsView.CurrentItem as IQuestReward;
 
@@ -768,7 +810,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Defines the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestEvemt"/> he wishes to remove from the Quest.
+        /// the user to select a <see cref="IQuestEvent"/> he wishes to remove from the Quest.
         /// </summary>
         private sealed class RemoveCompletionEventCommand : ViewModelCommand<QuestViewModel, Quest>
         {
@@ -808,7 +850,9 @@ namespace Zelda.QuestCreator
             public override void Execute( object parameter )
             {
                 if( !this.CanExecute( parameter ) )
+                {
                     return;
+                }
 
                 var e = this.ViewModel.completionEventsView.CurrentItem as IQuestEvent;
 
@@ -855,7 +899,7 @@ namespace Zelda.QuestCreator
 
         /// <summary>
         /// Defines the ICommand that when invoked allows
-        /// the user to select a <see cref="IQuestEvemt"/> he wishes to remove from the Quest.
+        /// the user to select a <see cref="IQuestEvent"/> he wishes to remove from the Quest.
         /// </summary>
         private sealed class RemoveStartEventCommand : ViewModelCommand<QuestViewModel, Quest>
         {
@@ -890,7 +934,9 @@ namespace Zelda.QuestCreator
             public override void Execute( object parameter )
             {
                 if( !this.CanExecute( parameter ) )
+                {
                     return;
+                }
 
                 var e = this.ViewModel.startEventsView.CurrentItem as IQuestEvent;
 

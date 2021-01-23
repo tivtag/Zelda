@@ -41,15 +41,8 @@ namespace Zelda.Updater
             string startUpPath = Path.GetDirectoryName( Assembly.GetEntryAssembly().Location );
             string updaterAssembly = Path.Combine( startUpPath, @"Content\Updater\Zelda.Updater.Gui.exe" );
 
-            var domainSetup = new AppDomainSetup() { 
-                ShadowCopyFiles = "true"
-            };
-
-            var domain = AppDomain.CreateDomain(
-                "Update Domain",
-                AppDomain.CurrentDomain.Evidence,
-                domainSetup
-            );
+            var domain = AppDomain.CreateDomain( "Update Domain" );
+            domain.SetShadowCopyFiles();
             
             domain.ExecuteAssembly( updaterAssembly );
         }

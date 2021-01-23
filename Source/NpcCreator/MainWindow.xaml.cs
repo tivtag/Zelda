@@ -89,7 +89,6 @@ namespace Zelda.NpcCreator
         /// <summary>
         /// Starts up and initializes the XNA game loop.
         /// </summary>
-        /// <param name="obj">The handle of the control xna should draw into.</param>
         private void RunXna()
         {
             this.xnaApp = new XnaApp( App.Current );

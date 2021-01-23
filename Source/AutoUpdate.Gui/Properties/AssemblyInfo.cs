@@ -11,9 +11,6 @@
 using System.Reflection;
 using System.Windows;
 
-[assembly: AssemblyTitle( "The Legend of Zelda : Black Crown | Updater GUI" )]
-[assembly: AssemblyDescription( "This file should not be manually started. Or updating of the patcher itself will fail." )]
-
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
     //(used if a resource is not found in the page, 

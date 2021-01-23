@@ -14,11 +14,12 @@
     <OutputType>WinExe</OutputType>
     <Platforms>x86</Platforms>
     <PlatformTarget>x86</PlatformTarget>
-    <RootNamespace>Zelda.Editor</RootNamespace>
+    <LangVersion>latest</LangVersion>
     <ApplicationIcon>Properties\editor-icon.ico</ApplicationIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Zelda.Editor</RootNamespace>
     <StartupObject>Zelda.Editor.EditorApp</StartupObject>
   </PropertyGroup>
 
@@ -27,6 +28,14 @@
     <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
     <DocumentationFile>..\..\Compiled\$(Configuration)\Editor.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Page Remove="EditorApp.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="EditorApp.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Atom">

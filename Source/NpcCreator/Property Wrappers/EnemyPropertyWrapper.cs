@@ -15,10 +15,15 @@ namespace Zelda.NpcCreator
     using System.Windows.Forms;
     using Atom.Math;
     using Zelda.Entities;
+    using Zelda.Entities.Behaviours;
+    using Zelda.Entities.Components;
+    using Zelda.Entities.Drawing;
     using Zelda.Items;
     using Zelda.Status;
+    using Zelda.Status.Containers;
     using Zelda.Status.Damage;
-    
+    using Zelda.Status.Damage.Containers;
+
     /// <summary>
     /// Defines the IObjectPropertyWrapper for <see cref="Enemy"/> entities.
     /// </summary>
@@ -35,11 +40,14 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value <= 0.0f )
-                    throw new ArgumentOutOfRangeException( "value", value, Atom.ErrorStrings.SpecifiedValueIsZeroOrNegative );
+                {
+                    throw new ArgumentOutOfRangeException( nameof( value ), value, Atom.ErrorStrings.SpecifiedValueIsZeroOrNegative );
+                }
+                else if( value > 120.0f )
+                {
+                    throw new ArgumentOutOfRangeException( nameof( value ), value, Atom.ErrorStrings.SpecifiedValueIsInvalid );
+                }
 
-                if( value > 120.0f )
-                    throw new ArgumentOutOfRangeException( "value", value, Atom.ErrorStrings.SpecifiedValueIsInvalid );
-                
                 this.WrappedObject.Moveable.Speed = this.WrappedObject.Moveable.BaseSpeed = value;
             }
         }
@@ -143,7 +151,7 @@ namespace Zelda.NpcCreator
         [LocalizedDisplayName( "PropDisp_AggressionType" )]
         [LocalizedCategory( "PropCate_Settings" )]
         [LocalizedDescription( "PropDesc_AggressionType" )]
-        public Zelda.Entities.Behaviours.AggressionType AggressionType
+        public AggressionType AggressionType
         {
             get
             {
@@ -171,24 +179,24 @@ namespace Zelda.NpcCreator
                 this.WrappedObject.FloorRelativity = value;
             }
         }
-        
-        [DefaultValue(null)]
+
+        [DefaultValue( null )]
         [LocalizedDisplayName( "PropDisp_EntityBehaviour" )]
         [LocalizedCategory( "PropCate_Settings" )]
         [LocalizedDescription( "PropDesc_EntityBehaviour" )]
-        [Editor(typeof(Design.EntityBehaviourSelectionEditor), typeof( System.Drawing.Design.UITypeEditor ))]
+        [Editor( typeof( Design.EntityBehaviourSelectionEditor ), typeof( System.Drawing.Design.UITypeEditor ) )]
         public Type EntityBehaviourType
         {
             get
             {
-                var behaviour = this.WrappedObject.Behaveable.Behaviour;
+                IEntityBehaviour behaviour = this.WrappedObject.Behaveable.Behaviour;
                 return behaviour != null ? behaviour.GetType() : null;
             }
             set
             {
                 if( value != null )
                 {
-                    var behaviour = serviceProvider.BehaviourManager.GetBehaviourClone( value, this.WrappedObject );
+                    IEntityBehaviour behaviour = serviceProvider.BehaviourManager.GetBehaviourClone( value, this.WrappedObject );
                     this.WrappedObject.Behaveable.Behaviour = behaviour;
                 }
                 else
@@ -201,7 +209,7 @@ namespace Zelda.NpcCreator
         [LocalizedDisplayName( "PropDisp_EntityBehaviourSettings" )]
         [LocalizedCategory( "PropCate_Settings" )]
         [LocalizedDescription( "PropDesc_EntityBehaviourSettings" )]
-        public Zelda.Entities.Behaviours.IEntityBehaviour EntityBehaviourSettings
+        public IEntityBehaviour EntityBehaviourSettings
         {
             get
             {
@@ -218,14 +226,14 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var dds = this.WrappedObject.DrawDataAndStrategy;
+                IDrawDataAndStrategy dds = this.WrappedObject.DrawDataAndStrategy;
                 return dds != null ? dds.GetType() : null;
             }
             set
             {
                 if( value != null )
                 {
-                    var dds = serviceProvider.DrawStrategyManager.GetStrategyClone( value, this.WrappedObject );
+                    IDrawDataAndStrategy dds = serviceProvider.DrawStrategyManager.GetStrategyClone( value, this.WrappedObject );
                     this.WrappedObject.DrawDataAndStrategy = dds;
                 }
                 else
@@ -238,7 +246,7 @@ namespace Zelda.NpcCreator
         [LocalizedDisplayName( "PropDisp_DrawDataAndStrategySettings" )]
         [LocalizedCategory( "PropCate_Settings" )]
         [LocalizedDescription( "PropDesc_DrawDataAndStrategySettings" )]
-        public Zelda.Entities.Drawing.IDrawDataAndStrategy DrawDataAndStrategySettings
+        public IDrawDataAndStrategy DrawDataAndStrategySettings
         {
             get
             {
@@ -258,7 +266,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.MaximumMana = value;
             }
@@ -272,7 +282,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.ManaRegeneration = value;
             }
@@ -286,7 +298,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.BaseMaximumLife = value;
             }
@@ -300,8 +314,10 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
-                
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
+
                 this.WrappedObject.Statable.LifeRegeneration = value;
             }
         }
@@ -324,7 +340,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.BaseArmor = value;
             }
@@ -340,7 +358,7 @@ namespace Zelda.NpcCreator
         }
 
         /// <summary>
-        /// Gets or sets the race of the <see cref="StatusObject"/>.
+        /// Gets or sets the race of the <see cref="Enemy"/>.
         /// </summary>
         [Category( "Status" ),
         Description( "The race of the this.WrappedObject.Statable." )]
@@ -358,21 +376,23 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value <= 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.Level = value;
             }
         }
 
         /// <summary>
-        ///  Gets or sets the value that states whether the <see cref="StatusObject"/> can block attacks.
+        ///  Gets or sets the value that states whether the <see cref="Enemy"/> can block attacks.
         /// </summary>
         [Category( "Status Block" ), DisplayName( "Can Block" ), DefaultValue( false ),
         Description( "States whether the enemy can block melee and ranged attacks." )]
         public bool CanBlock { get { return this.WrappedObject.Statable.CanBlock; } set { this.WrappedObject.Statable.CanBlock = value; } }
-        
+
         /// <summary>
-        /// Gets or sets the value that stores the chance for the <see cref="StatusObject"/> to block an attack.
+        /// Gets or sets the value that stores the chance for the <see cref="Enemy"/> to block an attack.
         /// Only relevant if canBlock is true.
         /// </summary>
         [Category( "Status Block" ), DisplayName( "Chance To Block" ), DefaultValue( 5.0f ),
@@ -381,22 +401,24 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                Status.Containers.ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 return chanceTo.GetBase( ChanceToStatus.Block );
             }
 
             set
             {
                 if( value < 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                Status.Containers.ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 chanceTo.SetBase( ChanceToStatus.Block, value );
             }
         }
 
         /// <summary>
-        /// Gets or sets the value that stores the block 'power' of the <see cref="StatusObject"/> - aka how much damage is blocked.
+        /// Gets or sets the value that stores the block 'power' of the <see cref="Enemy"/> - aka how much damage is blocked.
         /// Only relevant if canBlock is true.
         /// </summary>
         [Category( "Status Block" ), DisplayName( "Block Value" ), DefaultValue( 0 ),
@@ -407,7 +429,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.BlockValue = value;
             }
@@ -421,7 +445,9 @@ namespace Zelda.NpcCreator
             get
             {
                 if( this.AttackSpeedMelee == 0.0f )
+                {
                     return 0.0f;
+                }
 
                 float average = (this.DamageMeleeMin + this.DamageMeleeMax) / 2.0f;
                 return average / this.AttackSpeedMelee;
@@ -435,7 +461,9 @@ namespace Zelda.NpcCreator
             get
             {
                 if( this.AttackSpeedRanged == 0.0f )
+                {
                     return 0.0f;
+                }
 
                 float average = (this.DamageRangedMin + this.DamageRangedMax) / 2.0f;
                 return average / this.AttackSpeedRanged;
@@ -450,7 +478,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.DamageMeleeMin = value;
             }
@@ -464,7 +494,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.DamageMeleeMax = value;
             }
@@ -478,7 +510,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.DamageRangedMin = value;
             }
@@ -492,7 +526,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.DamageRangedMax = value;
             }
@@ -506,7 +542,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 || value > 10 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.AttackSpeedMelee = value;
             }
@@ -520,7 +558,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 || value > 10 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.AttackSpeedRanged = value;
             }
@@ -529,7 +569,7 @@ namespace Zelda.NpcCreator
         #region DamageBonusMagic
 
         /// <summary>
-        /// Gets or sets the magical damage bonus this <see cref="StatusObject"/> has. 
+        /// Gets or sets the magical damage bonus this <see cref="Enemy"/> has. 
         /// </summary>
         [Category( "Status" ), DisplayName( "Magical Damage Bonus Minimum" ), DefaultValue( 0 ),
         Description( "The amount of Damage Bonus the Enemy gets with Magical attacks." )]
@@ -539,7 +579,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value.Minimum < 0 || value.Maximum < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.DamageMagic = value;
             }
@@ -649,15 +691,15 @@ namespace Zelda.NpcCreator
         Description( "The modifier that is applied to the Physical damage the Enemy takes." )]
         public float DamageTakenFromPhysicalDamageSchool
         {
-            get 
-            { 
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+            get
+            {
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromSchool.GetBase( DamageSchool.Physical );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromSchool.SetBase( DamageSchool.Physical, value );
             }
         }
@@ -668,13 +710,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromSchool.GetBase( DamageSchool.Magical );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromSchool.SetBase( DamageSchool.Magical, value );
             }
         }
@@ -685,13 +727,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromElement.GetBase( ElementalSchool.Fire );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromElement.SetBase( ElementalSchool.Fire, value );
             }
         }
@@ -702,13 +744,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromElement.GetBase( ElementalSchool.Water );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromElement.SetBase( ElementalSchool.Water, value );
             }
         }
@@ -719,13 +761,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromElement.GetBase( ElementalSchool.Light );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromElement.SetBase( ElementalSchool.Light, value );
             }
         }
@@ -736,13 +778,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromElement.GetBase( ElementalSchool.Shadow );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromElement.SetBase( ElementalSchool.Shadow, value );
             }
         }
@@ -753,13 +795,13 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 return damageTaken.FromElement.GetBase( ElementalSchool.Nature );
             }
 
             set
             {
-                var damageTaken = this.WrappedObject.Statable.DamageTaken;
+                DamageTakenContainer damageTaken = this.WrappedObject.Statable.DamageTaken;
                 damageTaken.FromElement.SetBase( ElementalSchool.Nature, value );
             }
         }
@@ -777,16 +819,18 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 return chanceTo.GetBase( ChanceToStatus.Crit );
             }
 
             set
             {
                 if( value < 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 chanceTo.SetBase( ChanceToStatus.Crit, value );
             }
         }
@@ -800,16 +844,18 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 return chanceTo.GetBase( ChanceToStatus.Dodge );
             }
 
             set
             {
                 if( value < 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 chanceTo.SetBase( ChanceToStatus.Dodge, value );
             }
         }
@@ -823,16 +869,18 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 return chanceTo.GetBase( ChanceToStatus.Parry );
             }
 
             set
             {
                 if( value < 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 chanceTo.SetBase( ChanceToStatus.Parry, value );
             }
         }
@@ -846,16 +894,18 @@ namespace Zelda.NpcCreator
         {
             get
             {
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 return chanceTo.GetBase( ChanceToStatus.Miss );
             }
 
             set
             {
                 if( value < 0 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
-                var chanceTo = this.WrappedObject.Statable.ChanceTo;
+                ChanceToContainer chanceTo = this.WrappedObject.Statable.ChanceTo;
                 chanceTo.SetBase( ChanceToStatus.Miss, value );
             }
         }
@@ -868,15 +918,17 @@ namespace Zelda.NpcCreator
          Description( "The increased chance the player deosn't crit the Enemy with any attack." )]
         public float ChanceToBeCrit
         {
-            get 
+            get
             {
-                return this.WrappedObject.Statable.ChanceToBe.BaseCrit; 
+                return this.WrappedObject.Statable.ChanceToBe.BaseCrit;
             }
 
             set
             {
                 if( value < -100 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.ChanceToBe.BaseCrit = value;
             }
@@ -886,15 +938,17 @@ namespace Zelda.NpcCreator
          Description( "The increased chance the player deosn't hit the Enemy with any attack." )]
         public float ChanceToBeHit
         {
-            get 
+            get
             {
-                return this.WrappedObject.Statable.ChanceToBe.BaseHit; 
+                return this.WrappedObject.Statable.ChanceToBe.BaseHit;
             }
 
             set
             {
                 if( value < -100 || value > 100 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsInvalid, nameof( value ) );
+                }
 
                 this.WrappedObject.Statable.ChanceToBe.BaseHit = value;
             }
@@ -917,7 +971,9 @@ namespace Zelda.NpcCreator
             set
             {
                 if( value < 0 )
-                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, "value" );
+                {
+                    throw new ArgumentException( Atom.ErrorStrings.SpecifiedValueIsNegative, nameof( value ) );
+                }
 
                 this.WrappedObject.Killable.Experience = value;
             }
@@ -977,7 +1033,7 @@ namespace Zelda.NpcCreator
         #endregion
 
         [Category( "Status" ), DisplayName( "Damage Method - Melee" )]
-        [Editor( typeof( Zelda.NpcCreator.Design.EnemyAttackDamageMethodEditor ), typeof( System.Drawing.Design.UITypeEditor ) )]
+        [Editor( typeof( Design.EnemyAttackDamageMethodEditor ), typeof( System.Drawing.Design.UITypeEditor ) )]
         public Zelda.Attacks.AttackDamageMethod DamageMeleeMethod
         {
             get { return this.WrappedObject.MeleeAttack.DamageMethod; }
@@ -993,20 +1049,22 @@ namespace Zelda.NpcCreator
         public override void ApplyData( MainWindow window )
         {
             // Apply Loot:
-            var lootable = this.WrappedObject.Lootable;
+            Lootable lootable = this.WrappedObject.Lootable;
             lootable.Loot.Clear();
 
-            var dataGridViewLoot = window.DataGridLoot;
+            DataGridView dataGridViewLoot = window.DataGridLoot;
             dataGridViewLoot.EndEdit();
 
             foreach( DataGridViewRow row in dataGridViewLoot.Rows )
             {
-                string itemName     = (string)row.Cells[0].Value;
-                int dropChance      = row.Cells[1].Value != null ? (int)row.Cells[1].Value : 0;
+                string itemName = (string)row.Cells[0].Value;
+                int dropChance = row.Cells[1].Value != null ? (int)row.Cells[1].Value : 0;
                 bool magicFindWorks = (bool)row.Cells[2].FormattedValue;
 
                 if( itemName == null )
+                {
                     continue;
+                }
 
                 int id = magicFindWorks ? LootTable.ItemIdAffectedByMagicFind : 0;
                 lootable.Loot.Insert( itemName, dropChance, id );
@@ -1021,21 +1079,21 @@ namespace Zelda.NpcCreator
         /// </param>
         public override void SetupView( MainWindow window )
         {
-            var dataGridLoot = window.DataGridLoot;
-            var loot         = this.WrappedObject.Lootable.Loot;
+            DataGridView dataGridLoot = window.DataGridLoot;
+            LootTable loot = this.WrappedObject.Lootable.Loot;
 
             // Setup Loot:
             dataGridLoot.Rows.Clear();
 
             for( int i = 0; i < loot.Count; ++i )
             {
-                var entry = loot[i];
+                Atom.Collections.HatEntry<string> entry = loot[i];
 
                 dataGridLoot.Rows.Add(
                     entry.Data,
                     (int)entry.Weight,
                     entry.Id == LootTable.ItemIdAffectedByMagicFind,
-                    loot.TotalWeight == 0.0f ? 0.0f : (entry.Weight/loot.TotalWeight)*100.0f
+                    loot.TotalWeight == 0.0f ? 0.0f : (entry.Weight / loot.TotalWeight) * 100.0f
                 );
             }
         }
@@ -1051,10 +1109,7 @@ namespace Zelda.NpcCreator
         {
             if( base.Ensure() )
             {
-                if( !ValidationHelper.ValidateLoot( this.WrappedObject.Lootable.Loot ) )
-                    return false;
-
-                return true;
+                return ValidationHelper.ValidateLoot( this.WrappedObject.Lootable.Loot );
             }
 
             return false;
@@ -1069,7 +1124,9 @@ namespace Zelda.NpcCreator
         public EnemyPropertyWrapper( IZeldaServiceProvider serviceProvider )
         {
             if( serviceProvider == null )
-                throw new ArgumentNullException( "serviceProvider" );
+            {
+                throw new ArgumentNullException( nameof( serviceProvider ) );
+            }
 
             this.serviceProvider = serviceProvider;
         }
