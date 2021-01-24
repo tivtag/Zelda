@@ -24,29 +24,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Atom, Version=1.0.3640.30603, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Atom">
       <HintPath>..\..\Dependencies\Atom.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Atom.Xna, Version=1.0.3640.30620, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Atom.Xna">
       <HintPath>..\..\Dependencies\Atom.Xna.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework">
-      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game">
-      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics">
-      <HintPath>..\..\Dependencies\Microsoft.Xna.Framework.Graphics.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
+    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0.1641" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs" Link="Properties\SolutionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Recipes\Armors.xml">

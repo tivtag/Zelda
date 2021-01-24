@@ -103,6 +103,32 @@
             Gets or sets the event that will be triggered.
             </summary>
         </member>
+        <member name="M:Zelda.Actions.Scene.ExecuteEventAction.Execute">
+            <summary>
+            Executes this IAction.
+            </summary>
+        </member>
+        <member name="M:Zelda.Actions.Scene.ExecuteEventAction.Dexecute">
+            <summary>
+            Deferredly undoes this IAction.
+            </summary>
+        </member>
+        <member name="M:Zelda.Actions.Scene.ExecuteEventAction.Serialize(Atom.Storage.ISerializationContext)">
+            <summary>
+            Serializes this IStoreable object using the given ISerializationContext.
+            </summary>
+            <param name="context">
+            Provides access to the mechanisms required to serialize this IStoreable object.
+            </param>
+        </member>
+        <member name="M:Zelda.Actions.Scene.ExecuteEventAction.Deserialize(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Deserializes this IStoreable object using the given IDeserializationContext.
+            </summary>
+            <param name="context">
+            Provides access to the mechanisms required to deserialize this IStoreable object.
+            </param>
+        </member>
         <member name="T:Zelda.Actions.Scene.ActivateEntityAction">
             <summary>
             Represents an action that when executed activates a specific entity.

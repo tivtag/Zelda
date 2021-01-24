@@ -32,9 +32,6 @@
     <Reference Include="Atom.Game">
       <HintPath>..\..\Dependencies\Atom.Game.dll</HintPath>
     </Reference>
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing.Design" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj" />

@@ -107,7 +107,10 @@ namespace Zelda.UI
             this.IsEnabled = value;
             this.IsVisible = value;
         }
-        
+
+        /// <summary>
+        /// Resets this FullBlendInOutUIElement.
+        /// </summary>
         public void Reset()
         {
             this.SetEnabledState( false );
@@ -123,9 +126,12 @@ namespace Zelda.UI
         {
             var zeldaDrawContext = (ZeldaDrawContext)drawContext;
 
+            const byte Rgb = 0;
+            byte alpha = GetAlpha();
+
             drawContext.Batch.DrawRect(
                 this.ClientArea,
-                new Color( 0, 0, 0, GetAlpha() )
+                new Microsoft.Xna.Framework.Color( Rgb, Rgb, Rgb, alpha )
             );
         }
 

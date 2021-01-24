@@ -116,10 +116,12 @@ namespace Zelda.UI
         protected override void OnDraw( ISpriteDrawContext drawContext )
         {
             if( this.scene == null )
+            {
                 return;
+            }
 
             var zeldaDrawContext = (ZeldaDrawContext)drawContext;
-            var batch            = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
 
             // Draw Background.
             batch.DrawRect( this.ClientArea, ColorBackground );
@@ -148,7 +150,9 @@ namespace Zelda.UI
         private void DrawMap( ZeldaDrawContext drawContext )
         {
             if( this.mapTexture == null )
+            {
                 return;
+            }
 
             drawContext.Batch.Draw(
                 this.mapTexture,
@@ -167,11 +171,13 @@ namespace Zelda.UI
         private void DrawFogOfWar( ZeldaDrawContext zeldaDrawContext )
         {
             if( mapTexture == null )
+            {
                 return;
+            }
 
             // Draw Fog of War.
-            var fow   = scene.Status.FogOfWar;
-            var batch = zeldaDrawContext.Batch;
+            FogOfWarStatus fow = scene.Status.FogOfWar;
+            IComposedSpriteBatch batch = zeldaDrawContext.Batch;
 
             int fowCellWidth = mapTexture.Width / fow.Size;
             int fowCellHeight = mapTexture.Height / fow.Size;
@@ -209,13 +215,15 @@ namespace Zelda.UI
         /// </param>
         private void DrawPlayer( ISpriteBatch batch )
         {
-            var player = scene.Player;
+            Entities.PlayerEntity player = scene.Player;
             if( player == null )
+            {
                 return;
+            }
 
             if( tickTimeBlinkingHead <= 1.0f )
             {
-                var position = player.Collision.Center;
+                Vector2 position = player.Collision.Center;
                 var projectedPosition = new Vector2(
                     (position.X / scene.WidthInPixels) * renderTarget.Width,
                     (position.Y / scene.HeightInPixels) * renderTarget.Height
@@ -223,7 +231,7 @@ namespace Zelda.UI
 
                 var borderSize   = new Vector2( VerticalBorderSize, HorizontalBorderSize );
                 var spriteCenter = new Vector2( spriteLinkHead.Width / 2.0f, spriteLinkHead.Height / 2.0f );
-                var drawPosition = projectedPosition - spriteCenter + borderSize;
+                Vector2 drawPosition = projectedPosition - spriteCenter + borderSize;
 
                 drawPosition.X = (int)drawPosition.X;
                 drawPosition.Y = (int)drawPosition.Y;
@@ -248,7 +256,7 @@ namespace Zelda.UI
             }
 
             // Find Scaling Transform
-            var map       = scene.Map;
+            TileMap map       = scene.Map;
             int mapWidth  = map.Width * 16;
             int mapHeight = map.Height * 16;
 
@@ -263,7 +271,7 @@ namespace Zelda.UI
             this.redrawContext.Begin( BlendState.NonPremultiplied, SamplerState.LinearClamp, SpriteSortMode.Deferred, transform );
 
             // Draw :)
-            foreach( var floor in map.Floors )
+            foreach( TileMapFloor floor in map.Floors )
             {
                 foreach( TileMapSpriteDataLayer layer in floor.Layers )
                 {
@@ -273,7 +281,8 @@ namespace Zelda.UI
 
             if( this.ShouldDrawAmbientLayer() )
             {
-                var ambient = this.scene.Settings.AmbientColor;
+                Xna.Color ambient = this.scene.Settings.AmbientColor;
+                byte alpha = 125;
 
                 this.redrawContext.Batch.DrawRect(
                     new Rectangle(
@@ -282,7 +291,7 @@ namespace Zelda.UI
                         mapWidth,
                         mapHeight
                     ),
-                    new Xna.Color( ambient.R, ambient.G, ambient.B, 125 )
+                    new Xna.Color( ambient.R, ambient.G, ambient.B, alpha )
                 );            
             }
 

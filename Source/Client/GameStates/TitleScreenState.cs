@@ -66,7 +66,7 @@ namespace Zelda.GameStates
             userInterface.Setup( game );
 
             // Setup camera:
-            var camera = scene.Camera;
+            ZeldaCamera camera = scene.Camera;
             camera.ViewSize = game.ViewSize;
             camera.Scroll = new Vector2( 11 * 16.0f, 16 * 16.0f );
 
@@ -166,8 +166,7 @@ namespace Zelda.GameStates
         public void Draw( Atom.IDrawContext drawContext )
         {
             var zeldaDrawContext = (ZeldaDrawContext)drawContext;
-            var batch = zeldaDrawContext.Batch;
-            var pipeline = this.game.Graphics.Pipeline;
+            Graphics.IDrawingPipeline pipeline = this.game.Graphics.Pipeline;
 
             pipeline.InitializeFrame( this.scene, null, zeldaDrawContext );
             {
@@ -228,13 +227,15 @@ namespace Zelda.GameStates
         {
             drawContext.Begin();
 
+            const byte Rgb = 255;
+
             // Draw it centered:
             spriteLogo.Draw(
                 new Point2(
                     (game.ViewSize.X / 2) - (spriteLogo.Width / 2),
                     (game.ViewSize.Y / 2) - (spriteLogo.Height / 2)
                 ),
-                new Xna.Color( 255, 255, 255, (byte)(logoAlpha * 255) ),
+                new Xna.Color( Rgb, Rgb, Rgb, (byte)(logoAlpha * 255) ),
                 drawContext.Batch
             );
 
@@ -256,13 +257,17 @@ namespace Zelda.GameStates
             ZeldaUpdateContext zeldaUpdateContext = (ZeldaUpdateContext)updateContext;
             userInterface.Update( updateContext );
             if( HandleInput() )
+            {
                 return;
+            }
 
             if( isLogoShown )
             {
                 logoAlpha += 0.085f * zeldaUpdateContext.FrameTime;
                 if( logoAlpha > 1.0f )
+                {
                     logoAlpha = 1.0f;
+                }
             }
             else
             {
@@ -280,7 +285,9 @@ namespace Zelda.GameStates
         private void UpdateScroll( IUpdateContext updateContext )
         {
             if( updateContext.FrameTime == 0.0f )
+            {
                 return;
+            }
 
             KeyboardState keyState = userInterface.KeyState;
             float scrollSpeed = 16.0f + (keyState.IsKeyDown( Keys.LeftAlt ) ? 128.0f : 0.0f) + (keyState.IsKeyDown( Keys.LeftShift ) ? 64.0f : 0.0f);
@@ -334,7 +341,9 @@ namespace Zelda.GameStates
         private void UpdateMusic( ZeldaUpdateContext updateContext )
         {
             if( musicChannel == null )
+            {
                 return;
+            }
 
             UpdateMusicFadeIn( updateContext );
             UpdateMusicFadeOut( updateContext );
@@ -363,9 +372,10 @@ namespace Zelda.GameStates
             uint length = musicChannel.Sound.GetLength( Atom.Fmod.Native.TIMEUNIT.MS );
 
             float factor = (float)position / (float)length;
-
             if( factor >= 0.95f )
+            {
                 fadeMusicOut = true;
+            }
 
             if( fadeMusicOut )
             {
@@ -400,8 +410,8 @@ namespace Zelda.GameStates
         /// </returns>
         private bool HandleInput()
         {
-            var keyState = userInterface.KeyState;
-            var mouseState = userInterface.MouseState;
+            KeyboardState keyState = userInterface.KeyState;
+            MouseState mouseState = userInterface.MouseState;
 
             if( (keyState.IsKeyDown( Keys.Space ) && oldKeyState.IsKeyUp( Keys.Space )) ||
                 (keyState.IsKeyDown( Keys.Enter ) && oldKeyState.IsKeyUp( Keys.Enter )) ||
@@ -471,13 +481,19 @@ namespace Zelda.GameStates
         private void ShowTitleLogo()
         {
             if( isLogoShown )
+            {
                 return;
+            }
 
             if( musicChannel != null && musicChannel.IsPlaying )
+            {
                 this.fadeMusicOut = true;
+            }
 
             if( musicLogo != null )
+            {
                 musicLogo.Play();
+            }
 
             isLogoShown = true;
         }

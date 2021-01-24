@@ -18,13 +18,16 @@ SourceAnalysis.Cache
 *.cachefile
 .vs
 
-Compiled/Release/*.dll
-Compiled/Release/*.exe
-Compiled/Release/*.xml
-Compiled/Release/*.pdb
+Compiled/Release/**/*.dll
+Compiled/Release/**/*.dll.config
+Compiled/Release/**/*.exe
+Compiled/Release/**/*.xml
+Compiled/Release/**/*.pdb
+Compiled/Release/**/*.json
+Compiled/Release/**/*.txt
 Compiled/Release/Content/Updater/*.exe
 Compiled/Release/Content/Updater/*.pdb
-Compiled/Release/Content/Updater/*.exe.config
+Compiled/Release/**/Content/Updater/*.exe.config
 
 Content/BlackCrown_ContentProject/Atom*.*
 Content/BlackCrown_ContentProject/Tools.RecipeProcessor.*
