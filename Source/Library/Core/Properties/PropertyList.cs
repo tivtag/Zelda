@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Core.Properties.PropertyList class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Core.Properties
 {

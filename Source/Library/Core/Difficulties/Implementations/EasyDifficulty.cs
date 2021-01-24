@@ -5,7 +5,7 @@
 //     Defines the Zelda.Difficulties.EasyDifficulty class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 using Zelda.Status;

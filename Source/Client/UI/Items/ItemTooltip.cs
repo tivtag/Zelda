@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.Items.ItemTooltipArea class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI.Items

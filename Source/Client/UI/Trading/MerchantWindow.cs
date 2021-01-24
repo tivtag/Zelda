@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.Trading.MerchantWindow class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI.Trading

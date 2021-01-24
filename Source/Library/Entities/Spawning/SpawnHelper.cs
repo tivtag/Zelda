@@ -5,7 +5,7 @@
 //     Defines the static Zelda.Entities.Spawning.SpawnHelper utility class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Spawning

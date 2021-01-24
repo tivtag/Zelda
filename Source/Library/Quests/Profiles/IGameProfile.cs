@@ -5,7 +5,7 @@
 //     Defines the Zelda.Profiles.IGameProfile interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Profiles

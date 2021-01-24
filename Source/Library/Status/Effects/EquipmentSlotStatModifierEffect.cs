@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.EquipmentSlotStatModifierEffect class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Spawning.RazorEntitySpawn class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Spawning

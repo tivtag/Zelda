@@ -5,7 +5,7 @@
 //     Defines the Zelda.Talents.Ranged.HandEyeCoordinationTalent class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Talents.Ranged

@@ -5,7 +5,7 @@
 //     Defines the static Zelda.Design.DesignTime singleton class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Design

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Editor.Waypoint.WaypointViewModel class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Waypoint

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Design.StatusEffectListEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Design

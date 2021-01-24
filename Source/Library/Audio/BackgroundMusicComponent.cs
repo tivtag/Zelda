@@ -5,7 +5,7 @@
 //     Defines the Zelda.Audio.BackgroundMusicComponent class and Zelda.Audio.BackgroundMusicMode enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Audio

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Items.ItemManager classs.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Items

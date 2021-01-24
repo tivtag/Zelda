@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Entities.Design.SwitchableEntitySelectionEditor class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Design
 {

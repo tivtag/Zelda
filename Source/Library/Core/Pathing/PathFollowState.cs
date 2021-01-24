@@ -5,7 +5,7 @@
 //     Defines the Zelda.PathFollowState enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

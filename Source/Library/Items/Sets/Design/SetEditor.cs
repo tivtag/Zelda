@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.Sets.Design.SetEditor class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items.Sets.Design
 {

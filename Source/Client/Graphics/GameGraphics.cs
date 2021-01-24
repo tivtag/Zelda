@@ -5,7 +5,7 @@
 //     Defines the Zelda.GameGraphics class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Graphics
@@ -339,20 +339,11 @@ namespace Zelda.Graphics
         /// </returns>
         private IDrawingPipeline GetDrawingPipeline( DrawingPipeline drawingPipeline )
         {
-            switch( drawingPipeline )
-            {
-                case DrawingPipeline.Normal:
-                    return this.defaultDrawingPipeline;
-
-                case DrawingPipeline.Bloom:
-                    return this.bloomDrawingPipeline;
-
-                //case DrawingPipeline.HighDynamicRange:
-                //    return this.highDynamicRangeDrawingPipeline;
-
-                default:
-                    throw new System.NotImplementedException();
-            }
+            return drawingPipeline switch {
+                DrawingPipeline.Normal => this.defaultDrawingPipeline,
+                DrawingPipeline.Bloom => this.bloomDrawingPipeline,
+                _ => throw new System.NotImplementedException(),
+            };
         }
 
         /// <summary>
@@ -398,7 +389,9 @@ namespace Zelda.Graphics
         internal void SetFullScreen( bool state )
         {
             if( graphics.IsFullScreen == state )
+            {
                 return;
+            }
 
             graphics.IsFullScreen = state;
             ApplyChanges();

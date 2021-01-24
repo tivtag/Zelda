@@ -5,7 +5,7 @@
 //     Defines the Zelda.Skills.PlayerTalentSkill{TTalent} class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Skills

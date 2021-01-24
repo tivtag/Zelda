@@ -5,7 +5,7 @@
 //     Defines the Zelda.Saving.SceneStatus class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Saving

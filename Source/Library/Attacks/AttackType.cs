@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Attacks.AttackType enumeration.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Attacks
 {

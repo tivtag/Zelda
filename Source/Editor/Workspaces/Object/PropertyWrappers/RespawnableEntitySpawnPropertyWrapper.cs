@@ -2,7 +2,7 @@
 //     Copyright (c) federrot Software. All rights reserved.
 // </copyright>
 // <summary>Defines Zelda.Editor.Object.PropertyWrappers.RespawnableEntitySpawnPropertyWrapper class.</summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Editor.Object.PropertyWrappers
 {

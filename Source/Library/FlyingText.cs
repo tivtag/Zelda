@@ -5,7 +5,7 @@
 //     Defines the Zelda.FlyingText class and FlyingTextEvulator delegate.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Trading.Restocking.IRestocker interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Trading.Restocking

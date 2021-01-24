@@ -5,7 +5,7 @@
 //     Defines the Zelda.Saving.Storage.IValueStorage{T} interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Saving.Storage

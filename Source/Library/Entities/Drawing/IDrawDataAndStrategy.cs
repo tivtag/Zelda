@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Drawing.IDrawDataAndStrategy interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Drawing

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Events.ZeldaEvent class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Events

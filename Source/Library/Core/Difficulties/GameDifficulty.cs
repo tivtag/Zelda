@@ -5,7 +5,7 @@
 //     Defines the static Zelda.Difficulties.GameDifficulty class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Difficulties

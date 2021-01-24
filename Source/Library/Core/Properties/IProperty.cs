@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.Properties.IProperty interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Properties

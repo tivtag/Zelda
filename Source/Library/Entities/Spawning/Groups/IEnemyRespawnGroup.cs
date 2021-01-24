@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Spawning.IEnemyRespawnGroup interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Spawning

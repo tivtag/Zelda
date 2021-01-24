@@ -5,7 +5,7 @@
 //     Defines the Zelda.Errors.ZeldaErrorReporter class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Errors

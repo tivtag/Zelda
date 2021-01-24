@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Attacks.Limiter.IAttackLimiter interface.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Attacks.Limiter
 {

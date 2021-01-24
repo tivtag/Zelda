@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.SpecialItemType enumeration.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items
 {

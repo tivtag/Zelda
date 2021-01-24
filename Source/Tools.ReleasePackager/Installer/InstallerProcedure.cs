@@ -5,7 +5,7 @@
 //     Defines the Tools.ReleasePackager.Installer.InstallerProcedure class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Tools.ReleasePackager.Installer

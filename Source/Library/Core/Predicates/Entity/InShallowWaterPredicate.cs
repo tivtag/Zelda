@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.Predicates.Entity.InShallowWaterPredicate class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Predicates.Entity

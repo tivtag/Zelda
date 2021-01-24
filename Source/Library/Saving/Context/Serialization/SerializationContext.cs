@@ -5,7 +5,7 @@
 //     Defines the Zelda.Saving.SerializationContext class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Saving

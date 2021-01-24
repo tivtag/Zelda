@@ -5,7 +5,7 @@
 //     Defines the static Zelda.UI.UIFonts class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI

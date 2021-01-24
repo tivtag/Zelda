@@ -2,7 +2,7 @@
 //     Copyright (c) federrot Software. All rights reserved.
 // </copyright>
 // <summary>Defines the Zelda.Talents.Support.LuckyBastardTalent class.</summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Talents.Support
 {

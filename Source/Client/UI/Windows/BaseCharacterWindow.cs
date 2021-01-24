@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.BaseCharacterWindow class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI

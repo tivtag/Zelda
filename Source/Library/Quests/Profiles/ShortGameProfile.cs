@@ -5,7 +5,7 @@
 //    Defines the Zelda.Profiles.ShortGameProfile class.
 // </summary>
 // <author>
-//    Paul Ennemoser (Tick)
+//    Paul Ennemoser
 // </author>
 
 namespace Zelda.Profiles

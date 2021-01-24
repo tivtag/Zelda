@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.Predicates.Design.PredicateListEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Predicates.Design

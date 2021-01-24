@@ -5,7 +5,7 @@
 //     Defines the Zelda.Editor.Event.ViewModels.EventManagerViewModel class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Event.ViewModels

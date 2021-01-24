@@ -2,7 +2,7 @@
 //     Copyright (c) federrot Software. All rights reserved.
 // </copyright>
 // <summary>Defines the Zelda.Skills.ISkillProvider and Zelda.Skills.IISkillProvider{TSkill} interfaces.</summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Skills
 {

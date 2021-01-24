@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Attacks.FixedFireSpellDamageMethod class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Attacks.Methods
 {

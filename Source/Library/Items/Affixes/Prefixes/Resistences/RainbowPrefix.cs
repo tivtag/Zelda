@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.Affixes.Prefixes.RainbowPrefix class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items.Affixes.Prefixes
 {

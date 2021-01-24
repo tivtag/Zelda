@@ -5,7 +5,7 @@
 //     Defines the static Zelda.LogHelper utility class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

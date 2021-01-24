@@ -5,7 +5,7 @@
 //     Defines the Zelda.Editor.Tile.ViewModels.TileMapFloorViewModel class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Tile.ViewModels

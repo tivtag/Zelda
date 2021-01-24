@@ -5,7 +5,7 @@
 //     Defines the Zelda.Quests.Goals.KillEnemiesGoal class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Quests.Goals

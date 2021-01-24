@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the static Zelda.Entities.Projectiles.Drawing.ProjectileSpritesHelper class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Projectiles.Drawing
 {

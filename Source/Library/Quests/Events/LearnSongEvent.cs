@@ -5,7 +5,7 @@
 //     Defines the Zelda.Quests.Events.LearnSongEvent class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Quests.Events

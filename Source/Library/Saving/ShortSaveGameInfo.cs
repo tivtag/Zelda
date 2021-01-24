@@ -5,7 +5,7 @@
 //      Defines the Zelda.Saving.ShortSaveGameInfo structure.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Saving

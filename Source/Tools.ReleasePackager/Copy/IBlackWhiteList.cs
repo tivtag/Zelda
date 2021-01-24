@@ -2,7 +2,7 @@
 //     Copyright (c) federrot Software. All rights reserved.
 // </copyright>
 // <summary>Defines the Tools.ReleasePackager.Copy.IBlackWhiteList interface.</summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Tools.ReleasePackager.Copy
 {

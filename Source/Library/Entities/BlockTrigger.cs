@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.BlockTrigger class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Damage.Containers.DamageDoneContainer class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Damage.Containers

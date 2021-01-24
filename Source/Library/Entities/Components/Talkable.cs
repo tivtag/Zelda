@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Components.Talkable class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Components

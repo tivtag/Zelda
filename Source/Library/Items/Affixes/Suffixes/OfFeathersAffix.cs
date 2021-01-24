@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.Affixes.Suffixes.OfFeathersSuffix class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items.Affixes.Suffixes
 {

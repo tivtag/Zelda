@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.ToggleMode enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core

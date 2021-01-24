@@ -5,7 +5,7 @@
 //     Defines the Zelda.IUseable interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

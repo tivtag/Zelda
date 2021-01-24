@@ -5,7 +5,7 @@
 //     Defines the Zelda.Timing.TimerMap class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Timing

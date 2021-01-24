@@ -5,7 +5,7 @@
 //     Defines the Zelda.QuestCreator.QuestViewModel class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.QuestCreator

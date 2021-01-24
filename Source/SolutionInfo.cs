@@ -5,7 +5,7 @@
 //     Defines solution wide settings.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 using System.Resources;

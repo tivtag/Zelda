@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.Equipment class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 // TODO: Move ingame animation and ingame color into own class.
 

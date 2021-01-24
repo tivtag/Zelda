@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Procs.IProcChance interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Procs

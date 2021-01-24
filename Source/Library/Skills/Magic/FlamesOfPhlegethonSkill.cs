@@ -5,7 +5,7 @@
 //     Defines the Zelda.Skills.Magic.FlamesOfPhlegethonSkill class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Skills.Magic

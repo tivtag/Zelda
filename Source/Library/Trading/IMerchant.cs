@@ -5,7 +5,7 @@
 //     Defines the Zelda.Trading.IMerchant interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Trading

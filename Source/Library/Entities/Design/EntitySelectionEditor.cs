@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Design.EntitySelectionEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Design

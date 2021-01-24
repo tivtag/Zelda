@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.Items.Boxes.IBox interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI.Items.Boxes

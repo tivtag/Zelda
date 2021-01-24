@@ -5,7 +5,7 @@
 //     Defines the static Zelda.NpcCreator.ValidationHelper class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.NpcCreator

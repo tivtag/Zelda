@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Projectiles.Drawing.SingleAnimatedProjectileSprites class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Projectiles.Drawing

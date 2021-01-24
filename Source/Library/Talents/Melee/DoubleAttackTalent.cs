@@ -5,7 +5,7 @@
 //     Defines the Zelda.Talents.Melee.DoubleAttackTalent class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Talents.Melee

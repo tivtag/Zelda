@@ -5,7 +5,7 @@
 //     Defines the Zelda.Audio.Design.SoundFileNameEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Audio.Design

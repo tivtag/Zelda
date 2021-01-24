@@ -5,7 +5,7 @@
 //     Defines the Zelda.Casting.Spells.FirewallDamageMethod class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Casting.Spells

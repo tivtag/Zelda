@@ -5,7 +5,7 @@
 //     Defines the Zelda.Items.Affixes.Suffixes.OfRecoverySuffix class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Items.Affixes.Suffixes

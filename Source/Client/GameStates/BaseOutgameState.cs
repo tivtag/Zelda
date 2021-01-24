@@ -5,7 +5,7 @@
 //     Defines the Zelda.GameStates.BaseOutgameState class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.GameStates

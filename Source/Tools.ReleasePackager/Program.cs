@@ -5,7 +5,7 @@
 //     Defines the Tools.ReleasePackager.Program class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Tools.ReleasePackager

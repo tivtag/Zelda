@@ -5,7 +5,7 @@
 //     Defines the Zelda.Ocarina.SongMusic class and Zelda.Ocarina.SongMusicPlayMode enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Ocarina

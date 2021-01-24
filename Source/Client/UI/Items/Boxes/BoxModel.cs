@@ -4,7 +4,7 @@
 // <summary>
 //     Defines theZelda.UI.Items.Boxes.BoxModel class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.UI.Items.Boxes
 {

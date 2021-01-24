@@ -5,7 +5,7 @@
 //     Defines the Tools.RecipeProcessor.RecipeDocumentationWriter class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Tools.RecipeProcessor

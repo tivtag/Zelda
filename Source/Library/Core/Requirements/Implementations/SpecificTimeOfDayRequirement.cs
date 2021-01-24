@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.Requirements.SpecificTimeOfDayRequirement class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Requirements

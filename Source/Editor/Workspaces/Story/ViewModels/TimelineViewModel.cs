@@ -5,7 +5,7 @@
 //     Defines the Zelda.Editor.Story.ViewModels.TimelineViewModel class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Story.ViewModels

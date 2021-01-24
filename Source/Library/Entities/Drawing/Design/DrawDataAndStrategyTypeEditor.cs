@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Drawing.Design.DrawDataAndStrategyTypeEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Drawing.Design

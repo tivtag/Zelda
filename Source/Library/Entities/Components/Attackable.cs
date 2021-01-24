@@ -6,7 +6,7 @@
 //     the Zelda.Entities.Components.Attackable class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Components

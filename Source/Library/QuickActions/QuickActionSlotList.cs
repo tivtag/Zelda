@@ -5,7 +5,7 @@
 //     Defines the Zelda.QuickActions.QuickActionSlotList class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.QuickActions

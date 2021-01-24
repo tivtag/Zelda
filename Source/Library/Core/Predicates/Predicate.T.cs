@@ -5,7 +5,7 @@
 //     Defines the Zelda.Core.Predicates.Predicate{T} class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Predicates

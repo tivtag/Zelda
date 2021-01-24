@@ -5,7 +5,7 @@
 //     Defines the Zelda.Casting.Spells.FirePillarSpell class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Casting.Spells

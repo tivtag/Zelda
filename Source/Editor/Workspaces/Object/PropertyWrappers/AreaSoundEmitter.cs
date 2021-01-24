@@ -5,7 +5,7 @@
 //     Defines Zelda.Editor.Object.PropertyWrappers.AreaSoundEmitterPropertyWrapper class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Object.PropertyWrappers

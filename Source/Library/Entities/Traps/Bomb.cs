@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Bomb class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities
@@ -17,40 +17,6 @@ namespace Zelda.Entities
     using Zelda.Attacks;
     using Zelda.Entities.Components;
     using Zelda.Status;
-
-    public sealed class BombAudio
-    {
-        public BombAudio( AudioSystem audioSystem, IRand rand )
-        {
-            this.bombExplosionSoundA = audioSystem.GetSample( "Bomb_Blow.ogg" );
-            this.bombExplosionSoundB = audioSystem.GetSample( "Bomb_Blow_2.ogg" );
-
-            var mode =
-                Atom.Fmod.Native.MODE._3D |
-                Atom.Fmod.Native.MODE._3D_LINEARROLLOFF;
-
-            if( bombExplosionSoundA != null )
-            {
-                this.bombExplosionSoundA.Load( mode );
-            }
-
-            if( bombExplosionSoundB != null )
-            {
-                this.bombExplosionSoundB.Load( mode );
-            }
-
-            this.rand = rand;
-        }
-
-        public Sound GetRandomSound()
-        {
-            return this.rand.RandomBoolean ? this.bombExplosionSoundA : this.bombExplosionSoundB;
-        }
-
-        private readonly Sound bombExplosionSoundB;
-        private readonly Sound bombExplosionSoundA;
-        private readonly IRand rand;
-    }
 
     /// <summary>
     /// Represents a bomb that deals area damage on explosion.
@@ -220,10 +186,10 @@ namespace Zelda.Entities
             this.FloorRelativity = EntityFloorRelativity.IsAbove;
             scene.NotifyVisabilityUpdateNeededSoon();
 
-            var explosionCenter = this.Transform.Position;
-            var circle = new Circle( explosionCenter, this.explosionRadius );
+            Vector2 explosionCenter = this.Transform.Position;
+            Circle circle = new Circle( explosionCenter, this.explosionRadius );
 
-            foreach( var target in scene.VisibleEntities )
+            foreach( ZeldaEntity target in scene.VisibleEntities )
             {
                 if( this.FloorNumber == target.FloorNumber && target.Collision.Intersects( ref circle ) )
                 {
@@ -267,24 +233,28 @@ namespace Zelda.Entities
 
         private bool DealDamage( ZeldaEntity target )
         {
-            var attacker = this.statable.Owner as IAttackableEntity;
-            var attackable = target.Components.Get<Attackable>();
+            IAttackableEntity attacker = this.statable.Owner as IAttackableEntity;
+            Attackable attackable = target.Components.Get<Attackable>();
 
             if( attackable != null )
             {
-                var statable = attackable.Statable;
+                Statable statable = attackable.Statable;
 
                 if( statable != null )
                 {
-                    var result = this.damageMethod.GetDamageDone( this.statable, statable );
+                    AttackDamageResult result = this.damageMethod.GetDamageDone( this.statable, statable );
                     attackable.Attack( attacker, result );
 
                     if( result.AttackReceiveType == AttackReceiveType.Resisted ||
                         result.AttackReceiveType == AttackReceiveType.PartialResisted )
+                    {
                         return false;
+                    }
 
                     if( this.hitEffect != null )
+                    {
                         this.hitEffect.OnHit( this.statable, statable );
+                    }
                 }
                 else
                 {
@@ -301,20 +271,24 @@ namespace Zelda.Entities
 
         private void Push( ZeldaEntity target, ref Vector2 explosionCenter )
         {
-            var targetMoveable = target.Components.Get<Moveable>();
+            Moveable targetMoveable = target.Components.Get<Moveable>();
 
             if( targetMoveable != null && targetMoveable.CanBePushed )
             {
-                var delta = target.Transform.Position - explosionCenter;
-                var dir = delta.ToDirection4();
+                Vector2 delta = target.Transform.Position - explosionCenter;
+                Direction4 dir = delta.ToDirection4();
 
-                var length = delta.Length * 0.75f;
+                float length = delta.Length * 0.75f;
                 if( length > explosionRadius )
+                {
                     length = explosionRadius;
+                }
 
                 float powerFactor = 1.0f - (length / explosionRadius);
                 if( powerFactor < 0.11f )
+                {
                     powerFactor = 0.11f;
+                }
 
                 float power = powerFactor * this.pushingPower;
 

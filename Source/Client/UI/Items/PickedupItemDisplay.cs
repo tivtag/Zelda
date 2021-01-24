@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.PickedupItemDisplay class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI

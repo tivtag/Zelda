@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Cost.IManaCost interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Cost

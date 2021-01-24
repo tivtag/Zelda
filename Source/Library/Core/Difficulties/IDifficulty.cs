@@ -5,7 +5,7 @@
 //     Defines the Zelda.Difficulties.IDifficulty interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Difficulties

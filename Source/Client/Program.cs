@@ -5,14 +5,13 @@
 //     Defines the main entry point into the game.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda
 {
     using System;
     using System.Threading;
-    using Atom.ErrorReporting.Errors;
 
     /// <summary>
     /// Stores the entry point of the game.
@@ -22,16 +21,14 @@ namespace Zelda
         /// <summary>
         /// Defines the entry point of the game.
         /// </summary>
-        [System.STAThread]
-        public static void Main( /*string[] args // not used */ )
+        [STAThread]
+        public static void Main()
         {
-            bool createdNew = true;
-            using( Mutex mutex = new Mutex( true, "Zelda.Mutex", out createdNew ) )
+            using Mutex mutex = new Mutex( true, "Zelda.Mutex", out bool createdNew );
+
+            if( createdNew )
             {
-                if( createdNew )
-                {
-                    Run();
-                }
+                Run();
             }
         }
 

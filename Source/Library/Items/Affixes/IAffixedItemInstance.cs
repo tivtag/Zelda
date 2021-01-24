@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Items.Affixes.IAffixedItemInstance interface.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items.Affixes
 {

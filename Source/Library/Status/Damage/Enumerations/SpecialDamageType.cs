@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Damage.SpecialDamageType enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Damage

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Items.UseEffects.IItemUseEffect interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Items.UseEffects

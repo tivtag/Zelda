@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Projectiles.Projectile class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Projectiles

@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Attacks.Melee.BladestormAttack class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Attacks.Melee
 {

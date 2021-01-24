@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the static Zelda.Items.ItemSounds class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Items
 {

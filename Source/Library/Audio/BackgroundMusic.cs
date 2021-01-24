@@ -5,7 +5,7 @@
 //     Defines the Zelda.Saving.ISaveable interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Audio

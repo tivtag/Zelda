@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Behaviours.SetBehaviourEntityModifier class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Modifiers

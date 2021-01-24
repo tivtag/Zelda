@@ -5,7 +5,7 @@
 //     Defines Zelda.Editor.Object.PropertyWrappers.BlockTriggerPropertyWrapper class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Object.PropertyWrappers

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Trading.Restocking.Design.RestockerEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Trading.Restocking.Design

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Actions.RetaininglyActivateEntitySpawnAction class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Actions.Scene

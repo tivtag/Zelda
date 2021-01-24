@@ -5,7 +5,7 @@
 //     Defines the Zelda.Controls.PlayerControl class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Core.Controls

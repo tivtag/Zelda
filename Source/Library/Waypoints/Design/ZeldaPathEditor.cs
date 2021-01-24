@@ -5,7 +5,7 @@
 //     Defines the Zelda.Waypoints.Design.ZeldaPathEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Waypoints.Design

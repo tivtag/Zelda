@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.Cost.PercentageOfBaseAndTotalManaCost class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status.Cost

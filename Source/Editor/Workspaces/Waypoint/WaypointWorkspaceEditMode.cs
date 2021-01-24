@@ -5,7 +5,7 @@
 //     Defines the Zelda.Editor.Waypoint.WaypointWorkspaceEditMode enumeration.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Editor.Waypoint

@@ -5,7 +5,7 @@
 //     Defines the Tools.ReleasePackager.Copy.BlackWhiteList class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Tools.ReleasePackager.Copy

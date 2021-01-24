@@ -5,7 +5,7 @@
 //     Defines the Zelda.ItemCreator.IObjectViewModel interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.ItemCreator

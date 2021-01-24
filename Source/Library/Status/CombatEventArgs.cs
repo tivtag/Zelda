@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.CombatEventArgs structure.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status

@@ -5,7 +5,7 @@
 //     Defines the Zelda.ChangeType ernumation.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

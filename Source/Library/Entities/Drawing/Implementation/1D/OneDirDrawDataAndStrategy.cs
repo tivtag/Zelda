@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Entities.Drawing.OneDirDrawDataAndStrategy class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Drawing
 {

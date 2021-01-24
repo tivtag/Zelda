@@ -5,7 +5,7 @@
 //     Defines the Zelda.Ocarina.Songs.Teleportation.TeleportationSong class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Ocarina.Songs.Teleportation

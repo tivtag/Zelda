@@ -5,7 +5,7 @@
 //     Defines the Zelda.Timing.ResetableRangeTimer class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Timing

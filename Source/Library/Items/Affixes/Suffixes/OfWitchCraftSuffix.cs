@@ -5,7 +5,7 @@
 //     Defines the Zelda.Items.Affixes.Suffixes.OfWitchCraftSuffix class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Items.Affixes.Suffixes

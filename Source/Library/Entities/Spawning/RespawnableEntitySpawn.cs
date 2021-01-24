@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Spawning.RespawnableEntitySpawn class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Spawning

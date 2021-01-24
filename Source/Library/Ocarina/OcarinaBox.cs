@@ -5,7 +5,7 @@
 //     Defines the Zelda.Ocarina.OcarinaBox class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Ocarina

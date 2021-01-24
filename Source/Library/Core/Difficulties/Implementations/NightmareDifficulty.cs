@@ -5,7 +5,7 @@
 //     Defines the Zelda.Difficulties.NightmareDifficulty class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Difficulties

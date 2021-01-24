@@ -5,7 +5,7 @@
 //     Defines the Zelda.ItemCreator.Dialogs.UseEffectSelectionDialog class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.ItemCreator.Dialogs

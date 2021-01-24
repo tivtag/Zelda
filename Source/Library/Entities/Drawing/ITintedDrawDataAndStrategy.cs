@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Entities.Drawing.ITintedDrawDataAndStrategy interface.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Drawing
 {

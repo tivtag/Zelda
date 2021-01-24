@@ -5,7 +5,7 @@
 //     Defines the storage mechanisms Zelda.ZeldaScene class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

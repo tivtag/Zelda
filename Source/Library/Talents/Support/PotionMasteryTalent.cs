@@ -5,7 +5,7 @@
 //     Defines the Zelda.Talents.Support.PotionMasteryTalent class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Talents.Support

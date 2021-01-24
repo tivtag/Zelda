@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Crafting.CraftingBottle class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Crafting
 {

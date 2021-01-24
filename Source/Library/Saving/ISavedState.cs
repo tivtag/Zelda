@@ -5,7 +5,7 @@
 //     Defines the Zelda.Saving.ISavedState interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Saving

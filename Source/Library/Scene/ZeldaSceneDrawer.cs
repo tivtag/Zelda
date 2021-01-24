@@ -5,7 +5,7 @@
 //     Defines the Zelda.ZeldaSceneDrawer class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda

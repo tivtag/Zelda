@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Spawning.IEntityModifier interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Modifiers

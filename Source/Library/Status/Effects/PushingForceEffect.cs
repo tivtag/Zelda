@@ -5,7 +5,7 @@
 //     Defines the Zelda.Status.PushingForceEffect class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Status

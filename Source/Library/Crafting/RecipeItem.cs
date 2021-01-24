@@ -5,7 +5,7 @@
 //     Defines the Zelda.Crafting.RecipeItem class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Crafting

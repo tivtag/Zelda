@@ -5,7 +5,7 @@
 //     Defines the Zelda.Waypoints.WaypointPathFollower class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Waypoints

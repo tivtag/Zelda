@@ -5,7 +5,7 @@
 //     Defines the Zelda.Items.DropRequirements.QuestNotActiveNorCompletedRequirement class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Items.DropRequirements

@@ -5,7 +5,7 @@
 //     Defines the Zelda.Actions.StatResetAction class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Actions.Player

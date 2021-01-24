@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Entities.Projectiles.Drawing.ProjectileDrawDataAndStrategy class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Projectiles.Drawing
 {

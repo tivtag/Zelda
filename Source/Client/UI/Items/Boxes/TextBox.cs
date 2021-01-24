@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.UI.Items.Boxes.TextBox class.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.UI.Items.Boxes
 {

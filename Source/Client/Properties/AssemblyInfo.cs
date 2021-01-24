@@ -5,7 +5,7 @@
 //     Defines assembly wide settings.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 using System.Runtime.InteropServices;

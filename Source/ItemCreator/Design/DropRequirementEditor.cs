@@ -5,7 +5,7 @@
 //     Defines the Zelda.ItemCreator.Design.DropRequirementEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.ItemCreator.Design

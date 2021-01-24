@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Entities.Projectiles.IProjectileUpdateLogic interface.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Entities.Projectiles
 {    

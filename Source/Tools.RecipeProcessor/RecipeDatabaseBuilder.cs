@@ -5,7 +5,7 @@
 //     Defines the Tools.RecipeProcessor.RecipeDatabaseBuilder class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Tools.RecipeProcessor

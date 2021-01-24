@@ -5,7 +5,7 @@
 //     Defines the Zelda.UI.IItemInfoVisualizer interface.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.UI

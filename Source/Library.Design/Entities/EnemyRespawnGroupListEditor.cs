@@ -5,7 +5,7 @@
 //     Defines the Zelda.Entities.Spawning.Design.EnemyRespawnGroupListEditor class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Entities.Spawning.Design

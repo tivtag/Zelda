@@ -5,7 +5,7 @@
 //     Defines the Zelda.Weather.Creators.FogCreator class.
 // </summary>
 // <author>
-//     Paul Ennemoser (Tick)
+//     Paul Ennemoser
 // </author>
 
 namespace Zelda.Weather.Creators

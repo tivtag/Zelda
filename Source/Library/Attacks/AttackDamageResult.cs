@@ -4,7 +4,7 @@
 // <summary>
 //     Defines the Zelda.Attacks.AttackDamageResult structure.
 // </summary>
-// <author>Paul Ennemoser (Tick)</author>
+// <author>Paul Ennemoser</author>
 
 namespace Zelda.Attacks
 {
