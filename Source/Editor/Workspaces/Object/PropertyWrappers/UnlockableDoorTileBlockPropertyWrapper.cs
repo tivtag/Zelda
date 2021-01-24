@@ -193,7 +193,7 @@ namespace Zelda.Editor.Object.PropertyWrappers
         #endregion
 
         /// <summary>
-        /// Returns a clone of this <see cref="IObjectPropertyWrapper"/>.
+        /// Returns a clone of this <see cref="UnlockableDoorTileBlockPropertyWrapper"/>.
         /// </summary>
         /// <returns>The cloned instance.</returns>
         public override Atom.Design.IObjectPropertyWrapper Clone()

@@ -39,38 +39,67 @@
             Gets or sets the actual message this IMailMessage contains.
             </summary>
         </member>
-        <member name="T:Atom.Mail.Modifiers.AddAttachmentModifier">
+        <member name="T:Atom.Mail.IMailSender">
             <summary>
-            Implements an <see cref="T:Atom.Mail.Modifiers.IMailMessageModifier"/> that attaches a file to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            Provides a mechanism for sending <see cref="T:Atom.Mail.IMailMessage"/>s.
             </summary>
         </member>
-        <member name="P:Atom.Mail.Modifiers.AddAttachmentModifier.FilePath">
+        <member name="M:Atom.Mail.IMailSender.Send(Atom.Mail.IMailMessage)">
             <summary>
-            Gets or sets the full path of the file to attach to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            Attempts to send the specified IMailMessage.
             </summary>
-            <value>
-            The default value is null.
-            </value>
-        </member>
-        <member name="M:Atom.Mail.Modifiers.AddAttachmentModifier.Apply(Atom.Mail.IMailMessage)">
-            <summary>
-            Modifies the specified IMailMessage.
-            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
             <param name="mail">
-            The mail to modify.
+            The mail message to send.
             </param>
         </member>
-        <member name="T:Atom.Mail.Modifiers.IMailMessageModifier">
-            <summary>
-            Provides a mechanism for modifying an existing <see cref="T:Atom.Mail.IMailMessage"/>.
+        <member name="T:Atom.Mail.MailException">
+            <summary> 
+            The exception that is thrown when a mail-related error has occurred.
             </summary>
         </member>
-        <member name="M:Atom.Mail.Modifiers.IMailMessageModifier.Apply(Atom.Mail.IMailMessage)">
+        <member name="M:Atom.Mail.MailException.#ctor">
             <summary>
-            Modifies the specified IMailMessage.
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class.
             </summary>
-            <param name="mail">
-            The mail to modify.
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.String)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class and sets
+            the error message to the specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="message">
+            The message that describes the error.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class 
+            with a specified error message and a reference 
+            to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">
+            The message that describes the error.
+            </param>
+            <param name="innerException">
+            The exception that is cause of the new <see cref="T:Atom.Mail.MailException"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class, and
+            passes the specified <see cref="T:System.Runtime.Serialization.SerializationInfo"/> and
+            <see cref="T:System.Runtime.Serialization.StreamingContext"/> to the <see cref="T:System.Exception"/> constructor.
+            </summary>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds
+            the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that 
+            contains contextual information about the source or destination.
             </param>
         </member>
         <member name="T:Atom.Mail.MailMessage">
@@ -138,69 +167,6 @@
             <summary>
             The full paths of the files that are attached to this MailMessage.
             </summary>
-        </member>
-        <member name="T:Atom.Mail.MailException">
-            <summary> 
-            The exception that is thrown when a mail-related error has occurred.
-            </summary>
-        </member>
-        <member name="M:Atom.Mail.MailException.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Mail.MailException.#ctor(System.String)">
-            <summary> 
-            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class and sets
-            the error message to the specified <see cref="T:System.String"/>.
-            </summary>
-            <param name="message">
-            The message that describes the error.
-            </param>
-        </member>
-        <member name="M:Atom.Mail.MailException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class 
-            with a specified error message and a reference 
-            to the inner exception that is the cause of this exception.
-            </summary>
-            <param name="message">
-            The message that describes the error.
-            </param>
-            <param name="innerException">
-            The exception that is cause of the new <see cref="T:Atom.Mail.MailException"/>.
-            </param>
-        </member>
-        <member name="M:Atom.Mail.MailException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary> 
-            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class, and
-            passes the specified <see cref="T:System.Runtime.Serialization.SerializationInfo"/> and
-            <see cref="T:System.Runtime.Serialization.StreamingContext"/> to the <see cref="T:System.Exception"/> constructor.
-            </summary>
-            <param name="info">
-            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds
-            the serialized object data about the exception being thrown.
-            </param>
-            <param name="context">
-            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that 
-            contains contextual information about the source or destination.
-            </param>
-        </member>
-        <member name="T:Atom.Mail.IMailSender">
-            <summary>
-            Provides a mechanism for sending <see cref="T:Atom.Mail.IMailMessage"/>s.
-            </summary>
-        </member>
-        <member name="M:Atom.Mail.IMailSender.Send(Atom.Mail.IMailMessage)">
-            <summary>
-            Attempts to send the specified IMailMessage.
-            </summary>
-            <exception cref="T:Atom.Mail.MailException">
-            Thrown when an error has occurred during the mail sending operation.
-            </exception>
-            <param name="mail">
-            The mail message to send.
-            </param>
         </member>
         <member name="T:Atom.Mail.MailTo.MailToMailSender">
             <summary>
@@ -346,6 +312,40 @@
             <summary>
             Contains the native MAPI bindings.
             </summary>
+        </member>
+        <member name="T:Atom.Mail.Modifiers.AddAttachmentModifier">
+            <summary>
+            Implements an <see cref="T:Atom.Mail.Modifiers.IMailMessageModifier"/> that attaches a file to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.Modifiers.AddAttachmentModifier.FilePath">
+            <summary>
+            Gets or sets the full path of the file to attach to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+            <value>
+            The default value is null.
+            </value>
+        </member>
+        <member name="M:Atom.Mail.Modifiers.AddAttachmentModifier.Apply(Atom.Mail.IMailMessage)">
+            <summary>
+            Modifies the specified IMailMessage.
+            </summary>
+            <param name="mail">
+            The mail to modify.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.Modifiers.IMailMessageModifier">
+            <summary>
+            Provides a mechanism for modifying an existing <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.Modifiers.IMailMessageModifier.Apply(Atom.Mail.IMailMessage)">
+            <summary>
+            Modifies the specified IMailMessage.
+            </summary>
+            <param name="mail">
+            The mail to modify.
+            </param>
         </member>
         <member name="T:Atom.Mail.SafeMailSender">
             <summary>

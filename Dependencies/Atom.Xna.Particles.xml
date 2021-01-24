@@ -4,35 +4,49 @@
         <name>Atom.Xna.Particles</name>
     </assembly>
     <members>
-        <member name="T:Atom.Xna.Particles.Controller">
+        <member name="T:Atom.Xna.Particles.Controllers.BaseTriggerController">
             <summary>
-            Represents an object that controls some behaviour of a <see cref="T:Atom.Xna.Particles.ParticleEffect"/>.
+            Represents a <see cref="T:Atom.Xna.Particles.Controller"/> that is intended to trigger
+            a <see cref="T:Atom.Xna.Particles.ParticleEffect"/> after a fixed interval.
             </summary>
         </member>
-        <member name="P:Atom.Xna.Particles.Controller.Effect">
+        <member name="P:Atom.Xna.Particles.Controllers.BaseTriggerController.TriggerTime">
             <summary>
-            Gets the <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this <see cref="T:Atom.Xna.Particles.Controller"/> controls.
+            Gets or sets the time that has to pass until the ParticleEffect is triggered again.
             </summary>
         </member>
-        <member name="M:Atom.Xna.Particles.Controller.#ctor(Atom.Xna.Particles.ParticleEffect)">
+        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.#ctor(Atom.Xna.Particles.ParticleEffect)">
             <summary>
-            Initializes a new instance of the Controller class.
+            Initializes a new instance of the BaseTriggerController class.
             </summary>
             <param name="effect">
             The <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this new <see cref="T:Atom.Xna.Particles.Controller"/> controls.
             </param>
         </member>
-        <member name="M:Atom.Xna.Particles.Controller.Update(Atom.Xna.IXnaUpdateContext)">
+        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.Update(Atom.Xna.IXnaUpdateContext)">
             <summary>
-            Updates this Controller.
+            Updates this TriggerController.
             </summary>
             <param name="updateContext">
             The current IXnaUpdateContext.
             </param>
         </member>
-        <member name="F:Atom.Xna.Particles.Controller.effect">
+        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.Trigger">
             <summary>
-            The <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this <see cref="T:Atom.Xna.Particles.Controller"/> controls.
+            Triggers the <see cref="T:Atom.Xna.Particles.ParticleEffect"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.GetTriggerPosition">
+            <summary>
+            Gets the position at which the ParticleEffect should be triggered at.
+            </summary>
+            <returns>
+            The trigger position.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.Particles.Controllers.BaseTriggerController.timeLeft">
+            <summary>
+            Stores the time left until the ParticleEffect gets triggered again.
             </summary>
         </member>
         <member name="T:Atom.Xna.Particles.Controllers.MousePositionTriggerController">
@@ -84,49 +98,35 @@
             The trigger position.
             </returns>
         </member>
-        <member name="T:Atom.Xna.Particles.Controllers.BaseTriggerController">
+        <member name="T:Atom.Xna.Particles.Controller">
             <summary>
-            Represents a <see cref="T:Atom.Xna.Particles.Controller"/> that is intended to trigger
-            a <see cref="T:Atom.Xna.Particles.ParticleEffect"/> after a fixed interval.
+            Represents an object that controls some behaviour of a <see cref="T:Atom.Xna.Particles.ParticleEffect"/>.
             </summary>
         </member>
-        <member name="P:Atom.Xna.Particles.Controllers.BaseTriggerController.TriggerTime">
+        <member name="P:Atom.Xna.Particles.Controller.Effect">
             <summary>
-            Gets or sets the time that has to pass until the ParticleEffect is triggered again.
+            Gets the <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this <see cref="T:Atom.Xna.Particles.Controller"/> controls.
             </summary>
         </member>
-        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.#ctor(Atom.Xna.Particles.ParticleEffect)">
+        <member name="M:Atom.Xna.Particles.Controller.#ctor(Atom.Xna.Particles.ParticleEffect)">
             <summary>
-            Initializes a new instance of the BaseTriggerController class.
+            Initializes a new instance of the Controller class.
             </summary>
             <param name="effect">
             The <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this new <see cref="T:Atom.Xna.Particles.Controller"/> controls.
             </param>
         </member>
-        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.Update(Atom.Xna.IXnaUpdateContext)">
+        <member name="M:Atom.Xna.Particles.Controller.Update(Atom.Xna.IXnaUpdateContext)">
             <summary>
-            Updates this TriggerController.
+            Updates this Controller.
             </summary>
             <param name="updateContext">
             The current IXnaUpdateContext.
             </param>
         </member>
-        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.Trigger">
+        <member name="F:Atom.Xna.Particles.Controller.effect">
             <summary>
-            Triggers the <see cref="T:Atom.Xna.Particles.ParticleEffect"/>.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.Particles.Controllers.BaseTriggerController.GetTriggerPosition">
-            <summary>
-            Gets the position at which the ParticleEffect should be triggered at.
-            </summary>
-            <returns>
-            The trigger position.
-            </returns>
-        </member>
-        <member name="F:Atom.Xna.Particles.Controllers.BaseTriggerController.timeLeft">
-            <summary>
-            Stores the time left until the ParticleEffect gets triggered again.
+            The <see cref="T:Atom.Xna.Particles.ParticleEffect"/> this <see cref="T:Atom.Xna.Particles.Controller"/> controls.
             </summary>
         </member>
         <member name="T:Atom.Xna.Particles.Emitters.CircleEmitter">

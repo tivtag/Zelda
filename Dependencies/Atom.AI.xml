@@ -4,6 +4,32 @@
         <name>Atom.AI</name>
     </assembly>
     <members>
+        <member name="T:Atom.AI.AIErrorStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Atom.AI.AIErrorStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Atom.AI.AIErrorStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Atom.AI.AIErrorStrings.ThereIsNoFuzzyMappingX">
+            <summary>
+              Looks up a localized string similar to There is no FuzzyMapping &apos;{0}&apos; in the FuzzySet..
+            </summary>
+        </member>
+        <member name="P:Atom.AI.AIErrorStrings.ThereIsNoMembershipFunctionSetForFuzzyMappingX">
+            <summary>
+              Looks up a localized string similar to There is MembershipFunction set for the FuzzyMapping &apos;{0}&apos;..
+            </summary>
+        </member>
         <member name="T:Atom.AI.Fuzzy.FuzzyMapping`2">
             <summary>
             A <see cref="T:Atom.AI.Fuzzy.FuzzyMapping`2"/> represents
@@ -141,32 +167,6 @@
                   1 maps to true  (100%),
             and any other value maps to a meaning between true and false (X%).
             </returns>
-        </member>
-        <member name="T:Atom.AI.AIErrorStrings">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Atom.AI.AIErrorStrings.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Atom.AI.AIErrorStrings.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Atom.AI.AIErrorStrings.ThereIsNoFuzzyMappingX">
-            <summary>
-              Looks up a localized string similar to There is no FuzzyMapping &apos;{0}&apos; in the FuzzySet..
-            </summary>
-        </member>
-        <member name="P:Atom.AI.AIErrorStrings.ThereIsNoMembershipFunctionSetForFuzzyMappingX">
-            <summary>
-              Looks up a localized string similar to There is MembershipFunction set for the FuzzyMapping &apos;{0}&apos;..
-            </summary>
         </member>
         <member name="T:Atom.AI.AStarTilePathSearcher">
             <summary>

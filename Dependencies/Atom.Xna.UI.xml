@@ -155,6 +155,49 @@
             The sprite to display when the button is in selected state
             .</param>
         </member>
+        <member name="T:Atom.Xna.UI.Controls.LambdaButton">
+            <summary>
+            Represents a button that redirects the update and drawing operations
+            to external lambdas / delegates.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.#ctor(System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.IUpdateContext},System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.Xna.ISpriteDrawContext})">
+            <summary>
+            Initializes a new instance of the LambdaButton class.
+            </summary>
+            <param name="onUpdate">
+            The action that should be executed when the new LabdaButton is updating itself.
+            </param>
+            <param name="onDraw">
+            The action that should be executed when the new LabdaButton is drawing itself.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is updating.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is drawing.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onUpdate">
+            <summary>
+            The action that is executed when this LabdaButton is updating itself.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onDraw">
+            <summary>
+            The action that is executed when this LabdaButton is drawing itself.
+            </summary>
+        </member>
         <member name="T:Atom.Xna.UI.Controls.SpriteButton">
             <summary>
             Defines a <see cref="T:Atom.Xna.UI.Controls.Button"/> that is visualized using Sprites.
@@ -245,49 +288,6 @@
         <member name="F:Atom.Xna.UI.Controls.SpriteButton.colorSelected">
             <summary>
             The color the button is tinted.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.UI.Controls.LambdaButton">
-            <summary>
-            Represents a button that redirects the update and drawing operations
-            to external lambdas / delegates.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Controls.LambdaButton.#ctor(System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.IUpdateContext},System.Action{Atom.Xna.UI.Controls.LambdaButton,Atom.Xna.ISpriteDrawContext})">
-            <summary>
-            Initializes a new instance of the LambdaButton class.
-            </summary>
-            <param name="onUpdate">
-            The action that should be executed when the new LabdaButton is updating itself.
-            </param>
-            <param name="onDraw">
-            The action that should be executed when the new LabdaButton is drawing itself.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnUpdate(Atom.IUpdateContext)">
-            <summary>
-            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is updating.
-            </summary>
-            <param name="updateContext">
-            The current IUpdateContext.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Controls.LambdaButton.OnDraw(Atom.Xna.ISpriteDrawContext)">
-            <summary>
-            Called when this <see cref="T:Atom.Xna.UI.UIElement"/> is drawing.
-            </summary>
-            <param name="drawContext">
-            The current ISpriteDrawContext.
-            </param>
-        </member>
-        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onUpdate">
-            <summary>
-            The action that is executed when this LabdaButton is updating itself.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.UI.Controls.LambdaButton.onDraw">
-            <summary>
-            The action that is executed when this LabdaButton is drawing itself.
             </summary>
         </member>
         <member name="T:Atom.Xna.UI.Controls.SpriteTextButton">
@@ -1241,224 +1241,6 @@
             otherwise false.
             </returns>
         </member>
-        <member name="T:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement">
-            <summary>
-            Represents an abstract base implementation of the ITooltipDrawElement interface.
-            </summary>
-        </member>
-        <member name="E:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.TooltipChanged">
-            <summary>
-            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> drawn
-            by this ITooltipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip">
-            <summary>
-            Gets or sets the Tooltip this BaseTooltipDrawElement is visualizing.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChangedCore">
-            <summary>
-            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChanged">
-            <summary>
-            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.activeTooltip">
-            <summary>
-            The Tooltip this BaseTooltipDrawElement is visualizing.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement">
-            <summary>
-            Implements an <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> that draws <see cref="T:Atom.Xna.UI.Tooltips.TextTooltip"/>s using a <see cref="T:Atom.Xna.UI.Controls.TextField"/>.
-            </summary>
-        </member>
-        <member name="E:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.TooltipChanged">
-            <summary>
-            Invoked when the <see cref="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement"/> drawn
-            by this ITooltipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip">
-            <summary>
-            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Atom#Xna#UI#Tooltips#ITooltipDrawElement#Tooltip">
-            <summary>
-            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChangedCore">
-            <summary>
-            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChanged">
-            <summary>
-            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.activeTooltip">
-            <summary>
-            The Tooltip this TextFieldToolTipDrawElement is visualizing.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement">
-            <summary>
-            Provides a mechanism to draw a tooltip string.
-            </summary>
-        </member>
-        <member name="E:Atom.Xna.UI.Tooltips.ITooltipDrawElement.TooltipChanged">
-            <summary>
-            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> drawn
-            by this ITooltipDrawElement has changed.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip">
-            <summary>
-            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> this ITooltipDrawElement 
-            is visualizing.
-            </summary>
-            <value>The Tooltip to visualize. Set to null to not visualize any Tooltip.</value>
-        </member>
-        <member name="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement">
-            <summary>
-            Represents an ITooltipDrawElement that delegates the drawing logic into a lambda function / delegate.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.#ctor(System.Action{Atom.Xna.UI.Tooltips.Tooltip,Atom.Xna.ISpriteDrawContext})">
-            <summary>
-            Initializes a new instance of the LambdaTooltipDrawElement class.
-            </summary>
-            <param name="drawAction">
-            The action that is called when drawing the new LambdaTooltipDrawElement.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.Draw(Atom.IDrawContext)">
-            <summary>
-            Draws this LambdaTooltipDrawElement.
-            </summary>
-            <param name="drawContext">
-            The current IDrawContext.
-            </param>
-        </member>
-        <member name="F:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.drawAction">
-            <summary>
-            The action that is called when drawing this LambdaTooltipDrawElement.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.UI.Tooltips.TextTooltip">
-            <summary>
-            A TextTooltip (by default) shows some <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
-            when the mouse is hovering over the Tooltip's <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/>.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.TextTooltip.Text">
-            <summary>
-            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> shown by this Tooltip.
-            </summary>
-            <value>The default value is null.</value>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.TextTooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
-            <summary>
-            Initializes a new instance of the TextTooltip class.
-            </summary>
-            <param name="tooltipDrawElement">
-            The UIElement that is responsible for drawing the tooltip.
-            </param>
-        </member>
-        <member name="T:Atom.Xna.UI.Tooltips.Tooltip">
-            <summary>
-            A TextTooltip (by default) draws some information using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
-            when the mouse is hovering over the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of the Tooltip or the UIElement it is attached to.
-            </summary>
-            <remarks>
-            The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> is drawn inline if it implements <see cref="T:Atom.IDrawable"/> and
-            is not an <see cref="T:Atom.Xna.UI.UIElement"/>.
-            (<see cref="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement"/> for example)
-            </remarks>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.DrawElement">
-            <summary>
-            Gets the <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses to visualize its <see cref="T:Atom.Xna.UI.Text"/>.
-            </summary>
-            <value>The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses.</value>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.AttachedTo">
-            <summary>
-            Gets or sets the <see cref="T:Atom.Xna.UI.UIElement"/> this Tooltip is attached to.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.IsTooltipVisible">
-            <summary>
-            Gets a value indicating whether the Tooltip is currently visible.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
-            <summary>
-            Initializes a new instance of the Tooltip class.
-            </summary>
-            <param name="tooltipDrawElement">
-            The UIElement that is responsible for drawing the tooltip.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
-            <summary>
-            Called once every frame, allows this <see cref="T:Atom.Xna.UI.UIElement"/> to
-            react to mouse input.
-            </summary>
-            <param name="mouseState">
-            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
-            Do NOT modify this value, unless you know what you do.
-            </param>
-            <param name="oldMouseState">
-            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
-            Do NOT modify this value, unless you know what you do.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.GetTooltipVisibility(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
-            <summary>
-            Gets a value indicating whether the tooltip is currently visible.
-            </summary>
-            <param name="mouseState">
-            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
-            Do NOT modify this value, unless you know what you do.
-            </param>
-            <param name="oldMouseState">
-            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
-            Do NOT modify this value, unless you know what you do.
-            </param>
-            <returns>
-            Returns <see langword="true"/> if the Tooltip is currently visible;
-            otherwise <see langword="false"/>.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnDraw(Atom.Xna.ISpriteDrawContext)">
-            <summary>
-            Called when this UIElement is drawing itself.
-            </summary>
-            <param name="drawContext">
-            The current ISpriteDrawContext.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnUpdate(Atom.IUpdateContext)">
-            <summary>
-            Called when this UIElement is drawing itself.
-            </summary>
-            <param name="updateContext">
-            The current IUpdateContext.
-            </param>
-        </member>
-        <member name="F:Atom.Xna.UI.Tooltips.Tooltip.drawElement">
-            <summary>
-            The UIElement that is actually responsible for drawing the tooltip.
-            </summary>
-        </member>
         <member name="T:Atom.Xna.UI.IUIColorProvider">
             <summary>
             Provides a mechanis to receive a <see cref="T:Microsoft.Xna.Framework.Color"/> for a <see cref="T:Atom.Xna.UI.UIElement"/>.
@@ -2139,6 +1921,224 @@
         <member name="F:Atom.Xna.UI.Text.DefaultBlockSplitter">
             <summary>
             The splitter which is used by default.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement">
+            <summary>
+            Represents an abstract base implementation of the ITooltipDrawElement interface.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the Tooltip this BaseTooltipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChangedCore">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.OnTooltipChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.Tooltip"/> of this BaseTooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.BaseTooltipDrawElement.activeTooltip">
+            <summary>
+            The Tooltip this BaseTooltipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement">
+            <summary>
+            Provides a mechanism to draw a tooltip string.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.ITooltipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.ITooltipDrawElement.Tooltip"/> this ITooltipDrawElement 
+            is visualizing.
+            </summary>
+            <value>The Tooltip to visualize. Set to null to not visualize any Tooltip.</value>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement">
+            <summary>
+            Represents an ITooltipDrawElement that delegates the drawing logic into a lambda function / delegate.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.#ctor(System.Action{Atom.Xna.UI.Tooltips.Tooltip,Atom.Xna.ISpriteDrawContext})">
+            <summary>
+            Initializes a new instance of the LambdaTooltipDrawElement class.
+            </summary>
+            <param name="drawAction">
+            The action that is called when drawing the new LambdaTooltipDrawElement.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.Draw(Atom.IDrawContext)">
+            <summary>
+            Draws this LambdaTooltipDrawElement.
+            </summary>
+            <param name="drawContext">
+            The current IDrawContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement.drawAction">
+            <summary>
+            The action that is called when drawing this LambdaTooltipDrawElement.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement">
+            <summary>
+            Implements an <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> that draws <see cref="T:Atom.Xna.UI.Tooltips.TextTooltip"/>s using a <see cref="T:Atom.Xna.UI.Controls.TextField"/>.
+            </summary>
+        </member>
+        <member name="E:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.TooltipChanged">
+            <summary>
+            Invoked when the <see cref="T:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement"/> drawn
+            by this ITooltipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip">
+            <summary>
+            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Atom#Xna#UI#Tooltips#ITooltipDrawElement#Tooltip">
+            <summary>
+            Gets or sets the TextTooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChangedCore">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.OnTooltipChanged">
+            <summary>
+            Called when the <see cref="P:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.Tooltip"/> of this TextFieldToolTipDrawElement has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.TextFieldToolTipDrawElement.activeTooltip">
+            <summary>
+            The Tooltip this TextFieldToolTipDrawElement is visualizing.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.TextTooltip">
+            <summary>
+            A TextTooltip (by default) shows some <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
+            when the mouse is hovering over the Tooltip's <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.TextTooltip.Text">
+            <summary>
+            Gets or sets the <see cref="P:Atom.Xna.UI.Tooltips.TextTooltip.Text"/> shown by this Tooltip.
+            </summary>
+            <value>The default value is null.</value>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.TextTooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
+            <summary>
+            Initializes a new instance of the TextTooltip class.
+            </summary>
+            <param name="tooltipDrawElement">
+            The UIElement that is responsible for drawing the tooltip.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.UI.Tooltips.Tooltip">
+            <summary>
+            A TextTooltip (by default) draws some information using a <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/>
+            when the mouse is hovering over the <see cref="P:Atom.Xna.UI.UIElement.ClientArea"/> of the Tooltip or the UIElement it is attached to.
+            </summary>
+            <remarks>
+            The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> is drawn inline if it implements <see cref="T:Atom.IDrawable"/> and
+            is not an <see cref="T:Atom.Xna.UI.UIElement"/>.
+            (<see cref="T:Atom.Xna.UI.Tooltips.LambdaTooltipDrawElement"/> for example)
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.DrawElement">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses to visualize its <see cref="T:Atom.Xna.UI.Text"/>.
+            </summary>
+            <value>The <see cref="T:Atom.Xna.UI.Tooltips.ITooltipDrawElement"/> this Tooltip uses.</value>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.AttachedTo">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Xna.UI.UIElement"/> this Tooltip is attached to.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.UI.Tooltips.Tooltip.IsTooltipVisible">
+            <summary>
+            Gets a value indicating whether the Tooltip is currently visible.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.#ctor(Atom.Xna.UI.Tooltips.ITooltipDrawElement)">
+            <summary>
+            Initializes a new instance of the Tooltip class.
+            </summary>
+            <param name="tooltipDrawElement">
+            The UIElement that is responsible for drawing the tooltip.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.HandleMouseInput(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Called once every frame, allows this <see cref="T:Atom.Xna.UI.UIElement"/> to
+            react to mouse input.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.GetTooltipVisibility(Microsoft.Xna.Framework.Input.MouseState@,Microsoft.Xna.Framework.Input.MouseState@)">
+            <summary>
+            Gets a value indicating whether the tooltip is currently visible.
+            </summary>
+            <param name="mouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/>.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <param name="oldMouseState">
+            The state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse"/> one frame ago.
+            Do NOT modify this value, unless you know what you do.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if the Tooltip is currently visible;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnDraw(Atom.Xna.ISpriteDrawContext)">
+            <summary>
+            Called when this UIElement is drawing itself.
+            </summary>
+            <param name="drawContext">
+            The current ISpriteDrawContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.UI.Tooltips.Tooltip.OnUpdate(Atom.IUpdateContext)">
+            <summary>
+            Called when this UIElement is drawing itself.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.UI.Tooltips.Tooltip.drawElement">
+            <summary>
+            The UIElement that is actually responsible for drawing the tooltip.
             </summary>
         </member>
         <member name="T:Atom.Xna.UI.UIContainerElement">

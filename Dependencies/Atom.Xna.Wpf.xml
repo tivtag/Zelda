@@ -44,11 +44,6 @@
             Initializes this <see cref="T:Atom.Xna.Wpf.HiddenXnaGame"/>.
             </summary>
         </member>
-        <member name="F:Atom.Xna.Wpf.HiddenXnaGame.graphics">
-            <summary>
-            The Xna GraphicsDeviceManager object.
-            </summary>
-        </member>
         <member name="T:Atom.Xna.Wpf.TGAFormat">
             <summary>
             The Targa format of the file.
@@ -970,20 +965,9 @@
             Initializes this <see cref="T:Atom.Xna.Wpf.XnaWpfGame"/>.
             </summary>
         </member>
-        <member name="F:Atom.Xna.Wpf.XnaWpfGame.windowSize">
-            <summary>
-            The size of the window/control xna is drawing.
-            This value can't change because of limitation of the Xna framework.
-            </summary>
-        </member>
         <member name="F:Atom.Xna.Wpf.XnaWpfGame.controlHandle">
             <summary>
             The handle of the Control into which Xna is drawing.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.Wpf.XnaWpfGame.graphics">
-            <summary>
-            The Xna GraphicsDeviceManager object.
             </summary>
         </member>
         <member name="T:Atom.Xna.UncachedTargaFromFileTexture2DLoader">

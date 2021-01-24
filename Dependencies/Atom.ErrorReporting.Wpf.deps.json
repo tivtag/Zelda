@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Atom.ErrorReporting.Wpf/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.ErrorReporting": "1.0.0"
+        },
+        "runtime": {
+          "Atom.ErrorReporting.Wpf.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.ErrorReporting/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Mail": "1.0.0"
+        },
+        "runtime": {
+          "Atom.ErrorReporting.dll": {}
+        }
+      },
+      "Atom.Mail/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Mail.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.ErrorReporting.Wpf/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.ErrorReporting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Mail/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

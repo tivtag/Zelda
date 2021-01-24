@@ -61,9 +61,8 @@ namespace Zelda.NpcCreator
             this.Services.AddService<IEffectLoader>( EffectLoader.Create( this.Services ) );
             this.Services.AddService<IRenderTarget2DFactory>( new RenderTarget2DFactory( new Atom.Math.Point2( 1, 1 ), this.Graphics ) );
 
-            GlobalServices.Container.AddService<Atom.Design.IItemSelectionDialogFactory>(
-                new Atom.Wpf.Dialogs.ItemSelectionDialogFactory()
-            );
+            GlobalServices.Container.AddService<Atom.Design.IItemSelectionDialogFactory>( new Atom.Wpf.Design.ItemSelectionDialogFactory() );
+            GlobalServices.Container.AddService<Atom.Design.IExistingItemCollectionEditorFormFactory>( new Atom.Wpf.Design.ExistingItemCollectionEditorFormFactory() );
         }
 
         /// <summary>

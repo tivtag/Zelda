@@ -1,0 +1,51 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Atom.Fmod/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Fmod.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.Math/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Math.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.Fmod/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Math/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

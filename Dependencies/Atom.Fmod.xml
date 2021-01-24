@@ -785,6 +785,42 @@
             </para>
             </remarks>
         </member>
+        <member name="M:Atom.Fmod.Channel.SetDelay(System.UInt64,System.UInt64,System.Boolean)">
+            <summary>
+            Sets a start (and/or stop) time relative to the parent channel group DSP clock, with sample accuracy.
+            </summary>
+            <param name="dspclockStart">
+            DSP clock of the parent channel group to audibly start playing sound at, a value of 0 indicates no delay.
+            </param>
+            <param name="dspclockEnd">
+            DSP clock of the parent channel group to audibly stop playing sound at, a value of 0 indicates no delay.
+            </param>
+            <param name="stopChannels">
+            TRUE = stop according to ChannelControl::isPlaying. FALSE = remain 'active' and a new start delay could start playback again at a later time.
+            </param>
+        </member>
+        <member name="M:Atom.Fmod.Channel.GetDelay(System.UInt64@,System.UInt64@)">
+            <summary>
+            Gets the currently set delay values. 
+            </summary>
+            <remarks>
+            Note! Only works with sounds created with FMOD_SOFTWARE.
+            If FMOD_DELAYTYPE_DSPCLOCK_START is used, this will be the value of the DSP clock time at the time System::playSound was called,
+            if the user has not called Channel::setDelay.
+            What is the 'dsp clock'
+            The DSP clock represents the output stream to the soundcard, and is incremented by the output rate every second 
+            (though of course with much finer granularity than this).
+            So if your output rate is 48khz, the DSP clock will increment by 48000 per second.
+            The hi and lo values represent this 64bit number,
+            with the delaylo representing the least significant 32bits and the delayhi value representing the most significant 32bits.
+            </remarks>
+            <param name="dspclockStart">
+            Address of a variable to receive the top (most significant) 32 bits of a 64bit number representing the time.
+            </param>
+            <param name="dspclockEnd">
+            Address of a variable to receive the bottom (least significant) 32 bits of a 64bit number representing the time.
+            </param>
+        </member>
         <member name="M:Atom.Fmod.Channel.Set3DAttributes(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Sets the position and velocity of this 3d channel. 
@@ -969,10 +1005,13 @@
             <summary>
             Called by native FMOD when the native Channel reaches the end.
             </summary>
-            <param name="channelRaw">
+            <param name="channelControl">
             A pointer to the raw FMOD channel the callback is related to.
             </param>
-            <param name="type">
+            <param name="controlType">
+            Identifies the type of control pointer.
+            </param>
+            <param name="callbackType">
             Identifies the type of the callback.
             </param>
             <param name="commandData1">
@@ -1168,8 +1207,12 @@
             Panning only works on sounds created with FMOD_2D. 3D sounds are not pannable.
             Only sounds that are mono or stereo can be panned. Multichannel sounds (ie >2 channels) cannot be panned.
             <para>
-            Mono sounds are panned from left to right using constant power panning. This means when pan = 0.0, the balance for the sound in each speaker is 71% left and 71% right, not 50% left and 50% right. This gives (audibly) smoother pans.
-            Stereo sounds heave each left/right value faded up and down according to the specified pan position. This means when pan = 0.0, the balance for the sound in each speaker is 100% left and 100% right. When pan = -1.0, only the left channel of the stereo sound is audible, when pan = 1.0, only the right channel of the stereo sound is audible.
+            Mono sounds are panned from left to right using constant power panning.
+            This means when pan = 0.0, the balance for the sound in each speaker is 71% left and 71% right, not 50% left and 50% right.
+            This gives (audibly) smoother pans.
+            Stereo sounds heave each left/right value faded up and down according to the specified pan position.
+            This means when pan = 0.0, the balance for the sound in each speaker is 100% left and 100% right.
+            When pan = -1.0, only the left channel of the stereo sound is audible, when pan = 1.0, only the right channel of the stereo sound is audible.
             </para>
             </remarks>
             <param name="volume">
@@ -1185,6 +1228,26 @@
             </remarks>
             <param name="pan">
             A pan position, from 0.0 to 1.0 inclusive. 0.0 = left, 1.0 = right. Default = 0.5. 
+            </param>
+        </member>
+        <member name="M:Atom.Fmod.ChannelGroup.SetPitch(System.Single)">
+            <summary>
+            Sets the pitch value.
+            </summary>
+            <param name="pan">
+            Pitch value, 0.5 = half pitch, 2.0 = double pitch, etc default = 1.0.
+            </param>
+        </member>
+        <member name="M:Atom.Fmod.ChannelGroup.SetVolumeRamp(System.Boolean)">
+            <summary>
+            Sets whether the channel automatically ramps when setting volumes.
+            </summary>
+            <remarks>
+            When changing volumes on a non-paused channel, FMOD normally adds a small ramp to avoid a pop sound.
+            This function allows that setting to be overriden and volume changes to be applied immediately.
+            </remarks>
+            <param name="ramp">
+            Whether to enable volume ramping.
             </param>
         </member>
         <member name="M:Atom.Fmod.ChannelGroup.AddChildGroup(Atom.Fmod.ChannelGroup)">

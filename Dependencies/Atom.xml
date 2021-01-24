@@ -4779,479 +4779,6 @@
             The newly created IItemSelectionDialog{TItem}.
             </returns>
         </member>
-        <member name="T:Atom.Design.BaseItemCreationEditor">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that allows the user to create an object.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.BaseItemCreationEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Edits the value of the specified object using the editor style indicated
-            by the System.Drawing.Design.UITypeEditor.GetEditStyle() method.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain
-            additional context information.
-            </param>
-            <param name="provider">
-             An System.IServiceProvider that this editor can use to obtain services.
-             </param>
-            <param name="value">  
-            The object to edit.
-            </param>
-            <returns>
-            The new value of the object.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemCreationEditor.CreateObject(System.Type)">
-            <summary>
-            Creates an instance of the object of the given selected <see cref="T:System.Type"/>.
-            </summary>
-            <param name="type">
-            The type that has been selected by the user.
-            </param>
-            <returns>
-            The newly created object.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemCreationEditor.SetupCreatedObject(System.Object)">
-            <summary>
-            Called after the given object has been created.
-            </summary>
-            <param name="obj">
-            The object which has been created.
-            </param>
-        </member>
-        <member name="T:Atom.Design.BaseItemSelectionEditor`1">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that allows the user to select an item.
-            </summary>
-            <typeparam name="TItem">
-            The type of item that can be selected in the BaseItemSelectionEditor{TItem}.
-            </typeparam>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.GetSelectableItems">
-            <summary>
-            Gets the items that can be selected in this BaseItemSelectionEditor{TItem}.
-            </summary>
-            <returns>
-            The list of items.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Edits the value of the specified object using the editor style indicated
-            by the System.Drawing.Design.UITypeEditor.GetEditStyle() method.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain
-            additional context information.
-            </param>
-            <param name="provider">
-             An System.IServiceProvider that this editor can use to obtain services.
-             </param>
-            <param name="value">  
-            The object to edit.
-            </param>
-            <returns>
-            The new value of the object.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.ShowSelectionDialog(`0)">
-            <summary>
-            Allows the user to select an item.
-            </summary>
-            <param name="value">
-            The item the user has initially selected in the dialog.
-            </param>
-            <returns>
-            The item the user has selected.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.GetItemFromValue(System.Object)">
-            <summary>
-            Gets the TItem that is associated with the given <paramref name="value"/>.
-            </summary>
-            <param name="value">
-            The original value of the property.
-            </param>
-            <returns>
-            The object that will be pre-selected in the dialog.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.GetFinalValue(`0)">
-            <summary>
-            Gets the final value that is returned by this BaseItemSelectionEditor{TItem}.
-            </summary>
-            <param name="selectedItem">
-            The item the user has selected.
-            </param>
-            <returns>
-            The object that is returned from this BaseItemSelectionEditor{TItem}
-            back to the property.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseItemSelectionEditor`1.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Gets the editor style used by the 
-            System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)
-            method.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain
-            additional context information.
-            </param>
-            <returns>
-            Returns UITypeEditorEditStyle.Modal.
-            </returns>
-        </member>
-        <member name="T:Atom.Design.BaseTypeSelectionEditor">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that allows the user to select a <see cref="T:System.Type"/>.
-            </summary>
-        </member>
-        <member name="P:Atom.Design.BaseTypeSelectionEditor.ShowFullTypeName">
-            <summary>
-            Gets or sets a value indicating whether the full type name of the objects
-            to select should be shown or only the normal short name should be shown.
-            </summary>
-            <value>
-            The default value is false.
-            </value>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.GetTypes">
-            <summary>
-            Gets the types that the user can select in this BaseTypeSelectionEditor.
-            </summary>
-            <returns>
-            The types the user can select.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.GetSelectableItems">
-            <summary>
-            Gets the items that can be selected in this BaseItemSelectionEditor{TItem}.
-            </summary>
-            <returns>
-            The list of items.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.CreateTypeWrapper(System.Type)">
-            <summary>
-            Creates the NameableObjectWrapper{Type} for the given <paramref name="type"/>.
-            </summary>
-            <param name="type">
-            The type to wrap.
-            </param>
-            <returns>
-            The wrapper that has been created.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.GetItemFromValue(System.Object)">
-            <summary>
-            Gets the NameableObjectWrapper{Type} that is associated with the given <paramref name="value"/>.
-            </summary>
-            <param name="value">
-            The original value of the property.
-            </param>
-            <returns>
-            The object that will be pre-selected in the dialog.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.MapTypeToTypeName(System.Type)">
-            <summary>
-            Maps the given Type onto its typename.
-            </summary>
-            <param name="type">
-            The input type.
-            </param>
-            <returns>
-            The respective type name.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.BaseTypeSelectionEditor.MapTypeToName(System.Type)">
-            <summary>
-            Maps the given Type onto its short name.
-            </summary>
-            <param name="type">
-            The input type.
-            </param>
-            <returns>
-            The respective type name.
-            </returns>
-        </member>
-        <member name="T:Atom.Design.ExistingItemCollectionEditor`1">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that allows one to add existing
-            objects to a collection using the property grid.
-            </summary>
-            <remarks>
-            This is similiar to the System.ComponentModel.Design.CollectionEditor, but
-            instead of adding new items the user can select existing items.
-            </remarks>
-            <example>
-            To use this class simply inherit from it:
-            <code>
-            public class MyListEditor : Acid.Design.ExistingItemCollectionEditor{MyItemType}
-            {
-               public MyListEditor()
-               {
-                    protected override IItemSelectionDialog{MyItemType} CreateSelectionDialog()
-                    {
-                        return new MySelectionDialog();
-                    }
-               }
-            }
-            </code>
-            and then apply the editor on your property: 
-            <code>
-            [Editor( typeof( MyListEditor ), typeof( UITypeEditor ) )]
-            </code>
-            </example>
-            <typeparam name="TItem">The type of item the collection contains.</typeparam>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.CreateSelectionDialog">
-            <summary>
-            Creates the <see cref="T:Atom.Design.IItemSelectionDialog`1"/> this ExistingItemCollectionEditor{TItem}
-            uses internally. Must be overriden by users of this class.
-            </summary>
-            <returns>
-            The <see cref="T:Atom.Design.IItemSelectionDialog`1"/> that should be used by this ExistingItemCollectionEditor{TItem}.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Overriden. Edits the value of the specified object.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <param name="provider">An System.IServiceProvider that this editor can use to obtain services.</param>
-            <param name="value">The object to edit.</param>
-            <returns>
-            The new value of the object. If the value of the object has not changed,
-            this should return the same object it was passed.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Overriden. Gets the editor style used by the EditValue method. 
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <returns>
-            Returns UITypeEditorEditStyle.Modal.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.GetItems(System.Object)">
-            <summary>
-            Gets the items in the given collection.
-            </summary>
-            <param name="editValue">The input value to the editor.</param>
-            <returns>The array of items.</returns>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.SetItems(System.Object,`0[])">
-            <summary>
-            Sets the items in the given collection.
-            </summary>
-            <param name="editValue">The input value to the editor.</param>
-            <param name="value">The array of items to set.</param>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.selectionDialog">
-            <summary>
-            The IItemSelectionDialog that allows the user of the class to plugin
-            their custom dialog that selects an item.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.ExistingItemCollectionEditor`1.EditorForm">
-            <summary>
-            Represents the form that gets displayed when the user wants to edit his collection.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.#ctor(System.Object,Atom.Design.ExistingItemCollectionEditor{`0})">
-            <summary>
-            Initializes a new instance of the EditorForm class.
-            </summary>
-            <param name="editValue">The collection value beeing edited.</param>
-            <param name="editor">The editor that owns the new EditorForm.</param>
-        </member>
-        <member name="P:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.Items">
-            <summary>
-            Gets or sets the items the edited collection contains.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.AddItem(`0)">
-            <summary>
-            Adds the given item to the collection.
-            </summary>
-            <param name="item">
-            The item to add.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.RefreshUserCollection">
-            <summary>
-            Refreshes the collection of the user by
-            copying the current state of the list box.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.SwapItems(System.Int32,System.Int32)">
-            <summary>
-            Swaps the items at the given indices.
-            </summary>
-            <param name="indexA">The first index.</param>
-            <param name="indexB">The second index.</param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnOkButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the OK button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnAddButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the Add button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnRemoveButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the Remove button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnCancelButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the Cancel button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnUpButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the Up button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.OnDownButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the Down button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contain the event data.
-            </param>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.editValue">
-            <summary>
-            The collection value currently beeing edited.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.editor">
-            <summary>
-            The editor that owns this EditorForm.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.listBox">
-            <summary>
-            The ListBox that visualized the collection of items.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonAdd">
-            <summary>
-            The button when clicked allows the user to add a new item to the collection.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonRemove">
-            <summary>
-            The button when clicked allows the user to remove the currently selected item from the collection.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonUp">
-            <summary>
-            The button when clicked allows the user to move the currently selected item
-            up by one index.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonDown">
-            <summary>
-            The button when clicked allows the user to move the currently selected item
-            down by one index.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonCancel">
-            <summary>
-            The button when clicked closes the editor without applying the changes.
-            </summary>
-        </member>
-        <member name="F:Atom.Design.ExistingItemCollectionEditor`1.EditorForm.buttonOK">
-            <summary>
-            The button when clicked closes the editor while applying the changes to the underyling collection.
-            </summary>
-        </member>
-        <member name="T:Atom.Design.ToggleEditor">
-            <summary>
-            Represents an <see cref="T:System.Drawing.Design.UITypeEditor"/> that can be used as a simple toggle button
-            for a boolean value.
-            </summary>
-        </member>
-        <member name="M:Atom.Design.ToggleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Overriden. Edits the value of the specified object.
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <param name="provider">An System.IServiceProvider that this editor can use to obtain services.</param>
-            <param name="value">The object to edit.</param>
-            <returns>
-            The new value of the object. If the value of the object has not changed,
-            this should return the same object it was passed.
-            </returns>
-        </member>
-        <member name="M:Atom.Design.ToggleEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Overriden. Gets the editor style used by the EditValue method. 
-            </summary>
-            <param name="context">
-            An System.ComponentModel.ITypeDescriptorContext that can be used to gain additional context information.
-            </param>
-            <returns>
-            Returns UITypeEditorEditStyle.Modal.
-            </returns>
-        </member>
         <member name="T:Atom.Design.NameableObjectWrapper`1">
             <summary>
             Represents an object that wraps around another object, adding naming support to it.
@@ -5750,6 +5277,71 @@
             <summary>
             Writes a new empty line to this ConsoleLog.
             </summary>
+        </member>
+        <member name="T:Atom.Diagnostics.Contracts.Contract">
+            <summary>
+            Allows checking of class contracts.
+            </summary>
+            <remarks>
+            Quick implementation since I've had to remove the unsupported Microsoft Code Contracts.
+            </remarks>
+        </member>
+        <member name="M:Atom.Diagnostics.Contracts.Contract.NotNull``1(``0,System.String)">
+            <summary>
+            Checks whether the given obejct is not null.
+            </summary>
+            <param name="obj">
+            The object that should not be null.
+            </param>
+            <param name="argumentName">
+            The anme of the argument.
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.Contracts.Contract.Requires(System.Boolean,System.String)">
+            <summary>
+            Checks whether the given condition is met.
+            </summary>
+            <param name="condition">
+            The condition that must be true.
+            </param>
+            <param name="message">
+            The message to output if the condition is not met. (optional)
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.Contracts.Contract.Requires``1(System.Boolean,System.String)">
+            <summary>
+            Checks whether the given condition is met.
+            </summary>
+            <typeparam name="TException">
+            The exception type to throw if the condition is not met.
+            </typeparam>
+            <param name="condition">
+            The condition that must be true.
+            </param>
+            <param name="message">
+            The message to output if the condition is not met. (optional)
+            </param>
+        </member>
+        <member name="M:Atom.Diagnostics.Contracts.Contract.ForAll``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Checks whether the given condition is met for all item.
+            </summary>
+        </member>
+        <member name="M:Atom.Diagnostics.Contracts.Contract.Invariant(System.Boolean)">
+            <summary>
+            Checks whether the given invariant condition is met.
+            </summary>
+            <param name="invariant">
+            The invariant that must be true.
+            </param>
+        </member>
+        <member name="T:Atom.Diagnostics.Contracts.PureAttribute">
+            <summary>
+            Marks a method as pure.
+            </summary>
+            <remarks>
+            This class was added since we had to remove the now unsupported Microsoft Code Contracts.
+            </remarks>
         </member>
         <member name="T:Atom.Diagnostics.FileLog">
             <summary>

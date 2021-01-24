@@ -13,6 +13,7 @@ namespace Zelda.Editor
     using System;
     using System.Diagnostics;
     using Atom;
+    using Atom.Patterns.Provider;
     using Atom.Scene.Xna;
     using Atom.Xna;
     using Atom.Xna.Effects;
@@ -280,17 +281,18 @@ namespace Zelda.Editor
         /// </summary>
         private void RegisterServices()
         {
-            var dialogFactory = new Atom.Wpf.Dialogs.ItemSelectionDialogFactory();
+            var dialogFactory = new Atom.Wpf.Design.ItemSelectionDialogFactory();
+            var existingItemCollectionEditorFormFactory = new Atom.Wpf.Design.ExistingItemCollectionEditorFormFactory();
             var renderTargetFactory = new RenderTarget2DFactory( WindowSize, this.Graphics );
 
             this.Services.AddService<IRenderTarget2DFactory>( renderTargetFactory );
             this.Services.AddService<ISpriteLoader>( this.spriteLoader );
             this.Services.AddService<ISpriteSource>( this.spriteLoader );
-            this.Services.AddService<IFontLoader>( this.fontLoader );
             this.Services.AddService<ITexture2DLoader>( this.textureLoader );
             this.Services.AddService<ISpriteSheetLoader>( this.spriteSheetLoader );
             this.Services.AddService<IEffectLoader>( EffectLoader.Create( this.Services ) );
             this.Services.AddService<Atom.Design.IItemSelectionDialogFactory>( dialogFactory );
+            this.Services.AddService<Atom.Design.IExistingItemCollectionEditorFormFactory>( existingItemCollectionEditorFormFactory );
             this.Services.AddService<Atom.Xna.Particles.ParticleRenderer>( this.particleRenderer );
             this.Services.AddService<Zelda.Items.Sets.ISetDatabase>( new Zelda.Items.Sets.SetDatabase( this.editor ) );
             
@@ -301,8 +303,9 @@ namespace Zelda.Editor
             this.Services.AddService<Zelda.Weather.IWeatherMachineSettings>( this.defaultWeatherMachineSettings );
 
             GlobalServices.Container.AddService<Atom.Design.IItemSelectionDialogFactory>( dialogFactory );
+            GlobalServices.Container.AddService<Atom.Design.IExistingItemCollectionEditorFormFactory>( existingItemCollectionEditorFormFactory );
 
-            var container = this.editor.ProviderContainer;
+            IObjectProviderContainerRegistrar container = this.editor.ProviderContainer;
             container.Register<ZeldaCamera>( () => this.scene.Camera.Model );
             container.Register<ZeldaScene>( () => this.scene.Model );
         }
@@ -353,7 +356,7 @@ namespace Zelda.Editor
         /// </param>
         protected override void OnPreparingDeviceSettings( Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs e )
         {
-            var presentParams = e.GraphicsDeviceInformation.PresentationParameters;
+            PresentationParameters presentParams = e.GraphicsDeviceInformation.PresentationParameters;
             presentParams.RenderTargetUsage  = RenderTargetUsage.PreserveContents;
 
             LogHelper.LogInfo( e.GraphicsDeviceInformation, EditorApp.Current.Log );
@@ -368,7 +371,7 @@ namespace Zelda.Editor
         private void InitializeScene( SceneViewModel sceneViewModel )
         {
             Debug.Assert( sceneViewModel != null );
-            var scene = sceneViewModel.Model;
+            ZeldaScene scene = sceneViewModel.Model;
 
             // Initialize camera
             scene.Camera.ViewSize = this.TileMapArea.Size;
@@ -402,7 +405,7 @@ namespace Zelda.Editor
         {
             if( this.VisualizeQuadTree && this.scene != null )
             {
-                var tree = this.scene.Model.QuadTree;
+                Atom.Scene.QuadTree2 tree = this.scene.Model.QuadTree;
 
                 this.drawContext.Begin(
                     BlendState.NonPremultiplied,
@@ -450,7 +453,7 @@ namespace Zelda.Editor
         {
             drawContext.Begin();
             {
-                var batch = drawContext.Batch;
+                Atom.Xna.Batches.IComposedSpriteBatch batch = drawContext.Batch;
 
                 // Border on the Right
                 batch.Draw( whiteTexture,
@@ -490,10 +493,14 @@ namespace Zelda.Editor
         public object GetService( Type serviceType )
         {
             if( serviceType == typeof( ZeldaScene ) )
+            {
                 return this.scene == null ? null : this.scene.Model;
+            }
 
             if( serviceType == typeof( Atom.Xna.Particles.ParticleRenderer ) )
+            {
                 return this.particleRenderer;
+            }
 
             return this.Services.GetService( serviceType );
         }

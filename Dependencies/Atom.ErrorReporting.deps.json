@@ -1,0 +1,51 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Atom.ErrorReporting/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Mail": "1.0.0"
+        },
+        "runtime": {
+          "Atom.ErrorReporting.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.Mail/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Mail.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.ErrorReporting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Mail/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -381,6 +381,36 @@
             Gets the full name of the file.
             </summary>
         </member>
+        <member name="T:Atom.AutoUpdate.Manifest.Manifest">
+            <summary>
+            Encapsultes the state of the files of the application that are
+            supposed to be updateable.
+            </summary>
+            <remarks>
+            Manifests are usually stored on a web-server and downloaded to the client.
+            </remarks>
+        </member>
+        <member name="P:Atom.AutoUpdate.Manifest.Manifest.Files">
+            <summary>
+            Gets the IManifestFileEntries that are part of this Manifest.
+            </summary>
+        </member>
+        <member name="M:Atom.AutoUpdate.Manifest.Manifest.AddFile(Atom.AutoUpdate.Manifest.IManifestFile)">
+            <summary>
+            Adds the specified <see cref="T:Atom.AutoUpdate.Manifest.IManifestFile"/> to this Manifest.
+            </summary>
+            <param name="entry">
+            The entry to add.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If the specified <paramref name="entry"/> is null.
+            </exception>
+        </member>
+        <member name="F:Atom.AutoUpdate.Manifest.Manifest.files">
+            <summary>
+            The files that are part of this Manifest.
+            </summary>
+        </member>
         <member name="T:Atom.AutoUpdate.Manifest.ManifestBuilder">
             <summary>
             Implements a mechanism that makes it easier to
@@ -543,36 +573,6 @@
             <returns>
             The IManifest that has been deserialized.
             </returns>
-        </member>
-        <member name="T:Atom.AutoUpdate.Manifest.Manifest">
-            <summary>
-            Encapsultes the state of the files of the application that are
-            supposed to be updateable.
-            </summary>
-            <remarks>
-            Manifests are usually stored on a web-server and downloaded to the client.
-            </remarks>
-        </member>
-        <member name="P:Atom.AutoUpdate.Manifest.Manifest.Files">
-            <summary>
-            Gets the IManifestFileEntries that are part of this Manifest.
-            </summary>
-        </member>
-        <member name="M:Atom.AutoUpdate.Manifest.Manifest.AddFile(Atom.AutoUpdate.Manifest.IManifestFile)">
-            <summary>
-            Adds the specified <see cref="T:Atom.AutoUpdate.Manifest.IManifestFile"/> to this Manifest.
-            </summary>
-            <param name="entry">
-            The entry to add.
-            </param>
-            <exception cref="T:System.ArgumentNullException">
-            If the specified <paramref name="entry"/> is null.
-            </exception>
-        </member>
-        <member name="F:Atom.AutoUpdate.Manifest.Manifest.files">
-            <summary>
-            The files that are part of this Manifest.
-            </summary>
         </member>
         <member name="T:Atom.AutoUpdate.MD5FileHasher">
             <summary>

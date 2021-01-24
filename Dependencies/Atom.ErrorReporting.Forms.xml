@@ -99,33 +99,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory">
-            <summary>
-            Implements a mechanism for creating instances fo the <see cref="T:Atom.ErrorReporting.Dialogs.IErrorReportDialog"/> interface.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.#ctor(Atom.ErrorReporting.IErrorReporter)">
-            <summary>
-            Initializes a new instance of the WinFormsErrorReportDialogFactory class.
-            </summary>
-            <param name="mailReporter">
-            The optional reporter that allows users to send an error report by e-mail.
-            </param>
-        </member>
-        <member name="M:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.Build">
-            <summary>
-            Creates and then returns a new concrete instance of the IErrorReportDialog interface.
-            </summary>
-            <returns>
-            The newly created IErrorReportDialog.
-            </returns>
-        </member>
-        <member name="F:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.mailReporter">
-            <summary>
-            The optional reporter that allows users to send an error report by e-mail.
-            </summary>
-        </member>
         <member name="T:Atom.ErrorReporting.Dialogs.ExceptionDetailsDialog">
             <summary>
             Used to visualize the stack trace of an exception.
@@ -176,6 +149,33 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory">
+            <summary>
+            Implements a mechanism for creating instances fo the <see cref="T:Atom.ErrorReporting.Dialogs.IErrorReportDialog"/> interface.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.#ctor(Atom.ErrorReporting.IErrorReporter)">
+            <summary>
+            Initializes a new instance of the WinFormsErrorReportDialogFactory class.
+            </summary>
+            <param name="mailReporter">
+            The optional reporter that allows users to send an error report by e-mail.
+            </param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.Build">
+            <summary>
+            Creates and then returns a new concrete instance of the IErrorReportDialog interface.
+            </summary>
+            <returns>
+            The newly created IErrorReportDialog.
+            </returns>
+        </member>
+        <member name="F:Atom.ErrorReporting.Dialogs.WinFormsErrorReportDialogFactory.mailReporter">
+            <summary>
+            The optional reporter that allows users to send an error report by e-mail.
             </summary>
         </member>
         <member name="T:Atom.ErrorReporting.Hooks.ApplicationThreadExceptionHook">

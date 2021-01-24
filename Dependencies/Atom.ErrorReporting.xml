@@ -275,15 +275,92 @@
             Represents the storage field of the <see cref="P:Atom.ErrorReporting.Formatters.TextLineErrorMessageFormatter.Text"/> property.
             </summary>
         </member>
-        <member name="T:Atom.ErrorReporting.IShutdownLogic">
+        <member name="T:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook">
             <summary>
-            Provides a mechanism for shutting down the application after
-            a fatal error.
+            Implements an <see cref="T:Atom.ErrorReporting.IErrorHook"/> that hooks onto <see cref="E:System.AppDomain.UnhandledException"/> to
+            catch exceptions.
             </summary>
         </member>
-        <member name="M:Atom.ErrorReporting.IShutdownLogic.DoShutdown">
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.#ctor(Atom.ErrorReporting.IExceptionErrorFactory,Atom.ErrorReporting.IErrorReporter)">
             <summary>
-            Executes this IShutdownLogic.
+            Initializes a new instance of the UnhandledAppDomainExceptionHook class,
+            that hooks the current AppDomain.
+            </summary>
+            <param name="errorFactory">
+            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
+            </param>
+            <param name="errorReporter">
+            The IErrorReporter to which IExceptionErrors are passed.
+            </param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.#ctor(System.AppDomain,Atom.ErrorReporting.IExceptionErrorFactory,Atom.ErrorReporting.IErrorReporter)">
+            <summary>
+            Initializes a new instance of the UnhandledAppDomainExceptionHook class.
+            </summary>
+            <param name="appDomain">
+            The AppDomain to hook on.
+            </param>
+            <param name="errorFactory">
+            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
+            </param>
+            <param name="errorReporter">
+            The IErrorReporter to which IExceptionErrors are passed.
+            </param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.Hook">
+            <summary>
+            Hooks this IErrorHook.
+            </summary>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.Unhook">
+            <summary>
+            Unhooks this IErrorHook.
+            </summary>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.OnUnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Called when an exception has occurred in the AppDomain this UnhandledAppDomainExceptionHook
+            is hooked on.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The <see cref="T:System.UnhandledExceptionEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.ReportError(Atom.ErrorReporting.IExceptionError)">
+            <summary>
+            Reports the specified IExceptionError.
+            </summary>
+            <param name="error">
+            The IExceptionError that has occurred.
+            </param>
+        </member>
+        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.CreateError(System.UnhandledExceptionEventArgs)">
+            <summary>
+            Creates an IExceptionError object given the event data.
+            </summary>
+            <param name="e">
+            The <see cref="T:System.UnhandledExceptionEventArgs"/> that contain the event data.
+            </param>
+            <returns>
+            The newly created IExceptionError.
+            </returns>
+        </member>
+        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.appDomain">
+            <summary>
+            The AppDomain this UnhandledAppDomainExceptionHook hooks on.
+            </summary>
+        </member>
+        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.errorFactory">
+            <summary>
+            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
+            </summary>
+        </member>
+        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.errorReporter">
+            <summary>
+            The IErrorReporter to which IExceptionErrors are passed.
             </summary>
         </member>
         <member name="T:Atom.ErrorReporting.IError">
@@ -387,92 +464,15 @@
             The newly created concrete instance of the IExceptionError interface.
             </returns>
         </member>
-        <member name="T:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook">
+        <member name="T:Atom.ErrorReporting.IShutdownLogic">
             <summary>
-            Implements an <see cref="T:Atom.ErrorReporting.IErrorHook"/> that hooks onto <see cref="E:System.AppDomain.UnhandledException"/> to
-            catch exceptions.
+            Provides a mechanism for shutting down the application after
+            a fatal error.
             </summary>
         </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.#ctor(Atom.ErrorReporting.IExceptionErrorFactory,Atom.ErrorReporting.IErrorReporter)">
+        <member name="M:Atom.ErrorReporting.IShutdownLogic.DoShutdown">
             <summary>
-            Initializes a new instance of the UnhandledAppDomainExceptionHook class,
-            that hooks the current AppDomain.
-            </summary>
-            <param name="errorFactory">
-            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
-            </param>
-            <param name="errorReporter">
-            The IErrorReporter to which IExceptionErrors are passed.
-            </param>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.#ctor(System.AppDomain,Atom.ErrorReporting.IExceptionErrorFactory,Atom.ErrorReporting.IErrorReporter)">
-            <summary>
-            Initializes a new instance of the UnhandledAppDomainExceptionHook class.
-            </summary>
-            <param name="appDomain">
-            The AppDomain to hook on.
-            </param>
-            <param name="errorFactory">
-            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
-            </param>
-            <param name="errorReporter">
-            The IErrorReporter to which IExceptionErrors are passed.
-            </param>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.Hook">
-            <summary>
-            Hooks this IErrorHook.
-            </summary>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.Unhook">
-            <summary>
-            Unhooks this IErrorHook.
-            </summary>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.OnUnhandledException(System.Object,System.UnhandledExceptionEventArgs)">
-            <summary>
-            Called when an exception has occurred in the AppDomain this UnhandledAppDomainExceptionHook
-            is hooked on.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The <see cref="T:System.UnhandledExceptionEventArgs"/> that contain the event data.
-            </param>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.ReportError(Atom.ErrorReporting.IExceptionError)">
-            <summary>
-            Reports the specified IExceptionError.
-            </summary>
-            <param name="error">
-            The IExceptionError that has occurred.
-            </param>
-        </member>
-        <member name="M:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.CreateError(System.UnhandledExceptionEventArgs)">
-            <summary>
-            Creates an IExceptionError object given the event data.
-            </summary>
-            <param name="e">
-            The <see cref="T:System.UnhandledExceptionEventArgs"/> that contain the event data.
-            </param>
-            <returns>
-            The newly created IExceptionError.
-            </returns>
-        </member>
-        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.appDomain">
-            <summary>
-            The AppDomain this UnhandledAppDomainExceptionHook hooks on.
-            </summary>
-        </member>
-        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.errorFactory">
-            <summary>
-            The IExceptionErrorFactory used to create IExceptionErrors given an Exception.
-            </summary>
-        </member>
-        <member name="F:Atom.ErrorReporting.Hooks.UnhandledAppDomainExceptionHook.errorReporter">
-            <summary>
-            The IErrorReporter to which IExceptionErrors are passed.
+            Executes this IShutdownLogic.
             </summary>
         </member>
         <member name="T:Atom.ErrorReporting.Reporters.BaseMailErrorReporter">

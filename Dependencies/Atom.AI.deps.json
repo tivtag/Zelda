@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Atom.AI/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Game": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.AI.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.Game/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Game.dll": {}
+        }
+      },
+      "Atom.Math/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Math.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.AI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Game/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Math/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

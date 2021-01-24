@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Atom.Wpf/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Design": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Wpf.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.Design/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Design.dll": {}
+        }
+      },
+      "Atom.Math/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Math.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.Wpf/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Design/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Math/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -192,8 +192,7 @@ namespace Zelda.Graphics
         /// </summary>
         private void RegisterServices()
         {
-            var services = this.game.Services;
-
+            Microsoft.Xna.Framework.GameServiceContainer services = this.game.Services;
             services.AddService<IEffectLoader>( this.effectLoader );
             services.AddService<ITexture2DLoader>( this.textureLoader );
             services.AddService<ISpriteLoader>( this.spriteLoader );
@@ -216,8 +215,8 @@ namespace Zelda.Graphics
         /// <param name="e">Stores the event arguments.</param>
         private void OnPreparingDeviceSettings( object sender, Microsoft.Xna.Framework.PreparingDeviceSettingsEventArgs e )
         {
-            var deviceInfo = e.GraphicsDeviceInformation;
-            var presentParams = deviceInfo.PresentationParameters;
+            Microsoft.Xna.Framework.GraphicsDeviceInformation deviceInfo = e.GraphicsDeviceInformation;
+            PresentationParameters presentParams = deviceInfo.PresentationParameters;
 
             // Apply common settings.
             presentParams.RenderTargetUsage = RenderTargetUsage.PreserveContents;

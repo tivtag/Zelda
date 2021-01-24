@@ -35,6 +35,9 @@
       <HintPath>..\..\Dependencies\Atom.AI.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Atom.Design">
+      <HintPath>..\..\Dependencies\Atom.Design.dll</HintPath>
+    </Reference>
     <Reference Include="Atom.Fmod">
       <HintPath>..\..\Dependencies\Atom.Fmod.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>

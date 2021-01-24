@@ -46,6 +46,9 @@
       <HintPath>..\..\Dependencies\Atom.AI.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Atom.Design">
+      <HintPath>..\..\Dependencies\Atom.Design.dll</HintPath>
+    </Reference>
     <Reference Include="Atom.Fmod">
       <HintPath>..\..\Dependencies\Atom.Fmod.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -53,6 +56,9 @@
     <Reference Include="Atom.Game">
       <HintPath>..\..\Dependencies\Atom.Game.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Atom.Game.Design">
+      <HintPath>..\..\Dependencies\Atom.Game.Design.dll</HintPath>
     </Reference>
     <Reference Include="Atom.Game.Waypoints">
       <HintPath>..\..\Dependencies\Atom.Game.Waypoints.dll</HintPath>

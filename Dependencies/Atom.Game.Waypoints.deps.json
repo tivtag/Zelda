@@ -1,0 +1,97 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Atom.Game.Waypoints/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.AI": "1.0.0",
+          "Atom.Game": "1.0.0",
+          "Atom.Math": "1.0.0",
+          "Atom.Math.Graph": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Game.Waypoints.dll": {}
+        }
+      },
+      "Atom/1.0.0": {
+        "runtime": {
+          "Atom.dll": {}
+        }
+      },
+      "Atom.AI/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Game": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.AI.dll": {}
+        }
+      },
+      "Atom.Game/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Game.dll": {}
+        }
+      },
+      "Atom.Math/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Math.dll": {}
+        }
+      },
+      "Atom.Math.Graph/1.0.0": {
+        "dependencies": {
+          "Atom": "1.0.0",
+          "Atom.Math": "1.0.0"
+        },
+        "runtime": {
+          "Atom.Math.Graph.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Atom.Game.Waypoints/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.AI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Game/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Math/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Atom.Math.Graph/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

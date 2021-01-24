@@ -55,9 +55,8 @@ namespace Zelda.QuestCreator
         public App()
             : base( "QuestCreator" )
         {
-            GlobalServices.Container.AddService<Atom.Design.IItemSelectionDialogFactory>(
-                new Atom.Wpf.Dialogs.ItemSelectionDialogFactory()
-            );
+            GlobalServices.Container.AddService<Atom.Design.IItemSelectionDialogFactory>( new Atom.Wpf.Design.ItemSelectionDialogFactory() );
+            GlobalServices.Container.AddService<Atom.Design.IExistingItemCollectionEditorFormFactory>( new Atom.Wpf.Design.ExistingItemCollectionEditorFormFactory() );
         }
     }
 }

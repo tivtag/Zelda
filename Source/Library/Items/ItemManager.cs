@@ -78,14 +78,16 @@ namespace Zelda.Items
         {
             Item item;
             if( this.dict.TryGetValue( name, out item ) )
+            {
                 return item;
+            }
 
             try
             {
                 item = this.Load( name );
                 this.dict.Add( item.Name, item );
             }
-            catch( System.IO.FileNotFoundException exc )
+            catch( FileNotFoundException exc )
             {
                 if( this.serviceProvider != null )
                 {
@@ -133,7 +135,7 @@ namespace Zelda.Items
             {
                 if( serviceProvider != null )
                 {
-                    var log = this.serviceProvider.Log;
+                    Atom.Diagnostics.ILog log = this.serviceProvider.Log;
                     if( log != null )
                     {
                         log.WriteLine( "\nError loading " + name );
@@ -172,6 +174,9 @@ namespace Zelda.Items
             return this.dict.ContainsKey( name );
         }
 
+        /// <summary>
+        /// Gets all <see cref="Gem"/> definitions that are available.
+        /// </summary>
         public IEnumerable<Gem> GetGems()
         {
             foreach( string fileName in GetGemFileNames() )
@@ -188,7 +193,7 @@ namespace Zelda.Items
 
         private static string[] GetGemFileNames()
         {
-            var query =
+            IEnumerable<string> query =
                 from file in Directory.GetFiles( "Content\\Items" )
                 where file.StartsWith( "Content\\Items\\Gem", System.StringComparison.Ordinal )
                 select file;
@@ -196,6 +201,9 @@ namespace Zelda.Items
             return query.ToArray();
         }
 
+        /// <summary>
+        /// Clears the cached items.
+        /// </summary>
         public void Unload()
         {
             this.dict.Clear();

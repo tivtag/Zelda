@@ -4141,1316 +4141,156 @@
             The factors that have been calculated.
             </summary>
         </member>
-        <member name="T:Atom.Math.BaseValueModifier`2">
+        <member name="T:Atom.Math.MathErrorStrings">
             <summary>
-            Represents an abstract base implemention of the <see cref="T:Atom.Math.IValueModifier`2"/> interface.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
-            <typeparam name="TInput">
-            The type of the input value.
-            </typeparam>
-            <typeparam name="TOutput">
-            The type of the output value.
-            </typeparam>
         </member>
-        <member name="E:Atom.Math.BaseValueModifier`2.Changed">
+        <member name="P:Atom.Math.MathErrorStrings.ResourceManager">
             <summary>
-            Raised when this IValueModifier{TInput, TOutput} has been modified in a way that might require
-            previously modified input values to be re-evualated again.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="M:Atom.Math.BaseValueModifier`2.Apply(`0)">
+        <member name="P:Atom.Math.MathErrorStrings.Culture">
             <summary>
-            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
-            and returns the resulting value.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
-            <param name="input">
-            The input value.
-            </param>
-            <returns>
-            The output value.
-            </returns>
         </member>
-        <member name="M:Atom.Math.BaseValueModifier`2.OnChanged">
+        <member name="P:Atom.Math.MathErrorStrings.ArgumentInIntervalXYInclusive">
             <summary>
-            Raises the <see cref="E:Atom.Math.BaseValueModifier`2.Changed"/> of this BaseValueModifier{TInput, TOutput}.
+              Looks up a localized string similar to The argument is expected to be between {0} and {1} (including {0} and {1})..
             </summary>
         </member>
-        <member name="M:Atom.Math.BaseValueModifier`2.OnChanged(System.EventArgs)">
+        <member name="P:Atom.Math.MathErrorStrings.ArgumentIsInfinityNaN">
             <summary>
-            Raises the <see cref="E:Atom.Math.BaseValueModifier`2.Changed"/> of this BaseValueModifier{TInput, TOutput}.
+              Looks up a localized string similar to The given argument is infinite or NaN. This is not allowed..
             </summary>
-            <param name="e">
-            The EventArgs to pass to the event.
-            </param>
         </member>
-        <member name="T:Atom.Math.IValueModifier`2">
+        <member name="P:Atom.Math.MathErrorStrings.ArgumentTooLargeForIterationLimit">
             <summary>
-            Represents an ecapsulated function that modifies an input value to produce an output value.
+              Looks up a localized string similar to The given argument is too large for the set iteration limit..
             </summary>
-            <typeparam name="TInput">
-            The type of the input value.
-            </typeparam>
-            <typeparam name="TOutput">
-            The type of the output value.
-            </typeparam>
         </member>
-        <member name="E:Atom.Math.IValueModifier`2.Changed">
+        <member name="P:Atom.Math.MathErrorStrings.CantReceiveValueVertexOrderIsNone">
             <summary>
-            Raised when this IValueModifier{TInput, TOutput} has been modified in a way that might require
-            previously modified input values to be re-evualated again.
+              Looks up a localized string similar to Can&apos;t receive the value. The vertex order is &apos;TurnDirection.None&apos;..
             </summary>
         </member>
-        <member name="M:Atom.Math.IValueModifier`2.Apply(`0)">
+        <member name="P:Atom.Math.MathErrorStrings.CantSetVertexOrderToNone">
             <summary>
-            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
-            and returns the resulting value.
+              Looks up a localized string similar to Can&apos;t set the vertex order to &apos;TurnDirection.None&apos;..
             </summary>
-            <param name="input">
-            The input value.
-            </param>
-            <returns>
-            The output value.
-            </returns>
         </member>
-        <member name="T:Atom.Math.Modifiers.LambdaValueModifier`2">
+        <member name="P:Atom.Math.MathErrorStrings.IncompatibleMatricesTimes">
             <summary>
-            Represents an <see cref="T:Atom.Math.IValueModifier`2"/> that uses a lambda function to modify its value.
+              Looks up a localized string similar to The size of the matrices is incompatible for this operation..
             </summary>
-            <typeparam name="TInput">
-            The type of the input value.
-            </typeparam>
-            <typeparam name="TOutput">
-            The type of the output value.
-            </typeparam>
         </member>
-        <member name="P:Atom.Math.Modifiers.LambdaValueModifier`2.Lambda">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixDimensionsMismatch">
             <summary>
-            Gets or sets the lambda function that is applied by this LambdaValueModifier{TInput, TOutput}.
+              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrices to be of the same size..
             </summary>
         </member>
-        <member name="M:Atom.Math.Modifiers.LambdaValueModifier`2.Apply(`0)">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixIsSingular">
             <summary>
-            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
-            and returns the resulting value.
+              Looks up a localized string similar to The Matrix is singular/degenerated. (--&gt; The Matrix is not 	invertible).
             </summary>
-            <param name="input">
-            The input value.
-            </param>
-            <returns>
-            The output value.
-            </returns>
         </member>
-        <member name="F:Atom.Math.Modifiers.LambdaValueModifier`2._lambda">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSquare">
             <summary>
-            Represents the storage field of the <see cref="P:Atom.Math.Modifiers.LambdaValueModifier`2.Lambda"/> property.
+              Looks up a localized string similar to The Matrix must be a square matrix..
             </summary>
         </member>
-        <member name="T:Atom.Math.FastLineSegment2">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetric">
             <summary>
-            Represents an inmutable representation of a line segment in 2D space.
+              Looks up a localized string similar to The matrix must be symmetric..
             </summary>
-            <remarks>
-            The speed and perfomance characteristics are, 
-            in return of greatly reduces feature richness, 
-            much better than of the <see cref="T:Atom.Math.LineSegment2"/> class.
-            </remarks>
-            <seealso cref="T:Atom.Math.LineSegment2"/>
         </member>
-        <member name="F:Atom.Math.FastLineSegment2.Start">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetricPositiveDefinite">
             <summary>
-            The starting point of the line segment.
+              Looks up a localized string similar to The Matrix must be symmetric positive definite for this operation..
             </summary>
         </member>
-        <member name="F:Atom.Math.FastLineSegment2.End">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixNotPositiveDefinite">
             <summary>
-            The ending point of the line segment.
+              Looks up a localized string similar to The matrix is not positive definite..
             </summary>
         </member>
-        <member name="M:Atom.Math.FastLineSegment2.#ctor(Atom.Math.Vector2,Atom.Math.Vector2)">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixRankIsNotFull">
             <summary>
-            Initializes a new instance of the FastLineSegment2 structure.
+              Looks up a localized string similar to The matrix&apos;s rank is not full..
             </summary>
-            <param name="start">
-            The starting point of the new line segment.
-            </param>
-            <param name="end">
-            The ending point of the new line segment.
-            </param>
         </member>
-        <member name="M:Atom.Math.FastLineSegment2.Intersects(Atom.Math.Rectangle)">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixRowCountMismatch">
             <summary>
-            Determines whether a specified Rectanglet intersects with this FastLineSegment2.
+              Looks up a localized string similar to The number of rows of the Matrices doesn&apos;t match..
             </summary>
-            <param name="rectangle">
-            The Rectangle to test for intersection with.
-            </param>
-            <returns>
-            true if they intersect; -or-
-            otherwise false.
-            </returns>
         </member>
-        <member name="M:Atom.Math.FastLineSegment2.op_Explicit(Atom.Math.FastLineSegment2)~Atom.Math.LineSegment2">
+        <member name="P:Atom.Math.MathErrorStrings.MatrixVectorDimensionsMismatch">
             <summary>
-            Explicit cast operator that implements conversion
-            from a FastLineSegment2 to a <see cref="T:Atom.Math.LineSegment2"/>.
+              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrix and the vector to be of the same size..
             </summary>
-            <remarks>
-            This operation is explicit because the creationg of a LineSegment2 instance
-            is rather expensive.
-            </remarks>
-            <param name="segment">
-            The input segment.
-            </param>
-            <returns>
-            The converted value.
-            </returns>
         </member>
-        <member name="T:Atom.Math.IReadOnlyLine2">
-            <summary> 
-            Provides read-only access to line object in 2D space, descriped using the general line equation: Ax + By - c = 0.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.A">
-            <summary> 
-            Gets the A parameter of the line.
-            </summary>
-            <value>The A parameter as used in the 'Ax + By - c = 0' equation.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.B">
-            <summary> 
-            Gets the B parameter of the line.
-            </summary>
-            <value>The B parameter as used in the 'Ax + By - c = 0' equation.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.C">
-            <summary> 
-            Gets the C parameter of the line.
-            </summary>
-            <value>The C parameter as used in the 'Ax + By - c = 0' equation.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.Angle">
-            <summary> 
-            Gets the angle of the line in radians.
-            </summary>
-            <value>
-            The angle in radians.
-            </value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.IsVertical">
-            <summary> 
-            Gets a value indicating whether the line is a vertical line.
-            </summary>
-            <value> 
-            Is <see langword="true"/> if the line is vertical; otherwise <see langword="false"/>. 
-            </value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLine2.IsHorizontal">
-            <summary> 
-            Gets a value indicating whether the line is a horizontal line. 
-            </summary>
-            <value> 
-            Is <see langword="true"/> if the line is horizontal; otherwise <see langword="false"/>. 
-            </value>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLine2.Distance(Atom.Math.Vector2)">
-            <summary> 
-            Returns the distance from a given point to the line. 
-            </summary>
-            <param name="point">
-            The point to get the distance to.
-            </param>
-            <returns>
-            The distance.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLine2.GetX(System.Single)">
-            <summary>
-            Calculates X given <paramref name="y"/>.
-            </summary>
-            <exception cref="T:System.DivideByZeroException">
-            Thrown if <see cref="P:Atom.Math.IReadOnlyLine2.A"/> is 0.
-            </exception>
-            <param name="y">
-            The y coordinate.
-            </param>
-            <returns>
-            The x coordinate.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLine2.GetY(System.Single)">
-            <summary>
-            Calculates Y given <paramref name="x"/>.
-            </summary>
-            <exception cref="T:System.DivideByZeroException">
-            Thrown if <see cref="P:Atom.Math.IReadOnlyLine2.B"/> is 0.
-            </exception>
-            <param name="x">
-            The x coordinate.
-            </param>
-            <returns>
-            The y coordinate.
-            </returns>
-        </member>
-        <member name="T:Atom.Math.IReadOnlyLineSegment2">
-            <summary>
-            Provides read-only access to line ( ax + by + c = 0 ) object that has a start point and an end point.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLineSegment2.DistanceTo(Atom.Math.Vector2)">
-            <summary>
-            Returns the distance between this IReadOnlyLineSegment2 and the specfied Point.
-            </summary>
-            <param name="point">
-            The point to get the distance to.
-            </param>
-            <returns>
-            The distance to the point.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLineSegment2.GetPointLocation(Atom.Math.Vector2)">
-            <summary>
-            Gets the location of the given point (Is it left or right?).
-            </summary>
-            <param name="point">
-            The point to test.
-            </param>
-            <returns>
-            Returns:
-            <para>
-            -1: point at the left of the line (or above the line if the line is horizontal).
-            </para>
-            <para>
-            0: point in the line segment or in the line segment's extension.
-            </para>
-            <para>
-            1: point at right of the line (or below the line if the line is horizontal).
-            </para>
-            </returns>
-        </member>
-        <member name="M:Atom.Math.IReadOnlyLineSegment2.GetPointOnSegment(System.Single)">
-            <summary> 
-            Gets a point on this <see cref="T:Atom.Math.LineSegment2"/>. 
-            </summary>
-            <param name="time">
-            The amount to travel on the segment.
-            </param>
-            <returns>
-            A point along this LineSegment2.
-            </returns>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.Start">
-            <summary> 
-            Gets the start point of this IReadOnlyLineSegment2.
-            </summary>
-            <value>The start point of this IReadOnlyLineSegment2.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.End">
-            <summary> 
-            Gets the end point of this IReadOnlyLineSegment2.
-            </summary>
-            <value>The end point of this IReadOnlyLineSegment2.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.Length">
-            <summary> 
-            Gets the length of this IReadOnlyLineSegment2.
-            </summary>
-            <value>The length (also called magnitude) from the StartPoint to the EndPoint.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.LengthSquared">
-            <summary> 
-            Gets the squared length of the IReadOnlyLineSegment2.
-            </summary>
-            <value>The squared length (also called magnitude) from the StartPoint to the EndPoint.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.Maximum">
-            <summary>
-            Gets the maximum value of the points in the IReadOnlyLineSegment2.
-            </summary>
-            <value>The maximum value of the points in the IReadOnlyLineSegment2.</value>
-        </member>
-        <member name="P:Atom.Math.IReadOnlyLineSegment2.Minimum">
-            <summary>
-            Gets the minumum value of the points in the IReadOnlyLineSegment2.
-            </summary>
-            <value>The minumum value of the points in the IReadOnlyLineSegment2.</value>
-        </member>
-        <member name="T:Atom.Math.OrientedRectangleF">
-            <summary>
-            Represents an oriented rectangle in 2-D space.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.Corners">
-            <summary>
-            Gets the corners of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.UpperLeft">
-            <summary>
-            Gets the upper-left corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.UpperRight">
-            <summary>
-            Gets the upper-right corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.LowerLeft">
-            <summary>
-            Gets the lower-left corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.LowerRight">
-            <summary>
-            Gets the lower-right corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.OrientedRectangleF.LineSegments">
-            <summary>
-            Gets the line segments of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.#ctor(Atom.Math.Vector2,Atom.Math.Vector2,Atom.Math.Vector2)">
-            <summary>
-            Initializes a new instance of the OrientedRectangleF class.
-            </summary>
-            <param name="upperLeft">
-            The 'upper left' corner of the new OrientedRectangleF.
-            </param>
-            <param name="upperRight">
-            The 'upper right' corner of the new OrientedRectangleF.
-            </param>
-            <param name="lowerLeft">
-            The 'lower left' corner of the new OrientedRectangleF.
-            </param>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.FromRectangle(Atom.Math.RectangleF,System.Single)">
-            <summary>
-            Creates a new OrientedRectangleF given a RectangleF and an angle.
-            </summary>
-            <param name="rectangle">
-            The rectangle to rotate.
-            </param>
-            <param name="angle">
-            The angle to rotate in radian.
-            The center of the rectangle is the origin of rotation.
-            </param>
-            <returns>
-            The newly created OrientedRectangleF.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.FromLine(Atom.Math.FastLineSegment2,System.Single)">
-            <summary>
-            Creates a new OrientedRectangleF that lies on the specified line.
-            </summary>
-            <param name="line">
-            The line the new OrientedRectangleF lies on.
-            </param>
-            <param name="width">
-            The width of the rectangle; extending for half width into both directions perpendicular of
-            the input line.
-            </param>
-            <returns>
-            The newly created v.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.GetMinMax(Atom.Math.Vector2@,Atom.Math.Vector2@)">
-            <summary>
-            Gets the minimum and maximum points of this OrientedRectangleF.
-            </summary>
-            <param name="min">
-            Will contain the minimum point.
-            </param>
-            <param name="max">
-            Will contain the maximum point.
-            </param>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.Contains(Atom.Math.Vector2)">
-            <summary>
-            Gets a value indicating whether this OrientedRectangleF contains
-            the specified point.
-            </summary>
-            <param name="point">
-            The point to test for containment.
-            </param>
-            <returns>
-            true if this OrientedRectangleF contains the specified point;
-            otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.OrientedRectangleF.Intersects(Atom.Math.RectangleF)">
-            <summary>
-            Gets a value indicating whether this OrientedRectangleF intersects
-            with the specified axis-aligned RectangleF.
-            </summary>
-            <param name="rectangle">
-            The rectangle to check for intersection with.
-            </param>
-            <returns>
-            true if they intersect; -or- otherwise false.
-            </returns>
-        </member>
-        <member name="F:Atom.Math.OrientedRectangleF.upperLeft">
-            <summary>
-            The upper-left corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.OrientedRectangleF.upperRight">
-            <summary>
-            The upper-right corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.OrientedRectangleF.lowerRight">
-            <summary>
-            The lower-right corner of this OrientedRectangleF.
-            Is calculated from the other three corners.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.OrientedRectangleF.lowerLeft">
-            <summary>
-            The lower-left corner of this OrientedRectangleF.
-            </summary>
-        </member>
-        <member name="T:Atom.Math.RollingAverage">
-            <summary>
-            Helpts in averaging out a stream of floating-point values.
-            </summary>
-            <remarks>
-            Microsoft XNA Community Game Platform
-            Copyright (C) Microsoft Corporation. All rights reserved.
-            <para/>
-            To compensate for network latency, we need to know exactly how late each
-            packet is. Trouble is, there is no guarantee that the clock will be set the
-            same on every machine! The sender can include packet data indicating what
-            time their clock showed when they sent the packet, but this is meaningless
-            unless our local clock is in sync with theirs. To compensate for any clock
-            skew, we maintain a rolling average of the send times from the last 100
-            incoming packets. If this average is, say, 50 milliseconds, but one specific
-            packet arrives with a time difference of 70 milliseconds, we can deduce this
-            particular packet was delivered 20 milliseconds later than usual.
-            </remarks>
-        </member>
-        <member name="P:Atom.Math.RollingAverage.AverageValue">
-            <summary>
-            Gets the current value of the rolling average.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RollingAverage.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the RollingAverage class.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RollingAverage.AddValue(System.Single)">
-            <summary>
-            Adds a new value to the rolling average, automatically
-            replacing the oldest existing entry.
-            </summary>
-        </member>
-        <member name="T:Atom.Math.PositionalSpline3">
-            <summary>
-            A Catmull-Rom spline that can be used for interpolating translation movements in 3 dimensional space.
-            </summary>
-            <remarks>
-            <para>
-            A Catmull-Rom spline is a derivitive of the Hermite spline. The difference is that the Hermite spline
-            allows you to specifiy 2 endpoints and 2 tangents, then the spline is generated. A Catmull-Rom spline
-            allows you to just supply 1-n number of points and the tangents will be automatically calculated.
-            </para><para>
-            Derivation of the hermite polynomial can be found here:
-            <a href="http://www.cs.unc.edu/~hoff/projects/comp236/curves/papers/hermite.html">Hermite splines.</a>
-            </para>
-            </remarks>
-        </member>
-        <member name="P:Atom.Math.PositionalSpline3.AutoCalculate">
-            <summary>
-            Gets or sets a value indicating whether the tangents are automatically
-            recalculated when a new control point is added.
-            </summary>
-            <value>
-            When <see langword="true"/> the tangents are automatically
-            recalculated when a control point is added or removed.
-            This property may be set to <see langword="false"/> for perfomance reasons.
-            </value>
-        </member>
-        <member name="P:Atom.Math.PositionalSpline3.PointCount">
-            <summary>
-            Gets the number of control points in thisPositionalSpline3.
-            </summary>
-            <value>The number of control this.points.</value>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.AddPoint(Atom.Math.Vector3)">
-            <summary>
-            Adds a new control point to the end of thisPositionalSpline3.
-            </summary>
-            <param name="point"> The point to add. </param>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.Clear">
-            <summary>
-            Removes all current control points from thisPositionalSpline3.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.GetPoint(System.Int32)">
-            <summary>
-            Gets the control point at the specified <paramref name="index"/>.
-            </summary>
-            <param name="index">Index at which to retreive a point.</param>
-            <returns>The Vector3 containing the point data. </returns>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.Interpolate(System.Single)">
-            <summary>
-            Returns an interpolated point based on a parametric value over the whole series.
-            </summary>
-            <param name="distanceOnSpline">
-            A value between 0 and 1 representing the parametric distance along the
-            whole length of the spline, this method returns an interpolated point.
-            </param>
-            <returns>An interpolated point along the spline.</returns>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.Interpolate(System.Int32,System.Single)">
-            <summary>
-            Interpolates a single segment of the spline given a parametric value.
-            </summary>
-            <param name="segmentIndex">
-            The point index to treat as t=0. segmentIndex + 1 is deemed to be index=1.
-            </param>
-            <param name="distanceOnSpline">
-            The parametric input value.
-            </param>
-            <returns>
-            An interpolated point along the spline.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.PositionalSpline3.RecalculateTangents">
-            <summary>
-            Recalculates the tangents associated with this spline.
-            </summary>
-            <remarks>
-            If you tell the spline not to update on demand by setting AutoCalculate to false,
-            then you must call this after completing your updates to the spline this.points.
-            </remarks>
-        </member>
-        <member name="F:Atom.Math.PositionalSpline3.points">
-            <summary>
-            The collection of control this.points.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.PositionalSpline3.tangents">
-            <summary>
-            The collection of generated tangents for the spline controls this.points.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.PositionalSpline3.HermitePoly">
-            <summary>
-            The hermit poly constant matrix.
-            </summary>
-        </member>
-        <member name="T:Atom.Math.RotationalSpline3">
-            <summary>
-            A class used to interpolate orientations (rotations) along a spline
-            using derivatives of quaternions.
-            </summary>
-            <remarks>
-            <para>
-            Like the <see cref="T:Atom.Math.PositionalSpline3"/> class, this class is about interpolating values smoothly over a spline.
-            Whilst <see cref="T:Atom.Math.PositionalSpline3"/> deals with positions (the normal sense we think about splines),
-            this class interpolates orientations.
-            The theory is identical, except we're now in 4-dimensional space instead of 3.
-            </para><para>
-            In positional splines, we use the points and tangents on those points to generate
-            control points for the spline. In this case, we use quaternions and derivatives
-            of the quaternions (i.e. the rate and direction of change at each point). This is the
-            same as PositionalSpline since a tangent is a derivative of a position. 
-            We effectively generate an extra quaternion in between each actual quaternion 
-            which when take with the original quaternion forms the 'tangent' of that quaternion.
-            </para>
-            </remarks>
-        </member>
-        <member name="P:Atom.Math.RotationalSpline3.AutoCalculate">
-            <summary>
-            Gets or sets a value indicating whether the tangents 
-            are automatically recalculated when a control point is added or removed.
-            </summary>
-            <value>
-            When <see langword="true"/> the tangents are automatically
-            recalculated when a control point is added or removed.
-            This property may be set to <see langword="false"/> for perfomance reasons.
-            </value>
-        </member>
-        <member name="P:Atom.Math.RotationalSpline3.PointCount">
-            <summary>
-            Gets the number of control points in this <see cref="T:Atom.Math.RotationalSpline3"/>.
-            </summary>
-            <value>The number of control points.</value>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.AddPoint(Atom.Math.Quaternion)">
-            <summary>
-            Adds a control point to the end of the <see cref="T:Atom.Math.RotationalSpline3"/>.
-            </summary>
-            <param name="point"> The control point to add. </param>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.Clear">
-            <summary>
-            Removes all control points from this <see cref="T:Atom.Math.RotationalSpline3"/>.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Single)">
-            <summary>
-            Returns an interpolated point based on a parametric value over the whole series.
-            </summary>
-            <param name="distanceAlongSpline">
-            A value between 0 and 1 representing the parametric distance along the
-            whole length of the spline.
-            </param>
-            <returns>
-            An interpolated point along the spline.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Int32,System.Single)">
-            <summary>
-            Returns an interpolated point based on a parametric value over the whole series.
-            </summary>
-            <param name="index">
-            The point index to treat as t=0. index + 1 is deemed to be distanceAlongSpline=1.
-            </param>
-            <param name="distanceAlongSpline">
-            A value between 0 and 1 representing the parametric distance along the
-            whole length of the spline.
-            </param>
-            <returns>
-            An interpolated point along the spline.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Single,System.Boolean)">
-            <summary>
-            Returns an interpolated point based on a parametric value over the whole series.
-            </summary>
-            <param name="distanceAlongSpline">
-            A value between 0 and 1 representing the parametric distance along the
-            whole length of the spline.
-            </param>
-            <param name="useShortestPath">
-            True forces rotations to use the shortest path.
-            </param>
-            <returns>
-            An interpolated point along the spline.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Int32,System.Single,System.Boolean)">
-            <summary>
-            Interpolates a single segment of the spline given a parametric value.
-            </summary>
-            <param name="index">
-            The point index to treat as t=0. index + 1 is deemed to be distanceAlongSpline=1.
-            </param>
-            <param name="distanceAlongSpline">
-            The parametric input value.
-            </param>
-            <param name="useShortestPath">
-            States whether the spline should take the shortest path between two control points.
-            </param>
-            <returns>
-            An interpolated point along the spline.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RotationalSpline3.RecalculateTangents">
-            <summary>
-            Recalculates the tangents associated with this spline.
-            </summary>
-            <remarks>
-            If you tell the spline not to update on demand by setting AutoCalculate to false,
-            then you must call this after completing your updates to the spline points.
-            </remarks>
-        </member>
-        <member name="F:Atom.Math.RotationalSpline3.points">
-            <summary>
-            The list of control points.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RotationalSpline3.tangents">
-            <summary>
-            The list of generated tangents for the spline controls points.
-            </summary>
-        </member>
-        <member name="T:Atom.Math.MathDeserializationContextExtensions">
-            <summary>
-            Defines extension methods that allow serialization of Atom.Math types using the <see cref="T:Atom.Storage.IDeserializationContext"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Point2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Point2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint3(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Point3"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Point3 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint4(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Point4"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Point4 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Vector2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Vector2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector3(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Vector3"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Vector3 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector4(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Vector4"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Vector4 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexVector2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.ComplexVector2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The ComplexVector2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Vector"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Vector value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexVector(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.ComplexVector"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The ComplexVector value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRectangle(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Rectangle"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Rectangle value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRectangleF(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.RectangleF"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The RectangleF value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Matrix2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Matrix2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix3(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Matrix3"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Matrix3 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix4(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Matrix4"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Matrix4 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Matrix"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Matrix value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexMatrix(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.ComplexMatrix"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The ComplexMatrix value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplex(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Complex"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Complex value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadCircle(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Circle"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Circle value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRay2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Ray2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Ray2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRay3(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Ray3"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Ray3 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPlane3(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Plane3"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Plane3 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadFloatRange(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.FloatRange"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The FloatRange value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadIntegerRange(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.IntegerRange"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The IntegerRange value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVariableFloat(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.VariableFloat"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The VariableFloat value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadTriangle2(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Triangle2"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Triangle2 value that has been read.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadQuaternion(Atom.Storage.IDeserializationContext)">
-            <summary>
-            Reads a <see cref="T:Atom.Math.Quaternion"/> value.
-            </summary>
-            <param name="context">
-            The context to read with.
-            </param>
-            <returns>
-            The Quaternion value that has been read.
-            </returns>
-        </member>
-        <member name="T:Atom.Math.MathSerializationContextExtensions">
-            <summary>
-            Defines extension methods that allow serialization of Atom.Math types using the <see cref="T:Atom.Storage.ISerializationContext"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point2)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Point2"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="point">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point3)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Point3"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="point">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point4)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Point4"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="point">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector2)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Vector2"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector3)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Vector3"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector4)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Vector4"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexVector2)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.ComplexVector2"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Vector"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexVector)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.ComplexVector"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="vector">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Rectangle)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Rectangle"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="rectangle">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.RectangleF)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.RectangleF"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="rectangle">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix2)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Matrix2"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="matrix">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix3)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Matrix3"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="matrix">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix4)">
-            <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Matrix4"/> using this ISerializationContext.
-            </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="matrix">
-            The value to write.
-            </param>
-        </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix)">
+        <member name="P:Atom.Math.MathErrorStrings.NegativePlaneDistance">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Matrix"/> using this ISerializationContext.
+              Looks up a localized string similar to The plane distance {0} is negative. This is not supported..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="matrix">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexMatrix)">
+        <member name="P:Atom.Math.MathErrorStrings.OperationInvalidOnZeroVector">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.ComplexMatrix"/> using this ISerializationContext.
+              Looks up a localized string similar to This operation is invalid on a 0-vector..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="matrix">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Complex)">
+        <member name="P:Atom.Math.MathErrorStrings.OperationRequiresAtleastOnePoint">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Complex"/> number using this ISerializationContext.
+              Looks up a localized string similar to This operation requires at least one point..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="complex">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Circle)">
+        <member name="P:Atom.Math.MathErrorStrings.OppositePlanes">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Circle"/> using this ISerializationContext.
+              Looks up a localized string similar to The near plane distance is larger than the far plane distance. This is not allowed..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="circle">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Ray2)">
+        <member name="P:Atom.Math.MathErrorStrings.OutRangeFieldOfView">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Ray2"/> using this ISerializationContext.
+              Looks up a localized string similar to The field of view value &apos;{0}&apos; is out of valid range of 0 and PI (180 degree)..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="ray">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Ray3)">
+        <member name="P:Atom.Math.MathErrorStrings.SpecifiedAngleXGreaterTwoPi">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Ray3"/> using this ISerializationContext.
+              Looks up a localized string similar to The specified angle &apos;{0}&apos; is greater than two Pi..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="ray">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Plane3)">
+        <member name="P:Atom.Math.MathErrorStrings.TriangulationRequiresAtLeastThreeVertices">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Plane3"/> using this ISerializationContext.
+              Looks up a localized string similar to Triangulation requires at least 3 vertices as its input..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="plane">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.FloatRange)">
+        <member name="P:Atom.Math.MathErrorStrings.ValueGreaterThanMaximum">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.FloatRange"/> using this ISerializationContext.
+              Looks up a localized string similar to The given value is greater than the maximum..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="range">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.IntegerRange)">
+        <member name="P:Atom.Math.MathErrorStrings.ValueLessThanMinimum">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.IntegerRange"/> using this ISerializationContext.
+              Looks up a localized string similar to The given value is less than the minimum..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="range">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.VariableFloat)">
+        <member name="P:Atom.Math.MathErrorStrings.VectorLengthMismatch">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.VariableFloat"/> using this ISerializationContext.
+              Looks up a localized string similar to Vector length mismatch. This operation only works with Vectors that have the same number of elements..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="variableFloat">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Triangle2)">
+        <member name="P:Atom.Math.MathErrorStrings.VectorSizeMatrixRowCountMismatch">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Triangle2"/> using this ISerializationContext.
+              Looks up a localized string similar to The vector must have the same number of elements as the number of rows of the matrix..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="triangle">
-            The value to write.
-            </param>
         </member>
-        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Quaternion)">
+        <member name="P:Atom.Math.MathErrorStrings.VertexCountIsZero">
             <summary>
-            Writes/Serializes the given <see cref="T:Atom.Math.Quaternion"/> using this ISerializationContext.
+              Looks up a localized string similar to The vertex count is zero..
             </summary>
-            <param name="context">
-            The context to write with.
-            </param>
-            <param name="quaternion">
-            The value to write.
-            </param>
         </member>
         <member name="T:Atom.Math.ComplexMatrix">
             <summary>
@@ -8572,6 +7412,110 @@
             otherwise <see langword="false"/>.
             </returns>
         </member>
+        <member name="T:Atom.Math.BaseValueModifier`2">
+            <summary>
+            Represents an abstract base implemention of the <see cref="T:Atom.Math.IValueModifier`2"/> interface.
+            </summary>
+            <typeparam name="TInput">
+            The type of the input value.
+            </typeparam>
+            <typeparam name="TOutput">
+            The type of the output value.
+            </typeparam>
+        </member>
+        <member name="E:Atom.Math.BaseValueModifier`2.Changed">
+            <summary>
+            Raised when this IValueModifier{TInput, TOutput} has been modified in a way that might require
+            previously modified input values to be re-evualated again.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.BaseValueModifier`2.Apply(`0)">
+            <summary>
+            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
+            and returns the resulting value.
+            </summary>
+            <param name="input">
+            The input value.
+            </param>
+            <returns>
+            The output value.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.BaseValueModifier`2.OnChanged">
+            <summary>
+            Raises the <see cref="E:Atom.Math.BaseValueModifier`2.Changed"/> of this BaseValueModifier{TInput, TOutput}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.BaseValueModifier`2.OnChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Atom.Math.BaseValueModifier`2.Changed"/> of this BaseValueModifier{TInput, TOutput}.
+            </summary>
+            <param name="e">
+            The EventArgs to pass to the event.
+            </param>
+        </member>
+        <member name="T:Atom.Math.IValueModifier`2">
+            <summary>
+            Represents an ecapsulated function that modifies an input value to produce an output value.
+            </summary>
+            <typeparam name="TInput">
+            The type of the input value.
+            </typeparam>
+            <typeparam name="TOutput">
+            The type of the output value.
+            </typeparam>
+        </member>
+        <member name="E:Atom.Math.IValueModifier`2.Changed">
+            <summary>
+            Raised when this IValueModifier{TInput, TOutput} has been modified in a way that might require
+            previously modified input values to be re-evualated again.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.IValueModifier`2.Apply(`0)">
+            <summary>
+            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
+            and returns the resulting value.
+            </summary>
+            <param name="input">
+            The input value.
+            </param>
+            <returns>
+            The output value.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.Modifiers.LambdaValueModifier`2">
+            <summary>
+            Represents an <see cref="T:Atom.Math.IValueModifier`2"/> that uses a lambda function to modify its value.
+            </summary>
+            <typeparam name="TInput">
+            The type of the input value.
+            </typeparam>
+            <typeparam name="TOutput">
+            The type of the output value.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Math.Modifiers.LambdaValueModifier`2.Lambda">
+            <summary>
+            Gets or sets the lambda function that is applied by this LambdaValueModifier{TInput, TOutput}.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.Modifiers.LambdaValueModifier`2.Apply(`0)">
+            <summary>
+            Applies this IValueModifier{TInput, TOutput} to the specified <paramref name="input"/> value
+            and returns the resulting value.
+            </summary>
+            <param name="input">
+            The input value.
+            </param>
+            <returns>
+            The output value.
+            </returns>
+        </member>
+        <member name="F:Atom.Math.Modifiers.LambdaValueModifier`2._lambda">
+            <summary>
+            Represents the storage field of the <see cref="P:Atom.Math.Modifiers.LambdaValueModifier`2.Lambda"/> property.
+            </summary>
+        </member>
         <member name="T:Atom.Math.Plane3">
             <summary>
             Defines a plane in 3D space.
@@ -10340,6 +9284,66 @@
             <param name="right">The Circle on the right side of the equation.</param>
             <returns>The result of the operation.</returns>
         </member>
+        <member name="T:Atom.Math.FastLineSegment2">
+            <summary>
+            Represents an inmutable representation of a line segment in 2D space.
+            </summary>
+            <remarks>
+            The speed and perfomance characteristics are, 
+            in return of greatly reduces feature richness, 
+            much better than of the <see cref="T:Atom.Math.LineSegment2"/> class.
+            </remarks>
+            <seealso cref="T:Atom.Math.LineSegment2"/>
+        </member>
+        <member name="F:Atom.Math.FastLineSegment2.Start">
+            <summary>
+            The starting point of the line segment.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.FastLineSegment2.End">
+            <summary>
+            The ending point of the line segment.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.FastLineSegment2.#ctor(Atom.Math.Vector2,Atom.Math.Vector2)">
+            <summary>
+            Initializes a new instance of the FastLineSegment2 structure.
+            </summary>
+            <param name="start">
+            The starting point of the new line segment.
+            </param>
+            <param name="end">
+            The ending point of the new line segment.
+            </param>
+        </member>
+        <member name="M:Atom.Math.FastLineSegment2.Intersects(Atom.Math.Rectangle)">
+            <summary>
+            Determines whether a specified Rectanglet intersects with this FastLineSegment2.
+            </summary>
+            <param name="rectangle">
+            The Rectangle to test for intersection with.
+            </param>
+            <returns>
+            true if they intersect; -or-
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.FastLineSegment2.op_Explicit(Atom.Math.FastLineSegment2)~Atom.Math.LineSegment2">
+            <summary>
+            Explicit cast operator that implements conversion
+            from a FastLineSegment2 to a <see cref="T:Atom.Math.LineSegment2"/>.
+            </summary>
+            <remarks>
+            This operation is explicit because the creationg of a LineSegment2 instance
+            is rather expensive.
+            </remarks>
+            <param name="segment">
+            The input segment.
+            </param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
         <member name="T:Atom.Math.IndexedEdge">
             <summary>
             Defines an Edge structure that stores the indices (that point into the Vertex Data)
@@ -10495,6 +9499,175 @@
             <param name="left">The IndexedTriangle on the left side of the equation.</param>
             <param name="right">The IndexedTriangle on the right side of the equation.</param>
             <returns>true if the indices are not equal; otherwise false.</returns>
+        </member>
+        <member name="T:Atom.Math.IReadOnlyLine2">
+            <summary> 
+            Provides read-only access to line object in 2D space, descriped using the general line equation: Ax + By - c = 0.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.A">
+            <summary> 
+            Gets the A parameter of the line.
+            </summary>
+            <value>The A parameter as used in the 'Ax + By - c = 0' equation.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.B">
+            <summary> 
+            Gets the B parameter of the line.
+            </summary>
+            <value>The B parameter as used in the 'Ax + By - c = 0' equation.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.C">
+            <summary> 
+            Gets the C parameter of the line.
+            </summary>
+            <value>The C parameter as used in the 'Ax + By - c = 0' equation.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.Angle">
+            <summary> 
+            Gets the angle of the line in radians.
+            </summary>
+            <value>
+            The angle in radians.
+            </value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.IsVertical">
+            <summary> 
+            Gets a value indicating whether the line is a vertical line.
+            </summary>
+            <value> 
+            Is <see langword="true"/> if the line is vertical; otherwise <see langword="false"/>. 
+            </value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLine2.IsHorizontal">
+            <summary> 
+            Gets a value indicating whether the line is a horizontal line. 
+            </summary>
+            <value> 
+            Is <see langword="true"/> if the line is horizontal; otherwise <see langword="false"/>. 
+            </value>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLine2.Distance(Atom.Math.Vector2)">
+            <summary> 
+            Returns the distance from a given point to the line. 
+            </summary>
+            <param name="point">
+            The point to get the distance to.
+            </param>
+            <returns>
+            The distance.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLine2.GetX(System.Single)">
+            <summary>
+            Calculates X given <paramref name="y"/>.
+            </summary>
+            <exception cref="T:System.DivideByZeroException">
+            Thrown if <see cref="P:Atom.Math.IReadOnlyLine2.A"/> is 0.
+            </exception>
+            <param name="y">
+            The y coordinate.
+            </param>
+            <returns>
+            The x coordinate.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLine2.GetY(System.Single)">
+            <summary>
+            Calculates Y given <paramref name="x"/>.
+            </summary>
+            <exception cref="T:System.DivideByZeroException">
+            Thrown if <see cref="P:Atom.Math.IReadOnlyLine2.B"/> is 0.
+            </exception>
+            <param name="x">
+            The x coordinate.
+            </param>
+            <returns>
+            The y coordinate.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.IReadOnlyLineSegment2">
+            <summary>
+            Provides read-only access to line ( ax + by + c = 0 ) object that has a start point and an end point.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLineSegment2.DistanceTo(Atom.Math.Vector2)">
+            <summary>
+            Returns the distance between this IReadOnlyLineSegment2 and the specfied Point.
+            </summary>
+            <param name="point">
+            The point to get the distance to.
+            </param>
+            <returns>
+            The distance to the point.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLineSegment2.GetPointLocation(Atom.Math.Vector2)">
+            <summary>
+            Gets the location of the given point (Is it left or right?).
+            </summary>
+            <param name="point">
+            The point to test.
+            </param>
+            <returns>
+            Returns:
+            <para>
+            -1: point at the left of the line (or above the line if the line is horizontal).
+            </para>
+            <para>
+            0: point in the line segment or in the line segment's extension.
+            </para>
+            <para>
+            1: point at right of the line (or below the line if the line is horizontal).
+            </para>
+            </returns>
+        </member>
+        <member name="M:Atom.Math.IReadOnlyLineSegment2.GetPointOnSegment(System.Single)">
+            <summary> 
+            Gets a point on this <see cref="T:Atom.Math.LineSegment2"/>. 
+            </summary>
+            <param name="time">
+            The amount to travel on the segment.
+            </param>
+            <returns>
+            A point along this LineSegment2.
+            </returns>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.Start">
+            <summary> 
+            Gets the start point of this IReadOnlyLineSegment2.
+            </summary>
+            <value>The start point of this IReadOnlyLineSegment2.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.End">
+            <summary> 
+            Gets the end point of this IReadOnlyLineSegment2.
+            </summary>
+            <value>The end point of this IReadOnlyLineSegment2.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.Length">
+            <summary> 
+            Gets the length of this IReadOnlyLineSegment2.
+            </summary>
+            <value>The length (also called magnitude) from the StartPoint to the EndPoint.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.LengthSquared">
+            <summary> 
+            Gets the squared length of the IReadOnlyLineSegment2.
+            </summary>
+            <value>The squared length (also called magnitude) from the StartPoint to the EndPoint.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.Maximum">
+            <summary>
+            Gets the maximum value of the points in the IReadOnlyLineSegment2.
+            </summary>
+            <value>The maximum value of the points in the IReadOnlyLineSegment2.</value>
+        </member>
+        <member name="P:Atom.Math.IReadOnlyLineSegment2.Minimum">
+            <summary>
+            Gets the minumum value of the points in the IReadOnlyLineSegment2.
+            </summary>
+            <value>The minumum value of the points in the IReadOnlyLineSegment2.</value>
         </member>
         <member name="T:Atom.Math.Line2">
             <summary> 
@@ -10963,6 +10136,142 @@
         <member name="F:Atom.Math.LineSegment2.end">
             <summary>
             The ending point of this LineSegment2.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.OrientedRectangleF">
+            <summary>
+            Represents an oriented rectangle in 2-D space.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.Corners">
+            <summary>
+            Gets the corners of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.UpperLeft">
+            <summary>
+            Gets the upper-left corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.UpperRight">
+            <summary>
+            Gets the upper-right corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.LowerLeft">
+            <summary>
+            Gets the lower-left corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.LowerRight">
+            <summary>
+            Gets the lower-right corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.OrientedRectangleF.LineSegments">
+            <summary>
+            Gets the line segments of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.#ctor(Atom.Math.Vector2,Atom.Math.Vector2,Atom.Math.Vector2)">
+            <summary>
+            Initializes a new instance of the OrientedRectangleF class.
+            </summary>
+            <param name="upperLeft">
+            The 'upper left' corner of the new OrientedRectangleF.
+            </param>
+            <param name="upperRight">
+            The 'upper right' corner of the new OrientedRectangleF.
+            </param>
+            <param name="lowerLeft">
+            The 'lower left' corner of the new OrientedRectangleF.
+            </param>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.FromRectangle(Atom.Math.RectangleF,System.Single)">
+            <summary>
+            Creates a new OrientedRectangleF given a RectangleF and an angle.
+            </summary>
+            <param name="rectangle">
+            The rectangle to rotate.
+            </param>
+            <param name="angle">
+            The angle to rotate in radian.
+            The center of the rectangle is the origin of rotation.
+            </param>
+            <returns>
+            The newly created OrientedRectangleF.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.FromLine(Atom.Math.FastLineSegment2,System.Single)">
+            <summary>
+            Creates a new OrientedRectangleF that lies on the specified line.
+            </summary>
+            <param name="line">
+            The line the new OrientedRectangleF lies on.
+            </param>
+            <param name="width">
+            The width of the rectangle; extending for half width into both directions perpendicular of
+            the input line.
+            </param>
+            <returns>
+            The newly created v.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.GetMinMax(Atom.Math.Vector2@,Atom.Math.Vector2@)">
+            <summary>
+            Gets the minimum and maximum points of this OrientedRectangleF.
+            </summary>
+            <param name="min">
+            Will contain the minimum point.
+            </param>
+            <param name="max">
+            Will contain the maximum point.
+            </param>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.Contains(Atom.Math.Vector2)">
+            <summary>
+            Gets a value indicating whether this OrientedRectangleF contains
+            the specified point.
+            </summary>
+            <param name="point">
+            The point to test for containment.
+            </param>
+            <returns>
+            true if this OrientedRectangleF contains the specified point;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.OrientedRectangleF.Intersects(Atom.Math.RectangleF)">
+            <summary>
+            Gets a value indicating whether this OrientedRectangleF intersects
+            with the specified axis-aligned RectangleF.
+            </summary>
+            <param name="rectangle">
+            The rectangle to check for intersection with.
+            </param>
+            <returns>
+            true if they intersect; -or- otherwise false.
+            </returns>
+        </member>
+        <member name="F:Atom.Math.OrientedRectangleF.upperLeft">
+            <summary>
+            The upper-left corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.OrientedRectangleF.upperRight">
+            <summary>
+            The upper-right corner of this OrientedRectangleF.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.OrientedRectangleF.lowerRight">
+            <summary>
+            The lower-right corner of this OrientedRectangleF.
+            Is calculated from the other three corners.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.OrientedRectangleF.lowerLeft">
+            <summary>
+            The lower-left corner of this OrientedRectangleF.
             </summary>
         </member>
         <member name="T:Atom.Math.Polygon2">
@@ -12515,6 +11824,411 @@
             The triangle is acute-angled (de: spitzwinklig). 
             </summary>
         </member>
+        <member name="T:Atom.Math.RandExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Atom.Math.IRand"/> interface.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.Shuffle``1(System.Collections.Generic.IList{``0},Atom.Math.IRand)">
+            <summary>
+            Randomly shuffles the specified IList{T}.
+            </summary>
+            <typeparam name="T">
+            The type of the elements in the list.
+            </typeparam>
+            <param name="list">
+            The list to shuffle.
+            </param>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.Select``1(Atom.Math.IRand,System.Collections.Generic.IEnumerable{System.Tuple{System.Single,``0}})">
+            <summary>
+            Randomly selects one of the specified weighted items;
+            where a greater weight increases the chance for an item to be picked.
+            </summary>
+            <typeparam name="T">
+            The type of the items to select from.
+            </typeparam>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <param name="weightedItems">
+            The weighted items. The weights don't have to add up to any value.
+            </param>
+            <returns>
+            The item that has been selected;
+            or the default value of T if none has been selected.
+            </returns>
+            <example>
+               var titles = new Tuple&lt;float, string&gt;[] {
+                   Tuple.Create( 70.0f, "Link" ),
+                   Tuple.Create( 30.0f, "Garret" )
+               };
+               
+               string hero = rand.Select( titles );
+               
+               // 70% chance for hero to be "Link"
+               // 30% chance for hero to be "Garret"
+            </example>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomDirection4(Atom.Math.IRand)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction4"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomDirection4But(Atom.Math.IRand,Atom.Math.Direction4)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction4"/> that is not the given <paramref name="directionToExclude"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <param name="directionToExclude">
+            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomActualDirection4But(Atom.Math.IRand,Atom.Math.Direction4)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction4"/> that is not the given <paramref name="directionToExclude"/>
+            nor <see cref="F:Atom.Math.Direction4.None"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <param name="directionToExclude">
+            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomDirection8(Atom.Math.IRand)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction8"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction8"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomDirection8But(Atom.Math.IRand,Atom.Math.Direction8)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction8"/> that is not the given <paramref name="directionToExclude"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <param name="directionToExclude">
+            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomActualDirection8But(Atom.Math.IRand,Atom.Math.Direction8)">
+            <summary>
+            Gets a random <see cref="T:Atom.Math.Direction8"/> that is not the given <paramref name="directionToExclude"/> nor <see cref="F:Atom.Math.Direction8.None"/>.
+            </summary>
+            <param name="rand">
+            The random number generator to use.
+            </param>
+            <param name="directionToExclude">
+            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
+            </param>
+            <returns>
+            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector2,Atom.Math.Vector2)">
+            <summary>
+            Returns a random Vector2 value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random Vector2 greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector3,Atom.Math.Vector3)">
+            <summary>
+            Returns a random Vector3 value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random Vector3 greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector4,Atom.Math.Vector4)">
+            <summary>
+            Returns a random Vector4 value within the specified range.
+            </summary>
+            <param name="rand">The random number generator to use.</param>
+            <param name="minimumValue"> The lower bound. </param>
+            <param name="maximumValue"> The upper bound. </param>
+            <returns>
+            A random Vector4 greater than or equal to <c>minimumValue</c>, and less than
+            or equal to <c>maximumValue</c>. 
+            </returns>
+        </member>
+        <member name="T:Atom.Math.RandMT">
+            <summary>
+            Generates pseudo-random numbers from a uniform distribution
+            using the Mersenne Twister algorithm. 
+            This class can't be inherited.
+            </summary>
+            <remarks>
+            This is the 32-bit version of the algorithm. 
+            </remarks>
+        </member>
+        <member name="P:Atom.Math.RandMT.IsInitialized">
+            <summary>
+            Gets a value indicating whether this random number generator has been initialized (seeded).
+            </summary>
+            <value>
+            Returns <see langword="true"/> if it has been initialised; otherwise, <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomBoolean">
+            <summary>
+            Gets a random boolean state value.
+            </summary>
+            <value>
+            Returns <see langword="true"/> 50% of the time,
+            and <see langword="false"/> the other 50%.
+            </value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomInteger">
+            <summary>
+            Gets a random number in the interval [0,0x7fffffff].
+            </summary>
+            <value>A random integer.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomSingle">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random single-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomSingleRes53">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
+            </summary>
+            <value>A random single-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomDouble">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random double-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomDoubleRes53">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
+            </summary>
+            <value>A random double-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomDecimal">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random decimal value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomDecimalRes53">
+            <summary> 
+            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
+            </summary>
+            <value>A random decimal value.</value>
+        </member>
+        <member name="P:Atom.Math.RandMT.RandomUnsignedInteger">
+            <summary>
+            Gets a random number in the interval [0,0xffffffff].
+            Doesn't check if the random number generator has been initialized.
+            </summary>
+            <remarks>
+            This is the main function which is used to generate random numbers.
+            </remarks>
+            <value>A random unsigned integer.</value>
+        </member>
+        <member name="M:Atom.Math.RandMT.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
+            by using the time of day in milliseconds as the seed.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RandMT.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
+            using the given <paramref name="seed"/>.
+            </summary>
+            <param name="seed">
+            The seed used to initialize the pseudo random number generator.
+            </param>
+        </member>
+        <member name="M:Atom.Math.RandMT.#ctor(System.UInt32)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
+            using the given <paramref name="seed"/>.
+            </summary>
+            <param name="seed">
+            The seed used to initialize the pseudo random number generator.
+            </param>
+        </member>
+        <member name="M:Atom.Math.RandMT.Seed(System.UInt32)">
+            <summary>
+            Seeds this <see cref="T:Atom.Math.RandMT"/> using the given <paramref name="value"/>.
+            </summary>
+            <param name="value">
+            The seed used to initialize the pseudo random number generator.
+            </param>
+        </member>
+        <member name="M:Atom.Math.RandMT.Seed(System.Int32)">
+            <summary>
+            Seeds this <see cref="T:Atom.Math.RandMT"/> using the given <paramref name="value"/>.
+            </summary>
+            <param name="value">
+            The seed used to initialize the pseudo random number generator.
+            </param>
+        </member>
+        <member name="F:Atom.Math.RandMT.N">
+            <summary>
+            The size of the internal state array (624).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.Nmin1">
+            <summary>
+            The size of the internal state array, minus one (623).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.M">
+            <summary>
+            A constant that is used to index into the internal state array (397).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.Mmin1">
+            <summary>
+            The <see cref="F:Atom.Math.RandMT.M"/> constant, minus one (396).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.NminM">
+            <summary>
+            The <see cref="F:Atom.Math.RandMT.N"/> constant minus the <see cref="F:Atom.Math.RandMT.M"/> constant (624 - 397).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.MminN">
+            <summary>
+            The <see cref="F:Atom.Math.RandMT.M"/> constant minus the <see cref="F:Atom.Math.RandMT.N"/> constant (397 - 624).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.UpperMask">
+            <summary>
+            The upper mask constant (0x80000000U).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.LowerMask">
+            <summary>
+            The lower mask constant (0x7fffffffU).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.MaxRandomInt">
+            <summary>
+            The maximum random integer that can be created (0x7fffffff).
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.mag01">
+            <summary>
+            Stores the range of generated values.
+            mag01[x] = x * MATRIX_A. for x = 0,1.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.mt">
+            <summary>
+            The state point array.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RandMT.mti">
+            <summary>
+            If mti==N+1 then that means that mt[N] has not yet been initialized.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.RandSys">
+            <summary>
+            Defines a pseudo-random number generator that delgates 
+            all request to a <see cref="T:System.Random"/> object.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="P:Atom.Math.RandSys.RandomBoolean">
+            <summary>
+            Gets a random boolean state value.
+            </summary>
+            <value>
+            Returns <see langword="true"/> 50% of the time,
+            and <see langword="false"/> the other 50%.
+            </value>
+        </member>
+        <member name="P:Atom.Math.RandSys.RandomInteger">
+            <summary>
+            Gets a random number in the interval [0,0x7fffffff].
+            </summary>
+            <value>A random integer.</value>
+        </member>
+        <member name="P:Atom.Math.RandSys.RandomSingle">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random single-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandSys.RandomDouble">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random double-precision floating point value.</value>
+        </member>
+        <member name="P:Atom.Math.RandSys.RandomDecimal">
+            <summary>
+            Gets a random number in the interval [0.0, 1.0].
+            </summary>
+            <value>A random decimal value.</value>
+        </member>
+        <member name="M:Atom.Math.RandSys.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.RandSys"/> class;
+            using the time of day in milliseconds as the seed.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RandSys.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Math.RandSys"/> class; using the given <paramref name="seed"/>.
+            </summary>
+            <param name="seed">
+            A number used to calculate a starting value for the pseudo-random number
+            sequence. If a negative number is specified, the absolute value of the number
+            is used.
+            </param>
+        </member>
+        <member name="F:Atom.Math.RandSys.random">
+            <summary>
+            The System.Random object this <see cref="T:Atom.Math.RandSys"/> is wrapping around.
+            </summary>
+        </member>
         <member name="T:Atom.Math.Ray2">
             <summary> 
             Represents a ray in 2D space.
@@ -12800,6 +12514,848 @@
             Returns <see langword="true"/> if left is not equal to right; 
             otherwise <see langword="false"/>.
             </returns>
+        </member>
+        <member name="T:Atom.Math.RollingAverage">
+            <summary>
+            Helpts in averaging out a stream of floating-point values.
+            </summary>
+            <remarks>
+            Microsoft XNA Community Game Platform
+            Copyright (C) Microsoft Corporation. All rights reserved.
+            <para/>
+            To compensate for network latency, we need to know exactly how late each
+            packet is. Trouble is, there is no guarantee that the clock will be set the
+            same on every machine! The sender can include packet data indicating what
+            time their clock showed when they sent the packet, but this is meaningless
+            unless our local clock is in sync with theirs. To compensate for any clock
+            skew, we maintain a rolling average of the send times from the last 100
+            incoming packets. If this average is, say, 50 milliseconds, but one specific
+            packet arrives with a time difference of 70 milliseconds, we can deduce this
+            particular packet was delivered 20 milliseconds later than usual.
+            </remarks>
+        </member>
+        <member name="P:Atom.Math.RollingAverage.AverageValue">
+            <summary>
+            Gets the current value of the rolling average.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RollingAverage.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the RollingAverage class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RollingAverage.AddValue(System.Single)">
+            <summary>
+            Adds a new value to the rolling average, automatically
+            replacing the oldest existing entry.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.PositionalSpline3">
+            <summary>
+            A Catmull-Rom spline that can be used for interpolating translation movements in 3 dimensional space.
+            </summary>
+            <remarks>
+            <para>
+            A Catmull-Rom spline is a derivitive of the Hermite spline. The difference is that the Hermite spline
+            allows you to specifiy 2 endpoints and 2 tangents, then the spline is generated. A Catmull-Rom spline
+            allows you to just supply 1-n number of points and the tangents will be automatically calculated.
+            </para><para>
+            Derivation of the hermite polynomial can be found here:
+            <a href="http://www.cs.unc.edu/~hoff/projects/comp236/curves/papers/hermite.html">Hermite splines.</a>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Atom.Math.PositionalSpline3.AutoCalculate">
+            <summary>
+            Gets or sets a value indicating whether the tangents are automatically
+            recalculated when a new control point is added.
+            </summary>
+            <value>
+            When <see langword="true"/> the tangents are automatically
+            recalculated when a control point is added or removed.
+            This property may be set to <see langword="false"/> for perfomance reasons.
+            </value>
+        </member>
+        <member name="P:Atom.Math.PositionalSpline3.PointCount">
+            <summary>
+            Gets the number of control points in thisPositionalSpline3.
+            </summary>
+            <value>The number of control this.points.</value>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.AddPoint(Atom.Math.Vector3)">
+            <summary>
+            Adds a new control point to the end of thisPositionalSpline3.
+            </summary>
+            <param name="point"> The point to add. </param>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.Clear">
+            <summary>
+            Removes all current control points from thisPositionalSpline3.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.GetPoint(System.Int32)">
+            <summary>
+            Gets the control point at the specified <paramref name="index"/>.
+            </summary>
+            <param name="index">Index at which to retreive a point.</param>
+            <returns>The Vector3 containing the point data. </returns>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.Interpolate(System.Single)">
+            <summary>
+            Returns an interpolated point based on a parametric value over the whole series.
+            </summary>
+            <param name="distanceOnSpline">
+            A value between 0 and 1 representing the parametric distance along the
+            whole length of the spline, this method returns an interpolated point.
+            </param>
+            <returns>An interpolated point along the spline.</returns>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.Interpolate(System.Int32,System.Single)">
+            <summary>
+            Interpolates a single segment of the spline given a parametric value.
+            </summary>
+            <param name="segmentIndex">
+            The point index to treat as t=0. segmentIndex + 1 is deemed to be index=1.
+            </param>
+            <param name="distanceOnSpline">
+            The parametric input value.
+            </param>
+            <returns>
+            An interpolated point along the spline.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.PositionalSpline3.RecalculateTangents">
+            <summary>
+            Recalculates the tangents associated with this spline.
+            </summary>
+            <remarks>
+            If you tell the spline not to update on demand by setting AutoCalculate to false,
+            then you must call this after completing your updates to the spline this.points.
+            </remarks>
+        </member>
+        <member name="F:Atom.Math.PositionalSpline3.points">
+            <summary>
+            The collection of control this.points.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.PositionalSpline3.tangents">
+            <summary>
+            The collection of generated tangents for the spline controls this.points.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.PositionalSpline3.HermitePoly">
+            <summary>
+            The hermit poly constant matrix.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.RotationalSpline3">
+            <summary>
+            A class used to interpolate orientations (rotations) along a spline
+            using derivatives of quaternions.
+            </summary>
+            <remarks>
+            <para>
+            Like the <see cref="T:Atom.Math.PositionalSpline3"/> class, this class is about interpolating values smoothly over a spline.
+            Whilst <see cref="T:Atom.Math.PositionalSpline3"/> deals with positions (the normal sense we think about splines),
+            this class interpolates orientations.
+            The theory is identical, except we're now in 4-dimensional space instead of 3.
+            </para><para>
+            In positional splines, we use the points and tangents on those points to generate
+            control points for the spline. In this case, we use quaternions and derivatives
+            of the quaternions (i.e. the rate and direction of change at each point). This is the
+            same as PositionalSpline since a tangent is a derivative of a position. 
+            We effectively generate an extra quaternion in between each actual quaternion 
+            which when take with the original quaternion forms the 'tangent' of that quaternion.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Atom.Math.RotationalSpline3.AutoCalculate">
+            <summary>
+            Gets or sets a value indicating whether the tangents 
+            are automatically recalculated when a control point is added or removed.
+            </summary>
+            <value>
+            When <see langword="true"/> the tangents are automatically
+            recalculated when a control point is added or removed.
+            This property may be set to <see langword="false"/> for perfomance reasons.
+            </value>
+        </member>
+        <member name="P:Atom.Math.RotationalSpline3.PointCount">
+            <summary>
+            Gets the number of control points in this <see cref="T:Atom.Math.RotationalSpline3"/>.
+            </summary>
+            <value>The number of control points.</value>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.AddPoint(Atom.Math.Quaternion)">
+            <summary>
+            Adds a control point to the end of the <see cref="T:Atom.Math.RotationalSpline3"/>.
+            </summary>
+            <param name="point"> The control point to add. </param>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.Clear">
+            <summary>
+            Removes all control points from this <see cref="T:Atom.Math.RotationalSpline3"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Single)">
+            <summary>
+            Returns an interpolated point based on a parametric value over the whole series.
+            </summary>
+            <param name="distanceAlongSpline">
+            A value between 0 and 1 representing the parametric distance along the
+            whole length of the spline.
+            </param>
+            <returns>
+            An interpolated point along the spline.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Int32,System.Single)">
+            <summary>
+            Returns an interpolated point based on a parametric value over the whole series.
+            </summary>
+            <param name="index">
+            The point index to treat as t=0. index + 1 is deemed to be distanceAlongSpline=1.
+            </param>
+            <param name="distanceAlongSpline">
+            A value between 0 and 1 representing the parametric distance along the
+            whole length of the spline.
+            </param>
+            <returns>
+            An interpolated point along the spline.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Single,System.Boolean)">
+            <summary>
+            Returns an interpolated point based on a parametric value over the whole series.
+            </summary>
+            <param name="distanceAlongSpline">
+            A value between 0 and 1 representing the parametric distance along the
+            whole length of the spline.
+            </param>
+            <param name="useShortestPath">
+            True forces rotations to use the shortest path.
+            </param>
+            <returns>
+            An interpolated point along the spline.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.Interpolate(System.Int32,System.Single,System.Boolean)">
+            <summary>
+            Interpolates a single segment of the spline given a parametric value.
+            </summary>
+            <param name="index">
+            The point index to treat as t=0. index + 1 is deemed to be distanceAlongSpline=1.
+            </param>
+            <param name="distanceAlongSpline">
+            The parametric input value.
+            </param>
+            <param name="useShortestPath">
+            States whether the spline should take the shortest path between two control points.
+            </param>
+            <returns>
+            An interpolated point along the spline.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.RotationalSpline3.RecalculateTangents">
+            <summary>
+            Recalculates the tangents associated with this spline.
+            </summary>
+            <remarks>
+            If you tell the spline not to update on demand by setting AutoCalculate to false,
+            then you must call this after completing your updates to the spline points.
+            </remarks>
+        </member>
+        <member name="F:Atom.Math.RotationalSpline3.points">
+            <summary>
+            The list of control points.
+            </summary>
+        </member>
+        <member name="F:Atom.Math.RotationalSpline3.tangents">
+            <summary>
+            The list of generated tangents for the spline controls points.
+            </summary>
+        </member>
+        <member name="T:Atom.Math.MathDeserializationContextExtensions">
+            <summary>
+            Defines extension methods that allow serialization of Atom.Math types using the <see cref="T:Atom.Storage.IDeserializationContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Point2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Point2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint3(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Point3"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Point3 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPoint4(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Point4"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Point4 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Vector2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Vector2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector3(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Vector3"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Vector3 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector4(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Vector4"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Vector4 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexVector2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.ComplexVector2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The ComplexVector2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVector(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Vector"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Vector value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexVector(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.ComplexVector"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The ComplexVector value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRectangle(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Rectangle"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Rectangle value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRectangleF(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.RectangleF"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The RectangleF value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Matrix2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Matrix2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix3(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Matrix3"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Matrix3 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix4(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Matrix4"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Matrix4 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadMatrix(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Matrix"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Matrix value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplexMatrix(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.ComplexMatrix"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The ComplexMatrix value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadComplex(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Complex"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Complex value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadCircle(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Circle"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Circle value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRay2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Ray2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Ray2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadRay3(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Ray3"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Ray3 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadPlane3(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Plane3"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Plane3 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadFloatRange(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.FloatRange"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The FloatRange value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadIntegerRange(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.IntegerRange"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The IntegerRange value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadVariableFloat(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.VariableFloat"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The VariableFloat value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadTriangle2(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Triangle2"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Triangle2 value that has been read.
+            </returns>
+        </member>
+        <member name="M:Atom.Math.MathDeserializationContextExtensions.ReadQuaternion(Atom.Storage.IDeserializationContext)">
+            <summary>
+            Reads a <see cref="T:Atom.Math.Quaternion"/> value.
+            </summary>
+            <param name="context">
+            The context to read with.
+            </param>
+            <returns>
+            The Quaternion value that has been read.
+            </returns>
+        </member>
+        <member name="T:Atom.Math.MathSerializationContextExtensions">
+            <summary>
+            Defines extension methods that allow serialization of Atom.Math types using the <see cref="T:Atom.Storage.ISerializationContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Point2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="point">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point3)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Point3"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="point">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Point4)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Point4"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="point">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Vector2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector3)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Vector3"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector4)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Vector4"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexVector2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.ComplexVector2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Vector)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Vector"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexVector)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.ComplexVector"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="vector">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Rectangle)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Rectangle"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="rectangle">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.RectangleF)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.RectangleF"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="rectangle">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Matrix2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="matrix">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix3)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Matrix3"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="matrix">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix4)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Matrix4"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="matrix">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Matrix)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Matrix"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="matrix">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.ComplexMatrix)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.ComplexMatrix"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="matrix">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Complex)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Complex"/> number using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="complex">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Circle)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Circle"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="circle">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Ray2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Ray2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="ray">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Ray3)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Ray3"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="ray">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Plane3)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Plane3"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="plane">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.FloatRange)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.FloatRange"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="range">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.IntegerRange)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.IntegerRange"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="range">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.VariableFloat)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.VariableFloat"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="variableFloat">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Triangle2)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Triangle2"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="triangle">
+            The value to write.
+            </param>
+        </member>
+        <member name="M:Atom.Math.MathSerializationContextExtensions.Write(Atom.Storage.ISerializationContext,Atom.Math.Quaternion)">
+            <summary>
+            Writes/Serializes the given <see cref="T:Atom.Math.Quaternion"/> using this ISerializationContext.
+            </summary>
+            <param name="context">
+            The context to write with.
+            </param>
+            <param name="quaternion">
+            The value to write.
+            </param>
         </member>
         <member name="T:Atom.Math.DirectionExtensions">
             <summary>
@@ -13621,562 +14177,6 @@
             <exception cref="T:System.ArgumentException">
             If <paramref name="a"/> or <paramref name="b"/> are infinity or NaN.
             </exception>
-        </member>
-        <member name="T:Atom.Math.MathErrorStrings">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ArgumentInIntervalXYInclusive">
-            <summary>
-              Looks up a localized string similar to The argument is expected to be between {0} and {1} (including {0} and {1})..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ArgumentIsInfinityNaN">
-            <summary>
-              Looks up a localized string similar to The given argument is infinite or NaN. This is not allowed..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ArgumentTooLargeForIterationLimit">
-            <summary>
-              Looks up a localized string similar to The given argument is too large for the set iteration limit..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.CantReceiveValueVertexOrderIsNone">
-            <summary>
-              Looks up a localized string similar to Can&apos;t receive the value. The vertex order is &apos;TurnDirection.None&apos;..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.CantSetVertexOrderToNone">
-            <summary>
-              Looks up a localized string similar to Can&apos;t set the vertex order to &apos;TurnDirection.None&apos;..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.IncompatibleMatricesTimes">
-            <summary>
-              Looks up a localized string similar to The size of the matrices is incompatible for this operation..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixDimensionsMismatch">
-            <summary>
-              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrices to be of the same size..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixIsSingular">
-            <summary>
-              Looks up a localized string similar to The Matrix is singular/degenerated. (--&gt; The Matrix is not 	invertible).
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSquare">
-            <summary>
-              Looks up a localized string similar to The Matrix must be a square matrix..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetric">
-            <summary>
-              Looks up a localized string similar to The matrix must be symmetric..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixMustBeSymmetricPositiveDefinite">
-            <summary>
-              Looks up a localized string similar to The Matrix must be symmetric positive definite for this operation..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixNotPositiveDefinite">
-            <summary>
-              Looks up a localized string similar to The matrix is not positive definite..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixRankIsNotFull">
-            <summary>
-              Looks up a localized string similar to The matrix&apos;s rank is not full..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixRowCountMismatch">
-            <summary>
-              Looks up a localized string similar to The number of rows of the Matrices doesn&apos;t match..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.MatrixVectorDimensionsMismatch">
-            <summary>
-              Looks up a localized string similar to Dimensions mismatch. This operation requires the matrix and the vector to be of the same size..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.NegativePlaneDistance">
-            <summary>
-              Looks up a localized string similar to The plane distance {0} is negative. This is not supported..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.OperationInvalidOnZeroVector">
-            <summary>
-              Looks up a localized string similar to This operation is invalid on a 0-vector..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.OperationRequiresAtleastOnePoint">
-            <summary>
-              Looks up a localized string similar to This operation requires at least one point..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.OppositePlanes">
-            <summary>
-              Looks up a localized string similar to The near plane distance is larger than the far plane distance. This is not allowed..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.OutRangeFieldOfView">
-            <summary>
-              Looks up a localized string similar to The field of view value &apos;{0}&apos; is out of valid range of 0 and PI (180 degree)..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.SpecifiedAngleXGreaterTwoPi">
-            <summary>
-              Looks up a localized string similar to The specified angle &apos;{0}&apos; is greater than two Pi..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.TriangulationRequiresAtLeastThreeVertices">
-            <summary>
-              Looks up a localized string similar to Triangulation requires at least 3 vertices as its input..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ValueGreaterThanMaximum">
-            <summary>
-              Looks up a localized string similar to The given value is greater than the maximum..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.ValueLessThanMinimum">
-            <summary>
-              Looks up a localized string similar to The given value is less than the minimum..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.VectorLengthMismatch">
-            <summary>
-              Looks up a localized string similar to Vector length mismatch. This operation only works with Vectors that have the same number of elements..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.VectorSizeMatrixRowCountMismatch">
-            <summary>
-              Looks up a localized string similar to The vector must have the same number of elements as the number of rows of the matrix..
-            </summary>
-        </member>
-        <member name="P:Atom.Math.MathErrorStrings.VertexCountIsZero">
-            <summary>
-              Looks up a localized string similar to The vertex count is zero..
-            </summary>
-        </member>
-        <member name="T:Atom.Math.RandExtensions">
-            <summary>
-            Provides extension methods for the <see cref="T:Atom.Math.IRand"/> interface.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.Shuffle``1(System.Collections.Generic.IList{``0},Atom.Math.IRand)">
-            <summary>
-            Randomly shuffles the specified IList{T}.
-            </summary>
-            <typeparam name="T">
-            The type of the elements in the list.
-            </typeparam>
-            <param name="list">
-            The list to shuffle.
-            </param>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.Select``1(Atom.Math.IRand,System.Collections.Generic.IEnumerable{System.Tuple{System.Single,``0}})">
-            <summary>
-            Randomly selects one of the specified weighted items;
-            where a greater weight increases the chance for an item to be picked.
-            </summary>
-            <typeparam name="T">
-            The type of the items to select from.
-            </typeparam>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <param name="weightedItems">
-            The weighted items. The weights don't have to add up to any value.
-            </param>
-            <returns>
-            The item that has been selected;
-            or the default value of T if none has been selected.
-            </returns>
-            <example>
-               var titles = new Tuple&lt;float, string&gt;[] {
-                   Tuple.Create( 70.0f, "Link" ),
-                   Tuple.Create( 30.0f, "Garret" )
-               };
-               
-               string hero = rand.Select( titles );
-               
-               // 70% chance for hero to be "Link"
-               // 30% chance for hero to be "Garret"
-            </example>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomDirection4(Atom.Math.IRand)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction4"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomDirection4But(Atom.Math.IRand,Atom.Math.Direction4)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction4"/> that is not the given <paramref name="directionToExclude"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <param name="directionToExclude">
-            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomActualDirection4But(Atom.Math.IRand,Atom.Math.Direction4)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction4"/> that is not the given <paramref name="directionToExclude"/>
-            nor <see cref="F:Atom.Math.Direction4.None"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <param name="directionToExclude">
-            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomDirection8(Atom.Math.IRand)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction8"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction8"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomDirection8But(Atom.Math.IRand,Atom.Math.Direction8)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction8"/> that is not the given <paramref name="directionToExclude"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <param name="directionToExclude">
-            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomActualDirection8But(Atom.Math.IRand,Atom.Math.Direction8)">
-            <summary>
-            Gets a random <see cref="T:Atom.Math.Direction8"/> that is not the given <paramref name="directionToExclude"/> nor <see cref="F:Atom.Math.Direction8.None"/>.
-            </summary>
-            <param name="rand">
-            The random number generator to use.
-            </param>
-            <param name="directionToExclude">
-            The <see cref="T:Atom.Math.Direction4"/> that should not be picked.
-            </param>
-            <returns>
-            The random <see cref="T:Atom.Math.Direction4"/>, each direction has the same chance to be picked.
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector2,Atom.Math.Vector2)">
-            <summary>
-            Returns a random Vector2 value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random Vector2 greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector3,Atom.Math.Vector3)">
-            <summary>
-            Returns a random Vector3 value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random Vector3 greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="M:Atom.Math.RandExtensions.RandomRange(Atom.Math.IRand,Atom.Math.Vector4,Atom.Math.Vector4)">
-            <summary>
-            Returns a random Vector4 value within the specified range.
-            </summary>
-            <param name="rand">The random number generator to use.</param>
-            <param name="minimumValue"> The lower bound. </param>
-            <param name="maximumValue"> The upper bound. </param>
-            <returns>
-            A random Vector4 greater than or equal to <c>minimumValue</c>, and less than
-            or equal to <c>maximumValue</c>. 
-            </returns>
-        </member>
-        <member name="T:Atom.Math.RandMT">
-            <summary>
-            Generates pseudo-random numbers from a uniform distribution
-            using the Mersenne Twister algorithm. 
-            This class can't be inherited.
-            </summary>
-            <remarks>
-            This is the 32-bit version of the algorithm. 
-            </remarks>
-        </member>
-        <member name="P:Atom.Math.RandMT.IsInitialized">
-            <summary>
-            Gets a value indicating whether this random number generator has been initialized (seeded).
-            </summary>
-            <value>
-            Returns <see langword="true"/> if it has been initialised; otherwise, <see langword="false"/>.
-            </value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomBoolean">
-            <summary>
-            Gets a random boolean state value.
-            </summary>
-            <value>
-            Returns <see langword="true"/> 50% of the time,
-            and <see langword="false"/> the other 50%.
-            </value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomInteger">
-            <summary>
-            Gets a random number in the interval [0,0x7fffffff].
-            </summary>
-            <value>A random integer.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomSingle">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random single-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomSingleRes53">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
-            </summary>
-            <value>A random single-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomDouble">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random double-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomDoubleRes53">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
-            </summary>
-            <value>A random double-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomDecimal">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random decimal value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomDecimalRes53">
-            <summary> 
-            Gets a random number in the interval [0.0, 1.0) with 53-bit resolution.
-            </summary>
-            <value>A random decimal value.</value>
-        </member>
-        <member name="P:Atom.Math.RandMT.RandomUnsignedInteger">
-            <summary>
-            Gets a random number in the interval [0,0xffffffff].
-            Doesn't check if the random number generator has been initialized.
-            </summary>
-            <remarks>
-            This is the main function which is used to generate random numbers.
-            </remarks>
-            <value>A random unsigned integer.</value>
-        </member>
-        <member name="M:Atom.Math.RandMT.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
-            by using the time of day in milliseconds as the seed.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RandMT.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
-            using the given <paramref name="seed"/>.
-            </summary>
-            <param name="seed">
-            The seed used to initialize the pseudo random number generator.
-            </param>
-        </member>
-        <member name="M:Atom.Math.RandMT.#ctor(System.UInt32)">
-            <summary> 
-            Initializes a new instance of the <see cref="T:Atom.Math.RandMT"/> class;
-            using the given <paramref name="seed"/>.
-            </summary>
-            <param name="seed">
-            The seed used to initialize the pseudo random number generator.
-            </param>
-        </member>
-        <member name="M:Atom.Math.RandMT.Seed(System.UInt32)">
-            <summary>
-            Seeds this <see cref="T:Atom.Math.RandMT"/> using the given <paramref name="value"/>.
-            </summary>
-            <param name="value">
-            The seed used to initialize the pseudo random number generator.
-            </param>
-        </member>
-        <member name="M:Atom.Math.RandMT.Seed(System.Int32)">
-            <summary>
-            Seeds this <see cref="T:Atom.Math.RandMT"/> using the given <paramref name="value"/>.
-            </summary>
-            <param name="value">
-            The seed used to initialize the pseudo random number generator.
-            </param>
-        </member>
-        <member name="F:Atom.Math.RandMT.N">
-            <summary>
-            The size of the internal state array (624).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.Nmin1">
-            <summary>
-            The size of the internal state array, minus one (623).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.M">
-            <summary>
-            A constant that is used to index into the internal state array (397).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.Mmin1">
-            <summary>
-            The <see cref="F:Atom.Math.RandMT.M"/> constant, minus one (396).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.NminM">
-            <summary>
-            The <see cref="F:Atom.Math.RandMT.N"/> constant minus the <see cref="F:Atom.Math.RandMT.M"/> constant (624 - 397).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.MminN">
-            <summary>
-            The <see cref="F:Atom.Math.RandMT.M"/> constant minus the <see cref="F:Atom.Math.RandMT.N"/> constant (397 - 624).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.UpperMask">
-            <summary>
-            The upper mask constant (0x80000000U).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.LowerMask">
-            <summary>
-            The lower mask constant (0x7fffffffU).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.MaxRandomInt">
-            <summary>
-            The maximum random integer that can be created (0x7fffffff).
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.mag01">
-            <summary>
-            Stores the range of generated values.
-            mag01[x] = x * MATRIX_A. for x = 0,1.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.mt">
-            <summary>
-            The state point array.
-            </summary>
-        </member>
-        <member name="F:Atom.Math.RandMT.mti">
-            <summary>
-            If mti==N+1 then that means that mt[N] has not yet been initialized.
-            </summary>
-        </member>
-        <member name="T:Atom.Math.RandSys">
-            <summary>
-            Defines a pseudo-random number generator that delgates 
-            all request to a <see cref="T:System.Random"/> object.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="P:Atom.Math.RandSys.RandomBoolean">
-            <summary>
-            Gets a random boolean state value.
-            </summary>
-            <value>
-            Returns <see langword="true"/> 50% of the time,
-            and <see langword="false"/> the other 50%.
-            </value>
-        </member>
-        <member name="P:Atom.Math.RandSys.RandomInteger">
-            <summary>
-            Gets a random number in the interval [0,0x7fffffff].
-            </summary>
-            <value>A random integer.</value>
-        </member>
-        <member name="P:Atom.Math.RandSys.RandomSingle">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random single-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandSys.RandomDouble">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random double-precision floating point value.</value>
-        </member>
-        <member name="P:Atom.Math.RandSys.RandomDecimal">
-            <summary>
-            Gets a random number in the interval [0.0, 1.0].
-            </summary>
-            <value>A random decimal value.</value>
-        </member>
-        <member name="M:Atom.Math.RandSys.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Math.RandSys"/> class;
-            using the time of day in milliseconds as the seed.
-            </summary>
-        </member>
-        <member name="M:Atom.Math.RandSys.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Math.RandSys"/> class; using the given <paramref name="seed"/>.
-            </summary>
-            <param name="seed">
-            A number used to calculate a starting value for the pseudo-random number
-            sequence. If a negative number is specified, the absolute value of the number
-            is used.
-            </param>
-        </member>
-        <member name="F:Atom.Math.RandSys.random">
-            <summary>
-            The System.Random object this <see cref="T:Atom.Math.RandSys"/> is wrapping around.
-            </summary>
         </member>
         <member name="T:Atom.Math.SpecialFunctions">
             <summary>

@@ -64,6 +64,96 @@
             The currently cached assets.
             </summary>
         </member>
+        <member name="T:Atom.Xna.ContentAssetLoader">
+            <summary>
+            Implements the base implementation of an IAssetLoader that uses the
+            xna <see cref="P:Atom.Xna.ContentAssetLoader.ContentManager"/> to load and manage assets.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.ContentAssetLoader.RootDirectory">
+            <summary>
+            Gets or sets the root directory that is automatically
+            prefixed to assets loaded by this IAssetLoader.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.ContentAssetLoader.ContentManager">
+            <summary>
+            Gets the ContentManager this ContentAssetLoader internally uses
+            to load assets.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ContentAssetLoader.#ctor(Microsoft.Xna.Framework.Content.ContentManager)">
+            <summary>
+            Initializes a new instance of the ContentAssetLoader class.
+            </summary>
+            <param name="contentManager">
+            The Xna ContentManager responsible for loading the assets.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ContentAssetLoader.Dispose">
+            <summary>
+            Releases all resources used by this ContentAssetLoader.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ContentAssetLoader.UnloadAll">
+            <summary>
+            Unloads all assets that have been loaden with this ContentAssetLoader.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.ContentAssetLoader.relativeRootDirectory">
+            <summary>
+            The relative root directory.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.ContentAssetLoader.contentManager">
+            <summary>
+            The Xna ContentManager responsible for loading the Texture2D assets.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.IAsset">
+            <summary>
+            Represents a custom asset that can be used by xna applications.
+            </summary>
+            <remarks>
+            Usually IAssets don't use the xna Content Pipeline for greater
+            customization.
+            </remarks>
+        </member>
+        <member name="T:Atom.Xna.IAssetLoader">
+            <summary>
+            Provides the base contract that all asset loaders share.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.IAssetLoader.RootDirectory">
+            <summary>
+            Gets or sets the root directory that is automatically
+            prefixed to assets loaded by this IAssetLoader.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.IAssetLoader.UnloadAll">
+            <summary>
+            Unloads all assets that have been loaden with this IAssetLoader.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.ICustomAssetLoader`1">
+            <summary>
+            Represents an <see cref="T:Atom.Xna.IAssetLoader"/> that loads custom <see cref="T:Atom.Xna.IAsset"/>s.
+            </summary>
+            <typeparam name="TAsset">
+            The exact type of the IAsset the ICustomAssetLoader can load.
+            </typeparam>
+        </member>
+        <member name="M:Atom.Xna.ICustomAssetLoader`1.Load(System.String)">
+            <summary>
+            Tries to receive the asset with the given <paramref name="assetName"/>.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the asset to load.
+            </param>
+            <returns>
+            The loaded asset.
+            </returns>
+        </member>
         <member name="T:Atom.Xna.Batches.ComposedSpriteBatch">
             <summary>
             Implements mechanisms for drawing various sprites and arabitary forms.
@@ -650,157 +740,6 @@
             Ends drawing to this IDrawBatch, outputing the result.
             </summary>
         </member>
-        <member name="T:Atom.Xna.Batches.ITextureDrawBatch">
-            <summary>
-            Provides a mechanism that allows queueing and then drawing of 2D lines, objects consisting of 2D lines
-            and rectangles.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Atom.Math.RectangleF,Microsoft.Xna.Framework.Color,System.Single)">
-            <summary>
-            Draws a colored rectangle with the specified arguments.
-            </summary>
-            <param name="rectangle">
-            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
-            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
-            </param>
-            <param name="color">
-            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
-            </param>
-            <param name="layerDepth">
-            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
-            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
-            this parameter to affect sprite drawing.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,System.Single)">
-            <summary>
-            Draws a colored rectangle with the specified arguments.
-            </summary>
-            <param name="rectangle">
-            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
-            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
-            </param>
-            <param name="color">
-            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
-            </param>
-            <param name="layerDepth">
-            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
-            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
-            this parameter to affect sprite drawing.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color,System.Single)">
-            <summary>
-            Draws a colored rectangle with the specified arguments.
-            </summary>
-            <param name="rectangle">
-            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
-            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
-            </param>
-            <param name="color">
-            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
-            </param>
-            <param name="layerDepth">
-            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
-            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
-            this parameter to affect sprite drawing.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLine(Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
-            <summary>
-            Queues drawing a line by this ITextureDrawBatch.
-            </summary>
-            <param name="start">
-            The start position of the line.
-            </param>
-            <param name="end">
-            The end position of the line.
-            </param>
-            <param name="color">
-            The color of the line.
-            </param>
-            <param name="thickness">
-            The thickness of the line in pixels.
-            </param>
-            <param name="layerDepth">
-            The layer depth the line is drawn at. (Z-index)
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLine(Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Math.Vector2,System.Int32,System.Single)">
-            <summary>
-            Queues drawing a line by this ITextureDrawBatch.
-            </summary>
-            <param name="start">
-            The start position of the line.
-            </param>
-            <param name="end">
-            The end position of the line.
-            </param>
-            <param name="color">
-            The color of the line.
-            </param>
-            <param name="origin">
-            The origin of rotation.
-            </param>
-            <param name="thickness">
-            The thickness of the line in pixels.
-            </param>
-            <param name="layerDepth">
-            The layer depth the line is drawn at. (Z-index)
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLinePoly(Atom.Math.Polygon2,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
-            <summary>
-            Queues drawing a outer shape of a <see cref="T:Atom.Math.Polygon2"/> using lines by this ITextureDrawBatch.
-            </summary>
-            <param name="polygon">
-            The polygon to draw.
-            </param>
-            <param name="color">
-            The color of the lines.
-            </param>
-            <param name="thickness">
-            The thickness of the lines in pixels.
-            </param>
-            <param name="layerDepth">
-            The layer depth the lines are drawn at. (Z-index)
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLineRect(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
-            <summary>
-            Queues drawing a outer shape of a <see cref="T:Atom.Math.Rectangle"/> using lines by this ITextureDrawBatch.
-            </summary>
-            <param name="rectangle">
-            The rectangle to draw.
-            </param>
-            <param name="color">
-            The color of the lines.
-            </param>
-            <param name="thickness">
-            The thickness of the lines in pixels.
-            </param>
-            <param name="layerDepth">
-            The layer depth the lines are drawn at. (Z-index)
-            </param>
-        </member>
-        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLineRect(Atom.Math.OrientedRectangleF,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
-            <summary>
-            Queues drawing a outer shape of a <see cref="T:Atom.Math.OrientedRectangleF"/> using lines by this ITextureDrawBatch.
-            </summary>
-            <param name="rectangle">
-            The rectangle to draw.
-            </param>
-            <param name="color">
-            The color of the lines.
-            </param>
-            <param name="thickness">
-            The thickness of the lines in pixels.
-            </param>
-            <param name="layerDepth">
-            The layer depth the lines are drawn at. (Z-index)
-            </param>
-        </member>
         <member name="T:Atom.Xna.Batches.ISpriteBatch">
             <summary>
             Provides a mechanism that allows queueing of sprites to draw
@@ -1136,6 +1075,157 @@
             </param>
             <param name="layerDepth">
             The sorting depth of the sprite, between 0 (front) and 1 (back).
+            </param>
+        </member>
+        <member name="T:Atom.Xna.Batches.ITextureDrawBatch">
+            <summary>
+            Provides a mechanism that allows queueing and then drawing of 2D lines, objects consisting of 2D lines
+            and rectangles.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Atom.Math.RectangleF,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws a colored rectangle with the specified arguments.
+            </summary>
+            <param name="rectangle">
+            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
+            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
+            </param>
+            <param name="color">
+            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
+            </param>
+            <param name="layerDepth">
+            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
+            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
+            this parameter to affect sprite drawing.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws a colored rectangle with the specified arguments.
+            </summary>
+            <param name="rectangle">
+            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
+            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
+            </param>
+            <param name="color">
+            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
+            </param>
+            <param name="layerDepth">
+            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
+            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
+            this parameter to affect sprite drawing.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawRect(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws a colored rectangle with the specified arguments.
+            </summary>
+            <param name="rectangle">
+            A rectangle specifying, in screen coordinates, where the sprite will be drawn.
+            If this rectangle is not the same size as sourcerectangle, the sprite is scaled to fit.
+            </param>
+            <param name="color">
+            The color channel modulation to use. Use Xna.Color.White for full color with no tinting.
+            </param>
+            <param name="layerDepth">
+            The sorting depth of the sprite, between 0 (front) and 1 (back).You must
+            specify either SpriteSortMode.FrontToBack or SpriteSortMode.BackToFront for
+            this parameter to affect sprite drawing.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLine(Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
+            <summary>
+            Queues drawing a line by this ITextureDrawBatch.
+            </summary>
+            <param name="start">
+            The start position of the line.
+            </param>
+            <param name="end">
+            The end position of the line.
+            </param>
+            <param name="color">
+            The color of the line.
+            </param>
+            <param name="thickness">
+            The thickness of the line in pixels.
+            </param>
+            <param name="layerDepth">
+            The layer depth the line is drawn at. (Z-index)
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLine(Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Math.Vector2,System.Int32,System.Single)">
+            <summary>
+            Queues drawing a line by this ITextureDrawBatch.
+            </summary>
+            <param name="start">
+            The start position of the line.
+            </param>
+            <param name="end">
+            The end position of the line.
+            </param>
+            <param name="color">
+            The color of the line.
+            </param>
+            <param name="origin">
+            The origin of rotation.
+            </param>
+            <param name="thickness">
+            The thickness of the line in pixels.
+            </param>
+            <param name="layerDepth">
+            The layer depth the line is drawn at. (Z-index)
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLinePoly(Atom.Math.Polygon2,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
+            <summary>
+            Queues drawing a outer shape of a <see cref="T:Atom.Math.Polygon2"/> using lines by this ITextureDrawBatch.
+            </summary>
+            <param name="polygon">
+            The polygon to draw.
+            </param>
+            <param name="color">
+            The color of the lines.
+            </param>
+            <param name="thickness">
+            The thickness of the lines in pixels.
+            </param>
+            <param name="layerDepth">
+            The layer depth the lines are drawn at. (Z-index)
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLineRect(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
+            <summary>
+            Queues drawing a outer shape of a <see cref="T:Atom.Math.Rectangle"/> using lines by this ITextureDrawBatch.
+            </summary>
+            <param name="rectangle">
+            The rectangle to draw.
+            </param>
+            <param name="color">
+            The color of the lines.
+            </param>
+            <param name="thickness">
+            The thickness of the lines in pixels.
+            </param>
+            <param name="layerDepth">
+            The layer depth the lines are drawn at. (Z-index)
+            </param>
+        </member>
+        <member name="M:Atom.Xna.Batches.ITextureDrawBatch.DrawLineRect(Atom.Math.OrientedRectangleF,Microsoft.Xna.Framework.Color,System.Int32,System.Single)">
+            <summary>
+            Queues drawing a outer shape of a <see cref="T:Atom.Math.OrientedRectangleF"/> using lines by this ITextureDrawBatch.
+            </summary>
+            <param name="rectangle">
+            The rectangle to draw.
+            </param>
+            <param name="color">
+            The color of the lines.
+            </param>
+            <param name="thickness">
+            The thickness of the lines in pixels.
+            </param>
+            <param name="layerDepth">
+            The layer depth the lines are drawn at. (Z-index)
             </param>
         </member>
         <member name="T:Atom.Xna.Batches.SpriteDrawBatch">
@@ -1812,52 +1902,6 @@
             <returns>
             The resulting color.
             </returns>
-        </member>
-        <member name="T:Atom.Xna.ContentAssetLoader">
-            <summary>
-            Implements the base implementation of an IAssetLoader that uses the
-            xna <see cref="P:Atom.Xna.ContentAssetLoader.ContentManager"/> to load and manage assets.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.ContentAssetLoader.RootDirectory">
-            <summary>
-            Gets or sets the root directory that is automatically
-            prefixed to assets loaded by this IAssetLoader.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.ContentAssetLoader.ContentManager">
-            <summary>
-            Gets the ContentManager this ContentAssetLoader internally uses
-            to load assets.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ContentAssetLoader.#ctor(Microsoft.Xna.Framework.Content.ContentManager)">
-            <summary>
-            Initializes a new instance of the ContentAssetLoader class.
-            </summary>
-            <param name="contentManager">
-            The Xna ContentManager responsible for loading the assets.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ContentAssetLoader.Dispose">
-            <summary>
-            Releases all resources used by this ContentAssetLoader.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ContentAssetLoader.UnloadAll">
-            <summary>
-            Unloads all assets that have been loaden with this ContentAssetLoader.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.ContentAssetLoader.relativeRootDirectory">
-            <summary>
-            The relative root directory.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.ContentAssetLoader.contentManager">
-            <summary>
-            The Xna ContentManager responsible for loading the Texture2D assets.
-            </summary>
         </member>
         <member name="T:Atom.Xna.ColorHelper">
             <summary>
@@ -3658,629 +3702,6 @@
             The context under which the drawing operation occurrs.
             </param>
         </member>
-        <member name="T:Atom.Xna.SpriteFontExtensions">
-            <summary>
-            Contains extension method for the <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteFontExtensions.MeasureStringWidth(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String)">
-            <summary>
-            Returns the width of the given <see cref="T:System.String"/>.
-            </summary>
-            <param name="spriteFont">
-            The related sprite font.
-            </param>
-            <param name="text">
-            The string to measure.
-            </param>
-            <returns>
-            The width of the measured string.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.FramesPerSecond">
-            <summary>
-            Used to calcualte the frames per second of a XNA game.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.FramesPerSecond.Value">
-            <summary>
-            Gets the current frames per seconds.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.FramesPerSecond.Update(Atom.IUpdateContext)">
-            <summary>
-            Updates this FramesPerSecond calculation. Must be called once per frame.
-            </summary>
-            <param name="updateContext">
-            The current update context.
-            </param>
-        </member>
-        <member name="T:Atom.Xna.FullscreenRenderTarget2DFactory">
-            <summary>
-            Implements an <see cref="T:Atom.Xna.IRenderTarget2DFactory"/> that creates RenderTarget2D instances
-            with a specific size and SurfaceFormat.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.FullscreenRenderTarget2DFactory.Format">
-            <summary>
-            Gets or sets the SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.#ctor(Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService)">
-            <summary>
-            Initializes a new instance of the FullscreenRenderTarget2DFactory class.
-            </summary>
-            <param name="graphicsDeviceService">
-            Provides access to the xna GraphiceDevice that is required by the new RenderTarget2DFactory
-            to create RenderTarget2D instances.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.Create">
-            <summary>
-            Creates a new RenderTarget2D instance.
-            </summary>
-            <returns>
-            A new RenderTarget2D instance.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.Create(Atom.Math.Point2)">
-            <summary>
-            Creates a new RenderTarget2D instance.
-            </summary>
-            <param name="sizeDivider">
-            The divider that is applied on the size of the render target.
-            </param>
-            <returns>
-            A new RenderTarget2D instance.
-            </returns>
-        </member>
-        <member name="F:Atom.Xna.FullscreenRenderTarget2DFactory.format">
-            <summary>
-            The SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.FullscreenRenderTarget2DFactory.graphicsDeviceService">
-            <summary>
-            Provides access to the xna GraphiceDevice that is required by this RenderTarget2DFactory
-            to create RenderTarget2D instances.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.GameServiceContainerExtensions">
-            <summary>
-            Defines extension methods for the <see cref="T:Microsoft.Xna.Framework.GameServiceContainer"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.GameServiceContainerExtensions.AddService``1(Microsoft.Xna.Framework.GameServiceContainer,``0)">
-            <summary>
-            Adds a service to the GameServiceContainer.
-            </summary>
-            <typeparam name="TService">
-            The type of service to add.
-            </typeparam>
-            <param name="container">
-            The container to which the service should be added.
-            </param>
-            <param name="service">
-            The service provider to add.
-            </param>
-        </member>
-        <member name="T:Atom.Xna.GraphicsDeviceExtensions">
-            <summary>
-            Defines extension methods for the GraphicsDevice class.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.GraphicsDeviceExtensions.GetRenderTarget2D(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
-            <summary>
-            Attempts to get the first RenderTarget2D.
-            </summary>
-            <param name="device">
-            The device to query.
-            </param>
-            <returns>
-            The requested render target or null.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.IContentManagerProvider">
-            <summary>
-            Provides a mechanism that allows receiving of a <see cref="T:Microsoft.Xna.Framework.Content.ContentManager"/>.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.IContentManagerProvider.Content">
-            <summary>
-            Gets the <see cref="T:Microsoft.Xna.Framework.Content.ContentManager"/> this IContentManagerProvider provides.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.IXnaContext">
-            <summary>
-            Represents the common base interface that both the <see cref="T:Atom.Xna.IXnaDrawContext"/> and
-            the <see cref="T:Atom.Xna.IXnaUpdateContext"/> share.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.IXnaContext.GameTime">
-            <summary>
-            Gets or sets the current <see cref="T:Microsoft.Xna.Framework.GameTime"/>.
-            </summary>
-            <remarks>
-            Must be manually updated each frame.
-            </remarks>
-            <value>
-            Stores the timing information about the last frame.
-            </value>
-        </member>
-        <member name="T:Atom.Xna.IXnaDrawContext">
-            <summary>
-            Represents an <see cref="T:Atom.IDrawContext"/> that is supposed to be used in
-            a Xna application.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.IXnaDrawContext.Device">
-            <summary>
-            Gets the Xna GraphicsDevice object.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.MouseInputExtensions">
-            <summary>
-            Defines extension methods for the <see cref="T:Microsoft.Xna.Framework.Input.MouseState"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.MouseInputExtensions.Position(Microsoft.Xna.Framework.Input.MouseState)">
-            <summary>
-            Gets the position of the mouse cursor as a <see cref="T:Atom.Math.Point2"/>.
-            </summary>
-            <param name="mouseState">
-            The state to query.
-            </param>
-            <returns>
-            The position of the mouse.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.ISpriteAsset">
-            <summary>
-            Represents a definition of a two dimensional image that can easily be
-            drawn on the screen by creating an <see cref="T:Atom.Xna.ISprite"/> instance from it.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ISpriteAsset.CreateInstance">
-            <summary>
-            Creates an instance of this ISpriteAsset.
-            </summary>
-            <returns>
-            The instance that has been created.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.PooledSpriteWrapper">
-            <summary>
-            Represents a wrapper around an existing <see cref="T:Atom.Xna.ISprite"/> that adds
-            pooling support. <seealso cref="T:Atom.Collections.Pooling.PooledObjectWrapper`1"/>
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Name">
-            <summary>
-            Gets the name that uniquely identifies the ISprite.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Size">
-            <summary>
-            Gets the size of this ISprite (in pixels).
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Width">
-            <summary>
-            Gets the width of this ISprite (in pixels).
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Height">
-            <summary>
-            Gets the height of this ISprite (in pixels).
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Source">
-            <summary>
-            Gets the <see cref="T:Atom.Math.Rectangle"/> that defines the location 
-            of this ISprite in the <see cref="P:Atom.Xna.PooledSpriteWrapper.Texture"/>.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Rectangle.Empty"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Texture">
-            <summary>
-            Gets the Texture2D of this ISprite.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Color">
-            <summary>
-            Gets the color this ISprite is tinted-in by default.
-            </summary>
-            <value>
-            The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.
-            </value>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Scale">
-            <summary>
-            Gets the scaling factor that is applied by default for this ISprite.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Vector2.One"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Origin">
-            <summary>
-            Gets the origin of rotation and scaling used by this ISprite.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Vector2.Zero"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.PooledSpriteWrapper.Rotation">
-            <summary>
-            Gets the rotation of this ISprite in radians.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.#ctor(Atom.Xna.ISprite)">
-            <summary>
-            Initializes a new instance of the PooledSpriteWrapper class.
-            </summary>
-            <param name="pooledSprite">
-            The sprite that is intended to be pooled.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(System.Single,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given position
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="x">
-            The position to render the sprite at on the x-axis.
-            </param>
-            <param name="y">
-            The position to render the sprite at on the y-axis.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this <see cref="T:Atom.Xna.ISprite"/>.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="depthLayer">
-            The depth layer to draw the sprite at; used for sorting.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">The color channel modulation to use.</param>
-            <param name="depthLayer">The layer to draw at.</param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite into the given <paramref name="destination"/> rectangle.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="destination">
-            The rectangle to draw the sprite in.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">The color channel modulation to use.</param>
-            <param name="rotation">The rotation in radians.</param>
-            <param name="origin">The origin of rotation and scaling.</param>
-            <param name="scale">The scaling factor to apply.</param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="effects">
-            The SpriteEffect to apply.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="effects">
-            The SpriteEffect to apply.
-            </param>
-            <param name="layerDepth">
-            The depth layer to draw the Sprite at.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.Update(Atom.IUpdateContext)">
-            <summary>
-            Updates the ISprite this PooledSpriteWrapper wraps around;
-            if required.
-            </summary>
-            <param name="updateContext">
-            The current IUpdateContext.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.PooledSpriteWrapper.CloneInstance">
-            <summary>
-            Returns an instance of this ISprite. 
-            This may be a new object or the original object.
-            </summary>
-            <remarks>
-            The cloned object may be the same the original object
-            if there is no need to have independent instances.
-            </remarks>
-            <returns>
-            The clone of this instance.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.RenderTarget2DFactory">
-            <summary>
-            Implements an <see cref="T:Atom.Xna.IRenderTarget2DFactory"/> that creates RenderTarget2D instances
-            with a specific size and SurfaceFormat.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.RenderTarget2DFactory.Size">
-            <summary>
-            Gets or sets the size of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.RenderTarget2DFactory.Format">
-            <summary>
-            Gets or sets the SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.RenderTarget2DFactory.#ctor(Atom.Math.Point2,Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService,System.Int32)">
-            <summary>
-            Initializes a new instance of the RenderTarget2DFactory class.
-            </summary>
-            <param name="size">
-            The initial size of the RenderTarget2Ds created by the new RenderTarget2DFactory.
-            </param>
-            <param name="graphicsDeviceService">
-            Provides access to the xna GraphiceDevice that is required by the new RenderTarget2DFactory
-            to create RenderTarget2D instances.
-            </param>
-            <param name="multiSampleCount">
-            The preferred number of multisample locations.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.RenderTarget2DFactory.Create">
-            <summary>
-            Creates a new RenderTarget2D instance.
-            </summary>
-            <returns>
-            A new RenderTarget2D instance.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.RenderTarget2DFactory.Create(Atom.Math.Point2)">
-            <summary>
-            Creates a new RenderTarget2D instance.
-            </summary>
-            <param name="sizeDivider">
-            The divider that is applied on the size of the render target.
-            </param>
-            <returns>
-            A new RenderTarget2D instance.
-            </returns>
-        </member>
-        <member name="F:Atom.Xna.RenderTarget2DFactory.size">
-            <summary>
-            The size of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.RenderTarget2DFactory.format">
-            <summary>
-            The SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.RenderTarget2DFactory.multiSampleCount">
-            <summary>
-            The preferred number of multisample locations.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.RenderTarget2DFactory.graphicsDeviceService">
-            <summary>
-            Provides access to the xna GraphiceDevice that is required by this RenderTarget2DFactory
-            to create RenderTarget2D instances.
-            </summary>
-        </member>
         <member name="T:Atom.Xna.Fonts.Font">
             <summary>
             Implements a mechanism for drawing text using xna <see cref="P:Atom.Xna.Fonts.Font.SpriteFont"/>s.
@@ -4835,48 +4256,126 @@
             The text is aligned to the right side.
             </summary>
         </member>
-        <member name="T:Atom.Xna.IAsset">
+        <member name="T:Atom.Xna.SpriteFontExtensions">
             <summary>
-            Represents a custom asset that can be used by xna applications.
-            </summary>
-            <remarks>
-            Usually IAssets don't use the xna Content Pipeline for greater
-            customization.
-            </remarks>
-        </member>
-        <member name="T:Atom.Xna.IAssetLoader">
-            <summary>
-            Provides the base contract that all asset loaders share.
+            Contains extension method for the <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont"/> class.
             </summary>
         </member>
-        <member name="P:Atom.Xna.IAssetLoader.RootDirectory">
+        <member name="M:Atom.Xna.SpriteFontExtensions.MeasureStringWidth(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String)">
             <summary>
-            Gets or sets the root directory that is automatically
-            prefixed to assets loaded by this IAssetLoader.
+            Returns the width of the given <see cref="T:System.String"/>.
             </summary>
-        </member>
-        <member name="M:Atom.Xna.IAssetLoader.UnloadAll">
-            <summary>
-            Unloads all assets that have been loaden with this IAssetLoader.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.ICustomAssetLoader`1">
-            <summary>
-            Represents an <see cref="T:Atom.Xna.IAssetLoader"/> that loads custom <see cref="T:Atom.Xna.IAsset"/>s.
-            </summary>
-            <typeparam name="TAsset">
-            The exact type of the IAsset the ICustomAssetLoader can load.
-            </typeparam>
-        </member>
-        <member name="M:Atom.Xna.ICustomAssetLoader`1.Load(System.String)">
-            <summary>
-            Tries to receive the asset with the given <paramref name="assetName"/>.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the asset to load.
+            <param name="spriteFont">
+            The related sprite font.
+            </param>
+            <param name="text">
+            The string to measure.
             </param>
             <returns>
-            The loaded asset.
+            The width of the measured string.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.FramesPerSecond">
+            <summary>
+            Used to calcualte the frames per second of a XNA game.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.FramesPerSecond.Value">
+            <summary>
+            Gets the current frames per seconds.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.FramesPerSecond.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates this FramesPerSecond calculation. Must be called once per frame.
+            </summary>
+            <param name="updateContext">
+            The current update context.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.FullscreenRenderTarget2DFactory">
+            <summary>
+            Implements an <see cref="T:Atom.Xna.IRenderTarget2DFactory"/> that creates RenderTarget2D instances
+            with a specific size and SurfaceFormat.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.FullscreenRenderTarget2DFactory.Format">
+            <summary>
+            Gets or sets the SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.#ctor(Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService)">
+            <summary>
+            Initializes a new instance of the FullscreenRenderTarget2DFactory class.
+            </summary>
+            <param name="graphicsDeviceService">
+            Provides access to the xna GraphiceDevice that is required by the new RenderTarget2DFactory
+            to create RenderTarget2D instances.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.Create">
+            <summary>
+            Creates a new RenderTarget2D instance.
+            </summary>
+            <returns>
+            A new RenderTarget2D instance.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.FullscreenRenderTarget2DFactory.Create(Atom.Math.Point2)">
+            <summary>
+            Creates a new RenderTarget2D instance.
+            </summary>
+            <param name="sizeDivider">
+            The divider that is applied on the size of the render target.
+            </param>
+            <returns>
+            A new RenderTarget2D instance.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.FullscreenRenderTarget2DFactory.format">
+            <summary>
+            The SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.FullscreenRenderTarget2DFactory.graphicsDeviceService">
+            <summary>
+            Provides access to the xna GraphiceDevice that is required by this RenderTarget2DFactory
+            to create RenderTarget2D instances.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.GameServiceContainerExtensions">
+            <summary>
+            Defines extension methods for the <see cref="T:Microsoft.Xna.Framework.GameServiceContainer"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.GameServiceContainerExtensions.AddService``1(Microsoft.Xna.Framework.GameServiceContainer,``0)">
+            <summary>
+            Adds a service to the GameServiceContainer.
+            </summary>
+            <typeparam name="TService">
+            The type of service to add.
+            </typeparam>
+            <param name="container">
+            The container to which the service should be added.
+            </param>
+            <param name="service">
+            The service provider to add.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.GraphicsDeviceExtensions">
+            <summary>
+            Defines extension methods for the GraphicsDevice class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.GraphicsDeviceExtensions.GetRenderTarget2D(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            Attempts to get the first RenderTarget2D.
+            </summary>
+            <param name="device">
+            The device to query.
+            </param>
+            <returns>
+            The requested render target or null.
             </returns>
         </member>
         <member name="T:Atom.Xna.IContentLoadable">
@@ -4887,6 +4386,16 @@
         <member name="M:Atom.Xna.IContentLoadable.LoadContent">
             <summary>
             Loads the required content and assets.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.IContentManagerProvider">
+            <summary>
+            Provides a mechanism that allows receiving of a <see cref="T:Microsoft.Xna.Framework.Content.ContentManager"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.IContentManagerProvider.Content">
+            <summary>
+            Gets the <see cref="T:Microsoft.Xna.Framework.Content.ContentManager"/> this IContentManagerProvider provides.
             </summary>
         </member>
         <member name="T:Atom.Xna.IRenderTarget2DFactory">
@@ -4913,6 +4422,402 @@
             <returns>
             A new RenderTarget2D instance.
             </returns>
+        </member>
+        <member name="T:Atom.Xna.IXnaContext">
+            <summary>
+            Represents the common base interface that both the <see cref="T:Atom.Xna.IXnaDrawContext"/> and
+            the <see cref="T:Atom.Xna.IXnaUpdateContext"/> share.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.IXnaContext.GameTime">
+            <summary>
+            Gets or sets the current <see cref="T:Microsoft.Xna.Framework.GameTime"/>.
+            </summary>
+            <remarks>
+            Must be manually updated each frame.
+            </remarks>
+            <value>
+            Stores the timing information about the last frame.
+            </value>
+        </member>
+        <member name="T:Atom.Xna.IXnaDrawContext">
+            <summary>
+            Represents an <see cref="T:Atom.IDrawContext"/> that is supposed to be used in
+            a Xna application.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.IXnaDrawContext.Device">
+            <summary>
+            Gets the Xna GraphicsDevice object.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.IXnaUpdateContext">
+            <summary>
+            Identifies an object that represents an update context used in an XNA application.
+            </summary>
+            <remarks>
+            An update context is passed to the Update method of various objects.
+            </remarks>
+        </member>
+        <member name="T:Atom.Xna.LightMap">
+            <summary>
+            A <see cref="T:Atom.Xna.LightMap"/> is an independent 'layer'
+            that is used to render Lights to.
+            </summary>
+            <remarks>
+            <para>
+            Rendering to the <see cref="T:Atom.Xna.LightMap"/> is done in
+            LightMap Begin and LightMap End block. (RenderTargets may not be changed in the block)
+            The <see cref="T:Atom.Xna.LightMap"/> combines itself with the scene by calling Draw.
+            </para><para>
+            Also, RenderTargetUsage of the BackBuffer should be set to PreserveContent.
+            using the PreparingDeviceSettings event.
+            e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Atom.Xna.LightMap.AmbientColor">
+            <summary>
+            Gets or sets the ambient color.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.LightMap.LightTarget">
+            <summary>
+            Gets the RenderTarget2D to which lights are drawn to.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.LightMap.GraphicsDevice">
+            <summary>
+            Gets the xna GraphicsDevice that is required for drawing.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.#ctor(Atom.Xna.IRenderTarget2DFactory,Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Xna.LightMap"/> class.
+            </summary>
+            <param name="renderTargetFactory">
+            The IRenderTarget2DFactory that is responsible for creating the RenderTarget2D used
+            by the new LightMap.
+            </param>
+            <param name="graphicsDeviceService">
+            Provides access to the xna GraphicsDevice that is required for rendering the new LightMap.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.LightMap.LoadContent">
+            <summary>
+            Overriden to load required graphics content.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.CreateLightTarget">
+            <summary>
+            Creates the RenderTarget the LightMap is drawing to.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.CreateSpriteBatch">
+            <summary>
+            Creates the SpriteBatch used to draw the texture.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.Begin">
+            <summary>
+            After this call all drawn sprites are rendered to the <see cref="T:Atom.Xna.LightMap"/>;
+            instead of the previously set RenderTarget.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.Begin(Microsoft.Xna.Framework.Graphics.ClearOptions,System.Single,System.Int32)">
+            <summary>
+            After this call all drawn sprites are rendered to this <see cref="T:Atom.Xna.LightMap"/>;
+            instead of the previously set RenderTarget.
+            </summary>
+            <param name="clearOptions">
+            Flags indicating which surfaces to clear.
+            </param>
+            <param name="depth">
+            New depth value that this method stores in the depth buffer. This parameter
+            can be in the range of 0.0 through 1.0 (for z-based or w-based depth buffers).
+            A value of 0.0 represents the nearest distance to the viewer; a value of
+            1.0 represents the farthest distance.
+            </param>
+            <param name="stencil">
+            Integer value to store in each stencil-buffer entry. This parameter can be
+            in the range of 0 through 2n−1, where n is the bit depth of the stencil buffer.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.LightMap.End">
+            <summary>
+            Ends the drawing of light sprites to this <see cref="T:Atom.Xna.LightMap"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.Draw">
+            <summary>
+            Draws this LightMap.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.DisposeUnmanagedResources">
+            <summary>
+            Disposes the unmanaged resources used by this LightMap.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.LightMap.DisposeManagedResources">
+            <summary>
+            Disposes the managed resources used by this LightMap.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.blendState">
+            <summary>
+            The blending state that is used when blending together
+            the light map and the normal unlit scene.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.graphicsDevice">
+            <summary>
+            The xna GraphicsDevice that is required for rendering.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.ambientColor">
+            <summary>
+            The ambient color.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.lightTarget">
+            <summary>
+            The <see cref="T:Microsoft.Xna.Framework.Graphics.RenderTarget2D"/> which contains the Light scene.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.oldTarget">
+            <summary>
+            The <see cref="T:Microsoft.Xna.Framework.Graphics.RenderTarget2D"/> which was set before drawing to the LightMap has started.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.batch">
+            <summary>
+            The batch we use for rendering.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.renderTargetFactory">
+            <summary>
+            The IRenderTarget2DFactory that is responsible for creating the RenderTarget2D used
+            by this LightMap.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.LightMap.graphicsDeviceService">
+            <summary>
+            Provides access to the xna GraphicsDevice that is required for rendering.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.ToAtomMathExtensions">
+            <summary>
+            Contains extension methods that convert Xna math objects into their Atom equivalents.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Matrix"/> into a <see cref="T:Atom.Math.Matrix4"/>.
+            </summary>
+            <param name="matrix">The matrix to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Point)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Point"/> into a <see cref="T:Atom.Math.Point2"/>.
+            </summary>
+            <param name="point">The point to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Vector2"/> into a <see cref="T:Atom.Math.Vector2"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Vector3"/> into a <see cref="T:Atom.Math.Vector3"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector4)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Vector4"/> into a <see cref="T:Atom.Math.Vector4"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Converts the <see cref="T:Microsoft.Xna.Framework.Rectangle"/> into a <see cref="T:Atom.Math.Rectangle"/>.
+            </summary>
+            <param name="rectangle">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.ToXnaMathExtensions">
+            <summary>
+            Contains extension methods that convert At0k math objects into their Xna equivalents.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Matrix4)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Matrix4"/> into a <see cref="T:Microsoft.Xna.Framework.Matrix"/>.
+            </summary>
+            <param name="matrix">The matrix to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Rectangle)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Rectangle"/> into a <see cref="T:Microsoft.Xna.Framework.Rectangle"/>.
+            </summary>
+            <param name="rectangle">The rectangle to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.RectangleF)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.RectangleF"/> into a <see cref="T:Microsoft.Xna.Framework.Rectangle"/>.
+            </summary>
+            <param name="rectangle">The rectangle to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Point2)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Point2"/> into a <see cref="T:Microsoft.Xna.Framework.Point"/>.
+            </summary>
+            <param name="point">The point to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector2)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Vector2"/> into a <see cref="T:Microsoft.Xna.Framework.Vector2"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector3)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Vector3"/> into a <see cref="T:Microsoft.Xna.Framework.Vector3"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector4)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Vector4"/> into a <see cref="T:Microsoft.Xna.Framework.Vector4"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.MouseInputExtensions">
+            <summary>
+            Defines extension methods for the <see cref="T:Microsoft.Xna.Framework.Input.MouseState"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.MouseInputExtensions.Position(Microsoft.Xna.Framework.Input.MouseState)">
+            <summary>
+            Gets the position of the mouse cursor as a <see cref="T:Atom.Math.Point2"/>.
+            </summary>
+            <param name="mouseState">
+            The state to query.
+            </param>
+            <returns>
+            The position of the mouse.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.RenderTarget2DFactory">
+            <summary>
+            Implements an <see cref="T:Atom.Xna.IRenderTarget2DFactory"/> that creates RenderTarget2D instances
+            with a specific size and SurfaceFormat.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.RenderTarget2DFactory.Size">
+            <summary>
+            Gets or sets the size of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.RenderTarget2DFactory.Format">
+            <summary>
+            Gets or sets the SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.RenderTarget2DFactory.#ctor(Atom.Math.Point2,Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService,System.Int32)">
+            <summary>
+            Initializes a new instance of the RenderTarget2DFactory class.
+            </summary>
+            <param name="size">
+            The initial size of the RenderTarget2Ds created by the new RenderTarget2DFactory.
+            </param>
+            <param name="graphicsDeviceService">
+            Provides access to the xna GraphiceDevice that is required by the new RenderTarget2DFactory
+            to create RenderTarget2D instances.
+            </param>
+            <param name="multiSampleCount">
+            The preferred number of multisample locations.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.RenderTarget2DFactory.Create">
+            <summary>
+            Creates a new RenderTarget2D instance.
+            </summary>
+            <returns>
+            A new RenderTarget2D instance.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.RenderTarget2DFactory.Create(Atom.Math.Point2)">
+            <summary>
+            Creates a new RenderTarget2D instance.
+            </summary>
+            <param name="sizeDivider">
+            The divider that is applied on the size of the render target.
+            </param>
+            <returns>
+            A new RenderTarget2D instance.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.RenderTarget2DFactory.size">
+            <summary>
+            The size of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.RenderTarget2DFactory.format">
+            <summary>
+            The SurfaceFormat of the RenderTarget2Ds created by this RenderTarget2DFactory.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.RenderTarget2DFactory.multiSampleCount">
+            <summary>
+            The preferred number of multisample locations.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.RenderTarget2DFactory.graphicsDeviceService">
+            <summary>
+            Provides access to the xna GraphiceDevice that is required by this RenderTarget2DFactory
+            to create RenderTarget2D instances.
+            </summary>
         </member>
         <member name="T:Atom.Xna.AnimatedSprite">
             <summary>
@@ -5357,678 +5262,6 @@
             </param>
             <returns>
             The AnimatedSprite that has been loaden.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.IAnimatedSpriteSource">
-            <summary>
-            Provides a mechanism that allows receiving a set of <see cref="T:Atom.Xna.AnimatedSprite"/>s.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.IAnimatedSpriteSource.AnimatedSprites">
-            <summary>
-            Gets the <see cref="T:Atom.Xna.AnimatedSprite"/>s this IAnimatedSpriteSource contains.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.INormalSpriteSource">
-            <summary>
-            Provides a mechanism that allows receiving a set of <see cref="T:Atom.Xna.Sprite"/>s.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.INormalSpriteSource.Sprites">
-            <summary>
-            Gets the <see cref="T:Atom.Xna.Sprite"/>s this INormalSpriteSource contains.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.ISpriteDrawContext">
-            <summary>
-            Represents an <see cref="T:Atom.IDrawContext"/> that allows the drawing
-            of sprites.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.ISpriteDrawContext.Batch">
-            <summary>
-            Gets the <see cref="T:Atom.Xna.Batches.IComposedSpriteBatch"/> that should be used to draw
-            sprites and various shapes when using this ISpriteDrawContext.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.Begin">
-            <summary>
-            Prepares the graphics device for drawing sprites.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState)">
-            <summary>
-            Prepares the graphics device for drawing sprites with specified blending options.
-            </summary>
-            <param name="blendState">Blending options to use when rendering.</param>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode)">
-            <summary>
-            Prepares the graphics device for drawing sprites with specified blending,
-            sorting, and render state options.
-            </summary>
-            <param name="blendState">Blending options to use when rendering.</param>
-            <param name="samplerState">Sampler options to use when rendering.</param>
-            <param name="sortMode">Sorting options to use when rendering.</param>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode,Atom.Math.Matrix4)">
-            <summary> 
-            Prepares the graphics device for drawing sprites with specified blending,
-            sorting, and render state options, and a global transform matrix.
-            </summary>
-            <param name="blendState">Blending options to use when rendering.</param>
-            <param name="samplerState">Sampler options to use when rendering.</param>
-            <param name="sortMode">Sorting options to use when rendering.</param>
-            <param name="transform">
-            A matrix to apply to position, rotation, scale, and depth data passed to Spritebatch.Draw.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Matrix)">
-            <summary> 
-            Prepares the graphics device for drawing sprites with specified blending,
-            sorting, and render state options, and a global transform matrix.
-            </summary>
-            <param name="blendState">Blending options to use when rendering.</param>
-            <param name="samplerState">Sampler options to use when rendering.</param>
-            <param name="sortMode">Sorting options to use when rendering.</param>
-            <param name="transform">
-            A matrix to apply to position, rotation, scale, and depth data passed to Spritebatch.Draw.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISpriteDrawContext.End">
-            <summary>
-            Flushes the sprite batch and restores the device state to how it was before
-            Spritebatch.Begin was called.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.LightMap">
-            <summary>
-            A <see cref="T:Atom.Xna.LightMap"/> is an independent 'layer'
-            that is used to render Lights to.
-            </summary>
-            <remarks>
-            <para>
-            Rendering to the <see cref="T:Atom.Xna.LightMap"/> is done in
-            LightMap Begin and LightMap End block. (RenderTargets may not be changed in the block)
-            The <see cref="T:Atom.Xna.LightMap"/> combines itself with the scene by calling Draw.
-            </para><para>
-            Also, RenderTargetUsage of the BackBuffer should be set to PreserveContent.
-            using the PreparingDeviceSettings event.
-            e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
-            </para>
-            </remarks>
-        </member>
-        <member name="P:Atom.Xna.LightMap.AmbientColor">
-            <summary>
-            Gets or sets the ambient color.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.LightMap.LightTarget">
-            <summary>
-            Gets the RenderTarget2D to which lights are drawn to.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.LightMap.GraphicsDevice">
-            <summary>
-            Gets the xna GraphicsDevice that is required for drawing.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.#ctor(Atom.Xna.IRenderTarget2DFactory,Microsoft.Xna.Framework.Graphics.IGraphicsDeviceService)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Xna.LightMap"/> class.
-            </summary>
-            <param name="renderTargetFactory">
-            The IRenderTarget2DFactory that is responsible for creating the RenderTarget2D used
-            by the new LightMap.
-            </param>
-            <param name="graphicsDeviceService">
-            Provides access to the xna GraphicsDevice that is required for rendering the new LightMap.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.LightMap.LoadContent">
-            <summary>
-            Overriden to load required graphics content.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.CreateLightTarget">
-            <summary>
-            Creates the RenderTarget the LightMap is drawing to.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.CreateSpriteBatch">
-            <summary>
-            Creates the SpriteBatch used to draw the texture.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.Begin">
-            <summary>
-            After this call all drawn sprites are rendered to the <see cref="T:Atom.Xna.LightMap"/>;
-            instead of the previously set RenderTarget.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.Begin(Microsoft.Xna.Framework.Graphics.ClearOptions,System.Single,System.Int32)">
-            <summary>
-            After this call all drawn sprites are rendered to this <see cref="T:Atom.Xna.LightMap"/>;
-            instead of the previously set RenderTarget.
-            </summary>
-            <param name="clearOptions">
-            Flags indicating which surfaces to clear.
-            </param>
-            <param name="depth">
-            New depth value that this method stores in the depth buffer. This parameter
-            can be in the range of 0.0 through 1.0 (for z-based or w-based depth buffers).
-            A value of 0.0 represents the nearest distance to the viewer; a value of
-            1.0 represents the farthest distance.
-            </param>
-            <param name="stencil">
-            Integer value to store in each stencil-buffer entry. This parameter can be
-            in the range of 0 through 2n−1, where n is the bit depth of the stencil buffer.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.LightMap.End">
-            <summary>
-            Ends the drawing of light sprites to this <see cref="T:Atom.Xna.LightMap"/>.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.Draw">
-            <summary>
-            Draws this LightMap.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.DisposeUnmanagedResources">
-            <summary>
-            Disposes the unmanaged resources used by this LightMap.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.LightMap.DisposeManagedResources">
-            <summary>
-            Disposes the managed resources used by this LightMap.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.blendState">
-            <summary>
-            The blending state that is used when blending together
-            the light map and the normal unlit scene.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.graphicsDevice">
-            <summary>
-            The xna GraphicsDevice that is required for rendering.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.ambientColor">
-            <summary>
-            The ambient color.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.lightTarget">
-            <summary>
-            The <see cref="T:Microsoft.Xna.Framework.Graphics.RenderTarget2D"/> which contains the Light scene.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.oldTarget">
-            <summary>
-            The <see cref="T:Microsoft.Xna.Framework.Graphics.RenderTarget2D"/> which was set before drawing to the LightMap has started.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.batch">
-            <summary>
-            The batch we use for rendering.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.renderTargetFactory">
-            <summary>
-            The IRenderTarget2DFactory that is responsible for creating the RenderTarget2D used
-            by this LightMap.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.LightMap.graphicsDeviceService">
-            <summary>
-            Provides access to the xna GraphicsDevice that is required for rendering.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.ToAtomMathExtensions">
-            <summary>
-            Contains extension methods that convert Xna math objects into their Atom equivalents.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Matrix)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Matrix"/> into a <see cref="T:Atom.Math.Matrix4"/>.
-            </summary>
-            <param name="matrix">The matrix to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Point)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Point"/> into a <see cref="T:Atom.Math.Point2"/>.
-            </summary>
-            <param name="point">The point to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector2)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Vector2"/> into a <see cref="T:Atom.Math.Vector2"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector3)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Vector3"/> into a <see cref="T:Atom.Math.Vector3"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Vector4)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Vector4"/> into a <see cref="T:Atom.Math.Vector4"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToAtomMathExtensions.ToAtom(Microsoft.Xna.Framework.Rectangle)">
-            <summary>
-            Converts the <see cref="T:Microsoft.Xna.Framework.Rectangle"/> into a <see cref="T:Atom.Math.Rectangle"/>.
-            </summary>
-            <param name="rectangle">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.INormalSpriteLoader">
-            <summary>
-            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.Sprite"/> assets.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.INormalSpriteLoader.LoadSprite(System.String)">
-            <summary>
-            Loads the <see cref="T:Atom.Xna.Sprite"/> with the given <paramref name="assetName"/>.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the Sprite to load.
-            </param>
-            <returns>
-            The Sprite that has been loaden.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.ISprite">
-            <summary>
-            Represents a two dimensional image that can easily be
-            drawn on the screen.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Source">
-            <summary>
-            Gets the <see cref="T:Atom.Math.Rectangle"/> that defines the location 
-            of this ISprite in the <see cref="P:Atom.Xna.ISprite.Texture"/>.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Rectangle.Empty"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Texture">
-            <summary>
-            Gets the Texture2D of this ISprite.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Color">
-            <summary>
-            Gets the color this ISprite is tinted-in by default.
-            </summary>
-            <value>
-            The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.
-            </value>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Scale">
-            <summary>
-            Gets the scaling factor that is applied by default for this ISprite.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Vector2.One"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Origin">
-            <summary>
-            Gets the origin of rotation and scaling used by this ISprite.
-            </summary>
-            <value>The default value is <see cref="P:Atom.Math.Vector2.Zero"/>.</value>
-        </member>
-        <member name="P:Atom.Xna.ISprite.Rotation">
-            <summary>
-            Gets the rotation of this ISprite in radians.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(System.Single,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given position
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="x">
-            The position to render the sprite at on the x-axis.
-            </param>
-            <param name="y">
-            The position to render the sprite at on the y-axis.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this <see cref="T:Atom.Xna.ISprite"/>.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="depthLayer">
-            The depth layer to draw the sprite at; used for sorting.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">The color channel modulation to use.</param>
-            <param name="depthLayer">The layer to draw at.</param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite into the given <paramref name="destination"/> rectangle.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="destination">
-            The rectangle to draw the sprite in.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">The color channel modulation to use.</param>
-            <param name="rotation">The rotation in radians.</param>
-            <param name="origin">The origin of rotation and scaling.</param>
-            <param name="scale">The scaling factor to apply.</param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="effects">
-            The SpriteEffect to apply.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Atom.Xna.Batches.ISpriteBatch)">
-            <summary>
-            Draws this ISprite at the given <paramref name="position"/>
-            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
-            </summary>
-            <remarks>
-            <para>
-            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
-            block of the given <paramref name="batch"/>.
-            </para>
-            <para>
-            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
-            </para>
-            </remarks>
-            <param name="position">
-            The position to render the sprite at.
-            </param>
-            <param name="color">
-            The color channel modulation to use.
-            </param>
-            <param name="rotation">
-            The rotation in radians.
-            </param>
-            <param name="origin">
-            The origin of rotation and scaling.
-            </param>
-            <param name="scale">
-            The scaling factor to apply.
-            </param>
-            <param name="effects">
-            The SpriteEffect to apply.
-            </param>
-            <param name="layerDepth">
-            The depth layer to draw the Sprite at.
-            </param>
-            <param name="batch">
-            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.ISprite.CloneInstance">
-            <summary>
-            Returns an instance of this ISprite. 
-            This may be a new object or the original object.
-            </summary>
-            <remarks>
-            The cloned object may be the same the original object
-            if there is no need to have independent instances.
-            </remarks>
-            <returns>
-            The clone of this instance.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.ISpriteLoader">
-            <summary>
-            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.Sprite"/> and
-            <see cref="T:Atom.Xna.AnimatedSprite"/> assets.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ISpriteLoader.Load(System.String)">
-            <summary>
-            Attempts to loads the <see cref="T:Atom.Xna.Sprite"/> or an instance of
-            an <see cref="T:Atom.Xna.AnimatedSprite"/> that has the given <paramref name="assetName"/>.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the asset to load.
-            </param>
-            <returns>
-            The ISprite that has been loaden.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ISpriteLoader.Exists(System.String)">
-            <summary>
-            Determines whether an <see cref="T:Atom.Xna.Sprite"/> with the given <paramref name="assetName"/> exists.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the asset.
-            </param>
-            <returns>
-            true if it exists; -or- otherwise false.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ISpriteLoader.LoadAsset(System.String)">
-            <summary>
-            Attempts to loads the <see cref="T:Atom.Xna.Sprite"/> or an instance of
-            an <see cref="T:Atom.Xna.AnimatedSprite"/> that has the given <paramref name="assetName"/>.
-            </summary>
-            <remarks>
-            No ISprite instance is created.
-            </remarks>
-            <param name="assetName">
-            The name that uniquely identifies the asset to load.
-            </param>
-            <returns>
-            The ISpriteAsset that has been loaden.
             </returns>
         </member>
         <member name="T:Atom.Xna.SpriteAnimation">
@@ -6562,17 +5795,165 @@
             The <see cref="P:Atom.Xna.SpriteAnimation.AnimatedSprite"/> that works as a template for this <see cref="T:Atom.Xna.SpriteAnimation"/>.
             </summary>
         </member>
-        <member name="T:Atom.Xna.SpriteDatabase">
+        <member name="T:Atom.Xna.SpriteAtlas">
+            <summary>
+            Represents an atlas of <see cref="T:Atom.Xna.Sprite"/>s that share the same <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D"/>.
+            This class can't be inherited.
+            </summary>
             <content>
-            Defines the default IObjectReaderWriter for the SpriteDatabase class.
+            Defines the default IObjectReaderWriter for the SpriteAtlas class.
             </content>
+        </member>
+        <member name="P:Atom.Xna.SpriteAtlas.Texture">
+            <summary>
+            Gets or sets the Texture all <see cref="P:Atom.Xna.SpriteAtlas.Sprites"/> of this SpriteAtlas use.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.SpriteAtlas.Sprites">
+            <summary>
+            Gets the list of Sprites this SpriteAtlas contains.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.Verify">
+            <summary>
+            Verifies the integrity of this SpriteAtlas.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.VerifySprite(Atom.Xna.Sprite)">
+            <summary>
+            Verifies the integrity of the specified Sprite.
+            </summary>
+            <param name="sprite">
+            The Sprite to verify.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.SpriteAtlas.sprites">
+            <summary>
+            The Sprites that are part of this SpriteAtlas.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.SpriteAtlas.ReaderWriter">
+            <summary>
+            Defines the IObjectReaderWriter that implements serialization and deserialization
+            of <see cref="T:Atom.Xna.SpriteAtlas"/> objects. This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.#ctor(Atom.Xna.ITexture2DLoader)">
+            <summary>
+            Initializes a new instance of the ReaderWriter class.
+            </summary>
+            <param name="textureLoader">
+            Provides a mechanism that allows loading of Texture2D assets.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.Serialize(Atom.Xna.SpriteAtlas,Atom.Storage.ISerializationContext)">
+            <summary>
+            Serializes the given object using the given ISerializationContext.
+            </summary>
+            <param name="object">
+            The object to serialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the serialization process.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.Deserialize(Atom.Xna.SpriteAtlas,Atom.Storage.IDeserializationContext)">
+            <summary>
+            Deserializes the given object using the given IDeserializationContext.
+            </summary>
+            <param name="object">
+            The object to deserialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the deserialization process.
+            </param>
+        </member>
+        <member name="F:Atom.Xna.SpriteAtlas.ReaderWriter.textureLoader">
+            <summary>
+            Provides a mechanism that allows loading of Texture2D assets.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter">
+            <summary>
+            Defines an IObjectReaderWriter that implements serialization and deserialization
+            of <see cref="T:Atom.Xna.Sprite"/> objects to be stored in a SpriteAtlas.
+            </summary>
+        </member>
+        <member name="F:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Instance">
+            <summary>
+            Represents an instance of the SpriteReaderWriter class.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Serialize(Atom.Xna.Sprite,Atom.Storage.ISerializationContext)">
+            <summary>
+            Serializes the given object using the given ISerializationContext.
+            </summary>
+            <param name="object">
+            The object to serialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the serialization process.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Deserialize(Atom.Xna.Sprite,Atom.Storage.IDeserializationContext)">
+            <summary>
+            Deserializes the given object using the given IDeserializationContext.
+            </summary>
+            <param name="object">
+            The object to deserialize.
+            </param>
+            <param name="context">
+            The context that provides everything required for the deserialization process.
+            </param>
+        </member>
+        <member name="T:Atom.Xna.SpriteDatabase">
             <summary>
             Represents a set of <see cref="T:Atom.Xna.Sprite"/>s and AnimatedSprites that are
             all based on the same Texture2D.
             </summary>
             <content>
+            Defines the default IObjectReaderWriter for the SpriteDatabase class.
+            </content>
+            <content>
             Defines an INormalSpriteLoader that loads <see cref="T:Atom.Xna.Sprite"/>s directly from an existing <see cref="T:Atom.Xna.SpriteDatabase"/>.
             </content>
+        </member>
+        <member name="P:Atom.Xna.SpriteDatabase.Name">
+            <summary>
+            Gets or sets the name that uniquely identifies this SameTextureSpriteDatabase.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.SpriteDatabase.Atlas">
+            <summary>
+            Gets or sets the SpriteAtlas that is part of this SpriteDatabase.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.SpriteDatabase.AnimatedSprites">
+            <summary>
+            Gets the list of AnimatedSprites that are stored in this SpriteDatabase.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.SpriteDatabase.Sprites">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.Sprite"/> this SpriteDatabase contains.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.SpriteDatabase.FindSprite(System.String)">
+            <summary>
+            Searches this SpriteDatabase for the Sprite with the given <paramref name="name"/>.
+            </summary>
+            <param name="name">
+            The name of the Sprite to find.
+            </param>
+            <returns>
+            The requested Sprite;
+            or null if there is no Sprite that has the given name.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.SpriteDatabase.animatedSprites">
+            <summary>
+            The AnimatedSprites that are stored in this SpriteDatabase.
+            </summary>
         </member>
         <member name="T:Atom.Xna.SpriteDatabase.ReaderWriter">
             <summary>
@@ -6639,43 +6020,6 @@
             The IObjectReaderWriter that is used to de-/serialize SpriteAtlas objects.
             </summary>
         </member>
-        <member name="P:Atom.Xna.SpriteDatabase.Name">
-            <summary>
-            Gets or sets the name that uniquely identifies this SameTextureSpriteDatabase.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.SpriteDatabase.Atlas">
-            <summary>
-            Gets or sets the SpriteAtlas that is part of this SpriteDatabase.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.SpriteDatabase.AnimatedSprites">
-            <summary>
-            Gets the list of AnimatedSprites that are stored in this SpriteDatabase.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.SpriteDatabase.Sprites">
-            <summary>
-            Gets the <see cref="T:Atom.Xna.Sprite"/> this SpriteDatabase contains.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteDatabase.FindSprite(System.String)">
-            <summary>
-            Searches this SpriteDatabase for the Sprite with the given <paramref name="name"/>.
-            </summary>
-            <param name="name">
-            The name of the Sprite to find.
-            </param>
-            <returns>
-            The requested Sprite;
-            or null if there is no Sprite that has the given name.
-            </returns>
-        </member>
-        <member name="F:Atom.Xna.SpriteDatabase.animatedSprites">
-            <summary>
-            The AnimatedSprites that are stored in this SpriteDatabase.
-            </summary>
-        </member>
         <member name="T:Atom.Xna.SpriteDatabase.SpriteLoader">
             <summary>
             Implements an <see cref="T:Atom.Xna.INormalSpriteLoader"/> that searches a <see cref="T:Atom.Xna.SpriteDatabase"/> object
@@ -6721,6 +6065,487 @@
             <summary>
             The database from which Sprites are received.
             </summary>
+        </member>
+        <member name="T:Atom.Xna.IAnimatedSpriteSource">
+            <summary>
+            Provides a mechanism that allows receiving a set of <see cref="T:Atom.Xna.AnimatedSprite"/>s.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.IAnimatedSpriteSource.AnimatedSprites">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.AnimatedSprite"/>s this IAnimatedSpriteSource contains.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.INormalSpriteLoader">
+            <summary>
+            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.Sprite"/> assets.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.INormalSpriteLoader.LoadSprite(System.String)">
+            <summary>
+            Loads the <see cref="T:Atom.Xna.Sprite"/> with the given <paramref name="assetName"/>.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the Sprite to load.
+            </param>
+            <returns>
+            The Sprite that has been loaden.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.INormalSpriteSource">
+            <summary>
+            Provides a mechanism that allows receiving a set of <see cref="T:Atom.Xna.Sprite"/>s.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.INormalSpriteSource.Sprites">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.Sprite"/>s this INormalSpriteSource contains.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.ISprite">
+            <summary>
+            Represents a two dimensional image that can easily be
+            drawn on the screen.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Source">
+            <summary>
+            Gets the <see cref="T:Atom.Math.Rectangle"/> that defines the location 
+            of this ISprite in the <see cref="P:Atom.Xna.ISprite.Texture"/>.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Rectangle.Empty"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Texture">
+            <summary>
+            Gets the Texture2D of this ISprite.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Color">
+            <summary>
+            Gets the color this ISprite is tinted-in by default.
+            </summary>
+            <value>
+            The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Scale">
+            <summary>
+            Gets the scaling factor that is applied by default for this ISprite.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Vector2.One"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Origin">
+            <summary>
+            Gets the origin of rotation and scaling used by this ISprite.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Vector2.Zero"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.ISprite.Rotation">
+            <summary>
+            Gets the rotation of this ISprite in radians.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(System.Single,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given position
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="x">
+            The position to render the sprite at on the x-axis.
+            </param>
+            <param name="y">
+            The position to render the sprite at on the y-axis.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this <see cref="T:Atom.Xna.ISprite"/>.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="depthLayer">
+            The depth layer to draw the sprite at; used for sorting.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">The color channel modulation to use.</param>
+            <param name="depthLayer">The layer to draw at.</param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite into the given <paramref name="destination"/> rectangle.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="destination">
+            The rectangle to draw the sprite in.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">The color channel modulation to use.</param>
+            <param name="rotation">The rotation in radians.</param>
+            <param name="origin">The origin of rotation and scaling.</param>
+            <param name="scale">The scaling factor to apply.</param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="effects">
+            The SpriteEffect to apply.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="effects">
+            The SpriteEffect to apply.
+            </param>
+            <param name="layerDepth">
+            The depth layer to draw the Sprite at.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISprite.CloneInstance">
+            <summary>
+            Returns an instance of this ISprite. 
+            This may be a new object or the original object.
+            </summary>
+            <remarks>
+            The cloned object may be the same the original object
+            if there is no need to have independent instances.
+            </remarks>
+            <returns>
+            The clone of this instance.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.ISpriteAsset">
+            <summary>
+            Represents a definition of a two dimensional image that can easily be
+            drawn on the screen by creating an <see cref="T:Atom.Xna.ISprite"/> instance from it.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISpriteAsset.CreateInstance">
+            <summary>
+            Creates an instance of this ISpriteAsset.
+            </summary>
+            <returns>
+            The instance that has been created.
+            </returns>
+        </member>
+        <member name="T:Atom.Xna.ISpriteDrawContext">
+            <summary>
+            Represents an <see cref="T:Atom.IDrawContext"/> that allows the drawing
+            of sprites.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.ISpriteDrawContext.Batch">
+            <summary>
+            Gets the <see cref="T:Atom.Xna.Batches.IComposedSpriteBatch"/> that should be used to draw
+            sprites and various shapes when using this ISpriteDrawContext.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.Begin">
+            <summary>
+            Prepares the graphics device for drawing sprites.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState)">
+            <summary>
+            Prepares the graphics device for drawing sprites with specified blending options.
+            </summary>
+            <param name="blendState">Blending options to use when rendering.</param>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode)">
+            <summary>
+            Prepares the graphics device for drawing sprites with specified blending,
+            sorting, and render state options.
+            </summary>
+            <param name="blendState">Blending options to use when rendering.</param>
+            <param name="samplerState">Sampler options to use when rendering.</param>
+            <param name="sortMode">Sorting options to use when rendering.</param>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode,Atom.Math.Matrix4)">
+            <summary> 
+            Prepares the graphics device for drawing sprites with specified blending,
+            sorting, and render state options, and a global transform matrix.
+            </summary>
+            <param name="blendState">Blending options to use when rendering.</param>
+            <param name="samplerState">Sampler options to use when rendering.</param>
+            <param name="sortMode">Sorting options to use when rendering.</param>
+            <param name="transform">
+            A matrix to apply to position, rotation, scale, and depth data passed to Spritebatch.Draw.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.Begin(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Matrix)">
+            <summary> 
+            Prepares the graphics device for drawing sprites with specified blending,
+            sorting, and render state options, and a global transform matrix.
+            </summary>
+            <param name="blendState">Blending options to use when rendering.</param>
+            <param name="samplerState">Sampler options to use when rendering.</param>
+            <param name="sortMode">Sorting options to use when rendering.</param>
+            <param name="transform">
+            A matrix to apply to position, rotation, scale, and depth data passed to Spritebatch.Draw.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.ISpriteDrawContext.End">
+            <summary>
+            Flushes the sprite batch and restores the device state to how it was before
+            Spritebatch.Begin was called.
+            </summary>
+        </member>
+        <member name="T:Atom.Xna.ISpriteLoader">
+            <summary>
+            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.Sprite"/> and
+            <see cref="T:Atom.Xna.AnimatedSprite"/> assets.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISpriteLoader.Load(System.String)">
+            <summary>
+            Attempts to loads the <see cref="T:Atom.Xna.Sprite"/> or an instance of
+            an <see cref="T:Atom.Xna.AnimatedSprite"/> that has the given <paramref name="assetName"/>.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the asset to load.
+            </param>
+            <returns>
+            The ISprite that has been loaden.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ISpriteLoader.Exists(System.String)">
+            <summary>
+            Determines whether an <see cref="T:Atom.Xna.Sprite"/> with the given <paramref name="assetName"/> exists.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the asset.
+            </param>
+            <returns>
+            true if it exists; -or- otherwise false.
+            </returns>
+        </member>
+        <member name="M:Atom.Xna.ISpriteLoader.LoadAsset(System.String)">
+            <summary>
+            Attempts to loads the <see cref="T:Atom.Xna.Sprite"/> or an instance of
+            an <see cref="T:Atom.Xna.AnimatedSprite"/> that has the given <paramref name="assetName"/>.
+            </summary>
+            <remarks>
+            No ISprite instance is created.
+            </remarks>
+            <param name="assetName">
+            The name that uniquely identifies the asset to load.
+            </param>
+            <returns>
+            The ISpriteAsset that has been loaden.
+            </returns>
         </member>
         <member name="T:Atom.Xna.ISpriteSource">
             <summary>
@@ -6811,10 +6636,388 @@
             Unloads all assets that have been loaden with this IAssetLoader.
             </summary>
         </member>
+        <member name="T:Atom.Xna.PooledSpriteWrapper">
+            <summary>
+            Represents a wrapper around an existing <see cref="T:Atom.Xna.ISprite"/> that adds
+            pooling support. <seealso cref="T:Atom.Collections.Pooling.PooledObjectWrapper`1"/>
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Name">
+            <summary>
+            Gets the name that uniquely identifies the ISprite.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Size">
+            <summary>
+            Gets the size of this ISprite (in pixels).
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Width">
+            <summary>
+            Gets the width of this ISprite (in pixels).
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Height">
+            <summary>
+            Gets the height of this ISprite (in pixels).
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Source">
+            <summary>
+            Gets the <see cref="T:Atom.Math.Rectangle"/> that defines the location 
+            of this ISprite in the <see cref="P:Atom.Xna.PooledSpriteWrapper.Texture"/>.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Rectangle.Empty"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Texture">
+            <summary>
+            Gets the Texture2D of this ISprite.
+            </summary>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Color">
+            <summary>
+            Gets the color this ISprite is tinted-in by default.
+            </summary>
+            <value>
+            The default value is <see cref="P:Microsoft.Xna.Framework.Color.White"/>.
+            </value>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Scale">
+            <summary>
+            Gets the scaling factor that is applied by default for this ISprite.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Vector2.One"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Origin">
+            <summary>
+            Gets the origin of rotation and scaling used by this ISprite.
+            </summary>
+            <value>The default value is <see cref="P:Atom.Math.Vector2.Zero"/>.</value>
+        </member>
+        <member name="P:Atom.Xna.PooledSpriteWrapper.Rotation">
+            <summary>
+            Gets the rotation of this ISprite in radians.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.#ctor(Atom.Xna.ISprite)">
+            <summary>
+            Initializes a new instance of the PooledSpriteWrapper class.
+            </summary>
+            <param name="pooledSprite">
+            The sprite that is intended to be pooled.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(System.Single,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given position
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="x">
+            The position to render the sprite at on the x-axis.
+            </param>
+            <param name="y">
+            The position to render the sprite at on the y-axis.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this <see cref="T:Atom.Xna.ISprite"/>.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="depthLayer">
+            The depth layer to draw the sprite at; used for sorting.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the default settings of this ISprite.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">The color channel modulation to use.</param>
+            <param name="depthLayer">The layer to draw at.</param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Rectangle,Microsoft.Xna.Framework.Color,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite into the given <paramref name="destination"/> rectangle.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="destination">
+            The rectangle to draw the sprite in.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using a mix of the specified and the default settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">The color channel modulation to use.</param>
+            <param name="rotation">The rotation in radians.</param>
+            <param name="origin">The origin of rotation and scaling.</param>
+            <param name="scale">The scaling factor to apply.</param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="effects">
+            The SpriteEffect to apply.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Draw(Atom.Math.Vector2,Microsoft.Xna.Framework.Color,System.Single,Atom.Math.Vector2,Atom.Math.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Atom.Xna.Batches.ISpriteBatch)">
+            <summary>
+            Draws this ISprite at the given <paramref name="position"/>
+            to the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> using the specified settings.
+            </summary>
+            <remarks>
+            <para>
+            This call must be within the ISpriteBatch.Begin/ISpriteBatch.End
+            block of the given <paramref name="batch"/>.
+            </para>
+            <para>
+            It is NOT checked wheter the given <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> is null.
+            </para>
+            </remarks>
+            <param name="position">
+            The position to render the sprite at.
+            </param>
+            <param name="color">
+            The color channel modulation to use.
+            </param>
+            <param name="rotation">
+            The rotation in radians.
+            </param>
+            <param name="origin">
+            The origin of rotation and scaling.
+            </param>
+            <param name="scale">
+            The scaling factor to apply.
+            </param>
+            <param name="effects">
+            The SpriteEffect to apply.
+            </param>
+            <param name="layerDepth">
+            The depth layer to draw the Sprite at.
+            </param>
+            <param name="batch">
+            The <see cref="T:Atom.Xna.Batches.ISpriteBatch"/> to draw to.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.Update(Atom.IUpdateContext)">
+            <summary>
+            Updates the ISprite this PooledSpriteWrapper wraps around;
+            if required.
+            </summary>
+            <param name="updateContext">
+            The current IUpdateContext.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.PooledSpriteWrapper.CloneInstance">
+            <summary>
+            Returns an instance of this ISprite. 
+            This may be a new object or the original object.
+            </summary>
+            <remarks>
+            The cloned object may be the same the original object
+            if there is no need to have independent instances.
+            </remarks>
+            <returns>
+            The clone of this instance.
+            </returns>
+        </member>
         <member name="T:Atom.Xna.ISpriteSheet">
             <summary>
             Represents an ordered sheet of <see cref="T:Atom.Xna.ISprite"/>s.
             </summary>
+        </member>
+        <member name="T:Atom.Xna.ISpriteSheetLoader">
+            <summary>
+            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.ISpriteSheet"/> assets.
+            </summary>
+        </member>
+        <member name="M:Atom.Xna.ISpriteSheetLoader.LoadSpriteSheet(System.String)">
+            <summary>
+            Loads the <see cref="T:Atom.Xna.ISpriteSheet"/> resource with the given <paramref name="assetName"/>.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the ISpriteSheet resource to load.
+            </param>
+            <returns>
+            The ISpriteSheet resource thas has been loaden.
+            </returns>
         </member>
         <member name="T:Atom.Xna.SpriteSheet">
             <summary>
@@ -7161,12 +7364,21 @@
             The size of a single entry in the grid.
             </summary>
         </member>
-        <member name="T:Atom.Xna.ISpriteSheetLoader">
+        <member name="T:Atom.Xna.SpriteSheetLoader">
             <summary>
-            Provides a mechanism that allows loading of <see cref="T:Atom.Xna.ISpriteSheet"/> assets.
+            Implements a mechanism that allows loading of <see cref="T:Atom.Xna.SpriteSheet"/> assets.
+            This class can't be inherited.
             </summary>
         </member>
-        <member name="M:Atom.Xna.ISpriteSheetLoader.LoadSpriteSheet(System.String)">
+        <member name="M:Atom.Xna.SpriteSheetLoader.#ctor(Atom.Xna.ISpriteLoader)">
+            <summary>
+            Initializes a new instance of the SpriteSheetLoader class.
+            </summary>
+            <param name="spriteLoader">
+            Provides a mechanism for loading the sprite resources used by the ISpriteSheets.
+            </param>
+        </member>
+        <member name="M:Atom.Xna.SpriteSheetLoader.LoadSpriteSheet(System.String)">
             <summary>
             Loads the <see cref="T:Atom.Xna.ISpriteSheet"/> resource with the given <paramref name="assetName"/>.
             </summary>
@@ -7176,6 +7388,25 @@
             <returns>
             The ISpriteSheet resource thas has been loaden.
             </returns>
+        </member>
+        <member name="M:Atom.Xna.SpriteSheetLoader.ActuallyLoad(System.String,System.String)">
+            <summary>
+            Implements the actual asset loading logic used by this CachingCustomAssetLoader{TAsset}.
+            </summary>
+            <param name="assetName">
+            The name that uniquely identifies the asset to load.
+            </param>
+            <param name="filePath">
+            The path of the file thatis assumed to contain the asset to load.
+            </param>
+            <returns>
+            The loaded asset.
+            </returns>
+        </member>
+        <member name="F:Atom.Xna.SpriteSheetLoader.reader">
+            <summary>
+            Provides a mechanism for loading the sprite resources used by the ISpriteSheets.
+            </summary>
         </member>
         <member name="T:Atom.Xna.Sprite">
             <summary>
@@ -7610,117 +7841,6 @@
             Provides a mechanism that allows loading of Texture2D assets.
             </summary>
         </member>
-        <member name="T:Atom.Xna.SpriteAtlas">
-            <summary>
-            Represents an atlas of <see cref="T:Atom.Xna.Sprite"/>s that share the same <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D"/>.
-            This class can't be inherited.
-            </summary>
-            <content>
-            Defines the default IObjectReaderWriter for the SpriteAtlas class.
-            </content>
-        </member>
-        <member name="P:Atom.Xna.SpriteAtlas.Texture">
-            <summary>
-            Gets or sets the Texture all <see cref="P:Atom.Xna.SpriteAtlas.Sprites"/> of this SpriteAtlas use.
-            </summary>
-        </member>
-        <member name="P:Atom.Xna.SpriteAtlas.Sprites">
-            <summary>
-            Gets the list of Sprites this SpriteAtlas contains.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.Verify">
-            <summary>
-            Verifies the integrity of this SpriteAtlas.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.VerifySprite(Atom.Xna.Sprite)">
-            <summary>
-            Verifies the integrity of the specified Sprite.
-            </summary>
-            <param name="sprite">
-            The Sprite to verify.
-            </param>
-        </member>
-        <member name="F:Atom.Xna.SpriteAtlas.sprites">
-            <summary>
-            The Sprites that are part of this SpriteAtlas.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.SpriteAtlas.ReaderWriter">
-            <summary>
-            Defines the IObjectReaderWriter that implements serialization and deserialization
-            of <see cref="T:Atom.Xna.SpriteAtlas"/> objects. This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.#ctor(Atom.Xna.ITexture2DLoader)">
-            <summary>
-            Initializes a new instance of the ReaderWriter class.
-            </summary>
-            <param name="textureLoader">
-            Provides a mechanism that allows loading of Texture2D assets.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.Serialize(Atom.Xna.SpriteAtlas,Atom.Storage.ISerializationContext)">
-            <summary>
-            Serializes the given object using the given ISerializationContext.
-            </summary>
-            <param name="object">
-            The object to serialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the serialization process.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.Deserialize(Atom.Xna.SpriteAtlas,Atom.Storage.IDeserializationContext)">
-            <summary>
-            Deserializes the given object using the given IDeserializationContext.
-            </summary>
-            <param name="object">
-            The object to deserialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the deserialization process.
-            </param>
-        </member>
-        <member name="F:Atom.Xna.SpriteAtlas.ReaderWriter.textureLoader">
-            <summary>
-            Provides a mechanism that allows loading of Texture2D assets.
-            </summary>
-        </member>
-        <member name="T:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter">
-            <summary>
-            Defines an IObjectReaderWriter that implements serialization and deserialization
-            of <see cref="T:Atom.Xna.Sprite"/> objects to be stored in a SpriteAtlas.
-            </summary>
-        </member>
-        <member name="F:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Instance">
-            <summary>
-            Represents an instance of the SpriteReaderWriter class.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Serialize(Atom.Xna.Sprite,Atom.Storage.ISerializationContext)">
-            <summary>
-            Serializes the given object using the given ISerializationContext.
-            </summary>
-            <param name="object">
-            The object to serialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the serialization process.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.SpriteAtlas.ReaderWriter.SpriteReaderWriter.Deserialize(Atom.Xna.Sprite,Atom.Storage.IDeserializationContext)">
-            <summary>
-            Deserializes the given object using the given IDeserializationContext.
-            </summary>
-            <param name="object">
-            The object to deserialize.
-            </param>
-            <param name="context">
-            The context that provides everything required for the deserialization process.
-            </param>
-        </member>
         <member name="T:Atom.Xna.SpriteDrawContext">
             <summary>
             Represents an <see cref="T:Atom.IDrawContext"/> that allows the drawing
@@ -7997,50 +8117,6 @@
             The dictionary that maps assetNames onto AnimatedSprite.
             </summary>
         </member>
-        <member name="T:Atom.Xna.SpriteSheetLoader">
-            <summary>
-            Implements a mechanism that allows loading of <see cref="T:Atom.Xna.SpriteSheet"/> assets.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.SpriteSheetLoader.#ctor(Atom.Xna.ISpriteLoader)">
-            <summary>
-            Initializes a new instance of the SpriteSheetLoader class.
-            </summary>
-            <param name="spriteLoader">
-            Provides a mechanism for loading the sprite resources used by the ISpriteSheets.
-            </param>
-        </member>
-        <member name="M:Atom.Xna.SpriteSheetLoader.LoadSpriteSheet(System.String)">
-            <summary>
-            Loads the <see cref="T:Atom.Xna.ISpriteSheet"/> resource with the given <paramref name="assetName"/>.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the ISpriteSheet resource to load.
-            </param>
-            <returns>
-            The ISpriteSheet resource thas has been loaden.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.SpriteSheetLoader.ActuallyLoad(System.String,System.String)">
-            <summary>
-            Implements the actual asset loading logic used by this CachingCustomAssetLoader{TAsset}.
-            </summary>
-            <param name="assetName">
-            The name that uniquely identifies the asset to load.
-            </param>
-            <param name="filePath">
-            The path of the file thatis assumed to contain the asset to load.
-            </param>
-            <returns>
-            The loaded asset.
-            </returns>
-        </member>
-        <member name="F:Atom.Xna.SpriteSheetLoader.reader">
-            <summary>
-            Provides a mechanism for loading the sprite resources used by the ISpriteSheets.
-            </summary>
-        </member>
         <member name="T:Atom.Xna.XnaDeserializationContextExtensions">
             <summary>
             Defines extension methods that allow deserialization of Xna types using the <see cref="T:Atom.Storage.ISerializationContext"/> class.
@@ -8087,82 +8163,6 @@
             </param>
             <returns>
             The loaded Texture2D.
-            </returns>
-        </member>
-        <member name="T:Atom.Xna.IXnaUpdateContext">
-            <summary>
-            Identifies an object that represents an update context used in an XNA application.
-            </summary>
-            <remarks>
-            An update context is passed to the Update method of various objects.
-            </remarks>
-        </member>
-        <member name="T:Atom.Xna.ToXnaMathExtensions">
-            <summary>
-            Contains extension methods that convert At0k math objects into their Xna equivalents.
-            </summary>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Matrix4)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Matrix4"/> into a <see cref="T:Microsoft.Xna.Framework.Matrix"/>.
-            </summary>
-            <param name="matrix">The matrix to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Rectangle)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Rectangle"/> into a <see cref="T:Microsoft.Xna.Framework.Rectangle"/>.
-            </summary>
-            <param name="rectangle">The rectangle to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.RectangleF)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.RectangleF"/> into a <see cref="T:Microsoft.Xna.Framework.Rectangle"/>.
-            </summary>
-            <param name="rectangle">The rectangle to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Point2)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Point2"/> into a <see cref="T:Microsoft.Xna.Framework.Point"/>.
-            </summary>
-            <param name="point">The point to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector2)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Vector2"/> into a <see cref="T:Microsoft.Xna.Framework.Vector2"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector3)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Vector3"/> into a <see cref="T:Microsoft.Xna.Framework.Vector3"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
-            </returns>
-        </member>
-        <member name="M:Atom.Xna.ToXnaMathExtensions.ToXna(Atom.Math.Vector4)">
-            <summary>
-            Converts the <see cref="T:Atom.Math.Vector4"/> into a <see cref="T:Microsoft.Xna.Framework.Vector4"/>.
-            </summary>
-            <param name="vector">The vector to convert.</param>
-            <returns>
-            The converted value.
             </returns>
         </member>
         <member name="T:Atom.Xna.NullTexture2DLoader">

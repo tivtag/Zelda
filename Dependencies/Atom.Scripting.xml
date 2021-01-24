@@ -385,6 +385,17 @@
             This IScriptingEnvironment for method chaining.
             </returns>
         </member>
+        <member name="M:Atom.Scripting.ScriptingEnvironment.Execute(Microsoft.Scripting.Hosting.CompiledCode)">
+            <summary>
+            Compiles and executes the given code under this IScriptingEnvironment.
+            </summary>
+            <param name="code">
+            The code to execute.
+            </param>
+            <returns>
+            This IScriptingEnvironment for method chaining.
+            </returns>
+        </member>
         <member name="M:Atom.Scripting.ScriptingEnvironment.Execute(System.String,Microsoft.Scripting.Hosting.ScriptScope)">
             <summary>
             Compiles and executes the given code under this IScriptingEnvironment.

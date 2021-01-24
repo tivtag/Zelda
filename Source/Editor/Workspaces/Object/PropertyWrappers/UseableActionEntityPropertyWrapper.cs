@@ -121,7 +121,7 @@ namespace Zelda.Editor.Object.PropertyWrappers
                 }
                 else
                 {
-                    var strategyManager = DesignTime.Services.DrawStrategyManager;
+                    Entities.Drawing.DrawStrategyManager strategyManager = DesignTime.Services.DrawStrategyManager;
                     this.WrappedObject.DrawDataAndStrategy = strategyManager.GetStrategyClone( value, this.WrappedObject );
                 }
             }
@@ -159,7 +159,7 @@ namespace Zelda.Editor.Object.PropertyWrappers
         }
 
         /// <summary>
-        /// Returns a clone of this <see cref="IObjectPropertyWrapper"/>.
+        /// Returns a clone of this <see cref="UseableActionEntityPropertyWrapper"/>.
         /// </summary>
         /// <returns>The cloned instance.</returns>
         public override Atom.Design.IObjectPropertyWrapper Clone()

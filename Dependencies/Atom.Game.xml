@@ -818,263 +818,6 @@
             Stores the orgin of this <see cref="T:Atom.Components.Transform.Transform2"/> component.
             </summary>
         </member>
-        <member name="T:Atom.Events.Design.BaseEventCreationEditor">
-            <summary>
-            Defines an <see cref="T:System.Drawing.Design.UITypeEditor"/> that
-            when clicked on opens up a list of Event/EventTrigger Types.
-            !! Warning: The <see cref="T:Atom.Events.Design.BaseEventCreationEditor"/> requires
-            an <see cref="T:Atom.Events.IEventManagerService"/> to be available from the <see cref="T:Atom.GlobalServices"/>.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.BaseEventCreationEditor.#ctor(Atom.Events.EventDataType)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.BaseEventCreationEditor"/> class.
-            </summary>
-            <param name="mode">
-            States what kind of Event Data is created by the <see cref="T:Atom.Events.Design.EventCreationEditor"/>.
-            </param>
-        </member>
-        <member name="M:Atom.Events.Design.BaseEventCreationEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Gets called when the user tries to edit the value
-            this Editor is attached to.
-            </summary>
-            <param name="context">
-            An ITypeDescriptorContext that can be used to optain additional context information.
-            </param>
-            <param name="provider">
-            An IServiceProvider that this editor can use to obtain services.
-            </param>
-            <param name="value">
-            The value currently edited.
-            </param>
-            <returns>
-            The new value.
-            </returns>
-        </member>
-        <member name="M:Atom.Events.Design.BaseEventCreationEditor.ShowCreateNewDialog(Atom.Events.EventManager,System.Object)">
-            <summary>
-            Shows the dialog that allows the user to create new Event Data.
-            </summary>
-            <param name="eventManager">
-            The EventManager object.
-            </param>
-            <param name="value">
-            The value currently edited.
-            </param>
-            <returns>
-            The new value.
-            </returns>
-        </member>
-        <member name="M:Atom.Events.Design.BaseEventCreationEditor.ShowSelectDialog(Atom.Events.EventManager,System.Object)">
-            <summary>
-            Shows the dialog that allows the user to select an existing Event Data object.
-            </summary>
-            <param name="eventManager">
-            The EventManager object.
-            </param>
-            <param name="value">
-            The value currently edited.
-            </param>
-            <returns>
-            The new value.
-            </returns>
-        </member>
-        <member name="M:Atom.Events.Design.BaseEventCreationEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Overriden to return what <see cref="T:System.Drawing.Design.UITypeEditorEditStyle"/> the custom Editor uses.
-            </summary>
-            <param name="context">
-            An ITypeDescriptorContext that can be used to optain additional context information.
-            </param>
-            <returns>
-            Returns <see cref="F:System.Drawing.Design.UITypeEditorEditStyle.Modal"/>.
-            </returns>
-        </member>
-        <member name="F:Atom.Events.Design.BaseEventCreationEditor.mode">
-            <summary>
-            States what kind of EventData this Editor is editting.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.Design.EventCreationDialog">
-            <summary>
-            Defines a WinForms dialog that can be used
-            to select an <see cref="T:Atom.Events.Event"/> type or an <see cref="T:Atom.Events.EventTrigger"/> type
-            which has been registered on the <see cref="T:Atom.Events.EventTypeRegister"/>.
-            This is a sealed class.
-            </summary>
-        </member>
-        <member name="P:Atom.Events.Design.EventCreationDialog.SelectedType">
-            <summary>
-            Gets or sets the <see cref="T:Atom.Events.Event"/> or <see cref="T:Atom.Events.EventTrigger"/> <see cref="T:System.Type"/> 
-            which is selected in the <see cref="T:Atom.Events.Design.EventCreationDialog"/>.
-            </summary>
-            <value>The type that has been selected by the user.</value>
-        </member>
-        <member name="P:Atom.Events.Design.EventCreationDialog.EnteredName">
-            <summary>
-            Gets the name that has been entered by the user.
-            </summary>
-            <value>The name that has been entered by the user.</value>
-        </member>
-        <member name="M:Atom.Events.Design.EventCreationDialog.#ctor(Atom.Events.EventDataType,Atom.Events.EventManager)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.EventCreationDialog"/> class.
-            </summary>
-            <param name="dataType">
-            States what kind of Event Type Data can be selected in the EventCreationDialog.
-            </param>
-            <param name="eventManager">
-            The <see cref="T:Atom.Events.EventManager"/> object will manage the 
-            about to be created Event Data.
-            </param>
-        </member>
-        <member name="M:Atom.Events.Design.EventCreationDialog.OnButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the 'Ok' button.
-            </summary>
-            <param name="sender">
-            The sender of the event.
-            </param>
-            <param name="e">
-            The EventArgs that contains the event data.
-            </param>
-        </member>
-        <member name="F:Atom.Events.Design.EventCreationDialog.eventManager">
-            <summary>
-            The EventManager currently in-use.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventCreationDialog.dataType">
-            <summary>
-            The type of event data created by this EventCreationDialog.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventCreationDialog.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.EventCreationDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Atom.Events.Design.EventCreationDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.Design.EventSelectionOrCreationDialog">
-            <summary>
-            Provides a small dialog from which the user can
-            choose whether he wants to select an existing Event
-            or create a new one.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.EventSelectionOrCreationDialog"/> class.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.ShowDialog">
-            <summary>
-            Shows the <see cref="T:Atom.Events.Design.EventSelectionOrCreationDialog"/>,
-            returning the result of the 'query'.
-            </summary>
-            <returns>
-            The mode that has been selcted by the user.
-            </returns>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.OnSelectButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the 'Select' button.
-            </summary>
-            <param name="sender">The sender of the event.</param>
-            <param name="e">The EventArgs that contains the event data.</param>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.OnCreateButtonClicked(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks on the 'Create' button.
-            </summary>
-            <param name="sender">The sender of the event.</param>
-            <param name="e">The EventArgs that contains the event data.</param>
-        </member>
-        <member name="F:Atom.Events.Design.EventSelectionOrCreationDialog.mode">
-            <summary>
-            The currently selected mode.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventSelectionOrCreationDialog.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Atom.Events.Design.EventSelectionOrCreationDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.Design.EventSelectionOrCreation">
-            <summary>
-            Enumerates the different modi the user
-            can select within the <see cref="T:Atom.Events.Design.EventSelectionOrCreationDialog"/>.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventSelectionOrCreation.None">
-            <summary>
-            Nothing has been set.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventSelectionOrCreation.Select">
-            <summary>
-            An existing even should be selected.
-            </summary>
-        </member>
-        <member name="F:Atom.Events.Design.EventSelectionOrCreation.Create">
-            <summary>
-            A new event should be created.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.Design.EventCreationEditor">
-            <summary>
-            Defines an <see cref="T:System.Drawing.Design.UITypeEditor"/> that
-            when clicked on opens up a list of Event Types.
-            This is a sealed class.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.EventCreationEditor.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.EventCreationEditor"/> class.
-            </summary>
-        </member>
-        <member name="T:Atom.Events.Design.ExistingEventCollectionEditor">
-            <summary>
-            Represents an <see cref="T:Atom.Design.ExistingItemCollectionEditor`1"/> that
-            can be attached to a property that returns a collection of <see cref="T:Atom.Events.Event"/>s.
-            </summary>
-            <remarks>
-            Using this UITypeEditor one can insert <b>existing</b> <see cref="T:Atom.Events.Event"/>s into a collection of events.
-            </remarks>
-        </member>
-        <member name="M:Atom.Events.Design.ExistingEventCollectionEditor.CreateSelectionDialog">
-            <summary>
-            Creates the <see cref="T:Atom.Design.IItemSelectionDialog`1"/> this ExistingItemCollectionEditor{TItem}
-            uses internally. Must be overriden by users of this class.
-            </summary>
-            <returns>
-            The <see cref="T:Atom.Design.IItemSelectionDialog`1"/> that should be used by this ExistingItemCollectionEditor{TItem}.
-            </returns>
-        </member>
         <member name="T:Atom.Events.Design.LocalizedCategoryAttribute">
             <summary>
             Defines a localized CategoryAttribute that uses the <see cref="T:Atom.Events.EventStrings"/>
@@ -1119,18 +862,6 @@
             <param name="resourceName">
             The name of the string resource that is locked-up.
             </param>
-        </member>
-        <member name="T:Atom.Events.Design.TriggerCreationEditor">
-            <summary>
-            Defines an <see cref="T:System.Drawing.Design.UITypeEditor"/> that
-            when clicked on opens up a list of EventTrigger Types.
-            This is a sealed class.
-            </summary>
-        </member>
-        <member name="M:Atom.Events.Design.TriggerCreationEditor.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Atom.Events.Design.TriggerCreationEditor"/> class.
-            </summary>
         </member>
         <member name="T:Atom.Events.EventDataType">
             <summary>
@@ -1683,253 +1414,253 @@
         </member>
         <member name="T:Atom.Events.EventStrings">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventTriggerXToYThereAlreadyExistsSuchAnEventTrigger">
             <summary>
-              Looks up a localized string similar to Can&apos;t change the name of the EventTrigger &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an EventTrigger in the owning Event Manager. EventTrigger names must be unique..
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t change the name of the EventTrigger &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an EventTrigger in the owning Event Manager. EventTrigger names must be unique. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_CantChangeNameOfEventXToYThereAlreadyExistsSuchAnEvent">
             <summary>
-              Looks up a localized string similar to Can&apos;t change the name of the Event &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an Event in the owning Event Manager. Event names must be unique..
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t change the name of the Event &apos;{0}&apos; to &apos;{1}&apos;. There already exists such an Event in the owning Event Manager. Event names must be unique. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_CantDoThisEventXTypeNameYHasNotBeenAddedToManager">
             <summary>
-              Looks up a localized string similar to Can&apos;t do this. The event &apos;{0}&apos; (type-name=&apos;{1}&apos;) has not been added to an EventManager..
+              Sucht eine lokalisierte Zeichenfolge, die Can&apos;t do this. The event &apos;{0}&apos; (type-name=&apos;{1}&apos;) has not been added to an EventManager. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventManagerReturnedByEventServiceIsNull">
             <summary>
-              Looks up a localized string similar to The EventManager returned by the existing IEventManagerService is null..
+              Sucht eine lokalisierte Zeichenfolge, die The EventManager returned by the existing IEventManagerService is null. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventNameIsNull">
             <summary>
-              Looks up a localized string similar to The name of the Event is null..
+              Sucht eine lokalisierte Zeichenfolge, die The name of the Event is null. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventTriggerNameIsNull">
             <summary>
-              Looks up a localized string similar to The name of the EventTrigger is null..
+              Sucht eine lokalisierte Zeichenfolge, die The name of the EventTrigger is null. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventTriggerXAlreadyAddedToAnEventManager">
             <summary>
-              Looks up a localized string similar to The EventTrigger &apos;{0}&apos; already has been added to an EventManager..
+              Sucht eine lokalisierte Zeichenfolge, die The EventTrigger &apos;{0}&apos; already has been added to an EventManager. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventXAlreadyAddedToAnEventManager">
             <summary>
-              Looks up a localized string similar to The Event &apos;{0}&apos; already has been added to an EventManager..
+              Sucht eine lokalisierte Zeichenfolge, die The Event &apos;{0}&apos; already has been added to an EventManager. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_EventXDoesNotExistInEventManager">
             <summary>
-              Looks up a localized string similar to The requested Event &apos;{0}&apos; doesn&apos;t exist in the EventManager..
+              Sucht eine lokalisierte Zeichenfolge, die The requested Event &apos;{0}&apos; doesn&apos;t exist in the EventManager. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_FloorXIsInvalidFloorCountY">
             <summary>
-              Looks up a localized string similar to The floor number &apos;{0} is invalid. Only values from 0 to {1} are valid..
+              Sucht eine lokalisierte Zeichenfolge, die The floor number &apos;{0} is invalid. Only values from 0 to {1} are valid. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_IEventManagerServiceIsMissing">
             <summary>
-              Looks up a localized string similar to The IEventManagerService is missing. This is required for this operation..
+              Sucht eine lokalisierte Zeichenfolge, die The IEventManagerService is missing. This is required for this operation. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_LongTermEventRequiresEventManager">
             <summary>
-              Looks up a localized string similar to &quot;The LongTermEvent is required to be added to an EventManager.&quot;.
+              Sucht eine lokalisierte Zeichenfolge, die &quot;The LongTermEvent is required to be added to an EventManager.&quot; ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventNamedX">
             <summary>
-              Looks up a localized string similar to There already exists an Event with the name &apos;{0}&apos;. Events must have unique names..
+              Sucht eine lokalisierte Zeichenfolge, die There already exists an Event with the name &apos;{0}&apos;. Events must have unique names. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.Error_ThereAlreadyExistsAnEventTriggerNamedX">
             <summary>
-              Looks up a localized string similar to There already exists an EventTrigger with the name &apos;{0}&apos;. EventTriggers must have unique names..
+              Sucht eine lokalisierte Zeichenfolge, die There already exists an EventTrigger with the name &apos;{0}&apos;. EventTriggers must have unique names. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.MissingInformation">
             <summary>
-              Looks up a localized string similar to Missing Information.
+              Sucht eine lokalisierte Zeichenfolge, die Missing Information ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PleaseEnterName">
             <summary>
-              Looks up a localized string similar to Please enter a name..
+              Sucht eine lokalisierte Zeichenfolge, die Please enter a name. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropCate_Identification">
             <summary>
-              Looks up a localized string similar to Identification.
+              Sucht eine lokalisierte Zeichenfolge, die Identification ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropCate_Settings">
             <summary>
-              Looks up a localized string similar to Settings.
+              Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_AET_Area">
             <summary>
-              Looks up a localized string similar to The area in which the AreaEventTrigger may get triggered..
+              Sucht eine lokalisierte Zeichenfolge, die The area in which the AreaEventTrigger may get triggered. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_AET_TileArea">
             <summary>
-              Looks up a localized string similar to The area in which the AreaEventTrigger may get triggered (in tile-space)..
+              Sucht eine lokalisierte Zeichenfolge, die The area in which the AreaEventTrigger may get triggered (in tile-space). ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOff">
             <summary>
-              Looks up a localized string similar to The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is false..
+              Sucht eine lokalisierte Zeichenfolge, die The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is false. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_EventOn">
             <summary>
-              Looks up a localized string similar to The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is true..
+              Sucht eine lokalisierte Zeichenfolge, die The Event that gets triggered when the DualSwitchEvent is triggered and the IsSwitched flag is true. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitchable">
             <summary>
-              Looks up a localized string similar to States whether the DualSwitchEvent can be switched on or off...
+              Sucht eine lokalisierte Zeichenfolge, die States whether the DualSwitchEvent can be switched on or off.. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_DSEvent_IsSwitched">
             <summary>
-              Looks up a localized string similar to States whether the DualSwitchEvent is initially in a switched state or not..
+              Sucht eine lokalisierte Zeichenfolge, die States whether the DualSwitchEvent is initially in a switched state or not. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_E_Name">
             <summary>
-              Looks up a localized string similar to The (unique) name of the Event. .
+              Sucht eine lokalisierte Zeichenfolge, die The (unique) name of the Event.  ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_ET_Event">
             <summary>
-              Looks up a localized string similar to The Event which gets triggered when the EventTrigger is triggered..
+              Sucht eine lokalisierte Zeichenfolge, die The Event which gets triggered when the EventTrigger is triggered. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_ET_IsActive">
             <summary>
-              Looks up a localized string similar to States whether the EventTrigger is initially in an active state or not. Only active Triggers can get triggered..
+              Sucht eine lokalisierte Zeichenfolge, die States whether the EventTrigger is initially in an active state or not. Only active Triggers can get triggered. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_ET_Name">
             <summary>
-              Looks up a localized string similar to The (unique) name of the EventTrigger..
+              Sucht eine lokalisierte Zeichenfolge, die The (unique) name of the EventTrigger. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_Floor">
             <summary>
-              Looks up a localized string similar to The floor this Object is part of..
+              Sucht eine lokalisierte Zeichenfolge, die The floor this Object is part of. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_MultiEvent_Events">
             <summary>
-              Looks up a localized string similar to The list of events this MultiEvent delegates all calls to Trigger to..
+              Sucht eine lokalisierte Zeichenfolge, die The list of events this MultiEvent delegates all calls to Trigger to. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Event">
             <summary>
-              Looks up a localized string similar to The event that gets triggered after Time seconds after the TimedEvent was triggered..
+              Sucht eine lokalisierte Zeichenfolge, die The event that gets triggered after Time seconds after the TimedEvent was triggered. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_TimedEvent_Time">
             <summary>
-              Looks up a localized string similar to The time in seconds until the TimedEvent delegates a Trigger call onto the Event..
+              Sucht eine lokalisierte Zeichenfolge, die The time in seconds until the TimedEvent delegates a Trigger call onto the Event. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDesc_TypeName">
             <summary>
-              Looks up a localized string similar to Specifies type information about the Object..
+              Sucht eine lokalisierte Zeichenfolge, die Specifies type information about the Object. ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_AET_Area">
             <summary>
-              Looks up a localized string similar to Trigger Area.
+              Sucht eine lokalisierte Zeichenfolge, die Trigger Area ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_AET_TileArea">
             <summary>
-              Looks up a localized string similar to Trigger Area (in tile-space).
+              Sucht eine lokalisierte Zeichenfolge, die Trigger Area (in tile-space) ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOff">
             <summary>
-              Looks up a localized string similar to Event (when disabled).
+              Sucht eine lokalisierte Zeichenfolge, die Event (when disabled) ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_EventOn">
             <summary>
-              Looks up a localized string similar to Event (when enabled).
+              Sucht eine lokalisierte Zeichenfolge, die Event (when enabled) ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitchable">
             <summary>
-              Looks up a localized string similar to Is Switchable.
+              Sucht eine lokalisierte Zeichenfolge, die Is Switchable ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_DSEvent_IsSwitched">
             <summary>
-              Looks up a localized string similar to Is Switched.
+              Sucht eine lokalisierte Zeichenfolge, die Is Switched ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_Event">
             <summary>
-              Looks up a localized string similar to Event.
+              Sucht eine lokalisierte Zeichenfolge, die Event ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_Floor">
             <summary>
-              Looks up a localized string similar to Floor.
+              Sucht eine lokalisierte Zeichenfolge, die Floor ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_IsActive">
             <summary>
-              Looks up a localized string similar to Is Active.
+              Sucht eine lokalisierte Zeichenfolge, die Is Active ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_MultiEvent_Events">
             <summary>
-              Looks up a localized string similar to Events.
+              Sucht eine lokalisierte Zeichenfolge, die Events ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_Name">
             <summary>
-              Looks up a localized string similar to Name.
+              Sucht eine lokalisierte Zeichenfolge, die Name ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Event">
             <summary>
-              Looks up a localized string similar to Event.
+              Sucht eine lokalisierte Zeichenfolge, die Event ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_TimedEvent_Time">
             <summary>
-              Looks up a localized string similar to Time.
+              Sucht eine lokalisierte Zeichenfolge, die Time ähnelt.
             </summary>
         </member>
         <member name="P:Atom.Events.EventStrings.PropDisp_TypeName">
             <summary>
-              Looks up a localized string similar to Type Name.
+              Sucht eine lokalisierte Zeichenfolge, die Type Name ähnelt.
             </summary>
         </member>
         <member name="T:Atom.Events.DualSwitchEvent">

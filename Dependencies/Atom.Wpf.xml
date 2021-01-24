@@ -1488,7 +1488,7 @@
             cached to reduce reflection-related lock-up time.
             </summary>
         </member>
-        <member name="T:Atom.Wpf.Dialogs.ItemSelectionDialog`1">
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialog`1">
             <summary>
             Implements a mechanism that allows the user to select one or more nameable items of type <typeparamref name="TItem"/>.
             This class can't be inherited.
@@ -1497,17 +1497,17 @@
             The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
             </typeparam>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog`1.SelectedItem">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.SelectedItem">
             <summary>
             Gets or sets the item that the user has selected.
             </summary>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog`1.SelectedItems">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.SelectedItems">
             <summary>
             Gets the items that the user has selected.
             </summary>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog`1.AllowMultipleSelection">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.AllowMultipleSelection">
             <summary>
             Gets or sets a value indicating whether the user should
             be allowed to select multiple items.
@@ -1516,7 +1516,7 @@
             The default value is false;
             </value>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Initializes a new instance of the ItemSelectionDialog class.
             </summary>
@@ -1524,7 +1524,7 @@
             The items that should be selectable by the user.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog`1.ShowDialog">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog`1.ShowDialog">
             <summary>
             Shows this IItemSelectionDialog{TItem}
             </summary>
@@ -1533,12 +1533,12 @@
             -or- false if the user has canceled the operatioon. 
             </returns>
         </member>
-        <member name="F:Atom.Wpf.Dialogs.ItemSelectionDialog`1.dialog">
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog`1.dialog">
             <summary>
             The actual WPF dialog that is used to drive the dialog.
             </summary>
         </member>
-        <member name="T:Atom.Wpf.Dialogs.ItemSelectionDialog">
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialog">
             <summary>
             Implements a mechanism that allows the user to select one or more nameable items.
             </summary>
@@ -1546,17 +1546,17 @@
             ItemSelectionDialog
             </summary>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog.SelectedItem">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.SelectedItem">
             <summary>
             Gets or sets the item that the user has selected.
             </summary>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog.SelectedItems">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.SelectedItems">
             <summary>
             Gets the items that the user has selected.
             </summary>
         </member>
-        <member name="P:Atom.Wpf.Dialogs.ItemSelectionDialog.AllowMultipleSelection">
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.AllowMultipleSelection">
             <summary>
             Gets or sets a value indicating whether the user should
             be allowed to select multiple Assets.
@@ -1565,7 +1565,7 @@
             The default value is false;
             </value>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.#ctor(System.Collections.Generic.IEnumerable{Atom.IReadOnlyNameable})">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.#ctor(System.Collections.Generic.IEnumerable{Atom.IReadOnlyNameable})">
             <summary>
             Initializes a new instance of the ItemSelectionDialog class.
             </summary>
@@ -1573,7 +1573,7 @@
             The items that should be selectable by the user.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.SelectAsset(System.Int32)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.SelectAsset(System.Int32)">
             <summary>
             Selects the Asset at the given index.
             </summary>
@@ -1581,7 +1581,7 @@
             The zero-based index of the asset to select.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnAssetSearchBoxTextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
             <summary>
             Called when the user has entered text into the textBox.
             </summary>
@@ -1592,7 +1592,7 @@
             The TextChangedEventArgs that contain the event data.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.FindSearchMatches(System.String)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.FindSearchMatches(System.String)">
             <summary>
             Finds the indices of the assets whose name match the given searchText.
             </summary>
@@ -1600,7 +1600,7 @@
             The asset name that should be searched.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnAssetSearchBoxTextKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
             <summary>
             Called when the user has entered text into the textBox.
             </summary>
@@ -1611,7 +1611,7 @@
             The KeyEventArgs that contain the event data.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnAssetSearchBoxTextPreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextPreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
             <summary>
             Called when the user has entered text into the textBox.
             </summary>
@@ -1622,7 +1622,7 @@
             The KeyEventArgs that contain the event data.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnListBoxItemsKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnListBoxItemsKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
             <summary>
             Called when the user has pressed any key while the listBoxItems is focused.
             </summary>
@@ -1633,7 +1633,7 @@
             The RoutedEventArgs that contains the event args.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnSelectButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnSelectButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Called when the user has clicked on the Select button.
             </summary>
@@ -1644,7 +1644,7 @@
             The RoutedEventArgs that contains the event args.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnCancelButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnCancelButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Called when the user has clicked on the Cancel button.
             </summary>
@@ -1655,7 +1655,7 @@
             The RoutedEventArgs that contains the event args.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.OnWindowKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnWindowKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
             <summary>
             Called when the user has pressed any key while the window is focused.
             </summary>
@@ -1666,7 +1666,7 @@
             The RoutedEventArgs that contains the event args.
             </param>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.ShowDialog">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.ShowDialog">
             <summary>
             Shows this ItemSelectionDialog.
             </summary>
@@ -1675,20 +1675,41 @@
             -or- false if the user has canceled the operatioon. 
             </returns>
         </member>
-        <member name="F:Atom.Wpf.Dialogs.ItemSelectionDialog.matchIndex">
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog.matchIndex">
             <summary>
-            The zero-based index of the currently selected match in the <see cref="F:Atom.Wpf.Dialogs.ItemSelectionDialog.matches"/> list.
+            The zero-based index of the currently selected match in the <see cref="F:Atom.Wpf.Design.ItemSelectionDialog.matches"/> list.
             </summary>
         </member>
-        <member name="F:Atom.Wpf.Dialogs.ItemSelectionDialog.matches">
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog.matches">
             <summary>
             The list of indices that are a match for the current search.
             </summary>
         </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialog.InitializeComponent">
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialogFactory">
+            <summary>
+            Implements a machanism for creating IItemSelectionDialog{TIem} instances.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialogFactory.Build``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a new IItemSelectionDialog{TItem} that allows the user
+            to select the specified items.
+            </summary>
+            <typeparam name="TItem">
+            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
+            </typeparam>
+            <param name="items">
+            The items the user might select.
+            </param>
+            <returns>
+            The newly created IItemSelectionDialog{TItem}.
+            </returns>
         </member>
         <member name="T:Atom.Wpf.Dialogs.ColorPickerDialog">
             <summary>
@@ -1727,27 +1748,6 @@
             <summary>
             InitializeComponent
             </summary>
-        </member>
-        <member name="T:Atom.Wpf.Dialogs.ItemSelectionDialogFactory">
-            <summary>
-            Implements a machanism for creating IItemSelectionDialog{TIem} instances.
-            This class can't be inherited.
-            </summary>
-        </member>
-        <member name="M:Atom.Wpf.Dialogs.ItemSelectionDialogFactory.Build``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Creates a new IItemSelectionDialog{TItem} that allows the user
-            to select the specified items.
-            </summary>
-            <typeparam name="TItem">
-            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
-            </typeparam>
-            <param name="items">
-            The items the user might select.
-            </param>
-            <returns>
-            The newly created IItemSelectionDialog{TItem}.
-            </returns>
         </member>
         <member name="T:Atom.Wpf.Dialogs.OverwritePromptResult">
             <summary>
@@ -1837,41 +1837,6 @@
             <summary>
             InitializeComponent
             </summary>
-        </member>
-        <member name="T:Atom.Wpf.QuestionMessageBox">
-            <summary>
-            Defines static utility methods that provide an easy
-            way to show a MessageBox that asks the user a Yes/No question.
-            </summary>
-        </member>
-        <member name="M:Atom.Wpf.QuestionMessageBox.Show(System.String)">
-            <summary>
-            Shows a modal <see cref="T:System.Windows.MessageBox"/> that asks the
-            user the given <paramref name="question"/>.
-            </summary>
-            <param name="question">
-            The question to ask the user.
-            </param>
-            <returns>
-            True if the user has answered to the question with Yes;
-            otherwise false.
-            </returns>
-        </member>
-        <member name="T:Atom.Wpf.SafeExecute">
-            <summary>
-            Defines mechanism for executing <see cref="T:System.Action"/>s
-            within a specific safe context.
-            </summary>
-        </member>
-        <member name="M:Atom.Wpf.SafeExecute.WithMsgBox(System.Action)">
-            <summary>
-            Executes the specified Action within a safe context
-            that catches all exceptions and informs the user by displaying
-            the error in a MessageBox.
-            </summary>
-            <param name="action">
-            The action to apply.
-            </param>
         </member>
         <member name="T:Atom.Wpf.GameLoop">
             <summary>
@@ -2007,6 +1972,67 @@
             The converted RGB <see cref="T:System.Windows.Media.Color"/> color.
             </returns>
         </member>
+        <member name="T:Atom.Wpf.LambdaCommand">
+            <summary>
+            Represents an <see cref="T:System.Windows.Input.ICommand"/> that delegates its actions to lambdas / delegates.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.LambdaCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.#ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})">
+            <summary>
+            Initializes a new instance of the LambdaCommand class.
+            </summary>
+            <param name="action">
+            The action that is executed when the new LambdaCommand is executed.
+            </param>
+            <param name="canExecute">
+            The function that determines whether the new LambdaCommand can be executed in its current state.
+            If null then this LambdaCommand can always be executed.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">
+            Data used by the command.
+            If the command does not require data to be passed, this object can be set to null.
+            </param>
+            <returns>
+            true if this command can be executed;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">
+            Data used by the command.
+            If the command does not require data to be passed, this object can be set to null.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.OnCanExecuteChanged">
+            <summary>
+            Notifies this LambdaCommand that its current <see cref="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)"/>
+            change might have changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.LambdaCommand.action">
+            <summary>
+            The action that is executed when the new LambdaCommand is executed.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.LambdaCommand.canExecute">
+            <summary>
+            The function that determines whether this LambdaCommand can be executed in its current state.
+            If null then this LambdaCommand can always be executed.
+            </summary>
+        </member>
         <member name="T:Atom.Wpf.MathExtensions">
             <summary>
             Contains extensions that are provide methods to make working with both Atom.Math types and WPF easier.
@@ -2123,66 +2149,40 @@
               Looks up a localized string similar to Color Picker.
             </summary>
         </member>
-        <member name="T:Atom.Wpf.LambdaCommand">
+        <member name="T:Atom.Wpf.QuestionMessageBox">
             <summary>
-            Represents an <see cref="T:System.Windows.Input.ICommand"/> that delegates its actions to lambdas / delegates.
+            Defines static utility methods that provide an easy
+            way to show a MessageBox that asks the user a Yes/No question.
             </summary>
         </member>
-        <member name="E:Atom.Wpf.LambdaCommand.CanExecuteChanged">
+        <member name="M:Atom.Wpf.QuestionMessageBox.Show(System.String)">
             <summary>
-            Occurs when changes occur that affect whether or not the command should execute.
+            Shows a modal <see cref="T:System.Windows.MessageBox"/> that asks the
+            user the given <paramref name="question"/>.
             </summary>
-        </member>
-        <member name="M:Atom.Wpf.LambdaCommand.#ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})">
-            <summary>
-            Initializes a new instance of the LambdaCommand class.
-            </summary>
-            <param name="action">
-            The action that is executed when the new LambdaCommand is executed.
-            </param>
-            <param name="canExecute">
-            The function that determines whether the new LambdaCommand can be executed in its current state.
-            If null then this LambdaCommand can always be executed.
-            </param>
-        </member>
-        <member name="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)">
-            <summary>
-            Defines the method that determines whether the command can execute in its current state.
-            </summary>
-            <param name="parameter">
-            Data used by the command.
-            If the command does not require data to be passed, this object can be set to null.
+            <param name="question">
+            The question to ask the user.
             </param>
             <returns>
-            true if this command can be executed;
-            otherwise, false.
+            True if the user has answered to the question with Yes;
+            otherwise false.
             </returns>
         </member>
-        <member name="M:Atom.Wpf.LambdaCommand.Execute(System.Object)">
+        <member name="T:Atom.Wpf.SafeExecute">
             <summary>
-            Defines the method to be called when the command is invoked.
+            Defines mechanism for executing <see cref="T:System.Action"/>s
+            within a specific safe context.
             </summary>
-            <param name="parameter">
-            Data used by the command.
-            If the command does not require data to be passed, this object can be set to null.
+        </member>
+        <member name="M:Atom.Wpf.SafeExecute.WithMsgBox(System.Action)">
+            <summary>
+            Executes the specified Action within a safe context
+            that catches all exceptions and informs the user by displaying
+            the error in a MessageBox.
+            </summary>
+            <param name="action">
+            The action to apply.
             </param>
-        </member>
-        <member name="M:Atom.Wpf.LambdaCommand.OnCanExecuteChanged">
-            <summary>
-            Notifies this LambdaCommand that its current <see cref="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)"/>
-            change might have changed.
-            </summary>
-        </member>
-        <member name="F:Atom.Wpf.LambdaCommand.action">
-            <summary>
-            The action that is executed when the new LambdaCommand is executed.
-            </summary>
-        </member>
-        <member name="F:Atom.Wpf.LambdaCommand.canExecute">
-            <summary>
-            The function that determines whether this LambdaCommand can be executed in its current state.
-            If null then this LambdaCommand can always be executed.
-            </summary>
         </member>
         <member name="T:Atom.Wpf.IViewModel`1">
             <summary>
@@ -2200,6 +2200,17 @@
             <summary>
             Gets the model this <see cref="T:Atom.Wpf.IViewModel`1"/> wraps around.
             </summary>
+        </member>
+        <member name="T:Atom.Wpf.IViewModelCommand`2">
+            <summary>
+            Definues a command that is executed within a View-ViewModel-Model context.
+            </summary>
+            <typeparam name="TViewModel">
+            The type of the view model.
+            </typeparam>
+            <typeparam name="TModel">
+            The type of the model.
+            </typeparam>
         </member>
         <member name="P:Atom.Wpf.IViewModelCommand`2.Model">
             <summary>

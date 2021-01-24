@@ -88,9 +88,13 @@ namespace Zelda.ItemCreator
             this.Services.AddService<Zelda.BubbleTextManager>( new Zelda.BubbleTextManager() );
             this.Services.AddService<Zelda.Weather.Creators.IWeatherCreatorMap>( new Zelda.Weather.Creators.WeatherCreatorMap() );
 
-            var dialogFactory = new Atom.Wpf.Dialogs.ItemSelectionDialogFactory();
+            var dialogFactory = new Atom.Wpf.Design.ItemSelectionDialogFactory();
             this.Services.AddService( typeof( Atom.Design.IItemSelectionDialogFactory ), dialogFactory );
             GlobalServices.Container.AddService( typeof( Atom.Design.IItemSelectionDialogFactory ), dialogFactory );
+
+            var existingItemCollectionEditorFormFactory = new Atom.Wpf.Design.ExistingItemCollectionEditorFormFactory();
+            this.Services.AddService( typeof( Atom.Design.IExistingItemCollectionEditorFormFactory ), existingItemCollectionEditorFormFactory );
+            GlobalServices.Container.AddService<Atom.Design.IExistingItemCollectionEditorFormFactory>( existingItemCollectionEditorFormFactory );
         }
 
         /// <summary>

@@ -302,6 +302,21 @@
             The IValueModifier that is applied on the Distance to create the Weight.
             </summary>
         </member>
+        <member name="T:Atom.Waypoints.PathSegmentWaypoint">
+            <summary>
+            Enumerates the Waypoints that are part of a <see cref="T:Atom.Waypoints.PathSegment"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Waypoints.PathSegmentWaypoint.From">
+            <summary>
+            The first Waypoint in a PathSegment.
+            </summary>
+        </member>
+        <member name="F:Atom.Waypoints.PathSegmentWaypoint.To">
+            <summary>
+            The second Waypoint in a PathSegment.
+            </summary>
+        </member>
         <member name="T:Atom.Waypoints.ITilePathSegmentPathBuildService">
             <summary>
             Provides mechanism that builds the <see cref="T:Atom.Scene.Tiles.TilePath"/> of a <see cref="T:Atom.Waypoints.TilePathSegment"/>.
@@ -318,21 +333,6 @@
             <returns>
             The path for the specified TilePathSegment on the tile level.
             </returns>
-        </member>
-        <member name="T:Atom.Waypoints.PathSegmentWaypoint">
-            <summary>
-            Enumerates the Waypoints that are part of a <see cref="T:Atom.Waypoints.PathSegment"/>.
-            </summary>
-        </member>
-        <member name="F:Atom.Waypoints.PathSegmentWaypoint.From">
-            <summary>
-            The first Waypoint in a PathSegment.
-            </summary>
-        </member>
-        <member name="F:Atom.Waypoints.PathSegmentWaypoint.To">
-            <summary>
-            The second Waypoint in a PathSegment.
-            </summary>
         </member>
         <member name="T:Atom.Waypoints.TilePathSegment">
             <summary>
