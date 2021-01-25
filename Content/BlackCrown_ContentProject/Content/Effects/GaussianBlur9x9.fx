@@ -41,18 +41,18 @@ sampler2D SourceTextureSampler = sampler_state
 
 struct VS_OUTPUT
 {
-	float4 Position : POSITION;
-	float2 TexCoord : TEXCOORD0;
+    float4 Position : POSITION;
+    float2 TexCoord : TEXCOORD0;
 };
 
 VS_OUTPUT Common_VS(float4 Position : POSITION, float2 TexCoord : TEXCOORD0)
 {
-	VS_OUTPUT OUT;
-	
-	OUT.Position = Position;
-	OUT.TexCoord = TexCoord;
-	
-	return OUT;
+    VS_OUTPUT OUT;
+    
+    OUT.Position = Position;
+    OUT.TexCoord = TexCoord;
+    
+    return OUT;
 }
 
 
@@ -68,7 +68,7 @@ float4 GaussianBlurH(float2 texCoord : TEXCOORD0) : COLOR
     {
         color += (tex2D(SourceTextureSampler, texCoord + float2(Offsets[i], 0.0f)) * Weights[i]);
     }
-        
+    
     return float4( color.rgb, 1.0f );
 }
 
@@ -80,7 +80,7 @@ float4 GaussianBlurV(float2 texCoord : TEXCOORD0) : COLOR
     {
         color += (tex2D(SourceTextureSampler, texCoord + float2(0.0f, Offsets[i])) * Weights[i]);
     }
-        
+    
     return float4( color.rgb, 1.0f );
 }
 
@@ -89,8 +89,8 @@ technique GaussianBlur9x9_H
 {
     pass Pass0
     {
-        VertexShader = compile vs_1_1 Common_VS();
-        PixelShader = compile ps_2_0 GaussianBlurH();
+        VertexShader = compile vs_4_0 Common_VS();
+        PixelShader = compile ps_4_0 GaussianBlurH();
     }
 }
 
@@ -98,8 +98,8 @@ technique GaussianBlur9x9_V
 {
     pass Pass0
     {
-        VertexShader = compile vs_1_1 Common_VS();
-        PixelShader = compile ps_2_0 GaussianBlurV();
+        VertexShader = compile vs_4_0 Common_VS();
+        PixelShader = compile ps_4_0 GaussianBlurV();
     }
 }
 

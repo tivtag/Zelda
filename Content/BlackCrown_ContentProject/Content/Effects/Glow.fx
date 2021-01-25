@@ -11,7 +11,6 @@ sampler GlowSampler = sampler_state {
 	MIPFILTER = LINEAR;
 };
 
-
 float GlowStrength;
 float2 TexelSize;
 
@@ -68,7 +67,7 @@ static const float BlurWeights[KernelSize] = {
 float4 BlurHorizontalPS(float2 texCoord : TEXCOORD0) : COLOR0
 {
     float4 Color = 0;
-    for (int i = 0; i < KernelSize; i++)
+    for(int i = 0; i < KernelSize; i++)
     {    
         Color += tex2D( inputSampler, texCoord + PixelKernelH[i].xy * TexelSize) * BlurWeights[i];
     }
@@ -79,8 +78,8 @@ float4 BlurVerticalPS(float2 texCoord : TEXCOORD0) : COLOR0
 {
     float4 Color = 0;
 
-    for (int i = 0; i < KernelSize; i++)
-    {    
+    for(int i = 0; i < KernelSize; i++)
+    {
         Color += tex2D( inputSampler, texCoord + PixelKernelV[i].xy * TexelSize) * BlurWeights[i];
     }
     return Color;
@@ -89,7 +88,7 @@ float4 BlurVerticalPS(float2 texCoord : TEXCOORD0) : COLOR0
 float4 CombinePS(float2 texCoord : TEXCOORD0) : COLOR0
 {
     float4 Color = tex2D(inputSampler, texCoord);
-	Color +=GlowStrength * tex2D(GlowSampler, texCoord);
+    Color +=GlowStrength * tex2D(GlowSampler, texCoord);
     return Color;
 }
 
@@ -102,7 +101,7 @@ technique BlurHorizontal
 {
     pass P0
     {
-        PixelShader = compile ps_2_0 BlurHorizontalPS();
+        PixelShader = compile ps_4_0 BlurHorizontalPS();
     }
 }
     
@@ -110,7 +109,7 @@ technique BlurVertical
 {
     pass P0
     {
-        PixelShader = compile ps_2_0 BlurVerticalPS();
+        PixelShader = compile ps_4_0 BlurVerticalPS();
     }
 }
 
@@ -118,7 +117,7 @@ technique Combine
 {
     pass P0
     {
-        PixelShader = compile ps_2_0 CombinePS();
+        PixelShader = compile ps_4_0 CombinePS();
     }
 }
 
@@ -126,6 +125,6 @@ technique Copy
 {
     pass P0
     {
-        PixelShader = compile ps_2_0 CopyPS();
+        PixelShader = compile ps_4_0 CopyPS();
     }
 }

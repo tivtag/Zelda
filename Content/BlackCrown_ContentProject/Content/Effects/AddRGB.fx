@@ -1,11 +1,11 @@
-// <copyright file="Luminance.fx">
+// <copyright file="AddRGB.fx">
 //     Copyright (c) federrot Software & Ziggyware. All rights reserved.
 // </copyright>
 // <summary>
 // Implements the Add RGB pass of the High Dynamic Range effect.
 // </summary>
 // <author>
-// Initial: Mahdi Khodadadi Fard( mahdi3466@yahoo.com)
+// Initial: Mahdi Khodadadi Fard (mahdi3466@yahoo.com)
 // Changes: Paul Ennemoser
 // </author>
 
@@ -61,7 +61,7 @@ technique AddRGB
 {
     pass Pass0
     {
-        VertexShader = compile vs_1_1 Common_VS();
-        PixelShader = compile ps_2_0 AddRGB_PS();
+        VertexShader = compile vs_4_0 Common_VS();
+        PixelShader = compile ps_4_0 AddRGB_PS();
     }
 }

@@ -1,0 +1,156 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin
+/intermediateDir:obj
+/platform:Windows
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Content/Effects/AddRGB.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/AddRGB.fx
+
+#begin Content/Effects/BloomCombine.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/BloomCombine.fx
+
+#begin Content/Effects/BloomExtract.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/BloomExtract.fx
+
+#begin Content/Effects/Blur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Blur.fx
+
+#begin Content/Effects/BrightPass.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/BrightPass.fx
+
+#begin Content/Effects/Common.fxh
+/importer:
+/processor:
+/build:Content/Effects/Common.fxh
+
+#begin Content/Effects/DownSample4x4.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/DownSample4x4.fx
+
+#begin Content/Effects/EdgeDetection.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/EdgeDetection.fx
+
+#begin Content/Effects/GaussianBlur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/GaussianBlur.fx
+
+#begin Content/Effects/GaussianBlur9x9.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/GaussianBlur9x9.fx
+
+#begin Content/Effects/Glow.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Glow.fx
+
+#begin Content/Effects/HighDynamicRange.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/HighDynamicRange.fx
+
+#begin Content/Effects/LightCompositor.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/LightCompositor.fx
+
+#begin Content/Effects/LightningBolt.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/LightningBolt.fx
+
+#begin Content/Effects/LogLuv.fxh
+/importer:
+/processor:
+/build:Content/Effects/LogLuv.fxh
+
+#begin Content/Effects/Luminance.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Luminance.fx
+
+#begin Content/Effects/Noise.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Noise.fx
+
+#begin Content/Effects/PointSprite.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/PointSprite.fx
+
+#begin Content/Effects/Scale.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Scale.fx
+
+#begin Content/Effects/Shapes.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Shapes.fx
+
+#begin Content/Effects/SolidColor.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/SolidColor.fx
+
+#begin Content/Effects/Threshold.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/Threshold.fx
+
+#begin Content/Effects/Tonemap.fxh
+/importer:
+/processor:
+/build:Content/Effects/Tonemap.fxh
+
+#begin Content/Effects/ToneMapping.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Content/Effects/ToneMapping.fx
+

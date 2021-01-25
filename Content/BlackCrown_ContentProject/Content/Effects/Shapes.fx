@@ -6,7 +6,7 @@ float4x4 Projection;
 
 struct VertexShaderInput
 {
-	float4 Color : COLOR0;
+    float4 Color : COLOR0;
     float4 Position : POSITION0;
 
     // TODO: add input channels such as texture
@@ -15,7 +15,7 @@ struct VertexShaderInput
 
 struct VertexShaderOutput
 {
-	float4 Color : COLOR0;
+    float4 Color : COLOR0;
     float4 Position : POSITION0;
 
     // TODO: add vertex shader outputs such as colors and texture
@@ -29,7 +29,7 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 
     float4 viewPosition = mul(input.Position, View);
     output.Position = mul(viewPosition, Projection);
-	output.Color = input.Color;
+    output.Color = input.Color;
 
     // TODO: add your vertex shader code here.
 
@@ -37,7 +37,7 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 }
 
 float4 PixelShaderFunction(VertexShaderOutput input) : COLOR0
-{    
+{
     return input.Color;
 }
 
@@ -47,13 +47,13 @@ technique Technique1
     {
         // TODO: set renderstates here.
 
-        VertexShader = compile vs_2_0 VertexShaderFunction();
-        PixelShader = compile ps_2_0 PixelShaderFunction();
-		
-		//CullMode         = None;
-		//ZWriteEnable     = false;
-		//AlphaBlendEnable = true;
-		//SrcBlend         = SrcAlpha;
-		//DestBlend        = InvSrcAlpha;
+        VertexShader = compile vs_4_0 VertexShaderFunction();
+        PixelShader = compile ps_4_0 PixelShaderFunction();
+        
+        //CullMode         = None;
+        //ZWriteEnable     = false;
+        //AlphaBlendEnable = true;
+        //SrcBlend         = SrcAlpha;
+        //DestBlend        = InvSrcAlpha;
     }
 }

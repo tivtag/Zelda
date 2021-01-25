@@ -20,6 +20,6 @@ technique BloomExtract
 {
     pass Pass1
     {
-        PixelShader = compile ps_2_0 PixelShaderFunction();
+        PixelShader = compile ps_4_0 PixelShaderFunction();
     }
 }

@@ -9,13 +9,13 @@ float FallOffPower = 1.0f;
 struct VertexShaderInput
 {
     float4 Position : POSITION0;
-	float2 ColorGradient : TEXCOORD1;
+    float2 ColorGradient : TEXCOORD1;
 };
 
 struct VertexShaderOutput
 {
     float4 Position : POSITION0;
-	float2 ColorGradient : TEXCOORD1;
+    float2 ColorGradient : TEXCOORD1;
 };
 
 VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
@@ -31,19 +31,19 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 
 float4 PixelShaderFunction(VertexShaderOutput input) : COLOR0
 {
-	float p = saturate(length(input.ColorGradient));
-	
-	float lerp_factor = saturate(pow(1-p, FallOffPower));
-	float brightness = lerp_factor;
-	float3 color = lerp(EndColor,StartColor,lerp_factor);
-	return brightness * float4(color,1.0f);
+    float p = saturate(length(input.ColorGradient));
+    
+    float lerp_factor = saturate(pow(1-p, FallOffPower));
+    float brightness = lerp_factor;
+    float3 color = lerp(EndColor,StartColor,lerp_factor);
+    return brightness * float4(color,1.0f);
 }
 
 technique Technique1
 {
     pass Pass1
     {
-        VertexShader = compile vs_2_0 VertexShaderFunction();
-        PixelShader = compile ps_2_0 PixelShaderFunction();
+        VertexShader = compile vs_4_0 VertexShaderFunction();
+        PixelShader = compile ps_4_0 PixelShaderFunction();
     }
 }

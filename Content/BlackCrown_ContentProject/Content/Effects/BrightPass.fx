@@ -36,41 +36,41 @@ sampler2D LuminanceTextureSampler = sampler_state
 
 struct VS_OUTPUT
 {
-	float4 Position : POSITION;
-	float2 TexCoord : TEXCOORD0;
+    float4 Position : POSITION;
+    float2 TexCoord : TEXCOORD0;
 };
 
 VS_OUTPUT Common_VS(float4 Position : POSITION, float2 TexCoord : TEXCOORD0)
 {
-	VS_OUTPUT OUT;
-	OUT.Position = Position;
-	OUT.TexCoord = TexCoord + (0.5f / TargetSize);
-	
-	return OUT;
+    VS_OUTPUT OUT;
+    OUT.Position = Position;
+    OUT.TexCoord = TexCoord + (0.5f / TargetSize);
+    
+    return OUT;
 }
 
 float4 BrightPass_PS(float2 texCoord : TEXCOORD0) : COLOR0 
 {
-	float4 color = tex2D(SourceTextureSampler, texCoord);
-	float4 lc = tex2D(LuminanceTextureSampler, float2(0.5, 0.5));
-	
-	float lum = dot(color.rgb, LUMINANCE);
-		
-	float scaleLum = (lum * Exposure) / lc.r;
-	color.rgb *= (scaleLum * (1 + (scaleLum / (lc.g * lc.g)))) / (1 + scaleLum);
-		
+    float4 color = tex2D(SourceTextureSampler, texCoord);
+    float4 lc = tex2D(LuminanceTextureSampler, float2(0.5, 0.5));
+    
+    float lum = dot(color.rgb, LUMINANCE);
+    
+    float scaleLum = (lum * Exposure) / lc.r;
+    color.rgb *= (scaleLum * (1 + (scaleLum / (lc.g * lc.g)))) / (1 + scaleLum);
+    
     color.rgb -= Threshold;
     color.rgb = max(color.rgb, 0.0f);
-	
-	return color;
+    
+    return color;
 }
 
 technique BrightPass
 {
     pass p0
     {
-        VertexShader = compile vs_1_1 Common_VS();
-        PixelShader = compile ps_2_0 BrightPass_PS();
+        VertexShader = compile vs_4_0 Common_VS();
+        PixelShader = compile ps_4_0 BrightPass_PS();
         
         ZEnable = false;
         ZWriteEnable = false;

@@ -23,11 +23,10 @@ float4 PixelShaderFunction(float2 texCoord : TEXCOORD0) : COLOR0
     return c;
 }
 
-
 technique GaussianBlur
 {
     pass Pass1
     {
-        PixelShader = compile ps_2_0 PixelShaderFunction();
+        PixelShader = compile ps_4_0 PixelShaderFunction();
     }
 }

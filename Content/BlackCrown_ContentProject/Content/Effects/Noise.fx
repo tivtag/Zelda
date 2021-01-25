@@ -18,9 +18,9 @@ float  Overcast	   = 1.1f;
 // ------- Texture Samplers --------
 sampler TextureSampler = sampler_state
 { 
-	texture   = <Texture>; 
-	magfilter = LINEAR; 
-	minfilter = LINEAR;
+    texture   = <Texture>; 
+    magfilter = LINEAR; 
+    minfilter = LINEAR;
     mipfilter = LINEAR; 
     AddressU  = mirror; 
     AddressV  = mirror;
@@ -29,13 +29,13 @@ sampler TextureSampler = sampler_state
 
 struct VertexShaderInputOuput
 {
-    float4 Position		 : POSITION0;
+    float4 Position      : POSITION0;
     float2 TextureCoords : TEXCOORD;
 };
 
 VertexShaderInputOuput VertexShaderFunction(VertexShaderInputOuput input)
 {
-	return input;   
+    return input;   
 }
 
 
@@ -49,7 +49,7 @@ float4 PixelShaderFunction(VertexShaderInputOuput input) : COLOR0
      perlin += tex2D(TextureSampler, (input.TextureCoords) * 16 + MoveOffset) / 32;
      perlin += tex2D(TextureSampler, (input.TextureCoords) * 32 + MoveOffset) / 32; 
 
-	 float4 color = BaseColor + 1.0f - 2.0f * pow(perlin.r, Overcast);	 	 
+     float4 color = BaseColor + 1.0f - 2.0f * pow(perlin.r, Overcast);
      return color * ColorFactor;
 }
 
@@ -58,7 +58,7 @@ technique PerlinNoiseTechnique
 {
     pass Pass1
     {
-        VertexShader = compile vs_1_1 VertexShaderFunction();
-        PixelShader  = compile ps_2_0 PixelShaderFunction();
+        VertexShader = compile vs_4_0 VertexShaderFunction();
+        PixelShader  = compile ps_4_0 PixelShaderFunction();
     }
 }

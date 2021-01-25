@@ -51,18 +51,18 @@ sampler2D LuminanceTextureSampler = sampler_state
 
 struct VS_OUTPUT
 {
-	float4 Position : POSITION;
-	float2 TexCoord : TEXCOORD0;
+    float4 Position : POSITION;
+    float2 TexCoord : TEXCOORD0;
 };
 
 VS_OUTPUT Tonemap_VS(float4 Position : POSITION, float2 TexCoord : TEXCOORD0)
 {
-	VS_OUTPUT OUT;
-	
-	OUT.Position = Position;
-	OUT.TexCoord = TexCoord;
-	
-	return OUT;
+    VS_OUTPUT OUT;
+    
+    OUT.Position = Position;
+    OUT.TexCoord = TexCoord;
+    
+    return OUT;
 }
 
 
@@ -72,25 +72,24 @@ VS_OUTPUT Tonemap_VS(float4 Position : POSITION, float2 TexCoord : TEXCOORD0)
 
 float4 Tonemap_PS(float2 texcoord  : TEXCOORD0) : COLOR0
 {
-	float4 final	= tex2D(SourceTextureSampler, texcoord);
-	float4 l		= tex2D(LuminanceTextureSampler, float2(0.5f, 0.5f));
-	
-	
-	float Lp = (Exposure / l.r) * max(final.r, max(final.g, final.b));
-	float LmSqr = (l.g * l.g) * (l.g * l.g);
-	float toneScalar = ( Lp * ( 1.0f + ( Lp / ( LmSqr ) ) ) ) / ( 1.0f + Lp );
-
-	final.rgb *= toneScalar;
-
-	return final;
+    float4 final = tex2D(SourceTextureSampler, texcoord);
+    float4 l     = tex2D(LuminanceTextureSampler, float2(0.5f, 0.5f));
+    
+    
+    float Lp         = (Exposure / l.r) * max(final.r, max(final.g, final.b));
+    float LmSqr      = (l.g * l.g) * (l.g * l.g);
+    float toneScalar = ( Lp * ( 1.0f + ( Lp / ( LmSqr ) ) ) ) / ( 1.0f + Lp );
+    
+    final.rgb *= toneScalar;
+    
+    return final;
 }
 
 technique ToneMapping
 {
-	pass Pass0 
-	{
-
-		VertexShader = compile vs_1_1 Tonemap_VS();
-		PixelShader = compile ps_2_0 Tonemap_PS();
-	}
+   pass Pass0 
+   {
+       VertexShader = compile vs_4_0 Tonemap_VS();
+       PixelShader = compile ps_4_0 Tonemap_PS();
+   }
 }

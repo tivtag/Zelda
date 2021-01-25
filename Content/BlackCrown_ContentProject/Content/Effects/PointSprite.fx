@@ -2,13 +2,13 @@
 // PointSprite Effect
 // --------------------------------------------------------------------------------------------- //
 // Author:
-//		Tick
+//      Paul Ennemoser
 // Version:
-//		1.0
+//     1.0
 // Date:
-//		11.23.07
+//     11.23.07
 // Description:
-//		Effect file that can be used to draw a PointSprite.
+//     Effect file that can be used to draw a PointSprite.
 
 
 uniform extern float4x4 WVPMatrix;
@@ -16,24 +16,24 @@ uniform extern texture SpriteTexture;
 
 struct VS_INPUT
 {
-	float4 Position : POSITION;
-	float Size : PSIZE;
-	float Rotation : TEXCOORD;
-	float4 Color : COLOR0;
+    float4 Position : POSITION;
+    float Size : PSIZE;
+    float Rotation : TEXCOORD;
+    float4 Color : COLOR0;
 };
 
 struct VS_OUTPUT
 {
-	float4 Position : POSITION;
-	float Size : PSIZE;
-	float Rotation : TEXCOORD;
-	float4 Color : COLOR0;
+    float4 Position : POSITION;
+    float Size : PSIZE;
+    float Rotation : TEXCOORD;
+    float4 Color : COLOR0;
 };
 
 struct PS_INPUT
 {
-	float4 Color : COLOR;
-	float Rotation : TEXCOORD;
+    float4 Color : COLOR;
+    float Rotation : TEXCOORD;
     float2 TexCoord : TEXCOORD1;    
 };
 
@@ -51,42 +51,37 @@ sampler Sampler = sampler_state
 
 VS_OUTPUT MainVertexShader(VS_INPUT input)
 {
-	VS_OUTPUT output = (VS_OUTPUT)0;
-	
-	output.Position = mul(input.Position, WVPMatrix);
-	output.Color = input.Color;
-	output.Size = input.Size;
-	output.Rotation = input.Rotation;
-
-	return output;
+    VS_OUTPUT output = (VS_OUTPUT)0;
+    
+    output.Position = mul(input.Position, WVPMatrix);
+    output.Color = input.Color;
+    output.Size = input.Size;
+    output.Rotation = input.Rotation;
+    
+    return output;
 }
 
 float4 PixelShader_1_1(PS_INPUT input) : COLOR0
 {
-	return tex2D(Sampler, input.TexCoord) * input.Color;
+    return tex2D(Sampler, input.TexCoord) * input.Color;
 }
 
 technique PointSprites_1_1
 {
-	pass Pass0
-	{
-		vertexShader = compile vs_1_1 MainVertexShader();
-		pixelShader = compile ps_2_0 PixelShader_1_1();
-	}
+    pass Pass0
+    {
+        vertexShader = compile vs_4_0 MainVertexShader();
+        pixelShader = compile ps_4_0 PixelShader_1_1();
+    }
 }
 technique PointSprite_2_0
 {
     pass Pass0
     {
-		vertexShader = compile vs_1_1 MainVertexShader();
-		pixelShader = compile ps_2_0 PixelShader_1_1();
+        vertexShader = compile vs_4_0 MainVertexShader();
+        pixelShader = compile ps_4_0 PixelShader_1_1();
     }
 }
-
-
-
-
-
 
 /*
 uniform extern float4x4 WVPMatrix;
