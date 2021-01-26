@@ -26,6 +26,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
     <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
     <DocumentationFile>..\..\Compiled\$(Configuration)\TLoZ - Black Crown.xml</DocumentationFile>

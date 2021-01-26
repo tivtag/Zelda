@@ -15,7 +15,6 @@ namespace Zelda.GameStates
     using Atom.Math;
     using Atom.Xna;
     using Atom.Xna.Fonts;
-    using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using Zelda.Difficulties;
     using Zelda.Entities;
@@ -26,8 +25,14 @@ namespace Zelda.GameStates
     /// <summary>
     /// The Title Screen shows a short introduction to the game.
     /// </summary>
-    internal sealed class TitleScreenState : IGameState
+    internal sealed class TitleScreenState : IGameState, ISceneProvider
     {
+        #region [ Properties ]
+
+        public ZeldaScene Scene => this.scene;
+
+        #endregion
+
         #region [ Initialization ]
 
         /// <summary>
@@ -139,8 +144,8 @@ namespace Zelda.GameStates
 
             if( this.scene != null )
             {
-                this.scene.NotifySceneChange( ChangeType.Away );
-                this.scene = null;
+                // this.scene.NotifySceneChange( ChangeType.Away );
+               //this.scene = null;
             }
 
             this.musicChannel = null;
@@ -415,7 +420,8 @@ namespace Zelda.GameStates
 
             if( (keyState.IsKeyDown( Keys.Space ) && oldKeyState.IsKeyUp( Keys.Space )) ||
                 (keyState.IsKeyDown( Keys.Enter ) && oldKeyState.IsKeyUp( Keys.Enter )) ||
-                (mouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released) && game.IsActive )
+                (mouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released) && 
+                game.IsActive )
             {
                 if( isLogoShown )
                 {
@@ -427,22 +433,12 @@ namespace Zelda.GameStates
                     this.ShowTitleLogo();
                 }
             }
-            else if( keyState.IsKeyDown( Keys.F1 ) && oldKeyState.IsKeyUp( Keys.F1 ) )
-            {
-                if( game.Graphics.Pipeline == game.Graphics.BloomPipeline )
-                {
-                    this.game.Graphics.ChangePipeline( Graphics.DrawingPipeline.Normal );
-                }
-                else
-                {
-                    this.game.Graphics.ChangePipeline( Graphics.DrawingPipeline.Bloom );
-                }
-            }
             else if( keyState.IsKeyDown( Keys.Escape ) )
             {
                 this.game.Exit();
             }
-            else if( (mouseState.RightButton == ButtonState.Pressed && oldMouseState.RightButton == ButtonState.Released) && game.IsActive )
+            else if( (mouseState.RightButton == ButtonState.Pressed && oldMouseState.RightButton == ButtonState.Released) &&
+                     game.IsActive )
             {
                 SpawnRandomEnemy();
             }
@@ -456,8 +452,11 @@ namespace Zelda.GameStates
         {
             Atom.Collections.Hat<string> templateHat = new Atom.Collections.Hat<string>( game.Rand );
             templateHat.Insert( "Skeleton", 11.0f );
-            templateHat.Insert( "Skeleton_Red", 2.0f );
-            templateHat.Insert( "SkeletonHead", 1.0f );
+            templateHat.Insert( "Spider_Small_45", 5.0f );
+            templateHat.Insert( "Skeleton_Red", 4.0f );
+            templateHat.Insert( "SkeletonHead", 4.0f );
+            templateHat.Insert( "Ghost", 3.0f );
+            templateHat.Insert( "Boss_RudrasEye", 1.0f );
 
             ZeldaEntity entity = game.EntityTemplateManager
                 .GetTemplate( templateHat.Get() )

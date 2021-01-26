@@ -18,7 +18,6 @@ namespace Zelda.GameStates
     using Atom.Math;
     using Atom.Xna;
     using Atom.Xna.UI.Controls;
-    using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using Zelda.UI;
 
@@ -59,8 +58,8 @@ namespace Zelda.GameStates
             this.userInterface.KeyboardInput += this.OnKeyboardInput;
             this.userInterface.Setup( this.serviceProvider );
 
-            var viewSize = this.serviceProvider.ViewSize;
-            var sl = this.serviceProvider.SpriteLoader;
+            Point2 viewSize = this.serviceProvider.ViewSize;
+            ISpriteLoader sl = this.serviceProvider.SpriteLoader;
 
             float buttonPositionX = (int)(viewSize.X / 2.0f - 40.0f);
             float centerY = (int)(viewSize.Y / 2.0f);
@@ -205,7 +204,7 @@ namespace Zelda.GameStates
         }
 
         private void OnBackButtonClicked( object sender, ref MouseState mouseState, ref MouseState oldMouseState )
-        {   
+        {
             this.ChangeToIngameState();
 
             // Fix picking up of the action slot after closing it
@@ -244,7 +243,7 @@ namespace Zelda.GameStates
         /// </param>
         private void OnSettingsButtonClicked( object sender, ref MouseState mouseState, ref MouseState oldMouseState )
         {
-            var gameStateManager = this.serviceProvider.GetService<GameStateManager>();
+            GameStateManager gameStateManager = this.serviceProvider.GetService<GameStateManager>();
             gameStateManager.Push<SettingsState>();
         }
 
@@ -262,7 +261,7 @@ namespace Zelda.GameStates
         /// </summary>
         private void ChangeToIngameState()
         {
-            var gameStateManager = this.serviceProvider.GetService<GameStateManager>();
+            GameStateManager gameStateManager = this.serviceProvider.GetService<GameStateManager>();
             gameStateManager.Pop();
         }
 
@@ -274,14 +273,14 @@ namespace Zelda.GameStates
         /// </param>
         public void Draw( IDrawContext drawContext )
         {
-            var pipeline = this.ingameState.Game.Graphics.Pipeline;
+            Graphics.IDrawingPipeline pipeline = this.ingameState.Game.Graphics.Pipeline;
             var zeldaDrawContext = (ZeldaDrawContext)drawContext;
 
             pipeline.InitializeFrame( this.ingameState.Scene, this.userInterface, zeldaDrawContext );
             {
                 pipeline.BeginScene();
                 {
-                    var batch = zeldaDrawContext.Batch;
+                    Atom.Xna.Batches.IComposedSpriteBatch batch = zeldaDrawContext.Batch;
                     zeldaDrawContext.Begin();
                     {
                         batch.DrawRect(
@@ -373,9 +372,9 @@ namespace Zelda.GameStates
         /// </param>
         private void OnKeyboardInput( object sender, ref KeyboardState keyState, ref KeyboardState oldKeyState )
         {
-            var pressedKeys = keyState.GetPressedKeys();
+            Keys[] pressedKeys = keyState.GetPressedKeys();
 
-            foreach( var key in pressedKeys )
+            foreach( Keys key in pressedKeys )
             {
                 switch( key )
                 {

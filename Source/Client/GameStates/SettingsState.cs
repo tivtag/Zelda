@@ -31,14 +31,12 @@ namespace Zelda.GameStates
 
         public override void Load()
         {
-            this.LoadParticleEffect();
             this.LoadUserInterface();
         }
 
         public override void ChangedFrom( IGameState oldState )
         {
             base.ChangedFrom( oldState );
-            this.game.Graphics.ChangePipeline( Zelda.Graphics.DrawingPipeline.Bloom );
 
             this.Load();
             this.RefreshUiState();

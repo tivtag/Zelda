@@ -599,7 +599,9 @@ namespace Zelda.GameStates
 
             Keys[] pressedKeys = keyState.GetPressedKeys();
             if( this.HandleKeyboardInput_WindowsAndSettings( ref oldKeyState, pressedKeys ) )
+            {
                 return;
+            }
 
             this.HandleKeyboardInput_Game( ref keyState, ref oldKeyState, pressedKeys );
         }
@@ -619,7 +621,9 @@ namespace Zelda.GameStates
             {
                 Keys key = pressedKeys[i];
                 if( this.userInterface.HandleKeyDown( key, ref oldKeyState ) )
+                {
                     break;
+                }
 
                 if( key == keySettings.QuickSave && oldKeyState.IsKeyUp( keySettings.QuickSave ) )
                 {

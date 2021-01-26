@@ -18,6 +18,7 @@ namespace Zelda.GameStates
     using Atom.Fmod;
     using Atom.Math;
     using Atom.Xna;
+    using Atom.Xna.Batches;
     using Atom.Xna.Fonts;
     using Atom.Xna.UI.Controls;
     using Microsoft.Xna.Framework.Input;
@@ -254,10 +255,11 @@ namespace Zelda.GameStates
         public override void ChangedFrom( IGameState oldState )
         {
             this.selectionState = oldState as CharacterSelectionState;
-            if( this.selectionState == null )
+            if( selectionState == null )
+            {
                 throw new InvalidOperationException();
+            }
 
-            StealParticleEffect( selectionState );
             Load();
             ResetEnteredValues();
 
@@ -291,7 +293,9 @@ namespace Zelda.GameStates
         public override void ChangedTo( IGameState newState )
         {
             if( !(newState is CharacterSelectionState) )
+            {
                 throw new InvalidOperationException();
+            }
 
             this.Unload();
             base.ChangedTo( newState );
@@ -330,7 +334,7 @@ namespace Zelda.GameStates
 
         private void DrawLooksStep( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
             drawContext.Begin();
             {
                 DrawTitleHeader( "Customize Looks", drawContext );
@@ -351,7 +355,6 @@ namespace Zelda.GameStates
 
         private void DrawStatStep( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
             drawContext.Begin();
             {
                 DrawTitleHeader( "Invest Status Points", drawContext );
@@ -362,7 +365,7 @@ namespace Zelda.GameStates
 
         private void DrawDifficultyStep( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
             drawContext.Begin();
             {
                 DrawTitleHeader( "Select Difficulty", drawContext );
@@ -382,7 +385,7 @@ namespace Zelda.GameStates
 
         private void DrawTitleHeader( string title, ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
 
             // Draw Title Background
             batch.DrawRect(
@@ -414,10 +417,11 @@ namespace Zelda.GameStates
         private void DrawDifficultyButton( LambdaButton button, ISpriteDrawContext drawContext )
         {
             if( !button.IsVisible )
+            {
                 return;
+            }
 
-            var zeldaDrawContext = (ZeldaDrawContext)drawContext;
-            var batch = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
 
             batch.DrawRect(
                 (Rectangle)button.ClientArea,
@@ -453,7 +457,7 @@ namespace Zelda.GameStates
         /// </param>
         private void DrawEnterNameStep( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
+            Atom.Xna.Batches.IComposedSpriteBatch batch = drawContext.Batch;
             drawContext.Begin();
             {
                 int centerX = game.ViewSize.X / 2;
@@ -461,8 +465,8 @@ namespace Zelda.GameStates
 
                 bool isBlinking = blinkTimer < 0.5f;
                 string name = isBlinking ? this.Profile.Name + "_" : this.Profile.Name;
-                var strNameSize = this.FontLarge.MeasureString( this.Profile.Name );
-                var strBlinkNameSize = this.FontLarge.MeasureString( name );
+                Vector2 strNameSize = this.FontLarge.MeasureString( this.Profile.Name );
+                Vector2 strBlinkNameSize = this.FontLarge.MeasureString( name );
 
                 // Draw black rectangle behind name:
                 batch.DrawRect(
@@ -482,7 +486,7 @@ namespace Zelda.GameStates
 
                 if( !uniqueName )
                 {
-                    var smallFont = Zelda.UI.UIFonts.Tahoma9;
+                    IFont smallFont = Zelda.UI.UIFonts.Tahoma9;
                     const string TextNameInUse = "name already in use :(";
 
                     smallFont.Draw(
@@ -570,7 +574,9 @@ namespace Zelda.GameStates
             {
                 Keys key = pressedKeys[i];
                 if( oldKeyState.IsKeyDown( key ) )
+                {
                     continue;
+                }
 
                 switch( key )
                 {
@@ -648,7 +654,9 @@ namespace Zelda.GameStates
         {
             int indexOfCurrent = this.difficultyButtons.IndexOf( button => (DifficultyId)button.Tag == this.Profile.Difficulty );
             if( indexOfCurrent == -1 )
+            {
                 return;
+            }
 
             indexOfCurrent += by;
 
@@ -695,14 +703,16 @@ namespace Zelda.GameStates
         private void SelectDifficulty( Button button )
         {
             var difficulty = (DifficultyId)button.Tag;
-            foreach( var btn in this.difficultyButtons )
+            foreach( Button difficultyButton in this.difficultyButtons )
             {
-                btn.IsSelected = false;
+                difficultyButton.IsSelected = false;
             }
             button.IsSelected = true;
 
             if( this.Profile == null || difficulty == this.Profile.Difficulty )
+            {
                 return;
+            }
 
             this.Profile.Difficulty = difficulty;
             this.PlayDifficultySound();
@@ -743,8 +753,8 @@ namespace Zelda.GameStates
         private void RefreshNavigationButtonStates()
         {
             bool nextButtonValid = true;
-            var mode = NavButton.Mode.Next;
-            
+            NavButton.Mode mode = NavButton.Mode.Next;
+
             if( this.currentStep == CreationStep.EnterName )
             {
                 nextButtonValid = this.IsNameValid();
@@ -876,7 +886,7 @@ namespace Zelda.GameStates
                     break;
 
                 case CreationStep.SelectDifficulty:
-                    foreach( var button in this.difficultyButtons )
+                    foreach( Button button in this.difficultyButtons )
                     {
                         button.ShowAndEnable();
                     }
@@ -908,8 +918,8 @@ namespace Zelda.GameStates
                     colorHairHighlightSelector.HideAndDisable();
                     break;
 
-                case CreationStep.SelectDifficulty:                    
-                    foreach( var button in this.difficultyButtons )
+                case CreationStep.SelectDifficulty:
+                    foreach( Button button in this.difficultyButtons )
                     {
                         button.HideAndDisable();
                     }

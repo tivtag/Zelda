@@ -121,7 +121,7 @@ namespace Zelda.Graphics
         /// </remarks>
         public void EndScene()
         {
-            var target = this.rescaler.Target;
+            RenderTarget2D target = this.rescaler.Target;
 
             if( target == null )
             {
@@ -142,7 +142,7 @@ namespace Zelda.Graphics
                 graphicsDevice.SetRenderTarget( null );
 
                 this.bloom.PostProcess( this.resolveTarget, target, drawContext );
-            }    
+            }
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Zelda.Graphics
 
             batch = new SpriteBatch( graphicsDevice );
           
-            this.bloom = new Bloom( 
+            this.bloom = new DebugBloom(
                 serviceProvider.GetService<IEffectLoader>(), 
                 serviceProvider.GetService<IRenderTarget2DFactory>(), 
                 this.deviceService 
@@ -280,7 +280,7 @@ namespace Zelda.Graphics
         /// <summary>
         /// The bloom effect that is applied to the drawn scene.
         /// </summary>
-        private Bloom bloom;
+        private DebugBloom bloom;
 
         private SpriteBatch batch;
         private RenderTarget2D resolveTarget;

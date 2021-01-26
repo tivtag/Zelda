@@ -17,6 +17,7 @@ namespace Zelda.GameStates
     using Atom;
     using Atom.Math;
     using Atom.Xna;
+    using Atom.Xna.Batches;
     using Atom.Xna.Fonts;
     using Atom.Xna.UI.Controls;
     using Microsoft.Xna.Framework.Input;
@@ -57,7 +58,6 @@ namespace Zelda.GameStates
         {
             this.linkSprites = this.game.GetService<LinkSprites>();
             this.LoadMusic();
-            this.LoadParticleEffect();
             this.LoadUserInterface();
             this.LoadProfiles();
         }
@@ -104,7 +104,7 @@ namespace Zelda.GameStates
         /// </summary>
         protected override void SetupUserInterface()
         {
-            var spriteLoader = this.game.SpriteLoader;
+            ISpriteLoader spriteLoader = this.game.SpriteLoader;
             this.rectCharacterBackground = new Rectangle( 20, 20, 120, this.game.ViewSize.Y - 40 );
 
             this.difficultyIndicatorDrawer.Position = new Vector2(
@@ -164,7 +164,9 @@ namespace Zelda.GameStates
         private void LoadMusic()
         {
             if( this.channel != null )
+            {
                 return;
+            }
 
             var files = new Atom.Collections.Hat<string>( game.Rand, 2 );
             files.Insert( "Select Screen.mid", 70.0f );
@@ -248,10 +250,6 @@ namespace Zelda.GameStates
         /// </param>
         protected override void DrawPreScene( ZeldaDrawContext zeldaDrawContext )
         {
-            if( zeldaDrawContext.Camera != null )
-            {
-                zeldaDrawContext.Camera.Scroll = Vector2.Zero;
-            }
         }
 
         /// <summary>
@@ -262,6 +260,11 @@ namespace Zelda.GameStates
         /// </param>
         protected override void Update( ZeldaUpdateContext updateContext )
         {
+            if( Scene != null )
+            {
+                this.Scene.Update( updateContext );
+            }
+
             this.actionDisallowedTimer.Update( updateContext );
         }
 
@@ -278,14 +281,22 @@ namespace Zelda.GameStates
             else
             {
                 if( this.selectedProfileIndex == 0 )
+                {
                     this.buttonProfileLeft.IsEnabled = this.buttonProfileLeft.IsVisible = false;
+                }
                 else
+                {
                     this.buttonProfileLeft.IsEnabled = this.buttonProfileLeft.IsVisible = true;
+                }
 
                 if( this.selectedProfileIndex == this.profiles.Count - 1 )
+                {
                     this.buttonProfileRight.IsEnabled = this.buttonProfileRight.IsVisible = false;
+                }
                 else
+                {
                     this.buttonProfileRight.IsEnabled = this.buttonProfileRight.IsVisible = true;
+                }
             }
         }
 
@@ -295,7 +306,9 @@ namespace Zelda.GameStates
         private void MoveProfileIndexLeft()
         {
             if( this.selectedProfileIndex <= 0 )
+            {
                 return;
+            }
 
             this.SelectProfile( this.profiles[this.selectedProfileIndex - 1] );
             this.RefreshIndexButtonVisability();
@@ -307,7 +320,9 @@ namespace Zelda.GameStates
         private void MoveProfileIndexRight()
         {
             if( this.selectedProfileIndex == this.profiles.Count - 1 )
+            {
                 return;
+            }
 
             this.SelectProfile( this.profiles[this.selectedProfileIndex + 1] );
 
@@ -386,7 +401,7 @@ namespace Zelda.GameStates
         /// </param>
         protected override void DrawUserInterface( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
+            IComposedSpriteBatch batch = drawContext.Batch;
             drawContext.Begin();
 
             // Draw selected profile inside the black character overlay:
@@ -516,9 +531,14 @@ namespace Zelda.GameStates
             if( mouseState.LeftButton == ButtonState.Pressed )
             {
                 if( this.buttonProfileLeft.ClientArea.Contains( mouseState.X, mouseState.Y ) )
+                {
                     return;
+                }
+
                 if( this.buttonProfileRight.ClientArea.Contains( mouseState.X, mouseState.Y ) )
+                {
                     return;
+                }
 
                 // Enter game if the player clicks on the character rectangle.
                 if( this.rectCharacterBackground.Contains( new Point2( mouseState.X, mouseState.Y ) ) )
@@ -534,7 +554,9 @@ namespace Zelda.GameStates
         private void EnterGame()
         {
             if( this.actionDisallowedTimer.HasNotEnded || this.selectedProfile == null )
+            {
                 return;
+            }
 
             this.selectedProfile = this.selectedProfile.Load();
             this.game.States.Replace<IngameState>();
@@ -585,7 +607,9 @@ namespace Zelda.GameStates
         private void Exit()
         {
             if( this.actionDisallowedTimer.HasNotEnded )
+            {
                 return;
+            }
 
             this.game.Exit();
         }
@@ -622,11 +646,6 @@ namespace Zelda.GameStates
                 this.game.ItemManager.Unload();
                 this.Load();
                 this.RefreshCharacterTint();
-            }
-
-            if( this.game.Graphics.ChangePipeline( Zelda.Graphics.DrawingPipeline.Bloom ) )
-            {
-                this.RandomizeBloom();
             }
 
             this.actionDisallowedTimer.Reset();
