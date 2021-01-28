@@ -342,12 +342,30 @@ namespace Zelda.GameStates
                 ISprite sprite = linkSprites.GetMove( spriteDirection );
 
                 int drawOffsetX = 0;
-                if( spriteDirection == Direction4.Right )
+                int drawOffsetY = 0;
+                switch( spriteDirection )
                 {
-                    drawOffsetX = -1;
+                    case Direction4.None:
+                        break;
+                    case Direction4.Left:
+                        drawOffsetY = -1;
+                        break;
+                    case Direction4.Right:
+                        drawOffsetX = -1;
+                        drawOffsetY = -1;
+                        break;
+                    case Direction4.Up:
+                        break;
+                    case Direction4.Down:
+                        break;
                 }
 
-                sprite.Draw( new Vector2( (game.ViewSize.X / 2.0f) - (sprite.Width / 2) + drawOffsetX, 42 ), batch );
+                batch.DrawRect(
+                    new RectangleF( new Vector2( (game.ViewSize.X / 2.0f) - 12, 39 ), new Vector2( 24.0f, 26.0f ) ),
+                    Xna.Color.Black.WithAlpha( 150 ),
+                    0.025f
+                );
+                sprite.Draw( new Vector2( (game.ViewSize.X / 2.0f) - (sprite.Width / 2) + drawOffsetX, 42 + drawOffsetY ), batch );
             }
             drawContext.End();
             UserInterface.Draw( drawContext );
@@ -389,17 +407,17 @@ namespace Zelda.GameStates
 
             // Draw Title Background
             batch.DrawRect(
-                new Xna.Rectangle( 0, 0, game.ViewSize.X, 20 ),
-                UIColors.LightWindowBackground,
+                new Xna.Rectangle( 0, 0, game.ViewSize.X, 21 ),
+                UIColors.DarkWindowBackground,
                 0.001f
             );
 
             // Draw Title String
             UIFonts.TahomaBold11.Draw(
                 title,
-                new Vector2( game.ViewSize.X / 2, 0.0f ),
+                new Vector2( game.ViewSize.X / 2, 1.0f ),
                 TextAlign.Center,
-                new Microsoft.Xna.Framework.Color( 0, 0, 0, 155 ),
+                new Microsoft.Xna.Framework.Color( 255, 255, 255, 255 ),
                 0.002f,
                 drawContext
             );
@@ -518,6 +536,11 @@ namespace Zelda.GameStates
                     break;
                 default:
                     break;
+            }
+
+            if( Scene != null )
+            {
+                this.Scene.Update( updateContext );
             }
 
             base.Update( updateContext );

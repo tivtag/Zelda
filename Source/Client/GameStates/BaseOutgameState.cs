@@ -10,16 +10,10 @@
 
 namespace Zelda.GameStates
 {
-    using System.Collections.Generic;
     using Atom;
     using Atom.Math;
     using Atom.Xna;
     using Atom.Xna.Fonts;
-    using Atom.Xna.Particles;
-    using Atom.Xna.Particles.Controllers;
-    using Atom.Xna.Particles.Emitters;
-    using Atom.Xna.Particles.Modifiers;
-    using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using Zelda.Graphics;
     using Zelda.UI;
@@ -28,7 +22,7 @@ namespace Zelda.GameStates
     /// <summary>
     /// Represents the base class that both the <see cref="CharacterCreationState"/> and <see cref="CharacterSelectionState"/> share.
     /// </summary>
-    internal abstract class BaseOutgameState : IGameState
+    internal abstract class BaseOutgameState : IGameState, ISceneProvider
     {
         #region [ Properties ]
 
@@ -338,7 +332,7 @@ namespace Zelda.GameStates
             if( sceneProvider != null )
             {
                 this.scene = sceneProvider.Scene;
-                this.BackgroundColor = Xna.Color.Black.WithAlpha( 20 );
+                this.BackgroundColor = Xna.Color.Black.WithAlpha( 30 );
             }
             else
             {
@@ -362,7 +356,6 @@ namespace Zelda.GameStates
             this.game.GetService<FlyingTextManager>()
                 .IsVisible = true;
 
-            this.scene = null;
             this.isActive = false;
         }
 

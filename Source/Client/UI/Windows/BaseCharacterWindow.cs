@@ -10,6 +10,7 @@
 
 namespace Zelda.UI
 {
+    using System.Globalization;
     using Atom.Math;
     using Atom.Xna;
     using Atom.Xna.Fonts;
@@ -71,9 +72,8 @@ namespace Zelda.UI
         /// </param>
         protected virtual void DrawBasicStatistics( ISpriteDrawContext drawContext )
         {
-            var batch = drawContext.Batch;
-            var culture = System.Globalization.CultureInfo.CurrentCulture;
-            var statable = this.Player.Statable;
+            CultureInfo culture = CultureInfo.CurrentCulture;
+            Status.ExtendedStatable statable = this.Player.Statable;
 
             // Draw Player's name:
             DrawText(
@@ -189,7 +189,7 @@ namespace Zelda.UI
             }
             else
             {
-                var talentStats = this.Player.TalentTree.Statistics;
+                Talents.TalentTreeStatistics talentStats = this.Player.TalentTree.Statistics;
 
                 return string.Format(
                     "Unknown Class ({0}/{1}/{2}/{3})",

@@ -73,7 +73,7 @@ namespace Zelda.UI
         {
             Vector2 buttonPosition = new Vector2( CenterStatValuesX + 30, LineStartY + 2 );
 
-            foreach( var button in this.statUpButtons )
+            foreach( StatUpButton button in this.statUpButtons )
             {
                 button.Text           = "+";
                 button.Font           = fontText;
@@ -195,7 +195,9 @@ namespace Zelda.UI
         protected override void OnDraw( ISpriteDrawContext drawContext )
         {
             if( this.Player == null )
+            {
                 return;
+            }
 
             this.DrawBackground( drawContext );
             this.DrawBasicStatistics( drawContext );
@@ -211,9 +213,9 @@ namespace Zelda.UI
         /// </param>
         private void DrawDetailedInfos( ISpriteDrawContext drawContext )
         {
-            var statable = this.Player.Statable;
-            var culture  = CultureInfo.CurrentCulture;
-            float y      = LineStartY - 6;
+            ExtendedStatable statable = this.Player.Statable;
+            CultureInfo culture  = CultureInfo.CurrentCulture;
+            float y = LineStartY - 6;
             int baseX = (int)this.rightSpritePosition.X - 14;
 
             // Melee Damage:

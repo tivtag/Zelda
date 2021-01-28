@@ -31,7 +31,7 @@ namespace Zelda.UI
         {
             Vector2 buttonPosition = new Vector2( CenterStatValuesX + 46, LineStartY + 2 );
 
-            foreach( var button in this.statDownButtons )
+            foreach( StatUpButton button in this.statDownButtons )
             {
                 button.Text = "-";
                 button.Font = fontText;
@@ -155,7 +155,7 @@ namespace Zelda.UI
         /// </summary>
         protected override void Closing()
         {
-            foreach( var button in this.statDownButtons )
+            foreach( StatUpButton button in this.statDownButtons )
             {
                 button.HideAndDisable();
             }
@@ -186,10 +186,11 @@ namespace Zelda.UI
             userInterface.RemoveElements( this.statDownButtons );
             base.RemoveChildElementsFrom( userInterface );
         }
+
         /// <summary>
         /// Enumerates the StatUpButton for point reduction shown in the CharacterCreationStatusWindow.
         /// </summary>
-        private readonly StatUpButton[] statDownButtons = new StatUpButton[6] {            
+        private readonly StatUpButton[] statDownButtons = new StatUpButton[6] {
             new StatUpButton( Stat.Strength     ),
             new StatUpButton( Stat.Dexterity    ),
             new StatUpButton( Stat.Vitality     ),

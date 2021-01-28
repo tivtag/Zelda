@@ -663,7 +663,6 @@ namespace Zelda.GameStates
             if( newState is IngameState )
             {
                 this.Unload();
-                this.game.Graphics.ChangePipeline( Zelda.Graphics.DrawingPipeline.Normal );
             }
 
             base.ChangedTo( newState );
