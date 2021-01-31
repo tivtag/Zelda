@@ -59,7 +59,11 @@ namespace Zelda.GameStates
             }
         }
 
-        public ZeldaScene Scene => this.scene;
+        public ZeldaScene Scene
+        {
+            get => this.scene;
+            protected set => this.scene = value;
+        }
 
         #endregion
 
@@ -161,19 +165,14 @@ namespace Zelda.GameStates
         }
 
         /// <summary>
-        /// Draws the background and ParticleEffect of the BaseCharacterState.
+        /// Draws the background of this BaseOutgameState.
         /// </summary>
         /// <param name="drawContext">
         /// The current ISpriteDrawContext.
         /// </param>
         protected virtual void DrawBackground( ISpriteDrawContext drawContext )
         {
-            drawContext.Begin();
-            drawContext.Batch.DrawRect(
-                new Rectangle( 0, 0, this.game.ViewSize.X, this.game.ViewSize.Y ),
-                BackgroundColor
-            );
-            drawContext.End();
+            // no op
         }
 
         /// <summary>

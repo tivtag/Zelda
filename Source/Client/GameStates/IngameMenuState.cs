@@ -26,7 +26,7 @@ namespace Zelda.GameStates
     /// and exit to the character selection state.
     /// </summary>
     internal sealed class IngameMenuState : IGameState, ISceneProvider
-    {   
+    {
         /// <summary>
         /// Gets the ZeldaScene that is drawn in the background of this IngameMenuState.
         /// </summary>
@@ -64,24 +64,29 @@ namespace Zelda.GameStates
             float buttonPositionX = (int)(viewSize.X / 2.0f - 40.0f);
             float centerY = (int)(viewSize.Y / 2.0f);
             const float HalfButtonHeight = 11.0f;
-                 
+
             var saveButton = new SpriteButton( "Save", sl.LoadSprite( "Button_Save_Default" ), sl.LoadSprite( "Button_Save_Selected" ) ) {
-                Position = new Vector2( buttonPositionX, centerY - HalfButtonHeight * 4 )
+                Position = new Vector2( buttonPositionX, centerY - HalfButtonHeight * 4 ),
+                RelativeDrawOrder = 0.5f
             };
 
-            var settingsButton = new SpriteButton( "Settings", sl.LoadSprite( "Button_Settings_Default" ), sl.LoadSprite( "Button_Settings_Selected" ) )            {
-                Position = new Vector2( buttonPositionX, centerY - HalfButtonHeight )
+            var settingsButton = new SpriteButton( "Settings", sl.LoadSprite( "Button_Settings_Default" ), sl.LoadSprite( "Button_Settings_Selected" ) ) 
+            {
+                Position = new Vector2( buttonPositionX, centerY - HalfButtonHeight ),
+                RelativeDrawOrder = 0.5f
             };
 
             var exitButton = new SpriteButton( "Exit", sl.LoadSprite( "Button_Exit_Default" ), sl.LoadSprite( "Button_Exit_Selected" ) )
             {
-                Position = new Vector2( buttonPositionX, centerY + HalfButtonHeight * 2 )
+                Position = new Vector2( buttonPositionX, centerY + HalfButtonHeight * 2 ),
+                RelativeDrawOrder = 0.5f
             };
 
             // Back Button
             var backButton = new NavButton( "BackButton", serviceProvider ) {
                 Position = new Vector2( 3, serviceProvider.ViewSize.Y - 23 ),
-                ButtonMode = NavButton.Mode.Back
+                ButtonMode = NavButton.Mode.Back,
+                RelativeDrawOrder = 0.5f
             };
 
             backButton.Clicked += OnBackButtonClicked;
@@ -93,11 +98,19 @@ namespace Zelda.GameStates
             saveButton.MouseEntering += this.OnMouseEnteringButton;
             settingsButton.Clicked += this.OnSettingsButtonClicked;
             settingsButton.MouseEntering += this.OnMouseEnteringButton;
-            
+
             this.AddButton( saveButton );
             this.AddButton( settingsButton );
             this.AddButton( exitButton );
             this.SelectButton( saveButton );
+
+            // Background Rectangle
+            var backgroundRectangle = new RectangleUIElement() {
+                Size = serviceProvider.ViewSize,
+                Color = Microsoft.Xna.Framework.Color.Black.WithAlpha( 200 )
+            };
+
+            this.userInterface.AddElement( backgroundRectangle );
         }
 
         private void OnMouseEnteringButton( Atom.Xna.UI.UIElement sender )
@@ -279,23 +292,25 @@ namespace Zelda.GameStates
             pipeline.InitializeFrame( this.ingameState.Scene, this.userInterface, zeldaDrawContext );
             {
                 pipeline.BeginScene();
-                {
-                    Atom.Xna.Batches.IComposedSpriteBatch batch = zeldaDrawContext.Batch;
-                    zeldaDrawContext.Begin();
-                    {
-                        batch.DrawRect(
-                            new Microsoft.Xna.Framework.Rectangle(
-                                0,
-                                0,
-                                this.serviceProvider.ViewSize.X,
-                                this.serviceProvider.ViewSize.Y
-                            ),
-                            Microsoft.Xna.Framework.Color.Black.WithAlpha( 200 )
-                        );
-                    }
-                    zeldaDrawContext.End();
-                }
                 pipeline.EndScene();
+                //{
+                //    Atom.Xna.Batches.IComposedSpriteBatch batch = zeldaDrawContext.Batch;
+                //    zeldaDrawContext.Begin();
+                //    {
+
+                //        batch.DrawRect(
+                //            new Microsoft.Xna.Framework.Rectangle(
+                //                0,
+                //                0,
+                //                this.serviceProvider.ViewSize.X,
+                //                this.serviceProvider.ViewSize.Y
+                //            ),
+                //            Microsoft.Xna.Framework.Color.Black.WithAlpha( 200 ),
+                //            1f
+                //        );
+                //    }
+                //    zeldaDrawContext.End();
+                //}
                 pipeline.BeginUserInterface();
                 pipeline.EndUserInterface();
             }

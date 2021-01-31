@@ -22,6 +22,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
+    <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
     <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
     <DocumentationFile>..\..\Compiled\$(Configuration)\ZeldasLibrary.xml</DocumentationFile>

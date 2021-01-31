@@ -448,27 +448,7 @@ namespace Zelda.GameStates
             return false;
         }
 
-        private void SpawnRandomEnemy()
-        {
-            Atom.Collections.Hat<string> templateHat = new Atom.Collections.Hat<string>( game.Rand );
-            templateHat.Insert( "Skeleton", 11.0f );
-            templateHat.Insert( "Spider_Small_45", 5.0f );
-            templateHat.Insert( "Skeleton_Red", 4.0f );
-            templateHat.Insert( "SkeletonHead", 4.0f );
-            templateHat.Insert( "Ghost", 3.0f );
-            templateHat.Insert( "Boss_RudrasEye", 1.0f );
-
-            ZeldaEntity entity = game.EntityTemplateManager
-                .GetTemplate( templateHat.Get() )
-                .CreateInstance();
-
-            entity.Transform.Position = scene.Camera.Scroll + userInterface.MousePosition;
-
-            if( entity.Components.Get<Moveable>().IsWalkableAt( entity.Transform.Position, scene.Map.Floors[0].ActionLayer ) )
-            {
-                scene.Add( entity );
-            }
-        }
+        private void SpawnRandomEnemy() => randomTitleScreenEnemySpawner.SpawnRandomEnemy( game, userInterface, scene );
 
         #endregion
 
@@ -570,6 +550,11 @@ namespace Zelda.GameStates
         /// Used for input detection.
         /// </summary>
         private ZeldaUserInterface userInterface;
+
+        /// <summary>
+        /// Spawns the random enemies on right mouse-click.
+        /// </summary>
+        private readonly RandomTitleScreenEnemySpawner randomTitleScreenEnemySpawner = new RandomTitleScreenEnemySpawner();
 
         #region > Constants <
 

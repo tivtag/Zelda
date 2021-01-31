@@ -21,6 +21,7 @@ namespace Zelda.GameStates
     using Atom.Xna.Fonts;
     using Atom.Xna.UI.Controls;
     using Microsoft.Xna.Framework.Input;
+    using Zelda.Entities;
     using Zelda.Entities.Drawing;
     using Zelda.Profiles;
     using Zelda.Timing;
@@ -546,8 +547,14 @@ namespace Zelda.GameStates
                     this.EnterGame();
                 }
             }
+            else if( (mouseState.RightButton == ButtonState.Pressed && oldMouseState.RightButton == ButtonState.Released) &&
+                     game.IsActive )
+            {
+                SpawnRandomEnemy();
+            }
         }
 
+        private void SpawnRandomEnemy() => randomTitleScreenEnemySpawner.SpawnRandomEnemy( game, UserInterface, Scene );
         /// <summary>
         /// Enters the game by loading the selected profile.
         /// </summary>
@@ -650,6 +657,27 @@ namespace Zelda.GameStates
 
             this.actionDisallowedTimer.Reset();
             base.ChangedFrom( oldState );
+
+            if( this.Scene == null )
+            {
+                LoadBackupScene();
+            }
+        }
+
+        private void LoadBackupScene()
+        {
+            // Setup Scene
+            var scene = ZeldaScene.Load( "TitleScreen", this.game );
+            scene.SetVisibilityStateActionLayer( false );
+            scene.IngameDateTime.Current = new DateTime( 1000, 3, 1, 8, 45, 0 );
+            scene.IngameDateTime.TickSpeed = 310.0f;
+
+            // Setup camera:
+            ZeldaCamera camera = scene.Camera;
+            camera.ViewSize = game.ViewSize;
+            camera.Scroll = new Vector2( 180 * 16.0f, 16 * 16.0f );
+
+            this.Scene = scene;
         }
 
         /// <summary>
@@ -732,6 +760,11 @@ namespace Zelda.GameStates
         /// be executed.
         /// </summary>
         private readonly ResetableTimer actionDisallowedTimer = new ResetableTimer( 0.25f );
+
+        /// <summary>
+        /// Spawns the random enemies on right mouse-click.
+        /// </summary>
+        private readonly RandomTitleScreenEnemySpawner randomTitleScreenEnemySpawner = new RandomTitleScreenEnemySpawner();
 
         /// <summary>
         /// The ZeldaGame object.

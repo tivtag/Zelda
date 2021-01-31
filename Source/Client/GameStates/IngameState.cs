@@ -11,6 +11,7 @@
 namespace Zelda.GameStates
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using Atom;
@@ -18,6 +19,7 @@ namespace Zelda.GameStates
     using Microsoft.Xna.Framework.Input;
     using Zelda.Entities;
     using Zelda.Entities.Spawning;
+    using Zelda.Graphics;
     using Zelda.Profiles;
     using Zelda.Saving;
     using Zelda.UI;
@@ -25,7 +27,7 @@ namespace Zelda.GameStates
     /// <summary>
     /// Defines the the IGameState in which the actual game runs.
     /// </summary>
-    internal sealed class IngameState : Atom.IGameState, IIngameState, IDisposable
+    internal sealed class IngameState : Atom.IGameState, IIngameState, IDisposable, ISceneProvider
     {
         #region [ Properties ]
 
@@ -182,7 +184,7 @@ namespace Zelda.GameStates
         {
             if( this.player != null )
             {
-                var cache = this.player.WorldStatus.ScenesCache;
+                ZeldaScenesCache cache = this.player.WorldStatus.ScenesCache;
                 cache.Reload( this.game );
 
                 if( !cache.Contains( this.scene ) )
@@ -206,7 +208,9 @@ namespace Zelda.GameStates
         private void LoadProfile()
         {
             if( profile == null )
+            {
                 throw new InvalidOperationException( Resources.Error_TheProfileIsNull );
+            }
 
             this.player = profile.Player;
             this.worldStatus = profile.WorldStatus;
@@ -288,7 +292,9 @@ namespace Zelda.GameStates
         private void ChangeScene( ZeldaScene scene )
         {
             if( this.player.Scene != null )
+            {
                 this.player.RemoveFromScene();
+            }
 
             this.scene = scene;
 
@@ -367,12 +373,12 @@ namespace Zelda.GameStates
         private void TestCollisionPlayerEnemies()
         {
             int playerFloor = player.FloorNumber;
-            var entities = this.scene.VisibleEntities;
+            List<ZeldaEntity> entities = this.scene.VisibleEntities;
 
             for( int i = 0; i < entities.Count; ++i )
             {
-                var entity = entities[i];
-                var notifier = entity as ICollisionWithPlayerNotifier;
+                ZeldaEntity entity = entities[i];
+                ICollisionWithPlayerNotifier notifier = entity as ICollisionWithPlayerNotifier;
 
                 if( notifier != null )
                 {
@@ -407,7 +413,7 @@ namespace Zelda.GameStates
         /// </param>
         public void Draw( Atom.IDrawContext drawContext )
         {
-            var pipeline = this.graphics.Pipeline;
+            IDrawingPipeline pipeline = this.graphics.Pipeline;
 
             pipeline.InitializeFrame( this.scene, this.userInterface, (ZeldaDrawContext)drawContext );
             {
@@ -461,7 +467,9 @@ namespace Zelda.GameStates
         public ZeldaScene RequestSceneChange( string name, bool cachePrevious )
         {
             if( this.player == null )
+            {
                 return null;
+            }
 
             // If no change is required:
             if( this.scene != null && this.scene.Name.Equals( name, StringComparison.Ordinal ) )
@@ -470,7 +478,7 @@ namespace Zelda.GameStates
             }
 
             // Aquire and fill cache:
-            var scenesCache = this.player.WorldStatus.ScenesCache;
+            ZeldaScenesCache scenesCache = this.player.WorldStatus.ScenesCache;
 
             if( this.scene != null )
             {
@@ -494,7 +502,7 @@ namespace Zelda.GameStates
             }
             else
             {
-                var newScene = this.LoadScene( name );
+                ZeldaScene newScene = this.LoadScene( name );
                 this.ChangeScene( newScene );
                 return newScene;
             }
@@ -505,19 +513,25 @@ namespace Zelda.GameStates
         /// </summary>
         private void TryPickupOrUse()
         {
-            var entities = this.scene.VisibleEntities;
+            List<ZeldaEntity> entities = this.scene.VisibleEntities;
             if( entities == null )
+            {
                 return;
+            }
 
             // first check whether we can pickup an item
             for( int i = 0; i < entities.Count; ++i )
             {
                 var pickupable = entities[i] as IPickupableEntity;
                 if( pickupable == null )
+                {
                     continue;
+                }
 
                 if( pickupable.PickUp( player ) )
+                {
                     return;
+                }
             }
 
             // didn't find an item to pick up; now the useable objects
@@ -525,10 +539,14 @@ namespace Zelda.GameStates
             {
                 var useable = entities[i] as IUseable;
                 if( useable == null )
+                {
                     continue;
+                }
 
                 if( useable.Use( player ) )
+                {
                     return;
+                }
             }
         }
 
@@ -595,7 +613,9 @@ namespace Zelda.GameStates
         private void OnKeyboardInput( object sender, ref KeyboardState keyState, ref KeyboardState oldKeyState )
         {
             if( !this.userInterface.HasFocus )
+            {
                 return;
+            }
 
             Keys[] pressedKeys = keyState.GetPressedKeys();
             if( this.HandleKeyboardInput_WindowsAndSettings( ref oldKeyState, pressedKeys ) )
@@ -737,7 +757,9 @@ namespace Zelda.GameStates
         {
             // The following input is only allowed to be handled when ..
             if( this.isPaused || !this.userInterface.HasFocus )
+            {
                 return;
+            }
 
             // special case if the player has died
             // then he can respawn by pressing Space
@@ -819,9 +841,14 @@ namespace Zelda.GameStates
                 oldMouseState.LeftButton == ButtonState.Released )
             {
                 if( !this.userInterface.HasFocus || this.IsPaused )
+                {
                     return;
+                }
+
                 if( this.userInterface.SideBar.HasButtonAt( new Point2( mouseState.X, mouseState.Y ) ) )
+                {
                     return;
+                }
 
                 this.player.PickedupItemContainer.Drop();
             }

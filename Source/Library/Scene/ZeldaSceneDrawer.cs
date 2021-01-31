@@ -10,11 +10,13 @@
 
 namespace Zelda
 {
+    using System.Collections.Generic;
     using Atom.Scene.Tiles;
     using Atom.Xna;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    
+    using Zelda.Entities;
+
     /// <summary>
     /// Encapsulates the <see cref="ZeldaScene"/> drawing logic.
     /// </summary>
@@ -77,14 +79,14 @@ namespace Zelda
         /// </summary>
         private void PreDraw()
         {
-            var floors = this.scene.Map.Floors;
+            List<TileMapFloor> floors = this.scene.Map.Floors;
             for( int floorIndex = 0; floorIndex < floors.Count; ++floorIndex )
             {
                 var tag = floors[floorIndex].Tag as ZeldaTileMapFloorTag;
 
                 if( tag != null )
                 {
-                    var drawables = tag.VisibleDrawables;
+                    List<IZeldaFloorDrawable> drawables = tag.VisibleDrawables;
                     int drawablesCount = drawables.Count;
 
                     for( int i = 0; i < drawablesCount; ++i )
@@ -121,7 +123,7 @@ namespace Zelda
             else
             {
                 this.ActuallyDrawUnlit();
-            }                     
+            }
 
             // End Drawing
             drawContext.End();
@@ -132,18 +134,18 @@ namespace Zelda
         /// </summary>
         private void ActuallyDrawUnlit()
         {
-            var camera = scene.Camera;
+            ZeldaCamera camera = scene.Camera;
             int scrollX = (int)camera.Scroll.X;
             int scrollY = (int)camera.Scroll.Y;
             int viewWidth  = camera.ViewSize.X;
             int viewHeight = camera.ViewSize.Y;
-            var floors = this.scene.Map.Floors;
+            List<TileMapFloor> floors = this.scene.Map.Floors;
 
             for( int floorIndex = 0; floorIndex < floors.Count; ++floorIndex )
             {
                 // Draw Floor.
-                var floor = floors[floorIndex];
-                var layers = floor.Layers;
+                TileMapFloor floor = floors[floorIndex];
+                List<TileMapDataLayer> layers = floor.Layers;
 
                 for( int layerIndex = 0; layerIndex < layers.Count; ++layerIndex )
                 {
@@ -179,7 +181,7 @@ namespace Zelda
 
                 if( tag != null )
                 {
-                    var drawables = tag.VisibleDrawables;
+                    List<IZeldaFloorDrawable> drawables = tag.VisibleDrawables;
                     int drawablesCount = drawables.Count;
 
                     for( int i = 0; i < drawablesCount; ++i )
@@ -200,13 +202,13 @@ namespace Zelda
         /// </remarks>
         private void ActuallyDrawUnlitEditMode()
         {
-            var camera = scene.Camera;
+            ZeldaCamera camera = scene.Camera;
             int scrollX = (int)camera.Scroll.X;
             int scrollY = (int)camera.Scroll.Y;
             int viewWidth  = camera.ViewSize.X;
             int viewHeight = camera.ViewSize.Y;
-                        
-            foreach( var floor in this.scene.Map.Floors )
+
+            foreach( TileMapFloor floor in this.scene.Map.Floors )
             {
                 // Draw Floor.
                 foreach( TileMapSpriteDataLayer layer in floor.Layers )
@@ -242,18 +244,22 @@ namespace Zelda
 
                 if( tag != null )
                 {
-                    var drawables = tag.VisibleDrawables;
+                    List<IZeldaFloorDrawable> drawables = tag.VisibleDrawables;
                     int drawablesCount = drawables.Count;
 
                     for( int i = 0; i < drawablesCount; ++i )
                     {
-                        var drawable = drawables[i];
+                        IZeldaFloorDrawable drawable = drawables[i];
                         var editModeDrawable = drawable as IEditModeDrawable;
 
                         if( editModeDrawable != null )
+                        {
                             editModeDrawable.DrawEditMode( drawContext );
+                        }
                         else
+                        {
                             drawable.Draw( drawContext );
+                        }
                     }
                 }
             }
@@ -285,7 +291,7 @@ namespace Zelda
             // Now draw all lights:
             drawContext.Begin( BlendState.NonPremultiplied, SamplerState.LinearClamp, SpriteSortMode.Deferred, scene.Camera.Transform );
 
-            var visibleLights = scene.VisibleLights;
+            List<ILight> visibleLights = scene.VisibleLights;
             int lightCount = visibleLights.Count;
             for( int i = 0; i < lightCount; ++i )
             {
@@ -305,7 +311,7 @@ namespace Zelda
         /// </summary>
         private void DrawOverlays()
         {
-            var overlays = scene.Overlays;
+            List<Overlays.ISceneOverlay> overlays = scene.Overlays;
             this.drawContext.Device.BlendState = BlendState.NonPremultiplied;
 
             for( int i = 0; i < overlays.Count; ++i )

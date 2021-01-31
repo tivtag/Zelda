@@ -71,11 +71,11 @@ namespace Zelda.GameStates
 
         protected override void SetupUserInterface()
         {
-            var viewSize = this.game.ViewSize;
+            Point2 viewSize = this.game.ViewSize;
             float centerX = (int)viewSize.X / 2.0f;
             this.aspectRatioButtons.Clear();
 
-            var button = this.AddAspectRatioButton( "Normal", AspectRatio.Normal );
+            Button button = this.AddAspectRatioButton( "Normal", AspectRatio.Normal );
             button.Position = new Vector2( centerX - 50.0f, AspectRatioButtonY );
 
             button = this.AddAspectRatioButton( "16:9", AspectRatio.Wide16to9 );
@@ -120,6 +120,13 @@ namespace Zelda.GameStates
 
             backButton.Clicked += OnBackButtonClicked;
             UserInterface.AddElement( backButton );
+
+            var backgroundRectangle = new RectangleUIElement() {
+                Size = viewSize,
+                Color = Microsoft.Xna.Framework.Color.Black.WithAlpha( 200 )
+            };
+
+            UserInterface.AddElement( backgroundRectangle );
         }
 
         private void OnMasterVolumeValueChanged( object sender, ChangedValue<float> e )
@@ -201,9 +208,9 @@ namespace Zelda.GameStates
 
         private void DeselectAspectRatioButtons()
         {
-            foreach( var b in this.aspectRatioButtons )
+            foreach( Button aspectRatioButton in this.aspectRatioButtons )
             {
-                b.IsSelected = false;
+                aspectRatioButton.IsSelected = false;
             }
         }
 
@@ -237,7 +244,7 @@ namespace Zelda.GameStates
         {
             drawContext.Begin();
             {
-                var viewSize = this.game.ViewSize;
+                Point2 viewSize = this.game.ViewSize;
                 float centerX = (int)viewSize.X / 2.0f;
 
                 // Draw Title Background
@@ -297,9 +304,9 @@ namespace Zelda.GameStates
         private CheckBox checkBoxVsync;
         private Button buttonWindowMode, buttonFullscreenMode;
         private VolumeControl masterVolume, musicVolume, effectVolume;
+        private NavButton backButton;
 
         private readonly IList<Button> aspectRatioButtons = new List<Button>();
         private readonly ZeldaGame game;
-        private NavButton backButton;
     }
 }

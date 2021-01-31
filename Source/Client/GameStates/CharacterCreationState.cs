@@ -850,6 +850,17 @@ namespace Zelda.GameStates
             }
         }
 
+        protected override void OnMouseInput( ref MouseState mouseState, ref MouseState oldMouseState )
+        {
+            if( (mouseState.RightButton == ButtonState.Pressed && oldMouseState.RightButton == ButtonState.Released) &&
+                game.IsActive )
+            {
+                SpawnRandomEnemy();
+            }
+        }
+
+        private void SpawnRandomEnemy() => randomTitleScreenEnemySpawner.SpawnRandomEnemy( game, UserInterface, Scene );
+
         /// <summary>
         /// Gets a value indicating whether the currently enteredName is valid.
         /// </summary>
@@ -1058,5 +1069,10 @@ namespace Zelda.GameStates
         /// Enumerates the ui elements that allow the user to change the colors of the player sprite.
         /// </summary>
         private ColorSelector colorClothSelector, colorClothHighlightSelector, colorHairSelector, colorHairHighlightSelector;
+
+        /// <summary>
+        /// Spawns the random enemies on right mouse-click.
+        /// </summary>
+        private readonly RandomTitleScreenEnemySpawner randomTitleScreenEnemySpawner = new RandomTitleScreenEnemySpawner();
     }
 }
