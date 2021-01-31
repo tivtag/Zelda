@@ -664,6 +664,9 @@ namespace Zelda.GameStates
             }
         }
 
+        /// <summary>
+        /// Loads a fresh background screen; e.g. when coming from a ingame state.
+        /// </summary>
         private void LoadBackupScene()
         {
             // Setup Scene
