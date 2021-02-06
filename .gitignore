@@ -29,6 +29,9 @@ Compiled/Release/Content/Updater/*.exe
 Compiled/Release/Content/Updater/*.pdb
 Compiled/Release/**/Content/Updater/*.exe.config
 
+Tools/Compiled/**
+Source/Installer/Content/**
+
 Content/BlackCrown_ContentProject/Atom*.*
 Content/BlackCrown_ContentProject/Tools.RecipeProcessor.*
 Content/BlackCrown_ContentProject/ZeldasLibrary.*
