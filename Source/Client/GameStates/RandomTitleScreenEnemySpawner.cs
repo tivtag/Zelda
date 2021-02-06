@@ -27,7 +27,7 @@ namespace Zelda.GameStates
             templateHat.Insert( "Skeleton_Red", 4.0f );
             templateHat.Insert( "SkeletonHead", 4.0f );
             templateHat.Insert( "Ghost", 3.0f );
-            templateHat.Insert( "Boss_RudrasEye", 0.5f );
+            templateHat.Insert( "Boss_RudrasEye", 0.25f );
 
             ZeldaEntity entity = game.EntityTemplateManager
                 .GetTemplate( templateHat.Get() )
