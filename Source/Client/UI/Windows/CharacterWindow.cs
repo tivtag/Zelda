@@ -324,7 +324,7 @@ namespace Zelda.UI
             y += fontVerySmallText.LineSpacing - 7;
 
             // Draw Armor Info:
-            string strArmor = string.Format( 
+            string strArmor = string.Format(
                 culture,
                 Resources.ArmorXMitigationY,
                 statable.Armor.ToString( culture ),
@@ -332,7 +332,7 @@ namespace Zelda.UI
             );
 
             DrawText( 
-                fontVerySmallText, 
+                fontVerySmallText,
                 strArmor,
                 new Vector2( baseX - (int)fontVerySmallText.MeasureString( strArmor ).X, y ),
                 Xna.Color.White,
@@ -392,7 +392,7 @@ namespace Zelda.UI
                 strRegen,
                 new Vector2( baseX - (int)fontVerySmallText.MeasureString( strRegen ).X, y ),
                 Xna.Color.White,
-                drawContext               
+                drawContext
             );
 
             y += fontVerySmallText.LineSpacing + 1;
@@ -400,7 +400,7 @@ namespace Zelda.UI
             // Draw Free Stat Count:
             if( statable.FreeStatPoints > 0 || statUpCost < 0 )
             {
-                string strFreeStats = null;
+                string strFreeStats;
 
                 if( this.statUpCost > 0 )
                 {
@@ -466,7 +466,7 @@ namespace Zelda.UI
             maximum = statable.DamageDone.WithSource.ApplyFixedRanged( maximum );
             maximum = statable.DamageDone.WithSource.ApplyRanged( maximum );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             return string.Format(
                 culture,
                 Resources.RangedDamageXToYAtSpeedZ,
@@ -489,13 +489,17 @@ namespace Zelda.UI
         {
             double rangedAttackSpeed = System.Math.Round( statable.AttackSpeedRanged, 2 );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             string stringRangedAttackSpeed = rangedAttackSpeed.ToString( culture );
 
             if( stringRangedAttackSpeed.Length == 1 )
+            {
                 stringRangedAttackSpeed += culture.NumberFormat.NumberDecimalSeparator + "00";
+            }
             else if( stringRangedAttackSpeed.Length == 3 )
+            {
                 stringRangedAttackSpeed += "0";
+            }
 
             return stringRangedAttackSpeed;
         }
@@ -519,7 +523,7 @@ namespace Zelda.UI
             maximum = statable.DamageDone.WithSource.ApplyFixedMelee( maximum );
             maximum = statable.DamageDone.WithSource.ApplyMelee( maximum );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             return string.Format(
                 culture,
                 Resources.MeleeDamageXToYAtSpeedZ,
@@ -542,13 +546,17 @@ namespace Zelda.UI
         {
             double meleeAttackSpeed = System.Math.Round( statable.AttackSpeedMelee, 2 );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             string stringMeleeAttackSpeed = meleeAttackSpeed.ToString( culture );
 
             if( stringMeleeAttackSpeed.Length == 1 )
+            {
                 stringMeleeAttackSpeed += culture.NumberFormat.NumberDecimalSeparator + "00";
+            }
             else if( stringMeleeAttackSpeed.Length == 3 )
+            {
                 stringMeleeAttackSpeed += "0";
+            }
 
             return stringMeleeAttackSpeed;
         }
@@ -564,7 +572,7 @@ namespace Zelda.UI
         /// </returns>
         private static string GetSpellDamageInfoString( ExtendedStatable statable )
         {
-            var spellPower = statable.SpellPower.GetDamageRange( ElementalSchool.All );
+            IntegerRange spellPower = statable.SpellPower.GetDamageRange( ElementalSchool.All );
             int minimum = spellPower.Minimum;
             minimum = statable.DamageDone.WithSource.ApplyFixedSpell( minimum );
             minimum = statable.DamageDone.WithSource.ApplySpell( minimum );
@@ -573,7 +581,7 @@ namespace Zelda.UI
             maximum = statable.DamageDone.WithSource.ApplyFixedSpell( maximum );
             maximum = statable.DamageDone.WithSource.ApplySpell( maximum );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             return string.Format(
                 culture,
                 Resources.MagicDamageXToYAtCastSpeedZ,
@@ -596,7 +604,7 @@ namespace Zelda.UI
         {
             double castSpeed = System.Math.Round( statable.CastTimeModifier, 2 );
 
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             string stringCastSpeed = castSpeed.ToString( culture );
 
             if( stringCastSpeed.Length == 1 )
@@ -619,8 +627,8 @@ namespace Zelda.UI
         /// </param>
         private void DrawStatIndicators( ISpriteDrawContext drawContext )
         {
-            var culture  = System.Globalization.CultureInfo.CurrentCulture;
-            var statable = this.Player.Statable;
+            CultureInfo culture  = System.Globalization.CultureInfo.CurrentCulture;
+            ExtendedStatable statable = this.Player.Statable;
 
             int statLineStartY = LineStartY + 2;
 
@@ -878,14 +886,14 @@ namespace Zelda.UI
         {
             this.RefreshStatUpButtonVisability();
 
-            foreach( var tooltip in this.statTooltips )
+            foreach( TextTooltip tooltip in this.statTooltips )
             {
                 tooltip.ShowAndEnable();
             }
 
             if( ShowsStatValueTooltips )
             {
-                foreach( var tooltip in this.statValueTooltips )
+                foreach( TextTooltip tooltip in this.statValueTooltips )
                 {
                     tooltip.ShowAndEnable();
                 }
@@ -901,17 +909,17 @@ namespace Zelda.UI
         /// </summary>
         protected override void Closing()
         {
-            foreach( var button in this.statUpButtons )
+            foreach( StatUpButton button in this.statUpButtons )
             {
                 button.HideAndDisable();
             }
 
-            foreach( var tooltip in this.statTooltips )
+            foreach( TextTooltip tooltip in this.statTooltips )
             {
                 tooltip.HideAndDisable();
             }
 
-            foreach( var tooltip in this.statValueTooltips )
+            foreach( TextTooltip tooltip in this.statValueTooltips )
             {
                 tooltip.HideAndDisable();
             }
@@ -929,7 +937,7 @@ namespace Zelda.UI
         /// <summary>
         /// Enumerates the StatUpButton shown in the CharacterWindow.
         /// </summary>
-        private readonly StatUpButton[] statUpButtons = new StatUpButton[6] {            
+        private readonly StatUpButton[] statUpButtons = new StatUpButton[6] {
             new StatUpButton( Stat.Strength     ),
             new StatUpButton( Stat.Dexterity    ),
             new StatUpButton( Stat.Vitality     ),
@@ -1018,11 +1026,14 @@ namespace Zelda.UI
             protected override void OnDraw( ISpriteDrawContext drawContext )
             {
                 if( this.Tooltip == null )
+                {
                     return;
+                }
+
                 var zeldaDrawContext = (ZeldaDrawContext)drawContext;
 
                 // Draw background.
-                var area = this.ClientArea.ToXna();
+                Xna.Rectangle area = this.ClientArea.ToXna();
 
                 int borderWidth  = (int)(area.Width * 0.25f);
                 int borderHeight = (int)(area.Height * 0.2f);
@@ -1078,7 +1089,7 @@ namespace Zelda.UI
                 var zeldaDrawContext = (ZeldaDrawContext)drawContext;
 
                 // Draw background.
-                var area = this.ClientArea.ToXna();
+                Xna.Rectangle area = this.ClientArea.ToXna();
 
                 const int BorderWidth = 4;
                 area.X      -= BorderWidth / 2;
@@ -1112,7 +1123,7 @@ namespace Zelda.UI
                 if( this.Tooltip != null )
                 {
                     var stat     = (Stat)this.Tooltip.Tag;
-                    var statable = window.Player.Statable;
+                    ExtendedStatable statable = window.Player.Statable;
 
                     int baseValue  = statable.GetBaseStat( stat );
                     int totalValue = statable.GetStat( stat );

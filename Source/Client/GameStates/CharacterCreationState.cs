@@ -129,6 +129,14 @@ namespace Zelda.GameStates
             this.characterWindow = new CharacterCreationStatusWindow( this.game );
             this.UserInterface.AddElement( characterWindow );
 
+            Rectangle statBackgroundRectangle = this.characterWindow.StatBackgroundRectangle;
+            this.statsBackgroundRectangle = new RectangleUIElement() {
+                Position = statBackgroundRectangle.Position + 2,
+                Size = statBackgroundRectangle.Size - 2,
+                Color = Xna.Color.Black.WithAlpha( 100 )
+            };
+            UserInterface.AddElement( statsBackgroundRectangle );
+
             // Color
             this.colorClothSelector = new ColorSelector( new Vector2( game.ViewSize.X / 2.0f - 50.0f, 81.0f ), "Cloth Main" );
             this.UserInterface.AddElement( colorClothSelector );
@@ -163,6 +171,7 @@ namespace Zelda.GameStates
 
             DisableStep( CreationStep.SelectLooks );
             DisableStep( CreationStep.SelectDifficulty );
+            DisableStep( CreationStep.SelectStats );
         }
 
         private void OnColorSelectorColorChanged( object sender, EventArgs e )
@@ -910,6 +919,7 @@ namespace Zelda.GameStates
 
                 case CreationStep.SelectStats:
                     characterWindow.Open();
+                    statsBackgroundRectangle.ShowAndEnable();
                     break;
 
                 case CreationStep.SelectLooks:
@@ -943,6 +953,7 @@ namespace Zelda.GameStates
             {
                 case CreationStep.SelectStats:
                     characterWindow.Close();
+                    statsBackgroundRectangle.HideAndDisable();
                     break;
 
                 case CreationStep.SelectLooks:
@@ -1048,7 +1059,12 @@ namespace Zelda.GameStates
         /// <summary>
         /// Used to invest the status points of the player.
         /// </summary>
-        private Zelda.UI.CharacterWindow characterWindow;
+        private Zelda.UI.CharacterCreationStatusWindow characterWindow;
+
+        /// <summary>
+        /// UI rectangle that is sohwn behind the characterWindow, such that it becomes more readable.
+        /// </summary>
+        private RectangleUIElement statsBackgroundRectangle;
 
         /// <summary>
         /// The UI-movement buttons.

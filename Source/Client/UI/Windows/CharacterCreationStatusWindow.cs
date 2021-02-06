@@ -11,6 +11,8 @@ namespace Zelda.UI
     /// </summary>
     internal sealed class CharacterCreationStatusWindow : CharacterWindow
     {
+        public Rectangle StatBackgroundRectangle => new Rectangle( 3, 43, (int)this.Size.X - 7, (int)this.Size.Y - 74 );
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterCreationStatusWindow"/> class.
         /// </summary>
@@ -107,9 +109,10 @@ namespace Zelda.UI
 
         protected override void DrawBackground( Atom.Xna.ISpriteDrawContext drawContext )
         {
-            // no op
-            drawContext.Batch.DrawRect( new Rectangle( 3, 43, (int)this.Size.X - 7, (int)this.Size.Y - 74 ), new Xna.Color( 255, 255, 255, 15 ) );
-            drawContext.Batch.DrawLineRect( new Rectangle( 3, 43, (int)this.Size.X - 7, (int)this.Size.Y - 74 ), new Xna.Color( 255, 255, 255, 25 ) );
+            Rectangle area = this.StatBackgroundRectangle;
+
+            drawContext.Batch.DrawRect( area, new Xna.Color( 255, 255, 255, 15 ) );
+            drawContext.Batch.DrawLineRect( area, new Xna.Color( 255, 255, 255, 25 ) );
         }
         
         protected override void DrawBasicStatistics( Atom.Xna.ISpriteDrawContext drawContext )
