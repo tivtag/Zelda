@@ -6,7 +6,9 @@
 
 namespace Tools.ReleasePackager.Copy
 {
+    using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Reflection;
     using System.Xml;
@@ -30,14 +32,14 @@ namespace Tools.ReleasePackager.Copy
         public IBlackWhiteList Build( string resourceName )
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var fullResourceName = string.Format(
+            string fullResourceName = string.Format(
                  CultureInfo.InvariantCulture,
                  @"{0}.{1}", 
                  assembly.GetName().Name,
                  resourceName 
             );
 
-            using( var stream = assembly.GetManifestResourceStream( fullResourceName ) )
+            using( Stream stream = assembly.GetManifestResourceStream( fullResourceName ) )
             {
                 var document = XDocument.Load( XmlReader.Create( stream ) );
                 return Build( document );
@@ -56,15 +58,15 @@ namespace Tools.ReleasePackager.Copy
         /// </returns>
         public IBlackWhiteList Build( XDocument document )
         {
-            var directories = 
+            IEnumerable<string> directories = 
                 from dir in document.Descendants( "directory" )
                 select dir.Value;
 
-            var files = 
+            IEnumerable<string> files = 
                 from file in document.Descendants( "file" )
                 select file.Value;
 
-            var extensions = 
+            IEnumerable<string> extensions = 
                 from file in document.Descendants( "extension" )
                 select file.Value;
             

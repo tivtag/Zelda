@@ -2,14 +2,17 @@
 <whitelist>
   <files>
     <file>app.config</file>
-    <file>TLoZ - Black Crown.exe</file> 
+    <file>TLoZ - Black Crown.exe</file>
     <file>Zelda.Updater.Gui.exe</file>
-    <file>Zelda Updater.exe</file>  
-    <file>TLoZ - Black Crown.exe.config</file>
-    <file>Zelda.Updater.Gui.exe.config</file>
-    <file>Zelda Updater.exe.config</file>
-  </files>  
-  <extensions>   
+    <file>Zelda Updater.exe</file>
+    <file>TLoZ - Black Crown.dll.config</file>
+    <file>Zelda.Updater.Gui.dll.config</file>
+    <file>TLoZ - Black Crown.dll.config</file>
+    <file>TLoZ - Black Crown.runtimeconfig.json</file>
+    <file>Zelda.Updater.Gui.runtimeconfig.json</file>
+    <file>Zelda Updater.runtimeconfig.json</file>
+  </files>
+  <extensions>
   </extensions>
   <directories>
   </directories>

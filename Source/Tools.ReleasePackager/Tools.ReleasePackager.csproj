@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>RecipeProcessor</AssemblyName>
+    <AssemblyName>Zelda.ReleasePackager</AssemblyName>
     <AssemblyTitle>The Legend of Zelda : Black Crown | Release Packager</AssemblyTitle>
     <Description>Tool that setups the game for distribution.</Description>
     <Authors>Paul Ennemoser</Authors>
@@ -9,18 +9,22 @@
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <Platforms>x86</Platforms>
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>latest</LangVersion>
-    <RootNamespace>Zelda.RecipeProcessor</RootNamespace>
+    <RootNamespace>Zelda.ReleasePackager</RootNamespace>
     <StartupObject>Tools.ReleasePackager.Program</StartupObject>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
+    <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\Compiled\$(Configuration)\RecipeProcessor.xml</DocumentationFile>
+    <OutputPath>..\..\Tools\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Tools\Compiled\$(Configuration)\Zelda.ReleasePackager.xml</DocumentationFile>
   </PropertyGroup>
   
   <ItemGroup>

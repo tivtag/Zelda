@@ -18,20 +18,15 @@ namespace Tools.ReleasePackager
     /// <remarks>
     /// This works by sequentially running multiple IProcedures.
     /// </remarks>
-    sealed class Program
+    public static class Program
     {
-        static void Main( string[] args )
+        public static void Main( string[] args )
         {
             // ToDo: Use relative paths
             var packager = new Packager(
-                // Compiled 
-                @"D:\Projects\Zelda\Compiled\Release",
-
-                // Packaged
-                @"D:\Projects\Zelda\Packaged",
-
-                // Installer
-                @"D:\Projects\Zelda\Source\Installer"
+                compiledDirectory: @"F:\Projects\Zelda\Compiled\Release\net5.0-windows\win-x86",
+                packagedDirectory:  @"F:\Projects\Zelda\Packaged",
+                installerDirectory: @"F:\Projects\Zelda\Source\Installer"
             );
             
             bool hadError = !packager.Run();

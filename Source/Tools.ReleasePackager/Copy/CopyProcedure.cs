@@ -7,6 +7,7 @@
 namespace Tools.ReleasePackager.Copy
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
@@ -55,7 +56,7 @@ namespace Tools.ReleasePackager.Copy
         /// </summary>
         private void CopyFiles()
         {
-            var filesToCopy = this.filesToCopyFinder.GetFilesToCopy();
+            IEnumerable<string> filesToCopy = this.filesToCopyFinder.GetFilesToCopy();
 
             foreach( string file in filesToCopy )
             {

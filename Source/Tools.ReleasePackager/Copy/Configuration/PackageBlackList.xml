@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<blacklist>  
+<blacklist>
   <extensions>
     <extension>.exe</extension>
     <extension>.pdb</extension>
@@ -10,7 +10,8 @@
     <extension>.log</extension>
     <extension>.noReferenceAssembly</extension>
     <extension>.lastcodeanalysissucceeded</extension>
-  </extensions>  
+    <extension>.runtimeconfig.dev.json</extension>
+  </extensions>
   <files>
     <file>dummy_content.dll</file>
     <file>entries</file>
@@ -21,8 +22,9 @@
     <file>SpriteTool.Library.dll</file>
     <file>Atom.Wpf.dll</file>
     <file>Atom.Xna.Wpf.dll</file>
-    <file>Library.Design.dll</file>
-    <file>Microsoft.Scripting.Metadata.dll</file>
+    <file>TLoZ - Black Crown.runtimeconfig.dev.json</file>
+    <file>Zelda.Updater.Gui.runtimeconfig.dev.json</file>
+    <file>Zelda Updater.runtimeconfig.dev.json</file>
   </files>
   <directories>
     <directory>.svn</directory>
@@ -30,4 +32,3 @@
     <directory>CodeContracts</directory>
   </directories>
 </blacklist>
-
