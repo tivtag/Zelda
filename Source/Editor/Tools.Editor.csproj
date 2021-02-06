@@ -21,14 +21,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>Zelda.Editor</RootNamespace>
     <StartupObject>Zelda.Editor.EditorApp</StartupObject>
-    <SelfContained>true</SelfContained>
-    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\Compiled\$(Configuration)\Editor.xml</DocumentationFile>
+    <OutputPath>..\..\Tools\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Tools\Compiled\$(Configuration)\Editor.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

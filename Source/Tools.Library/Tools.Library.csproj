@@ -19,6 +19,8 @@
     <UseWpf>true</UseWpf>
     <RootNamespace>Zelda</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
   </PropertyGroup>
 
   <PropertyGroup>

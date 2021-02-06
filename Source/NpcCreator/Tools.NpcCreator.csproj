@@ -18,12 +18,15 @@
     <RootNamespace>Zelda.NpcCreator</RootNamespace>
     <StartupObject>Zelda.NpcCreator.App</StartupObject>
     <ApplicationIcon>Properties\icon.ico</ApplicationIcon>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\Compiled\$(Configuration)\NpcCreator.xml</DocumentationFile>
+    <OutputPath>..\..\Tools\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Tools\Compiled\$(Configuration)\NpcCreator.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

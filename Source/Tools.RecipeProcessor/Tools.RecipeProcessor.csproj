@@ -15,12 +15,16 @@
     <LangVersion>latest</LangVersion>
     <RootNamespace>Zelda.RecipeProcessor</RootNamespace>
     <StartupObject>Tools.RecipeProcessor.Program</StartupObject>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
+    <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\Compiled\$(Configuration)\RecipeProcessor.xml</DocumentationFile>
+    <OutputPath>..\..\Tools\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Tools\Compiled\$(Configuration)\RecipeProcessor.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -17,6 +17,9 @@
     <RootNamespace>Zelda.Updater</RootNamespace>
     <StartupObject>Zelda.Updater.App</StartupObject>
     <ApplicationIcon>Properties\updater_icon.ico</ApplicationIcon>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>

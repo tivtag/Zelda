@@ -18,12 +18,15 @@
     <RootNamespace>Zelda.QuestCreator</RootNamespace>
     <StartupObject>Zelda.QuestCreator.App</StartupObject>
     <ApplicationIcon>Properties\icon.ico</ApplicationIcon>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>false</PublishSingleFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup>
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\Compiled\$(Configuration)\</OutputPath>
-    <DocumentationFile>..\..\Compiled\$(Configuration)\QuestCreator.xml</DocumentationFile>
+    <OutputPath>..\..\Tools\Compiled\$(Configuration)\</OutputPath>
+    <DocumentationFile>..\..\Tools\Compiled\$(Configuration)\QuestCreator.xml</DocumentationFile>
   </PropertyGroup>
  
   <ItemGroup>
