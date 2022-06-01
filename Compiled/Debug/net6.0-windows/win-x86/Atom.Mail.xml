@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Mail</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Mail.IMailMessage">
+            <summary>
+            Represents a message that can be send using an <see cref="T:Atom.Mail.IMailSender"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.Recipients">
+            <summary>
+            Gets the list of recipients (To) of this IMailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.CarbonCopyRecipients">
+            <summary>
+            Gets the list of carbon copy recipients (CC) of this IMailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.BlindCarbonCopyRecipients">
+            <summary>
+            Gets the list of blind carbon copy recipients (BCC) of this IMailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.Attachments">
+            <summary>
+            Gets the list that contains the full paths of the files that are attached to this IMailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.Subject">
+            <summary>
+            Gets or sets the subject of this IMailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.IMailMessage.Body">
+            <summary>
+            Gets or sets the actual message this IMailMessage contains.
+            </summary>
+        </member>
+        <member name="T:Atom.Mail.IMailSender">
+            <summary>
+            Provides a mechanism for sending <see cref="T:Atom.Mail.IMailMessage"/>s.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.IMailSender.Send(Atom.Mail.IMailMessage)">
+            <summary>
+            Attempts to send the specified IMailMessage.
+            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
+            <param name="mail">
+            The mail message to send.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.MailException">
+            <summary> 
+            The exception that is thrown when a mail-related error has occurred.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.String)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class and sets
+            the error message to the specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="message">
+            The message that describes the error.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class 
+            with a specified error message and a reference 
+            to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">
+            The message that describes the error.
+            </param>
+            <param name="innerException">
+            The exception that is cause of the new <see cref="T:Atom.Mail.MailException"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.MailException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary> 
+            Initializes a new instance of the <see cref="T:Atom.Mail.MailException"/> class, and
+            passes the specified <see cref="T:System.Runtime.Serialization.SerializationInfo"/> and
+            <see cref="T:System.Runtime.Serialization.StreamingContext"/> to the <see cref="T:System.Exception"/> constructor.
+            </summary>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds
+            the serialized object data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that 
+            contains contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.MailMessage">
+            <summary>
+            Represents a message that can be send using an <see cref="T:Atom.Mail.IMailSender"/>.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.Recipients">
+            <summary>
+            Gets the list of recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.CarbonCopyRecipients">
+            <summary>
+            Gets the list of carbon copy recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.BlindCarbonCopyRecipients">
+            <summary>
+            Gets the list of blind carbon copy recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.Attachments">
+            <summary>
+            Gets the list that contains the full paths of the files that are attached to this MailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.Subject">
+            <summary>
+            Gets or sets the subject of this MailMessage.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.MailMessage.Body">
+            <summary>
+            Gets or sets the actual message this MailMessage contains.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.subject">
+            <summary>
+            The subject of this MailMessage.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.body">
+            <summary>
+            The body of this MailMessage.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.to">
+            <summary>
+            The list of recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.cc">
+            <summary>
+            The list of carbon copy recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.bcc">
+            <summary>
+            The list of blind carbon copy recipients of this MailMessage.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.MailMessage.attachments">
+            <summary>
+            The full paths of the files that are attached to this MailMessage.
+            </summary>
+        </member>
+        <member name="T:Atom.Mail.MailTo.MailToMailSender">
+            <summary>
+            Implements an <see cref="T:Atom.Mail.IMailSender"/> that uses the mailto: command to send the e-mail.
+            </summary>
+            <remarks>
+            The MailToMailSender can't send attachments or messages over 1000 characters.
+            Only one person can receive the e-mail.
+            </remarks>
+        </member>
+        <member name="F:Atom.Mail.MailTo.MailToMailSender.NewLineString">
+            <summary>
+            The string that is used to represent a new-line.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.MailTo.MailToMailSender.Send(Atom.Mail.IMailMessage)">
+            <summary>
+            Attempts to send the specified IMailMessage.
+            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
+            <param name="mail">
+            The mail message to send.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.Mapi.MapiMailSender">
+            <summary>
+            Implements an <see cref="T:Atom.Mail.IMailSender"/> that uses the windows Messaging Application Programming Interface (MAPI)
+            to send <see cref="T:Atom.Mail.IMailMessage"/>s.
+            This class can't be inherited.
+            </summary>
+            <remarks>
+            See also: http://de.wikipedia.org/wiki/Messaging_Application_Programming_Interface
+            </remarks>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.Send(Atom.Mail.IMailMessage)">
+            <summary>
+            Attempts to send the specified IMailMessage using MAPI.
+            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
+            <param name="mail">
+            The mail message to send.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.SendDirect(Atom.Mail.IMailMessage)">
+            <summary>
+            Attempts to send the specified IMailMessage using MAPI,
+            not allowing the user to manipulate or view the message.
+            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
+            <param name="mail">
+            The mail message to send.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.SendNative(Atom.Mail.IMailMessage,System.Int32)">
+            <summary>
+            Implements the native mail sending logic.
+            </summary>
+            <param name="mail">
+            The mail message to send.
+            </param>
+            <param name="how">
+            Specifies how the IMailMessage should be send.
+            </param>
+            <returns>
+            The native errror code.
+            </returns>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.BuildNativeRecipients(Atom.Mail.IMailMessage)">
+            <summary>
+            Builds the list of <see cref="T:Atom.Mail.Mapi.NativeMapiRecipDesc"/> for the specified IMailMessage.
+            </summary>
+            <param name="mail">
+            The input mail message.
+            </param>
+            <returns>
+            The corresponding native MAPI list of recipients of the specified IMailMessage.
+            </returns>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.GetNativeRecipientsPointer(System.Collections.Generic.IList{Atom.Mail.Mapi.NativeMapiRecipDesc})">
+            <summary>
+            Gets the pointer send to MAPI that contains the specified NativeMapiRecipDescs.
+            </summary>
+            <param name="recipients">
+            The recipients the mail is send to.
+            </param>
+            <returns>
+            A pointer used by MAPI.
+            </returns>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.GetNativeAttachments(Atom.Mail.IMailMessage)">
+            <summary>
+            Gets the pointer to a structure containing information about the attachments of this IMailMessage.
+            </summary>
+            <param name="mail">
+            The mail message to send.
+            </param>
+            <returns>
+            A pointer used by MAPI.
+            </returns>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.Cleanup(Atom.Mail.Mapi.NativeMapiMessage@)">
+            <summary>
+            Cleans up the specified NativeMapiMessage by de-allocating memory.
+            </summary>
+            <param name="nativeMessage">
+            The native message to dispose.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.Mapi.MapiMailSender.GetErrorMessage(System.Int32)">
+            <summary>
+            Gets the error message that responds to the specified errorNumber.
+            </summary>
+            <param name="errorNumber">
+            The native error number returned by MAPI.
+            </param>
+            <returns>
+            The corresponding error message.
+            </returns>
+        </member>
+        <member name="F:Atom.Mail.Mapi.MapiMailSender.ErrorMessages">
+            <summary>
+            Enumerates the various MAPI error messages.
+            </summary>
+        </member>
+        <member name="F:Atom.Mail.Mapi.MapiMailSender.MAPI_LOGON_UI">
+            <summary> </summary>
+        </member>
+        <member name="F:Atom.Mail.Mapi.MapiMailSender.MAPI_DIALOG">
+            <summary> </summary>
+        </member>
+        <member name="T:Atom.Mail.Mapi.MapiMailSender.MapiRecipientType">
+            <summary>
+            Enumerates the various recipient types MAPI supports.
+            </summary>
+        </member>
+        <member name="T:Atom.Mail.Mapi.MapiMailSender.NativeMethods">
+            <summary>
+            Contains the native MAPI bindings.
+            </summary>
+        </member>
+        <member name="T:Atom.Mail.Modifiers.AddAttachmentModifier">
+            <summary>
+            Implements an <see cref="T:Atom.Mail.Modifiers.IMailMessageModifier"/> that attaches a file to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Mail.Modifiers.AddAttachmentModifier.FilePath">
+            <summary>
+            Gets or sets the full path of the file to attach to the <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+            <value>
+            The default value is null.
+            </value>
+        </member>
+        <member name="M:Atom.Mail.Modifiers.AddAttachmentModifier.Apply(Atom.Mail.IMailMessage)">
+            <summary>
+            Modifies the specified IMailMessage.
+            </summary>
+            <param name="mail">
+            The mail to modify.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.Modifiers.IMailMessageModifier">
+            <summary>
+            Provides a mechanism for modifying an existing <see cref="T:Atom.Mail.IMailMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.Modifiers.IMailMessageModifier.Apply(Atom.Mail.IMailMessage)">
+            <summary>
+            Modifies the specified IMailMessage.
+            </summary>
+            <param name="mail">
+            The mail to modify.
+            </param>
+        </member>
+        <member name="T:Atom.Mail.SafeMailSender">
+            <summary>
+            Implements a safe <see cref="T:Atom.Mail.IMailSender"/> that tries to send the e-mail using various different techniques.
+            </summary>
+            <remarks>
+            By default if sending the mail failed using <see cref="T:Atom.Mail.Mapi.MapiMailSender"/>, the <see cref="T:Atom.Mail.MailTo.MailToMailSender"/> is used.
+            </remarks>
+        </member>
+        <member name="P:Atom.Mail.SafeMailSender.ThrowsOnError">
+            <summary>
+            Gets or sets a value indicating whether the SafeMailSender throws an MailException if an IMailMessage could
+            not be send using any of techniques.
+            </summary>
+            <value>
+            The default value is false.
+            </value>
+        </member>
+        <member name="M:Atom.Mail.SafeMailSender.#ctor">
+            <summary>
+            Initializes a new instance of the SafeMailSender class;
+            which uses the default IMailSenders <see cref="T:Atom.Mail.Mapi.MapiMailSender"/> and <see cref="T:Atom.Mail.MailTo.MailToMailSender"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Mail.SafeMailSender.#ctor(System.Collections.Generic.IEnumerable{Atom.Mail.IMailSender})">
+            <summary>
+            Initializes a new instance of the SafeMailSender class.
+            </summary>
+            <param name="senders">
+            The ordered list of IMailSenders the new SafeMailSender is going try to use.
+            </param>
+        </member>
+        <member name="M:Atom.Mail.SafeMailSender.Send(Atom.Mail.IMailMessage)">
+            <summary>
+            Attempts to send the specified IMailMessage.
+            </summary>
+            <exception cref="T:Atom.Mail.MailException">
+            Thrown when an error has occurred during the mail sending operation.
+            </exception>
+            <param name="mail">
+            The mail message to send.
+            </param>
+        </member>
+        <member name="F:Atom.Mail.SafeMailSender.senders">
+            <summary>
+            The MAPI mail sender that is prefered.
+            </summary>
+        </member>
+    </members>
+</doc>

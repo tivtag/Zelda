@@ -4,12 +4,12 @@
     <AssemblyTitle>The Legend of Zelda: Black Crown</AssemblyTitle>
     <Product>The Legend of Zelda: Black Crown</Product>
     <Company>federrot Software</Company>
-    <Copyright>Copyright 2020 © federrot Software</Copyright>
+    <Copyright>Copyright 2022 © federrot Software</Copyright>
     <Authors>Paul Ennemoser</Authors>
   </PropertyGroup>
   
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <Platforms>x86</Platforms>

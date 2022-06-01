@@ -1,0 +1,2380 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Atom.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Atom.Wpf.BaseCommand">
+            <summary>
+            Represents a base implementation of the <see cref="T:System.Windows.Input.ICommand"/> interface.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.BaseCommand.CanExecuteChanged">
+            <summary>
+            Raised when the CanExecute state of this <see cref="T:System.Windows.Input.ICommand"/> has changed.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.BaseCommand.Execute(System.Object)">
+            <summary>
+            Executes this ICommand.
+            </summary>
+            <param name="parameter">
+            The parameter passed to the command.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.BaseCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether this ICommand can execute in its current state.
+            </summary>
+            <remarks>
+            The default value is true. Overwrite this method to provide a custom implementation.
+            </remarks>
+            <param name="parameter">
+            Data used by the command. If the command does not require data to be passed,
+            this object can be set to null.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if this command can be executed; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.BaseCommand.OnCanExecuteChanged">
+            <summary>
+            Raises the <see cref="E:Atom.Wpf.BaseCommand.CanExecuteChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.BindingUtilities">
+            <summary>
+            Provides utility methods related to Windows Presentation Foundation (WPF) data-binding.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.BindingUtilities.UpdateBindingSources(System.Windows.DependencyObject,System.Windows.DependencyProperty[])">
+            <summary>
+            Recursively processes a given dependency object and all its
+            children, and updates sources of all objects that use a
+            binding expression on a given property.
+            </summary>
+            <param name="target">
+            The <see cref="T:System.Windows.DependencyObject"/> that marks a starting point.
+            This could be a dialog window or a panel control that hosts bound controls.
+            </param>
+            <param name="properties">
+            The properties to be updated if <paramref name="target"/> or one of its childrens
+            provide it along with a binding expression.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="target"/>, <paramref name="properties"/> or any of the given DependencyProperties is null.
+            </exception>
+        </member>
+        <member name="T:Atom.Wpf.Controls.ColorPicker">
+            <summary>
+            Implements an HSB (hue, saturation, brightness) based color picker.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.Controls.ColorPicker.SelectedColorChanged">
+            <summary>
+            Fired when the <see cref="T:System.Windows.Media.Color"/> of the <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.SelectedColorChangedEvent">
+            <summary>
+            Identifies the <see cref="T:System.Windows.RoutedEvent"/> for the <see cref="E:Atom.Wpf.Controls.ColorPicker.SelectedColorChanged"/> event.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.SelectedColor">
+            <summary>
+            Gets or sets the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.SelectedColorProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.SelectedColor"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnSelectedColorPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.SelectedColor"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.Alpha"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.Alpha">
+            <summary>
+            Gets or sets the ARGB alpha value of the selected color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.AlphaProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.Alpha"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.AlphaChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.Alpha"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.Alpha"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.Red">
+            <summary>
+            Gets or sets the ARGB red value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.RedProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.Red"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.RedChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.Red"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.Red"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.Green">
+            <summary>
+            Gets or sets the ARGB green value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.GreenProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.Green"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.GreenChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.Green"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.Green"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.Blue">
+            <summary>
+            Gets or sets the ARGB blue value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.BlueProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.Blue"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.BlueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.Blue"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.Blue"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.ScAlpha">
+            <summary>
+            Gets or sets the ScRGB alpha value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ScAlphaProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScAlpha"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.ScAlphaChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.ScAlpha"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.ScAlpha"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.ScRed">
+            <summary>
+            Gets or sets the ScRGB red value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ScRedProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScRed"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.ScRedChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.ScRed"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.ScRed"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.ScGreen">
+            <summary>
+            Gets or sets the ScRGB green value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ScGreenProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScGreen"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.ScGreenChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.ScGreen"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.ScGreen"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.ScBlue">
+            <summary>
+            Gets or sets the ScRGB blue value of the selected Color. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ScBlueProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScBlue"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.ScBlueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.ScBlue"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.ScBlue"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorPicker.HexadecimalString">
+            <summary>
+            Gets or sets the the selected Color in hexadecimal notation. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.HexadecimalStringProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorPicker.HexadecimalString"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.HexadecimalStringChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when <see cref="P:Atom.Wpf.Controls.ColorPicker.HexadecimalString"/> dependency property of the specified 
+            <see cref="T:Atom.Wpf.Controls.ColorPicker"/> <see cref="T:System.Windows.DependencyObject"/> has changed.
+            </summary>
+            <param name="d">The <see cref="T:Atom.Wpf.Controls.ColorPicker"/> whose <see cref="P:Atom.Wpf.Controls.ColorPicker.HexadecimalString"/> value has changed.</param>
+            <param name="e">Stores the change.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Controls.ColorPicker"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Atom.Wpf.Controls.ColorPicker"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnApplyTemplate">
+            <summary>
+            Is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnSelectedColorChanged(System.Windows.Media.Color,System.Windows.Media.Color)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.SelectedColor"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnAlphaChanged(System.Byte)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.Alpha"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnRedChanged(System.Byte)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.Red"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnGreenChanged(System.Byte)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.Green"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnBlueChanged(System.Byte)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.Blue"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnScAlphaChanged(System.Single)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScAlpha"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnScRedChanged(System.Single)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScRed"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnScGreenChanged(System.Single)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScGreen"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnScBlueChanged(System.Single)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.ScBlue"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnHexadecimalStringChanged(System.String,System.String)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.ColorPicker.HexadecimalString"/> value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
+            <summary>
+            Called whenever the control's template changes.
+            </summary>
+            <param name="oldTemplate">The old template.</param>
+            <param name="newTemplate">The new template.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Gets called when this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> was clicked.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The MouseButtonEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.OnMouseMove(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Gets called when the mouse is over this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> and got moved.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The MouseEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.BaseColorChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Double})">
+            <summary>
+            Gets called when the base color of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedPropertyChangedEventArgs{double} that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.ColorDetailSizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Gets called when the color detail element of the control has changed.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The SizeChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.SetColor(System.Windows.Media.Color)">
+            <summary>
+            Private helper method that sets
+            the color stored by the <see cref="T:Atom.Wpf.Controls.ColorPicker"/>.
+            </summary>
+            <param name="newColor">
+            The new color.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.UpdateMarkerPosition(System.Windows.Point)">
+            <summary>
+            Private helper method that updates the position of the marker
+            given a <paramref name="position"/>.
+            </summary>
+            <param name="position">
+            The new position.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.UpdateMarkerPosition(System.Windows.Media.Color)">
+            <summary>
+            Private helper method that updates the position of the marker
+            given a <see cref="T:System.Windows.Media.Color"/>.
+            </summary>
+            <param name="newColor">
+            The new color.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorPicker.DetermineColor(System.Windows.Point)">
+            <summary>
+            Determines the color to set given an input <paramref name="position"/>
+            on the color picker.
+            </summary>
+            <param name="position">The position.</param>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.color">
+            <summary>
+            Stores the color stored by this <see cref="T:Atom.Wpf.Controls.ColorPicker"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.colorSlider">
+            <summary>
+            Refernce to the spectrum slider of the Control Template.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.colorDetail">
+            <summary>
+            Refernce to the color detail view of the Control Template.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.colorMarker">
+            <summary>
+            Refernce to the element ofthe Control Template that marks the current color.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.markerTransform">
+            <summary>
+            Stores the translation transformation fo the color marker.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.colorPosition">
+            <summary>
+            Stores the position on the color detail.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.shouldFindPoint">
+            <summary>
+            States whether this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> should find the current color given the color position.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.templateApplied">
+            <summary>
+            States whether a control tempalte has been applied to this <see cref="T:Atom.Wpf.Controls.ColorPicker"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.isAlphaChange">
+            <summary>
+            States whether the alpha value of this <see cref="T:Atom.Wpf.Controls.ColorPicker"/> is currently changing.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ColorSliderName">
+            <summary>
+            Identifies the name of the color slider control template element.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ColorDetailName">
+            <summary>
+            Identifies the name of the color detail control template element.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorPicker.ColorMarkerName">
+            <summary>
+            Identifies the name of the color marker control template element.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Controls.ColorSpectrumSlider">
+            <summary>
+            Represents a <see cref="T:System.Windows.Controls.Slider"/> that can be used to set a <see cref="T:System.Windows.Media.Color"/>.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorSpectrumSlider.SelectedColor">
+            <summary>
+            Gets or sets the color selected by this <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/>. 
+            This is a dependency property.
+            </summary>
+            <value>The value that is selected in this ColorSpectrumSlider.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorSpectrumSlider.SelectedColorProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorSpectrumSlider.SelectedColor"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorSpectrumSlider.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorSpectrumSlider.OnApplyTemplate">
+            <summary>
+            Builds the visual tree for the <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/> control.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorSpectrumSlider.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            Updates the current position of the <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/> when the
+            <see cref="P:System.Windows.Controls.Primitives.RangeBase.Value"/> property changes.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorSpectrumSlider.UpdateColorSpectrum">
+            <summary>
+            Updates the color spectrum of this <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorSpectrumSlider.CreateSpectrum">
+            <summary>
+            Creates the spectrum this <see cref="T:Atom.Wpf.Controls.ColorSpectrumSlider"/> can represent.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorSpectrumSlider.spectrumDisplay">
+            <summary>
+            The shape object that represents the spectrum.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorSpectrumSlider.pickerBrush">
+            <summary>
+            The brush that is used to draw the picker.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorSpectrumSlider.SpectrumDisplayName">
+            <summary>
+            Identifies the spectrum display of the control template.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Controls.ColorThumb">
+            <summary>
+            Represents a color control that can be dragged by the user.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.ColorThumb.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Atom.Wpf.Controls.ColorThumb"/> class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorThumb.ThumbColor">
+            <summary>
+            Gets or sets the color of this <see cref="T:Atom.Wpf.Controls.ColorThumb"/>. This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorThumb.ThumbColorProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorThumb.ThumbColor"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorThumb.PointerOutlineThickness">
+            <summary>
+            Gets or sets the thickness of the pointer outline of this <see cref="T:Atom.Wpf.Controls.ColorThumb"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorThumb.PointerOutlineThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorThumb.PointerOutlineThickness"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.ColorThumb.PointerOutlineBrush">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush"/> of the pointer outline.
+            This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.ColorThumb.PointerOutlineBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.ColorThumb.PointerOutlineBrush"/> dependency property.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Controls.NumericTextBox">
+            <summary>
+            Represents a <see cref="T:System.Windows.Controls.TextBox"/> that allows the user to enter only numeric values.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericTextBox.AllowsNegativeSign">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Wpf.Controls.NumericTextBox"/>
+            allows the '-' sign to be entered.
+            This is a dependency property.
+            </summary>
+            <value>The default value is true.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericTextBox.AllowsNegativeSignProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericTextBox.AllowsNegativeSign"/> property.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericTextBox.AllowsDecimalNumbers">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Wpf.Controls.NumericTextBox"/> allows 
+            decimal numbers to be entered.
+            This is a dependency property.
+            </summary>
+            <value>The default value is true.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericTextBox.AllowsDecimalNumbersProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericTextBox.AllowsDecimalNumbers"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Controls.NumericTextBox"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.IsValidKey(System.Windows.Input.Key)">
+            <summary>
+            Helper method for the OnPreviewKeyDown method
+            that returns whether the given Key is valid.
+            </summary>
+            <param name="key">The key to validate.</param>
+            <returns>Returns true if the given Key is valid; otherwise false.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.IsValidString(System.String)">
+            <summary>
+            Helper method for the OnPreviewTextInput method
+            that returns whether the given string is valid.
+            </summary>
+            <param name="str">The string to validate.</param>
+            <returns>Returns true if the given string is valid; otherwise false.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.OnKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Overwritten to update the source Text binding when the user presses Enter. 
+            </summary>
+            <param name="e">The System.Windows.Input.KeyEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Overwritten to only allow valid keys to fire the KeyDown event.
+            </summary>
+            <param name="e">The System.Windows.Input.KeyEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.OnPreviewTextInput(System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Overwritten to only allow valid text to be inputed.
+            </summary>
+            <param name="e">The System.Windows.Input.TextCompositionEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericTextBox.CancelCommand(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <summary>
+            Cancels the event that fired this method.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The System.Windows.Input.CanExecuteRoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="T:Atom.Wpf.Controls.NumericUpDown">
+            <summary>
+            Represents a control that allows the user to enter a numeric value;
+            and also control it using two up/down buttons.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.#ctor">
+            <summary>
+            Initializes a new instance of the NumericUpDown class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.#cctor">
+            <summary>
+            Initializes static members of the NumericUpDown class.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.ValueChangedEvent">
+            <summary>
+            Identifies the ValueChanged routed event.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.Controls.NumericUpDown.ValueChanged">
+            <summary>
+            Occurs when the Value property changes.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.Value">
+            <summary>
+            Gets or sets the value displayed by this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> control.
+            This is a dependency property.
+            </summary>
+            <value>The value of the NumericUpDown control.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.Value"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the Value value of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> has changed.
+            </summary>
+            <param name="obj">
+            The NumericUpDown whose Value property has changed.
+            </param>
+            <param name="args">
+            The DependencyPropertyChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnValueChanged(System.Windows.RoutedPropertyChangedEventArgs{System.Decimal})">
+            <summary>
+            Raises the ValueChanged event.
+            </summary>
+            <param name="args">
+            Arguments associated with the ValueChanged event.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.CoerceValue(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the value of the Value property to be in valid range.
+            </summary>
+            <param name="element">The NumericUpDown whose Value property will be changed.</param>
+            <param name="value">The new value of the Value property.</param>
+            <returns>The coerced value that will be applied to the Value property.</returns>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.Minimum">
+            <summary>
+            Gets or sets the minumum value this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/>
+            control can have. This is a dependency property.
+            </summary>
+            <value>The default value is 0.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.MinimumProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.Minimum"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnMinimumChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the Minimum value of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> has changed.
+            </summary>
+            <param name="element">
+            The NumericUpDown whose Minimum property has changed.
+            </param>
+            <param name="args">
+            The DependencyPropertyChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.CoerceMinimum(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the value of the Minimum property to be in valid range.
+            </summary>
+            <param name="element">The NumericUpDown whose Minimum property will be changed.</param>
+            <param name="value">The new value of the Minimum property.</param>
+            <returns>The coerced value that will be applied to the Minimum property.</returns>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.Maximum">
+            <summary>
+            Gets or sets the maximum value this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/>
+            control can have. This is a dependency property.
+            </summary>
+            <value>The default value is 100.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.MaximumProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.Maximum"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnMaximumChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the Maximum value of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> instance has changed.
+            </summary>
+            <param name="element">
+            The NumericUpDown whose Maximum property has changed.
+            </param>
+            <param name="args">
+            The DependencyPropertyChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.CoerceMaximum(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the value of the Maximum property to be in valid range.
+            </summary>
+            <param name="element">The NumericUpDown whose Maximum property will be changed.</param>
+            <param name="value">The new value of the Maximum property.</param>
+            <returns>The coerced value that will be applied to the Maximum property.</returns>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.Change">
+            <summary>
+            Gets or sets the change in value that happens when the user 
+            presses the up or down button.
+            This is a dependency property.
+            </summary>
+            <value>
+            The default value is 1.
+            </value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.ChangeProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.Change"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.ValidateChange(System.Object)">
+            <summary>
+            Returns whether the specified value is an valid value
+            for the Change property.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <returns>Returns true if the value is valid; otherwise false.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.CoerceChange(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the value of the Change property to be in valid range.
+            </summary>
+            <param name="element">The NumericUpDown whose Change property will be changed.</param>
+            <param name="value">The new value of the Change property.</param>
+            <returns>The coerced value that will be applied to the Change property.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.GetSmallestChangeForDecimalPlaces(System.Int32)">
+            <summary>
+            Gets the smallest change given a number of decimal places.
+            </summary>
+            <param name="decimalPlaces">
+            The number of decimal places.
+            </param>
+            <returns>
+            The change to use.
+            </returns>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.DecimalPlaces">
+            <summary>
+            Gets or sets the number of decimal places
+            displayed by this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> control. 
+            This is a dependency property.
+            </summary>
+            <value>
+            The default value is 0.
+            </value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DecimalPlacesProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.DecimalPlaces"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnDecimalPlacesChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the DecimalPlaces value of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> instance has changed.
+            </summary>
+            <param name="element">
+            The NumericUpDown whose DecimalPlaces property has changed.
+            </param>
+            <param name="args">
+            The DependencyPropertyChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.ValidateDecimalPlaces(System.Object)">
+            <summary>
+            Returns whether the specified value is a valid for the DecimalPlaces property.
+            </summary>
+            <param name="value">
+            The value to validate.
+            </param>
+            <returns>
+            Returns <see langword="true"/> if the given value is valid;
+            otherwise <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.ValueString">
+            <summary>
+            Gets the value of this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> control as a string.
+            This is a dependency property.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.ValueStringPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.ValueString"/> dependency property key.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.ValueStringProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.NumericUpDown.ValueString"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.UpdateValueString">
+            <summary>
+            Updates the string that is displayed by the <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> control.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.numberFormatInfo">
+            <summary>
+            The number format that is used to convert the value into a string.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.IncreaseCommand">
+            <summary>
+            Gets the Command that is used to increase the value 
+            of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> instance by the value 
+            specified by its <see cref="P:Atom.Wpf.Controls.NumericUpDown.Change"/> property.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDown.DecreaseCommand">
+            <summary>
+            Gets the Command that is used to decrease the value 
+            of a <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> instance by the value 
+            specified by its <see cref="P:Atom.Wpf.Controls.NumericUpDown.Change"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.InitializeCommands">
+            <summary>
+            Initializes the commands used by the <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnIncreaseCommand(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Called when the IncreaseCommand has been invoked.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The ExecutedRoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnDecreaseCommand(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Called when the DecreaseCommand has been invoked.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The ExecutedRoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnIncrease">
+            <summary>
+            Called when the the value of this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/>
+            is meant to be increased.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnDecrease">
+            <summary>
+            Called when the the value of this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/>
+            is meant to be decreased.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnCreateAutomationPeer">
+            <summary>
+            Overriden to create the <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> to be used by this <see cref="T:Atom.Wpf.Controls.NumericUpDown"/>.
+            </summary>
+            <returns>Alpha new instance of the <see cref="T:Atom.Wpf.Controls.NumericUpDownAutomationPeer"/> class.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDown.OnMouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Called when MouseLeftButtonDown event has occured.
+            The purpose of this handle is to move input focus to NumericUpDown when user pressed
+            mouse left button on any part of slider that is not focusable.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The MouseButtonEventArgs that contains the event data.</param>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DefaultMinValue">
+            <summary>
+            The default values of the NumericUpDown control.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DefaultValue">
+            <summary>
+            The default values of the NumericUpDown control.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DefaultMaxValue">
+            <summary>
+            The default values of the NumericUpDown control.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DefaultChange">
+            <summary>
+            The default values of the NumericUpDown control.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.NumericUpDown.DefaultDecimalPlaces">
+            <summary>
+            The default number of decimal places the NumericUpDown has.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Controls.NumericUpDownAutomationPeer">
+            <summary>
+            Exposes the <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> control to UI Automation.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.#ctor(Atom.Wpf.Controls.NumericUpDown)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Controls.NumericUpDownAutomationPeer"/> class.
+            </summary>
+            <param name="control">
+            The <see cref="T:Atom.Wpf.Controls.NumericUpDown"/> associated with this <see cref="T:Atom.Wpf.Controls.NumericUpDownAutomationPeer"/>.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the control pattern for the <see cref="T:System.Windows.UIElement"/> that is associated
+            with this <see cref="T:System.Windows.Automation.Peers.UIElementAutomationPeer"/>.
+            </summary>
+            <param name="patternInterface">
+            Alpha value from the enumeration.
+            </param>
+            <returns> Returns this -or- null. </returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.GetClassNameCore">
+            <summary>
+            Gets the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this
+            <see cref="T:System.Windows.Automation.Peers.UIElementAutomationPeer"/>.
+            This method is called by System.Windows.Automation.Peers.AutomationPeer.GetClassName().
+            </summary>
+            <returns>
+            Returns the string "NumericUpDown".
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Gets the control type for the <see cref="T:System.Windows.UIElement"/> that is associated
+            with this <see cref="T:System.Windows.Automation.Peers.UIElementAutomationPeer"/>. This method
+            is called by System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType().
+            </summary>
+            <returns>
+            Returns <see cref="F:System.Windows.Automation.Peers.AutomationControlType.Spinner"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.RaiseValueChangedEvent(System.Decimal,System.Decimal)">
+            <summary>
+            Raises the value changed event.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.Owner">
+            <summary>
+            Gets the owner of this <see cref="T:Atom.Wpf.Controls.NumericUpDownAutomationPeer"/> instance.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the value of a control is read-only.
+            </summary>
+            <value>
+            Returns <see langword="true"/> if the value is read-only; 
+            otherwise <see langword="false"/> if it can be modified.
+            </value>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.LargeChange">
+            <summary>
+            Gets the value that is added to or subtracted from the System.Windows.Automation.Provider.IRangeValueProvider.Value
+            property when a large change is made, such as with the PAGE DOWN key.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.Maximum">
+            <summary>
+            Gets the maximum range value supported by the control.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.Minimum">
+            <summary>
+            Gets the minimum range value supported by the control.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.SmallChange">
+            <summary>
+            Gets the value that is added to or subtracted from the System.Windows.Automation.Provider.IRangeValueProvider.Value
+            property when a small change is made, such as with an arrow key.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.NumericUpDownAutomationPeer.Value">
+            <summary>
+            Gets the value of the control.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.NumericUpDownAutomationPeer.SetValue(System.Double)">
+            <summary>
+            Sets the value of the control.
+            </summary>
+            <param name="value">The value to set.</param>
+            <exception cref="T:System.Windows.Automation.ElementNotEnabledException">If the control is not enabled.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            When value is less than the minimum or greater than the maximum value of the control.
+            </exception>
+        </member>
+        <member name="T:Atom.Wpf.Controls.PropertyGridControl">
+            <summary>
+            Implements a custom UserControl that wrapps the <see cref="T:System.Windows.Forms.PropertyGrid"/> 
+            control for use with the Windows Presentation Foundation (WPF). 
+            </summary>
+            <summary>
+            PropertyGridControl
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.PropertyGridControl.SelectedObject">
+            <summary>
+            Gets or sets the object which is displayed within the PropertyGrid.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Controls.PropertyGridControl.SelectedObjectProperty">
+            <summary>
+            Indentifies the <see cref="P:Atom.Wpf.Controls.PropertyGridControl.SelectedObject"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.PropertyGridControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Controls.PropertyGridControl"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.PropertyGridControl.OnSelectedObjectChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the selected object changes.
+            </summary>
+            <param name="d">The PropertyGridControl whose SelectedObject property has changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Controls.PropertyGridControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Controls.RectangleInputControl">
+            <summary>
+            Defines an control that allows the editing of
+            a <see cref="T:Atom.Math.Rectangle"/> object.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/> class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.RectangleInputControl.Value">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Math.Rectangle"/> value displayed by this <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The Rectangle value being edited in this RectangleInputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.RectangleInputControl.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.Value"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.OnValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.Value"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.RectangleInputControl.RectangleX">
+            <summary>
+            Gets or sets the x-component of the <see cref="T:Atom.Math.Rectangle"/> value displayed by this <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The position on the x-axis of the Rectangle value being edited in this RectangleInputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.RectangleInputControl.RectangleXProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleX"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.OnRectangleXChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleX"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.RectangleInputControl.RectangleY">
+            <summary>
+            Gets or sets the y-component of the <see cref="T:Atom.Math.Rectangle"/> value displayed by this <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The position on the y-axis of the Rectangle value being edited in this RectangleInputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.RectangleInputControl.RectangleYProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleY"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.OnRectangleYChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleY"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.RectangleInputControl.RectangleWidth">
+            <summary>
+            Gets or sets the width-component of the <see cref="T:Atom.Math.Rectangle"/> value displayed by this <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The width of the Rectangle value being edited in this RectangleInputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.RectangleInputControl.RectangleWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleWidth"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.OnRectangleWidthChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleWidth"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.RectangleInputControl.RectangleHeight">
+            <summary>
+            Gets or sets the y-component of the <see cref="T:Atom.Math.Rectangle"/> value displayed by this <see cref="T:Atom.Wpf.Controls.RectangleInputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The height of the Rectangle value being edited in this RectangleInputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.RectangleInputControl.RectangleHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleHeight"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.RectangleInputControl.OnRectangleHeightChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.RectangleInputControl.RectangleHeight"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="T:Atom.Wpf.Controls.Vector2InputControl">
+            <summary>
+            Represents a control that allows the editing of a <see cref="T:Atom.Math.Vector2"/> value.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.Vector2InputControl.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Atom.Wpf.Controls.Vector2InputControl"/> class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Controls.Vector2InputControl.Value">
+            <summary>
+            Gets or sets the <see cref="T:Atom.Math.Vector2"/> value displayed by this <see cref="T:Atom.Wpf.Controls.Vector2InputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The Vector2 value being edited in this Vector2InputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.Vector2InputControl.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.Value"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.Vector2InputControl.OnValueChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.Value"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.Vector2InputControl.X">
+            <summary>
+            Gets or sets the x-component of the <see cref="T:Atom.Math.Vector2"/> value displayed by this <see cref="T:Atom.Wpf.Controls.Vector2InputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The value on the x-axis of the Vector2 value being edited in this Vector2InputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.Vector2InputControl.XProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.X"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.Vector2InputControl.OnXChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.Value"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="P:Atom.Wpf.Controls.Vector2InputControl.Y">
+            <summary>
+            Gets or sets the y-component of the <see cref="T:Atom.Math.Vector2"/> value displayed by this <see cref="T:Atom.Wpf.Controls.Vector2InputControl"/>.
+            This is a dependency property.
+            </summary>
+            <value>The value on the y-axis of the Vector2 value being edited in this Vector2InputControl.</value>
+        </member>
+        <member name="F:Atom.Wpf.Controls.Vector2InputControl.YProperty">
+            <summary>
+            Identifies the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.Y"/> property.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Controls.Vector2InputControl.OnYChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Gets called when the <see cref="P:Atom.Wpf.Controls.Vector2InputControl.Value"/> property has changed.
+            </summary>
+            <param name="d">The RectangleInputControl that has been changed.</param>
+            <param name="e">The DependencyPropertyChangedEventArgs that contains the event data.</param>
+        </member>
+        <member name="T:Atom.Wpf.Converters.ColorToBrushConverter">
+            <summary>
+            Implements an <see cref="T:System.Windows.Data.IValueConverter"/> that converts a <see cref="T:System.Windows.Media.Color"/> 
+            into a <see cref="T:System.Windows.Media.SolidColorBrush"/>, and back.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ColorToBrushConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <see cref="T:System.Windows.Media.Color"/> into a <see cref="T:System.Windows.Media.SolidColorBrush"/>.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ColorToBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <see cref="T:System.Windows.Media.SolidColorBrush"/> back into a <see cref="T:System.Windows.Media.Color"/>.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="T:Atom.Wpf.Converters.ObjectToSimpleTypeStringConverter">
+            <summary>
+            Implements a <see cref="T:System.Windows.Data.IValueConverter"/> that returns the 
+            simple type <see cref="T:System.String"/> "TypeName" of the <see cref="T:System.Object"/>.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ObjectToSimpleTypeStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ObjectToSimpleTypeStringConverter.System#Windows#Data#IValueConverter#ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            This operation is not supported.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+            <exception cref="T:System.NotSupportedException">
+            This operation is not supported.
+            </exception>
+        </member>
+        <member name="T:Atom.Wpf.Converters.RadiansToDegreesConverter">
+            <summary>
+            Implements an <see cref="T:System.Windows.Data.IValueConverter"/> that converts any floating point
+            value from radians to degrees and back. This is a sealed class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.RadiansToDegreesConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <paramref name="value"/> into degrees.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.RadiansToDegreesConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <paramref name="value"/> into radians.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="T:Atom.Wpf.Converters.RadiansToDegreesStringConverter">
+            <summary>
+            Implements an <see cref="T:System.Windows.Data.IValueConverter"/> that converts any floating point
+            value in radians into a <see cref="T:System.String"/> that represents that value in degrees and back. This is a sealed class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.RadiansToDegreesStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <paramref name="value"/> into degrees.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.RadiansToDegreesStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <paramref name="value"/> into radians.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="T:Atom.Wpf.Converters.ToStringConverter">
+            <summary>
+            Implements a <see cref="T:System.Windows.Data.IValueConverter"/> that converts a value <see cref="T:System.Object"/> into a <see cref="T:System.String"/>
+            and back.
+            This is a sealed class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ToStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="T:Atom.Wpf.Converters.ValueConverterGroup">
+            <summary>
+            A value converter which contains a list of <see cref="T:System.Windows.Data.IValueConverter"/>s
+            and invokes their Convert or ConvertBack methods in the order that they exist in the list.
+            </summary>
+            <remarks>
+            The output of one converter is piped into the next converter,
+            allowing for modular value converters to be chained together.
+            If the ConvertBack method is invoked,
+            the value converters are executed in reverse order (highest to lowest index).
+            Do not leave an element in the Converters property collection null,
+            every element must reference a valid <see cref="T:System.Windows.Data.IValueConverter"/> instance.
+            If a value converter's type is not decorated with the <see cref="T:System.Windows.Data.ValueConversionAttribute"/>,
+            an <see cref="T:System.InvalidOperationException"/> will be thrown when the converter
+            is added to the <see cref="P:Atom.Wpf.Converters.ValueConverterGroup.Converters"/> collection.
+            </remarks>
+        </member>
+        <member name="P:Atom.Wpf.Converters.ValueConverterGroup.Converters">
+            <summary>
+            Gets the list of IValueConverters contained in this <see cref="T:Atom.Wpf.Converters.ValueConverterGroup"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ValueConverterGroup.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Converters.ValueConverterGroup"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ValueConverterGroup.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture"> The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ValueConverterGroup.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified <paramref name="value"/> into radians.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ValueConverterGroup.GetTargetType(System.Int32,System.Type,System.Boolean)">
+            <summary>
+            Returns the target type for a conversion operation.
+            </summary>
+            <param name="converterIndex">The index of the current converter about to be executed.</param>
+            <param name="finalTargetType">The 'targetType' argument passed into the conversion method.</param>
+            <param name="convert">Pass true if calling from the Convert method, or false if calling from ConvertBack.</param>
+            <returns>The type to target for conversation.</returns>
+        </member>
+        <member name="M:Atom.Wpf.Converters.ValueConverterGroup.OnConvertersCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Gets called when the user has added or removed <see cref="T:System.Windows.Data.IValueConverter"/> s
+            to/from this <see cref="T:Atom.Wpf.Converters.ValueConverterGroup"/>.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> that contain the event data.
+            </param>
+        </member>
+        <member name="F:Atom.Wpf.Converters.ValueConverterGroup.converters">
+            <summary>
+            The collection of <see cref="T:System.Windows.Data.IValueConverter"/>s that have been added to this <see cref="T:Atom.Wpf.Converters.ValueConverterGroup"/>.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Converters.ValueConverterGroup.cachedAttributes">
+            <summary>
+            The <see cref="T:System.Windows.Data.ValueConversionAttribute"/> of the <see cref="T:System.Windows.Data.IValueConverter"/>s
+            that have been added of this <see cref="T:Atom.Wpf.Converters.ValueConverterGroup"/>
+            cached to reduce reflection-related lock-up time.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialog`1">
+            <summary>
+            Implements a mechanism that allows the user to select one or more nameable items of type <typeparamref name="TItem"/>.
+            This class can't be inherited.
+            </summary>
+            <typeparam name="TItem">
+            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.SelectedItem">
+            <summary>
+            Gets or sets the item that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.SelectedItems">
+            <summary>
+            Gets the items that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog`1.AllowMultipleSelection">
+            <summary>
+            Gets or sets a value indicating whether the user should
+            be allowed to select multiple items.
+            </summary>
+            <value>
+            The default value is false;
+            </value>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the ItemSelectionDialog class.
+            </summary>
+            <param name="items">
+            The items that should be selectable by the user.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog`1.ShowDialog">
+            <summary>
+            Shows this IItemSelectionDialog{TItem}
+            </summary>
+            <returns>
+            true if the user has selected an item;
+            -or- false if the user has canceled the operatioon. 
+            </returns>
+        </member>
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog`1.dialog">
+            <summary>
+            The actual WPF dialog that is used to drive the dialog.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialog">
+            <summary>
+            Implements a mechanism that allows the user to select one or more nameable items.
+            </summary>
+            <summary>
+            ItemSelectionDialog
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.SelectedItem">
+            <summary>
+            Gets or sets the item that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.SelectedItems">
+            <summary>
+            Gets the items that the user has selected.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Design.ItemSelectionDialog.AllowMultipleSelection">
+            <summary>
+            Gets or sets a value indicating whether the user should
+            be allowed to select multiple Assets.
+            </summary>
+            <value>
+            The default value is false;
+            </value>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.#ctor(System.Collections.Generic.IEnumerable{Atom.IReadOnlyNameable})">
+            <summary>
+            Initializes a new instance of the ItemSelectionDialog class.
+            </summary>
+            <param name="items">
+            The items that should be selectable by the user.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.SelectAsset(System.Int32)">
+            <summary>
+            Selects the Asset at the given index.
+            </summary>
+            <param name="assetIndex">
+            The zero-based index of the asset to select.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Called when the user has entered text into the textBox.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The TextChangedEventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.FindSearchMatches(System.String)">
+            <summary>
+            Finds the indices of the assets whose name match the given searchText.
+            </summary>
+            <param name="searchText">
+            The asset name that should be searched.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Called when the user has entered text into the textBox.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The KeyEventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnAssetSearchBoxTextPreviewKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Called when the user has entered text into the textBox.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The KeyEventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnListBoxItemsKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Called when the user has pressed any key while the listBoxItems is focused.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The RoutedEventArgs that contains the event args.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnSelectButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Called when the user has clicked on the Select button.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The RoutedEventArgs that contains the event args.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnCancelButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Called when the user has clicked on the Cancel button.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The RoutedEventArgs that contains the event args.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.OnWindowKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Called when the user has pressed any key while the window is focused.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The RoutedEventArgs that contains the event args.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.ShowDialog">
+            <summary>
+            Shows this ItemSelectionDialog.
+            </summary>
+            <returns>
+            true if the user has selected an item;
+            -or- false if the user has canceled the operatioon. 
+            </returns>
+        </member>
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog.matchIndex">
+            <summary>
+            The zero-based index of the currently selected match in the <see cref="F:Atom.Wpf.Design.ItemSelectionDialog.matches"/> list.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Design.ItemSelectionDialog.matches">
+            <summary>
+            The list of indices that are a match for the current search.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Design.ItemSelectionDialogFactory">
+            <summary>
+            Implements a machanism for creating IItemSelectionDialog{TIem} instances.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Design.ItemSelectionDialogFactory.Build``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a new IItemSelectionDialog{TItem} that allows the user
+            to select the specified items.
+            </summary>
+            <typeparam name="TItem">
+            The type of the nameable items the user can select in the IItemSelectionDialog{TItem}.
+            </typeparam>
+            <param name="items">
+            The items the user might select.
+            </param>
+            <returns>
+            The newly created IItemSelectionDialog{TItem}.
+            </returns>
+        </member>
+        <member name="T:Atom.Wpf.Dialogs.ColorPickerDialog">
+            <summary>
+            Represents a dialog that allows the user to pick any color
+            using the <see cref="T:Atom.Wpf.Controls.ColorPicker"/> control.
+            </summary>
+            <summary>
+            ColorPickerDialog
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Dialogs.ColorPickerDialog.SelectedColor">
+            <summary>
+            Gets or sets the color which has been set in the <see cref="T:Atom.Wpf.Dialogs.ColorPickerDialog"/>.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.ColorPickerDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Dialogs.ColorPickerDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.ColorPickerDialog.OnOkButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the OK button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.ColorPickerDialog.OnCancelButtonClicked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user has clicked on the Cancel button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.ColorPickerDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Dialogs.OverwritePromptResult">
+            <summary>
+            Enumerates the results of an enumeration prompt.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Dialogs.OverwritePromptResult.Overwrite">
+            <summary>
+            The user wishes to overwrite the file/object/etc.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Dialogs.OverwritePromptResult.OverwriteAll">
+            <summary>
+            The user wishes to overwrite all files/objects/etc.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.Dialogs.OverwritePromptResult.Cancel">
+            <summary>
+            The user wishes to not overwrite the file/object/etc.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.Dialogs.OverwritePromptDialog">
+            <summary>
+            Implements a simple dialog that promts the user
+            to overwrite a file/object/etc.
+            </summary>
+            <summary>
+            OverwritePromptDialog
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.Dialogs.OverwritePromptDialog"/> class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Dialogs.OverwritePromptDialog.AskOverwriteAll">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Atom.Wpf.Dialogs.OverwritePromptDialog"/>
+            allows the user to choose whether he wants to overwrite all.
+            </summary>
+            <value>
+            The default value is 'true'.
+            </value>
+        </member>
+        <member name="P:Atom.Wpf.Dialogs.OverwritePromptDialog.InfoString">
+            <summary>
+            Gets or sets the string that is displayed to get the user an idea
+            of what is going to be overwritten.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.ShowDialog">
+            <summary>
+            Opens this dialog and only returns when the
+            newly opened dialog window is closed.
+            </summary>
+            <returns>
+            The result of the dialog.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.Overwrite_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user clicks on the Overwrite button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.OverwriteAll_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user clicks on the OverwriteAll button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.Cancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Gets called when the user clicks on the Cancel button.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The RoutedEventArgs that contains the event data.</param>
+        </member>
+        <member name="F:Atom.Wpf.Dialogs.OverwritePromptDialog.result">
+            <summary>
+            Stores the result of the dialog.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.Dialogs.OverwritePromptDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.GameLoop">
+            <summary>
+            The GameLoop class allows the usage of a standard
+            game-loop in a Windows Presentation Foundation application.
+            This class can't be inherited.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.GameLoop.Updated">
+            <summary>
+            Raised when this GameLoop is updating.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.GameLoop.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.GameLoop"/> class.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.GameLoop.#ctor(System.TimeSpan,System.Windows.Threading.DispatcherPriority,System.Windows.Threading.Dispatcher)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.GameLoop"/> class.
+            </summary>
+            <param name="interval">
+            The period of time between ticks; can be used limit the frame rate.
+            </param>
+            <param name="priority">
+            The priority at which to invoke the GameLoop.
+            </param>
+            <param name="dispatcher">
+            The dispatcher the timer is associated with.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="dispatcher"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If the <paramref name="interval"/> is less than 0 or greater than <see cref="F:System.Int32.MaxValue"/>.
+            </exception>
+        </member>
+        <member name="M:Atom.Wpf.GameLoop.Start">
+            <summary>
+            Starts this GameLoop.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.GameLoop.Stop">
+            <summary>
+            Stops this GameLoop.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.GameLoop.OnTick(System.Object,System.EventArgs)">
+            <summary>
+            Called once per frame by the DispatcherTimer.
+            </summary>
+            <param name="sender">The sender of the event.</param>
+            <param name="e">The EventArgs that contain the event data.</param>
+        </member>
+        <member name="F:Atom.Wpf.GameLoop.isActive">
+            <summary>
+            States whether this GameLoop is currently active.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.GameLoop.elapsedTime">
+            <summary>
+            Stores the TimeSpan the last frame took to execute.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.GameLoop.lastUpdateTime">
+            <summary>
+            Stores the time at which the last frame has ended.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.GameLoop.frameTimer">
+            <summary>
+            The timer responsible for calling OnTick.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.GameLoopUpdateEventHandler">
+            <summary>
+            Defines the delegate that contains the logic that gets executed by a <see cref="T:Atom.Wpf.GameLoop"/> each frame.
+            </summary>
+            <param name="elapsedTime">
+            The time the last frame took.
+            </param>
+        </member>
+        <member name="T:Atom.Wpf.HsvColor">
+            <summary>
+            Describes a color in terms of Hue, Saturation
+            and Value (brightness).
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.HsvColor.Hue">
+            <summary>
+            The hue of the color.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.HsvColor.Saturation">
+            <summary>
+            The saturation of the color.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.HsvColor.Value">
+            <summary>
+            The value (brightness) of the color.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.HsvColor.GenerateSpectrum">
+            <summary>
+            Generates a list of colors with hues ranging from 0 360
+            and a saturation and value of 1. 
+            </summary>
+            <returns>
+            The generated color spectrum.
+            </returns> 
+        </member>
+        <member name="M:Atom.Wpf.HsvColor.FromRGB(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts the given RGB color into a <see cref="T:Atom.Wpf.HsvColor"/>.
+            </summary>
+            <param name="red">The red value of the input RGB color.</param>
+            <param name="green">The green value of the input RGB color.</param>
+            <param name="blue">The blue value of the input RGB color.</param>
+            <returns>
+            The converted <see cref="T:Atom.Wpf.HsvColor"/> color.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.HsvColor.ToRGB(System.Double,System.Double,System.Double)">
+            <summary>
+            Converts the given HSV color into a RGB <see cref="T:System.Windows.Media.Color"/>.
+            </summary>
+            <param name="hue">The hue value of the input HSV color.</param>
+            <param name="saturation">The saturation value of the input HSV color.</param>
+            <param name="value">The brightness value of the input HSV color.</param>
+            <returns>
+            The converted RGB <see cref="T:System.Windows.Media.Color"/> color.
+            </returns>
+        </member>
+        <member name="T:Atom.Wpf.LambdaCommand">
+            <summary>
+            Represents an <see cref="T:System.Windows.Input.ICommand"/> that delegates its actions to lambdas / delegates.
+            </summary>
+        </member>
+        <member name="E:Atom.Wpf.LambdaCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether or not the command should execute.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.#ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})">
+            <summary>
+            Initializes a new instance of the LambdaCommand class.
+            </summary>
+            <param name="action">
+            The action that is executed when the new LambdaCommand is executed.
+            </param>
+            <param name="canExecute">
+            The function that determines whether the new LambdaCommand can be executed in its current state.
+            If null then this LambdaCommand can always be executed.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">
+            Data used by the command.
+            If the command does not require data to be passed, this object can be set to null.
+            </param>
+            <returns>
+            true if this command can be executed;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">
+            Data used by the command.
+            If the command does not require data to be passed, this object can be set to null.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.LambdaCommand.OnCanExecuteChanged">
+            <summary>
+            Notifies this LambdaCommand that its current <see cref="M:Atom.Wpf.LambdaCommand.CanExecute(System.Object)"/>
+            change might have changed.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.LambdaCommand.action">
+            <summary>
+            The action that is executed when the new LambdaCommand is executed.
+            </summary>
+        </member>
+        <member name="F:Atom.Wpf.LambdaCommand.canExecute">
+            <summary>
+            The function that determines whether this LambdaCommand can be executed in its current state.
+            If null then this LambdaCommand can always be executed.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.MathExtensions">
+            <summary>
+            Contains extensions that are provide methods to make working with both Atom.Math types and WPF easier.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToWpfPointCollection(System.Collections.Generic.IEnumerable{Atom.Math.Vector2})">
+            <summary>
+            Converts the specified enumeration of <see cref="T:Atom.Math.Vector2"/> instances
+            into a <see cref="T:System.Windows.Media.PointCollection"/> that is supported by XNA.
+            </summary>
+            <param name="points"> The points to convert.</param>
+            <returns>
+            The converted <see cref="T:System.Windows.Media.PointCollection"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToWpfPointCollection(System.Collections.Generic.IList{Atom.Math.Vector2})">
+            <summary>
+            Converts the specified list of <see cref="T:Atom.Math.Vector2"/> instances
+            into a <see cref="T:System.Windows.Media.PointCollection"/> that is supported by XNA.
+            </summary>
+            <param name="points"> The points to convert.</param>
+            <returns>
+            The converted <see cref="T:System.Windows.Media.PointCollection"/>.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToWpf(Atom.Math.Point2)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Point2"/> into a <see cref="T:System.Windows.Point"/>.
+            </summary>
+            <param name="point">The point to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToWpf(Atom.Math.Vector2)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Vector2"/> into a <see cref="T:System.Windows.Point"/>.
+            </summary>
+            <param name="vector">The vector to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToWpf(Atom.Math.Polygon2)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Polygon2"/> into a <see cref="T:System.Windows.Shapes.Polygon"/> objct.
+            </summary>
+            <param name="polygon">The polygon to convert.</param>
+            <returns>
+            The converted object.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToAtomPoint(System.Windows.Point)">
+            <summary>
+            Converts the <see cref="T:System.Windows.Point"/> into a <see cref="T:Atom.Math.Point2"/>.
+            </summary>
+            <param name="point">The point to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Atom.Wpf.MathExtensions.ToAtomVector(System.Windows.Point)">
+            <summary>
+            Converts the <see cref="T:Atom.Math.Vector2"/> into a <see cref="T:System.Windows.Point"/>.
+            </summary>
+            <param name="point">The point to convert.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="T:Atom.Wpf.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.ButtonText_Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.ButtonText_Ok">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.Error_ValueConverterGroup_ConverterAttributeNeededOnce">
+            <summary>
+              Looks up a localized string similar to All value converters added to a ValueConverterGroup must be decorated with the ValueConversionAttribute attribute exactly once..
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.Error_ValueConverterGroup_NullIndexX">
+            <summary>
+              Looks up a localized string similar to The Converters collection of the ValueConverterGroup contains a null reference at index: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.Question">
+            <summary>
+              Looks up a localized string similar to Question.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.Properties.Resources.Title_ColorPickerDialog">
+            <summary>
+              Looks up a localized string similar to Color Picker.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.QuestionMessageBox">
+            <summary>
+            Defines static utility methods that provide an easy
+            way to show a MessageBox that asks the user a Yes/No question.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.QuestionMessageBox.Show(System.String)">
+            <summary>
+            Shows a modal <see cref="T:System.Windows.MessageBox"/> that asks the
+            user the given <paramref name="question"/>.
+            </summary>
+            <param name="question">
+            The question to ask the user.
+            </param>
+            <returns>
+            True if the user has answered to the question with Yes;
+            otherwise false.
+            </returns>
+        </member>
+        <member name="T:Atom.Wpf.SafeExecute">
+            <summary>
+            Defines mechanism for executing <see cref="T:System.Action"/>s
+            within a specific safe context.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.SafeExecute.WithMsgBox(System.Action)">
+            <summary>
+            Executes the specified Action within a safe context
+            that catches all exceptions and informs the user by displaying
+            the error in a MessageBox.
+            </summary>
+            <param name="action">
+            The action to apply.
+            </param>
+        </member>
+        <member name="T:Atom.Wpf.IViewModel`1">
+            <summary>
+            Implement this interface if you want your specific <see cref="T:Atom.Wpf.ViewModel`1"/> 
+            implemenentation class to allow type-safe access to the Model.
+            </summary>
+            <remarks>
+            See the <see cref="T:Atom.Wpf.ViewModel`1"/> class for a more detailed description.
+            </remarks>
+            <typeparam name="TModel">
+            The type of model.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Wpf.IViewModel`1.Model">
+            <summary>
+            Gets the model this <see cref="T:Atom.Wpf.IViewModel`1"/> wraps around.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.IViewModelCommand`2">
+            <summary>
+            Definues a command that is executed within a View-ViewModel-Model context.
+            </summary>
+            <typeparam name="TViewModel">
+            The type of the view model.
+            </typeparam>
+            <typeparam name="TModel">
+            The type of the model.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Wpf.IViewModelCommand`2.Model">
+            <summary>
+            Gets the model the <see cref="P:Atom.Wpf.IViewModelCommand`2.ViewModel"/> wraps around.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.IViewModelCommand`2.ViewModel">
+            <summary>
+            Gets the <see cref="T:Atom.Wpf.IViewModel`1"/> that owns this IViewModelCommand{TViewModel, TModel}.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.ViewModel`1">
+            <summary>
+            A ViewModel represents the layer between the View (XAML) and a Model (any kind of data/buisiness object/etc).
+            </summary>
+            <remarks>
+            This layer provides the View with the commands and bindings it needs to modify the Model.
+            Usually Models only contain valid data,
+            where it is possible for the ViewModel to store invalid values.
+            Also the ViewModel is responsible to convert data of the Model 
+            into data the UI can understand. (reduces the amount of IValueConverters needed in XAML code)
+            </remarks>
+            <typeparam name="TModel">
+            The type of the Model stored in the <see cref="T:Atom.Wpf.ViewModel`1"/>.
+            </typeparam>
+        </member>
+        <member name="E:Atom.Wpf.ViewModel`1.PropertyChanged">
+            <summary>
+            Raised when a property of this <see cref="T:Atom.Wpf.ViewModel`1"/> has changed.
+            This is required for binding.
+            </summary>
+            <remarks>
+            Not every property is required to notify by raising this event.
+            </remarks>
+        </member>
+        <member name="P:Atom.Wpf.ViewModel`1.Model">
+            <summary>
+            Gets the model this <see cref="T:Atom.Wpf.ViewModel`1"/> wraps around.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.ViewModel`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.ViewModel`1"/> class.
+            </summary>
+            <param name="model">
+            The model the new <see cref="T:Atom.Wpf.ViewModel`1"/> wraps around.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.ViewModel`1.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Atom.Wpf.ViewModel`1.PropertyChanged"/> event of this <see cref="T:Atom.Wpf.ViewModel`1"/>.
+            </summary>
+            <param name="propertyName">
+            The name of the property whose value has changed.
+            </param>
+        </member>
+        <member name="M:Atom.Wpf.ViewModel`1.ToString">
+            <summary>
+            Overriden return the string return by the ToString method of the <see cref="P:Atom.Wpf.ViewModel`1.Model"/>.
+            </summary>
+            <returns>The string return by the ToString method of the <see cref="P:Atom.Wpf.ViewModel`1.Model"/>.</returns>
+        </member>
+        <member name="F:Atom.Wpf.ViewModel`1.model">
+            <summary>
+            The model this <see cref="T:Atom.Wpf.ViewModel`1"/> wraps around.
+            </summary>
+        </member>
+        <member name="T:Atom.Wpf.ViewModelCommand`2">
+            <summary>
+            Represents the base class of all <see cref="T:System.Windows.Input.ICommand"/>s that are exposed
+            by a <see cref="T:Atom.Wpf.IViewModel`1"/>.
+            </summary>
+            <remarks>
+            Commands are usually exposed from the <see cref="T:Atom.Wpf.IViewModel`1"/>
+            using <see cref="T:System.Windows.Input.ICommand"/> and not this base class.
+            This class is meant to reduce the amount of work needed 
+            to implement new <see cref="T:System.Windows.Input.ICommand"/>s for <see cref="T:Atom.Wpf.IViewModel`1"/>s.
+            </remarks>
+            <typeparam name="TViewModel">
+            The concrete type of ViewModel the <see cref="T:System.Windows.Input.ICommand"/> uses.
+            </typeparam>
+            <typeparam name="TModel">
+            The type of the Model stored in the <see cref="T:Atom.Wpf.IViewModel`1"/>.
+            </typeparam>
+        </member>
+        <member name="P:Atom.Wpf.ViewModelCommand`2.Model">
+            <summary>
+            Gets the model the <see cref="P:Atom.Wpf.ViewModelCommand`2.ViewModel"/> wraps around.
+            </summary>
+        </member>
+        <member name="P:Atom.Wpf.ViewModelCommand`2.ViewModel">
+            <summary>
+            Gets the <see cref="T:Atom.Wpf.ViewModel`1"/> that owns this ViewModelCommand{TViewModel, TModel}.
+            </summary>
+        </member>
+        <member name="M:Atom.Wpf.ViewModelCommand`2.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Atom.Wpf.ViewModelCommand`2"/> class.
+            </summary>
+            <param name="viewModel">
+            The <see cref="T:Atom.Wpf.IViewModel`1"/> that executes the new <see cref="T:Atom.Wpf.ViewModelCommand`2"/>.
+            </param>
+        </member>
+        <member name="F:Atom.Wpf.ViewModelCommand`2.viewModel">
+            <summary>
+            The <see cref="T:Atom.Wpf.IViewModel`1"/> that owns this <see cref="T:Atom.Wpf.ViewModelCommand`2"/>.
+            </summary>
+        </member>
+        <member name="T:Acid.Wpf.Collections.DispatchingObservableCollection`1">
+            <summary>
+            Represents a thread-safe dynamic data collection that provides notifications when items
+            get added, removed, or when the whole list is refreshed.
+            </summary>
+            <typeparam name="T">
+            The type of items stored in the collection.
+            </typeparam>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.#ctor(System.Windows.Threading.Dispatcher)">
+            <summary>
+            Initializes a new instance of the DispatchingObservableCollection class.
+            </summary>
+            <param name="dispatcher">
+            The dispatcher that is running on the UI thread.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="dispatcher"/> is null.
+            </exception>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.SetItem(System.Int32,`0)">
+            <summary>
+            Replaces the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to replace.</param>
+            <param name="item">The new value for the element at the specified index.</param>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.RemoveItem(System.Int32)">
+            <summary>
+            Removes the item at the specified index of the collection.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.ClearItems">
+            <summary>
+            Removes all items from the collection.
+            </summary>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.InsertItem(System.Int32,`0)">
+            <summary>
+            Inserts an item into the collection at the specified index.
+            </summary>
+            <param name="index"> The zero-based index at which item should be inserted.</param>
+            <param name="item">The object to insert.</param>
+        </member>
+        <member name="M:Acid.Wpf.Collections.DispatchingObservableCollection`1.MoveItem(System.Int32,System.Int32)">
+            <summary>
+             Moves the item at the specified index to a new location in the collection.
+            </summary>
+            <param name="oldIndex">The zero-based index specifying the location of the item to be moved.</param>
+            <param name="newIndex">The zero-based index specifying the new location of the item.</param>
+        </member>
+        <member name="F:Acid.Wpf.Collections.DispatchingObservableCollection`1.dispatcher">
+            <summary>
+            The Dispatcher we're using to make the collection thread-safe.
+            </summary>
+        </member>
+    </members>
+</doc>

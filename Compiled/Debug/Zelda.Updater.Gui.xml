@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zelda.Updater.Gui</name>
+    </assembly>
+    <members>
+        <member name="T:Zelda.Updater.App">
+            <summary>
+            The Zelda.Updater application is reponsible for
+            updating the game by downloading only the files
+            that have been updated.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.AsyncGameFilesDownloader">
+            <summary>
+            Downloads and updates game files asynchronously.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.AsyncGameFilesDownloader.Completed">
+            <summary>
+            Raised when this AsyncGameFileDownloader has completed downloading all
+            required files.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.AsyncGameFilesDownloader.Errored">
+            <summary>
+            Raised when an error has occurred during the download.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.AsyncGameFilesDownloader.DownloadProgressChanged">
+            <summary>
+            Raised when a file download progress has occurred.
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.AsyncGameFilesDownloader.SucessfulDownloadCount">
+            <summary>
+            Gets the number of files that have bee sucessfully downloaded.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.#ctor(Atom.AutoUpdate.IDownloader)">
+            <summary>
+            Initializes a new instance of the AsyncGameFilesDownloader class.
+            </summary>
+            <param name="downloader">
+            The IDownloader that should be used for downloading the game files.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.DownloadAsync(System.Collections.Generic.IList{Atom.AutoUpdate.Manifest.IManifestFile})">
+            <summary>
+            Starts downloading the specified files.
+            </summary>
+            <param name="files">
+            The list of files to download.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.DownloadNext">
+            <summary>
+            Downloads the next file in the list.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.Download">
+            <summary>
+            Downloads the current file.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.OnAsyncDownloadCompleted(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+            <summary>
+            Called when the asynchronous download has completed.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The System.ComponentModel.AsyncCompletedEventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.AsyncGameFilesDownloader.OnAsyncDownloadProgressChanged(System.Object,System.Net.DownloadProgressChangedEventArgs)">
+            <summary>
+            Called when the current asynchronous download progress has changed.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The System.Net.DownloadProgressChangedEventArgs that contain the event data.
+            </param>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.sucessfulDownloadCount">
+            <summary>
+            The number of files that have been sucessfully downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.fileIndex">
+            <summary>
+            The infex of the current file beeing downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.file">
+            <summary>
+            The current file beeing downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.files">
+            <summary>
+            The files to download.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.downloader">
+            <summary>
+            The IDownloader that should be used for downloading the game files.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.downloadAddress">
+            <summary>
+            The base address from which files are downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.AsyncGameFilesDownloader.applicationPath">
+            <summary>
+            The base path of the application.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.Execute">
+            <summary>
+            Enables easy marshalling of code to the UI thread.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.Execute.InitializeWithDispatcher">
+            <summary>
+            Initializes the framework using the current dispatcher.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.Execute.OnUIThread(System.Action)">
+            <summary>
+            Executes the action on the UI thread.
+            </summary>
+            <param name="action">The action to execute.</param>
+        </member>
+        <member name="T:Zelda.Updater.FilesToDownloadFinder">
+            <summary>
+            Responsible for finding the files that must be downloaded and updated.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.FilesToDownloadFinder.#ctor(Atom.AutoUpdate.Manifest.IManifest)">
+            <summary>
+            Initializes a new instance of the FilesToDownloadFinder class.
+            </summary>
+            <param name="manifest">
+            The IManifest that has been downloaded from the server.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.FilesToDownloadFinder.Find">
+            <summary>
+            Finds the files that should be downloaded.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.Updater.FilesToDownloadFinder.ShouldUpdateFile(Atom.AutoUpdate.Manifest.IManifestFile)">
+            <summary>
+            Gets a value indicating whether the specified file
+            should be downloaded.
+            </summary>
+            <param name="file">
+            The file to check.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.Updater.FilesToDownloadFinder.IsUpdaterStubFile(Atom.AutoUpdate.Manifest.IManifestFile)">
+            <summary>
+            Gets a value indicating whether the specified IManifestFile
+            is actually the stub file that is running the Updater.
+            This file can't be updated using the updater.
+            </summary>
+            <param name="file">
+            The file to check.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.Updater.FilesToDownloadFinder.GetFilePath(Atom.AutoUpdate.Manifest.IManifestFile)">
+            <summary>
+            Gets the full path on the filesystem for the given IManifestFile.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Zelda.Updater.GameFilesDownloadProgressChangedEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.GameFilesDownloadProgressChangedEventArgs.File">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.GameFilesDownloadProgressChangedEventArgs.FileIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.GameFilesDownloadProgressChangedEventArgs.FileCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.GameFilesDownloadProgressChangedEventArgs.#ctor(System.Int64,System.Int64,Atom.AutoUpdate.Manifest.IManifestFile,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="bytesReceived"></param>
+            <param name="totalBytesToReceive"></param>
+            <param name="file"></param>
+            <param name="fileIndex"></param>
+            <param name="fileCount"></param>
+        </member>
+        <member name="T:Zelda.Updater.IAsyncProcess">
+            <summary>
+            Represents a process that runs asynchronous to the rest of the application.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.IAsyncProcess.Completed">
+            <summary>
+            Raised when the asynchronous has been completed.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.IAsyncProcess.Errored">
+            <summary>
+            Raises when an error has ocurred during the asynchronous process.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.MainWindow">
+            <summary>
+            Defines the Main Window of the Zelda Updater application.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the MainWindow class.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.OnKeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.BeginDownloadingPatchNotes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.BeginDownloadingManifest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.BeginDownloadingFiles(Atom.AutoUpdate.Manifest.IManifest)">
+            <summary>
+            
+            </summary>
+            <param name="manifest"></param>
+        </member>
+        <member name="M:Zelda.Updater.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.ManifestDownloader">
+            <summary>
+            Implements a mechanism that downloads the
+            current updater <see cref="T:Atom.AutoUpdate.Manifest.IManifest"/>.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.ManifestDownloader.Completed">
+            <summary>
+            Raised when this ManifestDownloader has completed downloading
+            the manifest.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.ManifestDownloader.Errored">
+            <summary>
+            Raised when an error has occurred during the download.
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.ManifestDownloader.Manifest">
+            <summary>
+            Gets the IManifest that has been downloaded.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Zelda.Updater.ManifestDownloader.#ctor(Atom.AutoUpdate.IDownloader)" -->
+        <member name="M:Zelda.Updater.ManifestDownloader.#ctor(Atom.AutoUpdate.IDownloader,Atom.AutoUpdate.Manifest.Serialization.IManifestSerializer)">
+            <summary>
+            Initializes a new instance of the ManifestDownloader class.
+            </summary>
+            <param name="downloader">
+            The IDownloader that should be used to download the IManifest data.
+            </param>
+            <param name="manifestSerializer">
+            The IManifestSerializer that should be used to derserialize the downloaded data.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.ManifestDownloader.DownloadManifestAync">
+            <summary>
+            Downloads the current IManifest.
+            </summary>
+            <returns>
+            The IManifest that has been downloaded.
+            </returns>
+        </member>
+        <member name="M:Zelda.Updater.ManifestDownloader.OnAsyncManifestDownloadCompleted(System.Object,System.Net.DownloadDataCompletedEventArgs)">
+            <summary>
+            Called when the async manifest dowload has completed.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The System.Net.DownloadDataCompletedEventArgs that contain event data.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.ManifestDownloader.ProcessDownloadedData(System.Byte[])">
+            <summary>
+            Processes the data that has been successfully downloaded.
+            </summary>
+            <param name="data">
+            The data that has been downloaded.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.ManifestDownloader.OnError(System.Exception)">
+            <summary>
+            Raises the Errored event.
+            </summary>
+            <param name="e">
+            The exception that has occurred.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.ManifestDownloader.GetDownloadAddress">
+            <summary>
+            Gets the address at which the manifest file is downloaded from.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Zelda.Updater.ManifestDownloader.manifest">
+            <summary>
+            The IManifest that has been downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.ManifestDownloader.downloader">
+            <summary>
+            The IDownloader that should be used to download the IManifest data.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.ManifestDownloader.manifestSerializer">
+            <summary>
+            The IManifestSerializer that should be used to derserialize the downloaded data.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.PatchNotesDownloader">
+            <summary>
+            Implements a method to download the patch notes.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.PatchNotesDownloader.Completed">
+            <summary>
+            Raised when this PatchNotesDownloader has completed downloading
+            the patch notes.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.PatchNotesDownloader.Errored">
+            <summary>
+            Raised when an error has occurred during the download.
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.PatchNotesDownloader.PatchNotes">
+            <summary>
+            Gets the patch notes that have been downloaded.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.#ctor(Atom.AutoUpdate.IDownloader)">
+            <summary>
+            Initializes a new instance of the PatchNotesDownloader class.
+            </summary>
+            <param name="downloader">
+            The IDownloader that should be used to download the IManifest data.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.DownloadPatchNotesAsync">
+            <summary>
+            Downloads the last known patch notes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.OnAsyncPatchNoteDownloadCompleted(System.Object,System.Net.DownloadDataCompletedEventArgs)">
+            <summary>
+            Called when the async patch notes dowload has completed.
+            </summary>
+            <param name="sender">
+            The sender of the event.
+            </param>
+            <param name="e">
+            The System.Net.DownloadDataCompletedEventArgs that contain event data.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.ProcessDownloadedData(System.Byte[])">
+            <summary>
+            Processes the data that has been successfully downloaded.
+            </summary>
+            <param name="data">
+            The data that has been downloaded.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.GetDownloadAddress">
+            <summary>
+            Gets the download address for the patch notes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Zelda.Updater.PatchNotesDownloader.OnError(System.Exception)">
+            <summary>
+            Raises the Errored event.
+            </summary>
+            <param name="e">
+            The exception that has occurred.
+            </param>
+        </member>
+        <member name="F:Zelda.Updater.PatchNotesDownloader.patchNotes">
+            <summary>
+            The patch notes that have been downloaded.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.PatchNotesDownloader.downloader">
+            <summary>
+            The IDownloader that should be used to download the IManifest data.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Zelda.Updater.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.StatusBarInfoController">
+            <summary>
+            Encapsulates the logic of showing information about the current status
+            of the Zelda.Updater to the user.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.StatusBarInfoController.ShowInformation(System.String)">
+            <summary>
+            Shows the given information to the user.
+            </summary>
+            <remarks>
+            The information is only shown when no error
+            is currently shown.
+            </remarks>
+            <param name="text">
+            The text to show.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.StatusBarInfoController.ShowError(System.String)">
+            <summary>
+            Shows the given error information to the user.
+            </summary>
+            <param name="text">
+            The text to show.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.StatusBarInfoController.SetText(System.String)">
+            <summary>
+            Sets the current text shown in the Status Bar.
+            </summary>
+            <param name="text">
+            The text to show.
+            </param>
+        </member>
+        <member name="F:Zelda.Updater.StatusBarInfoController.isShowingError">
+            <summary>
+            States whether the StatusBar is currently showing error information.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.StatusBarInfoController.statusBarItem">
+            <summary>
+            Identifies the StatusBarItem responsible for actually showing the status information.
+            </summary>
+        </member>
+        <member name="T:Zelda.Updater.UnrequiredFilesCleaner">
+            <summary>
+            Cleans/Deletes all the files the game doesn't require to run.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.UnrequiredFilesCleaner.Completed">
+            <summary>
+            Raised when this UnrequiredFilesCleaner has completed.
+            </summary>
+        </member>
+        <member name="E:Zelda.Updater.UnrequiredFilesCleaner.Errored">
+            <summary>
+            Raised when this UnrequiredFilesCleaner has raised an error.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.RunAsync(Atom.AutoUpdate.Manifest.IManifest)">
+            <summary>
+            Runs this UnrequiredFilesCleaner asynchronous.
+            </summary>
+            <param name="manifest">
+            The IManifest that contains all the files
+            the game depends on.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.CheckNextFile">
+            <summary>
+            Checks the next file in the list of files.
+            </summary>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.TryCheckFile(System.String)">
+            <summary>
+            Checks whether the given file should be cleaned/deleted.
+            </summary>
+            <remarks>
+            This method won't throw.
+            </remarks>
+            <param name="file">
+            The full file path of the file to check.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.CheckFile(System.String)">
+            <summary>
+            Checks whether the given file should be cleaned/deleted.
+            </summary>
+            <remarks>
+            This method might throw.
+            </remarks>
+            <param name="file">
+            The full file path of the file to check.
+            </param>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.ShouldCleanFile(System.String)">
+            <summary>
+            Gets a value indicating whether the specified file should be cleaned.
+            </summary>
+            <param name="file">
+            The full file path of the file to check.
+            </param>
+            <returns>
+            true if it should be cleaned; 
+            otherwise false.
+            </returns>
+        </member>
+        <member name="M:Zelda.Updater.UnrequiredFilesCleaner.CleanFile(System.String)">
+            <summary>
+            Cleanes/Deletes the specified file.
+            </summary>
+            <param name="file">
+            The full file path of the file to clean.
+            </param>
+        </member>
+        <member name="F:Zelda.Updater.UnrequiredFilesCleaner.fileIndex">
+            <summary>
+            The index of the current file.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.UnrequiredFilesCleaner.files">
+            <summary>
+            The actual files on the hard-disc.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.UnrequiredFilesCleaner.manifestFiles">
+            <summary>
+            The files the game depends on.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.UnrequiredFilesCleaner.applicationPath">
+            <summary>
+            The path of the application.
+            </summary>
+        </member>
+        <member name="F:Zelda.Updater.UnrequiredFilesCleaner.contentPath">
+            <summary>
+            The path that contains the content of the game.
+            </summary>
+        </member>
+    </members>
+</doc>

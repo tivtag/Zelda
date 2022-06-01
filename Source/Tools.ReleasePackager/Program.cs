@@ -24,9 +24,9 @@ namespace Tools.ReleasePackager
         {
             // ToDo: Use relative paths
             var packager = new Packager(
-                compiledDirectory: @"F:\Projects\Zelda\Compiled\Release\net5.0-windows\win-x86",
-                packagedDirectory:  @"F:\Projects\Zelda\Packaged",
-                installerDirectory: @"F:\Projects\Zelda\Source\Installer"
+                compiledDirectory: @"C:\Projects\Zelda\Compiled\Release\net6.0-windows\win-x86",
+                packagedDirectory:  @"C:\Projects\Zelda\Packaged",
+                installerDirectory: @"C:\Projects\Zelda\Source\Installer"
             );
             
             bool hadError = !packager.Run();
