@@ -25,7 +25,7 @@ namespace Zelda.Updater.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.files.ki-mo.org/zelda/download/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.files.ki-mo.org/zelda/download/")]
         public string DownloadAddress {
             get {
                 return ((string)(this["DownloadAddress"]));

@@ -6,6 +6,8 @@
 
 namespace Zelda.Updater
 {
+    using System.IO;
+    using System.Linq;
     using System.Windows;
 
     /// <summary>
@@ -15,5 +17,23 @@ namespace Zelda.Updater
     /// </summary>
     public sealed partial class App : Application
     {
+        //protected override void OnStartup( StartupEventArgs e )
+        //{
+        //    string firstArg = e.Args.FirstOrDefault();
+
+        //    if( !string.IsNullOrWhiteSpace( firstArg ) )
+        //    {
+        //        if( Directory.Exists( firstArg ) )
+        //        {
+        //            Directory.SetCurrentDirectory( firstArg );
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Directory.SetCurrentDirectory( @"C:\Users\paule\Desktop\ZeldaBlackCrown" );
+        //    }
+
+        //    base.OnStartup( e );
+        //}
     }
 }

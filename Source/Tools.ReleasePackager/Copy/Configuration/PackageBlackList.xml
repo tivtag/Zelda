@@ -22,6 +22,9 @@
     <file>SpriteTool.Library.dll</file>
     <file>Atom.Wpf.dll</file>
     <file>Atom.Xna.Wpf.dll</file>
+    <file>Microsoft.CodeAnalysis.dll</file>
+    <file>Microsoft.CodeAnalysis.VisualBasic.dll</file>
+    <file>Microsoft.CodeAnalysis.CSharp.dll</file>
     <file>TLoZ - Black Crown.runtimeconfig.dev.json</file>
     <file>Zelda.Updater.Gui.runtimeconfig.dev.json</file>
     <file>Zelda Updater.runtimeconfig.dev.json</file>

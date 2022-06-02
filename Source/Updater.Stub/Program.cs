@@ -11,6 +11,7 @@
 namespace Zelda.Updater
 {
     using System;
+    using System.Diagnostics;
     using System.IO;
     using System.Reflection;
     using System.Threading;
@@ -39,12 +40,11 @@ namespace Zelda.Updater
         private static void Run()
         {
             string startUpPath = Path.GetDirectoryName( Assembly.GetEntryAssembly().Location );
-            string updaterAssembly = Path.Combine( startUpPath, @"Content\Updater\Zelda.Updater.Gui.exe" );
+            string updaterAssembly = Path.Combine( startUpPath, @"Zelda.Updater.Gui.exe" );
 
-            var domain = AppDomain.CreateDomain( "Update Domain" );
-            domain.SetShadowCopyFiles();
-            
-            domain.ExecuteAssembly( updaterAssembly );
+            Process.Start( new ProcessStartInfo() {
+                 FileName = updaterAssembly
+            } );
         }
     }
 }

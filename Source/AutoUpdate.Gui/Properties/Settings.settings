@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DownloadAddress" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.files.ki-mo.org/zelda/download/</Value>
+      <Value Profile="(Default)">https://www.files.ki-mo.org/zelda/download/</Value>
     </Setting>
   </Settings>
 </SettingsFile>
