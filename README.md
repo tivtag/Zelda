@@ -38,13 +38,13 @@ The game currenly contains:
 - adjustable resolution, no need to ruin your eyes!
 
 ## Requirements
-The game requires you to have a graphics card/integrated graphics that supports atleast pixel shader 2.0.
-Besides that the game requires you to install the Microsoft .NET Framework 4.7.2
+The game requires you to have Windows x64 and graphics card/integrated graphics that supports atleast pixel shader 2.0.
+Besides that the game requires you to install the Microsoft .NET 6.0
 
 ## Download
 Game Download: http://www.files.ki-mo.org/zelda/ZeldaBlackCrown.zip
 
-Microsoft .NET 6.0.5 or newer: 
+Microsoft .NET 6: 
 https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.5-windows-x64-installer
 
