@@ -42,9 +42,12 @@ The game requires you to have a graphics card/integrated graphics that supports 
 Besides that the game requires you to install the Microsoft .NET Framework 4.7.2
 
 ## Download
-Game Download: http://paul.ennemoser.com/files/zelda/TLoZ%20-%20Black%20Crown.zip
+Game Download: http://www.files.ki-mo.org/zelda/ZeldaBlackCrown.zip
 
-Microsoft .NET Framework 4.7.2: https://www.microsoft.com/net/download/dotnet-framework-runtime
+Microsoft .NET 6.0.5 or newer: 
+https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.5-windows-x64-installer
+
 
 ## Related Source Code
 Atom Framework: https://github.com/tivtag/Atom
