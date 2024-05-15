@@ -1,12 +1,11 @@
 {
   "runtimeTarget": {
-    "name": ".NETStandard,Version=v2.1/",
+    "name": ".NETCoreApp,Version=v8.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETStandard,Version=v2.1": {},
-    ".NETStandard,Version=v2.1/": {
+    ".NETCoreApp,Version=v8.0": {
       "Atom.Math.Graph/1.0.0": {
         "dependencies": {
           "Atom": "1.0.0",

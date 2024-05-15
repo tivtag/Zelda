@@ -1,17 +1,17 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v6.0",
+    "name": ".NETCoreApp,Version=v8.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v6.0": {
+    ".NETCoreApp,Version=v8.0": {
       "Atom.Xna.Wpf/1.0.0": {
         "dependencies": {
           "Atom": "1.0.0",
           "Atom.Math": "1.0.0",
           "Atom.Xna": "1.0.0",
-          "MonoGame.Framework.WindowsDX": "3.8.0.1641"
+          "MonoGame.Framework.WindowsDX": "3.8.1.303"
         },
         "runtime": {
           "Atom.Xna.Wpf.dll": {}
@@ -264,11 +264,11 @@
           "System.Runtime.InteropServices": "4.1.0"
         }
       },
-      "MonoGame.Framework.DesktopGL/3.8.0.1641": {
+      "MonoGame.Framework.DesktopGL/3.8.1.303": {
         "runtime": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {
-            "assemblyVersion": "3.8.0.1641",
-            "fileVersion": "3.8.0.1641"
+          "lib/net6.0/MonoGame.Framework.dll": {
+            "assemblyVersion": "3.8.1.303",
+            "fileVersion": "3.8.1.303"
           }
         },
         "runtimeTargets": {
@@ -282,7 +282,7 @@
             "assetType": "native",
             "fileVersion": "0.0.0.0"
           },
-          "runtimes/osx/native/libSDL2-2.0.0.dylib": {
+          "runtimes/osx/native/libSDL2.dylib": {
             "rid": "osx",
             "assetType": "native",
             "fileVersion": "0.0.0.0"
@@ -295,7 +295,7 @@
           "runtimes/win-x64/native/SDL2.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "2.0.12.0"
+            "fileVersion": "2.0.20.0"
           },
           "runtimes/win-x64/native/soft_oal.dll": {
             "rid": "win-x64",
@@ -305,7 +305,7 @@
           "runtimes/win-x86/native/SDL2.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "2.0.12.0"
+            "fileVersion": "2.0.20.0"
           },
           "runtimes/win-x86/native/soft_oal.dll": {
             "rid": "win-x86",
@@ -314,7 +314,7 @@
           }
         }
       },
-      "MonoGame.Framework.WindowsDX/3.8.0.1641": {
+      "MonoGame.Framework.WindowsDX/3.8.1.303": {
         "dependencies": {
           "SharpDX": "4.0.1",
           "SharpDX.DXGI": "4.0.1",
@@ -325,9 +325,9 @@
           "SharpDX.XInput": "4.0.1"
         },
         "runtime": {
-          "lib/netcoreapp3.1/MonoGame.Framework.dll": {
-            "assemblyVersion": "3.8.0.1641",
-            "fileVersion": "3.8.0.1641"
+          "lib/net6.0-windows7.0/MonoGame.Framework.dll": {
+            "assemblyVersion": "3.8.1.303",
+            "fileVersion": "3.8.1.303"
           }
         }
       },
@@ -1543,7 +1543,7 @@
         "dependencies": {
           "Atom": "1.0.0",
           "Atom.Math": "1.0.0",
-          "MonoGame.Framework.DesktopGL": "3.8.0.1641"
+          "MonoGame.Framework.DesktopGL": "3.8.1.303"
         },
         "runtime": {
           "Atom.Xna.dll": {}
@@ -1683,19 +1683,19 @@
       "path": "microsoft.win32.registry/4.0.0",
       "hashPath": "microsoft.win32.registry.4.0.0.nupkg.sha512"
     },
-    "MonoGame.Framework.DesktopGL/3.8.0.1641": {
+    "MonoGame.Framework.DesktopGL/3.8.1.303": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rJQlrlHQbnOECYV6EcQ8GlGRQ2lzPTroXQcyyOZ0ki+BQRSJEN2zVBm9skqLiXya348aGAfTSSGTaSKjAy9NaA==",
-      "path": "monogame.framework.desktopgl/3.8.0.1641",
-      "hashPath": "monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+      "sha512": "sha512-eGYhqn0n1olk8MNYeE9EuBmoNNECN1T18rPMaQpkzsEQ0H3nVyFPXC+uCo78v5pi5juQpJ3PSFnSkjzZJ1U58A==",
+      "path": "monogame.framework.desktopgl/3.8.1.303",
+      "hashPath": "monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
     },
-    "MonoGame.Framework.WindowsDX/3.8.0.1641": {
+    "MonoGame.Framework.WindowsDX/3.8.1.303": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uWPGugWXe0eqrA5KgKc38z2K+RNgh8DmIDjIDdc7JX8m7azYDkNapHwIOANkEj5ZYAr7uqxjoqGcU4VS+ayl1g==",
-      "path": "monogame.framework.windowsdx/3.8.0.1641",
-      "hashPath": "monogame.framework.windowsdx.3.8.0.1641.nupkg.sha512"
+      "sha512": "sha512-RKAXyQRjkyw3hbaP5wmoqr7FH8SkaYfI8TUhX/S4PySHYjVhj4ufr0Rd2HDJTPkSq0KubsBoNUpbD9JM0DlwsQ==",
+      "path": "monogame.framework.windowsdx/3.8.1.303",
+      "hashPath": "monogame.framework.windowsdx.3.8.1.303.nupkg.sha512"
     },
     "NETStandard.Library/1.6.0": {
       "type": "package",
