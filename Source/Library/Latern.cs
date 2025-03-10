@@ -144,7 +144,7 @@ namespace Zelda
                 Name           = "LaternManaDrain",
                 PowerType      = LifeMana.Mana,
                 ManipType      = StatusManipType.Percental,
-                DamageEachTick = 10,
+                DamageEachTick = 5,
                 TickTime       = 10.0f
             };
         }

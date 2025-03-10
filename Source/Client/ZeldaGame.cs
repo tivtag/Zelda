@@ -16,6 +16,7 @@ namespace Zelda
     using Atom.Math;
     using Atom.Patterns.Provider;
     using Atom.Xna;
+    using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Zelda.Graphics;
     using Zelda.Weather;
@@ -442,7 +443,7 @@ namespace Zelda
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="args">The EventArgs that contains the event data.</param>
-        protected override void OnExiting( object sender, EventArgs args )
+        protected override void OnExiting( object sender, ExitingEventArgs args )
         {
             Settings.Instance.Save();
             base.OnExiting( sender, args );

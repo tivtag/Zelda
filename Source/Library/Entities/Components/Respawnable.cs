@@ -10,7 +10,7 @@
 
 namespace Zelda.Entities.Components
 {
-    using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using Atom;
     using Atom.Math;
@@ -41,6 +41,7 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets or sets the time in seconds it takes for the ZeldaEntity to respawn.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float RespawnTime
         {
             get { return respawnTime; }

@@ -11,6 +11,7 @@
 namespace Zelda.Status
 {
     using System;
+    using System.ComponentModel;
     using Atom;
     using Atom.Math;
     using Zelda.Attacks;
@@ -95,6 +96,7 @@ namespace Zelda.Status
         /// this <see cref="Statable"/> is 'friendly' towards the player.
         /// </summary>
         /// <value>The default value is null.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool IsFriendly
         {
             get;
@@ -181,6 +183,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the race of the <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public RaceType Race
         {
             get
@@ -201,6 +204,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the level of the status object.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public virtual int Level
         {
             get
@@ -221,6 +225,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the total armor of the statable <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int Armor
         {
             get
@@ -237,6 +242,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the base armor of the statable <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int BaseArmor
         {
             get
@@ -258,6 +264,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the melee attack speed (also called delay) of this status object.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float AttackSpeedMelee
         {
             get { return attackSpeedMelee; }
@@ -267,6 +274,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the melee ranged speed (also called delay) of this status object.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float AttackSpeedRanged
         {
             get { return attackSpeedRanged; }
@@ -277,9 +285,10 @@ namespace Zelda.Status
         /// Gets the modifier value that is applied to the cast-time
         /// of a spell to get the actual cast-time.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float CastTimeModifier
         {
-            get { return this.castTimeModifier; }            
+            get { return this.castTimeModifier; }
             set { this.castTimeModifier = value; }
         }
 
@@ -349,6 +358,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the physcial damage this <see cref="ZeldaEntity"/> can do in melee-range. 
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageMeleeMin
         {
             get { return damageMeleeMin; }
@@ -358,6 +368,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the physcial damage this <see cref="ZeldaEntity"/> can do in melee-range. 
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageMeleeMax
         {
             get { return damageMeleeMax; }
@@ -371,6 +382,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the physcial damage this <see cref="ZeldaEntity"/> can do in ranged combat. 
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageRangedMin
         {
             get { return damageRangedMin; }
@@ -380,6 +392,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the physcial damage this <see cref="ZeldaEntity"/> can do in ranged combat. 
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageRangedMax
         {
             get { return damageRangedMax; }
@@ -387,21 +400,23 @@ namespace Zelda.Status
         }
 
         #endregion
-        
+
         /// <summary>
         /// Gets or sets the magical damage bonus this <see cref="ZeldaEntity"/> has. 
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public IntegerRange DamageMagic
         {
             get;
             set;
         }
-        
+
         #region > Life <
 
         /// <summary>
         /// Gets or sets the current life of this <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int Life
         {
             get
@@ -427,6 +442,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the base value the <see cref="MaximumLife"/> value is based on.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int BaseMaximumLife
         {
             get;
@@ -436,6 +452,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the maximum life of this <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int MaximumLife
         {
             get
@@ -457,6 +474,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the amount of life regenerated each regen-tick.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int LifeRegeneration
         {
             get
@@ -477,6 +495,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the current mana of this <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int Mana
         {
             get
@@ -502,6 +521,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the maximum mana of this <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int MaximumMana
         {
             get
@@ -523,6 +543,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the amount of life regenerated each regen-tick.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int ManaRegeneration
         {
             get
@@ -543,6 +564,7 @@ namespace Zelda.Status
         /// <summary>
         ///  Gets or sets the value that states whether the <see cref="ZeldaEntity"/> can block attacks.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanBlock 
         {
             get
@@ -572,6 +594,7 @@ namespace Zelda.Status
         /// Gets or sets the value that stores the block 'power' of the <see cref="ZeldaEntity"/> - aka how much damage is blocked.
         /// Only relevant if canBlock is true.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int BlockValue
         {
             get 
@@ -601,6 +624,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets a value indicating whether this Statable is invincible.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool IsInvincible
         {
             get 

@@ -1,11 +1,11 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v8.0",
+    "name": ".NETCoreApp,Version=v9.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v8.0": {
+    ".NETCoreApp,Version=v9.0": {
       "Atom.Game.Waypoints/1.0.0": {
         "dependencies": {
           "Atom": "1.0.0",
@@ -20,7 +20,10 @@
       },
       "Atom/1.0.0": {
         "runtime": {
-          "Atom.dll": {}
+          "Atom.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "0.2.3.30"
+          }
         }
       },
       "Atom.AI/1.0.0": {
@@ -30,7 +33,10 @@
           "Atom.Math": "1.0.0"
         },
         "runtime": {
-          "Atom.AI.dll": {}
+          "Atom.AI.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "0.2.3.30"
+          }
         }
       },
       "Atom.Game/1.0.0": {
@@ -39,7 +45,10 @@
           "Atom.Math": "1.0.0"
         },
         "runtime": {
-          "Atom.Game.dll": {}
+          "Atom.Game.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Atom.Math/1.0.0": {
@@ -47,7 +56,10 @@
           "Atom": "1.0.0"
         },
         "runtime": {
-          "Atom.Math.dll": {}
+          "Atom.Math.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "0.2.3.30"
+          }
         }
       },
       "Atom.Math.Graph/1.0.0": {
@@ -56,7 +68,10 @@
           "Atom.Math": "1.0.0"
         },
         "runtime": {
-          "Atom.Math.Graph.dll": {}
+          "Atom.Math.Graph.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "0.2.3.30"
+          }
         }
       }
     }

@@ -22,7 +22,7 @@ namespace Zelda.Talents.Magic
         /// <summary>
         /// The base cooldown of Flames of Phlegethon (in seconds).
         /// </summary>
-        public const float Cooldown = 60.0f;
+        public const float Cooldown = 64.0f;
 
         /// <summary>
         /// The mana cost of the Flames of Phlegethon talent.
@@ -32,7 +32,7 @@ namespace Zelda.Talents.Magic
         /// <summary>
         /// The additional mana cost of the Flames of Phlegethon talent.
         /// </summary>
-        public const float ManaCostOfTotalMana = 0.25f;
+        public const float ManaCostOfTotalMana = 0.2f;
 
         /// <summary>
         /// The cast time of FlamesOfPhlegethon
@@ -60,7 +60,7 @@ namespace Zelda.Talents.Magic
         {
             get
             {
-                return 0.25f;
+                return 0.2f;
             }
         }
 
@@ -71,7 +71,7 @@ namespace Zelda.Talents.Magic
         {
             get
             {
-                return 0.5f;
+                return 0.4f;
             }
         }
 

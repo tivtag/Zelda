@@ -16,5 +16,5 @@ using System.Runtime.InteropServices;
 [assembly: System.CLSCompliant( false )] // XNA is not CLS compliant.
 [assembly: NeutralResourcesLanguage( "en" )]
 
-[assembly: AssemblyVersion( "3.2022.6.1" )]
-[assembly: AssemblyFileVersion( "3.2022.6.1" )]
+[assembly: AssemblyVersion( "3.2025.3.1" )]
+[assembly: AssemblyFileVersion( "3.2025.3.1" )]

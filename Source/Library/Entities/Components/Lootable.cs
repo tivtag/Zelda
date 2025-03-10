@@ -11,6 +11,7 @@
 namespace Zelda.Entities.Components
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using Atom.Diagnostics.Contracts;
     using Atom.Math;
@@ -49,6 +50,7 @@ namespace Zelda.Entities.Components
         /// Gets or sets a value that indicates how many items 
         /// the lootable <see cref="ZeldaEntity"/> may drop.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public ItemDropMode DropMode
         {
             get;
@@ -60,6 +62,7 @@ namespace Zelda.Entities.Components
         /// in which items will drop.
         /// </summary>
         /// <value>The default value is 5.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float DropRange
         {
             get { return this.dropRange; }

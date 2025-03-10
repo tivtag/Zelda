@@ -11,6 +11,7 @@
 namespace Zelda.Entities.Components
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using Atom;
     using Atom.Components;
@@ -40,6 +41,7 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets or sets the experience the ZeldaEntity gives when killed.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int Experience
         {
             get;

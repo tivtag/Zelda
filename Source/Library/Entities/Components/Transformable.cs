@@ -10,6 +10,7 @@
 
 namespace Zelda.Entities.Components
 {
+    using System.ComponentModel;
     using Atom.Components.Transform;
     using Atom.Math;
 
@@ -35,6 +36,7 @@ namespace Zelda.Entities.Components
         /// Gets or sets the direction the Entity is facing.
         /// </summary>
         /// <value>The default value is <see cref="Direction4.Down"/>.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public Direction4 Direction
         {
             get
@@ -58,6 +60,7 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets the direction the Entity was facing last frame.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public Direction4 OldDirection
         {
             get;

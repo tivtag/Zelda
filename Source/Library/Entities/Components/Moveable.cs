@@ -16,6 +16,7 @@ namespace Zelda.Entities.Components
     using Atom.Components;
     using Atom.Math;
     using Atom.Scene.Tiles;
+    using System.ComponentModel;
 
     /// <summary>
     /// Defines the <see cref="Component"/> that allows an Entity
@@ -32,12 +33,13 @@ namespace Zelda.Entities.Components
         /// Raised when the movement speed of the moveable entity has changed.
         /// </summary>
         public event SimpleEventHandler<Moveable> SpeedChanged;
-        
+
         /// <summary>
         /// Gets or sets the <see cref="IZeldaTileHandler"/> the <see cref="Moveable"/> component uses 
         /// to interact with the Tile Map of the Scene.
         /// </summary>
         /// <exception cref="ArgumentNullException">Set: If the given value is null.</exception>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public IZeldaTileHandler TileHandler
         {
             get
@@ -69,11 +71,12 @@ namespace Zelda.Entities.Components
             }
         }
 
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float SlideOffset
         {
             get { return this.slideOffset; }
             set { this.slideOffset = value; }
-        }        
+        }
 
         #region > Swimming <
 
@@ -81,6 +84,7 @@ namespace Zelda.Entities.Components
         /// Gets or sets a value indicating whether the Entity can swim in deep water.
         /// </summary>
         /// <value>The default value is false.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanSwim
         {
             get;
@@ -106,6 +110,7 @@ namespace Zelda.Entities.Components
         /// <value>
         /// The default value is null.
         /// </value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public Func<bool> CanCurrentlySwimStateFunction
         {
             get;
@@ -155,35 +160,38 @@ namespace Zelda.Entities.Components
         #endregion
 
         #region > Pushing <
-                
+
         /// <summary>
         /// Gets or sets a value indicating whether the Entity can be pushed.
         /// </summary>
         /// <value>The default value is true.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanBePushed
         {
             get;
             set;
         }
-        
+
         /// <summary>
         /// Gets or sets the value all pushing forces 
         /// applied to this moveable Entity are multiplied by.
         /// </summary>
         /// <value>The default value is 1.</value>
-        public float PushingForceModifier       
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
+        public float PushingForceModifier
         {
             get { return this.pushingForceModifier; }
             set { this.pushingForceModifier = value; }
         }
 
         #endregion
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether the Entity is solid
         /// and as such collides with the Tile Map of the Scene.
         /// </summary>
         /// <value>The default value is true.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CollidesWithMap 
         { 
             get;
@@ -194,6 +202,7 @@ namespace Zelda.Entities.Components
         /// Gets or sets a value indicating whether the Entity can currently move.
         /// </summary>
         /// <value>The default value is true.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanMove
         {
             get;
@@ -205,6 +214,7 @@ namespace Zelda.Entities.Components
         /// around the edges of a tile.
         /// </summary>
         /// <value>The default value is true.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanSlide
         {
             get;
@@ -215,6 +225,7 @@ namespace Zelda.Entities.Components
         /// Gets or sets a value indicating whether the Entity can change between TileMapFloors.
         /// </summary>
         /// <value>The default value is true.</value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool CanChangeFloor
         {
             get;
@@ -224,6 +235,7 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets or sets the current movement speed of the Entity
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float Speed
         {
             get
@@ -243,7 +255,8 @@ namespace Zelda.Entities.Components
 
         /// <summary>
         /// Gets or sets the base(non modified) movement speed of the Entity.
-        /// </summary>   
+        /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float BaseSpeed
         {
             get { return this.baseSpeed; }

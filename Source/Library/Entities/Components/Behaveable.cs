@@ -11,8 +11,9 @@
 namespace Zelda.Entities.Components
 {
     using System;
-    using Atom.Diagnostics.Contracts;
+    using System.ComponentModel;
     using Atom.Components;
+    using Atom.Diagnostics.Contracts;
     using Zelda.Entities.Behaviours;
 
     /// <summary>
@@ -27,6 +28,7 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets or sets the <see cref="IEntityBehaviour"/> that controls how the Entity acts in the world.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public IEntityBehaviour Behaviour
         {
             get

@@ -56,7 +56,11 @@ namespace Zelda
             {
                 if( game != null )
                 {
-                    game.Dispose();
+                    try
+                    {
+                        game.Dispose();
+                    }
+                    catch { }
                 }
             }
         }

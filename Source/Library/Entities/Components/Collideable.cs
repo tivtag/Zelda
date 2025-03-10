@@ -10,6 +10,7 @@
 
 namespace Zelda.Entities.Components
 {
+    using System.ComponentModel;
     using Atom.Components;
     using Atom.Components.Collision;
     using Atom.Math;
@@ -21,13 +22,14 @@ namespace Zelda.Entities.Components
     public sealed class ZeldaCollision : StaticCollision2
     {
         #region [ Properties ]
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether the ZeldaEntity is a solid object.
         /// </summary>
         /// <value>
         /// The default value is true.
         /// </value>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public bool IsSolid
         {
             get 

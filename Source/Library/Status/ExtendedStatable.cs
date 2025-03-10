@@ -11,6 +11,7 @@
 namespace Zelda.Status
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using Atom;
     using Zelda.Entities;
@@ -123,6 +124,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the number of rubies the extended statable ZeldaEntity has.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public long Rubies
         {
             get 
@@ -186,6 +188,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets or sets the level of the extended-statable <see cref="ZeldaEntity"/>.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public override int Level
         {
             get
@@ -266,6 +269,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets the average of the melee AttackSpeed and the melee WeaponSpeed.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float AttackSpeedMeleeNormalized
         {
             get;
@@ -275,6 +279,7 @@ namespace Zelda.Status
         /// <summary>
         /// Gets the average of the ranged AttackSpeed and the ranged WeaponSpeed.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float AttackSpeedRangedNormalized
         {
             get;
@@ -341,6 +346,7 @@ namespace Zelda.Status
         /// instead of the actual weapon speed.
         /// The normalized weapon speed can be looked-up using the StatusCalc.
         /// </remarks>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageMeleeNormalizedMin
         {
             get;
@@ -355,6 +361,7 @@ namespace Zelda.Status
         /// instead of the actual weapon speed.
         /// The normalized weapon speed can be looked-up using the StatusCalc.
         /// </remarks>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageMeleeNormalizedMax
         {
             get;
@@ -369,6 +376,7 @@ namespace Zelda.Status
         /// instead of the actual weapon speed.
         /// The normalized weapon speed can be looked-up using the StatusCalc.
         /// </remarks>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageRangedNormalizedMin
         {
             get;
@@ -383,6 +391,7 @@ namespace Zelda.Status
         /// instead of the actual weapon speed.
         /// The normalized weapon speed can be looked-up using the StatusCalc.
         /// </remarks>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int DamageRangedNormalizedMax
         {
             get;
@@ -397,6 +406,7 @@ namespace Zelda.Status
         /// Gets the effectiviness multiplier for Life Potions 
         /// this extended-statable <see cref="ZeldaEntity"/> uses.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float LifePotionEffectiviness
         {
             get;
@@ -407,6 +417,7 @@ namespace Zelda.Status
         /// Gets the effectiviness multiplier for Mana Potions 
         /// this extended-statable <see cref="ZeldaEntity"/> uses.
         /// </summary>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public float ManaPotionEffectiviness
         {
             get;
@@ -521,7 +532,7 @@ namespace Zelda.Status
 
         #endregion
 
-        #endregion        
+        #endregion
 
         #endregion
 

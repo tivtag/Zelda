@@ -15,6 +15,7 @@ namespace Zelda.Entities.Components
     using Atom;
     using Atom.Components;
     using Atom.Math;
+    using System.ComponentModel;
 
     /// <summary>
     /// Defines the <see cref="Component"/> that enables a <see cref="ZeldaEntity"/> 
@@ -42,6 +43,7 @@ namespace Zelda.Entities.Components
         /// <exception cref="ArgumentOutOfRangeException">
         /// Set: If the given value is negative.
         /// </exception>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int VisionRange
         {
             get
@@ -64,6 +66,7 @@ namespace Zelda.Entities.Components
         /// <exception cref="ArgumentOutOfRangeException">
         /// Set: If the given value is negative.
         /// </exception>
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
         public int FeelingRange
         {
             get

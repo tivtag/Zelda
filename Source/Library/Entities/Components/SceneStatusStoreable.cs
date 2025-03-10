@@ -1,6 +1,8 @@
 ﻿
 namespace Zelda.Entities.Components
 {
+    using System.ComponentModel;
+
     /// <summary>
     /// Adds the functionallity of storing the entity within the dynamic scene status storage;
     /// instead of the static map file.
@@ -10,7 +12,8 @@ namespace Zelda.Entities.Components
         /// <summary>
         /// Gets or sets a value indicating whether the entity is currently stored by the scene status.
         /// </summary>
-        public bool Stored 
+        [DesignerSerializationVisibility( DesignerSerializationVisibility.Visible )]
+        public bool Stored
         {
             get;
             set;
